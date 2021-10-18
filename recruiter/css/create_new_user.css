@@ -1,0 +1,116 @@
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+}
+.radio-item input[type='radio'] {
+  display: none;
+}
+.radio-item label {
+  font-size: 18px;
+  color: black;
+  font-weight: normal;
+}
+.radio-item label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #3598DB;
+  background-color: transparent;
+}
+.radio-item input[type=radio]:checked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #3598DB;
+}
+.default-input-for-add-client-1{
+    border: 1px solid #3598DB;
+}
+.default-select-for-add-client-1{
+    border: 1px solid #3598DB;
+}
+.sub-divs-image-box-right-side-add-client{
+    justify-content: space-between;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+.image-box-right-side-add-client{
+
+    justify-content: space-between;
+}
+.left-side-image-box-add-client-1{
+    flex-basis: 20%;
+}
+.input-image-upload-ekam-1-add-client{
+    display: none;
+}
+.label-for-image-upload-ekam-1client{
+    background-color: white;
+    position: relative;
+}
+.label-for-image-upload-ekam-1client h2{
+    padding: 40px;
+    box-shadow: 1px 8px 20px #00000033;
+    border-radius: 100%;
+    width: min-content;
+}
+.label-for-image-upload-ekam-1client p{
+    margin-top: -50px;
+    margin-left: 100px;
+}
+.label-for-image-upload-ekam-1client p i{
+    padding: 10px;
+    border-radius: 100%;
+    background: #3598DB;
+    color: white; 
+
+}
+.label-for-image-upload-ekam-1client h2 i{
+    color: #3598DB;
+    font-size: 50px;
+}
+input[type="checkbox"] {
+  visibility: hidden;
+}
+label {
+  cursor: pointer;
+  color: #333;
+  font-size:18px;
+}
+input[type="checkbox"] + label:before {
+  border: 2px solid #3598DB;
+  content: "\00a0";
+  display: inline-block;
+  font: 18px/1em sans-serif;
+  height: 18px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 18px;
+  margin-top:4px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #3598DB;
+  color: white;
+  content: "\2713";
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}

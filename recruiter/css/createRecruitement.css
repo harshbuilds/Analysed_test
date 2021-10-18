@@ -1,0 +1,57 @@
+.input-padding-create-recruitment-1{
+    height: 150px!important;
+}
+.right-side-image-box-right-add-client-1.create-rec{
+    flex-basis: 100%;
+}
+.input-padding-create-recruitment-12{
+    padding-bottom: 150px!important;
+}
+.inputs-for-add-client-below-image-box-create-rec{
+    align-items: flex-start;
+}
+.inputs-for-add-client-below-image-box{
+    width: 100%!important;
+}
+.heading-for-general-information-right-side-add-client-container.okaniawa i{
+    color: #51C46D;
+    background-color: #D6F8D1;
+    padding: 20px 25px;
+}
+.heading-for-general-information-right-side-add-client-container.okaniawa-1 i{
+    color: #EC4551;
+    background-color: #EC45512E;
+    padding: 20px 25px;
+}
+.heading-for-general-information-right-side-add-client-container.okaniawa-2 i{
+    color: #8C60EB;
+    background-color: #8C60EB4F;
+    padding: 20px 15px;
+}
+.file-upload-create-recruitment-1{
+    justify-content: space-between;
+}
+
+.file-upload-create-recruitment-1 span input{
+    display: none;
+}
+.default-button-for-recruiter-dashboard.file-upload{
+    padding: 10px;
+}
+
+@media screen and (max-width:1300px){
+    .create-rec-100-temp-p{
+        flex-basis: 45%!important;
+    }
+    .file-upload-create-recruitment-1 span {
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width:1000px){
+    .create-rec-100-temp-p{
+        flex-basis:100%!important;
+    }
+
+}
+
+

@@ -1,0 +1,103 @@
+.searchtools-recruiter-yourtools {
+  margin-top: 50px;
+}
+.searchtools-recruiter-yourtools span {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 31px;
+  padding: 7px 20px;
+  width: 30%;
+}
+.searchtools-recruiter-yourtools span input {
+}
+.searchtools-recruiter-yourtools span button {
+  float: right;
+  cursor: pointer;
+  color: #3598db;
+}
+.searchtools-recruiter-yourtools span input,
+.searchtools-recruiter-yourtools span button {
+  outline: none;
+  background-color: #fff;
+  border: none;
+  display: inline-block;
+  padding: 10px;
+}
+.frequently-used-searched-tools-recruiter {
+  margin-top: 70px;
+}
+.frequently-used-tools-heading-required {
+  color: #333333;
+  font-size: 18px;
+  margin: 10px 0px;
+  font-weight: bold;
+}
+.frequently-used-searched-tools-container {
+  justify-content: space-between;
+  margin: 40px 0px;
+}
+.single-item-searched-tools-recruiter-ekam {
+  flex-basis: 28%;
+  margin-bottom: 50px;
+}
+.icon-for-frequently-searched-item {
+  flex-basis: 20%;
+    padding: 8px;
+    margin-right: 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.link-and-description-of-tools-recruiter-ekam{
+  flex-basis: 70%;
+}
+.icon-for-frequently-searched-item i {
+  font-size: 30px;
+}
+
+.single-item-searched-tools-recruiter-ekam span a {
+  color: #3598db;
+  font-size: 18px;
+  display: block;
+  margin: 7px 0px;
+}
+.single-item-searched-tools-recruiter-ekam span span {
+  color: #979797;
+  font-size: 16px;
+  display: block;
+  margin: 7px 0px;
+}
+.time-last-used-tools-recruiter-ekam{
+  font-size: 12px!important;
+}
+.frequently-used-searched-tools-recruiter{
+  border-bottom: 1px solid #e8e8e8;
+}
+@media screen and (max-width:1550px){
+  .searchtools-recruiter-yourtools span {
+    width: 50%;
+  }
+}
+@media screen and (max-width:1000px){
+  .searchtools-recruiter-yourtools span {
+    width: 70%;
+  }
+  .single-item-searched-tools-recruiter-ekam {
+    flex-basis: 45%;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width:700px){
+  .searchtools-recruiter-yourtools span {
+    width: 100%;
+  }
+  .single-item-searched-tools-recruiter-ekam {
+    flex-basis: 95%;
+    margin-bottom: 50px;
+  }
+  .searchtools-recruiter-yourtools span input {
+    width: 70%;
+  }
+  .searchtools-recruiter-yourtools span button {
+    width: 10%;
+  }
+}
