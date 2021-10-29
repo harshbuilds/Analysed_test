@@ -2,6 +2,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/client_list.css">
 <title>Analysed</title>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+<?php
+   $flag=0;
+   if(isset($_POST['btnsearch']))
+   {
+     $textsearch=$_POST['textsearch'];
+     $sql="SELECT * FROM `client` WHERE company_name='$textsearch'";
+     $flag=1;
+   }
+ ?>
 <body>
 <div class="container">
 <div class="small_container-1">
@@ -38,10 +54,12 @@
                         </div>
                     </details-menu>
                 </details>
-                <input class="search-form-input" type="text" name="search" placeholder="Search by company name">
-                <button class="searchButton">
+              <form method="post">
+                <input class="search-form-input" type="text" name="textsearch" placeholder="Search by company name">
+                <button type="submit" name="btnsearch" class="searchButton">
                     <img src="./img/search-icon-blue.png" />
                 </button>
+              </form>
             </div>
             <div class="row-flex-jobj justifycontent-flex-end-1">
                 <p class="sortbyText">Sort by :
@@ -57,25 +75,52 @@
                         <option value="3"></option>
                     </select></p>
                 </div>
+
+        <?php
+        if($flag == 0)
+        {
+            $sql="select * from client";
+        }
+
+          $res=mysqli_query($conn,$sql);
+          if($res == TRUE)
+          {
+              $count=mysqli_num_rows($res);
+              if($count >0)
+              {
+                  while($rows=mysqli_fetch_assoc($res))
+                  {
+                      $client_id=$rows['client_id'];
+                      $client_img=$rows['client_img'];
+                      $name=$rows['name'];
+                      $company_name=$rows['company_name'];
+                      $role=$rows['role'];
+                      $role_detail=$rows['role_detail'];
+                      $main_email=$rows['main_email'];
+                      $contact_no=$rows['contact_no'];
+                      $added_on=$rows['added_on'];
+
+               ?>
                 <div class="row" >
                     <div class="column">
                         <input type="checkbox" class="checkbox" id="c1">
                         <label for="c1"></label>
                     </div>
                     <div class="column">
-                        <img src="./img/Ellipse -4.png" class="img">
+
+                        <?php echo '<img src="data:image;base64,'.base64_encode($client_img).' "  style="width: 55px; height: 55px;" >' ;   ?>
                     </div>
                     <div class="column">
-                        <p class="col-1">Chris Do</p>
-                        <span class="col-span-1">Company Name</span>
+                        <p class="col-1"><?php echo $name; ?></p>
+                        <span class="col-span-1"><?php echo $company_name; ?></span>
                     </div>
                     <div class="column">
-                        <p class="col-2">HR</p>
-                        <span class="col-span-2">Lorem Ipsum</span>
+                        <p class="col-2"><?php echo $role; ?></p>
+                        <span class="col-span-2"><?php echo $role_detail; ?></span>
                     </div>
                     <div class="column">
-                        <p class="col-3">+91 9089785678</p>
-                        <span class="col-span-3">example@gmail.com</span>
+                        <p class="col-3"><?php echo $contact_no; ?></p>
+                        <span class="col-span-3"><?php echo $main_email; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-4"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</p>
@@ -83,104 +128,19 @@
                     </div>
                     <div class="column">
                         <p class="col-5">Added on <span>05-05-2020 </span></p>
-                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span> 
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete</span></span>
-                    </div>
-                </div>
-
-                <div class="row" >
-                    <div class="column">
-                        <input type="checkbox" class="checkbox" id="c2">
-                        <label for="c2"></label>
-                    </div>
-                    <div class="column">
-                        <img src="./img/Ellipse -4.png" class="img">
-                    </div>
-                    <div class="column">
-                        <p class="col-1">Chris Do</p>
-                        <span class="col-span-1">Company Name</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-2">HR</p>
-                        <span class="col-span-2">Lorem Ipsum</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-3">+91 9089785678</p>
-                        <span class="col-span-3">example@gmail.com</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-4"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</p>
-                        <span class="col-span-4"><i class="fa fa-bell" aria-hidden="true"></i> Remainder</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-5">Added on <span>05-05-2020 </span></p>
-                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span> 
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete</span></span>
+                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span>
+                          <a href="delete_client_list.php?Id=<?php echo $client_id; ?>"><button ><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></a>
                     </div>
                 </div>
 
 
-                <div class="row" >
-                    <div class="column">
-                        <input type="checkbox" class="checkbox" id="c3">
-                        <label for="c3"></label>
-                    </div>
-                    <div class="column">
-                        <img src="./img/Ellipse -4.png" class="img">
-                    </div>
-                    <div class="column">
-                        <p class="col-1">Chris Do</p>
-                        <span class="col-span-1">Company Name</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-2">HR</p>
-                        <span class="col-span-2">Lorem Ipsum</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-3">+91 9089785678</p>
-                        <span class="col-span-3">example@gmail.com</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-4"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</p>
-                        <span class="col-span-4"><i class="fa fa-bell" aria-hidden="true"></i> Remainder</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-5">Added on <span>05-05-2020 </span></p>
-                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span> 
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete</span></span>
-                    </div>
-                </div>
+                  <?php
+                 }
+             }
+         }
+        ?>
 
-                <div class="row" >
-                    <div class="column">
-                        <input type="checkbox" class="checkbox" id="c4">
-                        <label for="c4"></label>
-                    </div>
-                    <div class="column">
-                        <img src="./img/Ellipse -4.png" class="img">
-                    </div>
-                    <div class="column">
-                        <p class="col-1">Chris Do</p>
-                        <span class="col-span-1">Company Name</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-2">HR</p>
-                        <span class="col-span-2">Lorem Ipsum</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-3">+91 9089785678</p>
-                        <span class="col-span-3">example@gmail.com</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-4"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</p>
-                        <span class="col-span-4"><i class="fa fa-bell" aria-hidden="true"></i> Remainder</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-5">Added on <span>05-05-2020 </span></p>
-                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span> 
-                        <i class="fa fa-trash" aria-hidden="true"></i> Delete</span></span>
-                    </div>
-                </div>
+
             </div>
         </div>
     </body>

@@ -1,4 +1,44 @@
 <?php include('header.php') ?>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+
+<?php
+    $c_id=1004;
+    $sql="select * from client where client_id='$c_id'";
+    $res=mysqli_query($conn,$sql);
+    if($res == TRUE)
+    {
+        $count=mysqli_num_rows($res);
+        if($count >0)
+        {
+            while($rows=mysqli_fetch_assoc($res))
+            {
+                $name=$rows['name'];
+                $company_name=$rows['company_name'];
+                $client_img=$rows['client_img'];
+                $role=$rows['role'];
+                $main_email=$rows['main_email'];
+                $contact_no=$rows['contact_no'];
+                $added_on=$rows['added_on'];
+                $city=$rows['city'];
+                $state=$rows['state'];
+                $country=$rows['country'];
+                $status=$rows['status'];
+                $division=$rows['division'];
+                $internal=$rows['internal'];
+                $created_by=$rows['created_by'];
+                $created_email=$rows['created_email'];
+                $created_no=$rows['created_no'];
+
+            }
+        }
+    }
+?>
 <title>Contact specific</title>
 <link rel="stylesheet" href="./css/contact_specific-1.css">
 
@@ -6,15 +46,16 @@
     <div class="container">
         <div class="small_container">
             <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link">Justin Soto</a>
+                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $name ?></a>
             </div>
 
+            <br><br>
             <div class="profile-img">
-                <img src="img/Ellipse -10@2x.png"  alt="">
-                <h1>Justin Soto<p1> #JB13069</p1></h1><br>
-                <h2>Fox Hunt - <span>HR</span></h2><br>
+                <?php echo '<img src="data:image;base64,'.base64_encode($client_img).' " >' ;   ?>
+                <h1><?php echo  $name ?><p1> #<?php echo  $c_id ?></p1></h1><br>
+                <h2><?php echo  $company_name ?> - <span><?php echo  $role ?></span></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> London</h4>
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
             <div class="button">
                 <button>Edit client</button>
@@ -29,22 +70,23 @@
                 <p><a href="contact_specific-6.php">Notes</a></p>
             </div>
 
+            <br><br>
             <div class="status">
                 <div class="status1" >
-                    <p>#JB13069</p>
-                    <span>05-05-2021</span>
+                    <p>#<?php echo  $c_id ?></p>
+                    <span><?php echo  $added_on ?></span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;">Justin soto</span>
-                    <p style="color:#3598DB;margin-left:70px">Fox Hunt <span style="color:black">| HR</span></p>
+                    <span style="margin-left:50px;"><?php echo  $name ?></span>
+                    <p style="color:#3598DB;margin-left:70px"><?php echo  $company_name ?> <span style="color:black">| <?php echo  $role ?></span></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
                     <span style="color:#979797; font-size:15px; margin-left:20px;">Status&emsp;&emsp;&emsp;&emsp;Last Contact</span>
                     <br>
                 </div>
 
-                <div class="displayname"> 
-                    <span>Live</span>&emsp;&emsp;&emsp;&emsp;&emsp;20-05-2020
+                <div class="displayname">
+                    <span><?php echo  $status ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $added_on ?>
                 </div>
                 <br><br>
 
@@ -53,59 +95,89 @@
                 </div>
 
                 <div class="fee-percent">
-                    <span>Other</span>&emsp;&emsp;&emsp;&emsp;&emsp;System verified
+                    <span><?php echo  $division ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $internal ?>
                 </div>
                 <br><br>
 
                 <div class="details">
                     <p style="color:#979797;padding-top: 0px;">Created by</p>
                     <br>
-                    <p style="color:#3598DB;">Curtis kelly</p>
-                    <p style="color:black;">abc@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo  $created_by ?></p>
+                    <p style="color:black;"><?php echo  $created_email ?></p>
+                    <p style="color:black;">+91 <?php echo  $created_no ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Contact info</p>
                     <br>
-                    <p style="color:#3598DB;">Emailid@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo  $main_email ?></p>
+                    <p style="color:black;">+91 <?php echo  $contact_no ?></p>
+                    <p style="color:black;">+91 <?php echo  $contact_no ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Address</p>
                     <br>
-                    <p style="color:black">Address line 1</p>
-                    <p style="color:black;">  City-12345</p>
-                    <p style="color: black;">State,Country.</p>
+                    <p style="color:black"><?php echo  $city ?></p>
+                    <p style="color: black;"><?php echo  $state ?> , <?php echo  $country ?>.</p>
                     <br><br>
                 </div>
             </div>
 
+
+
+            <?php
+            $cs_id=5001;
+            $sql1="select * from contact_specific where cs_id='$cs_id'";
+            $res1=mysqli_query($conn,$sql1);
+            if($res1 == TRUE)
+            {
+                $count=mysqli_num_rows($res1);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res1))
+                    {
+                        $last_edited=$rows['last_edited'];
+                        $files=$rows['files'];
+                        $notes=$rows['notes'];
+                        $jobs=$rows['jobs'];
+                        $visibility=$rows['visibility'];
+                        $source=$rows['source'];
+                        $validity=$rows['validity'];
+                        $type=$rows['type'];
+                        $skills=$rows['skills'];
+                        $email=$rows['email'];
+                        $contact_no=$rows['contact_no'];
+                        $city=$rows['city'];
+                        $state=$rows['state'];
+                        $country=$rows['country'];
+                    }
+                }
+              }
+            ?>
             <div class="left-side-container-1">
                 <div class="summary">
                     <div class="heading">
                         <p class="mainHeading">Summary</p>
-                        <span class="mainheading-left">Last edited <span >21-05-2020</span></span>
+                        <span class="mainheading-left">Last edited <span ><?php echo  $last_edited ?></span></span>
                     </div>
                     <div class="summary-content">
-                        <p><i class="fa fa-file" aria-hidden="true"></i> Files <span>10</span></p>
-                        <p><i class="fa fa-sticky-note" aria-hidden="true"></i> Notes<span>25</span></p>
-                        <p><i class="fa fa-suitcase" aria-hidden="true"></i> Jobs <span>32</span></p>
+                        <p><i class="fa fa-file" aria-hidden="true"></i> Files <span><?php echo  $files ?></span></p>
+                        <p><i class="fa fa-sticky-note" aria-hidden="true"></i> Notes<span><?php echo  $notes ?></span></p>
+                        <p><i class="fa fa-suitcase" aria-hidden="true"></i> Jobs <span><?php echo  $jobs ?></span></p>
                     </div>
                     <div class="summary-content-right">
                         <div class="visibility">
                             <p class="class-p">Visibility</p>
-                            <span class="span-class">Internal</span>
+                            <span class="span-class"><?php echo  $visibility ?></span>
                         </div>
                         <div class="source">
                             <p class="class-p">Source</p>
-                            <span class="span-class">Linkedin</span>
+                            <span class="span-class"><?php echo  $source ?></span>
                         </div>
                         <div class="validity">
                             <p class="class-p">Validity</p>
-                            <span class="span-class">System Verified</span>
+                            <span class="span-class"><?php echo  $validity ?></span>
                         </div>
                         <div class="type">
                             <p class="class-p">Type</p>
-                            <span class="span-class">Client</span>
+                            <span class="span-class"><?php echo  $type ?></span>
                         </div>
                     </div>
                 </div>
@@ -115,61 +187,72 @@
                         <p class="mainHeading">Required Skills</p>
                     </div>
                     <div class="skills-content">
-                        <p>PHP</p>
-                        <P>MySQL</P>
-                        <p>Nodejs</p>
+                        <!-- <p>PHP</p> -->
+                        <?php
+                            $skills_arr = explode (",", $skills);
+                            foreach($skills_arr as $value)
+                            {
+                        ?>
+                        <p><?php echo $value;?></p>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
 
-                <div class="tasks">
+                <div class="tasks" style="height:280px;">
                     <div class="heading">
                         <p class="mainHeading">Tasks</p>
                     </div>
                     <div class="task-content">
+                    <?php
+                        $sql2="select * from company_task";
+                        $res2=mysqli_query($conn,$sql2);
+                        if($res2 == TRUE)
+                        {
+                            $count=mysqli_num_rows($res2);
+                            if($count >0)
+                            {
+                                while($rows=mysqli_fetch_assoc($res2))
+                                {
+                                    $comp_img=$rows['comp_img'];
+                                    $job_comp=$rows['job_comp'];
+                                    $name_task=$rows['name_task'];
+                                    $desc_short=$rows['desc_short'];
+                                    $start_date=$rows['start_date'];
+                                    $end_date=$rows['end_date'];
+
+
+                            ?>
                         <div class="task-row">
+
                             <div class="task-column">
-                                <img src="./img/Fox hunt.png" class="img">
+                            <?php echo '<img src="data:image;base64,'.base64_encode($comp_img).' "  style="width: 55px; height: 55px;" >' ;   ?>
                             </div>
                             <div class="task-column">
-                                <p class="col-1">Fox Hunt</p>
+                                <p class="col-1"><?php echo $job_comp; ?></p>
                                 <span class="col-span-1">30%</span>
                             </div>
                             <div class="task-column">
-                                <p class="col-2">Task name</p>
-                                <span class="col-span-2">Type of the task</span>
+                                <p class="col-2"><?php echo $name_task; ?></p>
+                                <span class="col-span-2"><?php echo $desc_short; ?></span>
                             </div>
                             <div class="task-column">
                                 <p class="col-3">Assigned in</p>
-                                <span class="col-span-3">01-05-2020</span>
+                                <span class="col-span-3"><?php echo $start_date; ?></span>
                             </div>
                             <div class="task-column">
                                 <p class="col-4">Deadline</p>
-                                <span class="col-span-4">01-05-2020</span>
+                                <span class="col-span-4"><?php echo $end_date; ?></span>
                             </div>
+
                         </div>
                         <hr style="color:#979797;margin-top:15px;margin-bottom:10px">
-
-                        <div class="task-row">
-                            <div class="task-column">
-                                <img src="./img/Fox hunt.png" class="img">
-                            </div>
-                            <div class="task-column">
-                                <p class="col-1">Fox Hunt</p>
-                                <span class="col-span-1">30%</span>
-                            </div>
-                            <div class="task-column">
-                                <p class="col-2">Task name</p>
-                                <span class="col-span-2">Type of the task</span>
-                            </div>
-                            <div class="task-column">
-                                <p class="col-3">Assigned in</p>
-                                <span class="col-span-3">01-05-2020</span>
-                            </div>
-                            <div class="task-column">
-                                <p class="col-4">Deadline</p>
-                                <span class="col-span-4">01-05-2020</span>
-                            </div>
-                        </div>
+                        <?php
+                                    }
+                                }
+                            }
+                        ?>
 
                     </div>
                 </div>
@@ -179,85 +262,105 @@
                         <p class="mainHeading">Contact-info</p>
                     </div>
                     <div class="contact-info-content">
-                        <p class="contact-email">Emailid@gmail.com</p>
-                        <span>90009009090</span><br>
-                        <span>90009009090</span>
+                        <p class="contact-email"><?php echo  $email ?></p>
+                        <span><?php echo  $contact_no ?></span><br>
+                        <span><?php echo  $contact_no ?></span>
                     </div>
                     <div class="contact-info-content" style="margin-top: 25px;">
-                        <span>Address Line 1,City - 530032,</span>
-                        <span>State, Country</span>
+                        <span><?php echo  $city ?>,</span><br>
+                        <span><?php echo  $state ?>, <?php echo  $country ?></span>
                     </div>
                 </div>
-                    <div class="open-jobs">
+                <div class="open-jobs">
                     <p>Open jobs</p>
-                    <div class="row">
-                        <div class="column">
-                            <input type="checkbox" id="c1" class="checkbox">
-                            <label for="c1"></label>
-                        </div>
-                        <div class="column">
-                            <span  class="span-class-red"></span>
-                        </div>
-                        <div class="column">
-                            <p class="col-2">Full-time</p>
-                        </div>
-                        <div class="column">
-                            <p class="col-3">Acturial Assistant</p>
-                            <p class="col-3-1">#1544-1</p>
-                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> London</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-4">Company contact</p>
-                            <p class="col-4-1">Philip Martin</p>
-                            <span class="col-span-4">sandrovicente@gmail.com</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-eye" aria-hidden="true"></i></p>
-                            <span class="col-span-5">10</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-clipboard" aria-hidden="true"></i></p>
-                            <span class="col-span-5">6</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-user" aria-hidden="true"></i></p>
-                            <span class="col-span-5">1/4</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-6">Recruiter</p>
-                            <p class="col-6-1">Sandro Vicente</p>
-                            <span class="col-span-6">sandrovicente@gmail.com</span>
-                        </div>
-                    </div>
 
+
+                    <?php
+                        $sql="select * from job_list";
+                        $res=mysqli_query($conn,$sql);
+                        if($res == TRUE)
+                        {
+                            $count=mysqli_num_rows($res);
+                            if($count >0)
+                            {
+                                while($rows=mysqli_fetch_assoc($res))
+                                {
+                                    $priority=$rows['priority'];
+                                    $job_type=$rows['job_type'];
+
+                                    $state=$rows['state'];
+                                    $position=$rows['position'];
+                                    $job_id=$rows['job_id'];
+
+                                    $contact_client_company=$rows['contact_client_company'];
+                                    $company_website=$rows['company_website'];
+
+                                    $job_views=$rows['job_views'];
+                                    $openings=$rows['openings'];
+
+                                    $recruiters_name=$rows['recruiters_name'];
+                                    $company_email=$rows['company_email'];
+
+                                    $now = time(); // or your date as well
+                                    $your_date = strtotime($end_date);
+                                    $datediff = $your_date -$now;
+                                    $remain_days=round($datediff / (60 * 60 * 24));
+
+                                    if($remain_days < 0)
+                                    {
+                                      continue;
+                                    }
+
+
+                    ?>
                     <div class="row">
                         <div class="column">
                             <input type="checkbox" id="c1" class="checkbox">
                             <label for="c1"></label>
                         </div>
                         <div class="column">
+                        <?php
+                            if($priority == 'High')
+                            {
+                        ?>
+                        <span  class="span-class-red"></span>
+                        <?php
+                        }
+                        elseif($priority == 'Medium')
+                        {
+                        ?>
+                           <span  class="span-class-orange"></span>
+                        <?php
+                            }
+                            elseif($priority == 'Low')
+                            {
+                        ?>
                             <span  class="span-class-yellow"></span>
+                        <?php
+                            }
+                        ?>
+
                         </div>
                         <div class="column">
-                            <p class="col-2">Full-time</p>
+                            <p class="col-2"><?php echo $job_type; ?></p>
                         </div>
                         <div class="column">
-                            <p class="col-3">Acturial Assistant</p>
-                            <p class="col-3-1">#1544-1</p>
-                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> London</span>
+                            <p class="col-3"><?php echo $position; ?></p>
+                            <p class="col-3-1">#<?php echo $job_id; ?></p>
+                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $state; ?></span>
                         </div>
                         <div class="column">
                             <p class="col-4">Company contact</p>
-                            <p class="col-4-1">Philip Martin</p>
-                            <span class="col-span-4">sandrovicente@gmail.com</span>
+                            <p class="col-4-1"><?php echo $contact_client_company; ?></p>
+                            <span class="col-span-4"><?php echo $company_website; ?></span>
                         </div>
                         <div class="column">
                             <p class="col-5"><i class="fa fa-eye" aria-hidden="true"></i></p>
-                            <span class="col-span-5">10</span>
+                            <span class="col-span-5"><?php echo $job_views; ?></span>
                         </div>
                         <div class="column">
                             <p class="col-5"><i class="fa fa-clipboard" aria-hidden="true"></i></p>
-                            <span class="col-span-5">6</span>
+                            <span class="col-span-5"><?php echo $openings; ?></span>
                         </div>
                         <div class="column">
                             <p class="col-5"><i class="fa fa-user" aria-hidden="true"></i></p>
@@ -265,16 +368,22 @@
                         </div>
                         <div class="column">
                             <p class="col-6">Recruiter</p>
-                            <p class="col-6-1">Sandro Vicente</p>
-                            <span class="col-span-6">sandrovicente@gmail.com</span>
+                            <p class="col-6-1"><?php echo $recruiters_name; ?></p>
+                            <span class="col-span-6"><?php echo $company_email; ?></span>
                         </div>
                     </div>
+                    <?php
+                                }
+                            }
+                        }
+                    ?>
+
                 </div>
                 </div>
 
-                    
-                        
-        
+
+
+
             </div>
         </div>
     </div>
