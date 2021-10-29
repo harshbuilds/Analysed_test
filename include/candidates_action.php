@@ -4,7 +4,7 @@
 
 <?php
 if(isset($_POST['action'])){
-$sql="SELECT * from jobseeker where position !='' and  location!='' and qualification!='' and job_type!='' and status!=''";
+$sql="SELECT * from jobseeker where position !='' and  location!='' and qualification!='' and job_type!='' and job_status!=''";
 
 if (isset($_POST['qualification'])){
 
@@ -21,7 +21,7 @@ $sql .="AND job_type IN('".$job_type."')";
 if (isset($_POST['status'])){
 
 $status=implode("','",$_POST['status']);
-$sql .="AND status IN('".$status."')";
+$sql .="AND job_status IN('".$status."')";
 
 }
 if (isset($_POST['jobtitle'])){
@@ -46,7 +46,7 @@ while($row=$result->fetch_assoc()){
     <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
         <a href="">
             <?php
-            $status=$row["status"];
+            $status=$row["job_status"];
             if($status=="Reviewed") { ?>
                 <p class="candidate-status-jobs Reviewed">Reviewed</p>
             <?php   }
@@ -122,7 +122,7 @@ if(isset($_POST['sort_val'])){
              <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
         <a href="">
             <?php
-            $status=$row["status"];
+            $status=$row["job_status"];
             if($status=="Reviewed") { ?>
                 <p class="candidate-status-jobs Reviewed">Reviewed</p>
             <?php   }

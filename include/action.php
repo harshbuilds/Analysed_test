@@ -1,6 +1,6 @@
 <!--- Query for textbox and checkbox filters--->
 
-<?php include('connect.php') ?>
+<?php include('connection1.php') ?>
 
 <?php
 if(isset($_POST['action'])){
@@ -25,7 +25,7 @@ $sql .="AND company LIKE '%$company%'";
 
 }
 
-$result=$con->query($sql);
+$result=$conn->query($sql);
 
 if($result->num_rows>0){
 while($row=$result->fetch_assoc()){
@@ -101,19 +101,19 @@ if(isset($_POST['sort_val'])){
 	if($_POST['sort_val'] == "Recent"){ 
 
 		$sql="SELECT * from interview order by applied_date desc";
-        $result=$con->query($sql);
+        $result=$conn->query($sql);
 
     }
     else if($_POST['sort_val'] == "Old"){ 
 
         $sql="SELECT * from interview order by applied_date asc";
-        $result=$con->query($sql);
+        $result=$conn->query($sql);
 
     }
     else{
 
         $sql="SELECT * from interview";
-        $result=$con->query($sql);
+        $result=$conn->query($sql);
 
     }
     if($result){

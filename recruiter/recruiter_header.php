@@ -1,10 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['email']))  
-  {  
+//session_start();
+//if (!isset($_SESSION['email']))  
+  //{  
     
-      header("Location:/Analysed-test/signup/recruiter/Recruiter login.php");
-  } ?>
+      //header("Location:/Analysed-test/signup/recruiter/Recruiter login.php");
+  //} ?>
    <?php 
        include('db.php'); ?>
 <link rel="stylesheet" href="./css/header.css">
@@ -160,14 +160,14 @@ if (!isset($_SESSION['email']))
                     </div>
                     <img src="./img/Ellipse 234.png" alt="" srcset="" class="profile_picture_profileSection-dashboard-recruiter">
                     <h3 class="heading_name_profileSection-dashboard_recruiter"><?php
-                                            $sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
-                                        	$result_1 = mysqli_query($db,$sql);
-                                            while ($row = mysqli_fetch_array($result_1)) {
-                                                echo $row['firstname'];}
+                                            //$sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
+                                        	//$result_1 = mysqli_query($db,$sql);
+                                            //while ($row = mysqli_fetch_array($result_1)) {
+                                                //echo $row['firstname'];}
                                         
                                         	 ?></h3>
                     <p class="aboutOrganisation_profileSection-dashboard_recruiter">
-                        <a href="#"><img src="./img/Path -1.png"> About Organisation</a>
+                        <a href="aboutOrganization.php"><img src="./img/Path -1.png"> About Organisation</a>
                     </p>
                 </div>
                 <div class="messagesSection-container-dashboard_recruiter">

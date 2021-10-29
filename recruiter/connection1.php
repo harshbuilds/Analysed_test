@@ -4,10 +4,18 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "analysed";
-// $SITEURL = "https://localhost/Analysed/DashboardJobs.php";
-
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if($conn)
+{
+	//echo"connection Ok" ;
+}
+else
+{
+	echo "Connection Failed";
+}
+
 
 
 ?>

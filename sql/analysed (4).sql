@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 06:58 AM
+-- Generation Time: Oct 29, 2021 at 12:11 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -32,6 +32,56 @@ CREATE TABLE `about_org` (
   `about_us` varchar(255) NOT NULL,
   `industry` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `candidates`
+--
+
+CREATE TABLE `candidates` (
+  `id` int(11) NOT NULL,
+  `candidate_id` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `candidate_email` varchar(50) NOT NULL,
+  `countrycode` varchar(3) NOT NULL,
+  `phone_no` bigint(20) NOT NULL,
+  `birth_date` date NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `city_name` varchar(50) NOT NULL,
+  `zipcode` varchar(10) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `current_title` varchar(50) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `candidate_type` varchar(50) NOT NULL,
+  `emp_preference` varchar(50) NOT NULL,
+  `source` varchar(50) NOT NULL,
+  `recruiter` varchar(50) NOT NULL,
+  `current_salary` int(11) NOT NULL,
+  `salary_range1` int(11) NOT NULL,
+  `salary_range2` int(11) NOT NULL,
+  `talents` varchar(50) NOT NULL,
+  `resume` varchar(50) NOT NULL,
+  `skills` varchar(50) NOT NULL,
+  `qualifications` varchar(50) NOT NULL,
+  `comment` varchar(50) NOT NULL,
+  `availability_date` date NOT NULL,
+  `job` varchar(50) NOT NULL,
+  `accessibility` varchar(50) NOT NULL,
+  `response_type` varchar(50) NOT NULL,
+  `last_updated` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `candidates`
+--
+
+INSERT INTO `candidates` (`id`, `candidate_id`, `image`, `firstname`, `lastname`, `candidate_email`, `countrycode`, `phone_no`, `birth_date`, `status`, `address`, `country`, `city_name`, `zipcode`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talents`, `resume`, `skills`, `qualifications`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `last_updated`) VALUES
+(63, '', 'Ellipse 148.png', 'John Smith', 'S', 'abc@gmail.com', '+91', 9878675545, '2021-10-12', 'Active', '1234,New Street.', 'India', 'Chennai', '637 409', 'Tamil Nadu', 'Web Developer', 'Fox Hunt', 'Contract', 'Temporary', 'Linkedin', 'Andrew foy', 24000, 20000, 40000, 'Team Player,Good Communicator,Self motivated,Adapt', 'Resume.pdf', 'HTML,CSS,JS,PHP', 'BSc', 'Lorem Ipsum is simply dummy text of the printing a', '2021-10-25', 'Sr.Product designer', 'Internal', 'Submission', '2021-10-21');
 
 -- --------------------------------------------------------
 
@@ -1540,16 +1590,16 @@ INSERT INTO `cities` (`city_id`, `city_name`, `city_state`) VALUES
 
 CREATE TABLE `client` (
   `client_id` int(255) NOT NULL,
-  `company_name` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL,
-  `company` varchar(20) NOT NULL,
-  `company_img` longblob NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `company` varchar(50) NOT NULL,
+  `company_img` varchar(50) NOT NULL,
   `ownership` varchar(20) NOT NULL,
-  `industry` varchar(20) NOT NULL,
+  `industry` varchar(50) NOT NULL,
   `source` varchar(20) NOT NULL,
   `parent_company` varchar(20) NOT NULL,
-  `active_contact` varchar(10) NOT NULL,
-  `company_desc` varchar(100) NOT NULL,
+  `active_contact` varchar(50) NOT NULL,
+  `company_desc` varchar(1000) NOT NULL,
   `permanent_fee` varchar(20) NOT NULL,
   `contract_fee` varchar(20) NOT NULL,
   `main_email` varchar(20) NOT NULL,
@@ -1562,8 +1612,8 @@ CREATE TABLE `client` (
   `bank_name` varchar(20) NOT NULL,
   `bank_id` bigint(20) NOT NULL,
   `bank_acc_no` bigint(20) NOT NULL,
-  `iban` int(20) NOT NULL,
-  `vat` int(20) NOT NULL
+  `iban` varchar(20) NOT NULL,
+  `vat` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1571,9 +1621,51 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`client_id`, `company_name`, `status`, `company`, `company_img`, `ownership`, `industry`, `source`, `parent_company`, `active_contact`, `company_desc`, `permanent_fee`, `contract_fee`, `main_email`, `contact_no`, `address`, `city`, `zipcode`, `state`, `country`, `bank_name`, `bank_id`, `bank_acc_no`, `iban`, `vat`) VALUES
-(1, '0', '0', '0', '', 'Closed', 'Closed', 'Closed', 'Open', '0', '                            www', '111', '111', 'anu@gmail.com', 6383190317, '2/189, Nedugula village & post,', 'Ooty', '643217', 'Closed', 'Closed', 'sdf', 11111111, 123, 1111111111, 2147483647),
-(2, '0', '0', '0', '', 'Open', 'Open', 'Open', 'Closed', '0', '                  wwwwwwwwww          ', '1234', '12345', 'anu@gmail.com', 6383190317, '2/189, Nedugula village & post,', 'Ooty', '643217', 'Closed', 'Closed', 'wwwwww', 1234, 12345, 2345, 1234),
-(3, '0', '0', '0', 0x312d726573697a652e706e67, 'Closed', 'Open', 'Closed', 'Closed', '0', '                           swderftyui ', '23456789', '2345678', 'anu@gmail.com', 6383190317, '2/189, Nedugula village & post,', 'Ooty', '643217', 'Working', 'Working', 'werg', 2345, 2345, 345, 2345);
+(15, 'Fox hunt', 'Inactive', 'http://www.example.com', 'aa.png', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.      ', '10%', '10%', 'abc12@gmail.com', 8870986950, 'abc road,chennai', 'Washington', '637 409', 'Andhra Pradesh', 'India', 'Indian Bank', 1, 1234, '11', '12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_files`
+--
+
+CREATE TABLE `client_files` (
+  `file_id` int(11) NOT NULL,
+  `added_on` date NOT NULL,
+  `file_type` varchar(50) NOT NULL,
+  `visibility` varchar(50) NOT NULL,
+  `validity` varchar(50) NOT NULL,
+  `files` varchar(50) NOT NULL,
+  `kb` int(11) NOT NULL,
+  `uploaded_by` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `company_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_notes`
+--
+
+CREATE TABLE `client_notes` (
+  `note_id` int(11) NOT NULL,
+  `added_on` date NOT NULL,
+  `last_edited` date NOT NULL,
+  `uploaded_by` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `note_type` varchar(50) NOT NULL,
+  `time_spent` varchar(50) NOT NULL,
+  `notes` varchar(500) NOT NULL,
+  `company_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `client_notes`
+--
+
+INSERT INTO `client_notes` (`note_id`, `added_on`, `last_edited`, `uploaded_by`, `image`, `note_type`, `time_spent`, `notes`, `company_name`) VALUES
+(2, '2021-10-03', '2021-10-25', '', '', 'Resume Evaluation', '30 min', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', 'Fox Hunt');
 
 -- --------------------------------------------------------
 
@@ -1584,7 +1676,7 @@ INSERT INTO `client` (`client_id`, `company_name`, `status`, `company`, `company
 CREATE TABLE `contacts` (
   `contact_id` int(11) NOT NULL,
   `creator_id` int(11) DEFAULT NULL,
-  `company` int(11) DEFAULT NULL,
+  `company` varchar(50) DEFAULT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
@@ -1612,7 +1704,7 @@ CREATE TABLE `contacts` (
   `validity` varchar(20) NOT NULL,
   `lastvisit` date NOT NULL,
   `LinkedIn_profile` varchar(100) NOT NULL,
-  `added_on` datetime NOT NULL DEFAULT current_timestamp()
+  `added_on` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1620,7 +1712,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`contact_id`, `creator_id`, `company`, `fname`, `lname`, `status`, `picture`, `job_title`, `email`, `phone`, `address`, `skills`, `industry`, `last_meeting`, `mname`, `title`, `city`, `zip_code`, `state`, `country`, `company_name`, `contact_type`, `division`, `source`, `reports_to`, `last_contact`, `visibility`, `validity`, `lastvisit`, `LinkedIn_profile`, `added_on`) VALUES
-(1, NULL, NULL, 'Anushaya', 'Kumar', '1', 'a.jpg', 'we', 'anushayakumar20@gmail.com', '6383190317', '2/189, Nedugula village & post,', 'dfghj', '2', NULL, 'anushayakumar20@gmai', 'addition', 'Ooty', 643217, '1', '0', 'sss', '2', '2', '2', '2', '0666-08-09', '1', '2', '0089-06-06', 'asdf', '2021-10-04 12:02:00');
+(1, 1, 'Fox Hunt', 'Caley Mike', 'S', 'Active', '', 'Python Developer', 'abc2@gmail.com', '9000765890', 'New Street,chennai', 'Python,Java', 'Information Technology', '2021-10-11', '', NULL, 'chennai', 637890, 'Tamil Nadu', 'India', 'NAN', '', '', '', '', '', '', '', '0000-00-00', '', '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -1673,6 +1765,66 @@ CREATE TABLE `event` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `file_id` int(11) NOT NULL,
+  `added_on` date NOT NULL,
+  `file_type` varchar(50) NOT NULL,
+  `visibility` varchar(50) NOT NULL,
+  `validity` varchar(50) NOT NULL,
+  `files` varchar(50) NOT NULL,
+  `kb` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `files`
+--
+
+INSERT INTO `files` (`file_id`, `added_on`, `file_type`, `visibility`, `validity`, `files`, `kb`, `firstname`, `image`) VALUES
+(64, '2021-10-25', 'Resume', 'Internal', 'System Verified', 'Resume.pdf', 124, 'Chris Shore', ''),
+(65, '2021-10-25', '10th files', 'External', 'System Verified', 'Resume.pdf', 124, 'Chris Shore', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `interview`
+--
+
+CREATE TABLE `interview` (
+  `int_id` int(11) NOT NULL,
+  `rec_id` int(11) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `company` varchar(50) NOT NULL,
+  `interview` varchar(50) NOT NULL,
+  `date` datetime NOT NULL,
+  `Resume` varchar(50) NOT NULL,
+  `applied_date` date NOT NULL,
+  `scheduler_date_from` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `interview`
+--
+
+INSERT INTO `interview` (`int_id`, `rec_id`, `type`, `status`, `image`, `name`, `position`, `company`, `interview`, `date`, `Resume`, `applied_date`, `scheduler_date_from`) VALUES
+(1, 1, '', 'Active', 'Ellipse 148.png', 'Andrew foy', 'HTML Developer', 'Google', 'Not Completed', '2021-07-29 10:00:00', 'Resume.pdf', '2021-01-04', '0000-00-00'),
+(2, 2, '', 'Completed', 'Ellipse 148-1.png', 'Caley Mike', 'HTML Developer', 'Google', 'Completed', '2021-07-29 08:00:00', 'Resume.pdf', '2021-04-13', '0000-00-00'),
+(3, 3, '', 'Active', 'Ellipse 148-3.png', 'Jane Williams', 'Java Developer', 'Glassdoor', 'Not Completed', '2021-07-28 09:00:00', 'Resume.pdf', '2020-10-13', '0000-00-00'),
+(4, 4, '', 'Unfinished', 'Ellipse 148-1.png', 'Suzan D\'souza', 'HTML Developer', 'Google', 'Not Completed', '2021-08-02 12:50:00', 'Resume.pdf', '2021-02-14', '0000-00-00'),
+(5, 5, '', 'Active', 'Ellipse 148-2.png', 'Chris Shore', 'Python Developer', 'Amazon', 'Not Completed', '2021-08-01 10:00:00', 'Resume.pdf', '2021-08-05', '0000-00-00'),
+(6, 6, '', 'Active', 'Ellipse 148-1.png', 'Karen Doe', 'HTML Developer', 'Facebook', 'Not Completed', '2021-08-03 12:30:30', 'Resume.pdf', '2021-11-18', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobapply`
 --
 
@@ -1683,6 +1835,9 @@ CREATE TABLE `jobapply` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `job_title` varchar(50) NOT NULL,
+  `experience` int(11) NOT NULL,
+  `company` varchar(50) NOT NULL,
   `number` bigint(10) NOT NULL,
   `address` varchar(100) NOT NULL,
   `country` varchar(50) NOT NULL,
@@ -1693,14 +1848,17 @@ CREATE TABLE `jobapply` (
   `linkedin` varchar(100) NOT NULL,
   `certificates` longblob NOT NULL,
   `attachments` longblob NOT NULL,
-  `position_title` varchar(20) NOT NULL,
-  `company_name` varchar(20) NOT NULL,
-  `field_of_study` varchar(20) NOT NULL,
-  `institute` varchar(30) NOT NULL,
-  `year_of_passing` year(4) NOT NULL,
+  `emp_history` varchar(100) NOT NULL,
   `emp_from` date NOT NULL,
   `emp_to` date NOT NULL,
-  `skills` varchar(100) NOT NULL
+  `history_file` longblob NOT NULL,
+  `education` longblob NOT NULL,
+  `skills` varchar(100) NOT NULL,
+  `shortlist` varchar(50) NOT NULL,
+  `approved` varchar(50) NOT NULL,
+  `on_hold` varchar(50) NOT NULL,
+  `reject` varchar(50) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1712,19 +1870,20 @@ CREATE TABLE `jobapply` (
 CREATE TABLE `joblistings` (
   `job_id` int(255) NOT NULL,
   `recruiter_id` int(255) NOT NULL,
+  `job_description` varchar(50) NOT NULL,
+  `logo` varchar(50) NOT NULL,
   `position` varchar(50) NOT NULL,
   `industry` varchar(50) NOT NULL,
   `job_type` varchar(50) NOT NULL,
-  `job_description` longblob NOT NULL,
   `client_company` varchar(50) NOT NULL,
   `contact_client_company` varchar(50) NOT NULL,
   `business_dev_manager` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL,
   `priority` varchar(50) NOT NULL,
-  `job_reference_number` int(50) NOT NULL,
+  `job_reference_number` varchar(50) NOT NULL,
   `designation` varchar(100) NOT NULL,
   `recruiters_name` varchar(100) NOT NULL,
-  `openings` int(20) NOT NULL,
+  `openings` varchar(20) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `country` varchar(50) NOT NULL,
@@ -1732,9 +1891,9 @@ CREATE TABLE `joblistings` (
   `district` varchar(50) NOT NULL,
   `starting_time` time(5) NOT NULL,
   `ending_time` time(5) NOT NULL,
-  `client_margin` int(50) NOT NULL,
+  `client_margin` varchar(50) NOT NULL,
   `advert_contact_name` varchar(50) NOT NULL,
-  `advert_contact_no` bigint(10) NOT NULL,
+  `advert_contact_no` varchar(10) NOT NULL,
   `skills` varchar(100) NOT NULL,
   `qualification` varchar(100) NOT NULL,
   `eligibility_criteria` varchar(100) NOT NULL,
@@ -1746,19 +1905,29 @@ CREATE TABLE `joblistings` (
   `learning_opportunity` varchar(100) NOT NULL,
   `emp_endorsement` varchar(100) NOT NULL,
   `emp_benefits` varchar(100) NOT NULL,
-  `reputation_of _org` varchar(100) NOT NULL,
+  `reputation_of_org` varchar(100) NOT NULL,
   `advert_job_description` varchar(100) NOT NULL,
-  `workspace_view` longblob NOT NULL,
+  `workspace_view` varchar(50) NOT NULL,
   `transportation` varchar(50) NOT NULL,
   `package_type` varchar(50) NOT NULL,
-  `package_duartion` varchar(50) NOT NULL,
+  `package_duration` varchar(50) NOT NULL,
   `package` bigint(50) NOT NULL,
   `bill_rate` int(50) NOT NULL,
   `markup` int(50) NOT NULL,
   `days_on` varchar(50) NOT NULL,
-  `daya_off` varchar(50) NOT NULL,
-  `shift_pattern` varchar(50) NOT NULL
+  `days_off` varchar(50) NOT NULL,
+  `shift_pattern` varchar(50) NOT NULL,
+  `added_on` date NOT NULL,
+  `company` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `joblistings`
+--
+
+INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, `position`, `industry`, `job_type`, `client_company`, `contact_client_company`, `business_dev_manager`, `status`, `priority`, `job_reference_number`, `designation`, `recruiters_name`, `openings`, `start_date`, `end_date`, `country`, `state`, `district`, `starting_time`, `ending_time`, `client_margin`, `advert_contact_name`, `advert_contact_no`, `skills`, `qualification`, `eligibility_criteria`, `required_experience`, `relevant_experience`, `irrelevant_experience`, `roles_and_opportunity`, `growth_opportunity`, `learning_opportunity`, `emp_endorsement`, `emp_benefits`, `reputation_of_org`, `advert_job_description`, `workspace_view`, `transportation`, `package_type`, `package_duration`, `package`, `bill_rate`, `markup`, `days_on`, `days_off`, `shift_pattern`, `added_on`, `company`) VALUES
+(8, 1, 'Resume.pdf', '', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '5', '2', '9-6', '2021-10-19', 'Amazon'),
+(10, 2, 'Resume.pdf', '', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '5', '2', '9-6', '2021-10-27', 'Flipkart');
 
 -- --------------------------------------------------------
 
@@ -1768,9 +1937,10 @@ CREATE TABLE `joblistings` (
 
 CREATE TABLE `jobseeker` (
   `jobseeker_id` int(255) NOT NULL,
-  `firstname` int(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
+  `job_type` varchar(50) NOT NULL,
   `yearofpassing` year(4) NOT NULL,
   `skills` varchar(100) NOT NULL,
   `experience` int(10) NOT NULL,
@@ -1796,7 +1966,7 @@ CREATE TABLE `jobseeker` (
   `zip` varchar(10) NOT NULL,
   `state` varchar(10) NOT NULL,
   `current_title` varchar(10) NOT NULL,
-  `company_name` varchar(10) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
   `candidate_type` varchar(10) NOT NULL,
   `emp_preference` varchar(10) NOT NULL,
   `source` varchar(10) NOT NULL,
@@ -1809,8 +1979,47 @@ CREATE TABLE `jobseeker` (
   `availability_date` date NOT NULL,
   `job` varchar(20) NOT NULL,
   `accessibility` varchar(20) NOT NULL,
-  `response_type` varchar(20) NOT NULL
+  `response_type` varchar(20) NOT NULL,
+  `job_status` varchar(50) NOT NULL,
+  `added_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jobseeker`
+--
+
+INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `job_type`, `yearofpassing`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
+(1, 'John Smith', 'S', 'BSc.CS', 'Full-time', 2020, 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
+(2, 'Caley Mike', 'S', 'Computer Science Degree', 'Part-time', 2023, 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
+(3, 'John Doe', 'S', 'Design Master Degree', 'Internship', 2020, 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
+(4, 'Karen Doe', 'S', 'MCA', 'Part-time', 2020, 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
+(5, 'Chris Shore', 'S', 'BCom', 'Full-time', 2020, 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
+(6, 'Joe Daisy', 'S', 'MSc.SS', 'Part-time', 2020, 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `note_type` varchar(50) NOT NULL,
+  `reference_to` varchar(50) NOT NULL,
+  `Job_reference` int(11) NOT NULL,
+  `notes` varchar(500) NOT NULL,
+  `time_spent` varchar(50) NOT NULL,
+  `added_on` date NOT NULL,
+  `last_edited` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_reference`, `notes`, `time_spent`, `added_on`, `last_edited`) VALUES
+(26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21');
 
 -- --------------------------------------------------------
 
@@ -1835,6 +2044,14 @@ CREATE TABLE `recruiter` (
   `confirmpassword` varchar(50) NOT NULL,
   `rec_img` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `recruiter`
+--
+
+INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `country_code`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `rec_img`) VALUES
+(1, 'Karen Doe', 'S', 'abcd@gmail.com', 91, 9898876767, 'New Street', 'Fox Hunt', '', 'Information Technology', 'abc123@gmail.com', '', '', '', ''),
+(2, 'Joe Daisy', 'S', 'abc@gmail.com', 91, 9898876767, 'New Street', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1898,20 +2115,33 @@ INSERT INTO `state_list` (`id`, `state`) VALUES
 CREATE TABLE `task` (
   `task_id` int(255) NOT NULL,
   `recruiter_id` int(255) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `jobtitle` varchar(50) NOT NULL,
+  `company` varchar(50) NOT NULL,
+  `skills` varchar(50) NOT NULL,
   `type_of_task` varchar(255) NOT NULL,
   `restrictions` varchar(255) NOT NULL,
   `task_name` varchar(11) NOT NULL,
   `assigned_to` varchar(11) NOT NULL,
   `description` varchar(100) NOT NULL,
-  `req_skills` varchar(20) NOT NULL,
   `accuracy` varchar(11) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `duration_weeks` int(11) NOT NULL,
   `duration_days` int(11) NOT NULL,
   `duration_hours` int(11) NOT NULL,
-  `accepted_file_extensions` blob NOT NULL
+  `accepted_file_extensions` blob NOT NULL,
+  `created_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `task`
+--
+
+INSERT INTO `task` (`task_id`, `recruiter_id`, `position`, `jobtitle`, `company`, `skills`, `type_of_task`, `restrictions`, `task_name`, `assigned_to`, `description`, `accuracy`, `start_date`, `end_date`, `duration_weeks`, `duration_days`, `duration_hours`, `accepted_file_extensions`, `created_on`) VALUES
+(1, 0, 'Ux Designer', 'Adobe web app researcher', 'Fox Hunt', 'HTML, CSS , Bootstrap', '', '', '', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-17', '2021-11-24', 0, 0, 0, '', '2021-10-25'),
+(2, 0, 'HTML Developer', 'Mobile App Developer', 'Flipkart', 'HTML,CSS,JS', '', '', '', 'John Smith', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-03', '2021-11-17', 0, 0, 0, '', '2021-10-03'),
+(3, 0, 'Python Developer', 'Mobile App Developer', 'Google', 'Android', '', '', '', 'Joe Daisy', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-10', '2021-11-04', 0, 0, 0, '', '2021-10-02');
 
 -- --------------------------------------------------------
 
@@ -1953,32 +2183,53 @@ INSERT INTO `tickets` (`ticket_id`, `name`, `email`, `subject`, `message`, `prio
 --
 
 CREATE TABLE `user` (
-  `user_id` int(255) NOT NULL,
-  `user_type` varchar(20) NOT NULL,
-  `user_name` varchar(20) NOT NULL,
-  `designation` varchar(20) NOT NULL,
-  `number` bigint(10) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `notification` varchar(20) NOT NULL,
-  `user_access` varchar(20) NOT NULL
+  `id` int(11) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `usertype` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `phone_number` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `notification` varchar(50) NOT NULL,
+  `user_details` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `image`, `usertype`, `name`, `designation`, `phone_number`, `email`, `password`, `notification`, `user_details`) VALUES
+(18, 'Ellipse -1@2x.png', 'Job seeker', 'Andrew foy', 'Manager', '9089786767', 'abc12@gmail.com', '1234abcd', 'Allow user to choose settings', 'Can shortlist candidates,Can add a company,'),
+(19, 'Ellipse -2@2x.png', 'client', 'Sam', 'Recruiter', '8909786756', 'abc12@gmail.com', '1234', 'Allow user to choose settings', 'Access to database,Can create a job,Can shortlist candidates,Can add a company,Can add tasks,Can hire candidates,Can view analytics,Can view billing details,Can start or join video calls,Can schedule interviews,Can add candidates,Can reply to queries,Can create contracts,Can edit details of organisation,');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `about_org`
+-- Indexes for table `candidates`
 --
-ALTER TABLE `about_org`
-  ADD PRIMARY KEY (`abt_us_id`);
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`client_id`);
+
+--
+-- Indexes for table `client_files`
+--
+ALTER TABLE `client_files`
+  ADD PRIMARY KEY (`file_id`);
+
+--
+-- Indexes for table `client_notes`
+--
+ALTER TABLE `client_notes`
+  ADD PRIMARY KEY (`note_id`);
 
 --
 -- Indexes for table `contacts`
@@ -1991,6 +2242,18 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`event_id`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`file_id`);
+
+--
+-- Indexes for table `interview`
+--
+ALTER TABLE `interview`
+  ADD PRIMARY KEY (`int_id`);
 
 --
 -- Indexes for table `jobapply`
@@ -2009,6 +2272,12 @@ ALTER TABLE `joblistings`
 --
 ALTER TABLE `jobseeker`
   ADD PRIMARY KEY (`jobseeker_id`);
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `recruiter`
@@ -2032,23 +2301,41 @@ ALTER TABLE `tickets`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+
+--
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `client_files`
+--
+ALTER TABLE `client_files`
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `client_notes`
+--
+ALTER TABLE `client_notes`
+  MODIFY `note_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `event`
@@ -2057,28 +2344,52 @@ ALTER TABLE `event`
   MODIFY `event_id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `interview`
+--
+ALTER TABLE `interview`
+  MODIFY `int_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `jobapply`
+--
+ALTER TABLE `jobapply`
+  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `joblistings`
 --
 ALTER TABLE `joblistings`
-  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `jobseeker`
 --
 ALTER TABLE `jobseeker`
-  MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `recruiter`
 --
 ALTER TABLE `recruiter`
-  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `task_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `task_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tickets`
@@ -2090,7 +2401,7 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

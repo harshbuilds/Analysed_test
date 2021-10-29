@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<body>
     <?php include('header.php') ?>
-    <?php include('connect.php') ?>
+    <?php include('connection1.php') ?>
     <div class="container">
 
     	<div class="small_container">
@@ -24,7 +24,7 @@
     			<div class="left-side-container-DashboardJ">
 
     				<?php
-    				$total_rows = mysqli_query($con,"SELECT * FROM interview");
+    				$total_rows = mysqli_query($conn,"SELECT * FROM interview");
     				$num = mysqli_num_rows($total_rows);
     				?>
 
@@ -32,7 +32,7 @@
     				<div class="cards-section-container row-flex-jobs-j" id="result">
 
     					<?php
-    					$sql=mysqli_query($con,"select * from interview");
+    					$sql=mysqli_query($conn,"select * from interview");
     					$check=mysqli_num_rows($sql)>0;
     					if($check){
     						while($row=mysqli_fetch_assoc($sql)){
@@ -136,7 +136,7 @@
 				        	<div class="category-filters" id="categoryDiv3">
 				        		<?php
 				        		$sql="SELECT distinct status from interview order by status";
-				        		$result=$con->query($sql);
+				        		$result=$conn->query($sql);
 				        		while($row=$result->fetch_assoc()){
 				        			?>
 				        			<div class="row-flex-jobs-j">
@@ -148,7 +148,7 @@
 				        				<p>
 				        					<?php
 				        					$st=$row['status'];
-                                            $rt = mysqli_query($con,"SELECT * FROM interview where status='$st'");
+                                            $rt = mysqli_query($conn,"SELECT * FROM interview where status='$st'");
 				                            $num1 = mysqli_num_rows($rt);
 				                            ?>
 				                            <?php echo htmlentities($num1); ?>
@@ -185,7 +185,7 @@
 		
         
 			$.ajax({
-				url:'action.php',
+				url:'./include/action.php',
 			    method:'POST',
 				data:{action:action,status:status,position:position,company:company},
 				success:function(response){
@@ -212,7 +212,7 @@
 			var sort_val=$(this).val();
 
 			$.ajax({
-				url:'action.php',
+				url:'./include/action.php',
 				method:'POST',
 				data:{sort_val:sort_val},
 				success:function(response){

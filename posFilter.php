@@ -11,9 +11,9 @@ $sqlPos = "SELECT * FROM joblistings WHERE position LIKE '$sk%'";
 
 $sqlPac = "SELECT * FROM joblistings WHERE package LIKE '$sk%'";
 
-$sqlCom = "SELECT * FROM joblistings WHERE company_name LIKE '$sk%'"; 
+$sqlCom = "SELECT * FROM joblistings WHERE company LIKE '$sk%'"; 
 
-$sqlLoc = "SELECT * FROM joblistings WHERE job_location LIKE '$sk%'";
+$sqlLoc = "SELECT * FROM joblistings WHERE country LIKE '$sk%'";
 
 
 $resultPos = mysqli_query($conn,$sqlPos);
@@ -50,20 +50,20 @@ $posarr = array();
 
 while($row = mysqli_fetch_assoc($retrieve)){
     $temp = array();
-    $temp['id'] = $row['id'];
+    $temp['id'] = $row['job_id'];
     $temp['package_type'] = $row['package_type'];
     $temp['package'] = $row['package'];
     $temp['position'] = $row['position'];
-    $temp['skills_req'] = $row['skills_req'];
+    $temp['skills_req'] = $row['skills'];
 
-    $temp['created_on'] = $row['createdon'];
+    $temp['created_on'] = $row['added_on'];
     $temp['created_on'] = date('Y-m-d', strtotime($temp['created_on']));
 
-    $temp['job_description'] = $row['job_description'];
+    $temp['job_description'] = $row['advert_job_description'];
     $temp['job_description'] = substr($temp['job_description'], 0, 100);
 
     $temp['logo'] = $row['logo'];
-    $temp['company_name'] = $row['company_name'];
+    $temp['company_name'] = $row['company'];
     $temp['count'] = $finalcount; 
 
 

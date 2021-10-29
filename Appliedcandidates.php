@@ -34,7 +34,7 @@
                             <a href="">
 
                                 <?php
-                                $status=$row["status"];
+                                $status=$row["job_status"];
                                 if($status=="Reviewed") { ?>
                                     <p class="candidate-status-jobs Reviewed">Reviewed</p>
                                 <?php   }
@@ -209,20 +209,20 @@
                     </p>
                     <div class="category-filters" id="categoryDiv5">
                         <?php
-                        $sql="SELECT distinct status from jobseeker order by status";
+                        $sql="SELECT distinct job_status from jobseeker order by job_status";
                         $result=$conn->query($sql);
                         while($row=$result->fetch_assoc()){
                             ?>
                         <div class="row-flex-jobs-j">
                             <span>
                                <label class="job_type">
-                                    <input type="checkbox" value="<?= $row['status'];?>" id="status" onclick="myFunction()"><span> </span><?= $row['status']; ?>
+                                    <input type="checkbox" value="<?= $row['job_status'];?>" id="status" onclick="myFunction()"><span> </span><?= $row['job_status']; ?>
                                 </label>
                             </span>
                             <p>
                                 <?php
-                                $status=$row['status'];
-                                $rt = mysqli_query($conn,"SELECT * FROM jobseeker where status='$status'");
+                                $status=$row['job_status'];
+                                $rt = mysqli_query($conn,"SELECT * FROM jobseeker where job_status='$status'");
                                 $num1 = mysqli_num_rows($rt);
                                 ?>
                                 <?php echo htmlentities($num1); ?>
