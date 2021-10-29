@@ -448,7 +448,7 @@ input[type="checkbox"]:focus + label::before {
     border-radius:100%;
     display: inline-block;
     margin-top:10px;
-    margin-left:20px;
+    margin-left:10px;
 }
 .column .span-class-orange{
     background-color:#FFBD06;
@@ -456,7 +456,7 @@ input[type="checkbox"]:focus + label::before {
     border-radius:100%;
     display: inline-block;
     margin-top:10px;
-    margin-left:20px;
+    margin-left:10px;
 }
 .column .span-class-yellow{
     background-color:#FFED1D ;
@@ -464,39 +464,39 @@ input[type="checkbox"]:focus + label::before {
     border-radius:100%;
     display: inline-block;
     margin-top:10px;
-    margin-left:20px;
+    margin-left:10px;
 }
 .column .col-2{
   color: #979797;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .column .col-span-2{
   color: black;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .column .col-3{
     color: #3598DB;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .column .col-3-1{
     color: black;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .column .col-span-3{
   color: #979797;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 .column .col-4{
     color: #979797;
-     margin-left: 20px;
+     margin-left: 10px;
 }
 .column .col-4-1{
     color: #333333;
-     margin-left: 20px;
+     margin-left: 10px;
 }
 .column .col-span-4{
   color: black;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 .col-5{
   color:  #3598DB;
@@ -509,15 +509,15 @@ input[type="checkbox"]:focus + label::before {
 }
 .col-6{
     color: #979797;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .col-6-1{
     color: #333333;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .col-span-6{
    color: black;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 .column .fa{
     color: #3598DB;

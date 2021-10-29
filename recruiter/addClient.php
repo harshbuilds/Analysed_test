@@ -54,15 +54,14 @@
                         <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                             <p class="input-para-add-client-ekam-1">
                                 <label for="default-input-for-no.1">Company name *</label>
-                                <input type="text" name="company_name" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" required />
+                                <input type="text" name="company_name" class="default-input-for-add-client-1" placeholder="Company name" required />
                             </p>
                             <p class="input-para-add-client-ekam-1 right-side">
                             <label for="default-select-for-no1">Status *</label>
                             <select name="status" id="default-select-for-no.1" class="default-select-for-add-client-1" required />
                                 <option value="" default>Select Status</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
                             </select>
                             </p>
                         </div>
@@ -75,9 +74,9 @@
                             <label for="default-select-for-no.2">Ownership</label>
                             <select name="ownership" id="default-select-for-no.2" class="default-select-for-add-client-1" required>
                                 <option value="" default>Select Ownership</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="Private">Private</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Temporary">Temporary</option>
                             </select>
                             </p>
                         </div>
@@ -88,8 +87,8 @@
                     <p class="select-for-select-image-box-below-inputs"> 
                         <label for="default-select-for-no.3">Industry</label>
                             <select name="industry" id="default-select-for-no.3" class="default-select-for-add-client-1" required>
-                                <option value="" default>Temporary to permanent</option>
-                                <option value="Open">Open</option>
+                                <option value="" default>Select Industry</option>
+                                <option value="Information Technology">Information Technology</option>
                                 <option value="Closed">Closed</option>
                                 <option value="Working">Working</option>
                             </select>
@@ -98,27 +97,27 @@
                         <label for="default-select-for-no.4">Source</label>
                             <select name="source" id="default-select-for-no.4" class="default-select-for-add-client-1" required>
                                 <option value="" default>Select your source</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="Linkedin">Linkedin</option>
+                                <option value="Internshala">Internshala</option>
+                                <option value="Indeed">Indeed</option>
                             </select>
                     </p>
                     <p class="select-for-select-image-box-below-inputs"> 
                         <label for="default-select-for-no.5">Parent Company</label>
                             <select name="parent_company" id="default-select-for-no.5" class="default-select-for-add-client-1" required>
                                 <option value="" default>Select a parent company</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="Flipkart">Flipkart<option>
+                                <option value="Amazon">Amazon</option>
+                                <option value="Analysed">Analysed</option>
                             </select>
                     </p>
                     <p class="select-for-select-image-box-below-inputs"> 
                         <label for="default-select-for-no.6">Active contact</label>
                             <select name="active_contact" id="default-select-for-no.6" class="default-select-for-add-client-1" required>
                                 <option value="" default>Select active contact if available</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="Andrew foy">Andrew foy</option>
+                                <option value="Caley Mike">Caley Mike</option>
+                                <option value="Albert">Albert</option>
                             </select>
                     </p>
                     <p class="textarea-div-default-select-no7"> 

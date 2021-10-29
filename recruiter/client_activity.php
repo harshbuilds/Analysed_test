@@ -1,3 +1,14 @@
+<?php include('connection1.php'); ?>
+
+<?php
+session_start();
+if(isset($_SESSION['company_name'])) {
+    $company_name=$_SESSION['company_name'];
+    $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+    $check=mysqli_num_rows($sql)>0;
+    if($check){
+        while($row=mysqli_fetch_assoc($sql)){
+?>
 <?php include('header.php') ?>
 <title>Dashboard</title>
 <link rel="stylesheet" href="./css/client_activity.css">
@@ -11,10 +22,10 @@
 
             <div class="profile-img">
                 <img src="img/Fox hunt.png"  alt="">
-                <h1>Fox Hunt<p1><span><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></span> #JB13069</p1></h1><br>
-                <h2><span>Information Technology</span></h2><br>
+                <h1><?php echo $row["company_name"]; ?><p1><span><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></span><?php echo $row["client_id"]; ?> </p1></h1><br>
+                <h2><span><?php echo $row["industry"]; ?></span></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> London</h4>
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo $row["country"]; ?></h4>
             </div>
             <div class="button">
                 <button>Edit client</button>
@@ -32,14 +43,14 @@
 
             <div class="status">
                 <div class="status1" >
-                    <p>#JB13069</p>
+                    <p><?php echo $row["client_id"]; ?></p>
                     <span>05-05-2021</span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;">Fox Hunt</span>
-                    <p style="color:#3598DB;margin-left:40px">Information Technology</p>
+                    <span style="margin-left:50px;"><?php echo $row["company_name"]; ?></span>
+                    <p style="color:#3598DB;margin-left:40px"><?php echo $row["industry"]; ?></p>
                     <p style="color:#979797;font-size:18px;margin-left:25px"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</p>
-                    <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> London</p>
+                    <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
                     <span style="color:#979797; font-size:15px; margin-left:15px;">Status&emsp;&emsp;Ownership&emsp;&emsp;Source</span>
@@ -47,7 +58,7 @@
                 </div>
 
                 <div class="displayname"> 
-                    <span>Live</span>&emsp;&emsp;&emsp;Private&emsp;&emsp;&emsp;LinkedIn
+                    <span><?php echo $row["status"]; ?></span>&emsp;&emsp;<?php echo $row["ownership"]; ?>&emsp;&emsp;&emsp;<?php echo $row["source"]; ?>
                 </div>
                 <br><br>
 
@@ -61,7 +72,7 @@
                 <br><br>
                 <div class="employeement">
                     <p style="margin-left:8px">Parent Company</p>
-                    <p style="color:black;margin-top:10px">Name of company</p>
+                    <p style="color:black;margin-top:10px"><?php echo $row["parent_company"]; ?></p>
                 </div>
                 <br><br>
 
@@ -72,26 +83,37 @@
                     <p style="color:black;">abc@gmail.com</p>
                     <p style="color:black;">+91 9876543210</p>
                     <br><br>
+                    
+                     <?php
+                     $name=$row["active_contact"];
+                     $sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+                     $check1=mysqli_num_rows($sql)>0;
+                     if($check1){
+                        while($row1=mysqli_fetch_assoc($sql)){
+                        ?>
+
                     <p style="color:#979797;padding-top: 0px;">Active conatct</p>
                     <br>
-                    <p style="color:#3598DB;">Curtis Kulley</p>
-                    <p style="color:black;">abc@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo $row1["fname"]; ?></p>
+                    <p style="color:black;"><?php echo $row1["email"]; ?></p>
+                    <p style="color:black;"><?php echo $row1["phone"]; ?></p>
                     <br><br>
+                    <?php } } ?>
                     <p style="color:#979797;padding-top: 0px;">Contact info</p>
                     <br>
-                    <p style="color:#3598DB;">Emailid@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo $row["main_email"]; ?></p>
+                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
+                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Address</p>
                     <br>
-                    <p style="color:black">Address line 1</p>
-                    <p style="color:black;">  City-12345</p>
-                    <p style="color: black;">State,Country.</p>
+                    <p style="color:black"><?php echo $row["address"]; ?></p>
+                    <p style="color:black;">  <?php echo $row["city"]; ?>-<?php echo $row["zipcode"]; ?></p>
+                    <p style="color: black;"><?php echo $row["state"]; ?>,<?php echo $row["country"]; ?>.</p>
                     <br><br>
                 </div>
             </div>
+            <?php } } ?>
 
             <div class="left-side-container-1">
                 <div class="recent-activity">
@@ -243,6 +265,7 @@
         </div>
     </div>
 </body>
+<?php } ?>
 
 <script>
 var btnContainer=document.getElementById("list");

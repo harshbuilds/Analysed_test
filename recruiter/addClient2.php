@@ -14,11 +14,27 @@
             unset($_SESSION['info']['next']);
         }
      
-        header("Location: includes/register.php");
+       if(isset($_SESSION['info'])){
+        extract($_SESSION['info']);
+
+        $conn = mysqli_connect('localhost','root','','analysed');
+
+        //move_uploaded_file($_FILES["$company_img"]["tmp_name"],"img/".$_FILES["$company_img"]["name"]);
+
+        $sql = mysqli_query($conn,"INSERT INTO client (company_name,status,company,company_img,ownership,industry,source,parent_company,active_contact,company_desc,permanent_fee,contract_fee,main_email,contact_no,address,city,zipcode,state,country,bank_name,bank_id,bank_acc_no,iban,vat) VALUES ('$company_name','$status','$company','$company_img','$ownership','$industry','$source','$parent_company','$active_contact','$company_desc','$permanent_fee','$contract_fee','$main_email','$contact_no','$address','$city','$zipcode','$state','$country','$bank_name','$bank_id','$bank_acc_no','$iban','$vat')");
+
+        if($sql){
+
+			$_SESSION['company_name'] = $company_name;
+			header("Location: client_individual.php");
+             }
+             
+             else{
+                echo mysqli_error($conn);
+            }
+        }
+
      } 
-
-
-
 ?>
 
 <?php include('header.php')?>

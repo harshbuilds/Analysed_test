@@ -1,3 +1,17 @@
+<?php include('connection1.php'); ?>
+
+<?php
+session_start();
+
+if(isset($_SESSION['company_name'])) {
+
+    $company_name=$_SESSION['company_name'];
+    $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+    $check=mysqli_num_rows($sql)>0;
+    if($check){
+        while($row=mysqli_fetch_assoc($sql)){
+?>
+
 <?php include('header.php') ?>
 <title>Dashboard</title>
 <link rel="stylesheet" href="./css/client_individual.css">
@@ -10,11 +24,11 @@
             </div>
 
             <div class="profile-img">
-                <img src="img/Fox hunt.png"  alt="">
-                <h1>Fox Hunt<p1><span><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></span> #JB13069</p1></h1><br>
-                <h2><span>Information Technology</span></h2><br>
+                <img src="img/<?php echo $row["company_img"]; ?>"  alt="">
+                <h1><?php echo $row["company_name"]; ?><p1><span><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></span><?php echo $row["client_id"]; ?></p1></h1><br>
+                <h2><span><?php echo $row["industry"]; ?></span></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> London</h4>
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo $row["country"]; ?></h4>
             </div>
             <div class="button">
                 <button>Edit client</button>
@@ -32,14 +46,14 @@
 
             <div class="status">
                 <div class="status1" >
-                    <p>#JB13069</p>
+                    <p><?php echo $row["client_id"]; ?></p>
                     <span>05-05-2021</span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;">Fox Hunt</span>
-                    <p style="color:#3598DB;margin-left:40px">Information Technology</p>
+                    <span style="margin-left:50px;"><?php echo $row["company_name"]; ?></span>
+                    <p style="color:#3598DB;margin-left:40px"><?php echo $row["industry"]; ?></p>
                     <p style="color:#979797;font-size:18px;margin-left:25px"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</p>
-                    <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> London</p>
+                    <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
                     <span style="color:#979797; font-size:15px; margin-left:15px;">Status&emsp;&emsp;Ownership&emsp;&emsp;Source</span>
@@ -47,7 +61,7 @@
                 </div>
 
                 <div class="displayname"> 
-                    <span>Live</span>&emsp;&emsp;&emsp;Private&emsp;&emsp;&emsp;LinkedIn
+                    <span><?php echo $row["status"]; ?></span>&emsp;&emsp;&emsp;<?php echo $row["ownership"]; ?>&emsp;&emsp;<?php echo $row["source"]; ?>
                 </div>
                 <br><br>
 
@@ -61,9 +75,11 @@
                 <br><br>
                 <div class="employeement">
                     <p style="margin-left:8px">Parent Company</p>
-                    <p style="color:black;margin-top:10px">Name of company</p>
+                    <p style="color:black;margin-top:10px"><?php echo $row["parent_company"]; ?></p>
                 </div>
                 <br><br>
+
+
 
                 <div class="details">
                     <p style="color:#979797;padding-top: 0px;">Created by</p>
@@ -72,33 +88,86 @@
                     <p style="color:black;">abc@gmail.com</p>
                     <p style="color:black;">+91 9876543210</p>
                     <br><br>
+
+                     <?php
+                     $name=$row["active_contact"];
+                     $sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+                     $check1=mysqli_num_rows($sql)>0;
+                     if($check1){
+                        while($row1=mysqli_fetch_assoc($sql)){
+                        ?>
                     <p style="color:#979797;padding-top: 0px;">Active conatct</p>
                     <br>
-                    <p style="color:#3598DB;">Curtis Kulley</p>
-                    <p style="color:black;">abc@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo $row1["fname"]; ?></p>
+                    <p style="color:black;"><?php echo $row1["email"]; ?></p>
+                    <p style="color:black;"><?php echo $row1["phone"]; ?></p>
                     <br><br>
+                    <?php } } ?>
                     <p style="color:#979797;padding-top: 0px;">Contact info</p>
                     <br>
-                    <p style="color:#3598DB;">Emailid@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo $row["main_email"]; ?></p>
+                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
+                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Address</p>
                     <br>
-                    <p style="color:black">Address line 1</p>
-                    <p style="color:black;">  City-12345</p>
-                    <p style="color: black;">State,Country.</p>
+                    <p style="color:black"><?php echo $row["address"]; ?></p>
+                    <p style="color:black;">  <?php echo $row["city"]; ?>-<?php echo $row["zipcode"]; ?></p>
+                    <p style="color: black;"><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></p>
                     <br><br>
                 </div>
             </div>
 
             <div class="left-side-container-1">
                 <div class="row-recruiter quickaccess-links-container">
-                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-suitcase fa-lg" aria-hidden="true" style="color:#51C46D;margin-left:-30px;padding-right: 10px;"></i> Available jobs<span>4</span></a>
-                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-user fa-lg" aria-hidden="true" style="color:#297FB8;margin-left:-30px;padding-right: 10px;"></i> Contacts<span>5</span></a>
-                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-file-text fa-lg" aria-hidden="true" style="color:#8C60EB;margin-left:-30px;padding-right: 10px;"></i> Files<span>13</span></a>
-                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-sticky-note fa-lg" aria-hidden="true" style="color:#FFBD06;margin-left:-30px;padding-right: 10px;"></i> Notes<span>7</span></a>
+                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-suitcase fa-lg" aria-hidden="true" style="color:#51C46D;margin-left:-30px;padding-right: 10px;"></i> Available jobs
+                        <span>
+
+                            <?php
+                            $total_rows = mysqli_query($conn,"SELECT * FROM joblistings where client_company='$company_name' ");
+                            $num = mysqli_num_rows($total_rows);
+                            ?>
+
+                            <?php echo htmlentities($num); ?>
+
+                        </span>
+                    </a>
+                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-user fa-lg" aria-hidden="true" style="color:#297FB8;margin-left:-30px;padding-right: 10px;"></i> Contacts
+                        <span>
+                             
+                            <?php
+                            $total_rows = mysqli_query($conn,"SELECT * FROM contacts where company='$company_name' ");
+                            $num = mysqli_num_rows($total_rows);
+                            ?>
+
+                            <?php echo htmlentities($num); ?>
+                            
+                        </span>
+                    </a>
+                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-file-text fa-lg" aria-hidden="true" style="color:#8C60EB;margin-left:-30px;padding-right: 10px;"></i> Files
+                        <span>
+
+                            <?php
+                            $total_rows = mysqli_query($conn,"SELECT * FROM client_files where company_name='$company_name' ");
+                            $num = mysqli_num_rows($total_rows);
+                            ?>
+
+                            <?php echo htmlentities($num); ?>
+                               
+                        </span>
+                    </a>
+                    <a href="#" class="quickaccess-links-recruiter"><i class="fa fa-sticky-note fa-lg" aria-hidden="true" style="color:#FFBD06;margin-left:-30px;padding-right: 10px;"></i> Notes
+                        <span>
+
+                            <?php
+                            $total_rows = mysqli_query($conn,"SELECT * FROM client_notes where company_name='$company_name' ");
+                            $num = mysqli_num_rows($total_rows);
+                            ?>
+
+                            <?php echo htmlentities($num); ?>
+                            
+                        </span>
+                    </a>
                 </div>
 
                 <div class="company-desc">
@@ -106,8 +175,7 @@
                         <p class="mainHeading">Company Description</p>
                         <span class="mainheading-left">Last edited <span >21-05-2020</span></span>
                     </div>
-                    <div class="company-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam sit nonuLorem ipsum dolor sit amet, consetetur sadipscing elitr
-                    </div>
+                    <div class="company-content"><?php echo $row["company_desc"]; ?></div>
                 </div>
 
                 <div class="contact-info">
@@ -116,32 +184,50 @@
                     </div>
                     <div class="contact-content">
                         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
-                        <p class="contact-email">Emailid@gmail.com</p>
-                        <span>90009009090</span>
-                        <span>90009009090</span>
+                        <p class="contact-email"><?php echo $row["main_email"]; ?></p>
+                        <span><?php echo $row["contact_no"]; ?></span>
+                        <span><?php echo $row["contact_no"]; ?></span>
                     </div>
 
                     <div class="contact-content">
                         <p><i class="fa fa-building" aria-hidden="true"></i></p>
-                        <p class="contact-address">Address Line 1</p>
-                        <span>City - 530032,</span>
-                        <span>State, Country</span>
+                        <p class="contact-address"><?php echo $row["address"]; ?></p>
+                        <span><?php echo $row["city"]; ?> - <?php echo $row["zipcode"]; ?></span>
+                        <span><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></span>
                     </div>
                 </div>
+
+                <?php
+                
+                $sql=mysqli_query($conn,"select * from client_notes where company_name='$company_name' order by added_on desc limit 1");
+                $check=mysqli_num_rows($sql)>0;
+                if($check){
+                    while($row1=mysqli_fetch_assoc($sql)){
+                        ?>
 
                 <div class="last-note">
                     <div class="heading">
                         <p class="mainHeading">Last Note</p>
-                        <span class="mainheading-left">Last edited <span style="font-size: 16px;color:black">21-05-2020</span></span>
+                        <span class="mainheading-left">Last edited <span style="font-size: 16px;color:black"> <?php echo $row1["last_edited"]; ?></span></span>
                     </div>
                     <div class="last-note-profile">
                         <img src="./img/Profile-pic.png" style="margin-top: 12px;">
                         <p>Added by</p>
                         <span>Sasuke Uchiha</span>
                     </div>
-                    <div class="last-note-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonu
+                    <div class="last-note-content"> <?php echo $row1["notes"]; ?>
                     </div>
                 </div>
+
+                <?php } } ?>
+
+				<?php
+                $name=$row["active_contact"];
+				$sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+				$check=mysqli_num_rows($sql)>0;
+				if($check){
+					while($row=mysqli_fetch_assoc($sql)){
+						?>
 
                 <div class="active-contact">
                     <div class="heading">
@@ -150,14 +236,23 @@
                     </div>
                     <div class="active-contact-content">
                         <img src="img/Ellipse -4@2x.png" style="margin-left:60px;margin-top:15px">
-                        <p>Naruto Uzumaki</p>
-                        <p style="color:#979797;margin-left: 38px;">Emai.lid@gmail.com</p>
-                        <span>+91 90090009090</span>
+                        <p><?php echo $row["fname"]; ?></p>
+                        <p style="color:#979797;margin-left: 38px;"><?php echo $row["email"]; ?></p>
+                        <span><?php echo $row["phone"]; ?></span>
                     </div>
                 </div>
+				<?php } } ?>
+				
+				
 
                 <div class="open-jobs">
                     <p>Open jobs</p>
+					<?php
+					$sql=mysqli_query($conn,"select * from joblistings where client_company='$company_name'");
+					$check=mysqli_num_rows($sql)>0;
+					if($check){
+						while($row=mysqli_fetch_assoc($sql)){
+						?>
                     <div class="row">
                         <div class="column">
                             <input type="checkbox" id="c1" class="checkbox">
@@ -167,16 +262,18 @@
                             <span  class="span-class-red"></span>
                         </div>
                         <div class="column">
-                            <p class="col-2">Full-time</p>
+                            <p class="col-2">Added on</p>
+                            <p class="col-2-1"><?php echo $row["added_on"]; ?></p>
+                            <span class="col-span-2"><?php echo $row["job_type"]; ?></span>
                         </div>
                         <div class="column">
-                            <p class="col-3">Acturial Assistant</p>
-                            <p class="col-3-1">#1544-1</p>
-                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> London</span>
+                            <p class="col-3"><?php echo $row["position"]; ?></p>
+                            <p class="col-3-1"><?php echo $row["job_id"]; ?></p>
+                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></span>
                         </div>
-                        <div class="column">
+                        <div class="column" >
                             <p class="col-4">Company contact</p>
-                            <p class="col-4-1">Philip Martin</p>
+                            <p class="col-4-1"><?php echo $row["contact_client_company"]; ?></p>
                             <span class="col-span-4">sandrovicente@gmail.com</span>
                         </div>
                         <div class="column">
@@ -191,58 +288,19 @@
                             <p class="col-5"><i class="fa fa-user" aria-hidden="true"></i></p>
                             <span class="col-span-5">1/4</span>
                         </div>
-                        <div class="column">
+                         <div class="column">
                             <p class="col-6">Recruiter</p>
-                            <p class="col-6-1">Sandro Vicente</p>
+                            <p class="col-6-1"><?php echo $row["recruiters_name"]; ?></p>
                             <span class="col-span-6">sandrovicente@gmail.com</span>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="column">
-                            <input type="checkbox" id="c1" class="checkbox">
-                            <label for="c1"></label>
-                        </div>
-                        <div class="column">
-                            <span  class="span-class-yellow"></span>
-                        </div>
-                        <div class="column">
-                            <p class="col-2">Full-time</p>
-                        </div>
-                        <div class="column">
-                            <p class="col-3">Acturial Assistant</p>
-                            <p class="col-3-1">#1544-1</p>
-                            <span class="col-span-3"><i class="fa fa-map-marker" aria-hidden="true"></i> London</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-4">Company contact</p>
-                            <p class="col-4-1">Philip Martin</p>
-                            <span class="col-span-4">sandrovicente@gmail.com</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-eye" aria-hidden="true"></i></p>
-                            <span class="col-span-5">10</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-clipboard" aria-hidden="true"></i></p>
-                            <span class="col-span-5">6</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-5"><i class="fa fa-user" aria-hidden="true"></i></p>
-                            <span class="col-span-5">1/4</span>
-                        </div>
-                        <div class="column">
-                            <p class="col-6">Recruiter</p>
-                            <p class="col-6-1">Sandro Vicente</p>
-                            <span class="col-span-6">sandrovicente@gmail.com</span>
-                        </div>
-                    </div>
+				   <?php } } ?>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<?php } } }?>
 <script>
 var items = document.getElementsByName('item');
 var selectedItem = document.getElementById('selected-item');

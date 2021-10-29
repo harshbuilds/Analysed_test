@@ -68,19 +68,20 @@
                     <p class="select-for-select-image-box-below-inputs"> 
                         <label for="default-select-for-no.6">State</label>
                             <select name="state" id="default-select-for-no.6" class="default-select-for-add-client-1" required>
-                                <option value="" default>Andhra Pradesh</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                                <option value="" default>Select state</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
                             </select>
                     </p>
                     <p class="select-for-select-image-box-below-inputs"> 
                         <label for="default-select-for-no.6">Country</label>
                             <select name="country" id="default-select-for-no.6" class="default-select-for-add-client-1" required>
-                                <option value="" default>India</option>
-                                <option value="Open">Open</option>
-                                <option value="Closed">Closed</option>
-                                <option value="Working">Working</option>
+                               <option value="0" default>Select Country</option>
+                               <option value="India">India</option>
+                               <option value="Australia">Australia</option>
+                               <option value="Germany">Germany</option>
                             </select>
                     </p>
                     <input type = "submit" name="next"  class="save_button_addClient default-button-for-recruiter-dashboard" value="next" >

@@ -22,7 +22,7 @@ if(isset($_SESSION['firstname'])) {
             <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
  <div class="profile-img">
-   <img src="img/Ellipse 148.png" width="130" height="130" style="margin: 25px" alt="">
+   <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
   <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["id"]; ?></p1></h1><br>
   <h2><span style="color:#3598DB"><?php echo $row["current_title"]; ?>-</span><?php echo $row["company_name"]; ?></h2><br>
   <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -30,8 +30,8 @@ if(isset($_SESSION['firstname'])) {
 </svg> <?php echo $row["city_name"]; ?></h4>
 </div>
 <div class="button">
-<button><a href="create_candidate_edit.php?cid=<?php echo $row['id'];?>" style="text-decoration: none;color:#3598DB;"> Edit candidate</a></button>
-<button style="margin-top:-40px">View Resume</button>
+<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button>
+<button style="margin-top:-40px"><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
   </div>
           <div class="status">
      </div>

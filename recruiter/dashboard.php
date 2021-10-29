@@ -1,21 +1,19 @@
 
 
    <?php include('recruiter_header.php');
-       include('db.php'); ?>
+       include('connection1.php'); ?>
 <link rel="stylesheet" href="./css/dashboard.css">
 <link rel="stylesheet" href="./css/circle.css">
-  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous" />
-<link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />\
+  
 
 <div class="floating-divand-button-dashboard-recruiter">
     <ul class="floating-div-ul-dashboard-recruiter">
-        <li><a href="#">Add Client</a></li>
-        <li><a href="#">Add Contact</a></li>
-        <li><a href="#">Candidate</a></li>
-        <li><a href="#">Schedule Interview</a></li>
-        <li><a href="#">Create Job</a></li>
-        <li><a href="#">Create Task</a></li>
+        <li><a href="addClient.php">Add Client</a></li>
+        <li><a href="addContact.php">Add Contact</a></li>
+        <li><a href="../addCandidate.php">Candidate</a></li>
+        <li><a href="../schedule.php">Schedule Interview</a></li>
+        <li><a href="createRecruitement.php">Create Job</a></li>
+        <li><a href="createTasks.php">Create Task</a></li>
     </ul>
     <button class="floating-button-bottom-left-recruiter-db"><i class="fa fa-plus" aria-hidden="true"></i></button>
 </div>
@@ -35,16 +33,16 @@
                     <h1 class="mainHeadingDash">Dashboard</h1>
                     <p class="mainParaDash">Welcome back 
                                         	<?php
-                                            $sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
-                                        	$result_1 = mysqli_query($db,$sql);
-                                            while ($row = mysqli_fetch_array($result_1)) {
-                                                echo $row['firstname'];}
+                                            //$sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
+                                        	//$result_1 = mysqli_query($db,$sql);
+                                            //while ($row = mysqli_fetch_array($result_1)) {
+                                                //echo $row['firstname'];}
                                         
                                         	 ?>!</p>
                 </div>
                 <section class="cards_recruiter-items row-recruiter">
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../jobsCreated.php">
+                        <section class="numberSection"><a href="../DashboardJobs.php">
                             <p class="cardItemDash_recruiterheadingCards">Jobs Created</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM joblistings");
@@ -63,7 +61,7 @@
                         <section class="numberSection"><a href="../Appliedcandidates.php">
                             <p class="cardItemDash_recruiterheadingCards">Applied candidates</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
-                                        	$id = $db->query("SELECT * FROM jobapplications");
+                                        	$id = $db->query("SELECT * FROM jobseeker");
                                         	echo $id->num_rows;
                                         	 ?></h3>
                             </section>
@@ -95,7 +93,7 @@
                         <section class="numberSection"><a href="../hiredCandidates.php">
                             <p class="cardItemDash_recruiterheadingCards">Hired candidates</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
-                                        	$id = $db->query("SELECT * FROM files");
+                                        	$id = $db->query("SELECT * FROM jobseeker where job_status='Hired'");
                                         	echo $id->num_rows;
                                             ?></h3>
                             </section>
@@ -111,7 +109,7 @@
                         <section class="numberSection"><a href="../TasksCreated.php">
                             <p class="cardItemDash_recruiterheadingCards">Tasks Created</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
-                                        	$id = $db->query("SELECT * FROM coding_task_questions");
+                                        	$id = $db->query("SELECT * FROM task");
                                         	echo $id->num_rows;
                                             ?></h3>
                             </section>
@@ -124,10 +122,10 @@
                             </div></a>
                     </div>
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="#.php">
+                        <section class="numberSection"><a href="../shortListedJobs.php">
                             <p class="cardItemDash_recruiterheadingCards">Shortlisted</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
-                                        	$id = $db->query("SELECT shortlist FROM jobapplications where shortlist=1");
+                                        	$id = $db->query("SELECT * FROM jobseeker");
                                         	echo $id->num_rows;
                                             ?></h3>
                             </section>
@@ -155,28 +153,28 @@
                             <span>
                                 <p>MERN stack developer</p>
                                 <p><?php
-                                        	$id = $db->query("SELECT job_title FROM jobapplications WHERE job_title='MERN stack developer'");
+                                        	$id = $db->query("SELECT job_title FROM jobapply WHERE job_title='MERN stack developer'");
                                         	echo $id->num_rows;
                                             ?></p>
                             </span>
                             <span>
                                 <p>Android Studio Developer</p>
                                 <p><?php
-                                        	$id = $db->query("SELECT job_title FROM jobapplications WHERE job_title='Android Studio Developer'");
+                                        	$id = $db->query("SELECT job_title FROM jobapply WHERE job_title='Android Studio Developer'");
                                         	echo $id->num_rows;
                                             ?></p>
                             </span>
                             <span>
                                 <p>Django developer</p>
                                 <p><?php
-                                        	$id = $db->query("SELECT job_title FROM jobapplications WHERE job_title='Django developer'");
+                                        	$id = $db->query("SELECT job_title FROM jobapply WHERE job_title='Django developer'");
                                         	echo $id->num_rows;
                                             ?></p>
                             </span>
                             <span>
                                 <p>React-native front end developer</p>
                                 <p><?php
-                                        	$id = $db->query("SELECT job_title FROM jobapplications WHERE job_title='React-native front end developer'");
+                                        	$id = $db->query("SELECT job_title FROM jobapply WHERE job_title='React-native front end developer'");
                                         	echo $id->num_rows;
                                             ?></p>
                             </span>
@@ -200,7 +198,7 @@
                                     Approved
                                 </span>
                                 <p><?php
-                                        	$id = $db->query("SELECT approved FROM jobapplications WHERE approved=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
+                                        	$id = $db->query("SELECT approved FROM jobapply WHERE approved=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
                                         	echo $id->num_rows;
                                             ?></p>
                             </div>
@@ -210,7 +208,7 @@
                                     Shortlisted
                                 </span>
                                 <p><?php
-                                        	$id = $db->query("SELECT shortlist FROM jobapplications WHERE shortlist=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
+                                        	$id = $db->query("SELECT shortlist FROM jobapply WHERE shortlist=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
                                         	echo $id->num_rows;
                                             ?></p>
                             </div>
@@ -220,7 +218,7 @@
                                     On-hold
                                 </span>
                                 <p><?php
-                                        	$id = $db->query("SELECT on_hold FROM jobapplications WHERE on_hold=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
+                                        	$id = $db->query("SELECT on_hold FROM jobapply WHERE on_hold=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
                                         	echo $id->num_rows;
                                             ?></p>
                             </div>
@@ -230,7 +228,7 @@
                                     Rejected
                                 </span>
                                 <p><?php
-                                        	$id = $db->query("SELECT reject FROM jobapplications WHERE reject=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
+                                        	$id = $db->query("SELECT reject FROM jobapply WHERE reject=1 AND date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()");
                                         	echo $id->num_rows;
                                             ?></p>
                             </div>
@@ -243,7 +241,7 @@
                                 <a href="#">Today</a>
                             </span>
                             <div class="row-recruiter applicant_single_recruiter_div">
-                                 <?php $result = mysqli_query($db, "SELECT * FROM jobapplications where date=CURDATE()"); ?>
+                                 <?php $result = mysqli_query($db, "SELECT * FROM jobapply where date=CURDATE()"); ?>
 
 
                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -318,7 +316,7 @@
 
           <?php
               $query="select * from chart";
-              $res=mysqli_query($db,$query);
+              $res=mysqli_query($conn,$query);
               while($data=mysqli_fetch_array($res)){
                 $year=$data['year'];
                 $sale=$data['sale'];

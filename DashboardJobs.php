@@ -13,7 +13,7 @@
             <div class="left-side-container-DashboardJ">
 
             <?php
-                    include('config.php');
+                    include('connection1.php');
                     
                     $sql = "SELECT * FROM joblistings";
 
@@ -33,15 +33,15 @@
                         while($row = mysqli_fetch_assoc($res))
                         {
                             //get required values
-                            $id = $row['id'];
+                            $id = $row['job_id'];
                             $job_title = $row['position'];
-                            $job_desc = $row['job_description'];
-                            $job_created_on = $row['createdon'];
-                            $skills = $row['skills_req'];
+                            $job_desc = $row['advert_job_description'];
+                            $job_created_on = $row['added_on'];
+                            $skills = $row['skills'];
                             $package = $row['package'];
                             $package_type = $row['package_type'];
                             $company_logo = $row['logo'];
-                            $company_name = $row['company_name'];
+                            $company_name = $row['company'];
 
                             $skill_arr = explode(',',$skills);
                             ?>
@@ -148,7 +148,7 @@
                     </p>
                     <div class="category-filters" id="categoryDiv2">
                     <?php
-                            $filter2 = "SELECT DISTINCT company_name FROM joblistings";
+                            $filter2 = "SELECT DISTINCT company FROM joblistings";
                             $f2_res = mysqli_query($conn, $filter2);
                             $count = mysqli_num_rows($f2_res);
                             if($count){
@@ -158,8 +158,8 @@
                                     
                                     <div class="row-flex-jobs-j">
                                         <span>
-                                            <input type="checkbox" class="c1" value="<?php echo $row['company_name']; ?>" id="type">
-                                            <label for="type"><?php echo $row['company_name']; ?></label>
+                                            <input type="checkbox" class="c1" value="<?php echo $row['company']; ?>" id="type">
+                                            <label for="type"><?php echo $row['company']; ?></label>
                                         </span>
                                         <p>24</p>
                                     </div>
@@ -218,7 +218,7 @@
                     <div class="category-filters" id="categoryDiv4">
                     <?php
                             // include('config.php');
-                            $filter4 = "SELECT DISTINCT job_location FROM joblistings";
+                            $filter4 = "SELECT DISTINCT country FROM joblistings";
                             $f4_res = mysqli_query($conn, $filter4);
                             $count = mysqli_num_rows($f4_res);
                             if($count){
@@ -228,8 +228,8 @@
                                     
                                     <div class="row-flex-jobs-j">
                                         <span>
-                                            <input type="checkbox" class="c1" value="<?php echo $row['job_location']; ?>" id="type">
-                                            <label for="type"><?php echo $row['job_location']; ?></label>
+                                            <input type="checkbox" class="c1" value="<?php echo $row['country']; ?>" id="type">
+                                            <label for="type"><?php echo $row['country']; ?></label>
                                         </span>
                                         <p>24</p>
                                     </div>
