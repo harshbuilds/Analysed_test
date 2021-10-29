@@ -1,5 +1,13 @@
 <?php include('include/header.php')?>
-<html>
+
+<?php
+define('LOCALHOST','localhost');
+define('DB_USERNAME','root');
+define('DB_PASSWORD','');
+define('DB_NAME','analyse');
+$conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+
 <head>
   <link rel="stylesheet" href="css/my_task_10.css">
 
@@ -46,50 +54,48 @@
               <button class="b1" id="nac">Step 3</button>
             </div>
           </div>
-
+          
           <div class="col-10">
             <p class="c1">Step 1</p>
             <p class="c2">Select the type of task</p><br>
             <ul class="fullclick">
+              
+              <?php
+                $sql="select * from task_type";
+                $res=mysqli_query($conn,$sql);
+                if($res == TRUE)
+                {
+                  $count=mysqli_num_rows($res);
+                  if($count >0)
+                  {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                      $name=$rows['task_name'];
+                      $image_task=$rows['task_img'];
+                      $desc=$rows['task_desc'];
+                      $task_id=$rows['task_id']
+              ?>
               <li>
                 <div class="row" >
                   <div class="col-2">
-                    <img src="img/t1.png" height="100px" width="120px" style="margin-left:20px">
+                    <?php echo '<img src="data:image;base64,'.base64_encode($image_task).' "  style="width: 120px; height: 100px; margin-left:20px" >' ;   ?>
                   </div>
                   <div class="col-10">
-                    <span class="c1">Freestyle</span>
-                    <p class="c3" style="margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                      nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+                    <button class="addFilesMyTasks1" id="c1" > <?php echo $name; ?> </button>
+                    <p class="c3" style="margin-right:40px"><?php echo $desc; ?></p>
                   </div>
                 </div>
-                <a href="my_task_11.php" class="main"></a>
-              </li><br>
-              <li>
-                <div class="row">
-                  <div class="col-2">
-                    <img src="img/t2.png" height="100px" width="120px" style="margin-left:20px">
-                  </div>
-                  <div class="col-10">
-                    <span class="c1">Coding</span>
-                    <p class="c3" style="margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                      nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                  </div>
-                </div>
-                <a href="my_task_11.php" class="main"></a>
-              </li><br>
-              <li>
-                <div class="row">
-                  <div class="col-2">
-                    <img src="img/t3.png" height="100px" width="120px" style="margin-left:20px">
-                  </div>
-                  <div class="col-10">
-                    <span class="c1">MCQs</span>
-                    <p class="c3" style="margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                      nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-                  </div>
-                </div>
-                <a href="my_task_11.php" class="main"></a>
-              </li><br><br><br>
+                <a href="my_task_11.php?id=<?php echo $task_id; ?>" class="main"></a>
+                </li>
+                <?php
+                      }
+                    }
+                  }
+
+                ?>
+              
+              <br>
+              <br><br><br>
 
             </ul>
         
@@ -97,4 +103,3 @@
         </div>
     </div>
 </body>
-</html>
