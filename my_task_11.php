@@ -1,4 +1,13 @@
-<html>
+<?php include('include/header.php')?>
+<?php
+define('LOCALHOST','localhost');
+define('DB_USERNAME','root');
+define('DB_PASSWORD','');
+define('DB_NAME','analyse');
+$conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+
+
 <head>
   <link rel="stylesheet" href="css/my_task_11.css">
 
@@ -29,18 +38,18 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<style type="text/css">
+<!-- <style type="text/css">
 #btnnext
 {
   display: none;
 }
 
-</style>
+</style> -->
 
 </head>
 
 <body>
-    <?php include('include/header.php')?><br>
+    <br>
     <div class="main_body">
         <span class="a1">Create Tasks</span><br>
         <span class="a2">Create task to test candidate's ability</span><br><br><br><br>
@@ -56,7 +65,9 @@
           </div>
 
           <div class="col-10">
-            <p class="c1">Step 2 <button class="m2" id="btnnext"  onclick="location.href='my_task_13.php'"> Next &#8594; </button></p>
+            <p class="c1">Step 2 
+              <!-- <button class="m2" id="btnnext"  onclick="location.href='my_task_13.php'"> Next &#8594; </button> -->
+            </p>
             <p class="c2">Set restrictions</p>
             <p class="c3" style="margin-right:100px">Choose which restrictions you want to choose. elitr, sed diam nonumy eirmod tempor
                  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et 
@@ -65,20 +76,40 @@
         </div>
 
         <div class="row" >
-
+          <?php
+                $sql="select * from task_restriction";
+                $res=mysqli_query($conn,$sql);
+                $t_id=$_GET['id'];
+                if($res == TRUE)
+                {
+                  $count=mysqli_num_rows($res);
+                  if($count >0)
+                  {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                      $r_id=$rows['restr_id'];
+                      $name=$rows['restr_name'];
+                      $image_task=$rows['restr_img'];
+                      $desc=$rows['restr_desc'];
+          ?>
           <div class="col-3" width="15px" >
-            <div id="idscreenm" class="card" style="height:360px;width:250px">
-              <img src="img/screen_share-24px.svg" height="63px" width="63px" style="margin-left:80px;margin-top:20px;">
-              <br><span class="b2">Screen monitoring</span>
-              <br><p class="c4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero.</p>
+            <div id="idscreenm" class="card" style="height:370px;width:250px">
+              <?php echo '<img src="data:image;base64,'.base64_encode($image_task).' "  style="width: 63px; height: 63px; margin-left:80px;margin-top:20px;" >' ;   ?>
+              <br><button class="addFilesMyTasks1"  onclick="location.href='my_task_13.php?t_id=<?php echo $t_id; ?>&r_id=<?php echo $r_id; ?>'"> <?php echo $name; ?></button>
+              <br><p class="c4"><?php echo $desc; ?></p>
             </div>
           </div>
+          <?php
+                }
+              }
+            }
 
+          ?>
+<!-- 
           <div class="col-3" width="15px">
           <div class="card" style="height:360px;width:250px">
               <img src="img/person.png" height="63px" width="63px" style="margin-left:80px;margin-top:20px;">
-              <br><span class="b2">Candidate monitoring</span>
+              <br><button class="addFilesMyTasks1"  > Candidate monitoring</button>
               <br><p class="c4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero.</p>
             </div>
@@ -87,7 +118,7 @@
           <div class="col-3" width="15px">
           <div class="card" style="height:360px;width:250px">
               <img src="img/phonelink_lock-24px.svg" height="63px" width="63px" style="margin-left:80px;margin-top:20px;">
-              <br><span class="b2">Tab lock</span>
+              <br><button class="addFilesMyTasks1"  > Tab Lock</button>
               <br><p class="c4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero.</p>
             </div>
@@ -96,11 +127,11 @@
           <div class="col-3" width="15px">
           <div class="card" style="height:360px;width:250px">
               <img src="img/face.png" height="63px" width="63px" style="margin-left:80px;margin-top:20px;">
-              <br><span class="b2">Facial unlock</span>
+              <br><button class="addFilesMyTasks1"  > Facial unlock</button>
               <br><p class="c4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero.</p>
             </div>
-          </div>
+          </div> -->
 
         </div>
         <br><br>
@@ -108,7 +139,7 @@
         
     </div>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         
         $(document).ready(() => {
 
@@ -118,6 +149,5 @@
             });
           
         });
-      </script>
+      </script> -->
 </body>
-</html>

@@ -1,4 +1,34 @@
 <?php include('header.php')?>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+
+<?php
+           if(isset($_POST['send']))
+           {
+
+            $firstname=$_POST['firstname'];
+            $lastname=$_POST['lastname'];
+            $contact=$_POST['contact'];
+            $message=$_POST['message'];
+            $email=$_POST['email'];
+            $contact_us_id='C102';
+             
+
+            $sql2="INSERT INTO contact_us VALUES ('$contact_us_id', '$firstname' , '$lastname' , '$email' , '$contact' , '$message')";
+             $res2=mysqli_query($conn,$sql2);
+             if($res2 === TRUE)
+              {
+                   echo "<script> location.href='js_nearby_job.php'; </script>";
+              }
+           }
+      ?>
+
+
 <link rel="stylesheet" href="./css/contact.css">
 <title>Analysed</title>
 <div class="container">
@@ -31,15 +61,16 @@
             </div>
         </div>
         <div class="right-flex-contact-us-section-box">
-            <form action="/" id="contact-us-recruiter">
+        <form method = "POST" id="contact-us-recruiter">
+            <!-- <form action="/" id="contact-us-recruiter"> -->
             <div class="row-recruiter input-labels-contact-us">
                 <span>
                     <label for="first-name-recruiter-contact-us">First Name *</label><br>
-                    <input type="text" placeholder="Enter your first name" name="first-name" required id="first-name-recruiter-contact-us">
+                    <input type="text" placeholder="Enter your first name" name="firstname" required id="first-name-recruiter-contact-us">
                 </span>
                 <span>
                     <label for="first-name-recruiter-contact-us">Last Name</label><br>
-                    <input type="text" placeholder="Enter your last name" name="last-name"  id="last-name-recruiter-contact-us">
+                    <input type="text" placeholder="Enter your last name" name="lastname"  id="last-name-recruiter-contact-us">
                 </span>
             </div>
                     <span>
@@ -48,13 +79,13 @@
                 </span>
                 <span>
                     <label for="number-recruiter-contact-us">Contact number *</label><br>
-                    <input type="tel" placeholder="Enter your phone number" maxlength = 10 required name="phonenumber" id="number-recruiter-contact-us">
+                    <input type="tel" placeholder="Enter your phone number" maxlength = 10 required name="contact" id="number-recruiter-contact-us">
                 </span>
                 <span>
                     <label for="Message-recruiter-contact-us">Message *</label><br>
-                    <textarea placeholder="Enter your message here" required id="Message-recruiter-contact-us" form="usrform" name="message"></textarea>
+                    <input placeholder="Enter your message here" required id="Message-recruiter-contact-us"  name="message"></input>
                 </span>
-                <button class="button-recruiter-contact-us-submit" type="submit">Send message&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                <button class="button-recruiter-contact-us-submit" name="send">Send message&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </form>
         </div>
     </section>

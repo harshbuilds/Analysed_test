@@ -1,6 +1,14 @@
 <?php include('include/header.php') ?>
 <title>Dashboard</title>
-      
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse_m');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+
+
 <link rel="stylesheet" href="css/job_listings_pub-2.css">
 
 
@@ -29,8 +37,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    
+
+
 <body>
 
 <div class="main_body">
@@ -44,10 +52,10 @@
             <div class="row-flex-jobj">
                 <h1 class="mainHeadingDash" style="font-size:35px;">&emsp;&emsp;Actural Assistant</h1>
             </div>
-           
+
             <div class="row-flex-jobj">
                 <a href="#">&emsp;&emsp;&emsp;&emsp;XYZ Pharmaceuticals- </a> #1544-1
-            </div> 
+            </div>
             <p><br>&emsp;&emsp;&emsp;&emsp;05-05-2020</p>
         </div>
     </div>
@@ -59,51 +67,91 @@
                 <div class="options">
                     <p><a href="job_listings_activity_res.php"style="color:#979797;" id="te1">At a glance </a></p>
                     <p><a href="jobs_listings_activity_eval-1.php"style="color:#979797;" id="te1">Applicants </a></p>
-                    
+
                     <p><a href="job_listings_activity_res.php"style="color:#979797;" id="te1">Activity</a></p>
                     <!-- <div class="option1"> -->
                     <p><a href="job_listings_files.php"style="color:#979797;" id="te1">Files </a></p>
                     <!-- </div>  -->
                     <p><a href="job_listings_notes.php"style="color:#979797;" id="te1"> Notes </a></p>
-                  
+
                     <span style="color:#3598DB;"id="te1" > <b>|  Publish</b></span>
                 </div>
 
             </div>
             <div class="col-9 mb-4">
+
+               <?php
+               if(isset($_POST['btncard']))
+               {
+                 ?>
+                 <script type='text/javascript'>
+                     $(document).ready(function(){
+                        $("#btnc").hide();
+                        $("#ti").show();
+
+                         });
+                 </script>
+                 <?php
+               }
+                ?>
+
+
                 <div class="row">
-                    <div class="col-3">
-                        <div class="card"  style="height:170px">
-                            <div class="card-body" style="align:center"><br><br>
-                            <img src="img/seek_logo.png" width="150" height="55" >
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-3">
-                        <div class="card"  style="height:170px">
-                            <div class="card-body"><br><br>
-                                <img src="img/linkedIn_logo.png" width="150" height="40" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
+
+                  <?php
+                      $sql1="select * from job_list";
+                      $res=mysqli_query($conn,$sql1);
+                      if($res == TRUE)
+                      {
+                          $count=mysqli_num_rows($res);
+                          if($count >0)
+                          {
+                              while($rows=mysqli_fetch_assoc($res))
+                              {
+
+                                  $myimg=$rows['workspace_view'];
+                                ?>
+                              <div class="col-3">
+                                  <div class="card"  style="height:170px;margin-bottom:20px;">
+                                      <div class="card-body" style="align:center"><br><br>
+
+                                        <div id="ti" style="display:none;">
+                                         <img src="img/tickimgg.jpg" width="100" height="95">
+                                       </div>
+
+                                    <form method="post">
+                                      <button id="btnc" name="btncard">
+                                      <?php echo '<img src="data:image;base64,'.base64_encode($myimg).' "  style="width: 100px; height: 95px;" >' ;   ?>
+                                     </button>
+                                   </form>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                      <?php
+                              }
+                          }
+                      }
+                      ?>
+
+
             </div><br><br>
             <button class="nextMyTasks" id="myBtn">Next <img src="img/arrow-right.png" width="15" height="20" ></button>
                     <br>
                  <!-- cards -->
 
-                 
 
-                 
+
+
             </div>
             <div class="col-1 mb-4" >
                        <div class="card" style="width:300px;">
                                 <div class="card-body">
-                                    
+
                                   <div class="right-panel" style="text-align:center">
                                     <!-- <div class="status1"> -->
-                                   
+
                                       <div style="font-size:14px;">
                                         <b>#JB1554-1&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</b>
                                         <span style="color:#979797;">05-05-2020</span>
@@ -118,7 +166,7 @@
                                     </div>
                                    <!-- <div class="displayname">  -->
                                        <div>
-                                         
+
                                         <img src="img/eye-icon.jpg" width="25" height="20">&emsp;&emsp;
                                         <img src="img/task-icon.png" width="23" height="25">&emsp;&emsp;
                                         <img src="img/person-icon.png" width="23" height="20">
@@ -183,8 +231,8 @@
                             <!-- end of card body -->
                     </div>
                         <!-- end of card -->
-                       
-             
+
+
             </div>
             <!--end of col -->
         </div>
@@ -195,6 +243,3 @@
 <!-- end of main_body -->
 
 </body>
-
-
-    

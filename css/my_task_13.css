@@ -92,21 +92,21 @@
 #nac{
   color:#979797;
 }
-#f2{
+.f2{
     height: 53px;
     width:350px;
     border-radius: 7px;
     border: 1px solid #3598DB;
     margin-right: 20px;
   }
-  #f4{
+  .f4{
     height: 53px;
     width:300px;
     border-radius: 7px;
     border: 1px solid #3598DB;
     margin-right: 20px;
   }
-  #f5{
+  .f5{
     height: 53px;
     width:275px;
     border-radius: 7px;
