@@ -1,4 +1,11 @@
 <?php include('include/header.php') ?>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
 <title>Job Listings</title>
 <link rel="stylesheet" href="css/job_listings.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -6,14 +13,98 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+<style type="text/css">
+
+</style>
+
 <body>
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-    <a href="/" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="" class="active-breadcrumb-link">My Dashboard</a> > <a href="" class="active-breadcrumb-link">Job Listing</a> 
+    <a href="/" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="" class="active-breadcrumb-link">My Dashboard</a> > <a href="" class="active-breadcrumb-link">Job Listing</a>
 </div>
 
+<?php
+
+$flag=0;
+$status=0;
+if(isset($_POST['btnhigh']))
+{
+  $sql="SELECT * FROM `joblistings` WHERE priority= 'High'";
+  $flag=1;
+}
+if(isset($_POST['btnlow']))
+{
+  $sql="SELECT * FROM `joblistings` WHERE priority= 'Low'";
+  $flag=1;
+}
+if(isset($_POST['btnmedium']))
+{
+  $sql="SELECT * FROM `joblistings` WHERE priority= 'Medium'";
+  $flag=1;
+}
+if(isset($_POST['btnsearch']))
+{
+  $searchForJobs=$_POST['searchForJobs'];
+  $sql="SELECT * FROM `joblistings` WHERE job_id='$searchForJobs'";
+  $flag=1;
+}
+if(isset($_POST['btnactive']))
+{
+  $flag=0;
+  $status=2;
+   ?>
+       <script type='text/javascript'>
+           $(document).ready(function(){
+              $("#b1").css({"border-bottom":"3px solid transparent","color":"black"});
+              $("#b2").css({"border-bottom":"3px solid #3598DB","color":"#3598DB"});
+              $("#b3").css({"border-bottom":"3px solid transparent","color":"black"});
+               });
+       </script>
+   <?php
+}
+
+if(isset($_POST['btncompleted']))
+{
+  $flag=0;
+  $status=1;
+   ?>
+       <script type='text/javascript'>
+           $(document).ready(function(){
+              $("#b1").css({"border-bottom":"3px solid transparent","color":"black"});
+              $("#b3").css({"border-bottom":"3px solid #3598DB","color":"#3598DB"});
+              $("#b2").css({"border-bottom":"3px solid transparent","color":"black"});
+               });
+       </script>
+   <?php
+}
+
+if(isset($_POST['btnall']))
+{
+  $flag=0;
+   ?>
+       <script type='text/javascript'>
+           $(document).ready(function(){
+              $("#b2").css({"border-bottom":"3px solid transparent","color":"black"});
+              $("#b1").css({"border-bottom":"3px solid #3598DB","color":"#3598DB"});
+              $("#b3").css({"border-bottom":"3px solid transparent","color":"black"});
+               });
+       </script>
+   <?php
+
+}
+
+
+
+ ?>
 <div class="container" style="margin-left:150px">
-    <div class="small_container">  
+    <div class="small_container">
 
         <div class="row-flex-jobs-j alignitemsstart-shortlisted">
             <div class="heading_dash">
@@ -30,7 +121,9 @@
             <div class="col-8">
                 <div class="input-field" style="width:571px">
                 <img src="img/location_icon.png" alt="" width="15" height="15" >
-                <a href="/" class="active-breadcrumb-link">All Jobs   &emsp;   <span style="color:#979797">|&emsp; &emsp;</span></a>   
+                <a href="/" class="active-breadcrumb-link">All Jobs   &emsp;   <span style="color:#979797">|&emsp; &emsp;</span></a>
+
+              <form method="post">
                 <input
                     type="text"
                     name="searchForJobs"
@@ -38,9 +131,11 @@
                     class="searchForJobs"
                     placeholder="Search for Jobs by ID   "
                 />&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;
-                <button class="searchButton">
+                <button class="searchButton" type="submit" name="btnsearch">
                     <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
-                </button>  
+                </button>
+              </form>
+
                 </div>
             </div>
             <div class="col-4">
@@ -52,49 +147,135 @@
 
         <div class="row">
             <div class="col-4" style="margin-left:800px">
-                <img src="img/red-icon.png" width="30" height="20"> High&emsp;
-                <img src="img/orange-icon.png" width="17" height="18">&nbsp;&nbsp;Medium&emsp;
-                <img src="img/Yellow-icon.png" width="17" height="18">&nbsp;&nbsp;Low
+             <form method="post">
+               <button type="submit" style="background: none;border: none;" name="btnhigh"><img src="img/red-icon.png" width="30" height="20"> High&emsp;</button>
+               <button type="submit" style="background: none;border: none;" name="btnmedium"><img src="img/orange-icon.png" width="17" height="18">&nbsp;&nbsp;Medium&emsp;</button>
+               <button type="submit" style="background: none;border: none;" name="btnlow"><img src="img/Yellow-icon.png" width="17" height="18">&nbsp;&nbsp;Low</button>
+             </form>
+
             </div>
             <div class="col-8"><br>
                 <div class="categories-mytasks-1-active">
-                    <p class="category-mytasks1 active" id="category-mytasks1-1">All</p>
-                    <p class="category-mytasks1 " id="category-mytasks1-2">Active</p>
-                    <p class="category-mytasks1 " id="category-mytasks1-3">Completed</p>
-                    <p class="category-mytasks1 " style="color:#3598DB">Select All</p>
+
+                  <form method="post">
+                    <button type="submit" style="background: none;border: none;" name="btnall"><p class="category-mytasks1 active" id="b1" >All</p></button>
+                    <button type="submit" style="background: none;border: none;" name="btnactive"><p class="category-mytasks1" id="b2" >Active</p></button>
+                    <button type="submit" style="background: none;border: none;" name="btncompleted"><p class="category-mytasks1 " id="b3" >Completed</p></button>
+                 </form>
+
+
+
                 </div>
             </div>
-            
+
         </div>
+
+
 
         <div class="singleTasks_containerDiv">
+            <?php
+          //  $sql="SELECT * FROM `joblistings`";
+          if($flag == 0)
+          {
+            $sql="SELECT * FROM `joblistings`";
+          }
+            $res=mysqli_query($conn,$sql);
+            if($res == TRUE)
+            {
+                $count=mysqli_num_rows($res);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                        $start_date=$rows['start_date'];
+                        $state=$rows['state'];
+                        $position=$rows['position'];
+                        $openings=$rows['openings'];
+                        $client_company=$rows['client_company'];
+                        $job_type=$rows['job_type'];
+                        $contact_client_company=$rows['contact_client_company'];
+                        $job_views=$rows['job_views'];
+                        $skills=$rows['skills'];
+                        $required_experience=$rows['required_experience'];
+                        $advert_job_description=$rows['advert_job_description'];
+                        $availability_time=$rows['availability_time'];
+                        $company_email=$rows['company_email'];
+                        $workspace_view=$rows['workspace_view'];
+                        $rec_img=$rows['rec_img'];
+                        $job_id=$rows['job_id'];
+                        $recruiters_name=$rows['recruiters_name'];
+                        $priority=$rows['priority'];
 
+                        $end_date=$rows['end_date'];
+                        $now = time(); // or your date as well
+                        $your_date = strtotime($end_date);
+                        $datediff = $now - $your_date;
+                        $remain_days=round($datediff / (60 * 60 * 24));
+
+                         if(($flag == 0) && ($status == 1))
+                         {
+                           if($remain_days < 0)
+                           {
+                              continue;
+                           }
+                         }
+
+                         if(($flag == 0) && ($status == 2))  //for completed
+                         {
+                           if($remain_days > 0)
+                           {
+                              continue;
+                           }
+                         }
+
+
+                 ?>
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
-                <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   if($priority == 'High')
+                   {
+                ?>
+                   <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   }
+                   elseif($priority == 'Medium')
+                   {
+                ?>
+                    <img src="img/orange-icon.png" width="20" height="20">
+                <?php
+                    }
+                    elseif($priority == 'Low')
+                    {
+                ?>
+                    <img src="img/Yellow-icon.png" width="20" height="20">
+                <?php
+                    }
+                ?>
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p class="date_s">05-05-2020</p>
+                    <p class="date_s"><?php echo $start_date; ?></p>
                 </span>
                 <span>
-                    <p class="ac_assis">Acturial Assistant</p>
-                    <p class="id_num">#1544-1</p>
-                    <p class="loc_pin"><i class="fa fa-map-marker"></i> Hyderabad</p>
+                    <p class="ac_assis"><?php echo $position; ?></p>
+                    <p class="id_num">#<?php echo $job_id; ?></p>
+                    <p class="loc_pin"><i class="fa fa-map-marker"></i> <?php echo $state; ?></p>
                 </span>
                 <span>
-                    <p style="color:#333333;font-size:14px;line-height:1px ">Full-time</p>
-                    <p style="color:#979797;font-size:14px ">X openings</p>
+                    <p style="color:#333333;font-size:14px;line-height:1px "><?php echo $job_type; ?></p>
+                    <p style="color:#979797;font-size:14px "><?php echo $openings; ?> openings</p>
                 </span>
-                <button class="x1" onclick="location.href='job_listings_individual.php'"><img src="img/Prof-2.png" width="55" height="55"></button>
-                
+
+                <button class="x1" onclick="location.href='job_listings_individual.php?j_id=<?php echo $job_id; ?>'"><?php echo '<img src="data:image;base64,'.base64_encode($workspace_view).' "  style="width: 50px; height: 50px;" >' ;   ?></button>
+
                 <span>
                     <p style="color:#979797;line-height:1px ">Company contact</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Philip Martin</b></p>
-                    <p style="color:#333333">XYZ pharmaceuticals</p>
+                    <p style="color:#3598DB;line-height:1px "><b><?php echo $contact_client_company; ?></b></p>
+                    <p style="color:#333333"><?php echo $client_company; ?></p>
                 </span>
                 <span>
                     <img src="img/eye-icon.jpg" width="25" height="15"><br>
-                    <p style="color:#333333; "><b>&nbsp;10</b></p>
+                    <p style="color:#333333; "><b>&nbsp;<?php echo $job_views; ?></b></p>
                 </span>
                 <span>
                     <img src="img/task-icon.png" width="20" height="20"><br>
@@ -104,107 +285,23 @@
                     <img src="img/person-icon.png" width="25" height="20"><br>
                     <p style="color:#333333; "><b>&nbsp;1/4</b></p>
                 </span>
-                <img src="img/Prof-1.png" width="55" height="55">
+                <?php echo '<img src="data:image;base64,'.base64_encode($rec_img).' "  style="width: 55px; height: 55px;" >' ;   ?>
                 <span>
                     <p style="color:#979797;line-height:1px ">Recruiter</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Sandro Vicente</b></p>
-                    <p style="color:#333333">sandrovicente@gmail.com</p>
+                    <p style="color:#3598DB;line-height:1px "><b><?php echo $recruiters_name; ?></b></p>
+                    <p style="color:#333333"><?php echo $company_email; ?></p>
                 </span>
             </div>
+            <?php
+                        }
+                        $flag=0;
+                        $status=0;
+                    }
+                }
+            ?>
 
-            <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
-                <img src="img/orange-icon.png" width="20" height="20">
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p class="date_s">05-05-2020</p>
-                </span>
-                <span>
-                    <p class="ac_assis">Acturial Assistant</p>
-                    <p class="id_num">#1544-1</p>
-                    <p class="loc_pin"><i class="fa fa-map-marker"></i> Hyderabad</p>
-                </span>
-                <span>
-                    <p style="color:#333333;font-size:14px;line-height:1px ">Full-time</p>
-                    <p style="color:#979797;font-size:14px ">X openings</p>
-                </span>
-                <button class="x1" onclick="location.href='job_listings_individual.php'"><img src="img/Prof-2.png" width="55" height="55"></button>
-                
-                <span>
-                    <p style="color:#979797;line-height:1px ">Company contact</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Philip Martin</b></p>
-                    <p style="color:#333333">XYZ pharmaceuticals</p>
-                </span>
-                <span>
-                    <img src="img/eye-icon.jpg" width="25" height="15"><br>
-                    <p style="color:#333333; "><b>&nbsp;10</b></p>
-                </span>
-                <span>
-                    <img src="img/task-icon.png" width="20" height="20"><br>
-                    <p style="color:#333333; "><b>&nbsp;6</b></p>
-                </span>
-                <span>
-                    <img src="img/person-icon.png" width="25" height="20"><br>
-                    <p style="color:#333333; "><b>&nbsp;1/4</b></p>
-                </span>
-                <img src="img/Prof-1.png" width="55" height="55">
-                <span>
-                    <p style="color:#979797;line-height:1px ">Recruiter</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Sandro Vicente</b></p>
-                    <p style="color:#333333">sandrovicente@gmail.com</p>
-                </span>
-            </div>
 
-            <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
-                <img src="img/Yellow-icon.png" width="20" height="20">
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p class="date_s">05-05-2020</p>
-                </span>
-                <span>
-                    <p class="ac_assis">Acturial Assistant</p>
-                    <p class="id_num">#1544-1</p>
-                    <p class="loc_pin"><i class="fa fa-map-marker"></i> Hyderabad</p>
-                </span>
-                <span>
-                    <p style="color:#333333;font-size:14px;line-height:1px ">Full-time</p>
-                    <p style="color:#979797;font-size:14px ">X openings</p>
-                </span>
-                <button class="x1" onclick="location.href='job_listings_individual.php'"><img src="img/Prof-2.png" width="55" height="55"></button>
-                
-                <span>
-                    <p style="color:#979797;line-height:1px ">Company contact</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Philip Martin</b></p>
-                    <p style="color:#333333">XYZ pharmaceuticals</p>
-                </span>
-                <span>
-                    <img src="img/eye-icon.jpg" width="25" height="15"><br>
-                    <p style="color:#333333; "><b>&nbsp;10</b></p>
-                </span>
-                <span>
-                    <img src="img/task-icon.png" width="20" height="20"><br>
-                    <p style="color:#333333; "><b>&nbsp;6</b></p>
-                </span>
-                <span>
-                    <img src="img/person-icon.png" width="25" height="20"><br>
-                    <p style="color:#333333; "><b>&nbsp;1/4</b></p>
-                </span>
-                <img src="img/Prof-1.png" width="55" height="55">
-                <span>
-                    <p style="color:#979797;line-height:1px ">Recruiter</p>
-                    <p style="color:#3598DB;line-height:1px "><b>Sandro Vicente</b></p>
-                    <p style="color:#333333">sandrovicente@gmail.com</p>
-                </span>
-            </div>
         </div>
-
-
-
         <div class="addnew"><img src="img/plus.png" width="50" height="50" style="margin-left:1000px" /></div>
         <br><br><br>
-    </div> 
-
-
-
-
+    </div>

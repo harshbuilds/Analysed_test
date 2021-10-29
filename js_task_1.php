@@ -1,4 +1,11 @@
 <?php include('include/header.php')?>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
 <html>
 <head>
   <link rel="stylesheet" href="css/js_task_1.css">
@@ -55,7 +62,7 @@
     transform: translate(-50%, -50%);
     padding: 10px;
     /* text-align: center; */
-          
+
   }
 </style>
 </head>
@@ -68,11 +75,13 @@
         <p>lorem ipsum reto alsuy adonti asoplre nkis aypign qnikaam</p>
         <hr style="width:80%;margin-left:10px"></hr>
         <br>
-        <button id="btnfinish" onclick="window.location.href = 'js_task.php';">Finish</button></center>
+
+        <button id="btnfinish" >Finish</button></center>
+
       </div>
     </div>
 
-  
+
     <div id="upload-modal">
 		<div id="upload-container">
 			<p class="bot4" style="margin-left:50px;margin-top:50px">Upload task file
@@ -82,31 +91,60 @@
                 <p style="margin-left:60px;margin-top:40px"><img src="img/upload-box.svg" height="70px" width="80px">
                 <span id="sub_3">Drag and drop a task file and watch me go!</span></p>
                 <p class="bot4" style="margin-left:250px"> or </p>
-                <button class="addFilesMyTasks1" id="myBtn1" onclick=""> Upload </button>
+                <?php
+                    if(isset($_POST['btntask']))
+                    {
+                    //  $documenttype=$_POST['documenttype'];
+                      $fileName= $_FILES['file2']['name'];
+                      $fileTmpName=$_FILES['file2']['tmp_name'];
+                      $path="Documents/".$fileName;
+                      $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+                      $created = @date('Y-m-d');
+                      $fileSize = $_FILES['file2']['size'];
+                       $sql4="INSERT into company_task(task_id,file_name) values('T112','$fileName')";
+                       $res4=mysqli_query($conn,$sql4);
+                       if($res4)
+                       {
+                         move_uploaded_file($fileTmpName, $path);
+                       }
+                    }
+                 ?>
+              <form method="post" enctype="multipart/form-data">
+                <input  type="file" name="file2" /><br>
+                <button class="addFilesMyTasks1" id="myBtn1" name="btntask"> Upload </button>
+              </form>
             </div>
         </div>
     </div>
 
     <br><br><br>
     <div class="head_ele">
-        <div class="content_1"><b>Task Name | MCQ  
+        <?php
+            $t_id='T603';
+            $sql="select * from company_task where task_id='$t_id'";
+            $res=mysqli_query($conn,$sql);
+            if($res == TRUE)
+            {
+                $count=mysqli_num_rows($res);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                        $name_task=$rows['name_task'];
+                        $desc_short=$rows['desc_short'];
+                        $rec_name=$rows['rec_name'];
+                        $job_n=$rows['job_n'];
+                        $job_comp=$rows['job_comp'];
+                        $job_desc=$rows['job_desc'];
+                        $exp_inp=$rows['exp_inp'];
+                        $exp_out=$rows['exp_out'];
+                 ?>
+        <div class="content_1"><b><?php echo $name_task; ?> | <?php echo $desc_short; ?>
             <span class="sub_1">Instructions</span></b>
-            <span class="sub_2" style="margin-left: 220px;">Added by XYZ</span>
+            <span class="sub_2" style="margin-left: 220px;">Added by <?php echo $rec_name; ?></span>
         </div><br>
-        <div class="sub_2">Which Job | Which Company</div><br><br>
-        <div class="sub_2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur 
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  <br><br>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+        <div class="sub_2"><?php echo $job_n; ?> | <?php echo $job_comp; ?></div><br><br>
+        <div class="sub_2"><?php echo $job_desc; ?>
         </div><br><br><br>
         <div class="content_1"><b>Expected output</b></div><br><br>
         <div class="row">
@@ -114,10 +152,7 @@
                 <div class="card" style="width:470px;height:220px">
                   <div id="box_1">
                     <p class="content_2">Example input</p>
-                    <p id="box_2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                        nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                    <p id="box_2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                        nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                    <p id="box_2"><?php echo $exp_inp; ?></p>
                   </div>
                 </div>
             </div>
@@ -125,15 +160,17 @@
                 <div class="card" style="width:470px;height:220px">
                   <div id="box_1">
                     <p class="content_2">Example input</p>
-                    <p id="box_2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                        nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                    <p id="box_2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                        nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                    <p id="box_2"><?php echo $exp_out; ?></p>
                   </div>
                 </div>
             </div>
         </div><br><br><br>
-        
+        <?php
+                        }
+                    }
+                }
+            ?>
+
         <div class="card" id="content_3">
             <p class="sub_2" id="box_1"><b>Deadline Countdown</b></p>
             <p class="val_1"><b>72 : 35 : 04</b></p>
@@ -154,33 +191,42 @@
             <span class="bot2">Newest first</span>&emsp;
             <span class="sub_2"><b>Solved</b></span>
             <img src="img/up.png" height="20px" width="20px"></p><br><br>
-
+            <div>
+            <?php
+            $sql2="select * from querry ";
+            $res2=mysqli_query($conn,$sql2);
+            if($res2 == TRUE)
+            {
+                $count=mysqli_num_rows($res2);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res2))
+                    {
+                        $Question=$rows['Question'];
+                        $resp_name=$rows['resp_name'];
+                        $resp_img=$rows['resp_img'];
+                        $resp_ans=$rows['resp_ans'];
+                        $resp_time=$rows['resp_time'];
+                        $ques_time=$rows['ques_time'];
+                        $resp_date=$rows['resp_date'];
+                        $ques_date=$rows['resp_date'];
+                 ?>
             <p class="bot3"><b>Query topic</b>
-            <span class="content_2" style="margin-left:570px">24, Jul 2020&emsp; 9:00PM</span></p>
-            <p id="box_2" style="margin-left:40px;margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-                accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+            <span class="content_2" style="margin-left:570px"><?php echo $ques_date; ?>&emsp; <?php echo $ques_time; ?></span></p>
+            <p id="box_2" style="margin-left:40px;margin-right:40px"><?php echo $Question; ?></p>
             <p class="content_2" style="margin-left:40px">Response:</p>
-            <p style="margin-left:40px" ><img src="img/Ellipse 148.png" height="50px" width="50px"> &nbsp;<span class="bot4"><b>Responder name</b></span>
-            <span class="content_2" style="margin-left:500px">24, Jul 2020&emsp; 9:00PM</span></p>
-            <p id="box_2" style="margin-left:40px;margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-                accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+            <p style="margin-left:40px" ><?php echo '<img src="data:image;base64,'.base64_encode($resp_img).' "  style="width: 55px; height: 55px;" >' ;   ?>
+                 &nbsp;<span class="bot4"><b><?php echo $resp_name; ?></b></span>
+            <span class="content_2" style="margin-left:450px"><?php echo $resp_date; ?>&emsp; <?php echo $resp_time; ?></span></p>
+            <p id="box_2" style="margin-left:40px;margin-right:40px"><?php echo $resp_ans; ?></p>
             <p class="bot5">Reply<img src="img/reply.png" height="20px" width="20px"></p>
             <hr style="margin-left:40px;margin-right:30px"></hr>
-
-            <p class="bot3"><b>Query topic</b>
-            <span class="content_2" style="margin-left:570px">24, Jul 2020&emsp; 9:00PM</span></p>
-            <p id="box_2" style="margin-left:40px;margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-                accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-            <p class="content_2" style="margin-left:40px">Response:</p>
-            <p style="margin-left:40px" ><img src="img/Profile1.png" height="50px" width="50px"> &nbsp;<span class="bot4"><b>Responder name</b></span>
-            <span class="content_2" style="margin-left:500px">24, Jul 2020&emsp; 9:00PM</span></p>
-            <p id="box_2" style="margin-left:40px;margin-right:40px">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-                accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-            <p class="bot5">Reply<img src="img/reply.png" height="20px" width="20px"></p>
+            </div>
+            <?php
+                        }
+                    }
+                }
+            ?>
 
         </div>
         <br><br><Br>
@@ -192,24 +238,24 @@
        $(document).ready(() => {
                 $("#submittask").click(() => {
                     $("#upload-modal").show();
-                });   
+                });
 
                 $("#closeit").click(() => {
                     $("#upload-modal").hide();
-                });   
+                });
 
                  $("#myBtn1").click(() => {
                     $("#successcard").show();
                     $("#upload-modal").hide();
-                });  
+                });
 
                  $("#btnfinish").click(() => {
                     $("#successcard").hide();
                     $("#upload-modal").hide();
-                });        
-                
+                });
+
           });
-      
+
     </script>
 </body>
 </html>

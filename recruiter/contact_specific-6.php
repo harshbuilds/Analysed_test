@@ -1,20 +1,70 @@
 <?php include('header.php') ?>
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analyse');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
+<?php
+$flag=0;
+if(isset($_POST['btnsearch']))
+{
+   $textsearch=$_POST['textsearch'];
+   $sql3="SELECT * FROM `notes` WHERE type='$textsearch'";
+   $flag=1;
+}
+
+?>
+<?php
+    $c_id=1004;
+    $sql="select * from client where client_id='$c_id'";
+    $res=mysqli_query($conn,$sql);
+    if($res == TRUE)
+    {
+        $count=mysqli_num_rows($res);
+        if($count >0)
+        {
+            while($rows=mysqli_fetch_assoc($res))
+            {
+                $name=$rows['name'];
+                $company_name=$rows['company_name'];
+                $client_img=$rows['client_img'];
+                $role=$rows['role'];
+                $main_email=$rows['main_email'];
+                $contact_no=$rows['contact_no'];
+                $added_on=$rows['added_on'];
+                $city=$rows['city'];
+                $state=$rows['state'];
+                $country=$rows['country'];
+                $status=$rows['status'];
+                $division=$rows['division'];
+                $internal=$rows['internal'];
+                $created_by=$rows['created_by'];
+                $created_email=$rows['created_email'];
+                $created_no=$rows['created_no'];
+
+            }
+        }
+    }
+?>
+
 <title>Contact specific</title>
 <link rel="stylesheet" href="./css/contact_specific-6.css">
 
 <body>
     <div class="container">
         <div class="small_container">
-            <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link">Justin Soto</a>
+        <div class="bread-crumbs_Mytools-recruiter">
+                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $name ?></a>
             </div>
 
             <div class="profile-img">
-                <img src="img/Ellipse -10@2x.png"  alt="">
-                <h1>Justin Soto<p1> #JB13069</p1></h1><br>
-                <h2>Fox Hunt - <span>HR</span></h2><br>
+                <?php echo '<img src="data:image;base64,'.base64_encode($client_img).' " >' ;   ?>
+                <h1><?php echo  $name ?><p1> #<?php echo  $c_id ?></p1></h1><br>
+                <h2><?php echo  $company_name ?> - <span><?php echo  $role ?></span></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> London</h4>
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
             <div class="button">
                 <button>Edit client</button>
@@ -27,25 +77,25 @@
                 <p><a href="contact_specific-5.php">Jobs</a></p>
                 <p><a href="contact_specific-4.php">Files</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Notes</p>
-                
+
             </div>
 
             <div class="status">
-                <div class="status1" >
-                    <p>#JB13069</p>
-                    <span>05-05-2021</span>
+            <div class="status1" >
+                    <p>#<?php echo  $c_id ?></p>
+                    <span><?php echo  $added_on ?></span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;">Justin soto</span>
-                    <p style="color:#3598DB;margin-left:70px">Fox Hunt <span style="color:black">| HR</span></p>
+                    <span style="margin-left:50px;"><?php echo  $name ?></span>
+                    <p style="color:#3598DB;margin-left:70px"><?php echo  $company_name ?> <span style="color:black">| <?php echo  $role ?></span></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
                     <span style="color:#979797; font-size:15px; margin-left:20px;">Status&emsp;&emsp;&emsp;&emsp;Last Contact</span>
                     <br>
                 </div>
 
-                <div class="displayname"> 
-                    <span>Live</span>&emsp;&emsp;&emsp;&emsp;&emsp;20-05-2020
+                <div class="displayname">
+                    <span><?php echo  $status ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $added_on ?>
                 </div>
                 <br><br>
 
@@ -54,35 +104,38 @@
                 </div>
 
                 <div class="fee-percent">
-                    <span>Other</span>&emsp;&emsp;&emsp;&emsp;&emsp;System verified
+                    <span><?php echo  $division ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $internal ?>
                 </div>
                 <br><br>
 
                 <div class="details">
                     <p style="color:#979797;padding-top: 0px;">Created by</p>
                     <br>
-                    <p style="color:#3598DB;">Curtis kelly</p>
-                    <p style="color:black;">abc@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo  $created_by ?></p>
+                    <p style="color:black;"><?php echo  $created_email ?></p>
+                    <p style="color:black;">+91 <?php echo  $created_no ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Contact info</p>
                     <br>
-                    <p style="color:#3598DB;">Emailid@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;"><?php echo  $main_email ?></p>
+                    <p style="color:black;">+91 <?php echo  $contact_no ?></p>
+                    <p style="color:black;">+91 <?php echo  $contact_no ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Address</p>
                     <br>
-                    <p style="color:black">Address line 1</p>
-                    <p style="color:black;">  City-12345</p>
-                    <p style="color: black;">State,Country.</p>
+                    <p style="color:black"><?php echo  $city ?></p>
+                    <p style="color: black;"><?php echo  $state ?> , <?php echo  $country ?>.</p>
                     <br><br>
                 </div>
             </div>
 
             <div class="left-side-container-1">
                                     <span class="row-recruiter upcoming_interview_top_span">
-                        <div class="search-box">
+
+                      <form method="post">
+                      <div class="search-box">
+
+
                         <details id="dropdown" class="dropdown">
                             <summary class="dropdown-button">
                                 <span id="selected-item" class="selected-item"> <i class="fa fa-pencil" aria-hidden="true"></i> Author</span>
@@ -108,11 +161,15 @@
                                 </div>
                             </details-menu>
                         </details>
-                        <input class="search-form-input" type="search" name="search" placeholder="Search for appointment">
-                        <button class="searchButton">
+
+                        <input class="search-form-input" type="search" name="textsearch" placeholder="Search for type">
+                        <button type="submit" name="btnsearch" class="searchButton">
                             <img src="./img/search-icon-blue.png" />
                         </button>
+
+
                     </div>
+                    </form>
                     <button class="btn" id="myBtn" type="button">Add +</button>
                 </span>
                 <div class="row-flex-jobj justifycontent-flex-end-1">
@@ -143,29 +200,55 @@
                     </select>
                 </div>
 
+                <?php
+
+                if($flag == 0)
+                {
+                  $sql3="select * from notes";
+                }
+            $res=mysqli_query($conn,$sql3);
+            if($res == TRUE)
+            {
+                $count=mysqli_num_rows($res);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                        $n_id=$rows['n_id'];
+                        $last_updated=$rows['last_updated'];
+                        $added_on=$rows['added_on'];
+                        $added_by=$rows['added_by'];
+                        $img=$rows['img'];
+                        $type=$rows['type'];
+                        $time=$rows['time'];
+                        $content=$rows['content'];
+
+
+                 ?>
                 <div class="row">
-                <div class="column">
+
+                    <div class="column">
                         <input type="checkbox" id="c1" class="checkbox">
                         <label for="c1"></label>
                     </div>
                     <div class="column">
                         <p class="col-1">Last Updated</p>
-                        <span class="col-span-1">05-05-2020</span>
+                        <span class="col-span-1"><?php echo $last_updated; ?></span>
                     </div>
                     <div class="column">
                         <img src="./img/Ellipse -5.png" class="img">
                     </div>
                     <div class="column">
                         <p class="col-2">Uploaded by</p>
-                        <span class="col-span-2">Sasuke Uchiha</span>
+                        <span class="col-span-2"><?php echo $added_by; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-3">Type</p>
-                        <span class="col-span-3">Resume evaluation</span>
+                        <span class="col-span-3"><?php echo $type; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-4">Time spent</p>
-                        <span class="col-span-4">30min</span>
+                        <span class="col-span-4"><?php echo $time; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-5">Edit <i class="fa fa-pencil" aria-hidden="true"></i></p>
@@ -176,95 +259,17 @@
 
                     <div class="column" style="margin-top:80px;margin-left: -838px;">
                         <p class="col-1">Added on</p>
-                        <span class="col-span-1">05-05-2020</span>
+                        <span class="col-span-1"><?php echo $added_on; ?></span>
                     </div>
                     <div class="column" style="margin-top:-5px;margin-left: 200px;padding-right: 10px;">
-                        <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.</p>
+                        <p style="font-size: 16px;"><?php echo $content; ?></p>
                     </div>
                 </div>
-
-
-                <div class="row">
-
-                    <div class="column">
-                        <input type="checkbox" id="c1" class="checkbox">
-                        <label for="c1"></label>
-                    </div>
-                    <div class="column">
-                        <p class="col-1">Last Updated</p>
-                        <span class="col-span-1">05-05-2020</span>
-                    </div>
-                    <div class="column">
-                        <img src="./img/Ellipse -5.png" class="img">
-                    </div>
-                    <div class="column">
-                        <p class="col-2">Uploaded by</p>
-                        <span class="col-span-2">Sasuke Uchiha</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-3">Type</p>
-                        <span class="col-span-3">Resume evaluation</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-4">Time spent</p>
-                        <span class="col-span-4">30min</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-5">Edit <i class="fa fa-pencil" aria-hidden="true"></i></p>
-                    </div>
-                    <div class="column">
-                        <p class="col-6">Delete <i class="fa fa-trash" aria-hidden="true"></i></p>
-                    </div>
-
-                    <div class="column" style="margin-top:80px;margin-left: -838px;">
-                        <p class="col-1">Added on</p>
-                        <span class="col-span-1">05-05-2020</span>
-                    </div>
-                    <div class="column" style="margin-top:-5px;margin-left: 200px;padding-right: 10px;">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="column">
-                        <input type="checkbox" id="c1" class="checkbox">
-                        <label for="c1"></label>
-                    </div>
-                    <div class="column">
-                        <p class="col-1">Last Updated</p>
-                        <span class="col-span-1">05-05-2020</span>
-                    </div>
-                    <div class="column">
-                        <img src="./img/Ellipse -5.png" class="img">
-                    </div>
-                    <div class="column">
-                        <p class="col-2">Uploaded by</p>
-                        <span class="col-span-2">Sasuke Uchiha</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-3">Type</p>
-                        <span class="col-span-3">Resume evaluation</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-4">Time spent</p>
-                        <span class="col-span-4">30min</span>
-                    </div>
-                    <div class="column">
-                        <p class="col-5">Edit <i class="fa fa-pencil" aria-hidden="true"></i></p>
-                    </div>
-                    <div class="column">
-                        <p class="col-6">Delete <i class="fa fa-trash" aria-hidden="true"></i></p>
-                    </div>
-
-                    <div class="column" style="margin-top:80px;margin-left: -838px;">
-                        <p class="col-1">Added on</p>
-                        <span class="col-span-1">05-05-2020</span>
-                    </div>
-                    <div class="column" style="margin-top:-5px;margin-left: 200px;padding-right: 10px;">
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.</p>
-                    </div>
-                </div>
+                <?php
+                        }
+                    }
+                }
+            ?>
 
 
             </div>

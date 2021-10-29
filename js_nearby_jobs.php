@@ -40,12 +40,12 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
     <br>
     <div class="bread-crumbs_Mytools-recruiter">
      <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
-     <a href="" class="active-breadcrumb-link"><u> Shortlisted_Jobs </u></a>
+     <a href="" class="active-breadcrumb-link"><u> Nearby_Jobs </u></a>
     </div>
     <br><br>
     <div class="main_body">
        <div class="container">
-        <p class="a1">Shortlisted jobs <img src="img/List icon.svg" height="47px" width="47px"></p>
+         <p class="a1">Nearby Jobs <img src="./img/js_near1.png" height="40" weight="40"></p>
          <div class="row">
             <div class="col-2">
                     <label id="b1" >Sort by:&emsp;<a href="/" class="active-breadcrumb-link">Recent</a> </label>
@@ -93,7 +93,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
 
               $skill='%'.$skill.'%';
 
-              $sql3="SELECT * FROM `shortlisted_jobs` WHERE (state ='$mystate') AND (district $exclamloc='$location') AND (package BETWEEN $minsal AND $maxsal) AND (industry $exclamindus= '$chooseindustry') AND (job_type='$jobtype') AND (skills LIKE '$skill')";
+              $sql3="SELECT * FROM `joblistings` WHERE (state ='$mystate') AND (district $exclamloc='$location') AND (package BETWEEN $minsal AND $maxsal) AND (industry $exclamindus= '$chooseindustry') AND (job_type='$jobtype') AND (skills LIKE '$skill')";
                   //echo $sql3;
               $res3=mysqli_query($conn,$sql3);
               if($res3 == TRUE)
@@ -150,11 +150,13 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                 <div class="skills" style="margin-left:20px;">
                     <p style="font-size:13px;line-height:2px ;"> <i><?php echo $skills; ?></i></p>
                 </div>
-
+                <div style="margin-left:20px;">
+                    <p style="font-size:13px ;color :#0F9D58"><img src="./img/locat-icon.png" height="11" weight="15"> <?php echo $district; ?>,<?php echo $state; ?>,<?php echo $country; ?></p>
+                </div>
                 <br>
                 <div class="last_job_content" style="margin-left:20px;">
                     <p id="first"><?php echo $job_type; ?></p>
-                    <a href="jobDescription.php?id=<?php echo $jobid; ?>" id="second">See more</a>
+                    <a href="jobDescription.php?id=<?php echo $jobid; ?>" id="second">Apply Now</a>
                 </div>
               </div>
             </div>
@@ -173,7 +175,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
           <div class="row">
             <?php
               $mystate=$_GET['mystate'];
-              $sql="select * from shortlisted_jobs where state='$mystate'";
+              $sql="select * from joblistings where state='$mystate'";
               $res=mysqli_query($conn,$sql);
               if($res == TRUE)
               {
@@ -201,8 +203,6 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                       $start_date2 = strtotime($start_date);
                       $datediff2 =  $your_date - $start_date2;
 
-
-
                       $actual_days=round($datediff2 / (60 * 60 * 24));
                       $district=$rows['district'];
             ?>
@@ -216,8 +216,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                 </div>
                 <div class="row" style="margin-left:10px;">
                     <div class="col-3">
-                      <!-- <img src="img/Airbnb-logo.png" height="55" width="55"/> -->
-                      <?php echo '<img src="data:image;base64,'.base64_encode($workspace_view).' "  style="width: 50px; height: 50px;" >' ;   ?>
+                  <?php echo '<img src="data:image;base64,'.base64_encode($workspace_view).' "  style="width: 50px; height: 50px;" >' ;   ?>
                     </div>
                     <div class="col-9">
                     <br><span style="line-height:1 ;" id="b4"><?php echo $client_company; ?></span><br>
@@ -234,19 +233,24 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                 <div class="skills" style="margin-left:20px;">
                     <p style="font-size:13px;line-height:2px ;"> <i><?php echo $skills; ?></i></p>
                 </div>
-
+                <div style="margin-left:20px;">
+                    <p style="font-size:13px ;color :#0F9D58"><img src="./img/locat-icon.png" height="11" weight="15"> <?php echo $district; ?>,<?php echo $state; ?>,<?php echo $country; ?></p>
+                </div>
                 <br>
                 <div class="last_job_content" style="margin-left:20px;">
                     <p id="first"><?php echo $job_type; ?></p>
-                    <a href="jobDescription.php?id=<?php echo $jobid; ?>" id="second">See more</a>
+                    <a href="jobDescription.php?id=<?php echo $jobid; ?>" id="second">Apply Now</a>
                 </div>
               </div>
+
             </div>
             <?php
                   }
                 }
               }
+
             ?>
+
           </div>
           <?php
             }
@@ -303,6 +307,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
           </form>
         </div>
       </div>
+
      </div>
 
     </div>
