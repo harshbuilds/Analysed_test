@@ -1,4 +1,4 @@
-<?php include ('header.php')?>
+<?php include ('header1.php')?>
 <link rel="stylesheet" href="./css/myMessages.css">
 <title>Messages</title>
 <div class="container">
@@ -56,7 +56,7 @@
             <div class="right-side-myMessages">
                 <div class="tabsForMyMessages-right-side">
                     <span class="status-tabsFromMyMessages active">Status</span>
-                    <span class="status-tabsFromMyMessages ">Description</span>
+                    <a href="myMessages_1.php"><span class="status-tabsFromMyMessages ">Description</span></a>
                 </div>
                 <div class="main-content-right-side-myMessages">
                 <section class="status-right-side-myMessages">

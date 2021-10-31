@@ -1,20 +1,20 @@
 <?php
 	session_start();
 
-	$db = mysqli_connect('localhost', 'root', '', 'virtualanalyse');
+	$db = mysqli_connect('localhost', 'root', '', 'analysed');
 
 if(isset($_POST['submit']))
 {
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $run_query=mysqli_query($db,"SELECT * FROM recruiters WHERE email='$email'AND password='$password'");
+    $run_query=mysqli_query($db,"SELECT * FROM recruiter WHERE email='$email'AND password='$password'");
 
     if(mysqli_num_rows($run_query))
     {
-       $_SESSION['firstname']=$firstname;
-      $_SESSION['rec_id']=$rec_id;
+      $_SESSION['firstname']=$firstname;
+      $_SESSION['recruiter_id']=$recruiter_id;
       $_SESSION['email']=$email;
-        echo "<script>window.open('/Analysed-test/recruiter/dashboard.php','_self')</script>";
+        echo "<script>window.open('./../../recruiter/dashboard.php','_self')</script>";
     }
     else
     {

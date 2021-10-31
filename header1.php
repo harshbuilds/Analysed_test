@@ -8,62 +8,62 @@
       <ul class="sidebar_main-list">
         <li class="sidebar_main-listItems">
           <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Menu.png" class="menuForSidebar"/>
+            <img src="./recruiter/img/Menu.png" class="menuForSidebar"/>
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/nav-ele-1.png" />
+          <a href="recruiter/dashboard.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/nav-ele-1.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 72.png" />
+          <a href="recruiter/aboutOrganization.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 72.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Icon awesome-tools.png" />
-          </a>
-        </li>
-        <!-- <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Path 3377.png" />
-          </a>
-        </li> -->
-        <!-- <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 2964.png" />
-          </a>
-        </li> -->
-        <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Path 284-2.png" />
+          <a href="recruiter/yourTools.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Icon awesome-tools.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 75.png" />
+          <a href="recruiter/addClient.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Path 3377.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 139.png" />
+          <a href="addCandidate.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 2964.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 136.png" />
+          <a href="recruiter/createTasks.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Path 284-2.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 138.png" />
+          <a href="schedule.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 75.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
-            <img src="./img/Group 137.png" />
+          <a href="recruiter/settings.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 139.png" />
+          </a>
+        </li>
+        <li class="sidebar_main-listItems">
+          <a href="recruiter/addClient.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 136.png" />
+          </a>
+        </li>
+        <li class="sidebar_main-listItems">
+          <a href="recruiter/complaint_tickets.php" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 138.png" />
+          </a>
+        </li>
+        <li class="sidebar_main-listItems">
+          <a href="" class="sidebar_main-listlinks">
+            <img src="./recruiter/img/Group 137.png" />
           </a>
         </li>
       </ul>

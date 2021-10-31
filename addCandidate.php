@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('header1.php')?>
 <link rel="stylesheet" href="./css/addCandidate.css" />
 <div class="container">
     <div class="addcan_breadcrumb_container">
@@ -60,7 +60,7 @@
                         <select>
                         <br>
                         <br>
-                        <button class="addcan_button">Proceed to add details of new candidate</button>
+                        <a href="addCandidates1.php"><button class="addcan_button">Proceed to add details of new candidate</button></a>
                     <div>
                 </div>
             </div>
