@@ -24,8 +24,8 @@
             </div>
             <div class="row-recruiter quickaccess-links-container">
                 <a href="../schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
-                <a href="../myMessages.php" class="quickaccess-links-recruiter">My Mails <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="../myfiles.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
+                <a href="../mails.php" class="quickaccess-links-recruiter">My Mails <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                <a href="../my_files.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
                 <a href="../myTasksNew.php" class="quickaccess-links-recruiter">My Tasks <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
             <div class="main-dashboard-container-recruiter">
@@ -33,10 +33,10 @@
                     <h1 class="mainHeadingDash">Dashboard</h1>
                     <p class="mainParaDash">Welcome back 
                                         	<?php
-                                            //$sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
-                                        	//$result_1 = mysqli_query($db,$sql);
-                                            //while ($row = mysqli_fetch_array($result_1)) {
-                                                //echo $row['firstname'];}
+                                            $sql="SELECT firstname FROM recruiter where email= '" . $_SESSION['email'] . "'";
+                                        	$result_1 = mysqli_query($db,$sql);
+                                            while ($row = mysqli_fetch_array($result_1)) {
+                                                echo $row['firstname'];}
                                         
                                         	 ?>!</p>
                 </div>

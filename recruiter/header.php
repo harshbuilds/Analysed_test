@@ -12,57 +12,57 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="dashboard.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-1.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="aboutOrganization.php" class="sidebar_main-listlinks">
             <img src="./img/Group 72.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="yourTools.php" class="sidebar_main-listlinks">
             <img src="./img/Icon awesome-tools.png" />
           </a>
         </li>
-        <!-- <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+        <li class="sidebar_main-listItems">
+          <a href="addClient.php" class="sidebar_main-listlinks">
             <img src="./img/Path 3377.png" />
           </a>
-        </li> -->
-        <!-- <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+        </li>
+        <li class="sidebar_main-listItems">
+          <a href="../addCandidate.php" class="sidebar_main-listlinks">
             <img src="./img/Group 2964.png" />
           </a>
-        </li> -->
+        </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="createTasks.php" class="sidebar_main-listlinks">
             <img src="./img/Path 284-2.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="../schedule.php" class="sidebar_main-listlinks">
             <img src="./img/Group 75.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="settings.php" class="sidebar_main-listlinks">
             <img src="./img/Group 139.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="addContact.php" class="sidebar_main-listlinks">
             <img src="./img/Group 136.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="complaint_tickets.php" class="sidebar_main-listlinks">
             <img src="./img/Group 138.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="" class="sidebar_main-listlinks">
             <img src="./img/Group 137.png" />
           </a>
         </li>

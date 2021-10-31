@@ -1,10 +1,10 @@
 <?php
-//session_start();
-//if (!isset($_SESSION['email']))  
-  //{  
+session_start();
+if (!isset($_SESSION['email']))  
+  {  
     
-      //header("Location:/Analysed-test/signup/recruiter/Recruiter login.php");
-  //} ?>
+      header("Location:/Analysed-test/signup/recruiter/Recruiter login.php");
+  } ?>
    <?php 
        include('db.php'); ?>
 <link rel="stylesheet" href="./css/header.css">
@@ -41,7 +41,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="addCandidate.php" class="sidebar_main-listlinks">
+          <a href="../addCandidate.php" class="sidebar_main-listlinks">
             <img src="./img/Group 2964.png" />
           </a>
         </li>
@@ -51,7 +51,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="scheduleMeeting.php" class="sidebar_main-listlinks">
+          <a href="../schedule.php" class="sidebar_main-listlinks">
             <img src="./img/Group 75.png" />
           </a>
         </li>
@@ -61,7 +61,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="addClient.php" class="sidebar_main-listlinks">
+          <a href="addContact.php" class="sidebar_main-listlinks">
             <img src="./img/Group 136.png" />
           </a>
         </li>
@@ -71,7 +71,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="contact.php" class="sidebar_main-listlinks">
+          <a href="" class="sidebar_main-listlinks">
             <img src="./img/Group 137.png" />
           </a>
         </li>
@@ -150,7 +150,7 @@
                         <span>
                             <ul>
                                 <li>
-                                    <a href="profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
+                                    <a href="../profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
                                 </li>
                                 <li>
                                     <a href="#" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
@@ -160,10 +160,11 @@
                     </div>
                     <img src="./img/Ellipse 234.png" alt="" srcset="" class="profile_picture_profileSection-dashboard-recruiter">
                     <h3 class="heading_name_profileSection-dashboard_recruiter"><?php
-                                            //$sql="SELECT firstname FROM recruiters where email= '" . $_SESSION['email'] . "'";
-                                        	//$result_1 = mysqli_query($db,$sql);
-                                            //while ($row = mysqli_fetch_array($result_1)) {
-                                                //echo $row['firstname'];}
+                                            $sql="SELECT firstname FROM recruiter where email= '" . $_SESSION['email'] . "'";
+											
+                                        	$result_1 = mysqli_query($db,$sql);
+                                            while ($row = mysqli_fetch_array($result_1)) {
+                                                echo $row['firstname'];}
                                         
                                         	 ?></h3>
                     <p class="aboutOrganisation_profileSection-dashboard_recruiter">
@@ -173,7 +174,7 @@
                 <div class="messagesSection-container-dashboard_recruiter">
                     <div class="row-recruiter" style="justify-content: space-between;">
                         <p style="font-size: 18px;color:#333333;font-weight:bold">Messages</p>
-                        <a href="#"><img src="./img/Path 469.png" alt="" srcset=""></a>
+                        <a href="../myMessages.php"><img src="./img/Path 469.png" alt="" srcset=""></a>
                     </div>
                     <div class="row-recruiter messages-item">
                         <img src="./img/Ellipse -1.png" alt="">

@@ -3,7 +3,7 @@
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "";
-$dbName = "analysed";
+$dbName = "virtual_analysed";
 
 $conn = mysqli_connect($dbHost,$dbUser,$dbPass,$dbName);
 

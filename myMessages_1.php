@@ -1,4 +1,4 @@
-<?php include ('header.php')?>
+<?php include ('header1.php')?>
 <link rel="stylesheet" href="./css/myMessages.css">
 <link rel="stylesheet" href="./css/myMessages_1.css">
 <title>Messages</title>
