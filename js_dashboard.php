@@ -32,7 +32,7 @@
 <title>Dashboard</title>
 <link rel="stylesheet" href="css/js_dashboard.css">
 <body>
-    
+
     <div class="main_body">
         <br><br><br>
         <!-- Heading -->
@@ -75,7 +75,7 @@
             </div>
             <div class="col-3">
                 <div class="card" id="c1">
-                    <a href="js_shortlisted_jobs.php">
+                    <a href="shortlistedjobs.php">
                     <div class="row" id="val1">
                         <div class="col-8">
                             <p class="headingCards">Shortlisted</p>
@@ -116,7 +116,7 @@
                         Langley<br></span>
                     </p>
                     <a href="jobsNearYou.php"><img src="./img/map.png" alt="" class="mapForJobsImage"/></a>
-                    
+
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Job title</span>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:250px">Jobs available</span>
@@ -154,7 +154,7 @@
         <p class="head_1"><br>Recommended for you</p>
             <div id="temp">
                 <div class="card" style="height:300px;width:280px" id="temp2">
-                    <a href="js_job_description.php">
+                    <a href="jobsDescription.php">
                     <div class="icons">
                         <img src="img/share-icon.png" height="23" width="25">&emsp;
                         <img src="img/star-icon.png" height="23" width="25">
@@ -178,7 +178,7 @@
                     </div>
                     <div class="last_job_content" style="margin-left:20px;">
                         <p id="first"><br>Full Time</p><br>
-                        <a href="js_job_description.php" id="second">Apply Now</a>
+                        <a href="jobsDescription.php" id="second">Apply Now</a>
                     </div></a>
                 </div>
 
@@ -239,18 +239,18 @@
                 </div>
 
                 <div id="temp3">
-                    <a href="js_more_jobs.php">
+                    <a href="js_more_job.php">
                     <p class="more_v">View more > </p></a>
                 </div>
             </div>
 
-        
+
             <!-- line 4 -->
         <p class="head_1"><br>Search for specific job</p>
         <div class="row">
             <div class="col mx-1">
                 <p class="s1" id="k1"> <img src="img/DataAnalysis.png" height="100px" width="120px" style="margin-top:41px" ><br><br><br> <span class="o1">Data Analysis</span></p>
-                
+
             </div>
             <div class="col mx-1">
                 <p class="s1" id="k2"> <img src="img/Seo.png" height="100px" width="120px" style="margin-top:41px" ><br><br><br> <span class="o1">SEO</span> </p>
@@ -270,9 +270,9 @@
         <!-- line 5 -->
         <br><br><br>
         <div class="card" id="li_5">
-            <span class="leftText">&emsp;Upcoming Interviews<a href="js_schedule.php"><button class="addFilesMyTasks1"> Schedule an interview + </button></a><br><br>
+            <span class="leftText">&emsp;Upcoming Interviews<a href="schedule.php"><button class="addFilesMyTasks1"> Schedule an interview + </button></a><br><br>
             </span>
-            <p class="s4" > 
+            <p class="s4" >
                 <span class="last_t1" >NAME</span>
                 <span class="last_t2">DATE</span>
                 <span class="last_t3">JOB ROLE</span>
