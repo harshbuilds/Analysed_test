@@ -1,5 +1,4 @@
-
-    <title>Dashboard</title>
+<title>Dashboard</title>
     <link rel="stylesheet" href="./css/applicationStatus.css">
   <body>
     <?php include('header.php') ?>
