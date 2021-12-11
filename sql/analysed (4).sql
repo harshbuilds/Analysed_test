@@ -2022,7 +2022,6 @@ INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_refere
 (26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21');
 
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `recruiter`
 --
@@ -2032,8 +2031,7 @@ CREATE TABLE `recruiter` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `country_code` int(3) NOT NULL,
-  `number` bigint(10) NOT NULL,
+  `number` varchar(10) NOT NULL,
   `address` varchar(200) NOT NULL,
   `company_name` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
@@ -2042,16 +2040,18 @@ CREATE TABLE `recruiter` (
   `off_address` varchar(200) NOT NULL,
   `password` varchar(50) NOT NULL,
   `confirmpassword` varchar(50) NOT NULL,
-  `rec_img` longblob NOT NULL
+  `rec_img` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recruiter`
 --
 
-INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `country_code`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `rec_img`) VALUES
-(1, 'Karen Doe', 'S', 'abcd@gmail.com', 91, 9898876767, 'New Street', 'Fox Hunt', '', 'Information Technology', 'abc123@gmail.com', '', '', '', ''),
-(2, 'Joe Daisy', 'S', 'abc@gmail.com', 91, 9898876767, 'New Street', '', '', '', '', '', '', '', '');
+INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `rec_img`) VALUES
+(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', NULL),
+(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', NULL),
+(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', NULL);
+
 
 -- --------------------------------------------------------
 
