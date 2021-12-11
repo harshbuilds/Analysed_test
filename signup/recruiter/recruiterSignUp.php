@@ -398,7 +398,7 @@ else{
 
 if(isset($_POST["register"])){
     
-
+//variables
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
 $email=$_POST['email'];
