@@ -68,7 +68,7 @@ if(isset($_POST['login'])){
 $email=$_POST['email'];
 $password=$_POST['password'];
 
-//query for login
+//query for logging in
 $s="SELECT * FROM recruiter WHERE email='$email' && password='$password';";
 $result=mysqli_query($con,$s);
 $num=mysqli_num_rows($result);
