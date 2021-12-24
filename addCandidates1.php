@@ -1,21 +1,22 @@
+<!-- addCandidates1.php-->
 <?php
     session_start();
-    
+
     if(isset($_POST['next'])){
         foreach ($_POST as $key => $value)
         {
             $_SESSION['info'][$key] = $value;
         }
-     
+
         $keys = array_keys($_SESSION['info']);
-     
+
         if(in_array('next', $keys)){
             unset($_SESSION['info']['next']);
         }
 
         header("Location: addCandidates2.php");
-     } 
- 
+     }
+
 
 ?>
 <?php include('header1.php')?>
@@ -70,7 +71,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="container">
 <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
+        <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addCandidates1.php" class="active-breadcrumb-link">Add candidates</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -130,13 +131,13 @@
                                         <label for="default-input-for-no.1">Birth Date*</label>
                                         <input type="date" name="birthdate" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" required />
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1">
                                         <label for="default-select-for-no.3">Status</label>
                                             <select name="Industry" id="default-select-for-no.3" class="default-select-for-add-client-1">
                                                 <option value="0" default>select status</option>
                                                 <option value="Active">Active</option>
                                                 <option value="Inactive">Inactive</option>
-                                               
+
                                             </select>
                                     </p>
                                     <p class="input-para-add-client-ekam-1 ">
@@ -152,15 +153,15 @@
                                             <option value="Germany">Germany</option>
                                         </select>
                                     </p>
-                                    <p class="input-para-add-client-ekam-1  fx-city-name-1"> 
+                                    <p class="input-para-add-client-ekam-1  fx-city-name-1">
                                         <label for="default-select-for-no.13">City name</label>
                                         <input id="default-select-for-no.13" name="cityname" type="text" class="default-input-for-add-client-1" placeholder="Enter your city name">
                                     </p>
-                                    <p class="input-para-add-client-ekam-1  fx-city-name-1"> 
+                                    <p class="input-para-add-client-ekam-1  fx-city-name-1">
                                             <label for="default-select-for-no.13">Zipcode</label>
                                             <input id="default-select-for-no.13" name="Zipcode" type="text" class="default-input-for-add-client-1" placeholder="Enter zipcode of city">
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">State</label>
                                             <select name="State" id="default-select-for-no.6" class="default-select-for-add-client-1">
                                                 <option value="" default>select state</option>
@@ -186,7 +187,7 @@
 
 function fasterPreview( uploader ) {
     if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src', 
+          $('#profileImage').attr('src',
              window.URL.createObjectURL(uploader.files[0]) );
     }
 }
