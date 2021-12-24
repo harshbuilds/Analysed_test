@@ -1,3 +1,4 @@
+<!-- addCandidates2.php-->
 <?php
 
     session_start();
@@ -7,15 +8,15 @@
         {
             $_SESSION['info'][$key] = $value;
         }
-     
+
         $keys = array_keys($_SESSION['info']);
-     
+
         if(in_array('next', $keys)){
             unset($_SESSION['info']['next']);
         }
-     
+
         header("Location: addCandidates3.php");
-     } 
+     }
 
 ?>
 <?php include('header1.php')?>
@@ -24,7 +25,7 @@
 <title>Analysed</title>
 <div class="container">
 <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
+        <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addCandidates2.php" class="active-breadcrumb-link">Add candidates</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -65,7 +66,7 @@
                                             <option value="Permanent">Permanent</option>
                                         </select>
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1">
                                         <label for="default-select-for-no.3">Employment Preference*</label>
                                             <select name="employmentPreference" id="default-select-for-no.3" class="default-select-for-add-client-1" required />
                                                 <option value="0" default>Select employment preference</option>
@@ -74,7 +75,7 @@
                                                 <option value="Permanent">Permanent</option>
                                             </select>
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1">
                                         <label for="default-select-for-no.3">Source*</label>
                                             <select name="source" id="default-select-for-no.3" class="default-select-for-add-client-1" required />
                                                 <option value="0" default>Select source</option>
@@ -83,7 +84,7 @@
                                                 <option value="Indeed">Indeed</option>
                                             </select>
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1">
                                         <label for="default-select-for-no.3">Recruiter*</label>
                                             <select name="recruiter" id="default-select-for-no.3" class="default-select-for-add-client-1" required />
                                                 <option value="0" default>Select Recruiter</option>
@@ -107,7 +108,7 @@
                                 </div>
                                 <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
                         </div>
-                    </form>  
+                    </form>
                     </div>
                 </div>
     </div>
