@@ -8,14 +8,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <body>
 <br>
-    <div class="main_body">  
+    <div class="main_body">
         <div class="head_txt">
             My Contact
         </div>
 
         <div>
             <a href="/" class="sub_1">Create new contact and manage old ones</a>
-            <button class="addFilesMyTasks1" >Add + </button>
+            <a href="./recruiter/addClient.php"><button class="addFilesMyTasks1" >Add + </button></a>
         </div>
 
       <div class="container" style="margin-left:-2%;">
@@ -23,12 +23,12 @@
             <div class="col-7">
                 <div class="input-field" style="width:585px">
                 <img src="img/person.png" alt="" height="25px" width="25px" class="box_1"><span id="m1">Company&nbsp;</span>
-                <input type="text"  name="searchForJobs" id="inputSearch_12" class="searchForJobs" 
+                <input type="text"  name="searchForJobs" id="inputSearch_12" class="searchForJobs"
                     placeholder="| &emsp;&emsp;Search by name "
                 />
                 <button class="searchButton">
                     <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
-                </button>  
+                </button>
                 </div>
             </div>
             <div class="col-5">
@@ -68,7 +68,7 @@
                         <span style="font-size:14px;color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
                     </div>
                 </span>
-                                        
+
             </div>
 
             <div class="singletask_myTasks">
@@ -98,7 +98,7 @@
                         <span style="font-size:14px;color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
                     </div>
                 </span>
-                                        
+
             </div>
 
             <div class="singletask_myTasks">
@@ -128,7 +128,7 @@
                         <span style="font-size:14px;color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
                     </div>
                 </span>
-                                        
+
             </div>
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
@@ -157,12 +157,8 @@
                         <span style="font-size:14px;color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
                     </div>
                 </span>
-                                        
+
             </div>
         </div>
         <br><br>
-    </div> 
-
-
-
-
+    </div>
