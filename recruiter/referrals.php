@@ -64,6 +64,5 @@ function copy_password() {
     document.execCommand("Copy");
     textArea.remove();
     alert("Copied");
-}
-    
+}   
 </script>
