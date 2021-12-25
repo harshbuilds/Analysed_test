@@ -1,291 +1,203 @@
+<?php include('include/header.php')?>
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'analyse');
+if(isset($_POST['submit']))
+{
+   
+    $user_type=$_POST['user_type'];
+    $user_name=$_POST['user_name'];
+    $designation=$_POST['designation'];
+    $number=$_POST['number'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $notification=$_POST['notification'];
+    $user_access=$_POST['user'];  
+    $chk="";  
+    foreach($user_access as $chk1)  
+   {  
+      $chk .= $chk1.",";  
+   }
+   $sql=mysqli_query($con,"insert into user (user_type,user_name,designation,number,email,password,notification,user_access) values ('$user_type','$user_name','$designation','$number','$email','$password','$notification','$chk')");
+   echo '<script>alert("User Created Successfully!!")</script>';
+    }
+?>
 
-    <title>Dashboard</title>
-  <body>
-    <?php include('header.php') ?>
-    <div class="container">
-      <div class="small_container">
+<link rel="stylesheet" href="./css/create_custom_user.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<title>Analysed</title>
+
+<div class="container">
+    <div class="small_container">
         <div class="heading_dash">
-          <h1 class="mainHeadingDash">Dashboard</h1>
-          <p class="mainParaDash">Welcome back, John Doe!</p>
+            <h1 class="mainHeadingDash">Create User</h1>
+            <p class="mainParaDash" style="color:#3598DB;">Provide details and give user access controls.</p><br><br>
         </div>
-        <section class="cardsSection">
-          <div class="cardItemDash">
-            <section class="numberSection">
-              <p class="headingCards">Jobs Applied</p>
-              <h3 class="numberCards">1</h3>
-            </section>
-            <img src="./img/stats-img-1.png" alt="" class="cardImageDash" />
-          </div>
-          <div class="cardItemDash">
-            <section class="numberSection">
-              <p class="headingCards">Jobs Nearby</p>
-              <h3 class="numberCards">30</h3>
-            </section>
-            <img src="./img/stats-img-2.png" alt="" class="cardImageDash" />
-          </div>
-          <div class="cardItemDash">
-            <section class="numberSection">
-              <p class="headingCards">Shortlisted</p>
-              <h3 class="numberCards">10</h3>
-            </section>
-            <img src="./img/stats-img-3.png" alt="" class="cardImageDash" />
-          </div>
-          <div class="cardItemDash">
-            <section class="numberSection">
-              <p class="headingCards">Starred Jobs</p>
-              <h3 class="numberCards">2</h3>
-            </section>
-            <img src="./img/stats-img-4.png" alt="" class="cardImageDash" />
-          </div>
-        </section>
-        <section class="mapJobsSection">
-          <div class="mapJobsSingle">
-            <section class="headingForMapJobs">
-              <span class="leftText">Jobs near you</span>
-              <span class="rightText">
-                <img src="./img/setting-icon-blue.png" />
-                <span>Langley</span>
-              </span>
-            </section>
-            <img src="./img/map.png" alt="" class="mapForJobsImage"/>
-            <ul class="jobTitleList">
-              <li class="jobTitleListItem active">
-                <span>Job title</span>
-                <span>Jobs Available</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>Mern Stack Developer</span>
-                <span>506</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>Mean Stack Developer</span>
-                <span>114</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>Django Developer</span>
-                <span>506</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>React Developer</span>
-                <span>506</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mapJobsSingle">
-            <section class="headingForMapJobs">
-              <span class="leftText">Profile viewed</span>
-              <span class="rightText">
-                <img src="./img/setting-icon-blue.png" />
-                <span>Last 30 Days</span>
-              </span>
-            </section>
-            <span class="totalViews">Total Views: 136</span>
-            <img src="./img/graph.png" alt="" class="mapForJobsImage"/>
-            <ul class="jobTitleList">
-              <li class="jobTitleListItem active">
-                <span>Skills</span>
-                <span>No. of Company</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>Python</span>
-                <span>506</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>Design Xd</span>
-                <span>114</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>HTML & CSS</span>
-                <span>506</span>
-              </li>
-              <li class="jobTitleListItem">
-                <span>React Developer</span>
-                <span>506</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="recommendedForYou">
-          <h4 class="heading_main_dash">Recommended for you</h4>
+        <form method="post" id="form1" enctype="multipart/form-data">
+        <div class="row-recruiter container-for-add-client-main" style="margin-top: -50px;">
+            <div class="right-side-row-for-add-client-container-1" id="general-information-addclient-1">
+                <div class="row-recruiter sub-divs-image-box-right-side-add-client">
+                    <div class="row-recruiter"style="padding-top:40px">
+                        <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Personal details</h2>
+                    </div>
+                </div>
+                <div class="row-recruiter inputs-for-add-client-below-image-box">
+                    <div class="right-side-image-box-right-add-client-1">
+                                <div class="row-recruiter sub-divs-image-box-right-side-add-client" style="display:flex;">
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1">
+                                        <label for="usertype">User Type <span style="color:#3598DB;">*</span></label>
+                                        <select name="user_type" id="user_type" class="default-select-for-add-client-1" style="color:grey;">
+                                                <option value="0" default>Select User type</option>
+                                                <option value="Recruiter">Recruiter</option>
+                                                <option value="Job seeker">Job seeker</option>
+                                                <option value="client">Client</option>
+                                            </select>
+                                    </p>
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1">
+                                        <label for="user_name">Name <span style="color:#3598DB;">*</span></label>
+                                        <input type="text" name="user_name" class="default-input-for-add-client-1" placeholder="Enter name of the user" id="user_name">
+                                    </p>
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1">
+                                        <label for="designation">Designation <span style="color:#3598DB;">*</span></label>
+                                        <input type="text" name="designation" class="default-input-for-add-client-1" placeholder="Enter designation" id="designation">
+                                    </p>
+                                    
+                                </div>
 
-          <div class="cards_recommendedForYou">
-            <div class="cardsItem_recommendedForYou">
-                  <div class="icons-sharing-recommendedForYou">
-                    <img src="./img/share-icon.png" class="shareIcon_recommendedForYou">
-                    <img src="./img/star-icon.png" class="shareIcon_recommendedForYou">
-                  </div>
-              <section class="cardsItem_desc_sec">
-                  <img src="./img/Airbnb-logo.png" alt="" class="cardsItem_Image">
-                  <span class="cardsItem_Name">AirBnb</span>
-              </section>
-              <h4>Frontend Developer</h4>
-              <span class="cardsItem_duration">2 Days Left</span>
-              <p class="cardsItem_skills">HTML,CSS,UI,Frontend</p>
-              <div class="cta_cardDesc">
-                <span>Full time</span>
-                <button class="ApplyNow_cardDesc">Apply Now</button>
-              </div>
-            </div>
-            <div class="cardsItem_recommendedForYou">
-                  <div class="icons-sharing-recommendedForYou">
-                    <img src="./img/share-icon.png" class="shareIcon_recommendedForYou">
-                    <img src="./img/star-icon.png" class="shareIcon_recommendedForYou">
-                  </div>
-              <section class="cardsItem_desc_sec">
-                  <img src="./img/Netflix-logo.png" alt="" class="cardsItem_Image">
-                  <span class="cardsItem_Name">Netflix</span>
-              </section>
-              <h4>Frontend Developer</h4>
-              <span class="cardsItem_duration">2 Days Left</span>
-              <p class="cardsItem_skills">HTML,CSS,UI,Frontend</p>
-              <div class="cta_cardDesc">
-                <span>Full time</span>
-                <button class="ApplyNow_cardDesc">Apply Now</button>
-              </div>
-            </div>
-            <div class="cardsItem_recommendedForYou">
-                  <div class="icons-sharing-recommendedForYou">
-                    <img src="./img/share-icon.png" class="shareIcon_recommendedForYou">
-                    <img src="./img/star-icon.png" class="shareIcon_recommendedForYou">
-                  </div>
-              <section class="cardsItem_desc_sec">
-                  <img src="./img/Uber-logo.png" alt="" class="cardsItem_Image">
-                  <span class="cardsItem_Name">Uber</span>
-              </section>
-              <h4>Frontend Developer</h4>
-              <span class="cardsItem_duration">2 Days Left</span>
-              <p class="cardsItem_skills">HTML,CSS,UI,Frontend</p>
-              <div class="cta_cardDesc">
-                <span>Full time</span>
-                <button class="ApplyNow_cardDesc">Apply Now</button>
-              </div>
-            </div>
-            <div class="cardsItem_recommendedForYou viewMoreLink_recommendedForYou">
-              <a href="#" class="viewMore_cardsItem_recommendedForYou">View More ></a>
-            </div>
-          </div>
-        </section>
-        <section class="searchForSpecificJob">
-          <h4 class="heading_main_dash">Search for specific job</h4>
-          <div class="specificJobCards">
-            <div class="singleItem_specificJobCards">
-              <img src="./img/DataAnalysis.png">
-              <p>Data Analysis</p>
-            </div>
-            <div class="singleItem_specificJobCards">
-              <img src="./img/Seo.png">
-              <p>SEO</p>
-            </div>
-            <div class="singleItem_specificJobCards">
-              <img src="./img/PythonDeveloper.png">
-              <p>Python Developer</p>
-            </div>
-            <div class="singleItem_specificJobCards">
-              <img src="./img/WebDeveloper.png">
-              <p>Web Developer</p>
-            </div>
-            <div class="cardsItem_recommendedForYou viewMoreLink_recommendedForYou">
-              <a href="#" class="viewMore_cardsItem_recommendedForYou">View More ></a>
-            </div>
-          </div>
-        </section>
-        <section class="upcomingInterviews">
-          <div class="container_upcomingInterviews">
-            <div class="main_cta_upcomingInterviews">
-              <p>Upcoming Interviews</p>
-              <a href="#">Schedule an interview +</a>
-            </div>
-            <div class="heading_upcomingInterviews">
-              <p>NAME</p>
-              <p>DATE</p>
-              <p>JOB ROLE</p>
-            </div>
-            <div class="companies_upcomingInterviews">
-              <div class="singleCompany_upcomingInterview">
-                <div class="companyDetails_upcomingInterview">
-                  <img src="./img/Profile1.png">
-                  <span class="name_upcomingInterviews"><p>John Smith</p>
-                <p class="designationInterview">Company</p></span>
-                  
+                                <div class="row-recruiter sub-divs-image-box-right-side-add-client" style="display:flex;">
+                                    <div class="input-para-add-client-ekam-1 fx-city-name-1">
+                                        <label for="phone_number">Phone number <span style="color:#3598DB;">*</span></label>
+                                        <input type="tel" maxlength='10' name="number" id="number" class="default-input-for-add-client-1"  placeholder="Enter a 10 digit phone number">
+                                    </div>
+    
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1">
+                                        <label for="email">Email <span style="color:#3598DB;">*</span></label>
+                                        <input type="email" name="email" class="default-input-for-add-client-1" placeholder="Enter the associated email-id" id="email">
+                                    </p>
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1"> 
+                                        <label for="password">Password <span style="color:#3598DB;">*</span></label>
+                                        <input type="password" name="password" class="default-input-for-add-client-1" placeholder="Set the password for the account" id="password">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="row-recruiter" style="margin-bottom: 30px;">
+                                    <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Notification details</h2>
+                                </div>
+                                <div class="row-recruiter sub-divs-image-box-right-side-add-client">
+                                    <div class="radio-item">
+                                        <input type="radio" id="ritema" name="notification" value="Allow email notifications">
+                                        <label for="ritema">Allow email notifications</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="ritemb" name="notification" value="Allow user to choose settings">
+                                        <label for="ritemb">Allow user to choose settings</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="ritemc" name="notification" value="Don't allow email notifications">
+                                        <label for="ritemc">Don't allow email notifications</label>
+                                    </div>
+                                </div>
+                            <div class="row-recruiter" style="margin-bottom: 30px; display:flex">
+                                    <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">User access details</h2>
+									<div class="col-sm">
+                                        <input type="checkbox" id="select-all">
+										<label for="select-all" style="color:#3598DB;"> Select all</label>
+                                    </div>
+                            </div>
+                                <div class="row"style="padding-bottom:13px">
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c1" name="user[]" value="Access to database">
+										<label for="c1">Access to database</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c2" name="user[]" value="Can create a job">
+										<label for="c2">Can create a job</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c3" name="user[]" value="Can shortlist candidates">
+										<label for="c3">Can shortlist candidates</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c4" name="user[]" value="Can add a company">
+										<label for="c4">Can add a company</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-bottom:13px">
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c5" name="user[]" value="Can add tasks">
+										<label for="c5">Can add tasks</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c6" name="user[]" value="Can hire candidates">
+										<label for="c6">Can hire candidates</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c7" name="user[]" value="Can view analytics">
+										<label for="c7">Can view analytics</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c8" name="user[]" value="Can view billing details">
+										<label for="c8">Can view billing details</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-bottom:13px">
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c9" name="user[]" value="Can start or join video calls">
+										<label for="c9">Can start or join video calls</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c10" name="user[]" value="Can schedule interviews">
+										<label for="c10">Can schedule interviews</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c11" name="user[]" value="Can add candidates">
+										<label for="c11">Can add candidates</label>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c12" name="user[]" value="Can reply to queries">
+										<label for="c12">Can reply to queries</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-bottom:13px">
+                                    <div class="col-sm">
+                                        <input type="checkbox" id="c13" name="user[]" value="Can create contracts">
+										<label for="c13">Can create contracts</label>
+                                    </div>
+                                    <div class="col-sm" style="margin-left:-570px">
+                                        <input type="checkbox" id="c14" name="user[]" value="Can edit details of organisation">
+										<label for="c14">Can edit details of organisation</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-success" style="float:right">Create user</button>
+                    </form>
                 </div>
-                <div class="schedule_upcomingInterview">
-                  <img src="./img/black-calendar-icon.png">
-                  <p>12th May,2020</p>
-                  <!-- <span>
-                    
-                    </span>
-                  <img src="./img/grey-clock-icon.png"> <p>5 PM</p> -->
-                  
-                </div>
-                <p class="role_upcomingInterview">
-                  Full stack web developer
-                </p>
-              </div>
-              <div class="singleCompany_upcomingInterview">
-                <div class="companyDetails_upcomingInterview">
-                  <img src="./img/Profile1.png">
-                  <span class="name_upcomingInterviews"><p>John Smith</p>
-                <p class="designationInterview">Company</p></span>
-                  
-                </div>
-                <div class="schedule_upcomingInterview">
-                  <img src="./img/black-calendar-icon.png">
-                  <p>12th May,2020</p>
-                  <!-- <span>
-                    
-                    </span>
-                  <img src="./img/grey-clock-icon.png"> <p>5 PM</p> -->
-                  
-                </div>
-                <p class="role_upcomingInterview">
-                  Full stack web developer
-                </p>
-              </div>
-              <div class="singleCompany_upcomingInterview">
-                <div class="companyDetails_upcomingInterview">
-                  <img src="./img/Profile1.png">
-                  <span class="name_upcomingInterviews"><p>John Smith</p>
-                <p class="designationInterview">Company</p></span>
-                  
-                </div>
-                <div class="schedule_upcomingInterview">
-                  <img src="./img/black-calendar-icon.png">
-                  <p>12th May,2020</p>
-                  <!-- <span>
-                    
-                    </span>
-                  <img src="./img/grey-clock-icon.png"> <p>5 PM</p> -->
-                  
-                </div>
-                <p class="role_upcomingInterview">
-                  Full stack web developer
-                </p>
-              </div>
-              <div class="singleCompany_upcomingInterview">
-                <div class="companyDetails_upcomingInterview">
-                  <img src="./img/Profile1.png">
-                  <span class="name_upcomingInterviews"><p>John Smith</p>
-                  <p class="designationInterview">Company</p></span>
-                  
-                </div>
-                <div class="schedule_upcomingInterview">
-                  <img src="./img/black-calendar-icon.png">
-                  <p>12th May,2020</p>
-                  <!-- <span>
-                    
-                    </span>
-                  <img src="./img/grey-clock-icon.png"> <p>5 PM</p> -->
-                  
-                </div>
-                <p class="role_upcomingInterview">
-                  Full stack web developer
-                </p>
-              </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </body>
 
-</html>
+<script>
+    $("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+</script>
+<script>
+    $(document).ready(function(){
+        $("#form1 #select-all").click(function(){
+            $("#form1 input[type='checkbox']").prop('checked',this.checked);
+        });
+    });
+</script>
