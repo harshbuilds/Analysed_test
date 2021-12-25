@@ -7,14 +7,14 @@
 
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Shortlisted Jobs</a> 
+            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="DashboardJobs.php" class="active-breadcrumb-link">Shortlisted Jobs</a>
         </div>
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
 
             <?php
                     include('connection1.php');
-                    
+
                     $sql = "SELECT * FROM joblistings";
 
                     $res = mysqli_query($conn, $sql);
@@ -57,34 +57,34 @@
                                 <p class="job-desc-dashboard-jobs">
 
                                 <!-- SELECT SUBSTRING('Quadratically',5,6); -->
-                                <?php 
+                                <?php
                                 echo substr($job_desc, 0, 100);
-                                
+
                                 ?>
                                 </p>
                                 <div class="skills-div row-flex-jobs-j">
-                                    <?php 
+                                    <?php
                                         for ($x = 0; $x < count($skill_arr); $x++) {
                                             ?>
                                             <p><?php echo $skill_arr[$x]; ?></p>
                                             <?php
                                         }
                                     ?>
-                                    
+
                                     <!-- <p>Remote Job</p>
                                     <p>Senior level</p>
                                     <p>HTML</p>
                                     <p>CSS</p>
                                     <p>Javascript</p> -->
                                 </div>
-                                <p class="date-created-jobsDashboard"><?php 
+                                <p class="date-created-jobsDashboard"><?php
                                 $job_created_on = date('Y-m-d', strtotime($job_created_on));
                                 echo $job_created_on; ?></p>
                                 </a>
                     </div>
 
                             <?php
-                            
+
                         }
                     }
                     else{
@@ -111,7 +111,7 @@
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </p>
                     <div class="category-filters" id="categoryDiv1">
-                        
+
                         <?php
                             // include('config.php');
                             $filter1 = "SELECT DISTINCT position FROM joblistings";
@@ -121,7 +121,7 @@
                                 // echo '<script>alert("Inserted Successfully")</script>';
                                 while($row = mysqli_fetch_assoc($f1_res)){
                                     ?>
-                                    
+
                                     <div class="row-flex-jobs-j">
                                         <span>
                                             <input type="checkbox" class="c1" value="<?php echo $row['position']; ?>" id="type">
@@ -130,16 +130,16 @@
                                         <p>24</p>
                                     </div>
                                     <?php
-                                } 
+                                }
                             }
                             else{
                                 echo '<script>alert("Insertion failed")</script>';
                             }
-                        ?> 
+                        ?>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="category-main-first">
                     <p class="row-flex-jobs-j">
                         <span class="heading-filter-dj" id="filterHeading2">Company name</span>
@@ -155,7 +155,7 @@
                                 // echo '<script>alert("Inserted Successfully")</script>';
                                 while($row = mysqli_fetch_assoc($f2_res)){
                                     ?>
-                                    
+
                                     <div class="row-flex-jobs-j">
                                         <span>
                                             <input type="checkbox" class="c1" value="<?php echo $row['company']; ?>" id="type">
@@ -165,13 +165,13 @@
                                     </div>
 
                                     <?php
-                                } 
+                                }
                             }
                             else{
                                 echo '<script>alert("Insertion failed")</script>';
                             }
-                        ?> 
-                            
+                        ?>
+
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -190,7 +190,7 @@
                                 // echo '<script>alert("Inserted Successfully")</script>';
                                 while($row = mysqli_fetch_assoc($f3_res)){
                                     ?>
-                                    
+
                                     <div class="row-flex-jobs-j">
                                         <span>
                                             <input type="checkbox" class="c1" value="<?php echo $row['package']; ?>" id="type">
@@ -200,13 +200,13 @@
                                     </div>
 
                                     <?php
-                                } 
+                                }
                             }
                             else{
                                 echo '<script>alert("Insertion failed")</script>';
                             }
-                        ?> 
-                            
+                        ?>
+
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -225,7 +225,7 @@
                                 // echo '<script>alert("Inserted Successfully")</script>';
                                 while($row = mysqli_fetch_assoc($f4_res)){
                                     ?>
-                                    
+
                                     <div class="row-flex-jobs-j">
                                         <span>
                                             <input type="checkbox" class="c1" value="<?php echo $row['country']; ?>" id="type">
@@ -235,19 +235,19 @@
                                     </div>
 
                                     <?php
-                                } 
+                                }
                             }
                             else{
                                 echo '<script>alert("Insertion failed")</script>';
                             }
-                        ?>         
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        
+
 <script>
     const filterHeading1 = document.querySelector('#filterHeading1');
     const filterHeading2 = document.querySelector('#filterHeading2');
@@ -259,7 +259,7 @@
     const categoryDiv3 = document.querySelector('#categoryDiv3');
     const categoryDiv4 = document.querySelector('#categoryDiv4');
     const categoryDiv5 = document.querySelector('#categoryDiv5');
-    
+
     filterHeading1.addEventListener('click',()=>{
         categoryDiv1.classList.toggle('active')
     })
@@ -275,9 +275,9 @@
 
     function deleteChild(){
         var e = document.querySelector(".cards-section-container");
-        
+
         //e.firstElementChild can be used.
-        var child = e.lastElementChild; 
+        var child = e.lastElementChild;
         while (child) {
             e.removeChild(child);
             child = e.lastElementChild;
@@ -327,11 +327,11 @@
                         $(structure.join('')).prependTo('.cards-section-container');
                     }
                 }
-                
+
             });
             // end of ajax
     }
-        
+
     $("input:checkbox.c1").click(function() {   //here (.) represents class .c1
         if($(this).prop('checked')) {
             let value = $(this).val();
@@ -344,15 +344,15 @@
                 multiCheckKey = false;
                 ajaxFilter('posFilter.php', value, multiCheckKey);
             }
-            
+
         }
-    }); 
+    });
 
     $(document).ready(function(){
         $("#select-box").on('change',function(){
             var value = $(this).val();
             multiCheckKey = true;
-            
+
             ajaxFilter('select-box.php', value, multiCheckKey);
         });
     });
