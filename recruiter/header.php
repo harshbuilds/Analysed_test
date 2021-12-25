@@ -17,7 +17,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="aboutOrganization.php" class="sidebar_main-listlinks">
+          <a href="admin_panel.php" class="sidebar_main-listlinks">
             <img src="./img/Group 72.png" />
           </a>
         </li>
