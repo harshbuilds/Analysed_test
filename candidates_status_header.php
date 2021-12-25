@@ -15,11 +15,11 @@ if(isset($_SESSION['firstname'])) {
        <link rel="stylesheet" href="./css/candidates_status_header.css">
 <body>
    <?php include('header.php') ?>
- 
+
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
  <div class="profile-img">
    <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
@@ -49,7 +49,7 @@ if(isset($_SESSION['firstname'])) {
      Status&emsp;&emsp;&emsp;&emsp;&emsp;Availability date</span>
      <br>
      </div>
-    <div class="displayname"> 
+    <div class="displayname">
     <span style="color:red"><?php echo $row["status"]; ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["availability_date"]; ?>
     </div>
     <br>
@@ -62,7 +62,7 @@ if(isset($_SESSION['firstname'])) {
     <p><?php echo $row["company_name"]; ?></p>
     <br>
     <br><br>
-    Contact 
+    Contact
     <br>
     <br>
     <p style="margin-left:-0"><?php echo $row["candidate_email"]; ?></p>
