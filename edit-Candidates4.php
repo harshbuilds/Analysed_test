@@ -11,9 +11,9 @@
         {
             $_SESSION['info'][$key] = $value;
         }
-     
+
         $keys = array_keys($_SESSION['info']);
-     
+
         if(in_array('next', $keys)){
             unset($_SESSION['info']['next']);
         }
@@ -22,7 +22,7 @@
         extract($_SESSION['info']);
 
         $conn = mysqli_connect('localhost','root','','analysed');
-		
+
 		$date=date("Y-m-d");
 
         move_uploaded_file($_FILES["$image"]["tmp_name"],"img/".$_FILES["$image"]["name"]);
@@ -32,18 +32,18 @@
         $sql = mysqli_query($conn,"update candidates set image='$image',firstname='$firstname',lastname='$lastname',candidate_email='$emailid',countrycode='$code',phone_no='$phonenumber',birth_date='$birthdate',status='$Industry',address='$address',country='$ownership',city_name='$cityname',zipcode='$Zipcode',state='$State',current_title='$currentTitle',company_name='$companyName',candidate_type='$candidateType',emp_preference='$employmentPreference',source='$source',recruiter='$recruiter',current_salary='$currentSalary',salary_range1='$salaryRange1',salary_range2='$salaryRange2',talents='$talents',resume='$resume',skills='$skills',qualifications='$qualification',comment='$candidateComment',availability_date='$availability',job='$job',accessibility='$accessebility',response_type='$reasonType',last_updated='$date' where firstname='$firstname'");
 
         if($sql){
-			
+
             $_SESSION['firstname'] = $firstname;
 			header("Location: Candidates_specific.php");
-            
+
              }
-             
+
              else{
                 echo mysqli_error($conn);
             }
         }
 
-     } 
+     }
 	 ?>
 <?php include('header1.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
@@ -52,7 +52,7 @@
 <title>Analysed</title>
 <div class="container">
 <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
+        <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="edit-Candidates4.php" class="active-breadcrumb-link">Add candidates</a> 
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -90,7 +90,7 @@
                                         <label for="default-input-for-no.1">Availability Date*</label>
                                         <input type="date" name="availability" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['availability_date']; ?>" required />
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Job*</label>
                                             <select name="job" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
                                                 <option value="<?php echo $row['job']; ?>" default><?php echo $row['job']; ?></option>
@@ -99,7 +99,7 @@
                                                 <option value="UI Designer">UI Designer</option>
                                             </select>
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Accessibility*</label>
                                             <select name="accessebility" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
                                                 <option value="<?php echo $row['accessibility']; ?>" default><?php echo $row['accessibility']; ?></option>
@@ -107,7 +107,7 @@
                                                 <option value="External">External</option>
                                             </select>
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1"> 
+                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Response type*</label>
                                             <select name="reasonType" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
                                                 <option value="<?php echo $row['response_type']; ?>" default><?php echo $row['response_type']; ?></option>
