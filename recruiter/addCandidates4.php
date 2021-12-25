@@ -36,7 +36,7 @@
             unset($_SESSION['info']['next']);
         }
      
-        header("Location: includes/registerCandidate.php");
+        
      } 
 
 ?>
@@ -115,3 +115,4 @@
     </div>
     </div>
 </div>
+
