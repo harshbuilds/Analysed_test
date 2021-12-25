@@ -58,7 +58,7 @@
                     <a href="#" class="social-linl-single-after-pie-chart-right-side-about-us"><i class="fa fa-linkedin-square" aria-hidden="true" style="color:#0070ac"></i></a>
                     <a href="#" class="social-linl-single-after-pie-chart-right-side-about-us"><i class="fa fa-twitter" aria-hidden="true" style="color:#1c9ceb"></i></a>
                     <a href="#" class="social-linl-single-after-pie-chart-right-side-about-us"><i class="fa fa-instagram" aria-hidden="true" style="color:#fd425f"></i></a>
-                    <a href="" class="social-linl-single-after-pie-chart-right-side-about-us"><i class="fa fa-facebook" aria-hidden="true" style="color:#4267b2"></i></a>
+                    <a href="#" class="social-linl-single-after-pie-chart-right-side-about-us"><i class="fa fa-facebook" aria-hidden="true" style="color:#4267b2"></i></a>
                 </div>
                 </div>
             </div>
