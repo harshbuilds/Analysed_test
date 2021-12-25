@@ -11,15 +11,15 @@
         {
             $_SESSION['info'][$key] = $value;
         }
-     
+
         $keys = array_keys($_SESSION['info']);
-     
+
         if(in_array('next', $keys)){
             unset($_SESSION['info']['next']);
         }
-     
+
         header("Location: edit-Candidates4.php");
-     } 
+     }
 
 ?>
 <?php include('header1.php')?>
@@ -30,7 +30,7 @@
 <title>Analysed</title>
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
+        <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="edit-Candidates3.php" class="active-breadcrumb-link">Add candidates</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">
