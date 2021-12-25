@@ -6,7 +6,7 @@
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
   <div class="profile-img">
    <img src="img/Ellipse 148.png" width="130" height="130" style="margin: 25px" alt="">
@@ -27,7 +27,7 @@
     <p>Files</p>
      <p>Notes</p>
      </div>
-    
+
      <div class="status">
      </div>
      <div class="status1"><b>#JB13069&emsp;&emsp;&emsp;&emsp;&emsp;</b>
@@ -44,7 +44,7 @@
      Status&emsp;&emsp;&emsp;&emsp;&emsp;Availability date</span>
      <br>
      </div>
-    <div class="displayname"> 
+    <div class="displayname">
     <span style="color:red">InActive</span>&emsp;&emsp;&emsp;&emsp;&emsp;20-05-2021
     </div>
     <br>
@@ -57,7 +57,7 @@
     <p>Fox Hunt</p>
     <br>
     <br><br>
-    Contact 
+    Contact
     <br>
     <br>
     <p style="margin-left:-30">Email Id:abc@gmail.com</p>
