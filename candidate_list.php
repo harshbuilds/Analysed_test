@@ -6,7 +6,7 @@
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> 
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a>
         </div>
   <div class="database">
   My Database<br><br>
@@ -20,9 +20,9 @@
         <i class="fa fa-search" style="color:#3598DB"></i>
    </div>
    <div class="add">
-<button class="btn" id="myBtn"><a style="color:white" href="#">Add+</a></button>
+<button class="btn" id="myBtn"><a style="color:white" href="addCandidates1.php">Add+</a></button>
    </div>
-  
+
    <div class="sort">
    <span style="color:#979797">Sort by &emsp;</span><span style="color:#3598DB">Experience &emsp;</span>
    <span>
@@ -55,7 +55,7 @@
   <p>Minimum years of experience</p>
 <br>
 <input type="text" placeholder="enter number">
-  
+
 </div><br>
 <div class="qual">
   <p>Country</p>
