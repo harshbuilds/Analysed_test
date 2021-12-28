@@ -6,7 +6,7 @@
 <img src="img/main-logo.png" alt="">
 <a href="index.html">Contact</a>
 <a href="index.html">About</a>
-<a href="landing_1.php">Signup</a>
+<a href="signup\jobSeeker\index.php">Signup</a>
 </div>
 <div class="signup">
 Login<br>
