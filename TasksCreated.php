@@ -12,7 +12,7 @@
 
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Tasks Created</a> 
+            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="tasksCreated.php" class="active-breadcrumb-link">Tasks Created</a>
         </div>
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
@@ -41,12 +41,12 @@
                                 <div class="upcomingInterviews-p tasks-created-p">
 
                                     <?php
-                                    $date=$row['start_date']; 
+                                    $date=$row['start_date'];
                                     $start_date=date_format(new DateTime($date),"M d, Y");
                                     ?>
 
                                     <?php
-                                    $date=$row['end_date']; 
+                                    $date=$row['end_date'];
                                     $end_date=date_format(new DateTime($date),"M d, Y");
                                     ?>
 
@@ -71,7 +71,7 @@
                     }
                 }
                 ?>
-                    
+
                 </div>
             </div>
             <div class="right-side-container-DashboardJ">
@@ -87,22 +87,22 @@
                 <h2 class="filter-heading">Filter</h2>
                 <form class="form">
                 <div class="category-main-first">
-                    
+
                         <label for="jobtitle" class="label-applied-candidates">Job Title</label>
                         <input type="text" id="jobtitle" placeholder="Job Title" class="input-applied-candidates" oninput="myFunction()" onclick="myFunction()">
-                    
+
                 </div>
                 <div class="category-main-first">
-                    
+
                         <label for="CompanyName" class="label-applied-candidates">Company Name</label>
                         <input type="text" id="company" placeholder="Company Name" class="input-applied-candidates" oninput="myFunction()" onclick="myFunction()">
-                    
+
                 </div>
                 <div class="category-main-first">
-                    
+
                     <label for="Skills" class="label-applied-candidates">Skills</label>
                     <input type="text" id="skills" placeholder="Skills" class="input-applied-candidates" oninput="myFunction()" onclick="myFunction()">
-                
+
             </div>
         </form>
     </div>
@@ -113,7 +113,7 @@
 
     const categoryDiv3 = document.querySelector('#categoryDiv3');
 
-    
+
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })
@@ -128,8 +128,8 @@
             var position=document.getElementById('jobtitle').value;
             var company=document.getElementById('company').value;
             var skills=document.getElementById('skills').value;
-        
-        
+
+
             $.ajax({
                 url:'./include/action3.php',
                 method:'POST',
@@ -157,4 +157,3 @@
         });
     });
 </script>
-
