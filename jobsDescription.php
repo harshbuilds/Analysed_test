@@ -11,7 +11,7 @@
 <div class="container">
 <div class="small_container">
     <div class="bread-crumbs_Mytools-recruiter" style="margin-bottom: 40px;">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
+            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="suggestedjobs.php" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="jobsDescription.php" class="active-breadcrumb-link">Job Description</a>
         </div>
     <div class="job-row-flex-JobDescription">
         <div class="left-side-jobDescription">
@@ -65,7 +65,7 @@
         </button>
       </div>
       <div class="modal-body">
-	  
+
 	  <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -107,7 +107,7 @@
           <option value="2">Tamil Nadu</option>
           <option value="2">Kerala</option>
       </select>
-      
+
     </div>
  </div>
  <div class="form-row">
@@ -144,14 +144,14 @@
         </button>
       </div>
       <div class="modal-body">
-    
+
     <form>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="fileupload">Upload Resume <span style="font-size:13px;color:lightgray;">6 MB max</span></label>
       <p style="font-size:13px;color:lightgray;">Upload your resume if you have not already done so</p>
       <label for="fileupload" class="form-control" style="color:lightgray;">(*.doc,*.docx,*.rtf,*.txt,*.pdf)</label>
-      
+
       <input type="file" class="form-control" id="fileupload" style="display:none;">
     </div>
     <div class="form-group col-md-6">
@@ -184,7 +184,7 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="" data-toggle="modal" data-target="#myModal3" style="display:none;"> 
+<button type="button" class="" data-toggle="modal" data-target="#myModal3" style="display:none;">
 </button>
 
 <!--Work and Educational History--->
@@ -198,7 +198,7 @@
         </button>
       </div>
       <div class="modal-body">
-    
+
     <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -260,7 +260,7 @@
         </button>
       </div>
       <div class="modal-body">
-    
+
   <form>
     <div class="form-group">
       <label for="topic">Field of Study/Topic*</label>
@@ -322,7 +322,7 @@
         </button>
       </div>
       <div class="modal-body">
-    
+
     <form>
     <div class="form-group col-md-6">
       <p class="row-flex-jobs-j">
@@ -370,19 +370,19 @@
 
 <script>
 $("div[id^='myModal']").each(function(){
-  
+
   var currentModal = $(this);
-  
+
   //click next
   currentModal.find('.btn-next').click(function(){
     currentModal.modal('hide');
-    currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show'); 
+    currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show');
   });
-  
+
   //click prev
   currentModal.find('.btn-prev').click(function(){
     currentModal.modal('hide');
-    currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show'); 
+    currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show');
   });
 
 });
@@ -393,7 +393,7 @@ $("div[id^='myModal']").each(function(){
 
     const categoryDiv3 = document.querySelector('#categoryDiv3');
 
-    
+
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })
