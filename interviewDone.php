@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./css/interviewDone.css">
     <link rel="stylesheet" href="./css/shortlistedJobs.css">
 	<link rel="stylesheet" href="./css/myTasksNew.css">
-	
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<body>
@@ -16,7 +16,7 @@
     	<div class="small_container">
 
     		<div class="bread-crumbs_Mytools-recruiter">
-    			<a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a>
+    			<a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a>
     		</div>
 
     		<div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
@@ -48,7 +48,7 @@
     									<?php   }
     									if($status=="Unfinished"){ ?>
     										<p class="candidate-status-jobs Unfinished"><?php echo $row["status"]; ?></p>
-    									<?php } 
+    									<?php }
     									if($status=="Completed"){ ?>
     										<p class="candidate-status-jobs Completed"><?php echo $row["status"]; ?></p>
     									<?php } ?>
@@ -77,7 +77,7 @@
     											?>
     											<p>Upcoming Interview</p>
     											<?php
-    											$date=$row['date']; 
+    											$date=$row['date'];
     									        $datetime=date_format(new DateTime($date),"\\O\\n d M, Y \\a\\t H A");
     									        ?>
     									        <p><?php echo $datetime; ?></p>
@@ -126,7 +126,7 @@
                             <input type="text" id="company" placeholder="Company Name" class="input-applied-candidates product_check" name="company"  oninput="myFunction()" onclick="myFunction()" autocomplete="off">
 
 				        </div>
-			
+
 				        <div class="category-main-first">
 				        	<p class="row-flex-jobs-j">
 				        		<span class="heading-filter-dj" id="filterHeading3">Type of Interviews</span>
@@ -152,7 +152,7 @@
 				                            $num1 = mysqli_num_rows($rt);
 				                            ?>
 				                            <?php echo htmlentities($num1); ?>
-				                            	
+
 				                        </p>
 				                    </div>
 				                <?php } ?>
@@ -162,13 +162,13 @@
 				</div>
 			</div>
 		</body>
-				
+
 <script>
     const filterHeading3 = document.querySelector('#filterHeading3');
 
     const categoryDiv3 = document.querySelector('#categoryDiv3');
 
-    
+
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })
@@ -182,8 +182,8 @@
 			var status= get_filter_text('status');
 			var position=document.getElementById('position').value;
 			var company=document.getElementById('company').value;
-		
-        
+
+
 			$.ajax({
 				url:'./include/action.php',
 			    method:'POST',
@@ -195,7 +195,7 @@
 			});
 		}
 
-	
+
 		function get_filter_text(text_id){
 			var filterData=[];
 			$('#'+text_id+':checked').each(function(){
@@ -222,4 +222,3 @@
 		});
 	});
 </script>
-
