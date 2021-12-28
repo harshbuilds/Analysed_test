@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="./css/tools1.css">
 <div class="container-1">
  <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link"><u>Tools</u></a>
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="tools1.php" class="active-breadcrumb-link"><u>Tools</u></a>
         </div>
         <div class="nav">
   <l><a href="#">Mydatabase &#10006;</a></l>
