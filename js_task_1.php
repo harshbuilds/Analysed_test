@@ -179,7 +179,7 @@
         <br><br><br>
         <div class="row" style="margin-left:220px;margin-right:200px">
             <div class="col-6">
-                <button class="val3" onclick="window.location.href = 'js_task.php';">&emsp;&emsp;End Task </button>
+                <button class="val3" onclick="window.location.href = 'js_task_1.php';">&emsp;&emsp;End Task </button>
             </div>
             <div class="col-6">
                 <button id="submittask" class="val4" onclick=""> &emsp;&emsp;Submit Task </button>
