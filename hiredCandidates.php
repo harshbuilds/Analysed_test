@@ -11,7 +11,7 @@
 
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a> 
+            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="hiredCandidates.php" class="active-breadcrumb-link">Applied Candidates</a>
         </div>
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
@@ -36,15 +36,15 @@
                                 <h3 class="job-headingnname"><?php echo $row["firstname"]; ?></h3>
                                 <p class="skill-job-candiate hiredCandidates-p1"><?php echo $row["position"]; ?></p>
                                 <div class="row-flex-jobj email-id-and-experience">
-                                    <img src="./img/Mail icon.svg"> 
+                                    <img src="./img/Mail icon.svg">
                                     <span><p class="grey-email-id">Email ID</p><p class="name-dark-id"><?php echo $row["js_email"]; ?></p></span>
                                 </div>
                                 <div class="row-flex-jobj email-id-and-experience">
-                                    <img src="./img/briefcase.svg"> 
+                                    <img src="./img/briefcase.svg">
                                     <span class="span-experience-1">
                                     <p class="grey-email-id">Experience & Roles</p>
                                     <p class="name-dark-id row-flex-jobs-j"><span>Total</span> <span><?php echo $row["experience"]; ?> Years Experience </span></p>
-                                    
+
                                     </span>
                                 </div>
                                 <div class="seemorebutton-social">
@@ -70,16 +70,16 @@
                 <h2 class="filter-heading">Filter</h2>
                 <form class="form">
                 <div class="category-main-first">
-                    
+
                         <label for="jobtitle" class="label-applied-candidates">Job Title</label>
                         <input type="text" id="jobtitle" placeholder="Job Title" class="input-applied-candidates" oninput="myFunction()" onclick="myFunction()">
-                    
+
                 </div>
                 <div class="category-main-first">
-                    
+
                         <label for="CompanyName" class="label-applied-candidates">Company Name</label>
                         <input type="text" id="company" placeholder="Company Name" class="input-applied-candidates" oninput="myFunction()" onclick="myFunction()">
-                    
+
                 </div>
             </form>
         </div>
@@ -91,9 +91,9 @@
             var action='data';
             var position=document.getElementById('jobtitle').value;
             var company=document.getElementById('company').value;
-            
-        
-        
+
+
+
             $.ajax({
                 url:'./include/action4.php',
                 method:'POST',
@@ -121,4 +121,3 @@
         });
     });
 </script>
-
