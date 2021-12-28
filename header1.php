@@ -17,7 +17,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="recruiter/aboutOrganization.php" class="sidebar_main-listlinks">
+          <a href="admin_panel1.php" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 72.png" />
           </a>
         </li>
@@ -52,7 +52,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="recruiter/addClient.php" class="sidebar_main-listlinks">
+          <a href="recruiter/referrals.php" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 136.png" />
           </a>
         </li>
