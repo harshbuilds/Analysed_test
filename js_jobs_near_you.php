@@ -36,8 +36,8 @@
 <title>Jobs near you</title>
 <br>
     <div class="bread-crumbs_Mytools-recruiter" style="font-size:15px">
-     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span> 
-     <a href="" class="active-breadcrumb-link"><u> Jobs Near You </u></a>
+     <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
+     <a href="js_jobs_near_you.php" class="active-breadcrumb-link"><u> Jobs Near You </u></a>
     </div>
 <div style="margin-left:50px">
     <div class="bgcolor-modal-JobsNearYou">
@@ -47,11 +47,11 @@
             <div class="container-modal-inputs-jobsNearYou">
                 <div class="grid-location-settings-modal">
                     <div class="column-1-location-settings-modal">
-                        <label for="enterLocation-modal-input">Location</label>    
+                        <label for="enterLocation-modal-input">Location</label>
                         <input type="text" placeholder="Enter Your Location" id="enterLocation-modal-input">
-                    </div> 
+                    </div>
                     <div class="column-2-location-settings-modal">
-                        <label for="industry-modal-input">Industry</label>    
+                        <label for="industry-modal-input">Industry</label>
                         <select name="" id="industry-modal-input">
                             <option value="0">Technology</option>
                             <option value="1">Mechanical</option>
@@ -60,32 +60,32 @@
                     </div>
 
                     <div class="column-1-location-settings-modal">
-                        <label for="jobsinRadius-modal-input">Job in radius</label>    
+                        <label for="jobsinRadius-modal-input">Job in radius</label>
                         <input type="text" placeholder="Enter job radius in kms" id="jobsinRadius-modal-input">
-                    </div> 
+                    </div>
                     <div class="column-2-location-settings-modal">
-                        <label for="addSkills-modal-input">Add Skills +</label>    
+                        <label for="addSkills-modal-input">Add Skills +</label>
                         <span id="addSkills-modal-input">PHP <i class="fa fa-times" aria-hidden="true"></i></span>
                         <span id="addSkills-modal-input">MYSQL <i class="fa fa-times" aria-hidden="true"></i></span>
                     </div>
 
                     <div class="column-1-location-settings-modal">
-                        <label for="payTypeSalary-modal-input">Pay type salary</label>    
+                        <label for="payTypeSalary-modal-input">Pay type salary</label>
                         <input type="text" placeholder="min" id="payTypeSalary-modal-input">
                         <input type="text" placeholder="max" id="payTypeSalary-modal-input">
-                        
-                        <label for="payTypeSalary-modal-input" class="te1">Job type</label>  
+
+                        <label for="payTypeSalary-modal-input" class="te1">Job type</label>
 
                         <div class="radioButtons-jobsType-modal">
-                            <input type="radio" name="jobtype-Modal" id="partTime-jobType-modal" class="te2"> 
+                            <input type="radio" name="jobtype-Modal" id="partTime-jobType-modal" class="te2">
                             <label for="partTime-jobType-modal">Part Time</label>
                         </div>
                         <div class="radioButtons-jobsType-modal">
-                            <input type="radio" name="jobtype-Modal" id="fullTime-jobType-modal" class="te2"> 
+                            <input type="radio" name="jobtype-Modal" id="fullTime-jobType-modal" class="te2">
                             <label for="fullTime-jobType-modal">Full Time</label>
                         </div>
                         <div class="radioButtons-jobsType-modal">
-                            <input type="radio" name="jobtype-Modal" id="intern-jobType-modal" class="te2"> 
+                            <input type="radio" name="jobtype-Modal" id="intern-jobType-modal" class="te2">
                             <label for="intern-jobType-modal">Internship</label>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                                 <p>London, UK</p>
                             </span>
                         </section>
-                            
+
                         <p class="designation-cardItem-jobsNearYou">Frontend Developer</p>
                         <section class="duration-cardItem-jobsNearYou">
                             <span></span>
@@ -160,7 +160,7 @@
                                 <p>London, UK</p>
                             </span>
                         </section>
-                            
+
                         <p class="designation-cardItem-jobsNearYou">Frontend Developer</p>
                         <section class="duration-cardItem-jobsNearYou">
                             <span></span>
