@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="css/index.css">
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -7,17 +7,19 @@
 <nav class="sidebar_main">
       <ul class="sidebar_main-list">
         <li class="sidebar_main-listItems">
+
           <a href="#" class="sidebar_main-listlinks">
             <img src="./img/Menu.png" class="menuForSidebar"/>
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="js_dashboard.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-1.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="mytasks1.php" class="sidebar_main-listlinks">
+            <!--admin_panel1.php-->
             <img src="./img/nav-ele-2.png" />
           </a>
         </li>
@@ -32,27 +34,27 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="schedule.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-5.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="my_files.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-6.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="myMessages.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-7.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="./recruiter/complaint_tickets.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-8.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="./recruiter/referrals.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-9.png" />
           </a>
         </li>
