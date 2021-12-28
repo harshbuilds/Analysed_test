@@ -39,8 +39,8 @@
 
     <br>
     <div class="bread-crumbs_Mytools-recruiter">
-     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
-     <a href="" class="active-breadcrumb-link"><u> Suggested_Jobs </u></a>
+     <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
+     <a href="suggestedjobs.php" class="active-breadcrumb-link"><u> Suggested_Jobs </u></a>
     </div>
     <br><br>
     <div class="main_body">
