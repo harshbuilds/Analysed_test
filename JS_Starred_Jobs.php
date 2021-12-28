@@ -39,8 +39,8 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
 
     <br>
     <div class="bread-crumbs_Mytools-recruiter">
-     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
-     <a href="" class="active-breadcrumb-link"><u> Starred_Jobs </u></a>
+     <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
+     <a href="JS_Starred_Jobs.php" class="active-breadcrumb-link"><u> Starred_Jobs </u></a>
     </div>
     <br><br>
     <div class="main_body">
