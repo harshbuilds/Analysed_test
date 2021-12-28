@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="./css/tools2.css">
 <div class="container-1">
  <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link"><u>Tools</u></a>
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="tools2.php" class="active-breadcrumb-link"><u>Tools</u></a>
         </div>
         <div class="nav">
   <l><a href="#">Mydatabase &#10006;</a></l>
@@ -27,9 +27,9 @@
         <i class="fa fa-search" style="color:#3598DB"></i>
    </div>
    <div class="add">
-<button class="btn" id="myBtn"><a style="color:white" href="#">Add+</a></button>
+<button class="btn" id="myBtn"><a style="color:white" href="addCandidate.php">Add+</a></button>
    </div>
-   
+
    <div class="sort">
    <span style="color:#979797">Sort by &emsp;</span><span style="color:#3598DB">Recent &emsp;</span>
    <span>
