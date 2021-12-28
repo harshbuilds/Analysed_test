@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="card" id="c1">
-                    <a href="js_applied_jobs.php">
+                    <a href="js_applied_job.php">
                     <div class="row" id="val1">
                         <div class="col-8">
                             <p class="headingCards">Jobs Applied</p>
