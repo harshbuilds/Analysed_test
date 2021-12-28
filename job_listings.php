@@ -27,7 +27,7 @@
 <body>
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-    <a href="/" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="" class="active-breadcrumb-link">My Dashboard</a> > <a href="" class="active-breadcrumb-link">Job Listing</a>
+    <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="candidate_list.php" class="active-breadcrumb-link">My Dashboard</a> > <a href="Job_listings.php" class="active-breadcrumb-link">Job Listing</a>
 </div>
 
 <?php
