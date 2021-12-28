@@ -134,8 +134,8 @@
 </head>
 <body>
 <div class="bread-crumbs_Mytools-recruiter" style="margin-left:100px">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
-            >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
+            >  <a href="js_dashboard.php" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
 <div class="container" style="margin-left:150px">
   <div class="small_container">
