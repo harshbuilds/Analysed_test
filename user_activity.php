@@ -91,7 +91,7 @@
                     <p class="t1">
                         <p class="s2">Scheduled an interview &emsp; <img src="img/grey-clock-icon.png" height="15px" width="15px">
                         <span class="v3"> X minutes ago</span><br>
-                        <span class="v3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+                        <span class="v3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
                             labore et dolore magna</span><br>
                     </p>
                 </div>
