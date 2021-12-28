@@ -24,9 +24,9 @@
                         <div class="sender-messages">
                             <p class="sender-image-sender-messages">EW</p>
                             <p class="sender-messages-message-received-myMessages">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                            <span class="messages-seen-time-sender-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>    
+                            <span class="messages-seen-time-sender-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
-                        
+
                     </div>
                     <div class="messagesDiv-right-side-myMessages">
                         <div class="receiver-messages">
@@ -42,7 +42,7 @@
                             <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="inputforMessages-send-messages-myMessages">
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
             </div>
-            
+
             <div class="right-side-myMessages">
                 <div class="tabsForMyMessages-right-side">
                     <span class="status-tabsFromMyMessages active">Description</span>
@@ -83,9 +83,11 @@
                             <span><i class="fa fa-phone" aria-hidden="true"></i> +91 9090900900</span>
                             <span><i class="fa fa-map-marker" aria-hidden="true"></i> Lorem, address, place</span>
                         </div>
+                        <a href="js_nearby_job.php">
                         <button class="seeallJobs_right-side-mymessages">
                         See all jobs
                         </button>
+                      </a>
                     </div>
                 </section>
                 </div>
