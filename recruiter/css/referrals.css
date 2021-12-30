@@ -1,170 +1,76 @@
-.heading-container-referrals-recruiters{
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.heading-container-referrals-recruiters .left-side-heading-and-links{
-    width: 50%;
-}
-.heading-container-referrals-recruiters .left-side-heading-and-links h2{
-    font-size: 30px;
-    color: #2f323a;
-}
-.heading-container-referrals-recruiters .left-side-heading-and-links p{
-    font-size: 15px;
-    color:#979797;
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.heading-container-referrals-recruiters .left-side-heading-and-links span i{
-    font-size: 35px;
-   margin-right: 20px;
-}
-.heading-container-referrals-recruiters .right-side-image-div{
-    width: 40%;
-}
-.heading-container-referrals-recruiters .right-side-image-div img{
-    width: 100%;
-}
-.linkfor-referral{
-    margin-top: 30px;
-    justify-content: space-between;
-}
-.linkfor-referral span{
+* {
+    margin: 0px;
+    padding: 0px;
+  }
 
-    background: #eee;
-    padding:  20px 30px;
-    width: 86%;
-    border-radius: 8px;
-    color: #51a8df;
+  body {
+    background: white;
+  }
+
+  .title p{
+    position:relative;
+    right:-250;
+    bottom:-60;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:30px;
+
 }
-.linkfor-referral .link-copy-referral{
-    background-color: #337ab7;
-    outline: none;
+
+.title img{
+    position:relative;
+    float:right;
+    right:100;
+    width:300px;
+}
+
+.social p{
+    position:relative;
+    right:-250;
+    top:130;
+    color:grey;
+}
+
+.social .media img{
+    width:60px;
+    position:relative;
+    right:-250;
+    top:160;
+    padding:15px;
+}
+
+.box input{
+    position:relative;
+    right:-265;
+    bottom:-200;
+    border: 1px solid #3598db;
+    border-radius: 5px;
+    background: #fafbff;
+    color: #3598db;
+    padding:15px;
+    margin-bottom: 20px;
+    width: 60%;
+    z-index:1000;
+
+}
+
+.box .copy{
+    position:relative;
+    bottom:-200;
+    right:-290;
+    background-color: #3598db;
+    color: #ffffff;
     border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
-    padding: 16px 18px;
-    border-radius: 8px;
-    color: white;
-    width: 10%;
-}
-.your-referrals-main-container{
-    margin-top: 50px;
-    max-width: 100%;
-}
-.cards-item-recruiter{
-        background: #ffffff;
-        box-shadow: 1px 3px 10px #00000033;
-        border-radius: 8px;
-        margin-right: auto;
-        width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        margin-left: 0px;
-        margin-right: 12%;
+    border-radius:6px;
 }
 
-.your-referrals-main-container h2{
-    font-weight: normal;
-    color: #333333;
-    margin: 30px 0px;
-}
-.card-item-your-referrals-single{
-    /* max-width: 100%; */
-    /* overflow-x: scroll; */
-    padding: 30px;
-    justify-content: space-around;
-    margin-top: 40px;
-    flex-wrap: nowrap;
-    width: 100vw;
-    box-shadow: 1px 3px 10px #00000033;
-}
-.card-item-your-referrals-single span p{
-    color: #979797;
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-.card-item-your-referrals-single span {
-    display: inline-block;
-    flex-basis: 25%;
-}
-.card-item-your-referrals-single span span{
-    color: #333333;
-    font-size: 18px;
-}
-.card-item-parent-div-referrals{
-    width: 100%;
-    overflow-x: scroll;
-}
-.sent-through-text-referrals{
-    text-align: center;
-}
-@media screen and (max-width:1470px){
-    .linkfor-referral .link-copy-referral{
-        width: 13%;
-    }
-}
-@media screen and (max-width:1150px){
-    .linkfor-referral span{
-        width: 70%;
-    }
-}
-@media screen and (max-width:1100px){
-    .linkfor-referral span{
-        width: 70%;
-    }
-    .linkfor-referral .link-copy-referral{
-        width: 20%;
-    }
-}
-@media screen and (max-width:900px){
-    .card-item-your-referrals-single span{
-        flex-basis: 40%;
-    }
-
-}
-@media screen and (max-width:700px){
-    .card-item-your-referrals-single span{
-        flex-basis: auto;
-    }
-    .sent-through-text-referrals{
-        display:none;
-    }
-}
-@media screen and (max-width:500px){
-    .heading-container-referrals-recruiters{
-        flex-direction: column;
-    }
-    .heading-container-referrals-recruiters .left-side-heading-and-links p{
-        margin-top: 30px;
-    }
-    .left-side-heading-and-links,.right-side-image-div{
-        width: 100%!important;
-        flex-basis: 100%;
-    }
-    .right-side-image-div{
-        margin-top: 40px;
-    }
-    .linkfor-referral{
-        flex-direction: column;
-        justify-content: center;
-    }
-    .linkfor-referral span{
-        width: 100%;
-        display: block;
-        overflow-x: scroll;
-    }
-    .linkfor-referral .link-copy-referral{
-        width: 50%;
-        margin-top: 30px;
-    }
-    .card-item-your-referrals-single{
-        justify-content: flex-start;
-    }
-    .sent-through-text-referrals{
-        display:block;
-    }
-    .card-item-referrals-first-span-parent{
-        padding: 0px 30px;
-    }
+.referrals p{
+    position:relative;
+    right:-250;
+    bottom:-240;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:30px;
 }
