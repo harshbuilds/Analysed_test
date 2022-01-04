@@ -12,7 +12,7 @@
 
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="Appliedcandidates.php" class="active-breadcrumb-link">Applied Candidates</a> 
+            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a> 
         </div>
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
@@ -40,7 +40,7 @@
                                 <?php   }
                                 if($status=="Contacting"){ ?>
                                     <p class="candidate-status-jobs Contacting">Contacting</p>
-                                <?php }
+                                <?php } 
                                 if($status=="Hired"){ ?>
                                     <p class="candidate-status-jobs Hired">Hired</p>
                                 <?php } ?>
@@ -129,16 +129,16 @@
                 <h2 class="filter-heading">Filter</h2>
                 <form class="form">
                 <div class="category-main-first">
-
+                    
                         <label for="jobtitle" class="label-applied-candidates">Job Title</label>
                         <input type="text" id="jobtitle" placeholder="Job Title" class="input-applied-candidates" oninput="myFunction()">
-
+                    
                 </div>
                 <div class="category-main-first">
-
+                    
                         <label for="Location" class="label-applied-candidates">Location</label>
                         <input type="text" id="location" placeholder="Location" class="input-applied-candidates" oninput="myFunction()">
-
+                    
                 </div>
                 <div class="category-main-first">
                     <p class="row-flex-jobs-j">
@@ -167,7 +167,7 @@
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                        <?php } ?>
+                        <?php } ?>     
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -197,8 +197,8 @@
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                        <?php } ?>
-
+                        <?php } ?>  
+                                 
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -228,8 +228,8 @@
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                    <?php } ?>
-
+                    <?php } ?>  
+                            
                     </div>
                 </div>
             </form>
@@ -243,7 +243,7 @@
     const categoryDiv3 = document.querySelector('#categoryDiv3');
     const categoryDiv4 = document.querySelector('#categoryDiv4');
     const categoryDiv5 = document.querySelector('#categoryDiv5');
-
+    
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })
@@ -265,8 +265,8 @@
             var status= get_filter_text('status');
             var jobtitle=document.getElementById('jobtitle').value;
             var location=document.getElementById('location').value;
-
-
+        
+        
             $.ajax({
                 url:'./include/candidates_action.php',
                 method:'POST',
@@ -278,7 +278,7 @@
             });
         }
 
-
+    
         function get_filter_text(text_id){
             var filterData=[];
             $('#'+text_id+':checked').each(function(){
@@ -305,3 +305,5 @@
         });
     });
 </script>
+
+
