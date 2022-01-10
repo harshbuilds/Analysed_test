@@ -52,7 +52,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="recruiter/referrals.php" class="sidebar_main-listlinks">
+          <a href="recruiter/addClient.php" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 136.png" />
           </a>
         </li>
