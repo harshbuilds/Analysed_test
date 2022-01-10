@@ -1937,66 +1937,32 @@ INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, 
 
 CREATE TABLE `jobseeker` (
   `jobseeker_id` int(255) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
-  `job_type` varchar(50) NOT NULL,
-  `yearofpassing` year(4) NOT NULL,
+  `yearofpassing` varchar(10) NOT NULL,
   `skills` varchar(100) NOT NULL,
-  `experience` int(10) NOT NULL,
+  `experience` varchar(10) NOT NULL,
   `js_email` varchar(100) NOT NULL,
-  `countrycode` int(3) NOT NULL,
-  `number` bigint(10) NOT NULL,
-  `resume` varbinary(100) NOT NULL,
-  `location` varchar(100) NOT NULL,
-  `interest` varchar(100) NOT NULL,
-  `project` varchar(100) NOT NULL,
-  `position` varchar(100) NOT NULL,
-  `organisation` varchar(100) NOT NULL,
-  `availability` varchar(50) NOT NULL,
-  `age` int(100) NOT NULL,
-  `language` varchar(50) NOT NULL,
-  `notes` varchar(255) NOT NULL,
-  `image` longblob NOT NULL,
-  `dob` date NOT NULL,
-  `status` varchar(20) NOT NULL,
+  `number` varchar(10) NOT NULL,
   `address` varchar(20) NOT NULL,
-  `country` varchar(10) NOT NULL,
-  `city` varchar(10) NOT NULL,
-  `zip` varchar(10) NOT NULL,
-  `state` varchar(10) NOT NULL,
-  `current_title` varchar(10) NOT NULL,
-  `company_name` varchar(50) NOT NULL,
-  `candidate_type` varchar(10) NOT NULL,
-  `emp_preference` varchar(10) NOT NULL,
-  `source` varchar(10) NOT NULL,
-  `recruiter` varchar(10) NOT NULL,
-  `current_salary` int(11) NOT NULL,
-  `salary_range1` int(11) NOT NULL,
-  `salary_range2` int(11) NOT NULL,
-  `talent` varchar(20) NOT NULL,
-  `comment` varchar(50) NOT NULL,
-  `availability_date` date NOT NULL,
-  `job` varchar(20) NOT NULL,
-  `accessibility` varchar(20) NOT NULL,
-  `response_type` varchar(20) NOT NULL,
-  `job_status` varchar(50) NOT NULL,
-  `added_on` date NOT NULL
+  `resume` varchar(300) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `confirmpassword` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jobseeker`
 --
 
-INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `job_type`, `yearofpassing`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
-(1, 'John Smith', 'S', 'BSc.CS', 'Full-time', 2020, 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
-(2, 'Caley Mike', 'S', 'Computer Science Degree', 'Part-time', 2023, 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
-(3, 'John Doe', 'S', 'Design Master Degree', 'Internship', 2020, 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
-(4, 'Karen Doe', 'S', 'MCA', 'Part-time', 2020, 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
-(5, 'Chris Shore', 'S', 'BCom', 'Full-time', 2020, 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
-(6, 'Joe Daisy', 'S', 'MSc.SS', 'Part-time', 2020, 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11');
-
--- --------------------------------------------------------
+INSERT INTO `jobseeker` (`jobseeker_id`, `user_id`, `firstname`, `lastname`, `qualification`, `yearofpassing`, `skills`, `experience`, `js_email`, `number`, `address`, `resume`, `password`, `confirmpassword`) VALUES
+(2, '', 'noah', 'c', 'Undergraduate', '', 'java', '1', 'noah@gmail.com', '4593475947', 'blr', '', 'noah', 'noah'),
+(3, '', 'harry', 's', 'Postgraduate', '', 'c,c++', '1', 'harry@gmail.com', '5457547564', 'delhi', '', 'harry1', 'harry1'),
+(4, '', 'kevin', 'a', 'Undergraduate', '', 'java', '1', 'kev@gmail.com', '7745745384', 'agra', '', 'kev', 'kev'),
+(5, '625715', 'liam', 'p', 'Undergraduate', '', 'java', '1', 'liam@gmail.com', '7343743743', 'bangalore', '', 'liam', 'liam'),
+(6, '627244', 'john', 'd', 'Postgraduate', '', 'java', '0', 'john@gmail.com', '3463546453', 'birgunj', '', 'john', 'john'),
+(7, '748156', 'karen', 'p', 'Undergraduate', '2021', 'c,c++', '1', 'karen@gmail.com', '7636436547', 'bangalore', '', 'karen', 'karen');
 
 --
 -- Table structure for table `notes`
@@ -2032,8 +1998,7 @@ CREATE TABLE `recruiter` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `country_code` int(3) NOT NULL,
-  `number` bigint(10) NOT NULL,
+  `number` varchar(10) NOT NULL,
   `address` varchar(200) NOT NULL,
   `company_name` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
@@ -2042,18 +2007,17 @@ CREATE TABLE `recruiter` (
   `off_address` varchar(200) NOT NULL,
   `password` varchar(50) NOT NULL,
   `confirmpassword` varchar(50) NOT NULL,
-  `rec_img` longblob NOT NULL
+  `rec_img` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recruiter`
 --
 
-INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `country_code`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `rec_img`) VALUES
-(1, 'Karen Doe', 'S', 'abcd@gmail.com', 91, 9898876767, 'New Street', 'Fox Hunt', '', 'Information Technology', 'abc123@gmail.com', '', '', '', ''),
-(2, 'Joe Daisy', 'S', 'abc@gmail.com', 91, 9898876767, 'New Street', '', '', '', '', '', '', '', '');
-
--- --------------------------------------------------------
+INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `rec_img`) VALUES
+(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', NULL),
+(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', NULL),
+(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', NULL);
 
 --
 -- Table structure for table `state_list`
