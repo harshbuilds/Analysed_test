@@ -1,22 +1,47 @@
 <?php
+include 'conn.php';
+session_start();
 
-    session_start();
 
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-       header("Location: createRecruitement2.php");
-     } 
+    
+    $td="../upload/";
+    $tf=$td.basename($_FILES["fileToUpload"]["name"]);
 
+    $_SESSION['file'] = basename($_FILES["fileToUpload"]["name"]);
+
+    $move= move_uploaded_file($_FILES["fileToUpload"]["tmp_name"] , $tf);
+
+    if (!($move)) {
+        
+        echo "something wrong";
+    }
+
+
+
+        $_SESSION['Position'] = $_POST['Position'];
+        $_SESSION['Industry'] = $_POST['Industry'];
+        $_SESSION['Jobtype'] =$_POST['Jobtype'];
+        $_SESSION['client_company'] =$_POST['client_company'];
+        $_SESSION['Contact_at_client_company'] =$_POST['Contact_at_client_company'];
+        $_SESSION['Business_Development_Manager'] =$_POST['Business_Development_Manager'];
+        $_SESSION['Status'] =$_POST['Status'];
+        $_SESSION['Priority'] =$_POST['Priority'];
+        $_SESSION['Job_reference_number'] =$_POST['Job_reference_number'];
+        $_SESSION['Designation'] =$_POST['Designation'];
+        $_SESSION['Recruiters_name'] =$_POST['Recruiters_name'];
+        $_SESSION['Number_of_openings'] =$_POST['Number_of_openings'];
+        $_SESSION['Start_Date'] =$_POST['Start_Date'];
+        $_SESSION['End_Date'] =$_POST['End_Date'];
+        $_SESSION['Joblocation1'] =$_POST['Joblocation1'];
+        $_SESSION['Joblocation2'] =$_POST['Joblocation2'];
+        $_SESSION['Joblocation3'] =$_POST['Joblocation3'];
+        $_SESSION['Starting_time'] =$_POST['Starting_time'];
+        $_SESSION['Ending_time'] =$_POST['Ending_time'];
+        $_SESSION['Client_margin'] =$_POST['Client_margin'];
+        $_SESSION['Contact_information_for_the_advert'] =$_POST['Contact_information_for_the_advert'];
+        $_SESSION['advert_contact_no'] =$_POST['advert_contact_no'];
+    
+        
 ?>
 
 <?php include('header.php')?>
@@ -33,7 +58,7 @@
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
         <!--<button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
-        <form action="" method="post">
+        <form action="createRecruitement2.php" method="POST">
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="createRecruitement.php" >Job Description</a></p>
