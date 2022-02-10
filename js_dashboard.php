@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/jsDashboard.css"> <!--linking to the css file-->
+<link rel="stylesheet" href="./css/js_Dashboard.css"> <!--linking to the css file-->
 <?php include('header.php')?> <!--including the header file-->
 
 <title>JobSeeker Dashboard</title>  <!--title of the page-->
