@@ -1,28 +1,30 @@
 <?php
+include 'conn.php';
+session_start();
 
-    session_start();
-
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: createRecruitement3.php");
-     } 
+        $_SESSION['skills'] =$_POST['skills'];
+        $_SESSION['Qualifications'] =$_POST['Qualifications'];
+        $_SESSION['Eligibility_criteria'] =$_POST['Eligibility_criteria'];
+        $_SESSION['Experience_requirement'] =$_POST['Experience_requirement'];
+        $_SESSION['Relevant_experience'] =$_POST['Relevant_experience'];
+        $_SESSION['Irrelevant_experience'] =$_POST['Irrelevant_experience'];
 
 ?>
 
 <?php include('header.php')?>
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/createRecruitement.css">
 <title>Analysed</title>
+</head>
+<body>
+
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Job listings</a> ><a href="">Create Recruitement</a> 
@@ -33,7 +35,7 @@
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
         <!--<button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
-        <form action="" method="post">
+        <form action="createRecruitement3.php" method="POST" enctype="multipart/form-data">
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="createRecruitement.php">Job Description</a></p>
@@ -77,7 +79,7 @@
                                     </p>
                                     <p class="input-para-add-client-ekam-1"> 
                                         <label for="default-select-for-no.11">Workspace view</label>
-                                        <input id="default-select-for-no.11" name="Workspace_view" type="file" class="" placeholder="Enter reputation of organisation">
+                                        <input id="fileToUpload" name="fileToUpload" type="file" class="">
                                         
                                         <label for="default-select-for-no.3" style="margin-top:40px">Transportation *</label>
                                             <select name="Transportation" id="default-select-for-no.3" class="default-select-for-add-client-1"required />
@@ -100,3 +102,5 @@
 </div>
 
 
+</body>
+</html>
