@@ -14,10 +14,10 @@ Login<br>
 <div class=image1>
 <div class="image">
 <img src="img/recruiter.png" alt="">
-<button><a href="signup/recruiter/Recruiter login.php">Recruiter</a></button></div>
+<button><a href="signup/recruiter/recruiterSignUp.php">Recruiter</a></button></div></a>
 <div class="image">
 <img src="img/jobseeker.png" alt="">
-<button>Jobseeker</button>
+<a href="signup/jobSeeker/jobSeekerSignUp.php"><button>Jobseeker</a></button>
 </div>
 
 </div>
