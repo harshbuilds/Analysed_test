@@ -1,29 +1,55 @@
 <?php
+include 'conn.php';
+session_start();
 
-    session_start();
+    
 
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: includes/registerRecruitment.php");
-     } 
 
+
+    $td="../upload/";
+    $tf=$td.basename($_FILES["fileToUpload"]["name"]);
+
+     $_SESSION['Workspace_view'] = basename($_FILES["fileToUpload"]["name"]);
+
+    $move= move_uploaded_file($_FILES["fileToUpload"]["tmp_name"] , $tf);
+
+    if (!($move)) {
+        
+        echo "something wrong";
+    }
+
+
+        $_SESSION['Roles_and_responsibilities'] = $_POST['Roles_and_responsibilities'];
+        $_SESSION['Growth_oppurtunities'] = $_POST['Growth_oppurtunities'];
+        $_SESSION['Learning_oppurtunities'] = $_POST['Learning_oppurtunities'];
+        $_SESSION['Employeee_endorsements'] = $_POST['Employeee_endorsements'];
+        $_SESSION['Employee_benefits'] = $_POST['Employee_benefits'];
+        $_SESSION['Reputation_of_organisation'] = $_POST['Reputation_of_organisation'];
+        $_SESSION['advert_Job_description'] = $_POST['advert_Job_description'];
+       // = $_POST['Workspace_view'];
+        $_SESSION['Transportation'] = $_POST['Transportation'];
+        
+        echo $_SESSION['file'];
+        echo $_SESSION['Position'];
+        echo $_SESSION['Industry'];
+              
 ?>
 
 
 <?php include('header.php')?>
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/createRecruitement.css">
 <title>Analysed</title>
+  
+</head>
+<body>
+
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Job listings</a> ><a href="">Create Recruitement</a> 
@@ -34,7 +60,7 @@
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
         <!--<button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
-        <form action="" method="post">
+        <form action="csubmitRecruitement.php" method="POST">
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="createRecruitement.php">Job Description</a></p>
@@ -105,3 +131,6 @@
 </div>
 
 
+
+</body>
+</html>
