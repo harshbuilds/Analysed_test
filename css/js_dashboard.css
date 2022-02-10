@@ -1,310 +1,959 @@
-@font-face {
-    font-family: CeraB;
-    src: url(../fonts/CeraPro-Bold.ttf);
-  }
-  @font-face {
-    font-family: MetroB;
-    src: url(../fonts/metropolis/Metropolis-Bold.woff);
-  }
-  @font-face {
-    font-family: CeraM;
-    src: url(../fonts/CeraPRO-Medium.ttf);
-  }
-  @font-face {
-    font-family: Metro;
-    src: url(../fonts/metropolis/Metropolis-Regular.woff);
-  }
-  @font-face {
-    font-family: MetroM;
-    src: url(../fonts/metropolis/Metropolis-Medium.woff);
-  }
-  @font-face {
-    font-family: MetroS;
-    src: url(../fonts/metropolis/Metropolis-ExtraBold.woff);
-  }
-  @font-face {
-    font-family: MetroMI;
-    src: url(../fonts/metropolis/Metropolis-MediumItalic.woff);
+* {
+    margin: 0px;
+    padding: 0px;
   }
 
-.main_body{
-    margin-left: 150px;
-    background-color: transparent;
-}
-.head_1{
-    color: #333333;
-    font-size: 40px;
-    font-family: CeraM;
-}
-.sub_1{
-    color: #3598DB;
-    font-size: 16px;
-    font-family: Metro;
-}
-.loc_1{
-    color: #333333;
-    font-size: 18px;
-    font-family: MetroM;
-}
-.loc_2{
-    color: #333333;
-    font-size: 18px;
-    font-family: Metro;
-    margin-left: 40px;
-}
-.loc_3{
-    color: #333333;
-    font-size: 16px;
-    font-family: Metro;
-}
-.map_des{
-    height:250px;
-    width:480px;
-    margin-left: 40px;
-}
-#c1{
-    height:100px;
-    width: 250px;
-    align-items:center;
-    display: flex;
-}
-#c2{
-    width: 550px;
-    height: 750px;
-    /* align-items:center; */
-    display: flex;
-}
-#c3{
-    width: 540px;
-    height: 676px;
-    /* align-items:center; */
-    display: flex;
-}
-#val1{
-    margin-top: 25px;
-}
-.cardImageDash{
-    height: 55px;
-    width: 55px;
-}
-.headingCards{
-    color: #979797;
-    font-size: 18px;
-    font-family: Metro;
-    line-height: 10%;
-}
-.last_t1{
-    color: #979797;
-    font-size: 16px;
-    font-family: Metro;
-    margin-left: 130px;
-}
-#b_8{
-    color: #979797;
-    font-size: 14px;
-    font-family: Metro;
-    /* margin-left: 150px; */
-}
-.last_t2{
-    color: #979797;
-    font-size: 16px;
-    font-family: Metro;
-    margin-left: 190px;
-}
-.last_t3{
-    color: #979797;
-    font-size: 16px;
-    font-family: Metro;
-    margin-left: 220px;
-    /* margin-top: 200px; */
-}
-.numberCards{
-    color: #333333;
-    font-size: 30px;
-    font-family: MetroM;
-    margin-left:30px
-}
-.leftText{
-    color: #333333;
-    font-size: 18px;
-    font-family: MetroM;
-    margin-top: 30px;
-    margin-left: 30px;
-}
-.rightText{
-    color: #3598DB;
-    font-size: 16px;
-    font-family: Metro;
-    margin-left: 280px;
-}
-.rightText1{
-    color: #3598DB;
-    font-size: 16px;
-    font-family: Metro;
-    margin-left: 240px;
-}
-.mapForJobsImage{
-    height: 358px;
-    width: 500px;
-    margin-left: 30px;
-}
-#l1_h1{
-    color: #333333;
-    font-size: 18px;
-    font-family: MetroM;
+  body {
+    background: white;
+    
+  }
+  .title {
+      position:relative;
+      right:-240;
+      bottom:-60;
+  }
+
+  .title h2{
+      font-size:38px;
+      font-weight: lighter;
+
+  }
+
+  .title p{
+      color:#3598db;
+      position:relative;
+      top:-10;
+  }
+
+  .jobs-applied{
+      position:relative;
+      right:-240;
+      bottom:-100;
+      border:1px solid white;
+      border-radius: 5px;
+    box-sizing:content-box;
+    width:15%;
+    height:13%;
+    z-index: 9;
+    background-color: white;
+    word-wrap:break-word;
+    box-shadow:1px 5px 20px #888888;
+  }
+
+  .jobs-applied p{
+      color:#888888;
+      font-weight: lighter;
+      position:relative;
+      right:-30;
+      bottom:-20;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+
+  .jobs-applied img{
+      position:relative;
+      right:-150;
+      bottom:20;
+  }
+
+  .jobs-applied h3{
+      font-weight: normal;
+      position:relative;
+      right:-50;
+      bottom:-30;
+      font-size: 25px;
+  }
+
+  .jobs-nearby{
+    position:relative;
+    right:-500;
+    bottom:-4;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:13%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
 }
 
-#temp{
-    display: flex;
-    align-items: flex-start;
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    padding-top: 10px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    width: 100%; 
+.jobs-nearby p{
+    color:#888888;
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-20;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
-#temp2{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    margin-top: 10px;
-    padding-bottom: 20px;
+
+.jobs-nearby img{
+    position:relative;
+    right:-150;
+    bottom:20;
+}
+
+.jobs-nearby h3{
+    font-weight: normal;
+    position:relative;
+    right:-50;
+    bottom:-30;
+    font-size: 25px;
+}
+
+.shortlisted{
+    position:relative;
+    right:-760;
+    bottom:92;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:13%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.shortlisted p{
+    color:#888888;
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-20;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.shortlisted img{
+    position:relative;
+    right:-150;
+    bottom:20;
+}
+
+.shortlisted h3{
+    font-weight: normal;
+    position:relative;
+    right:-50;
+    bottom:-30;
+    font-size: 25px;
+}
+
+.starred-jobs{
+    position:relative;
+    right:-1020;
+    bottom:187;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:13%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.starred-jobs p{
+    color:#888888;
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-20;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.starred-jobs img{
+    position:relative;
+    right:-150;
+    bottom:20;
+}
+
+.starred-jobs h3{
+    font-weight: normal;
+    position:relative;
+    right:-50;
+    bottom:-30;
+    font-size: 25px;
+}
+
+.jobs-near-you{
+    position:relative;
+    right:-240;
+    bottom:155;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:33%;
+  height:90%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.jobs-near-you #title{
+    color:black;
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-20;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.jobs-near-you #setting{
+    position:relative;
+    right:-370;
+    bottom:-5;
+}
+
+.jobs-near-you #place{
+    color:#3598db;
+    font-weight: lighter;
+    position:relative;
+    right:-390;
+    bottom:12;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.jobs-near-you #map{
+    position:relative;
+    right:-30;
+}
+
+.jobs-near-you table{
+    width:100%;
+}
+
+.jobs-near-you th{
+    position:relative;
+    left:-30;
+    font-weight: lighter;
     margin:10px;
 }
-#temp3{
-    box-shadow: 0 4px 8px 0 #fff;
-    margin-top: 10px;
-    padding-bottom: 20px;
+.jobs-near-you td{
+    position:relative;
+    right:-30;
+    bottom:-30;
+    font-weight: lighter;
+    padding:8px;
+}
+
+.jobs-near-you hr{
+    position:relative;
+    bottom:-30;
+    right:-20;
+    width:430px;
+}
+.profile-viewed{
+    position:relative;
+    right:-760;
+    bottom:810;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:33%;
+  height:85%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.profile-viewed #title{
+    color:black;
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-20;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.profile-viewed #setting{
+    position:relative;
+    right:-370;
+    bottom:-5;
+}
+
+.profile-viewed #days{
+    color:#3598db;
+    font-weight: lighter;
+    position:relative;
+    right:-390;
+    bottom:12;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.profile-viewed #views{
+    font-weight: lighter;
+    position:relative;
+    right:-30;
+    bottom:-10;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.profile-viewed table{
+    width:100%;
+}
+
+.profile-viewed th{
+    position:relative;
+    left:-30;
+    font-weight: lighter;
     margin:10px;
 }
-.more_v{
-    color: #6EC5FF;
-    font-size: 16px;
-    font-family: MetroM;
-    margin-left: 60px;
-    margin-top: 150px;
+.profile-viewed td{
+    position:relative;
+    right:-50;
+    bottom:-30;
+    font-weight: lighter;
+    padding:8px;
 }
-.more_m{
-    color: #6EC5FF;
-    font-size: 15px;
-    font-family: MetroM;
-    margin-left: 20px;
-    margin-top: 130px;
 
+.profile-viewed hr{
+    position:relative;
+    bottom:-30;
+    right:-20;
+    width:430px;
 }
-.icons{
-    align-items: right;
-    margin-top: 15px;
-    margin-left:180px
+
+
+.recommend h2{
+    position:relative;
+    right:-240;
+    bottom:700;
+    font-weight: normal;
+    font-size: 35px;
 }
-#b_9{
-    color:#333333;
-    font-family: Metro;
-    font-size: 16px;
-    /* line-height: 1.3; */
+
+
+.airbnb{
+    position:relative;
+    right:-240;
+    bottom:680;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:33%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
 }
-#b4{
-    color:#333333;
-    font-family: MetroS;
-    font-size: 16px;
+
+.airbnb #share{
+position:relative;
+right:-115;
+top:-10;
 }
-#b5{
-    color:#979797;
-    font-family: MetroM;
-    font-size: 12px;
+
+.airbnb #star{
+position:relative;
+right:-120;
+top:-12;
 }
-.designation{
-    font-family: MetroB;
-    font-size: 18px;
-    color: #333333;
+
+.airbnb #logo{
+    position:relative;
+    right:-20;
+    bottom:-20;
 }
-.days{
-    color: #979797;
-    font-family: MetroM;
-    font-size:12px;
+
+.airbnb #name{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: bold;
+    font-size: medium;
 }
-.skills{
-    color: #3598DB;
-    font-style: MetroMI;
-    font-size: 16px;
-}
-.last_job_content #first{
-    float:left;
-    margin-top: 10px;
+
+.airbnb #address{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: lighter;
     font-size: smaller;
-    font-family: sans-serif;
-    color: #979797;
-}    
-.last_job_content #second{
+    color:#888888;
+}
+
+.airbnb #role{
+    font-weight: lighter;
+    font-size: small;
+    position:relative;
+    bottom:-10;
+    right:-13;
+}
+
+.airbnb progress{
+   position: relative;
+   bottom:-20;
+   right:-13;
+   width:85px;
+
+}
+
+.airbnb #days-left{
+    font-weight: lighter;
+    font-size: x-small;
+    color:#888888;
+    position:relative;
+    right:-120;
+}
+
+.airbnb #skills{
+    font-weight: lighter;
+    font-size: small;
+    color:#3598db;
+    position:relative;
+    right:-12;
+    bottom:-15;
+}
+
+.airbnb #type{
+    font-weight: lighter;
+    font-size: smaller;
+    color:#888888;
+    position:relative;
+    right:-12;
+    bottom:-55;
+}
+
+.airbnb input{
+    position:relative;
+    right:-110;
+    bottom: -35px;
+    border: 1px solid #3598db;
+  border-radius: 20px;
+  background: #fafbff;
+  color: #3598db;
+  padding:7px;
+  margin-bottom: 20px;
+  width: 40%;
+  cursor:pointer;
+}
+
+
+.netflix{
+    position:relative;
+    right:-490;
+    bottom:921;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:33%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.netflix #share{
+position:relative;
+right:-115;
+top:-10;
+}
+
+.netflix #star{
+position:relative;
+right:-120;
+top:-12;
+}
+
+.netflix #logo{
+    position:relative;
+    right:-20;
+    bottom:-20;
+}
+
+.netflix #name{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.netflix #address{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: lighter;
+    font-size: smaller;
+    color:#888888;
+}
+
+.netflix #role{
+    font-weight: lighter;
+    font-size: small;
+    position:relative;
+    bottom:-10;
+    right:-13;
+}
+
+.netflix progress{
+   position: relative;
+   bottom:-20;
+   right:-13;
+   width:85px;
+
+}
+
+.netflix #days-left{
+    font-weight: lighter;
+    font-size: x-small;
+    color:#888888;
+    position:relative;
+    right:-120;
+}
+
+.netflix #skills{
+    font-weight: lighter;
+    font-size: small;
+    color:#3598db;
+    position:relative;
+    right:-12;
+    bottom:-15;
+}
+
+.netflix #type{
+    font-weight: lighter;
+    font-size: smaller;
+    color:#888888;
+    position:relative;
+    right:-12;
+    bottom:-55;
+}
+
+.netflix input{
+    position:relative;
+    right:-110;
+    bottom: -35px;
+    border: 1px solid #3598db;
+  border-radius: 20px;
+  background: #fafbff;
+  color: #3598db;
+  padding:7px;
+  margin-bottom: 20px;
+  width: 40%;
+  cursor:pointer;
+}
+
+.uber{
+    position:relative;
+    right:-740;
+    bottom:1162;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:15%;
+  height:33%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.uber #share{
+position:relative;
+right:-115;
+top:-10;
+}
+
+.uber #star{
+position:relative;
+right:-120;
+top:-12;
+}
+
+.uber #logo{
+    position:relative;
+    right:-20;
+    bottom:-20;
+}
+
+.uber #name{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.uber #address{
+    position:relative;
+    top:-15;
+    right:-70;
+    font-weight: lighter;
+    font-size: smaller;
+    color:#888888;
+}
+
+.uber #role{
+    font-weight: lighter;
+    font-size: small;
+    position:relative;
+    bottom:-10;
+    right:-13;
+}
+
+.uber progress{
+   position: relative;
+   bottom:-20;
+   right:-13;
+   width:85px;
+
+}
+
+.uber #days-left{
+    font-weight: lighter;
+    font-size: x-small;
+    color:#888888;
+    position:relative;
+    right:-120;
+}
+
+.uber #skills{
+    font-weight: lighter;
+    font-size: small;
+    color:#3598db;
+    position:relative;
+    right:-12;
+    bottom:-15;
+}
+
+.uber #type{
+    font-weight: lighter;
+    font-size: smaller;
+    color:#888888;
+    position:relative;
+    right:-12;
+    bottom:-55;
+}
+
+.uber input{
+    position:relative;
+    right:-110;
+    bottom: -35px;
+    border: 1px solid #3598db;
+  border-radius: 20px;
+  background: #fafbff;
+  color: #3598db;
+  padding:7px;
+  margin-bottom: 20px;
+  width: 40%;
+  cursor:pointer;
+}
+
+.recommend .view-more{
+    position:relative;
+    right:-1050;
+    top:-1280;
+}
+
+.recommend .view-more a{
+    color: #3598db;
     text-decoration: none;
-    float: right;
-    border: 1px solid #3598DB;
-    border-radius: 20px;
-    padding:5px;
-    color:#3598DB;
-    font-size: smaller;
-    font-family: sans-serif;
-    margin-right: 20px;
-}
-.last_job_content{
-  color: #0F9D58;
-  font-size: 16px;
-  font-family: MetroM;
+    font-weight: lighter;
 }
 
-.o1{
-    color: #333333;
-    font-size: 18px;
-    font-family: MetroM;
+.job-search h2{
+    position:relative;
+    right:-240;
+    bottom:1120;
+    font-weight: normal;
+    font-size: 35px;
 }
-.s1{
-    border-radius: 8px;
-    text-align: center;
-    height: 230px;
-    width: 210px;
-    /* margin-top: 50px; */
+
+.data-analysis{
+    position:relative;
+    right:-240;
+    bottom:1080;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:13%;
+  height:27%;
+  z-index: 9;
+  background-color: #eeecf7;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px white;
 }
-.s4{
-    /* text-align: center; */
-    height: 58px;
-    width: 900px;
-    border: 1px solid #6EC5FF38;
-    background-color: #6EC5FF38;
+
+.data-analysis #name{
+    position:relative;
+    right:-45;
+    bottom:-55;
+    font-weight: lighter;
 }
-#k1{
-    border: 1px solid #816CD51A;
-    background-color: #816CD51A;
+
+.data-analysis #logo{
+    position:relative;
+    right:-45;
+    bottom:-40;
 }
-#k2{
-    border: 1px solid #F268421A;
-    background-color: #F268421A;
+
+.seo{
+    position:relative;
+    right:-460;
+    bottom:1277;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:13%;
+  height:27%;
+  z-index: 9;
+  background-color: #fbebe8;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px white;
 }
-#k3{
-    border: 1px solid #2C528F1A;
-    background-color: #2C528F1A;
+
+.seo #name{
+    position:relative;
+    right:-74;
+    bottom:-57;
+    font-weight: lighter;
 }
-#k4{
-    border: 1px solid #FDF53F1A;
-    background-color: #FDF53F1A;
+
+.seo #logo{
+    position:relative;
+    right:-45;
+    bottom:-40;
 }
 
 
-#li_5{
-    height: 530px;
-    width: 900px;
+.python-developer{
+    position:relative;
+    right:-675;
+    bottom:1475;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:13%;
+  height:27%;
+  z-index: 9;
+  background-color: #e5e9ef;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px white;
 }
-.addFilesMyTasks1 {
-    /* display: flex; */
-    /* right: 2%; */
-    box-shadow: 1px 3px 10px #00000033;
-    border-radius: 8px;
-    background-color: #3598DB;
-    color: #fff;
-    padding: 8px 16px;
-    border: 1px solid #3598DB;
-    align-items: center;
-    text-align: center;
-    width: 220px;
-    height: 35px;
-    margin-left: 400px;
-    font-size: 14px;
-  }
+
+.python-developer #name{
+    position:relative;
+    right:-40;
+    bottom:-57;
+    font-weight: lighter;
+}
+
+.python-developer #logo{
+    position:relative;
+    right:-45;
+    bottom:-40;
+}
+
+.web-developer{
+    position:relative;
+    right:-890;
+    bottom:1673;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:13%;
+  height:27%;
+  z-index: 9;
+  background-color: #fbfae7;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px white;
+}
+
+.web-developer #name{
+    position:relative;
+    right:-40;
+    bottom:-57;
+    font-weight: lighter;
+}
+
+.web-developer #logo{
+    position:relative;
+    right:-45;
+    bottom:-40;
+}
+
+.job-search .view-more{
+    position:relative;
+    right:-1160;
+    top:-1780;
+}
+
+.job-search .view-more a{
+    color: #3598db;
+    text-decoration: none;
+    font-weight: lighter;
+}
+
+.upcoming-interview{
+    position:relative;
+    right:-240;
+    bottom:1650;
+    border:1px solid white;
+    border-radius: 5px;
+  box-sizing:content-box;
+  width:50%;
+  height:60%;
+  z-index: 9;
+  background-color: white;
+  word-wrap:break-word;
+  box-shadow:1px 5px 20px #888888;
+}
+
+.upcoming-interview #title{
+    font-weight: lighter;
+    font-size: medium;
+    position:relative;
+    right:-30;
+    bottom:-30;
+}
+
+.upcoming-interview input{
+    position:relative;
+    right:-500;
+    bottom: -9px;
+    border: 1px solid white;
+  border-radius: 4px;
+  background: #3598db;
+  color: white;
+  padding:8px;
+  margin-bottom: 20px;
+  width: 25%;
+  cursor:pointer;
+}
+
+.upcoming-interview table{
+    width:250%;
+}
+
+.upcoming-interview th{
+    font-weight: lighter;
+    color: #888888;
+}
+
+.upcoming-interview #one img{
+    position: relative;
+    right:-20;
+    bottom:-10;
+}
+
+.upcoming-interview  #name{
+    position: relative;
+    right:90;
+    bottom:-4;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.upcoming-interview  #company{
+    position: relative;
+    right:260;
+    bottom:-20;
+    font-weight: lighter;
+    font-size: 10px;
+    color: #888888;
+}
+
+.upcoming-interview #calendar{
+    position: relative;
+    right:390;
+    bottom:-3;
+}
+
+.upcoming-interview #date{
+    font-weight: lighter;
+    font-size: normal;
+    position: relative;
+    right:410;
+}
+.upcoming-interview #clock{
+    position: relative;
+    right:400;
+    bottom:-20;
+}
+.upcoming-interview #time{
+    font-weight: lighter;
+    color: #888888;
+    position: relative;
+    right:810;
+    bottom:-20;
+}
+
+.upcoming-interview #role{
+    font-weight: lighter;
+    position: relative;
+    right:730;
+}
+
+.upcoming-interview hr{
+    position:relative;
+    bottom:-90;
+    right:-35;
+    color: #888888;
+    width:90%;
+}
+.upcoming-interview #two img{
+    position: relative;
+    right:-20;
+    bottom:-35;
+}
+
+.upcoming-interview  #name1{
+    position: relative;
+    right:90;
+    bottom:-20;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.upcoming-interview  #company1{
+    position: relative;
+    right:261;
+    bottom:-35;
+    font-weight: lighter;
+    font-size: 10px;
+    color: #888888;
+}
+
+.upcoming-interview #calendar1{
+    position: relative;
+    right:390;
+    bottom:-18;
+}
+
+.upcoming-interview #date1{
+    font-weight: lighter;
+    font-size: normal;
+    position: relative;
+    right:411;
+    bottom:-20;
+}
+.upcoming-interview #clock1{
+    position: relative;
+    right:400;
+    bottom:-37;
+}
+.upcoming-interview #time1{
+    font-weight: lighter;
+    color: #888888;
+    position: relative;
+    right:810;
+    bottom:-39;
+}
+
+.upcoming-interview #role1{
+    font-weight: lighter;
+    position: relative;
+    right:730;
+    bottom:-20;
+}
