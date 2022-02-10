@@ -72,13 +72,26 @@ $password=$_POST['password'];
 $s="SELECT * FROM jobseeker WHERE js_email='$js_email' && password='$password';";
 $result=mysqli_query($con,$s);
 $num=mysqli_num_rows($result);
+$z="SELECT * FROM recruiter WHERE email='$js_email' && password='$password';";
+$result1=mysqli_query($con,$z);
+$num1=mysqli_num_rows($result1);
 if($num==1)
 {
     echo "<script>alert('Login Successful')</script>"; //alert message
+    echo "<script>window.open('./../../js_dashboard.php','_self')</script>";
 }
+else
+{
+  if($num1==1)
+  {
+    echo "<script>alert('Login Successful')</script>"; //alert message
+    echo "<script>window.open('./../../recruiter','_self')</script>";
 
-else{
+  }
+  else
+  {
     echo"<script>alert('Please enter correct email and password')</script>"; //alert mesage
+  }
 }
 }
 ?>
