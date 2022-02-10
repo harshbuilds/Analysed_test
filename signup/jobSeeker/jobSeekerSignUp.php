@@ -253,6 +253,7 @@ else{
 
 if(isset($_POST["register"])){
 
+$check_id=2;
 $user_id=rand(999999,111111);
 $firstname=$_POST['firstname'];
 $lastname=$_POST['lastname'];
@@ -278,7 +279,7 @@ if($confirmpassword!=$password){
    }
    else  //if(move_uploaded_file($_FILES["resume"]["tmp_name"], $target_file))
    {
-   $reg="INSERT INTO jobseeker(user_id,firstname,lastname,js_email,number,address,qualification,yearofpassing,skills,experience,password,confirmpassword)VALUES('$user_id','$firstname','$lastname','$js_email','$number','$address','$qualification','$yearofpassing','$skills','$experience','$password','$confirmpassword')";
+   $reg="INSERT INTO jobseeker(check_id, user_id,firstname,lastname,js_email,number,address,qualification,yearofpassing,skills,experience,password,confirmpassword)VALUES('$check_id','$user_id','$firstname','$lastname','$js_email','$number','$address','$qualification','$yearofpassing','$skills','$experience','$password','$confirmpassword')";
 
 mysqli_query($con,$reg);
 echo "<script>alert('Registration Successful')</script>"; //alert message
