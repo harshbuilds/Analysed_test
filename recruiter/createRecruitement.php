@@ -1,28 +1,27 @@
 <?php
+include 'conn.php';
+session_start();
+        
+        
 
-    session_start();
-
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: createRecruitement1.php");
-     } 
-
+  
 ?>
 
 <?php include('header.php')?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/createRecruitement.css">
 <title>Analysed</title>
+</head>
+<body>
+
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Job listings</a> ><a href="">Create Recruitement</a> 
@@ -32,7 +31,7 @@
             <h1 class="mainHeadingDash">Create recruitment</h1>
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
-        <form action="" method="post">
+        <form action="createRecruitement1.php" method="POST" enctype="multipart/form-data">
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="" class="active">Job Description</a></p>
@@ -46,7 +45,7 @@
                   
                         <label for="file-upload-create-rec-e" ><span style="font-size:18px;margin-right:12px;color:#333333;">Job description</span>
                         <label class="default-button-for-recruiter-dashboard file-upload">
-                            <input type="file" name="file" style="display: none">Browse</label>
+                            <input type="file" id="fileToUpload" name="fileToUpload" style="display: none">Browse</label>
                         </label>
                     </div>   
 
@@ -225,3 +224,5 @@
 </div>
 
 
+</body>
+</html>
