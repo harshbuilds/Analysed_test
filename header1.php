@@ -42,6 +42,11 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
+          <a href="myMessages.php" class="sidebar_main-listlinks">
+            <img src="./img/nav-ele-7.png" />
+          </a>
+        </li>
+        <li class="sidebar_main-listItems">
           <a href="schedule.php" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 75.png" />
           </a>
@@ -52,7 +57,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="recruiter/addClient.php" class="sidebar_main-listlinks">
+          <a href="recruiter/referrals.php" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 136.png" />
           </a>
         </li>
@@ -64,6 +69,11 @@
         <li class="sidebar_main-listItems">
           <a href="" class="sidebar_main-listlinks">
             <img src="./recruiter/img/Group 137.png" />
+          </a>
+        </li>
+        <li class="sidebar_main-listItems">
+          <a href="#" class="sidebar_main-listlinks">
+            <img src="./img/Star.svg" class="share-and-star-icon-img">
           </a>
         </li>
       </ul>
