@@ -58,6 +58,11 @@
             <img src="./img/nav-ele-9.png" />
           </a>
         </li>
+        <li class="sidebar_main-listItems">
+          <a href="#" class="sidebar_main-listlinks">
+            <img src="./img/Star.svg" class="share-and-star-icon-img">
+          </a>
+        </li>
       </ul>
 </nav>
 <div class="container">
