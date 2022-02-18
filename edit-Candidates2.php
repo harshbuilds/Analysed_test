@@ -20,7 +20,7 @@ if (isset($_POST['next'])) {
       $_SESSION['Zipcode']    = $_POST['Zipcode'];
       $_SESSION['State']      = $_POST['State'];
 
-      $td="../Analysed_test-main/img/";
+        $td="../img/";
           $tf=$td.basename($_FILES["image"]["name"]);
 
           $_SESSION['image']  = basename($_FILES["image"]["name"]);

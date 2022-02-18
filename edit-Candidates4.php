@@ -12,7 +12,7 @@ if (isset($_POST['next'])) {
 
 
 
-    $td="../Analysed_test-main/img/";
+      $td="../img/";
     $tf=$td.basename($_FILES["resume"]["name"]);
 
    $_SESSION['resume']  = basename($_FILES["resume"]["name"]);
