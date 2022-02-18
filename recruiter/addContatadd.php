@@ -1,29 +1,32 @@
 <?php
+    
+    include 'conn.php';     //database connection page included
+    session_start();        //session has been started
 
-    session_start();
+    
 
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
- 
-        header("Location: addContactProfessional.php");
-     } 
- 
+
+    // posting all data from personal information page to global variables using $_Session['']
+     $_SESSION['job_title']  = $_POST['job_title'];
+     $_SESSION['company_name']  = $_POST['company_name'];
+     $_SESSION['contact_type']  = $_POST['contact_type'];
+     $_SESSION['division']  = $_POST['division'];
+     $_SESSION['source']  = $_POST['source'];
+     $_SESSION['reports_to']  = $_POST['reports_to'];
+     $_SESSION['industry']  = $_POST['industry'];
+     $_SESSION['skills']  = $_POST['skills'];
+
+
+    
 
 ?>
+
+
 <?php include('header.php')?>
 
 <link rel="stylesheet" href="./css/addClient.css">
 <title>Analysed</title>
-<form action="" method="post">
+<form action="addContactIns.php" method="post" enctype="multipart/form-data"> <!-- redirecting to insert query page with data of additional information -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add Contact</a> 
@@ -80,7 +83,7 @@
                                         <input type="text" name="LinkedIn_profile" class="default-input-for-add-client-1" placeholder="Profile URL" id="default-input-for-no.2">
                                     </p>
                             </div>
-                             <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
+                             <input type = "submit" name = "submit" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
                     </div>
                 </div>
             </div>

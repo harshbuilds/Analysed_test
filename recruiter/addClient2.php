@@ -1,46 +1,25 @@
 <?php
+include 'conn.php';              //database connection page included
+session_start();                 //session has been started
 
-    session_start();
 
-    if(isset($_POST['submit'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-       if(isset($_SESSION['info'])){
-        extract($_SESSION['info']);
 
-        $conn = mysqli_connect('localhost','root','','analysed');
 
-        //move_uploaded_file($_FILES["$company_img"]["tmp_name"],"img/".$_FILES["$company_img"]["name"]);
+// posting all data from personal information page to global variables using $_Session[''
+$_SESSION['main_email']  = $_POST['main_email'];
+$_SESSION['contact_no']   = $_POST['contact_no'];
+$_SESSION['address']    = $_POST['address'];
+$_SESSION['city'] = $_POST['city'];
+$_SESSION['zipcode']   = $_POST['zipcode'];
+$_SESSION['state']   = $_POST['state'];
+$_SESSION['country']    = $_POST['country'];
 
-        $sql = mysqli_query($conn,"INSERT INTO client (company_name,status,company,company_img,ownership,industry,source,parent_company,active_contact,company_desc,permanent_fee,contract_fee,main_email,contact_no,address,city,zipcode,state,country,bank_name,bank_id,bank_acc_no,iban,vat) VALUES ('$company_name','$status','$company','$company_img','$ownership','$industry','$source','$parent_company','$active_contact','$company_desc','$permanent_fee','$contract_fee','$main_email','$contact_no','$address','$city','$zipcode','$state','$country','$bank_name','$bank_id','$bank_acc_no','$iban','$vat')");
-
-        if($sql){
-
-			$_SESSION['company_name'] = $company_name;
-			header("Location: client_individual.php");
-             }
-             
-             else{
-                echo mysqli_error($conn);
-            }
-        }
-
-     } 
 ?>
 
 <?php include('header.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
 <title>Analysed</title>
-  <form action="" method="post">
+  <form action="addClientInsert.php" method="post" enctype="multipart/form-data">  <!-- redirecting to insert query page with data of Billing information -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a> 

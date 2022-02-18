@@ -1,22 +1,10 @@
 <?php
 
-    session_start();
+   include 'conn.php';   //database connection page included
+    session_start();     //session has been started
+   
 
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: createRecruitement1.php");
-     } 
-
+   
 ?>
 
 <?php include('header.php')?>
@@ -32,7 +20,7 @@
             <h1 class="mainHeadingDash">Create recruitment</h1>
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
-        <form action="" method="post">
+        <form action="createRecruitement1.php" method="post" enctype="multipart/form-data"><!-- redirecting to skills & exp page with data of Job Description -->
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="" class="active">Job Description</a></p>

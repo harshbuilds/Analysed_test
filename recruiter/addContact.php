@@ -1,26 +1,14 @@
 <?php
-    session_start();
-
-    if(isset($_POST['next'])){
-       foreach ($_POST as $key => $value)
-       {
-           $_SESSION['info'][$key] = $value;
-       }
     
-       $keys = array_keys($_SESSION['info']);
-    
-       if(in_array('next', $keys)){
-           unset($_SESSION['info']['next']);
-       }
-    
-       header("Location: addContatadd.php");
-    } 
-
+    include 'conn.php';         //database connection page included
+    session_start();            //session has been started
 ?>
+
+
 <?php include('header.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
 <title>Analysed</title>
-<form action="" method="post">
+<form action="addContactProfessional.php" method="post" enctype="multipart/form-data"> <!-- redirecting to  professional info page with data of personal info -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add Contact</a> 
@@ -42,7 +30,7 @@
                 <h2 class="heading-for-general-information-right-side-add-client-container heading-addContact-1"><i class="fa fa-home" aria-hidden="true"></i> Personal information</h2>
                 <div class="left-side-image-box-add-client-1">
                         <div class="sub-divs-image-box-right-side-add-client">
-                            <input type="file" class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client" name="picture">
+                            <input type="file" class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client" name="fileToUpload">
                                 <label class="label-for-image-upload-ekam-1client position-absolute-label-ekam-addclient" for="input-image-upload-ekam-1-add-client">
                                 <h2 style="padding:20px 30px"><i class="fa fa-user" aria-hidden="true"></i></h2>
                                 <p style="margin-left:80px;margin-top:-30px;"><i class="fa fa-camera" aria-hidden="true"></i></p>

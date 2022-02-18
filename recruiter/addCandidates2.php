@@ -4,6 +4,9 @@ session_start();             //session has been started
 
 // posting all data from personal information page to global variables using $_Session['']
 
+if (isset($_POST['next'])) {
+
+
 $_SESSION['firstname']  = $_POST['firstname'];
 $_SESSION['lastname']   = $_POST['lastname'];
 $_SESSION['emailid']    = $_POST['emailid'];
@@ -18,8 +21,8 @@ $_SESSION['State']      = $_POST['State'];
 
 
 
-// method to insert any files in database
-$td="../upload/";
+// method to insert any image or doc files in database
+    $td="../img/";
     $tf=$td.basename($_FILES["image"]["name"]);
 
     $_SESSION['image']  = basename($_FILES["image"]["name"]);
@@ -30,8 +33,7 @@ $td="../upload/";
 
         echo "something wrong";
     }
-
-
+}
 
 ?>
 

@@ -1,26 +1,13 @@
 <?php
-    session_start();
-
-    if(isset($_POST['next'])){
-       foreach ($_POST as $key => $value)
-       {
-           $_SESSION['info'][$key] = $value;
-       }
-    
-       $keys = array_keys($_SESSION['info']);
-    
-       if(in_array('next', $keys)){
-           unset($_SESSION['info']['next']);
-       }
-    
-       header("Location: addClient1.php");
-    } 
+   include 'conn.php';      //database connection page included
+session_start();            //session has been started
+     
 
 ?>
 <?php include('header.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
 <title>Analysed</title>
-<form action="" method="post">
+<form action="addClient1.php" method="post" enctype="multipart/form-data"> <!-- redirecting to contact information page with data of General information -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a> 
@@ -42,7 +29,7 @@
                 <div class="row-recruiter image-box-right-side-add-client">
                     <div class="left-side-image-box-add-client-1">
                         <div class="sub-divs-image-box-right-side-add-client">
-                            <input type="file" name="company_img" required class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client">
+                            <input type="file" name="fileToUpload"  class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client">
                             <label class="label-for-image-upload-ekam-1client" for="input-image-upload-ekam-1-add-client">
                                 <h2><i class="fa fa-building" aria-hidden="true"></i></h2>
                                 <p><i class="fa fa-camera" aria-hidden="true"></i></p>

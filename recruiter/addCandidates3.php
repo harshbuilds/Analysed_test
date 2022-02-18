@@ -5,6 +5,8 @@ session_start();             //session has been started
 
     // posting all data from personal information page to global variables using $_Session['']
 
+if (isset($_POST['next'])) {
+
     $_SESSION['current_title']  = $_POST['currentTitle'];
     $_SESSION['company_Name'] = $_POST['companyName'];
     $_SESSION['candidate_Type'] = $_POST['candidateType'];
@@ -15,7 +17,7 @@ session_start();             //session has been started
     $_SESSION['salary_Range1'] = $_POST['salaryRange1'];
     $_SESSION['salary_Range2'] = $_POST['salaryRange2'];
 
-
+}
 
 
 ?>

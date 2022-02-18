@@ -1,22 +1,17 @@
 <?php
+    
+    include 'conn.php';  //database connection page included
+    session_start();      //session has been started
 
-    session_start();
-
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: createRecruitement3.php");
-     } 
-
+    // posting all data from personal information page to global variables using $_Session['']
+   $_SESSION['skills']  = $_POST['skills'];
+   $_SESSION['Qualifications']  = $_POST['Qualifications'];
+   $_SESSION['Eligibility_criteria']  = $_POST['Eligibility_criteria'];
+   $_SESSION['Experience_requirement']  = $_POST['Experience_requirement'];
+   $_SESSION['Relevant_experience']  = $_POST['Relevant_experience'];
+   $_SESSION['Irrelevant_experience']  = $_POST['Irrelevant_experience'];
+   
+   
 ?>
 
 <?php include('header.php')?>
@@ -33,7 +28,8 @@
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
         <!--<button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
-        <form action="" method="post">
+
+        <form action="createRecruitement3.php" method="post" enctype="multipart/form-data">  <!-- redirecting to Payment info page with data of Role Details -->
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addRec-1"><a href="createRecruitement.php">Job Description</a></p>

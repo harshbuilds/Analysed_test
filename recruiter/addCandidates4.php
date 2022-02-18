@@ -4,12 +4,15 @@ include 'conn.php';          //database connection page included
 session_start();            //session has been started
 
     // posting all data from personal information page to global variables using $_Session['']
+    if (isset($_POST['next'])) {
+
+
     $_SESSION['talent']  = $_POST['talents'];
     $_SESSION['skills'] = $_POST['skills'];
     $_SESSION['qualification'] = $_POST['qualification'];
 
 
-    $td="../upload/";
+    $td="../img/";
     $tf=$td.basename($_FILES["resume"]["name"]);
 
    $_SESSION['resume']  = basename($_FILES["resume"]["name"]);
@@ -21,7 +24,7 @@ session_start();            //session has been started
         echo "something wrong";
     }
 
-
+  }
 
 
 ?>
