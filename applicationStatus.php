@@ -1,6 +1,7 @@
 
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/applicationStatus.css">
+<!-->css<-->
   <body>
     <?php include('header.php') ?>
     <div class="container">
