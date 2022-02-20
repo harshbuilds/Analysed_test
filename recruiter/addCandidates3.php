@@ -1,27 +1,31 @@
 <?php
 
-include 'conn.php';          //database connection page included
-session_start();             //session has been started
+    session_start();
 
-    // posting all data from personal information page to global variables using $_Session['']
+    if(isset($_POST['next'])){
+        foreach ($_POST as $key => $value)
+        {
+            $_SESSION['info'][$key] = $value;
+        }
+     
+        $keys = array_keys($_SESSION['info']);
+     
+        if(in_array('next', $keys)){
+            unset($_SESSION['info']['next']);
+        }
 
-if (isset($_POST['next'])) {
+        $file_name = $_FILES['image-file']['name'];
+        $file_type = $_FILES['image-file']['type'];
+        $file_size = $_FILES['image-file']['size'];
+        $file_tem_loc = $_FILES['image-file']['tmp_name'];
+        $file_store = "resume/".$file_name;
 
-    $_SESSION['current_title']  = $_POST['currentTitle'];
-    $_SESSION['company_Name'] = $_POST['companyName'];
-    $_SESSION['candidate_Type'] = $_POST['candidateType'];
-    $_SESSION['employment_Preference'] = $_POST['employmentPreference'];
-    $_SESSION['source'] = $_POST['source'];
-    $_SESSION['recruiter'] = $_POST['recruiter'];
-    $_SESSION['current_Salary'] = $_POST['currentSalary'];
-    $_SESSION['salary_Range1'] = $_POST['salaryRange1'];
-    $_SESSION['salary_Range2'] = $_POST['salaryRange2'];
-
-}
-
+        move_uploaded_file($file_tem_loc,$file_store);
+     
+        header("Location: addCandidates4.php");
+     } 
 
 ?>
-
 <?php include('header.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/addCandidates1.css">
@@ -30,7 +34,7 @@ if (isset($_POST['next'])) {
 <title>Analysed</title>
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a>
+        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -50,7 +54,7 @@ if (isset($_POST['next'])) {
                 <img src="./img/creativity.svg" width="50px" style="margin-right: 30px;">
                     <h2 class="heading-for-general-information-right-side-add-client-container">Skills & Qualification</h2>
                 </div>
-                <form action="addCandidates4.php" method="POST" enctype="multipart/form-data"> <!-- redirecting to Additional information page with data of Skills & Qualification -->
+                <form action="" method="post" enctype="multipart/form-data">
                 <div class="row-recruiter inputs-for-add-client-below-image-box">
                     <div class="right-side-image-box-right-add-client-1">
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
@@ -61,7 +65,7 @@ if (isset($_POST['next'])) {
                                     <div class="input-signup-div fx-city-name-1">
                                             <label for="file-upload">Upload resume </label>
                                             <label for="file-upload"><span class="span-class-file-upload">(*.docx, *.rtf, *.txt, *.pdf) <i class="fa fa-upload" aria-hidden="true"></i></span></label>
-                                            <input type="file" name="resume" id="file-upload" placeholder="docx" style="display:none;" />
+                                            <input type="file" name="resume" id="file-upload" placeholder="docx" style="display:none;" required />
                                     </div>
                                     <p class="input-para-add-client-ekam-1 talents">
                                         <label for="default-input-for-no.1">Skills*</label>
@@ -71,9 +75,9 @@ if (isset($_POST['next'])) {
                                         <label for="default-select-for-no1 ">Qualification*</label>
                                         <select name="qualification" id="default-select-for-no.1" class="default-select-for-add-client-1" required />
                                             <option value="0" default>Select Status</option>
-                                            <option value="MSc">MSc</option>
-                                            <option value="BSc">BSc</option>
-                                            <option value="B.Com">B.Com</option>
+                                            <option value="1">Open</option>
+                                            <option value="2">Closed</option>
+                                            <option value="3">Working</option>
                                         </select>
                                     </p>
                                 </div>
