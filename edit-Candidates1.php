@@ -1,10 +1,25 @@
-
+<?php include('connection1.php'); ?>
 <?php
+    session_start();
+    if(isset($_SESSION['firstname'])) {
 
+        $firstname=$_SESSION['firstname'];
 
-   include 'conn.php';     //database connection page included
-   session_start();      //session has been started
-
+    if(isset($_POST['next'])){
+        foreach ($_POST as $key => $value)
+        {
+            $_SESSION['info'][$key] = $value;
+        }
+     
+        $keys = array_keys($_SESSION['info']);
+     
+        if(in_array('next', $keys)){
+            unset($_SESSION['info']['next']);
+        }
+     
+        header("Location: edit-Candidates2.php");
+     } 
+ 
 
 ?>
 <?php include('header1.php')?>
@@ -59,7 +74,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="container">
 <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a>
+        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a> 
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -81,14 +96,12 @@
                     <h2 class="heading-for-general-information-right-side-add-client-container">Personal information</h2>
                 </div>
                 <?php
-
-                  $_SESSION['cid']=$_GET['edit_Candidates'];
-                $sql=mysqli_query($con,"select * from candidates where candidate_id='".$_SESSION['cid']."'");
+                $sql=mysqli_query($conn,"select * from candidates where firstname='$firstname'");
                 $check=mysqli_num_rows($sql)>0;
                 if($check){
                     while($row=mysqli_fetch_assoc($sql)){
                         ?>
-                <form action="edit-Candidates2.php" method="post" enctype="multipart/form-data">
+                <form action="" method="post">
                     <div class="row-recruiter image-box-right-side-add-client">
                         <div class="left-side-image-box-add-client-1">
                             <div class="sub-divs-image-box-right-side-add-client">
@@ -98,7 +111,7 @@
                                     <h2 class="background-class"><i class="" aria-hidden="true"></i></h2>
                                     <p class="image-upload-e"><i class="fa fa-camera" aria-hidden="true"></i></p>
                                 </label>
-                                <input id="imageUpload" type="file" name="image" capture>
+                                <input id="imageUpload" type="file" name="profile_photo" capture>
 
                             </div>
                         </div>
@@ -109,58 +122,58 @@
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-input-for-no.1">First Name*</label>
-                                        <input type="text" name="firstname" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['firstname']; ?>" >
+                                        <input type="text" name="firstname" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['firstname']; ?>" required />
                                     </p>
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-input-for-no.1">Last Name*</label>
-                                        <input type="text" name="lastname" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1"  value="<?php echo $row['lastname']; ?>" >
+                                        <input type="text" name="lastname" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1"  value="<?php echo $row['lastname']; ?>" required />
                                     </p>
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-input-for-no.1">Email-ID*</label>
-                                        <input type="email" name="emailid" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['emailid']; ?>" >
+                                        <input type="email" name="emailid" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['candidate_email']; ?>"  required />
                                     </p>
                                     <div class="input-signup-div fx-city-name-1">
                                         <label for="input-first-name">Phone number</label>
-                                        <div class="phn-number-div row-signup"  style="flex-wrap: nowrap;"><select name="code"><option value="+91" >+91</option></select><input type="tel" maxlength='10' name="phonenumber" placeholder="Phone number" id="input-first-name" class="phn-number--input-signup" value="<?php echo $row['phonenumber']; ?>" ></div>
+                                        <div class="phn-number-div row-signup"  style="flex-wrap: nowrap;"><select name="code"><option value="+91" >+91</option></select><input type="tel" maxlength='10' name="phonenumber" placeholder="Phone number" id="input-first-name" class="phn-number--input-signup" value="<?php echo $row['phone_no']; ?>" ></div>
                                     </div>
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-input-for-no.1">Birth Date*</label>
-                                        <input type="date" name="birthdate" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['birthdate']; ?>"  >
+                                        <input type="date" name="birthdate" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['birth_date']; ?>"  required />
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1">
+                                    <p class="select-for-select-image-box-below-inputs fx-city-name-1"> 
                                         <label for="default-select-for-no.3">Status</label>
                                             <select name="Industry" id="default-select-for-no.3" class="default-select-for-add-client-1">
-                                                <option value="<?php echo $row['Industry']; ?>" default><?php echo $row['Industry']; ?></option>
+                                                <option value="<?php echo $row['status']; ?>" default><?php echo $row['status']; ?></option>
                                                 <option value="Active">Active</option>
                                                 <option value="Inactive">Inactive</option>
-
+                                               
                                             </select>
                                     </p>
                                     <p class="input-para-add-client-ekam-1 ">
                                         <label for="default-input-for-no.2">Address*</label>
-                                        <input type="text" name="address" class="default-input-for-add-client-1" placeholder="Address" id="default-input-for-no.2" value="<?php echo $row['address']; ?>"  >
+                                        <input type="text" name="address" class="default-input-for-add-client-1" placeholder="Address" id="default-input-for-no.2" value="<?php echo $row['address']; ?>"  required />
                                     </p>
                                     <p  class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-select-for-no.2">Country</label>
                                         <select name="ownership" id="default-select-for-no.2" class="default-select-for-add-client-1">
-                                            <option value="<?php echo $row['ownership']; ?>"  default><?php echo $row['ownership']; ?></option>
+                                            <option value="<?php echo $row['country']; ?>"  default><?php echo $row['country']; ?></option>
                                             <option value="India">India</option>
                                             <option value="Australia">Australia</option>
                                             <option value="Germany">Germany</option>
                                         </select>
                                     </p>
-                                    <p class="input-para-add-client-ekam-1  fx-city-name-1">
+                                    <p class="input-para-add-client-ekam-1  fx-city-name-1"> 
                                         <label for="default-select-for-no.13">City name</label>
-                                        <input id="default-select-for-no.13" name="cityname" type="text" class="default-input-for-add-client-1" placeholder="Enter your city name" value="<?php echo $row['cityname']; ?>" >
+                                        <input id="default-select-for-no.13" name="cityname" type="text" class="default-input-for-add-client-1" placeholder="Enter your city name" value="<?php echo $row['city_name']; ?>" >
                                     </p>
-                                    <p class="input-para-add-client-ekam-1  fx-city-name-1">
+                                    <p class="input-para-add-client-ekam-1  fx-city-name-1"> 
                                             <label for="default-select-for-no.13">Zipcode</label>
-                                            <input id="default-select-for-no.13" name="Zipcode" type="text" class="default-input-for-add-client-1" placeholder="Enter zipcode of city" value="<?php echo $row['Zipcode']; ?>" >
+                                            <input id="default-select-for-no.13" name="Zipcode" type="text" class="default-input-for-add-client-1" placeholder="Enter zipcode of city" value="<?php echo $row['zipcode']; ?>" >
                                     </p>
-                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
+                                    <p class="select-for-select-image-box-below-inputs  fx-city-name-1"> 
                                         <label for="default-select-for-no.6">State</label>
                                             <select name="State" id="default-select-for-no.6" class="default-select-for-add-client-1">
-                                                <option value="<?php echo $row['State']; ?>"  default><?php echo $row['State']; ?></option>
+                                                <option value="<?php echo $row['state']; ?>"  default><?php echo $row['state']; ?></option>
                                                 <option value="Andhra Pradesh" default>Andhra Pradesh</option>
                                                 <option value="Tamil Nadu">Tamil Nadu</option>
                                                 <option value="Uttar Pradesh">Uttar Pradesh</option>
@@ -168,13 +181,10 @@
                                             </select>
                                     </p>
                                 </div>
-
-
-                                <input href="edit-Candidates2.php?edit_Candidates1=<?php echo $row['candidate_id'];?>"  type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
-
+                                <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
                         </div>
                     </form>
-                <?php } } ?>
+                <?php } } } ?>
                     </div>
                 </div>
             </div>
@@ -187,7 +197,7 @@
 
 function fasterPreview( uploader ) {
     if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src',
+          $('#profileImage').attr('src', 
              window.URL.createObjectURL(uploader.files[0]) );
     }
 }
