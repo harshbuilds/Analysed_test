@@ -1,3 +1,34 @@
+<?php
+session_start();
+include 'connection1.php';
+
+if (isset($_POST['submit'])) {
+
+    $username = $_SESSION['username']=$_POST['username'];
+    $pwd = $_POST['password'];
+    $sql = "select * from recruiter where email = '$username'";
+    $run = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($run);
+
+    $pwd_fetch = $row['password'];
+    $pwd_decode  =password_verify($pwd,$pwd_fetch);
+
+    if ($pwd_decode) {
+        echo "loggedin successfully";
+    }
+    else{
+
+        echo "<script>window.open('index.php?error=username or password incorrect','_self')</script>";
+    }
+
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html class="no-js" prefix="og: http://ogp.me/ns#"  lang="en-IN">
     <head>
@@ -52,7 +83,7 @@
                           <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary mb-2 ml-2 mr-3">Login</button>
-                        <div class="forg-pass-md"><a href="./signup/forgot-password/forgot-password.php">Forgot Password ?</a></div>
+                        <div class="forg-pass-md"><a href="./forgot-password.php">Forgot Password ?</a></div>
                       </form>
                     </div>
                 </div>
@@ -68,7 +99,7 @@
                     <div class="header-content mx-auto animated wow zoomIn" data-wow-duration="0.3s" data-wow-delay=".1s">
                       <h1 class="mx-auto">A Virtual Recruitment Platform</h1>
                       <p>Recruitment and hiring process has been a complex task for a long time and we plan to change that. Analysed helps recruiters in human analytics through AI and provides them with virtual testing tools to lighten the burden of the struggle for both recruiters and job aspirants. Let's eliminate together the troubles witnessed in the recruitment process and uncover a one stop solution to it.</p>
-                      <a href="login_previous.php"><button  class="btn btn-white mt-4 py-2 px-3 ">SIGN UP <i class="fas fa-arrow-alt-circle-up"></i></button></a>
+                      <a href="https://analysed.in/Pages/signup/signup.php"><button  class="btn btn-white mt-4 py-2 px-3 ">SIGN UP <i class="fas fa-arrow-alt-circle-up"></i></button></a>
                     </div>
                   </div>
                   <div class="col-lg-5 my-auto">
@@ -184,7 +215,7 @@
                       <div class="col-md-3 col-sm-6 ">
                         <div class="heading-footer"><h2>Quick Links</h2></div>
                         <ul class="list-unstyled link-list">
-                          <li>  <i class="fa fa-angle-right"></i>  <a href="./aboutOrganization.php">About us</a></li>
+                          <li>  <i class="fa fa-angle-right"></i>  <a href="./about.php">About us</a></li>
                           <li>  <i class="fa fa-angle-right"></i>  <a href="./terms.php">Terms & Conditions</a></li>
                           <li>  <i class="fa fa-angle-right"></i>  <a href="./privacy-policy.php">Privacy Policy</a></li>
                           <li>  <i class="fa fa-angle-right"></i>  <a href="./career.php">Careers with us</a></li>
