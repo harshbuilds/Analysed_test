@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('header.php')?><!-->header<-->
 <link rel="stylesheet" href="./css/setting_home_2.css">
 <title>Settings</title>
 
