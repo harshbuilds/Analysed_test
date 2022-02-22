@@ -7,9 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <body>
+      <!-->header<-->
     <?php include('header.php') ?>
     <div class="container">
-
+      <!-->container<-->
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
             <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a> 
@@ -24,6 +25,7 @@
 
                 <h2 class="jobsCreateaDashboard-jobs">Applied Candidates <span> (<?php echo htmlentities($num); ?>)</span></h2>
                 <div class="cards-section-container row-flex-jobs-j" id="result">
+                    <!-->select card<-->
                     <?php
                         $sql=mysqli_query($conn,"select * from jobseeker");
                         $check=mysqli_num_rows($sql)>0;
@@ -31,6 +33,7 @@
                             while($row=mysqli_fetch_assoc($sql)){
                          ?>
                         <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
+                            <!-->status<-->
                             <a href="">
 
                                 <?php
@@ -48,6 +51,7 @@
                                 <img src="./img/Ellipse 148-1.png" alt="">
                                 <h3 class="job-headingnname"><?php echo $row["firstname"]; ?></h3>
                                 <p class="skill-job-candiate"><?php echo $row["position"]; ?></p>
+                                <!-->list of data below<-->
                                 <ul class="candidate-desc">
                                     <li><?php echo $row["qualification"]; ?></li>
                                     <li><?php echo $row["experience"]; ?> Year Experience</li>
