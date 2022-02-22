@@ -1,5 +1,5 @@
 <?php include('connection1.php'); ?>
-
+<!-->checking connection<-->
 <?php
 session_start();
 if(isset($_SESSION['firstname'])) {
@@ -13,7 +13,7 @@ if(isset($_SESSION['firstname'])) {
             ?>
  <?php include('header.php') ?>
 <title>Dashboard</title>
-
+<!-->css<-->
 <link rel="stylesheet" href="./css/Candidates_specific.css">
 <body>
 
@@ -22,6 +22,7 @@ if(isset($_SESSION['firstname'])) {
         <div class="bread-crumbs_Mytools-recruiter">
             <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
+	<!-->image<-->
   <div class="profile-img">
    <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
   <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["id"]; ?></p1></h1><br>
