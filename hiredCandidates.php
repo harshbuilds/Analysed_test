@@ -1,4 +1,4 @@
-<?php include('connection1.php') ?>
+<?php include('connection1.php') ?><!-->connection<-->
 <title>Dashboard</title>
     <link rel="stylesheet" href="./css/DashboardJobs.css">
     <link rel="stylesheet" href="./css/appliedCandidates.css">
@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/shortlistedJobs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
+      <!-->header<-->
     <?php include('header.php') ?>
     <div class="container">
 
