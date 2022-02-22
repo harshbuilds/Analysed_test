@@ -1,6 +1,7 @@
-<?php include('include/header.php')?>
+<?php include('include/header.php')?> <!-->header<-->
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'analyse');
+//connect to db
 if(isset($_POST['submit']))
 {
    
