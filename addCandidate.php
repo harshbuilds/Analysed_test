@@ -1,8 +1,10 @@
 <!-- addCandidate.php-->
-<?php include('header1.php')?>
+<?php include('header1.php')?><!-->header<-->
 <link rel="stylesheet" href="./css/addCandidate.css" />
+<!-->css<-->
 <div class="container">
     <div class="addcan_breadcrumb_container">
+        <!-->list<-->
         <ul class="addcan_breadcrumb_container_ul">
             <li class="addcan_breadcrumb_container_li"><a href="js_dashboard.php">Dashboard</a></li>
             <li class="addcan_breadcrumb_container_li"><a href="candidate_list.php">My Database</a></li>
@@ -25,6 +27,7 @@
                         dolores
                         et ea rebum.</p>
                     <br>
+                    <!-->content<-->
                     <div class="addcan_uploadcontent">
                         <div class="addcan_uploadcontent1">
                         <div class="addcan_uploadimg"><img src="img/Icon metro-upload.png"></div>
