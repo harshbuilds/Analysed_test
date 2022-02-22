@@ -1,5 +1,5 @@
-<?php include ('header.php')?>
-<link rel="stylesheet" href="./css/settings.css">
+<?php include ('header.php')?><!-->header<-->
+<link rel="stylesheet" href="./css/settings.css"><!-->css<-->
 <div class="container">
         <div class="small_container" >
             <div class="heading_dash">
