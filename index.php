@@ -14,11 +14,11 @@ if (isset($_POST['submit'])) {
     $pwd_decode  =password_verify($pwd,$pwd_fetch);
 
     if ($pwd_decode) {
-        echo "<script>window.open('candidate_list.php')</script>";
+        echo "loggedin successfully";
     }
     else{
 
-        echo "<script>window.open('index.php')</script>";
+        echo "<script>window.open('index.php?error=username or password incorrect','_self')</script>";
     }
 
 
