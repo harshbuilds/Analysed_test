@@ -1,20 +1,6 @@
 <?php
-    session_start();
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-     
-        header("Location: qualifications.php");
-     } 
- 
+session_start();
+include 'connection1.php';
 ?>
 
 <?php include('../navMenu.php')?>
@@ -30,7 +16,7 @@
                 </p>
                 <p class="progress-bar-signup"><span></span></p>
                 <p class="personal-details-heading">Personal details</p>
-                <form action="" method="post">
+                <form action="qualifications.php" method="post">
                     <div class="row-signup input-section-row">
                         <div class="input-signup-div">
                             <label for="input-first-name">First name</label>
@@ -68,6 +54,6 @@
                 <img src="../images/js.svg" alt="">
             </div>
         </div>
-        
+
     </div>
 </div>

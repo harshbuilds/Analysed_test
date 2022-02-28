@@ -1,34 +1,18 @@
 <?php
+include 'connection1.php';
+session_start();
+if (isset($_POST['next'])) {
 
-    session_start();
-
-    if(isset($_POST['next'])){
-        foreach ($_POST as $key => $value)
-        {
-            $_SESSION['info'][$key] = $value;
-        }
-     
-        $keys = array_keys($_SESSION['info']);
-     
-        if(in_array('next', $keys)){
-            unset($_SESSION['info']['next']);
-        }
-
-        $file_name = $_FILES['resume']['name'];
-        $file_type = $_FILES['resume']['type'];
-        $file_size = $_FILES['resume']['size'];
-        $file_tem_loc = $_FILES['resume']['tmp_name'];
-        $file_store = "includes/resume/".$file_name;
-
-        move_uploaded_file($file_tem_loc,$file_store);
-
-     
-        header("Location: includes/register.php");
-     } 
-
-
-
+  $_SESSION['Firstname']  = $_POST['Firstname'];
+  $_SESSION['Lastname']   = $_POST['Lastname'];
+  $_SESSION['Emailaddress']    = $_POST['Emailaddress'];
+  $_SESSION['Phonenumber'] = $_POST['Phonenumber'];
+  $_SESSION['Password'] = $_POST['Password'];
+  $_SESSION['ConfirmPassword'] = $_POST['ConfirmPassword'];
+  $_SESSION['Address'] = $_POST['Address'];
+}
 ?>
+
 
 <?php include('../navMenu.php')?>
 
@@ -45,7 +29,7 @@
                     </p>
                     <p class="progress-bar-signup"><span style="width:100%;"></span></p>
                     <p class="personal-details-heading">Career details</p>
-                    <form action="" method="post" enctype = "multipart/form-data">
+                    <form action="jobseekerins.php" method="post" enctype = "multipart/form-data">
                         <div class="row-signup input-section-row">
                         <div class="input-signup-div industry">
                                 <label for="industry-selection-1">Qualification</label>
