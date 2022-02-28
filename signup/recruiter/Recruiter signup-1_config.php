@@ -1,31 +1,50 @@
+
 <?php
- session_start(); 
 
- if (isset($_SESSION['info'])){
+include 'connection1.php';
+session_start();
+if (isset($_POST['submit'])) {
 
- extract($_SESSION['info']); // Function to extract array.
- 
- $db = mysqli_connect('localhost', 'root', '', 'analysed');
- 
- if($password1!=$password){
-	  echo "<script>alert('password and confirm password are different!')</script>";
-      echo "<script>window.open('index.php','_self')</script>";
-	  }
- else{
- $query = mysqli_query($db,"insert into recruiter (firstname,lastname,email,number,password,confirmpassword,address,company_name,designation,off_email,industry,off_address) values('$firstname','$lastname','$email','$number','$password','$password1','$address','$companyname','$designation','$offemail','$industry','$offaddress')");
- 
- if ($query)
-{
-	//unset($_SESSION['info']);
-	echo "<script>alert('Account has been created successfully!')</script>";
-	echo "<script>window.open('Recruiter login.php','_self')</script>";
-	
+  $_SESSION['companyname']  = $_POST['companyname'];
+  $_SESSION['designation']   = $_POST['designation'];
+  $_SESSION['offemail']    = $_POST['offemail'];
+  $_SESSION['industry'] = $_POST['industry'];
+  $_SESSION['offaddress'] = $_POST['offaddress'];
+  $_SESSION['consultant'] = $_POST['consultant'];
+
+
+  $query ="select * from recruiter where email = '".$_SESSION['email']."'";
+      $run = mysqli_query($conn,$query);
+      $row = mysqli_num_rows($run);
+
+      if ($row>0) {
+            echo "Email id already exist!  please try with another email id";
+      }elseif ($_SESSION['password'] !== $_SESSION['password1']) {
+          echo "Your password does not match ! please try  again";
+      }
+      else{
+          $sql='insert into recruiter(firstname,lastname,email,number,password,confirmpassword,address,company_name,designation,industry,off_email,off_address,consultant)values("'.$_SESSION['firstname'].'",
+          "'.$_SESSION['lastname'].'",
+          "'.$_SESSION['email'].'",
+          "'.$_SESSION['number'].'",
+          "'.$_SESSION['password'].'",
+          "'.$_SESSION['password1'].'",
+          "'.$_SESSION['address'].'",
+          "'.$_SESSION['companyname'].'",
+          "'.$_SESSION['designation'].'",
+          "'.$_SESSION['industry'].'",
+          "'.$_SESSION['offemail'].'",
+          "'.$_SESSION['offaddress'].'","'.$_SESSION['consultant'].'")';
+
+          $run = mysqli_query($conn,$sql);
+
+          if ($run) {
+                 echo " <script>window.open('index.php','_self')</script>";
+          }
+
+      }
+
+
 }
-else
-{
-	echo mysqli_error($query);
-	
-}
-	}
- }
- ?>
+
+?>

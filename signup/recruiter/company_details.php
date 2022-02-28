@@ -1,19 +1,19 @@
-<?php 
+<?php
+include 'connection1.php';
 session_start();
+if (isset($_POST['next'])) {
 
-if (isset($_POST['submit']))
-{
-    foreach ($_POST as $key => $value) {
-        $_SESSION['info'][$key]= $value;
-    }
-    $keys=array_keys($_SESSION['info']);
-    if(in_array('next',$keys))
-    {
-        unset($_SESSION['info']['next']);
-
-    }
-    header('location:Recruiter signup-1_config.php');
+  $_SESSION['firstname']  = $_POST['firstname'];
+  $_SESSION['lastname']   = $_POST['lastname'];
+  $_SESSION['email']    = $_POST['email'];
+  $_SESSION['number'] = $_POST['number'];
+  $_SESSION['password'] = $_POST['password'];
+  $_SESSION['password1'] = $_POST['password1'];
+  $_SESSION['address'] = $_POST['address'];
 }
+
+
+
 ?>
 <!Doctype html>
     <meta charset="UTF-8">
@@ -30,7 +30,8 @@ if (isset($_POST['submit']))
                     </p>
                     <p class="progress-bar-signup"><span style="width:100%;"></span></p>
                     <p class="personal-details-heading">Company details</p>
-                    <form action="" method="post">
+                    
+              <form action="Recruiter signup-1_config.php" method="post">
                         <div class="row-signup input-section-row">
                             <div class="input-signup-div">
                                 <label for="input-first-name">Company Name</label>
