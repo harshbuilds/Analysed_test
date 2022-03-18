@@ -1,6 +1,5 @@
-<?php include('connection1.php'); ?>
-
 <?php
+include 'conn.php';
 session_start();
 if(isset($_SESSION['firstname']) && isset($_POST['submit']))
 {
@@ -134,7 +133,7 @@ Drag and Drop a File<br>
   <div class="files-added" id="result1">
 
   <?php
-  $sql=mysqli_query($conn,"select * from files where firstname='$firstname'");
+  $sql=mysqli_query($con,"select * from files where firstname='$firstname'");
   $check=mysqli_num_rows($sql)>0;
   if($check){
     while($row=mysqli_fetch_assoc($sql)){

@@ -1,22 +1,5 @@
-<?php include('connection1.php'); ?>
 
-<?php
-session_start();
-if(isset($_SESSION['firstname']) && isset($_POST['submit']))
-{
-  $firstname=$_SESSION['firstname'];
-  $note_type=$_POST['note_type'];
-  $reference_to=$_POST['reference_to'];
-  $job_reference=$_POST['job_reference'];
-  $notes=$_POST['notes'];
-  $time_spent=$_POST['time_spent'];
-  $date=date("Y-m-d");
-
-  $query=mysqli_query($conn,"insert into notes(firstname,note_type,reference_to,Job_reference,notes,time_spent,added_on,last_edited) values('$firstname','$note_type','$reference_to','$job_reference','$notes','$time_spent','$date','$date')");
-  echo '<script> alert("Notes added successfully");</script>';
-}
-?>
-
+<html>
  <link rel="stylesheet" href="./css/candidates_notes.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
@@ -27,7 +10,7 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
    <p><a style="color:#979797" href="candidates_activity.php">Activity</a></p>
     <p><a style="color:#979797" href="candidates_files.php">Files</a></p><br>
    <span style="color:#3598DB"><a style="color:#3598DB" href="candidates_notes.php"> <b>| Notes </b> </a></span>
-     
+
      </div>
      <div class="search">
       <form class="form">
@@ -108,12 +91,7 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
   </select></span></div>
   <div class="files-added" id="result">
 
-    <?php
-    $sql=mysqli_query($conn,"select * from notes where firstname='$firstname'");
-    $check=mysqli_num_rows($sql)>0;
-    if($check){
-      while($row=mysqli_fetch_assoc($sql)){
-        ?>
+
 
   <div class="main-notes">
   <input type="checkbox">
@@ -147,9 +125,11 @@ Added on<br>
 <p><?php echo $row["notes"]; ?></p>
 
   </div>
-  <?php } } ?>
+
   </form>
 </div>
+
+</html>
 
 <script>
     var modal = document.getElementById("myModal");
@@ -197,8 +177,8 @@ window.onclick = function(event) {
 	function myFunction(){
 			var action='data';
 			var search=document.getElementById('search').value;
-		
-        
+
+
 			$.ajax({
 				url:'./include/action2.php',
 			    method:'POST',

@@ -1,11 +1,7 @@
-
-    <title>Dashboard</title>
+<title>Dashboard</title>
     <link rel="stylesheet" href="./css/applicationStatus.css">
-<!-->css<-->
   <body>
-      <!-->header<-->
     <?php include('header.php') ?>
-      <!-->card<-->
     <div class="container">
       <div class="small_container">
         <div class="heading_dash">

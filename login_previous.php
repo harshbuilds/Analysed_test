@@ -1,3 +1,10 @@
+<<?php
+
+session_start();
+include 'connection1.php'
+ ?>
+
+
 <html>
 <head>
 <link rel="stylesheet" href="css/landing_1.css">
@@ -6,7 +13,7 @@
 <img src="img/main-logo.png" alt="">
 <a href="index.html">Contact</a>
 <a href="index.html">About</a>
-<a href="signup\jobSeeker\index.php">Signup</a>
+<a href="landing_1.php">Signup</a>
 </div>
 <div class="signup">
 Login<br>
@@ -14,10 +21,10 @@ Login<br>
 <div class=image1>
 <div class="image">
 <img src="img/recruiter.png" alt="">
-<button><a href="signup/recruiter/recruiterSignUp.php">Recruiter</a></button></div></a>
+<button><a href="signup/recruiter/Recruiter login.php">Recruiter</a></button></div>
 <div class="image">
 <img src="img/jobseeker.png" alt="">
-<a href="signup/jobSeeker/jobSeekerSignUp.php"><button>Jobseeker</a></button>
+<button>Jobseeker</button>
 </div>
 
 </div>

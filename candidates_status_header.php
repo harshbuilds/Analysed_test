@@ -1,4 +1,4 @@
-<?php include('connection1.php'); ?>
+<?php include 'connection1.php'; ?>
 
 <?php
 if(isset($_SESSION['firstname'])) {
@@ -19,7 +19,7 @@ if(isset($_SESSION['firstname'])) {
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
  <div class="profile-img">
    <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">

@@ -1,32 +1,27 @@
-
 <?php
-include 'connection1.php';     //database connection page included
-session_start();      //session has been started
+
+session_start();             //session has been started
+include 'conn.php';
+include 'header1.php';         //database connection page included
 
 
 
-if (isset($_POST['next'])) {
-      $_SESSION['talent']  = $_POST['talents'];
-      $_SESSION['skills'] = $_POST['skills'];
-      $_SESSION['qualification'] = $_POST['qualification'];
+  $_SESSION['cID'] = $_POST['edi'];
+  echo $_SESSION['cID'];
+
+// if(isset($_GET['edit_Candidates'])){
+
+$sql= 'SELECT * from candidates where candidate_id ="'.$_SESSION['cID'].'" ';
+// query to establish connection from database and get the output of  query
+$run = mysqli_query($con,$sql);
+$i= 1;
 
 
+// displaying all the data from the table
+$row =mysqli_fetch_assoc($run)
 
-      $td="../img/";
-    $tf=$td.basename($_FILES["resume"]["name"]);
+?>
 
-   $_SESSION['resume']  = basename($_FILES["resume"]["name"]);
-
-    $move= move_uploaded_file($_FILES["resume"]["tmp_name"] , $tf);
-
-    if (!($move)) {
-
-        echo "something wrong";
-    }
-
-    }
-	 ?>
-<?php include('header1.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/addCandidates1.css">
 <!-- <link rel="stylesheet" href="../signup/recruiter/css/index.css"> -->
@@ -53,31 +48,27 @@ if (isset($_POST['next'])) {
                 <img src="./img/clipboard.svg" width="50px" style="margin-right: 30px;">
                     <h2 class="heading-for-general-information-right-side-add-client-container">Additional information</h2>
                 </div>
-                <?php
 
 
 
-                                $sql=mysqli_query($conn,"select * from candidates where candidate_id='".$_SESSION['cid']."'");
-                                $check=mysqli_num_rows($sql)>0;
-                                if($check){
-                                    while($row=mysqli_fetch_assoc($sql)){
-                       ?>
-                <form action="editCandidatesUpdate.php" method="post">
+<form action="edit-CandidatesUpdate.php" method="post" enctype="multipart/form-data">
+
+
                 <div class="row-recruiter inputs-for-add-client-below-image-box">
                     <div class="right-side-image-box-right-add-client-1">
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-input-for-no.1">Candidates Comments*</label>
-                                        <input type="text" name="candidateComment" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['comment']; ?>" required />
+                                        <input type="text" name="candidateComment" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['candidateComment']; ?>">
                                     </p>
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-input-for-no.1">Availability Date*</label>
-                                        <input type="date" name="availability" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['availability_date']; ?>" required />
+                                        <input type="date" name="availability" class="default-input-for-add-client-1" placeholder="Company name" id="default-input-for-no.1" value="<?php echo $row['availability']; ?>">
                                     </p>
                                     <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Job*</label>
-                                            <select name="job" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
-                                                <option value="<?php echo $row['job']; ?>" default><?php echo $row['job']; ?></option>
+                                            <select name="job" id="default-select-for-no.6" class="default-select-for-add-client-1">
+                                                  <option value="<?php echo $row['job']; ?>" default><?php echo $row['job']; ?></option>
                                                 <option value="Sr.Product designer">Sr.Product designer</option>
                                                 <option value="Software Engineer">Software Engineer</option>
                                                 <option value="UI Designer">UI Designer</option>
@@ -85,25 +76,26 @@ if (isset($_POST['next'])) {
                                     </p>
                                     <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Accessibility*</label>
-                                            <select name="accessebility" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
-                                                <option value="<?php echo $row['accessibility']; ?>" default><?php echo $row['accessibility']; ?></option>
+                                            <select name="accessebility" id="default-select-for-no.6" class="default-select-for-add-client-1">
+                                                <option value="<?php echo $row['accessebility']; ?>" default><?php echo $row['accessebility']; ?></option>
                                                 <option value="Internal">Internal</option>
                                                 <option value="External">External</option>
                                             </select>
                                     </p>
                                     <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">Response type*</label>
-                                            <select name="reasonType" id="default-select-for-no.6" class="default-select-for-add-client-1" required />
-                                                <option value="<?php echo $row['response_type']; ?>" default><?php echo $row['response_type']; ?></option>
+                                            <select name="reasonType" id="default-select-for-no.6" class="default-select-for-add-client-1">
+                                              <option value="<?php echo $row['reasonType']; ?>" default><?php echo $row['reasonType']; ?></option>
                                                 <option value="Web response">Web response</option>
                                                 <option value="Submission">Submission</option>
                                             </select>
                                     </p>
                                 </div>
-                                <input type = "submit" name = "submit" class="save_button_addClient default-button-for-recruiter-dashboard" value="Submit" >
+                                <input type = "submit" name = "submit" class="save_button_addClient default-button-for-recruiter-dashboard" value="submit" href="edit-CandidatesUpdate.php?edit_Candidates=<?php echo $row['candidate_id'];?>" >
                             </div>
                         </form>
-                    <?php } }  ?>
+
+
                     </div>
                 </div>
             </div>

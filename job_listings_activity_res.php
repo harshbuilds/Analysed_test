@@ -1,13 +1,11 @@
 <?php include('include/header.php') ?>
 
-<?php
-   define('LOCALHOST','localhost');
-   define('DB_USERNAME','root');
-   define('DB_PASSWORD','');
-   define('DB_NAME','analyse');
-   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
-?>
 
+<?php
+
+   include 'conn.php';
+   // session_start();
+?>
 
 
 <head>
@@ -69,9 +67,9 @@
 
     ?>
     <?php
-           $j_id=$_GET['j_id'];
+           $j_id=1;
             $sql="select * from joblistings where job_id='$j_id'";
-            $res=mysqli_query($conn,$sql);
+            $res=mysqli_query($con,$sql);
             if($res == TRUE)
             {
                 $count=mysqli_num_rows($res);
@@ -134,8 +132,8 @@
 </head>
 <body>
 <div class="bread-crumbs_Mytools-recruiter" style="margin-left:100px">
-            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
-            >  <a href="js_dashboard.php" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
+            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
+            >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
 <div class="container" style="margin-left:150px">
   <div class="small_container">

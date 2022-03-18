@@ -1,5 +1,5 @@
 <?php include('connection1.php'); ?>
-<!-->checking connection<-->
+
 <?php
 session_start();
 if(isset($_SESSION['firstname'])) {
@@ -13,16 +13,15 @@ if(isset($_SESSION['firstname'])) {
             ?>
  <?php include('header.php') ?>
 <title>Dashboard</title>
-<!-->css<-->
+
 <link rel="stylesheet" href="./css/Candidates_specific.css">
 <body>
-
+  
 <div class="container1">
 <div class="small_container1">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
-	<!-->image<-->
   <div class="profile-img">
    <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
   <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["id"]; ?></p1></h1><br>
@@ -108,7 +107,7 @@ if(isset($_SESSION['firstname'])) {
      Status&emsp;&emsp;&emsp;&emsp;&emsp;Availability date</span>
      <br>
      </div>
-    <div class="displayname">
+    <div class="displayname"> 
     <span style="color:red"><?php echo $row["status"]; ?></span>&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo $row["availability_date"]; ?>
     </div>
     <br>
@@ -121,7 +120,7 @@ if(isset($_SESSION['firstname'])) {
     <p><?php echo $row["company_name"]; ?></p>
     <br>
     <br><br>
-    Contact
+    Contact 
     <br>
     <br>
     <p style="margin-left:-0"><?php echo $row["candidate_email"]; ?></p>

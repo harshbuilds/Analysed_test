@@ -1,14 +1,11 @@
-<!-- addCandidate.php-->
-<?php include('header1.php')?><!-->header<-->
+<?php include('header1.php')?>
 <link rel="stylesheet" href="./css/addCandidate.css" />
-<!-->css<-->
 <div class="container">
     <div class="addcan_breadcrumb_container">
-        <!-->list<-->
         <ul class="addcan_breadcrumb_container_ul">
-            <li class="addcan_breadcrumb_container_li"><a href="js_dashboard.php">Dashboard</a></li>
-            <li class="addcan_breadcrumb_container_li"><a href="candidate_list.php">My Database</a></li>
-            <li class="addcan_breadcrumb_container_li"><a href="addCandidate.php">Add Candidate</a></li>
+            <li class="addcan_breadcrumb_container_li"><a href="#">Dashboard</a></li>
+            <li class="addcan_breadcrumb_container_li"><a href="#">My Database</a></li>
+            <li class="addcan_breadcrumb_container_li"><a href="#">Add Candidate</a></li>
         </ul>
     </div>
     <div class="small_container">
@@ -27,7 +24,6 @@
                         dolores
                         et ea rebum.</p>
                     <br>
-                    <!-->content<-->
                     <div class="addcan_uploadcontent">
                         <div class="addcan_uploadcontent1">
                         <div class="addcan_uploadimg"><img src="img/Icon metro-upload.png"></div>
@@ -41,8 +37,8 @@
                             <input type="file" id="file" class="file">
                             <label for="file">Upload</label>
                         </div>
-
-
+                        
+                        
                     </div>
                 </div>
                 <div class="addcan_right_container">
@@ -58,9 +54,9 @@
                         <p>Convert it to </p>
                         <br>
                         <select class="addcan_select">
-
+                        
                         <option selected disabled>Select a Company Template </option>
-
+                        
                         <select>
                         <br>
                         <br>

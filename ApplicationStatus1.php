@@ -1,16 +1,13 @@
 
-    <title>Dashboard</title>
+  <title>Dashboard</title>
     <link rel="stylesheet" href="./css/applicationStatus.css">
     <link rel="stylesheet" href="./css/applicationStatus1.css">
     <link rel="stylesheet" href="./css/myTasksNew.css">
-<!-->linking css<-->
   <body>
     <?php include('header.php') ?>
-      <!-->include header<-->
     <div class="container">
       <div class="small_container">
         <div class="name-and-image-top-div row-flex-jobj">
-            <!-->facebook<-->
             <img src="./img/Facbook.svg">
             <span>
                 <p class="Applicationstatusname">Facebook</p>
@@ -30,7 +27,6 @@
                     </div>
                 </div>
                 <div class="status-div-application-status">
-                    <!-->status inline css<-->
                     <p class="status-heading">Status</p>
                     <hr style="border:0.1px solid rgba(0,0,0,.1);">
                     <div class="timeline-div">
@@ -47,11 +43,9 @@
                             <div class="status-1 pending">
                                 <div class="content-timeline">
                                     <p>Task</p>
-                                    <!-->list of cards<-->
                                     <ul>
                                         <li>Task assigned</li>
                                         <li>
-                                            <!-->card 1<-->
                                             <div class="card-upcoming-task-main-1">
                                                 <div class="name-and-image row-myTasksNew">
                                                     <img src="./img/Facbook.svg" alt="">
@@ -60,19 +54,16 @@
                                                         <span>www.facebook.com</span>
                                                     </span>
                                                 </div>
-                                                <!-->card 2<-->
                                                 <div class="message-text-outline row-myTasksNew">
                                                     <img src="./img/message-text-outline.svg" alt="">
                                                     <span class="active">Starts in 5 Days</span>
                                                 </div>
-                                                <!-->card 3<-->
                                                 <div class="row-myTasksNew progressbar-parent ">
                                                     <div class="progress-bar">
                                                     <span style="width: 50%;"></span>
                                                     </div>
                                                     <p>50%</p>
                                                 </div>
-                                                <!-->profile images<-->
                                                 <div class="row-myTasksNew imagesfocard-1">
                                                     <div class="images-bottom">
                                                         <img src="./img/Profile1.png" alt="">
@@ -88,7 +79,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-->status<-->
                             <div class="status-1 unassigned">
                                 <div class="content-timeline">
                                     <p>Interview</p>
@@ -126,7 +116,6 @@
                             </div>
                             <p class="grey-shade-application-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             <div class="row-flex-jobj">
-                                <!-->progress bar<-->
                             <p class="progress-bar"><span style="width:40%"></span></p>     
                             <p class="progress-text">40%</p>
                             </div>

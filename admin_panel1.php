@@ -52,12 +52,12 @@
 </style>
 <body>
     <div class="main_body">
-
+        
         <p class="Heading_Dash_1">Admin panel</p>
         <p class="sub_1">Create and manage your user types.<br><br></p>
         <p style="display:flex">
-            <a href="./recruiter/client_list1.php"><button class="addFilesMyTasks1" id="myBtn" > &emsp;Clients &emsp;<i class="fas fa-building"></i>&emsp; </button></a>
-            <a href="contact_list.php"><button class="addFilesMyTasks1" id="myBtn" > &emsp;Contacts &emsp;<i class="fa fa-address-book"></i>&emsp;</button></a>
+            <button class="addFilesMyTasks1" id="myBtn" > &emsp;Clients &emsp;<i class="fas fa-building"></i>&emsp; </button>
+            <button class="addFilesMyTasks1" id="myBtn" > &emsp;Contacts &emsp;<i class="fa fa-address-book"></i>&emsp;</button>
             <button class="addFilesMyTasks1" id="myBtn" >&nbsp;Placements &emsp;<i class="fa fa-user-check"></i>&emsp;</button>
         </p>
 
@@ -65,11 +65,11 @@
         <div class="row">
             <div class="col-9"><br>
                 <p class="input-field1" style="width:561px;height: 35px;">
-                    <a href="/" class="active-breadcrumb-link"><i class="fa fa-filter" aria-hidden="true"></i>&emsp;All types   &emsp;  <span style="color:#979797">|  &emsp;</span></a>
+                    <a href="/" class="active-breadcrumb-link"><i class="fa fa-filter" aria-hidden="true"></i>&emsp;All types   &emsp;  <span style="color:#979797">|  &emsp;</span></a>   
                     <input type="text" name="searchForJobs" id="inputSearch" class="searchForJobs" placeholder="Search for users"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <button class="searchButton">
                         <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
-                    </button>
+                    </button>  
                 </p>
             </div>
             <div class="col-3"><br>
@@ -177,9 +177,9 @@
                       </div>
                      <!--end of extracards task_5 -->
                     </div>
-
-
-
+                
+                
+                
 
             </div>
             <div class="col-2">
@@ -239,7 +239,7 @@
                <span class="b1">Expand</span>
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col-10">
                <br><br>

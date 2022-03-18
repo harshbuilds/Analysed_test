@@ -244,7 +244,7 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="job_listings_files.php" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>

@@ -1,4 +1,9 @@
-<?php include('connection1.php') ?>
+<?php
+include 'connection1.php';         //database connection page included
+session_start();            //session has been started
+?>
+
+
 <title>Dashboard</title>
     <link rel="stylesheet" href="./css/DashboardJobs.css">
     <link rel="stylesheet" href="./css/appliedCandidates.css">
@@ -7,55 +12,52 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <body>
-      <!-->header<-->
     <?php include('header.php') ?>
     <div class="container">
-      <!-->container<-->
+
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a> 
+            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Applied Candidates</a>
         </div>
+        <form action="" method="post">
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
 
                     <?php
-                    $total_rows = mysqli_query($conn,"SELECT * FROM jobseeker");
+                    $total_rows = mysqli_query($conn,"SELECT * FROM candidates");
                     $num = mysqli_num_rows($total_rows);
                     ?>
 
                 <h2 class="jobsCreateaDashboard-jobs">Applied Candidates <span> (<?php echo htmlentities($num); ?>)</span></h2>
                 <div class="cards-section-container row-flex-jobs-j" id="result">
-                    <!-->select card<-->
                     <?php
-                        $sql=mysqli_query($conn,"select * from jobseeker");
+                        $sql=mysqli_query($conn,"select * from candidates");
                         $check=mysqli_num_rows($sql)>0;
                         if($check){
                             while($row=mysqli_fetch_assoc($sql)){
                          ?>
                         <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
-                            <!-->status<-->
                             <a href="">
 
                                 <?php
-                                $status=$row["job_status"];
+                                $status=$row["candidate_type"];      //here candidateType is used to check status of candidate
                                 if($status=="Reviewed") { ?>
                                     <p class="candidate-status-jobs Reviewed">Reviewed</p>
                                 <?php   }
                                 if($status=="Contacting"){ ?>
                                     <p class="candidate-status-jobs Contacting">Contacting</p>
-                                <?php } 
+                                <?php }
                                 if($status=="Hired"){ ?>
                                     <p class="candidate-status-jobs Hired">Hired</p>
                                 <?php } ?>
 
-                                <img src="./img/Ellipse 148-1.png" alt="">
+                                <img src="upload/<?php echo $row["image"]; ?>" alt="">
                                 <h3 class="job-headingnname"><?php echo $row["firstname"]; ?></h3>
-                                <p class="skill-job-candiate"><?php echo $row["position"]; ?></p>
-                                <!-->list of data below<-->
+                                <!-- <p class="skill-job-candiate"><?php echo $row["position"]; ?></p> -->
                                 <ul class="candidate-desc">
-                                    <li><?php echo $row["qualification"]; ?></li>
-                                    <li><?php echo $row["experience"]; ?> Year Experience</li>
-                                    <li><?php echo $row["job_type"]; ?></li>
+                                    <li><?php echo $row["qualifications"]; ?></li>
+                                    <!-- <li><?php echo $row["experience"]; ?> Year Experience</li> -->
+                                    <!-- <li><?php echo $row["job_type"]; ?></li> -->
                                     <li><?php echo $row["skills"]; ?></li>
                                 </ul>
                                 <div class="row-flex-jobs-j seemorebutton-social">
@@ -73,6 +75,8 @@
                             }
                         }
                         ?>
+
+                        </form>
                    <!-- <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
                             <a href="">
                                 <p class="candidate-status-jobs Contacting">Contacting</p>
@@ -133,16 +137,16 @@
                 <h2 class="filter-heading">Filter</h2>
                 <form class="form">
                 <div class="category-main-first">
-                    
+
                         <label for="jobtitle" class="label-applied-candidates">Job Title</label>
-                        <input type="text" id="jobtitle" placeholder="Job Title" class="input-applied-candidates" oninput="myFunction()">
-                    
+                        <input type="text" name="jobtitle" id="jobtitle" placeholder="Job Title" class="input-applied-candidates" oninput="myFunction()">
+
                 </div>
                 <div class="category-main-first">
-                    
+
                         <label for="Location" class="label-applied-candidates">Location</label>
-                        <input type="text" id="location" placeholder="Location" class="input-applied-candidates" oninput="myFunction()">
-                    
+                        <input type="text" name="location" id="location" placeholder="Location" class="input-applied-candidates" oninput="myFunction()">
+
                 </div>
                 <div class="category-main-first">
                     <p class="row-flex-jobs-j">
@@ -171,7 +175,7 @@
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                        <?php } ?>     
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -182,7 +186,7 @@
                     </p>
                     <div class="category-filters" id="categoryDiv4">
                         <?php
-                        $sql="SELECT distinct job_type from jobseeker order by job_type";
+                        $sql="SELECT distinct job_type from jobseeker order by 	job_type";
                         $result=$conn->query($sql);
                         while($row=$result->fetch_assoc()){
                             ?>
@@ -201,8 +205,8 @@
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                        <?php } ?>  
-                                 
+                        <?php } ?>
+
                     </div>
                 </div>
                 <div class="category-main-first">
@@ -213,27 +217,27 @@
                     </p>
                     <div class="category-filters" id="categoryDiv5">
                         <?php
-                        $sql="SELECT distinct job_status from jobseeker order by job_status";
+                        $sql="SELECT distinct status from jobseeker order by status";
                         $result=$conn->query($sql);
                         while($row=$result->fetch_assoc()){
                             ?>
                         <div class="row-flex-jobs-j">
                             <span>
                                <label class="job_type">
-                                    <input type="checkbox" value="<?= $row['job_status'];?>" id="status" onclick="myFunction()"><span> </span><?= $row['job_status']; ?>
+                                    <input type="checkbox" value="<?= $row['status'];?>" id="status" onclick="myFunction()"><span> </span><?= $row['status']; ?>
                                 </label>
                             </span>
                             <p>
                                 <?php
-                                $status=$row['job_status'];
+                                $status=$row['status'];
                                 $rt = mysqli_query($conn,"SELECT * FROM jobseeker where job_status='$status'");
                                 $num1 = mysqli_num_rows($rt);
                                 ?>
                                 <?php echo htmlentities($num1); ?>
                             </p>
                         </div>
-                    <?php } ?>  
-                            
+                    <?php } ?>
+
                     </div>
                 </div>
             </form>
@@ -247,7 +251,7 @@
     const categoryDiv3 = document.querySelector('#categoryDiv3');
     const categoryDiv4 = document.querySelector('#categoryDiv4');
     const categoryDiv5 = document.querySelector('#categoryDiv5');
-    
+
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })
@@ -269,8 +273,8 @@
             var status= get_filter_text('status');
             var jobtitle=document.getElementById('jobtitle').value;
             var location=document.getElementById('location').value;
-        
-        
+
+
             $.ajax({
                 url:'./include/candidates_action.php',
                 method:'POST',
@@ -282,7 +286,7 @@
             });
         }
 
-    
+
         function get_filter_text(text_id){
             var filterData=[];
             $('#'+text_id+':checked').each(function(){
@@ -309,5 +313,3 @@
         });
     });
 </script>
-
-

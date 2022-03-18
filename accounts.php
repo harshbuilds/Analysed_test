@@ -1,13 +1,12 @@
-<?php include ('header.php')?><!-->header<-->
+<?php include ('header.php')?>
 <link rel="stylesheet" href="./css/accounts.css">
-<title>Accounts</title><!-->title<-->
+<title>Accounts</title>
 <div class="container">
     <div class="small_container">
         <div class="heading_dash">
-            <h1 class="mainHeadingDash">Accounts</h1><!-->heading<-->
+            <h1 class="mainHeadingDash">Accounts</h1>
             <p class="mainParaDash">Lorem Ipsum gerolit pecona devousi tero</p>
         </div>
-        <!-->cards<-->
         <div class="pricing_cards_for_accounts row_for_accounts">
             <div class="card_single_item_pricing_cards">
                 <p class="card_heading_single_item_pricing_cards">Intro</p>
@@ -42,7 +41,6 @@
                 <a class="signup_price_Card_single_item" href="#">Sign Up</a>
             </div>
         </div>
-        <!-->status<-->
         <div class="add_account_for_accounts">
             <h1 class="mainHeadingDash">Add Account</h1>
             <div class="row_for_accounts column_flex_for_filter">
@@ -55,12 +53,10 @@
                     <input type="text" name="" placeholder="Search for users" class="input_for_searching_users_for_accounts" id="">
                     <button class="button_for_searching_users_for_accounts"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
-                <!-->add<-->
                 <button class="add_button_for_accounts">Add +</button>
             </div>
             <div class="exisiting_users_for_accounts">
                 <p class="existing_users_heading_container">Existing user</p>
-                <!-->accounts<-->
                 <div class="row_for_accounts">
                     <div class="card_item_users_accounts">
                         <button class=""><i class="fa fa-trash trash_can_for_deleting_user" aria-hidden="true"></i></button>
