@@ -41,11 +41,11 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
 <?php include('header.php');?>
 
 <link rel="stylesheet" href="./css/addClient.css">
-<title>Analysed</title>
+<title id="title">Analysed</title>
   <form action="addClient2.php" method="post" enctype="multipart/form-data"> <!-- redirecting to Billing information page with data of contact  information -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a>
+        <a href="./dashboard.php">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -53,6 +53,10 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
             <p class="mainParaDash">Fill in the details to create a new client.</p>
         </div>
         <!-- <button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button> -->
+        <div class="header_img_1"> <!--Extra part added, required for responsiveness -->
+             <a href="./dashboard.php"> <img src="img/client_back.JPG" class="back_img_1"></a> <!-- back to dashboard pg-->
+            <img src="img/client_header.JPG" class="bg_img_1">
+        </div>
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addClient-1"><a href="addClient.php">General info</a></p>
@@ -62,14 +66,16 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
 
             <div class="right-side-row-for-add-client-container-1" id="contact-info-addclient-1">
                 <h2 class="heading-for-general-information-right-side-add-client-container-1"><i class="fa fa-building" aria-hidden="true"></i> Contact information</h2>
-                <div class="row-recruiter inputs-for-add-client-below-image-box">
+                <div class="row-recruiter inputs-for-add-client-below-image-box" id="client1">
                     <p class="input-para-add-client-ekam-1">
                             <label for="default-select-for-no.11">Main Email</label>
                             <input id="default-select-for-no.11" name="main_email" type="email" class="default-input-for-add-client-1"placeholder="Enter mail email id" required />
+                            <img src="img/plus1.JPG" class="plus">
                         </p>
                         <p class="input-para-add-client-ekam-1">
                             <label for="default-select-for-no.12">Contact number</label>
                             <input id="default-select-for-no.12" type="tel" name="contact_no" class="default-input-for-add-client-1" placeholder="Enter 10 digit mobile number" required />
+                            <img src="img/plus1.JPG" class="plus">
                     </p>
                     <p class="input-para-add-client-ekam-1">
                             <label for="default-select-for-no.13">Address</label>
@@ -102,7 +108,7 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
                                <option value="Germany">Germany</option>
                             </select>
                     </p>
-                    <input type = "submit" name="next"  class="save_button_addClient default-button-for-recruiter-dashboard" value="next" >
+                    <input type = "submit" name="next"  class="save_button_addClient default-button-for-recruiter-dashboard" id="save_2" value="next" > <!-- linked to addClient2 pg  -->
                 </div>
             </div>
 

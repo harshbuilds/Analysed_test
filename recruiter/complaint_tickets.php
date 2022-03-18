@@ -11,9 +11,9 @@
         <div class="ticket-select-options-div-complaint_tickets">
             <div class="row-recruiter">
             <span>
-                <label for="ticket_type_label_complaint_tickets" class="ticket_type_label_complaint_tickets_label">Ticket Type</label>
-                <div class="ticket-after-div-select-element">
-                    <select name="" id="ticket_type_label_complaint_tickets">
+                <label for="ticket_type_label_complaint_tickets" class="ticket_type_label_complaint_tickets_label" id="label1">Ticket Type</label>
+                <div class="ticket-after-div-select-element" id="arrow">
+                    <select name="" id="ticket_type_label_complaint_tickets" class="label2">
                     <option value="0">All tickets</option>
                         <option value="1">Complaint</option>
                         <option value="2">Feedback</option>
@@ -23,9 +23,9 @@
                 </div>
             </span>
             <span>
-                <label for="ticket_type_label_complaint_tickets" class="ticket_type_label_complaint_tickets_label">Priority</label>
-                <div class="ticket-after-div-select-element">
-                <select name="" id="ticket_type_label_complaint_tickets">
+                <label for="ticket_type_label_complaint_tickets" class="ticket_type_label_complaint_tickets_label" id="label3">Priority</label>
+                <div class="ticket-after-div-select-element" id="arrow1">
+                <select name="" id="ticket_type_label_complaint_tickets" class="label4">
                     <option value="0">Select all</option>
                     <option value="1">High</option>
                     <option value="2">Medium</option>
@@ -33,27 +33,27 @@
                 </select>
                 </div>
             </span>       
-            <button class="create-ticket-button-for-complaints-ticket">Create ticket +</button>
+            <button class="create-ticket-button-for-complaints-ticket" id="but1">Create ticket +</button>
             </div>
         </div>
         <div class="ticket-categories-options-tochoose">
             <div class="row-recruiter">
-                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-recent active">Recent</p>
-                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-unassigned">Unassigned</p>
-                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-closed">Closed</p>
+                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-recent active" id="head1">Recent</p>
+                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-unassigned" id="head2">Unassigned</p>
+                <p class="sub-ticket-categories-options-tochoose sub-ticket-categories-options-tochoose-closed" id="head3">Closed</p>
             </div>
         </div>
-        <div class="recent-complaint-tickets-recruiter active complaint-tickets-recruiter-cards-div">
+        <div class="recent-complaint-tickets-recruiter active complaint-tickets-recruiter-cards-div" id="complaints">
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket complaint">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -68,13 +68,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -89,13 +89,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket feedback">Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket feedback" id="comp1">Feedback</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -110,13 +110,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket"id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -133,13 +133,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket complaint">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -154,13 +154,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -175,13 +175,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket feedback">Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket feedback" id="comp1">Feedback</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -196,13 +196,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query"  id="comp1"id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -219,13 +219,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket complaint">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -240,13 +240,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -261,13 +261,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket feedback">Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket feedback" id="comp1" >Feedback</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>
@@ -282,13 +282,13 @@
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket query">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
                         <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
                         <span>
-                            <p  class="light-grey-text-complain-ticket">Added by</p>
+                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
                         </span>
                     </span>

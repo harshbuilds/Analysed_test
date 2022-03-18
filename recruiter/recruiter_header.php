@@ -21,57 +21,57 @@ if (!isset($_SESSION['email']))
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="dashboard.php" class="sidebar_main-listlinks">
+          <a href="./dashboard.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-1.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="aboutOrganization.php" class="sidebar_main-listlinks">
+          <a href="./admin_panel.php" class="sidebar_main-listlinks">
             <img src="./img/Group 72.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="yourTools.php" class="sidebar_main-listlinks">
+          <a href="./yourTools.php" class="sidebar_main-listlinks">
             <img src="./img/Icon awesome-tools.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="addClient.php" class="sidebar_main-listlinks">
+          <a href="./contact_list.php" class="sidebar_main-listlinks">
             <img src="./img/Path 3377.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="../addCandidate.php" class="sidebar_main-listlinks">
+          <a href="./client_list.php" class="sidebar_main-listlinks">
             <img src="./img/Group 2964.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="createTasks.php" class="sidebar_main-listlinks">
+          <a href="./job_listings.php" class="sidebar_main-listlinks">
             <img src="./img/Path 284-2.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="../schedule.php" class="sidebar_main-listlinks">
+          <a href="./candidate_list.php" class="sidebar_main-listlinks">
             <img src="./img/Group 75.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="settings.php" class="sidebar_main-listlinks">
+          <a href="./settings.php" class="sidebar_main-listlinks">
             <img src="./img/Group 139.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="addContact.php" class="sidebar_main-listlinks">
+          <a href="./referrals.php" class="sidebar_main-listlinks">
             <img src="./img/Group 136.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="complaint_tickets.php" class="sidebar_main-listlinks">
+          <a href="./complaint_tickets.php" class="sidebar_main-listlinks">
             <img src="./img/Group 138.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="" class="sidebar_main-listlinks">
+          <a href="./contact.php" class="sidebar_main-listlinks">
             <img src="./img/Group 137.png" />
           </a>
         </li>

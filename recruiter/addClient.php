@@ -6,11 +6,11 @@ session_start();            //session has been started
 ?>
 <?php include('header.php')?>
 <link rel="stylesheet" href="./css/addClient.css">
-<title>Analysed</title>
+<title id="title">Analysed</title>
 <form action="addClient1.php" method="post" enctype="multipart/form-data"> <!-- redirecting to contact information page with data of General information -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a>
+        <a href="./dashboard.php">Dashboard</a> > <a href="">My Database</a> > <a href="">Add client</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">
@@ -18,6 +18,11 @@ session_start();            //session has been started
             <p class="mainParaDash">Fill in the details to create a new client.</p>
         </div>
         <!--<button type = "submit" class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
+        <div class="header_img">   <!--Extra part added, required for responsiveness -->
+           <a href="./dashboard.php"> <img src="img/client_back.JPG" class="back_img"></a> <!-- back to dashboard pg-->
+            <img src="img/client_header.JPG" class="bg_img">
+        </div>
+
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addClient-1"><a href="addClient.php" class="active">General info</a></p>
@@ -28,7 +33,7 @@ session_start();            //session has been started
                 <h2 class="heading-for-general-information-right-side-add-client-container"><i class="fa fa-pencil" aria-hidden="true"></i> General information</h2>
                 <div class="row-recruiter image-box-right-side-add-client">
                     <div class="left-side-image-box-add-client-1">
-                        <div class="sub-divs-image-box-right-side-add-client">
+                        <div class="sub-divs-image-box-right-side-add-client" id="comp_img">
                             <input type="file" name="fileToUpload"  class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client">
                             <label class="label-for-image-upload-ekam-1client" for="input-image-upload-ekam-1-add-client">
                                 <h2><i class="fa fa-building" aria-hidden="true"></i></h2>
@@ -67,7 +72,6 @@ session_start();            //session has been started
                             </select>
                             </p>
                         </div>
-
                     </div>
                 </div>
                 <div class="row-recruiter inputs-for-add-client-below-image-box">
@@ -121,7 +125,7 @@ session_start();            //session has been started
                         <input id="default-select-for-no.10" name="contract_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
                     </p>
                     </div>
-                    <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
+                    <a href="addClient1.php"> <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" ></a> <!-- linked to addClient1 pg -->
             </div>
 
         </div>

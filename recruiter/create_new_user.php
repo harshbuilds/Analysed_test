@@ -1,4 +1,10 @@
-<?php include('header.php')?>
+<!DOCTYPE html>
+<html lang="en">
+<!--TOP HEADER-->
+<?php include ('header_files.php')?>
+
+<!--HEADER FILES-->
+    <?php include('header.php')?>
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'analysed');
 if(isset($_POST['submit']))
@@ -23,6 +29,7 @@ if(isset($_POST['submit']))
    echo '<script>alert("User Created Successfully!!")</script>';
     }
 ?>
+       <!--CSS FILES-->
 <link rel="stylesheet" href="./css/addClient.css">
 <link rel="stylesheet" href="./css/create_new_user.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,6 +37,7 @@ if(isset($_POST['submit']))
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <title>Analysed</title>
+            <!-- START OF INTERNAL STYLESHEET -->
 <style>
 #imageUpload
 {
@@ -72,10 +80,11 @@ if(isset($_POST['submit']))
     margin-top: -35px;
     margin-left: 87px;
 }
-</style>
+</style>    <!-- END OF INTERNAL STYLESHEET -->
 <div class="container">
     <div class="small_container">
         <div class="heading_dash">
+            <!-- CREATE USER -->
             <h1 class="mainHeadingDash">Create User</h1>
             <p class="mainParaDash" style="color:#3598DB;">Provide details and give user access controls.</p>
         </div>
@@ -96,6 +105,7 @@ if(isset($_POST['submit']))
             <div class="right-side-row-for-add-client-container-1" id="general-information-addclient-1">
                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                     <div class="row-recruiter"style="padding-top:40px">
+                                    <!-- PERSONAL DETAILS -->
                         <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Personal details</h2>
                     </div>
                 </div>
@@ -103,7 +113,7 @@ if(isset($_POST['submit']))
                     <div class="right-side-image-box-right-add-client-1">
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
-                                        <label for="usertype">User Type <span style="color:#3598DB;">*</span></label>
+                                        <label for="usertype"> Title <span style="color:#3598DB;">*</span></label>
                                         <select name="usertype" id="usertype" class="default-select-for-add-client-1" style="color:grey;">
                                                 <option value="0" default>Select User type</option>
                                                 <option value="Recruiter">Recruiter</option>
@@ -134,13 +144,13 @@ if(isset($_POST['submit']))
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div>          <!-- NOTIFICATION DETAILS -->
                                 <div class="row-recruiter" style="margin-bottom: 30px;">
                                     <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Notification details</h2>
                                 </div>
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                                     <div class="radio-item">
-                                        <input type="radio" id="ritema" name="notification" value="Allow email notifications">
+                                        <input type="radio" id="ritema" name="notification" value="Allow email notifications" checked="checked">
                                         <label for="ritema">Allow email notifications</label>
                                     </div>
                                     <div class="radio-item">
@@ -152,6 +162,7 @@ if(isset($_POST['submit']))
                                         <label for="ritemc">Don't allow email notifications</label>
                                     </div>
                                 </div>
+                                                    <!-- USER ACCESS DETAILS -->
                             <div class="row-recruiter" style="margin-bottom: 30px;">
                                     <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">User access details</h2>
 									<div class="col-sm">
@@ -225,12 +236,13 @@ if(isset($_POST['submit']))
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-success" style="float:right">Create user</button>
+                                             <!-- CREATE USER BUTTON -->
+                        <button  type="submit" name="submit" class="btn btn-success" style="float:right">Create user</button>
                     </form>
                 </div>
             </div>
 
-<script>
+ <script>
     $("#profileImage").click(function(e) {
     $("#imageUpload").click();
 });
@@ -252,4 +264,12 @@ $("#imageUpload").change(function(){
             $("#form1 input[type='checkbox']").prop('checked',this.checked);
         });
     });
-</script>
+</script> 
+
+
+
+
+
+
+
+

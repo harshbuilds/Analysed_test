@@ -1,4 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+  <!--HEADER FILES--> 
+  <?php include ('header_files.php')?>
+ 
+  <!--TOP HEADER--> 
 <?php include('header.php')?>
+<!--CSS FILES-->
 <link rel="stylesheet" href="./css/setting_home_2.css">
 <title>Settings</title>
 
@@ -30,7 +38,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <body>
-
+                                    <!-- SELECT THE TYPE OF USER -->
     <div id="upload-modal">
 		<div id="upload-container">
 			<p class="l1" style="margin-left:50px;margin-top:50px">Select the type of user
@@ -47,7 +55,7 @@
                 </div>
                 <div class="col-4">
                     <p id="ex5">&emsp;Lorem Ipsum&emsp;&emsp;&nbsp;<i class="far fa-building"></i></p><br>
-                    <a href="create_customer_user3.php"><p id="ex6">&emsp;Recruiter&emsp;<i class="fab fa-black-tie"></i></p></a>
+                    <a href="create_new_user.php"><p id="ex6">&emsp;Recruiter&emsp;<i class="fab fa-black-tie"></i></p></a>
                 </div>
             </div>
             <br><br>
@@ -63,7 +71,7 @@
   <div class="main_body">
      <div class="container">
         <br><br>
-        <p class="mainHeadingDash" style="font-size: 33px;">Accounts</p>
+        <p class="mainHeadingDash">Accounts</p>
         <p class="sub_1">Lorem Ipsum gerolit pecona devousi tero<br><br><br><br></p>
     
       
@@ -71,6 +79,7 @@
         <div class="task_1">
             <div class="card" id="c1">
                 <div class="int_1">
+                     <!--INTRO PACKAGE DIVISION-->
                     <p class="t1">Intro</p>
                     <p class="t2">500₹<span class="t3"> / Month</span></p>
                     <p class="t4">Lorem ipsum dolor sit amet, capetetur adipiscing elit.</p><br>
@@ -82,6 +91,7 @@
             </div>
             <div class="card" id="c1">
                 <div class="int_1">
+                     <!--BASE PACKAGE DIVISION-->
                     <p class="t1">Base</p>
                     <p class="t2">1500₹<span class="t3"> / Month</span></p>
                     <p class="t4">Lorem ipsum dolor sit amet, capetetur adipiscing elit.</p><br>
@@ -94,6 +104,7 @@
 
             <div class="card" id="c2">
                 <div class="int_2">
+                     <!--POPULAR PACKAGE DIVISION-->
                     <p class="p1">Popular</p>
                     <p class="p2">2500₹<span class="p3"> / Month</span></p>
                     <p class="p4">Lorem ipsum dolor sit amet, capetetur adipiscing elit.</p><br>
@@ -106,6 +117,7 @@
 
             <div class="card" id="c1">
                 <div class="int_1">
+                     <!--PREMIUM PACKAGE DIVISION-->
                     <p class="t1">Premium</p>
                     <p class="t2">3500₹<span class="t3"> / Month</span></p>
                     <p class="t4">Lorem ipsum dolor sit amet, capetetur adipiscing elit.</p><br>
@@ -116,14 +128,16 @@
                 </div>
             </div>
            
-        </div>
+        </div><!--ACCOUNTS DIVISION ENDS HERE-->
+
         <br><br>
 
-        <!-- line 2 -->
+        <!-- line 2 --><!--START OF ADD ACCOUNT-->
         <p class="mainHeadingDash" style="font-size: 33px;">Add Account<br><br></p>
         <div class="row">
             <div class="col-9">
                 <p class="input-field1" style="width:580px">
+                                    <!-- SEARCH BAR -->
                     <a href="/" class="active-breadcrumb-link">&emsp;<i class="fa fa-filter" aria-hidden="true"></i>&emsp;All types&emsp;&emsp;<span style="color:#979797">|  &emsp;&emsp;</span></a>   
                     <input type="text" name="searchForJobs" id="inputSearch" class="searchForJobs" placeholder="Search for users"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <button class="searchButton">
@@ -135,9 +149,9 @@
                 <button class="addFilesMyTasks" id="myBtn" >Add +</button>
             </div>
             
-        </div>
+        </div><!--END OF ADD ACCOUNT -->
 
-        <!-- line 3 -->
+        <!-- line 3 --> <!--START OF EXISTING USER-->
         <p class="t1"><br><br>Existing user<br><br></p>
         <div class="task_5">
             <div class="card" id="c5">
@@ -146,7 +160,7 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Ellipse 148.png" height="130px" width="130px">
+                        <img src="./img/Ellipse 148.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
@@ -158,7 +172,7 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Ellipse 148-1.png" height="130px" width="130px">
+                        <img src="./img/Ellipse 148.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
@@ -170,7 +184,7 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Ellipse 148-2.png" height="130px" width="130px">
+                        <img src="./img/Ellipse 148.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
@@ -182,7 +196,7 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Profile1.png" height="130px" width="130px">
+                        <img src="./img/Profile-pic.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
@@ -194,7 +208,7 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Prof-1.png" height="130px" width="130px">
+                        <img src="./img/Profile-pic.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
@@ -206,14 +220,14 @@
                     <span id="mp1">profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Profile3.png" height="130px" width="130px">
+                        <img src="./img/Profile-pic.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1hr ago</span></p>
                     </center>
                 </div>
             </div>
-        </div>
-
+        </div>  <!--END OF EXISTING USER-->
+         <!--START OF DELETED USER-->
         <p class="t1"><br><br>Deleted user<br><br></p>
         <div class="task_5">
         <div class="card" id="c5">
@@ -221,7 +235,7 @@
                     <span id="mp2" >profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Profile1.png" height="130px" width="130px">
+                        <img src="./img/Profile-pic.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1 week ago</span></p>
                     </center>
@@ -232,13 +246,13 @@
                     <span id="mp2" >profile <i class="fas fa-external-link-alt" aria-hidden="true"></i></span></p>
 
                     <center>
-                        <img src="img/Prof-1.png" height="130px" width="130px">
+                        <img src="./img/Profile-pic.png" height="130px" width="130px">
                         <p class="l1"><br>Naruto Uzumaki</p>
                         <p class="l2">Last login <span class="l3">1 month ago</span></p>
                     </center>
                 </div>
             </div>
-        </div>
+        </div>  <!--END OF DELETED USER-->
 
         <br><br>
     </div>
@@ -258,5 +272,6 @@
       
     </script>
 
-       
+
+        
 </body>

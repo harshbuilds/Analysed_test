@@ -43,7 +43,7 @@ $_SESSION['State']      = $_POST['State'];
 <title>Analysed</title>
 <div class="container">
 <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a>
+        <a href="recruiter/dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="active-breadcrumb-link">Add candidates</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">

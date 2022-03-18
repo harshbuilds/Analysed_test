@@ -1,14 +1,15 @@
-<?php include('header.php') ?>
-<?php
-   define('LOCALHOST','localhost');
-   define('DB_USERNAME','root');
-   define('DB_PASSWORD','');
-   define('DB_NAME','analyse');
-   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
-?>
 
 <?php
-    $c_id=1004;
+
+   include 'connection1.php';     //database connection page included
+   session_start();        //session has been started
+
+
+?>
+
+<?php include('header.php') ?>
+<?php
+    $c_id=15;
     $sql="select * from client where client_id='$c_id'";
     $res=mysqli_query($conn,$sql);
     if($res == TRUE)
@@ -18,13 +19,13 @@
         {
             while($rows=mysqli_fetch_assoc($res))
             {
-                $name=$rows['name'];
-                $company_name=$rows['company_name'];
-                $client_img=$rows['client_img'];
+                $name=$rows['company_name'];
+                $company_name=$rows['company'];
+                $client_img=$rows['company_img'];
                 $role=$rows['role'];
                 $main_email=$rows['main_email'];
                 $contact_no=$rows['contact_no'];
-                $added_on=$rows['added_on'];
+                $added_on=$rows['last_updated'];
                 $city=$rows['city'];
                 $state=$rows['state'];
                 $country=$rows['country'];
@@ -123,8 +124,8 @@
 
 
             <?php
-            $cs_id=5001;
-            $sql1="select * from contact_specific where cs_id='$cs_id'";
+            $cs_id=3;
+            $sql1="select * from contacts where contact_id='$cs_id'";
             $res1=mysqli_query($conn,$sql1);
             if($res1 == TRUE)
             {
@@ -133,17 +134,17 @@
                 {
                     while($rows=mysqli_fetch_assoc($res1))
                     {
-                        $last_edited=$rows['last_edited'];
+                        $last_edited=$rows['added_on'];
                         $files=$rows['files'];
                         $notes=$rows['notes'];
-                        $jobs=$rows['jobs'];
+                        $jobs=$rows['job_title'];
                         $visibility=$rows['visibility'];
                         $source=$rows['source'];
                         $validity=$rows['validity'];
-                        $type=$rows['type'];
+                        $type=$rows['contact_type'];
                         $skills=$rows['skills'];
                         $email=$rows['email'];
-                        $contact_no=$rows['contact_no'];
+                        $contact_no=$rows['phone'];
                         $city=$rows['city'];
                         $state=$rows['state'];
                         $country=$rows['country'];
@@ -206,7 +207,8 @@
                     </div>
                     <div class="task-content">
                     <?php
-                        $sql2="select * from company_task";
+			 $job_id = 1;
+                        $sql2="select * from company_task where job_id = $job_id";
                         $res2=mysqli_query($conn,$sql2);
                         if($res2 == TRUE)
                         {
@@ -276,10 +278,11 @@
 
 
                     <?php
-                        $sql="select * from job_list";
-                        $res=mysqli_query($conn,$sql);
-                        if($res == TRUE)
-                        {
+			 $job_id=8;
+			 $$sql="select * from joblistings where job_id =$job_id";
+                         $res=mysqli_query($conn,$sql);
+                         if($res == TRUE)
+                         {
                             $count=mysqli_num_rows($res);
                             if($count >0)
                             {

@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--TOP HEADER-->
+//php include ('header_files.php')
 <?php
 
     include 'connection1.php';     //database connection page included
@@ -22,11 +26,15 @@
 ?>
 
 
+<!--HEADER FILES-->
 <?php include('header.php')?>
-
+<!--CSS FILES-->
 <link rel="stylesheet" href="./css/addClient.css">
+
 <title>Analysed</title>
+
 <form action="addContactIns.php" method="post" enctype="multipart/form-data"> <!-- redirecting to insert query page with data of additional information -->
+
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add Contact</a>
@@ -44,21 +52,24 @@
                 <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addContact-2"><a href="addContactProfessional.php">Professional info</a></p>
                 <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addContact-3"><a href="addContatadd.php" class="active">Additional info</a></p>
             </div>
-
+                                            <!-- ADDITIONAL INFORMATION -->
             <div class="right-side-row-for-add-client-container-1" id="additional-information-addcontact-1">
                 <h2 class="heading-for-general-information-right-side-add-client-container heading-addContact-3"><i class="fa fa-question" aria-hidden="true"></i> Additional information</h2>
                 <div class="row-recruiter image-box-right-side-add-client">
                     <div class="right-side-image-box-right-add-client-1">
                         <div class="row-recruiter inputs-for-add-client-below-image-box">
+                                                        <!-- LAST CONTACT -->
                             <p class="input-para-add-client-ekam-1 calendar-input-addContact-1" >
                                 <label for="default-input-for-no.1 ">Last Contact </label>
                                 <input type="date" name="last_contact" class="default-input-for-add-client-1" placeholder="Enter current job title of candidate" id="default-input-for-no.1">
                             </p>
+                                                        <!-- LAST VISIT -->
                             <p class="input-para-add-client-ekam-1 calendar-input-addContact-1" >
                                 <label for="default-input-for-no.1011">Last visit</label>
                                 <input type="date" name="lastvisit" class="default-input-for-add-client-1" placeholder="Candidate currently employed in?" id="default-input-for-no.1011">
                             </p>
                             </div>
+                                                        <!-- VISIBILITY -->
                             <div class="row-recruiter inputs-for-add-client-below-image-box">
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Visibility *</label>
@@ -69,6 +80,7 @@
                                         <option value="3">Working</option>
                                     </select>
                                 </p>
+                                                            <!-- VALIDITY -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Validity*</label>
                                     <select name="validity" id="default-select-for-no.1" class="default-select-for-add-client-1">
@@ -78,12 +90,14 @@
                                         <option value="3">Working</option>
                                     </select>
                                 </p>
+                                                                    <!-- LINKEDIN PROFILE  -->
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-input-for-no.2">Link to LinkedIn profile </label>
                                         <input type="text" name="LinkedIn_profile" class="default-input-for-add-client-1" placeholder="Profile URL" id="default-input-for-no.2">
                                     </p>
                             </div>
-                             <input type = "submit" name = "submit" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
+                                                            <!-- SAVE BUTTON -->
+                             <button type = "submit" name = "submit" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >&emsp;save &emsp;<i class="fa fa-save"></i>&emsp;</button>
                     </div>
                 </div>
             </div>
