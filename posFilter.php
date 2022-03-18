@@ -1,3 +1,12 @@
+
+<?php
+
+   include 'connection1.php';
+   session_start();
+?>
+
+
+
 <?php
 include('config.php');
 
@@ -11,7 +20,7 @@ $sqlPos = "SELECT * FROM joblistings WHERE position LIKE '$sk%'";
 
 $sqlPac = "SELECT * FROM joblistings WHERE package LIKE '$sk%'";
 
-$sqlCom = "SELECT * FROM joblistings WHERE company LIKE '$sk%'"; 
+$sqlCom = "SELECT * FROM joblistings WHERE company LIKE '$sk%'";
 
 $sqlLoc = "SELECT * FROM joblistings WHERE country LIKE '$sk%'";
 
@@ -27,23 +36,23 @@ $resultall = mysqli_query($conn,$sqlall);
 
 if($count = mysqli_num_rows($resultPos)){
     $retrieve = $resultPos;
-    $finalcount = $count; 
+    $finalcount = $count;
 }
 elseif($count1 = mysqli_num_rows($resultPac)){
     $retrieve = $resultPac;
-    $finalcount = $count; 
+    $finalcount = $count;
 }
 elseif($count2 = mysqli_num_rows($resultCom)){
     $retrieve = $resultCom;
-    $finalcount = $count; 
+    $finalcount = $count;
 }
 elseif($count3 = mysqli_num_rows($resultLoc)){
     $retrieve = $resultLoc;
-    $finalcount = $count; 
+    $finalcount = $count;
 }
 else{
     $retrieve = $resultall;
-    $finalcount = $count; 
+    $finalcount = $count;
 }
 
 $posarr = array();
@@ -64,7 +73,7 @@ while($row = mysqli_fetch_assoc($retrieve)){
 
     $temp['logo'] = $row['logo'];
     $temp['company_name'] = $row['company'];
-    $temp['count'] = $finalcount; 
+    $temp['count'] = $finalcount;
 
 
     array_push($posarr,$temp);
@@ -73,4 +82,3 @@ while($row = mysqli_fetch_assoc($retrieve)){
 
 echo json_encode($posarr);
 ?>
-

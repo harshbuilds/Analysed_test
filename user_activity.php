@@ -1,4 +1,4 @@
-<?php include('include/header.php')?><!-->header<-->
+<?php include('include/header.php')?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
@@ -91,7 +91,7 @@
                     <p class="t1">
                         <p class="s2">Scheduled an interview &emsp; <img src="img/grey-clock-icon.png" height="15px" width="15px">
                         <span class="v3"> X minutes ago</span><br>
-                        <span class="v3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        <span class="v3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
                             labore et dolore magna</span><br>
                     </p>
                 </div>

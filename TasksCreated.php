@@ -1,5 +1,8 @@
-<?php include('connection1.php') ?>
-<!-->include<-->
+<?php
+include 'connection1.php';         //database connection page included
+session_start();            //session has been started
+?>
+
 <title>Dashboard</title>
     <link rel="stylesheet" href="./css/DashboardJobs.css">
     <link rel="stylesheet" href="./css/appliedCandidates.css">
@@ -7,25 +10,20 @@
     <link rel="stylesheet" href="./css/tasksCreated.css">
     <link rel="stylesheet" href="./css/shortlistedJobs.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-->css<-->
   <body>
     <?php include('header.php') ?>
-      <!-->include header<-->
     <div class="container">
 
       <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <!-->page navigation<-->
-            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="tasksCreated.php" class="active-breadcrumb-link">Tasks Created</a>
+            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Tasks Created</a>
         </div>
         <div class="row-flex-jobs-j alignitemsstart-shortlisted Dashboard-main-container-jobs">
             <div class="left-side-container-DashboardJ">
-                
                 <?php
                     $total_rows = mysqli_query($conn,"SELECT * FROM task");
                     $num = mysqli_num_rows($total_rows);
                     ?>
-                <!-->jobs create<-->
                 <h2 class="jobsCreateaDashboard-jobs">Tasks Created<span> (<?php echo htmlentities($num); ?>)</span></h2>
                 <div class="cards-section-container row-flex-jobs-j" id="result">
 
@@ -38,8 +36,8 @@
 
                     <div class="single-container-cards-DasboardJobs candidatesjobs-applied">
                             <a href="">
-                                <p class="candidate-status-jobs"><img src="./img/More.svg"></p>
-                                <img src="./img/Ellipse 148-1.png" alt="">
+                                <p class="candidate-status-jobs"></p>
+                                <img src="<?php echo $row["task_img"]; ?>" alt="">
                                 <h3 class="job-headingnname"><?php echo $row["assigned_to"]; ?></h3>
                                 <p class="skill-job-candiate"><?php echo $row["position"]; ?></p>
                                 <p class="taskassigned-taskcreated"><?php echo $row["jobtitle"]; ?></p>

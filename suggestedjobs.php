@@ -1,14 +1,21 @@
-<?php include('header.php')?><!-->header<-->
-<link rel="stylesheet" href="./css/suggestedjobs.css" /><!-->css<-->
+
+
+<?php
+
+   include 'connection1.php';
+   session_start();
+?>
+
+
+<?php include('header.php')?>
+<link rel="stylesheet" href="./css/suggestedjobs.css" />
 <div class="container">
-    <!-->list<-->
     <div class="sugjob_breadcrumb_container">
         <ul class="sugjob_breadcrumb_container_ul">
-            <li class="sugjob_breadcrumb_container_li"><a href="js_dashboard.php">Dashboard</a></li>
-            <li class="sugjob_breadcrumb_container_li"><a href="suggestedjobs.php">Suggested Jobs</a></li>
+            <li class="sugjob_breadcrumb_container_li"><a href="#">Dashboard</a></li>
+            <li class="sugjob_breadcrumb_container_li"><a href="#">Suggested Jobs</a></li>
         </ul>
     </div>
-    <!-->jobs<-->
     <div class="small_container">
         <div class="heading_dash">
             <h1 class="mainHeadingDash">Suggested Jobs</h1>

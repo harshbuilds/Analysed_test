@@ -1,13 +1,12 @@
-<?php include('include/header.php')?>
 <?php
-define('LOCALHOST','localhost');
-define('DB_USERNAME','root');
-define('DB_PASSWORD','');
-define('DB_NAME','analyse');
-$conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+include 'connection1.php';          //database connection page included
+session_start();             //session has been started
 ?>
 
 
+
+
+<?php include('include/header.php')?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
@@ -39,8 +38,8 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
 
     <br>
     <div class="bread-crumbs_Mytools-recruiter">
-     <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
-     <a href="shortlistedJobs.php" class="active-breadcrumb-link"><u> Shortlisted_Jobs </u></a>
+     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a><span style="color:#3598DB"> > </span>
+     <a href="" class="active-breadcrumb-link"><u> Shortlisted_Jobs </u></a>
     </div>
     <br><br>
     <div class="main_body">
@@ -59,70 +58,65 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
             <div class="row">
         <div class="col-9">
           <?php
-            if(isset($_POST['btnapply']))
+            $exclamloc="";
+            $exclamindus="";
+            $mystate=$_GET['mystate'];
+            $location=$_POST['location'];
+            $minsal=$_POST['minsal'];
+            $maxsal=$_POST['maxsal'];
+            $chooseindustry=$_POST['chooseindustry'];
+            $jobtype=$_POST['jobtype'];
+            $skill=$_POST['skill'];
+            if($location=="")
             {
-          ?>
-          <div class="row">
-            <?php
-              $exclamloc="";
-              $exclamindus="";
-              $mystate=$_GET['mystate'];
-              $location=$_POST['location'];
-              $minsal=$_POST['minsal'];
-              $maxsal=$_POST['maxsal'];
-              $chooseindustry=$_POST['chooseindustry'];
-              $jobtype=$_POST['jobtype'];
-              $skill=$_POST['skill'];
-              if($location=="")
-              {
-                $location="!";
-              }
+              $location="!";
+            }
 
-              if($minsal=="")
-              {
-                $minsal=0;
-              }
-              if($maxsal=="")
-              {
-                $maxsal=10000;
-              }
-              if($chooseindustry=="")
-              {
-                $exclamindus="!";
-              }
+            if($minsal=="")
+            {
+              $minsal=0;
+            }
+            if($maxsal=="")
+            {
+              $maxsal=10000;
+            }
+            if($chooseindustry=="")
+            {
+              $exclamindus="!";
+            }
 
-              $skill='%'.$skill.'%';
+            $skill='%'.$skill.'%';
 
-              $sql3="SELECT * FROM `shortlisted_jobs` WHERE (state ='$mystate') AND (district $exclamloc='$location') AND (package BETWEEN $minsal AND $maxsal) AND (industry $exclamindus= '$chooseindustry') AND (job_type='$jobtype') AND (skills LIKE '$skill')";
-                  //echo $sql3;
-              $res3=mysqli_query($conn,$sql3);
-              if($res3 == TRUE)
+            $sql3="SELECT * FROM `joblistings` WHERE (state ='$mystate') AND (district $exclamloc='$location') AND (package BETWEEN $minsal AND $maxsal) AND (industry $exclamindus= '$chooseindustry') AND (job_type='$jobtype') AND (skills LIKE '$skill')";
+                //echo $sql3;
+            $res3=mysqli_query($conn,$sql3);
+            if($res3 == TRUE)
+            {
+              $count=mysqli_num_rows($res3);
+              if($count >0)
               {
-                $count=mysqli_num_rows($res3);
-                if($count >0)
+                while($rows=mysqli_fetch_assoc($res3))
                 {
-                  while($rows=mysqli_fetch_assoc($res3))
-                  {
-                    $workspace_view=$rows['workspace_view'];
-                    $client_company=$rows['client_company'];
-                    $state=$rows['state'];
-                    $country=$rows['country'];
-                    $position=$rows['position'];
-                    $start_date=$rows['start_date'];
-                    $end_date=$rows['end_date'];
-                    $skills=$rows['skills'];
-                    $job_type=$rows['job_type'];
-                    $now = time(); // or your date as well
-                    $your_date = strtotime($end_date);
-                    $datediff =  $your_date - $now;
-                    $remain_days=round($datediff / (60 * 60 * 24));
+                  $workspace_view=$rows['workspace_view'];
+                  $client_company=$rows['client_company'];
+                  $state=$rows['state'];
+                  $country=$rows['country'];
+                  $position=$rows['position'];
+                  $start_date=$rows['start_date'];
+                  $end_date=$rows['end_date'];
+                  $skills=$rows['skills'];
+                  $job_type=$rows['job_type'];
+                  $now = time(); // or your date as well
+                  $your_date = strtotime($end_date);
+                  $datediff =  $your_date - $now;
+                  $remain_days=round($datediff / (60 * 60 * 24));
 
-                    $start_date2 = strtotime($start_date);
-                    $datediff2 =  $your_date - $start_date2;
+                  $start_date2 = strtotime($start_date);
+                  $datediff2 =  $your_date - $start_date2;
 
-                    $actual_days=round($datediff2 / (60 * 60 * 24));
-                    $district=$rows['district'];
-            ?>
+                  $actual_days=round($datediff2 / (60 * 60 * 24));
+                  $district=$rows['district'];
+          ?>
 
             <div class="col-4 mb-3">
               <div class="card" style="height:315px;width:250px" id="temp2">
@@ -173,7 +167,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
           <div class="row">
             <?php
               $mystate=$_GET['mystate'];
-              $sql="select * from shortlisted_jobs where state='$mystate'";
+              $sql="select * from joblistings where state='$mystate'";
               $res=mysqli_query($conn,$sql);
               if($res == TRUE)
               {
@@ -200,8 +194,6 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                       $jobid=$rows['job_id'];
                       $start_date2 = strtotime($start_date);
                       $datediff2 =  $your_date - $start_date2;
-
-
 
                       $actual_days=round($datediff2 / (60 * 60 * 24));
                       $district=$rows['district'];
