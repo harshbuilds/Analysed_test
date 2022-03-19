@@ -1,11 +1,9 @@
-<?php include('header.php') ?>
+
 <?php
-   define('LOCALHOST','localhost');
-   define('DB_USERNAME','root');
-   define('DB_PASSWORD','');
-   define('DB_NAME','analysed');
-   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+   include 'connection1.php';   //database connection page included
+    session_start();     //session has been started
 ?>
+<?php include('header.php') ?>
 <title>Job Listings</title>
 <link rel="stylesheet" href="css/job_listings.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -36,23 +34,29 @@ $flag=0;
 $status=0;
 if(isset($_POST['btnhigh']))
 {
-  $sql="SELECT * FROM `joblistings` WHERE priority= 'High'";
+  $sql="SELECT * FROM `joblistings` WHERE priority= '3'";
   $flag=1;
 }
 if(isset($_POST['btnlow']))
 {
-  $sql="SELECT * FROM `joblistings` WHERE priority= 'Low'";
+  $sql="SELECT * FROM `joblistings` WHERE priority= '1'";
   $flag=1;
 }
 if(isset($_POST['btnmedium']))
 {
-  $sql="SELECT * FROM `joblistings` WHERE priority= 'Medium'";
+  $sql="SELECT * FROM `joblistings` WHERE priority= '2'";
   $flag=1;
 }
 if(isset($_POST['btnsearch']))
 {
   $searchForJobs=$_POST['searchForJobs'];
   $sql="SELECT * FROM `joblistings` WHERE job_id='$searchForJobs'";
+  $flag=1;
+}
+if(isset($_POST['jobscr']))
+{
+  $searchForJobs=$_POST['searchForJobs1'];
+  $sql="SELECT * FROM `joblistings` WHERE position='$searchForJobs'";
   $flag=1;
 }
 if(isset($_POST['btnactive']))
@@ -201,7 +205,7 @@ if(isset($_POST['btnall']))
                         $availability_time=$rows['availability_time'];
                         $company_email=$rows['company_email'];
                         $workspace_view=$rows['workspace_view'];
-                        $rec_img=$rows['rec_img'];
+                        $rec_img=$rows['logo'];
                         $job_id=$rows['job_id'];
                         $recruiters_name=$rows['recruiters_name'];
                         $priority=$rows['priority'];
@@ -233,19 +237,19 @@ if(isset($_POST['btnall']))
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
                 <?php
-                   if($priority == 'High')
+                   if($priority == '3')
                    {
                 ?>
                    <img src="img/red-icon.png" width="30" height="20">
                 <?php
                    }
-                   elseif($priority == 'Medium')
+                   elseif($priority == '2')
                    {
                 ?>
                     <img src="img/orange-icon.png" width="20" height="20">
                 <?php
                     }
-                    elseif($priority == 'Low')
+                    elseif($priority == '1')
                     {
                 ?>
                     <img src="img/Yellow-icon.png" width="20" height="20">
