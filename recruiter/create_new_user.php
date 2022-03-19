@@ -3,13 +3,20 @@
 <!--TOP HEADER-->
 <?php include ('header_files.php')?>
 
-<!--HEADER FILES-->
-    <?php include('header.php')?>
+
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'analysed');
+
+   include 'connection1.php';     //database connection page included
+   session_start();        //session has been started
+
+
+?>
+
+<?php include('header.php') ?>
+<?php
 if(isset($_POST['submit']))
 {
-   
+
     $usertype=$_POST['usertype'];
     $name=$_POST['name'];
     $designation=$_POST['designation'];
@@ -17,15 +24,15 @@ if(isset($_POST['submit']))
     $email=$_POST['email'];
     $password=$_POST['password'];
     $notification=$_POST['notification'];
-    $checkbox1=$_POST['user'];  
-    $chk="";  
-    foreach($checkbox1 as $chk1)  
-   {  
-      $chk .= $chk1.",";  
+    $checkbox1=$_POST['user'];
+    $chk="";
+    foreach($checkbox1 as $chk1)
+   {
+      $chk .= $chk1.",";
    }
    $compfile=$_FILES["compfile"]["name"];
    move_uploaded_file($_FILES["compfile"]["tmp_name"],"img/".$_FILES["compfile"]["name"]);
-   $sql=mysqli_query($con,"insert into user (image,usertype,name,designation,phone_number,email,password,notification,user_details) values ('$compfile','$usertype','$name','$designation','$phone_number','$email','$password','$notification','$chk')");
+   $sql=mysqli_query($conn,"insert into user (image,usertype,name,designation,phone_number,email,password,notification,user_details) values ('$compfile','$usertype','$name','$designation','$phone_number','$email','$password','$notification','$chk')");
    echo '<script>alert("User Created Successfully!!")</script>';
     }
 ?>
@@ -133,12 +140,12 @@ if(isset($_POST['submit']))
                                         <label for="phone_number">Phone number <span style="color:#3598DB;">*</span></label>
                                         <input type="tel" maxlength='10' name="phone_number" id="phone_number" class="default-input-for-add-client-1"  placeholder="Enter a 10 digit phone number">
                                     </div>
-    
+
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="email">Email <span style="color:#3598DB;">*</span></label>
                                         <input type="email" name="email" class="default-input-for-add-client-1" placeholder="Enter the associated email-id" id="email">
                                     </p>
-                                    <p class="input-para-add-client-ekam-1 fx-city-name-1"> 
+                                    <p class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="password">Password <span style="color:#3598DB;">*</span></label>
                                         <input type="password" name="password" class="default-input-for-add-client-1" placeholder="Set the password for the account" id="password">
                                     </p>
@@ -249,7 +256,7 @@ if(isset($_POST['submit']))
 
 function fasterPreview( uploader ) {
     if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src', 
+          $('#profileImage').attr('src',
              window.URL.createObjectURL(uploader.files[0]) );
     }
 }
@@ -264,12 +271,4 @@ $("#imageUpload").change(function(){
             $("#form1 input[type='checkbox']").prop('checked',this.checked);
         });
     });
-</script> 
-
-
-
-
-
-
-
-
+</script>
