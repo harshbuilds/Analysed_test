@@ -296,6 +296,11 @@ body {
     margin: 20px auto;
   }
 }
+@media screen and (max-width: 609px) {
+  .nav_main{
+    display: none;
+  }
+}
 @media screen and (max-width: 500px) {
   .profileInNav::after {
     left: 65px;

@@ -281,6 +281,83 @@ width: 100%;
     width: 70%;
   }
 }
+@media screen and (max-width: 609px){
+  .mainHeadingDash{
+    font-size: 31px;
+    position: relative;
+    top: -88px;
+  }
+  .mainParaDash{
+    color: black;
+    position: relative;
+    top: -82px;
+    font-size: 14px;
+  }
+  #but1{
+        position: relative;
+    left: 0px;
+    top: -236px;
+    background-color: #3598DB;
+  }
+  #label1{
+    position: relative;
+    top: -41px;
+  }
+  #ticket_type_label_complaint_tickets{
+    border: 1px solid black;
+    color: black;
+  }
+  .label2{ 
+   position: relative;
+        top: -40px;
+  }
+  #arrow::after{
+    border-top: 8px solid black;
+    top: -28px;
+  }
+  #label3{
+        position: relative;
+    top: -101px;
+    left: 153px;
+  }
+  .label4{
+        position: relative;
+    top: -100px;
+    left: 151px;
+  }
+  #arrow1::after{
+    border-top: 8px solid black;
+    top: -89px;
+    right: -131px;
+  }
+  #head1{
+    position: relative;
+    top: -120px;
+    left: -105px;
+  }
+  .sub-ticket-categories-options-tochoose::after{
+    background-color: #3598DB;
+    position: relative;
+    top: -7px;
+  }
+  #head2{
+    position: relative;
+        top: -182px;
+    left: 34px;
+  }
+  #head3{
+    position: relative;
+        top: -244px;
+    left: 151px;
+  }
+  #complaints{
+        position: relative;
+    top: -213px;
+  }
+  .light-grey-text-complain-ticket{
+    
+  }
+}
 @media screen and (max-width:500px){
   .create-ticket-recruiter-ekam form{
     margin: 50px auto;

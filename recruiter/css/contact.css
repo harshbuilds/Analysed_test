@@ -54,7 +54,7 @@
     width: 100%!important;
 }
 .input-labels-contact-us span input{
-    width: 100%!important;
+    width: 100%;
 }
 #contact-us-recruiter span textarea{
     border: none;
@@ -98,5 +98,80 @@
     }
     .contact-us-section-box{
         flex-direction: column-reverse;
+    }
+}
+@media screen and (max-width: 609px){
+    #img-1 img{
+        display: none;
+    }
+    .mainHeadingDash{
+        top: -95px;
+    font-size: 25px;
+    position: relative;
+    }
+    .mainParaDash{
+        color: black;
+    position: relative;
+    top: -98px;
+    font-size: 12px;
+    }
+    .contact-us-section-box{
+        box-shadow: none;
+        height: auto;
+    }
+    #fn{
+            position: relative;
+    top: -149px;
+    left: -48px;
+    }
+    .fn-1{
+            position: relative;
+    top: -150px;
+    left: -49px;
+
+    }
+    #ln{
+            position: relative;
+       top: -147px;
+    left: -48px;
+    }
+    .ln-1{
+            position: relative;
+        top: -148px;
+    left: -49px;
+    }
+    #next-header{
+    position: relative;
+    top: -148px;
+    left: -46px;
+    }
+    button{
+            position: relative;
+    top: -52px;
+    width: 254px;
+    left: -30px;
+    }
+    #below
+    {
+        display: flex;
+        height: 100px;
+            display: flex;
+    height: 100px;
+    position: relative;
+    top: -134px;
+    left: -11px;
+    background-color: #3598DB;
+    }
+    .grey-small-text-contact-us,.black-text-contact-us-image-below{
+        color: white;
+        font-size: 15.5px;
+    }
+    .button-recruiter-contact-us-submit{
+            background-color: #3598DB;
+    position: relative;
+    top: -143px;
+    }
+    #contact-us-recruiter span input{
+        width: 286px;
     }
 }

@@ -204,6 +204,16 @@ input[type="date"]::-webkit-inner-spin-button{
     right: 20px;
     position: absolute;
 }
+.header_img,.back_img,.bg_img,.header_img_1,.back_img_1,.bg_img_1,.header_img_2,.back_img_2,.bg_img_2{
+    display: none;
+}
+.plus{
+    position: relative;
+    top: -37px;
+    width: 34px;
+    height: 30px;
+    left: 432px;
+}
 @media screen and (max-width:1300px){
 
     .right-side-image-box-right-add-client-1{
@@ -267,5 +277,99 @@ right: 0px;}
     .save_button_addClient{
         top: -50px;
         right: 0px;
+    }
+}
+@media screen and (max-width: 609px){
+    #title,.bread-crumbs_Mytools-recruiter,.mainHeadingDash,.mainParaDash,.links-for-add-client-low-side-row-for-add-client{
+        display: none;
+    }
+    .header_img,.back_img,.bg_img{
+    display: flex;
+    }
+    .header_img{
+    position: relative;
+    top: -170px;
+    left: -96px;
+    }
+    .back_img{
+        position: relative;
+    left: 63px;
+    top: 20px;
+    width: 45px;
+    height: 45px;
+    }
+    .heading-for-general-information-right-side-add-client-container,.heading-for-general-information-right-side-add-client-container-1,.heading-for-general-information-right-side-add-client-container-2{
+            position: relative;
+    top: -213px;
+    left: -16px;
+    white-space: nowrap;
+    font-size: 20px
+    }
+    .heading-for-general-information-right-side-add-client-container i,.heading-for-general-information-right-side-add-client-container-1 i,.heading-for-general-information-right-side-add-client-container-2 i{
+            width: 55px;
+    height: 55px;
+    padding: 10px;
+
+
+    }
+    .right-side-image-box-right-add-client-1,#client1{
+        position: relative;
+    top: -308px;
+    left: -12px;
+    }
+    .inputs-for-add-client-below-image-box{
+             position: relative;
+    top: -345px;
+    left: -12px;
+    }
+    .default-button-for-recruiter-dashboard {
+        position: absolute;
+    top: 1447px;
+    left: -15px;
+    }
+    #comp_img{
+            position: relative;
+    top: 875px;
+    left: 70px;
+    width: 50px;
+    height: 50px;
+    }
+    .header_img_1,.back_img_1,.bg_img_1, .header_img_2,.back_img_2,.bg_img_2{
+    display: flex;
+    }
+    .header_img_1,.header_img_2{
+    position: relative;
+       top: -170px;
+    left: -100px;
+    }
+    .back_img_1,.back_img_2{
+        position: relative;
+    left: 63px;
+    top: 20px;
+    width: 45px;
+    height: 45px;
+    }
+    .bg_img_1{
+            width: 409px;
+    }
+    #client1{
+            top: -251px;
+    width: 300px;
+    }
+    .plus{
+        left: 304px;
+    }
+    #save_2{
+          position: absolute;
+    top: 620px;
+    left: -2px;
+    }
+    .bg_img_2{
+            width: 409px;
+    }
+    #save_3{
+         position: absolute;
+    top: 470px;
+    left: -2px;
     }
 }

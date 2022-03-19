@@ -38,7 +38,7 @@ border-radius: 8px;
 opacity: 1;
 color: #2D3E50;
 font-size: 18px;
-font-family: MetroM;
+font-family: Metro;
 line-height: 2.8;
 margin-left: 50px;
 }
@@ -321,4 +321,10 @@ line-height: 3;
   padding: 5px 10px;
   font-size: 18px;
   font-family: Metro;
+border-color: #6EC5FF;
+}
+.containers{
+  width:100%;
+  margin-left:100px;
+  margin-right:100px;
 }

@@ -3,6 +3,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    /* padding-left: 80px; */
 }
 .left_area_for_settings{
     flex-basis: 70%;
