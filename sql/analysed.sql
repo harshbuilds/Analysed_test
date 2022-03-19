@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2022 at 04:47 PM
+-- Generation Time: Mar 19, 2022 at 10:28 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -30,8 +30,26 @@ SET time_zone = "+00:00";
 CREATE TABLE `about_org` (
   `abt_us_id` int(2) NOT NULL,
   `about_us` varchar(255) NOT NULL,
-  `industry` varchar(255) NOT NULL
+  `industry` varchar(255) NOT NULL,
+  `org_name` varchar(225) NOT NULL,
+  `logo` varchar(225) NOT NULL,
+  `insta_link` varchar(225) NOT NULL,
+  `twitter_link` varchar(225) NOT NULL,
+  `org_location` varchar(225) NOT NULL,
+  `org_address` varchar(225) NOT NULL,
+  `org_rec_name` varchar(225) NOT NULL,
+  `org_email` varchar(225) NOT NULL,
+  `org_phone` varchar(225) NOT NULL,
+  `linkeln_link` varchar(225) NOT NULL,
+  `facebook_link` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `about_org`
+--
+
+INSERT INTO `about_org` (`abt_us_id`, `about_us`, `industry`, `org_name`, `logo`, `insta_link`, `twitter_link`, `org_location`, `org_address`, `org_rec_name`, `org_email`, `org_phone`, `linkeln_link`, `facebook_link`) VALUES
+(101, 'Analysed', 'IT', 'Analysed', '', 'analysedInsta', 'analysedTwitter', 'India', 'Delhi', 'ana', 'analysed@gmail.com', '76875645', 'analysedlink', 'analysedFacebook');
 
 -- --------------------------------------------------------
 
@@ -40,8 +58,7 @@ CREATE TABLE `about_org` (
 --
 
 CREATE TABLE `candidates` (
-  `id` int(11) NOT NULL,
-  `candidate_id` varchar(50) NOT NULL,
+  `candidate_id` int(11) NOT NULL,
   `image` varchar(50) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
@@ -80,8 +97,12 @@ CREATE TABLE `candidates` (
 -- Dumping data for table `candidates`
 --
 
-INSERT INTO `candidates` (`id`, `candidate_id`, `image`, `firstname`, `lastname`, `candidate_email`, `countrycode`, `phone_no`, `birth_date`, `status`, `address`, `country`, `city_name`, `zipcode`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talents`, `resume`, `skills`, `qualifications`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `last_updated`) VALUES
-(63, '', 'Ellipse 148.png', 'John Smith', 'S', 'abc@gmail.com', '+91', 9878675545, '2021-10-12', 'Active', '1234,New Street.', 'India', 'Chennai', '637 409', 'Tamil Nadu', 'Web Developer', 'Fox Hunt', 'Contract', 'Temporary', 'Linkedin', 'Andrew foy', 24000, 20000, 40000, 'Team Player,Good Communicator,Self motivated,Adapt', 'Resume.pdf', 'HTML,CSS,JS,PHP', 'BSc', 'Lorem Ipsum is simply dummy text of the printing a', '2021-10-25', 'Sr.Product designer', 'Internal', 'Submission', '2021-10-21');
+INSERT INTO `candidates` (`candidate_id`, `image`, `firstname`, `lastname`, `candidate_email`, `countrycode`, `phone_no`, `birth_date`, `status`, `address`, `country`, `city_name`, `zipcode`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talents`, `resume`, `skills`, `qualifications`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `last_updated`) VALUES
+(1, '5.jpg', 'John Smith', 'S', 'abc@gmail.com', '+91', 9878675545, '2021-10-12', 'Active', '1234,New Street.', 'India', 'Chennai', '637 409', 'Tamil Nadu', 'Web Developer', 'Fox Hunt', 'Contract', 'Temporary', 'Linkedin', 'Andrew foy', 24000, 20000, 40000, 'Team Player,Good Communicator,Self motivated,Adapt', '', 'HTML,CSS,JS,PHP', 'BCom', 'no comments to make', '2021-10-25', 'Sr.Product designer', 'Internal', 'Submission', '2022-03-05'),
+(3, '', 'julia ', 'robert', 'jul@gmail.com', '', 7656432314, '2000-01-02', '1', 'Richmond town', 'Australia', 'london', '713305', 'karnataka', 'developer', 'facebook', '2', '3', '3', '3', 12000, 13300, 14000, 'c++', 'addCandidate1.txt', 'Cloud computing', 'BSc', 'working ', '2021-11-30', '1', '1', '1', '2022-03-12'),
+(4, '10.jpg', 'jammie', 'oliver', 'jami@gmail.com', '', 6756453423, '2021-10-29', '2', 'Richmond town', 'Australia', 'berlin', '713305', 'Maharastra', 'cyber security', 'Instagram', '2', '1', '1', '1', 12000, 13300, 14000, 'java', 'mbox.txt', 'Artificial Intelligence', 'BSc', 'working ', '2021-11-30', '2', '2', '2', '2022-03-12'),
+(5, '', 'lucy', 'brown', 'lusy@gmail.com', '', 6756453423, '2022-12-31', '1', 'Richmond town', 'India', 'kolkata', '123122', 'karnataka', 'developer', 'Boeing', '3', '1', '1', '2', 12000, 13300, 14000, 'Golang', '', 'ML', 'BSc', 'working ', '2021-10-29', '3', '2', '2', '2022-03-12'),
+(6, '16.jpg', 'Alex', 'wheeler', 'alex@gmai.com', '', 87654323, '2021-11-29', '2', 'baker street', 'Australia', 'berlin', '713305', 'UP', 'developer', 'facebook', '2', '2', '2', '2', 7000, 8000, 9000, 'java', '', 'C', 'MSc', 'working ', '2020-11-29', '3', '2', '2', '2022-03-12');
 
 -- --------------------------------------------------------
 
@@ -1613,15 +1634,26 @@ CREATE TABLE `client` (
   `bank_id` bigint(20) NOT NULL,
   `bank_acc_no` bigint(20) NOT NULL,
   `iban` varchar(20) NOT NULL,
-  `vat` varchar(20) NOT NULL
+  `vat` varchar(20) NOT NULL,
+  `last_updated` date NOT NULL DEFAULT current_timestamp(),
+  `role` varchar(225) NOT NULL,
+  `division` varchar(225) NOT NULL,
+  `internal` varchar(225) NOT NULL,
+  `created_by` varchar(225) NOT NULL,
+  `created_email` varchar(225) NOT NULL,
+  `created_no` varchar(225) NOT NULL,
+  `role_detail` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`client_id`, `company_name`, `status`, `company`, `company_img`, `ownership`, `industry`, `source`, `parent_company`, `active_contact`, `company_desc`, `permanent_fee`, `contract_fee`, `main_email`, `contact_no`, `address`, `city`, `zipcode`, `state`, `country`, `bank_name`, `bank_id`, `bank_acc_no`, `iban`, `vat`) VALUES
-(15, 'Fox hunt', 'Inactive', 'http://www.example.com', 'aa.png', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.      ', '10%', '10%', 'abc12@gmail.com', 8870986950, 'abc road,chennai', 'Washington', '637 409', 'Andhra Pradesh', 'India', 'Indian Bank', 1, 1234, '11', '12');
+INSERT INTO `client` (`client_id`, `company_name`, `status`, `company`, `company_img`, `ownership`, `industry`, `source`, `parent_company`, `active_contact`, `company_desc`, `permanent_fee`, `contract_fee`, `main_email`, `contact_no`, `address`, `city`, `zipcode`, `state`, `country`, `bank_name`, `bank_id`, `bank_acc_no`, `iban`, `vat`, `last_updated`, `role`, `division`, `internal`, `created_by`, `created_email`, `created_no`, `role_detail`) VALUES
+(15, 'Fox hunt', 'Inactive', 'http://www.example.com', 'aa.png', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.      ', '10%', '10%', 'abc12@gmail.com', 8870986950, 'abc road,chennai', 'Washington', '637 409', 'Andhra Pradesh', 'India', 'Indian Bank', 1, 1234, '11', '12', '2022-03-04', 'developer', 'none', 'yes', 'Max', 'max@gmail.com', '123412', 'developer lead'),
+(16, 'virtusa', 'Active', 'orls,dla', '3.jpg', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Andrew foy', 'new company to join                            ', '14', '14', 'vir@gmail.com', 67543423, 'las vegas', 'las', '76564534', 'Madhya Pradesh', 'Germany', 'hdfc', 16521, 123123121, '1234321', '123651', '2022-03-04', '', '', '', '', '', '', ''),
+(17, 'oracle', 'Inactive', 'orls,dla', '', 'Temporary', 'Working', 'Linkedin', 'Flipkart', 'Andrew foy', '                           new', '1233', '12', 'or@gmail.com', 1234567890, 'Richmond town', 'chennai', '76564534', 'Tamil Nadu', 'India', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-12', '', '', '', '', '', '', ''),
+(18, 'oracle', 'Active', 'netbeans.com', '', 'Contract', 'Closed', 'Internshala', '', 'Caley Mike', '                            ', '1233', '14', 'net@gamil.com', 67543423, 'baker street', 'Bangalore Rural', '123121', 'Andhra Pradesh', 'Australia', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-17', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1670,6 +1702,49 @@ INSERT INTO `client_notes` (`note_id`, `added_on`, `last_edited`, `uploaded_by`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `company_task`
+--
+
+CREATE TABLE `company_task` (
+  `job_id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `restr_id` int(11) NOT NULL,
+  `name_indi` varchar(225) NOT NULL,
+  `name_task` varchar(225) NOT NULL,
+  `desc_short` varchar(225) NOT NULL,
+  `desc_skills` varchar(225) NOT NULL,
+  `accuracy` varchar(225) NOT NULL,
+  `start_date` varchar(225) NOT NULL,
+  `end_date` varchar(225) NOT NULL,
+  `duration_week` varchar(225) NOT NULL,
+  `duration_days` varchar(225) NOT NULL,
+  `duration_hours` varchar(225) NOT NULL,
+  `file_extensions` varchar(225) NOT NULL,
+  `comp_img` varchar(225) NOT NULL,
+  `job_comp` varchar(225) NOT NULL,
+  `rec_name` varchar(225) NOT NULL,
+  `job_n` int(11) NOT NULL,
+  `job_desc` varchar(225) NOT NULL,
+  `exp_inp` varchar(225) NOT NULL,
+  `exp_out` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `company_task`
+--
+
+INSERT INTO `company_task` (`job_id`, `task_id`, `restr_id`, `name_indi`, `name_task`, `desc_short`, `desc_skills`, `accuracy`, `start_date`, `end_date`, `duration_week`, `duration_days`, `duration_hours`, `file_extensions`, `comp_img`, `job_comp`, `rec_name`, `job_n`, `job_desc`, `exp_inp`, `exp_out`) VALUES
+(1, 10, 0, 'new tzask', 'java developement', 'develope app', 'mobile application', '10', '2022-03-09', '2022-03-12', '5', '2', '2', 'pdf', '', 'new', 'max', 0, 'devlopment', '10', '20'),
+(2, 0, 0, 'new tzask', 'java developement', 'develope app', 'mobile application', '10', '2022-03-09', '2022-03-12', '5', '2', '2', 'pdf', '', '', '', 0, '', '', ''),
+(3, 0, 0, 'new tzask', 'java developement', 'develope app', 'mobile application', '10', '2022-03-09', '2022-03-12', '5', '2', '2', 'pdf', '', '', '', 0, '', '', ''),
+(4, 0, 0, 'new tzask', 'java developement', 'develope app', 'mobile application', '10', '2022-03-09', '2022-03-12', '5', '2', '2', 'pdf', '', '', '', 0, '', '', ''),
+(5, 4, 1, 'max', 'pyton development', 'flask app', 'web page', '88', '2000-02-03', '2021-11-30', '5', '', '2', 'pdf', '', '', '', 0, '', '', ''),
+(6, 4, 5, 'max', 'pyton development', 'flask app', 'web page', '88', '2000-02-03', '2021-11-30', '5', '', '2', 'pdf', '', '', '', 0, '', '', ''),
+(7, 4, 5, 'max', 'pyton development', 'develope app', 'mobile application', '10', '2022-11-22', '2023-12-31', '5', '2', '2', 'pdf', '', '', '', 0, '', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contacts`
 --
 
@@ -1704,15 +1779,19 @@ CREATE TABLE `contacts` (
   `validity` varchar(20) NOT NULL,
   `lastvisit` date NOT NULL,
   `LinkedIn_profile` varchar(100) NOT NULL,
-  `added_on` date NOT NULL DEFAULT current_timestamp()
+  `added_on` date NOT NULL DEFAULT current_timestamp(),
+  `files` varchar(225) NOT NULL,
+  `notes` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contacts`
 --
 
-INSERT INTO `contacts` (`contact_id`, `creator_id`, `company`, `fname`, `lname`, `status`, `picture`, `job_title`, `email`, `phone`, `address`, `skills`, `industry`, `last_meeting`, `mname`, `title`, `city`, `zip_code`, `state`, `country`, `company_name`, `contact_type`, `division`, `source`, `reports_to`, `last_contact`, `visibility`, `validity`, `lastvisit`, `LinkedIn_profile`, `added_on`) VALUES
-(1, 1, 'Fox Hunt', 'Caley Mike', 'S', 'Active', '', 'Python Developer', 'abc2@gmail.com', '9000765890', 'New Street,chennai', 'Python,Java', 'Information Technology', '2021-10-11', '', NULL, 'chennai', 637890, 'Tamil Nadu', 'India', 'NAN', '', '', '', '', '', '', '', '0000-00-00', '', '2021-10-11');
+INSERT INTO `contacts` (`contact_id`, `creator_id`, `company`, `fname`, `lname`, `status`, `picture`, `job_title`, `email`, `phone`, `address`, `skills`, `industry`, `last_meeting`, `mname`, `title`, `city`, `zip_code`, `state`, `country`, `company_name`, `contact_type`, `division`, `source`, `reports_to`, `last_contact`, `visibility`, `validity`, `lastvisit`, `LinkedIn_profile`, `added_on`, `files`, `notes`) VALUES
+(1, 1, 'Fox Hunt', 'Caley Mike', 'S', 'Active', '', 'Python Developer', 'abc2@gmail.com', '9000765890', 'New Street,chennai', 'Python,Java', 'Information Technology', '2021-10-11', '', NULL, 'chennai', 637890, 'Tamil Nadu', 'India', 'NAN', '', '', '', '', '', '', '', '0000-00-00', '', '2021-10-11', '', ''),
+(3, 2, 'max', 'Richard', 'Max', '1', '', 'Developer', 'jane@gmail.com', '86564534', 'madras', 'java', '2', NULL, 'Jr', NULL, 'chennai', 1234112, '3', '1', 'virtusa', '2', '2', '2', '2', '2020-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-05', '11', 'going to join'),
+(4, NULL, NULL, 'Richard', 'jones', '2', '3.jpg', 'Developer', 'jbone@gmail.com', '3425123456', 'Richmond town', 'ML', '2', NULL, '', '', 'Bangalore Rural', -2, '2', '2', 'netbeans', '2', '3', '2', '2', '2021-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-17', '', '');
 
 -- --------------------------------------------------------
 
@@ -1728,6 +1807,16 @@ CREATE TABLE `contact_us` (
   `contact` int(10) NOT NULL,
   `message` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`contact_us_id`, `firstname`, `lastname`, `email`, `contact`, `message`) VALUES
+(1, 'alan', 'walker', 'alan@gmail.com', 435643, 'new work'),
+(2, 'mark', 'walker', 'max@gmail.com', 435643, 'new work'),
+(3, 'jinni', 'richie', 'nat@gmail.com', 435643, 'good app'),
+(4, 'fazz', 'abb', 'fa@gmail.com', 2147483647, 'new message');
 
 -- --------------------------------------------------------
 
@@ -1861,6 +1950,13 @@ CREATE TABLE `jobapply` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `jobapply`
+--
+
+INSERT INTO `jobapply` (`application_id`, `job_id`, `jobseeker_id`, `firstname`, `lastname`, `email`, `job_title`, `experience`, `company`, `number`, `address`, `country`, `state`, `city`, `zipcode`, `resume`, `linkedin`, `certificates`, `attachments`, `emp_history`, `emp_from`, `emp_to`, `history_file`, `education`, `skills`, `shortlist`, `approved`, `on_hold`, `reject`, `date`) VALUES
+(6, 0, 0, 'nate', 'mark', 'nat@gmail.com', 'developer', 5, 'facebook', 867564512111, 'baker street', 'uk', 'london', 'london', 123456, '', 'nat@linked', '', '', 'virtusa', '2022-03-22', '2022-03-30', '', '', 'c++', 'no', 'no', 'no', 'yes', '2022-03-30');
+
 -- --------------------------------------------------------
 
 --
@@ -1914,20 +2010,26 @@ CREATE TABLE `joblistings` (
   `package` bigint(50) NOT NULL,
   `bill_rate` int(50) NOT NULL,
   `markup` int(50) NOT NULL,
+  `cl_margin` varchar(225) NOT NULL,
   `days_on` varchar(50) NOT NULL,
   `days_off` varchar(50) NOT NULL,
   `shift_pattern` varchar(50) NOT NULL,
   `added_on` date NOT NULL,
-  `company` varchar(50) NOT NULL
+  `company` varchar(50) NOT NULL,
+  `location` varchar(225) NOT NULL,
+  `company_website` varchar(225) NOT NULL,
+  `job_views` varchar(225) NOT NULL,
+  `company_email` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `joblistings`
 --
 
-INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, `position`, `industry`, `job_type`, `client_company`, `contact_client_company`, `business_dev_manager`, `status`, `priority`, `job_reference_number`, `designation`, `recruiters_name`, `openings`, `start_date`, `end_date`, `country`, `state`, `district`, `starting_time`, `ending_time`, `client_margin`, `advert_contact_name`, `advert_contact_no`, `skills`, `qualification`, `eligibility_criteria`, `required_experience`, `relevant_experience`, `irrelevant_experience`, `roles_and_opportunity`, `growth_opportunity`, `learning_opportunity`, `emp_endorsement`, `emp_benefits`, `reputation_of_org`, `advert_job_description`, `workspace_view`, `transportation`, `package_type`, `package_duration`, `package`, `bill_rate`, `markup`, `days_on`, `days_off`, `shift_pattern`, `added_on`, `company`) VALUES
-(8, 1, 'Resume.pdf', '', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '5', '2', '9-6', '2021-10-19', 'Amazon'),
-(10, 2, 'Resume.pdf', '', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '5', '2', '9-6', '2021-10-27', 'Flipkart');
+INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, `position`, `industry`, `job_type`, `client_company`, `contact_client_company`, `business_dev_manager`, `status`, `priority`, `job_reference_number`, `designation`, `recruiters_name`, `openings`, `start_date`, `end_date`, `country`, `state`, `district`, `starting_time`, `ending_time`, `client_margin`, `advert_contact_name`, `advert_contact_no`, `skills`, `qualification`, `eligibility_criteria`, `required_experience`, `relevant_experience`, `irrelevant_experience`, `roles_and_opportunity`, `growth_opportunity`, `learning_opportunity`, `emp_endorsement`, `emp_benefits`, `reputation_of_org`, `advert_job_description`, `workspace_view`, `transportation`, `package_type`, `package_duration`, `package`, `bill_rate`, `markup`, `cl_margin`, `days_on`, `days_off`, `shift_pattern`, `added_on`, `company`, `location`, `company_website`, `job_views`, `company_email`) VALUES
+(8, 1, 'Resume.pdf', '', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-19', 'Amazon', '', '', '', ''),
+(10, 2, 'Resume.pdf', '', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-27', 'Flipkart', 'manchester', '', '', ''),
+(16, 0, '', '', 'UI Developer', 'Intel', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'Chris Do', '12', '2021-11-30', '2021-11-29', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:57:00.00000', '21:58:00.00000', '11', 'New', '1234211231', 'Cloud computing', '12', 'Indian', '1 year', '11 months', '5 months', 'full stack developer', 'high', 'high', 'good', '100000', 'good', 'new', '', '1', '2', '3 month', 12111111, 12, 11, '11', '20', '10', 'Night', '2022-03-04', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1993,13 +2095,36 @@ CREATE TABLE `jobseeker` (
 --
 
 INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
-(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
-(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
-(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
-(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
-(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
-(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', '', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11'),
-(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 0, 76564534, 0x6d626f782e747874, '', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', 'Bangalore', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', '', '2022-02-28');
+(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
+(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
+(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
+(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', 'old', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
+(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', 'new', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
+(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11'),
+(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 91, 76564534, 0x6d626f782e747874, 'new york', 'development', 'analysed', 'developer', 'facebook', 'immidiate', 22, 'english', 'good to join', '', '2022-03-02', 'available', 'Bangalore', 'india', 'bangalore', '7133055', 'karnataka', 'dev', 'facebook', 'new', 'ok', 'none', 'fox', 10000, 10000, 20000, 'c++', 'ready to join', '2022-03-30', 'new', 'yes', 'yes', 'applied', '2022-02-28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `js_files`
+--
+
+CREATE TABLE `js_files` (
+  `JS_id` int(11) NOT NULL,
+  `file_name` varchar(225) NOT NULL,
+  `file_type` varchar(225) NOT NULL,
+  `doc_type` varchar(225) NOT NULL,
+  `file_size` varchar(225) NOT NULL,
+  `added_on` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `js_files`
+--
+
+INSERT INTO `js_files` (`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`) VALUES
+(1, '1.jpeg', 'jpeg', '', '54539', '2022-03-12'),
+(2, '1.jpeg', 'jpeg', '', '54539', '2022-03-12');
 
 -- --------------------------------------------------------
 
@@ -2016,15 +2141,41 @@ CREATE TABLE `notes` (
   `notes` varchar(500) NOT NULL,
   `time_spent` varchar(50) NOT NULL,
   `added_on` date NOT NULL,
-  `last_edited` date NOT NULL
+  `last_edited` date NOT NULL,
+  `img` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notes`
 --
 
-INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_reference`, `notes`, `time_spent`, `added_on`, `last_edited`) VALUES
-(26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21');
+INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_reference`, `notes`, `time_spent`, `added_on`, `last_edited`, `img`) VALUES
+(26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `query`
+--
+
+CREATE TABLE `query` (
+  `query_id` int(11) NOT NULL,
+  `Question` varchar(225) NOT NULL,
+  `resp_name` varchar(225) NOT NULL,
+  `resp_img` varchar(225) NOT NULL,
+  `resp_ans` varchar(225) NOT NULL,
+  `resp_time` date NOT NULL DEFAULT current_timestamp(),
+  `ques_time` date NOT NULL DEFAULT current_timestamp(),
+  `resp_date` date NOT NULL DEFAULT current_timestamp(),
+  `ques_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `query`
+--
+
+INSERT INTO `query` (`query_id`, `Question`, `resp_name`, `resp_img`, `resp_ans`, `resp_time`, `ques_time`, `resp_date`, `ques_date`) VALUES
+(11, 'how to update', 'new', '', 'update using files upload', '2022-03-23', '2022-03-30', '2022-03-30', '2022-03-30');
 
 -- --------------------------------------------------------
 
@@ -2063,6 +2214,32 @@ INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `numb
 (6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL),
 (7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL),
 (8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `starred_jobs`
+--
+
+CREATE TABLE `starred_jobs` (
+  `job_id` int(11) NOT NULL,
+  `client_company` varchar(225) NOT NULL,
+  `state` varchar(225) NOT NULL,
+  `country` varchar(225) NOT NULL,
+  `position` varchar(225) NOT NULL,
+  `start_date` varchar(225) NOT NULL,
+  `end_date` varchar(225) NOT NULL,
+  `skills` varchar(225) NOT NULL,
+  `job_type` varchar(225) NOT NULL,
+  `district` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `starred_jobs`
+--
+
+INSERT INTO `starred_jobs` (`job_id`, `client_company`, `state`, `country`, `position`, `start_date`, `end_date`, `skills`, `job_type`, `district`) VALUES
+(1, 'new', 'andhra', 'india', 'developer', '10-02-2022', '11-02-2022', 'c++', 'Full-time', 'berlin');
 
 -- --------------------------------------------------------
 
@@ -2130,6 +2307,7 @@ CREATE TABLE `task` (
   `jobtitle` varchar(50) NOT NULL,
   `company` varchar(50) NOT NULL,
   `skills` varchar(50) NOT NULL,
+  `task_img` varchar(225) NOT NULL,
   `type_of_task` varchar(255) NOT NULL,
   `restrictions` varchar(255) NOT NULL,
   `task_name` varchar(11) NOT NULL,
@@ -2149,10 +2327,30 @@ CREATE TABLE `task` (
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`task_id`, `recruiter_id`, `position`, `jobtitle`, `company`, `skills`, `type_of_task`, `restrictions`, `task_name`, `assigned_to`, `description`, `accuracy`, `start_date`, `end_date`, `duration_weeks`, `duration_days`, `duration_hours`, `accepted_file_extensions`, `created_on`) VALUES
-(1, 0, 'Ux Designer', 'Adobe web app researcher', 'Fox Hunt', 'HTML, CSS , Bootstrap', '', '', '', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-17', '2021-11-24', 0, 0, 0, '', '2021-10-25'),
-(2, 0, 'HTML Developer', 'Mobile App Developer', 'Flipkart', 'HTML,CSS,JS', '', '', '', 'John Smith', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-03', '2021-11-17', 0, 0, 0, '', '2021-10-03'),
-(3, 0, 'Python Developer', 'Mobile App Developer', 'Google', 'Android', '', '', '', 'Joe Daisy', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-10', '2021-11-04', 0, 0, 0, '', '2021-10-02');
+INSERT INTO `task` (`task_id`, `recruiter_id`, `position`, `jobtitle`, `company`, `skills`, `task_img`, `type_of_task`, `restrictions`, `task_name`, `assigned_to`, `description`, `accuracy`, `start_date`, `end_date`, `duration_weeks`, `duration_days`, `duration_hours`, `accepted_file_extensions`, `created_on`) VALUES
+(1, 0, 'Ux Designer', 'Adobe web app researcher', 'Fox Hunt', 'HTML, CSS , Bootstrap', '', '', '', 'new', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-17', '2021-11-24', 0, 0, 0, '', '2021-10-25'),
+(2, 0, 'HTML Developer', 'Mobile App Developer', 'Flipkart', 'HTML,CSS,JS', '', '', '', '', 'John Smith', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-03', '2021-11-17', 0, 0, 0, '', '2021-10-03'),
+(3, 0, 'Python Developer', 'Mobile App Developer', 'Google', 'Android', '', '', '', '', 'Joe Daisy', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-10', '2021-11-04', 0, 0, 0, '', '2021-10-02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `task_restriction`
+--
+
+CREATE TABLE `task_restriction` (
+  `restr_id` int(11) NOT NULL,
+  `restr_name` varchar(225) NOT NULL,
+  `restr_img` varchar(225) NOT NULL,
+  `restr_desc` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `task_restriction`
+--
+
+INSERT INTO `task_restriction` (`restr_id`, `restr_name`, `restr_img`, `restr_desc`) VALUES
+(1, 'database problem', '', 'database connection issue');
 
 -- --------------------------------------------------------
 
@@ -2222,7 +2420,7 @@ INSERT INTO `user` (`id`, `image`, `usertype`, `name`, `designation`, `phone_num
 -- Indexes for table `candidates`
 --
 ALTER TABLE `candidates`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`candidate_id`);
 
 --
 -- Indexes for table `client`
@@ -2243,10 +2441,22 @@ ALTER TABLE `client_notes`
   ADD PRIMARY KEY (`note_id`);
 
 --
+-- Indexes for table `company_task`
+--
+ALTER TABLE `company_task`
+  ADD PRIMARY KEY (`job_id`);
+
+--
 -- Indexes for table `contacts`
 --
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`contact_id`);
+
+--
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`contact_us_id`);
 
 --
 -- Indexes for table `event`
@@ -2285,10 +2495,22 @@ ALTER TABLE `jobseeker`
   ADD PRIMARY KEY (`jobseeker_id`);
 
 --
+-- Indexes for table `js_files`
+--
+ALTER TABLE `js_files`
+  ADD PRIMARY KEY (`JS_id`);
+
+--
 -- Indexes for table `notes`
 --
 ALTER TABLE `notes`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `query`
+--
+ALTER TABLE `query`
+  ADD PRIMARY KEY (`query_id`);
 
 --
 -- Indexes for table `recruiter`
@@ -2297,10 +2519,22 @@ ALTER TABLE `recruiter`
   ADD PRIMARY KEY (`recruiter_id`);
 
 --
+-- Indexes for table `starred_jobs`
+--
+ALTER TABLE `starred_jobs`
+  ADD PRIMARY KEY (`job_id`);
+
+--
 -- Indexes for table `task`
 --
 ALTER TABLE `task`
   ADD PRIMARY KEY (`task_id`);
+
+--
+-- Indexes for table `task_restriction`
+--
+ALTER TABLE `task_restriction`
+  ADD PRIMARY KEY (`restr_id`);
 
 --
 -- Indexes for table `tickets`
@@ -2322,13 +2556,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `client_files`
@@ -2343,10 +2577,22 @@ ALTER TABLE `client_notes`
   MODIFY `note_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `company_task`
+--
+ALTER TABLE `company_task`
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `contact_us_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `event`
@@ -2370,13 +2616,13 @@ ALTER TABLE `interview`
 -- AUTO_INCREMENT for table `jobapply`
 --
 ALTER TABLE `jobapply`
-  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `joblistings`
 --
 ALTER TABLE `joblistings`
-  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `jobseeker`
@@ -2385,10 +2631,22 @@ ALTER TABLE `jobseeker`
   MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `js_files`
+--
+ALTER TABLE `js_files`
+  MODIFY `JS_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `query`
+--
+ALTER TABLE `query`
+  MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `recruiter`
@@ -2397,10 +2655,22 @@ ALTER TABLE `recruiter`
   MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `starred_jobs`
+--
+ALTER TABLE `starred_jobs`
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
   MODIFY `task_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `task_restriction`
+--
+ALTER TABLE `task_restriction`
+  MODIFY `restr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tickets`
