@@ -1,6 +1,6 @@
 <?php
-session_start();
 include 'connection1.php';
+session_start();
 ?>
 
 <?php include('../navMenu.php')?>
