@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--TOP HEADER-->
-//php include ('header_files.php')
+<?php include ('header_files.php')?>
 <?php
 
     include 'connection1.php';     //database connection page included
@@ -29,7 +29,7 @@
 <!--HEADER FILES-->
 <?php include('header.php')?>
 <!--CSS FILES-->
-<link rel="stylesheet" href="./css/addClient.css">
+<link rel="stylesheet" href="./css/addClientContact.css">
 
 <title>Analysed</title>
 

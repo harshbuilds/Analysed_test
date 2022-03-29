@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--TOP HEADER-->
 <?php include('header.php') ?>
+
 <title>Dashboard</title>
 <link rel="stylesheet" href="./css/create_event.css">
 <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.13.css" />
@@ -13,15 +18,16 @@
                 <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Schedule</a> > <a href="" class="active-breadcrumb-link"> Event creation</a>
             </div>
             <div class="heading_dash">
-                <h1 class="mainHeadingDash">Create an event</h1>
-                <button class="btn" id="myBtn" type="button">Create Event</button>
+                                     <!-- Create an event -->
+                <h1 class="mainHeadingDash"> Create an event</h1>
+                <a href="schedule.php"> <button class="btn" id="myBtn" type="button">Create Event</button>
             </div>
             <div class="event">
                 <div class="event-name">
                     <input type="text" placeholder="Name Event" class="input-text-class">
                     <button class="reset-btn" type="reset">&times;</button>
                 </div>
-                <div class="event-time">
+                <div class="event-time flex container">
                     <div class="box-content">
                         <p><input id="datepic" class="datepic" placeholder="20 Aug, 2021"></p>
                     </div>
@@ -72,10 +78,11 @@
                         <label for="c" class="select-col-label"> All day</label>
                     </div>
                      <div class="select-col">
-                        <input type="checkbox" id="c1" name="cb">
+                        <input type="checkbox" id="c1" name="cb" checked>
                         <label for="c1" class="select-col-label"> Repeat</label>
                     </div>
                 </div>
+                                            <!-- EVENT DETAILS -->
                 <div id="list" class="list">
                     <li><a class="btn-1 active" href="#" onclick="divVisibility('Div1');">Event Details</a></li>
                     <li ><a class="btn-1" href="#" onclick="divVisibility('Div2');" >Schedule</a></li>
@@ -145,8 +152,8 @@
                         </div>
                  </div>
             </div>
-        </div>
-
+         </div> <!-- END OF EVENT -->
+                 <!-- START OF    SCHEDULE  -->
         <div id="Div2" style="display:none">
             <div class="main-container-timings">
                 <button class="btn-2">Name</button>
@@ -250,7 +257,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- END OF SCHEDULE -->
     </div>
 </div>
 </div>

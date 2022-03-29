@@ -136,10 +136,9 @@
         <p class="mainHeadingDash" style="font-size: 33px;">Add Account<br><br></p>
         <div class="row">
             <div class="col-9">
-                <p class="input-field1" style="width:580px">
-                                    <!-- SEARCH BAR -->
-                    <a href="/" class="active-breadcrumb-link">&emsp;<i class="fa fa-filter" aria-hidden="true"></i>&emsp;All types&emsp;&emsp;<span style="color:#979797">|  &emsp;&emsp;</span></a>   
-                    <input type="text" name="searchForJobs" id="inputSearch" class="searchForJobs" placeholder="Search for users"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <p class="input-field1">
+                    <a href="" class="active-breadcrumb-link dropdown">&emsp;<i class="fa fa-filter" aria-hidden="true"></i>&emsp;All types</a>   
+                    <input type="text" name="searchForJobs" id="inputSearch" class="search-form-input" placeholder="Search for users"/>&emsp;&emsp;&emsp;&emsp;
                     <button class="searchButton">
                         <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
                     </button>  
@@ -149,7 +148,13 @@
                 <button class="addFilesMyTasks" id="myBtn" >Add +</button>
             </div>
             
-        </div><!--END OF ADD ACCOUNT -->
+        </div>
+
+                   
+              
+            
+        
+        <!-- END OF ADD ACCOUNT -->
 
         <!-- line 3 --> <!--START OF EXISTING USER-->
         <p class="t1"><br><br>Existing user<br><br></p>
