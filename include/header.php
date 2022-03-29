@@ -12,12 +12,12 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="js_dashboard.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-1.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="mytasks1.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-2.png" />
           </a>
         </li>
@@ -37,22 +37,22 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="mytasks.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-6.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="js_message.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-7.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="complaint_tickets.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-8.png" />
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="referrals.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-9.png" />
           </a>
         </li>
