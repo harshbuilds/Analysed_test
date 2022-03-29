@@ -71,11 +71,15 @@ padding-bottom: 20px;
   color:#333333;
   font-family: MetroS;
   font-size: 15px;
+      position: relative;
+    top: -12px;
 }
 #b5{
   color:#979797;
   font-family: MetroM;
-  font-size: 14px;
+  font-size: 10px;
+  position: relative;
+      top: -6px;
 }
 #f1{
   color:#333333;
@@ -150,12 +154,18 @@ color: #333333;
 .days{
   color: #979797;
   font-family: MetroM;
-  font-size:14px;
+  font-size: 9px;
+      position: relative;
+    top: -4px;
   }
 .skills{
 color: #3598DB;
 font-style: MetroMI;
 font-size: 16px;
+}
+.skills p{
+  position: relative;
+    top: -2px;
 }
 progress::-webkit-progress-value {
   background-color: green;
@@ -173,7 +183,7 @@ progress::-webkit-progress-value {
   float: right;
   border: 1px solid #3598DB;
   border-radius: 20px;
-  padding:5px;
+  padding:10px;
   color:#3598DB;
   font-size: smaller;
   font-family: sans-serif;
@@ -183,4 +193,34 @@ progress::-webkit-progress-value {
 color: #0F9D58;
 font-size: 16px;
 font-family: MetroM;
+}
+.icons{
+      display: flex;
+    position: relative;
+    left: -43px;
+}
+@media screen and (max-width: 609px){
+  .bread-crumbs_Mytools-recruiter,.col-2,.col-3{
+    display: none;
+  }
+  .a1{
+    top: -115px;
+    position: relative;
+    left: -94px;
+    font-size: 25px;
+  }
+  .a1 img{
+    position: relative;
+        left: -194px;
+    height: 30px;
+    width: 30px;
+  }
+  .col-4{
+    position: relative;
+        display: table;
+    top: -129px;
+    left: -94px;
+    padding-bottom: 3px;
+
+  }
 }

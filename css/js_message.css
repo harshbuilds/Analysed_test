@@ -368,3 +368,46 @@ padding: 10px 30px;
       width: 100%;
   }
 }
+@media screen and (max-width: 609px){
+  .mainHeadingDash {
+        font-size: 29px;
+    position: relative;
+    top: -79px;
+    left: -133px;
+  }
+  .nameAndInfo-myMessages{
+        position: relative;
+    left: -132px;
+    top: -65px;
+  }
+  .nameAndInfo-myMessages i{
+    display: none;
+  }
+  .icon-nameAndInfo{
+    position: relative;
+    top: -80px;
+    left: -127px;
+  }
+  .messages-container-myMessages{
+    margin-top: -41px;
+        margin-left: -134px;
+        width: 358px;
+  }
+  .date-of-messages-container-myMessages{
+        position: relative;
+    left: -2px;
+  }
+  .messages-seen-time-sender-messages {
+        top: 229px;
+    left: 39px;
+  }
+  #div2{
+    position: relative;
+    top: -53px;
+  }
+  .inputforMessages-send-messages-myMessages {
+    position: relative;
+    left: -121px;
+    width: 326px;
+  }
+}
