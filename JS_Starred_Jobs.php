@@ -1,9 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
 <?php
 include 'connection1.php';          //database connection page included
 session_start();             //session has been started
 ?>
 
-
+<!--TOP HEADER-->
 <?php include('include/header.php')?>
 
 
@@ -44,6 +48,7 @@ session_start();             //session has been started
     <br><br>
     <div class="main_body">
        <div class="container">
+         
          <p class="a1">Starred jobs <img src="img/stats-img-4.png" height="47px" width="47px"></p>
 
          <div class="row">
@@ -66,7 +71,7 @@ session_start();             //session has been started
             <?php
               $exclamloc="";
               $exclamindus="";
-              $mystate=$_GET['mystate'];
+               $mystate="Madhya Pradesh";//$_GET['mystate'];
               $location=$_POST['location'];
               $minsal=$_POST['minsal'];
               $maxsal=$_POST['maxsal'];
@@ -125,7 +130,7 @@ session_start();             //session has been started
             ?>
 
 
-            <div class="col-4 mb-3">
+            <div class="col-4 mb-3" id="card1">
               <div class="card" style="height:315px;width:250px" id="temp2">
                 <div class="icons">
                   <img src="img/share-icon.png" height="27" width="29">&emsp;
@@ -173,7 +178,8 @@ session_start();             //session has been started
           ?>
           <div class="row">
             <?php
-              $mystate=$_GET['mystate'];
+             $mystate="Madhya Pradesh";//$_GET['mystate'];
+             
               $sql="select * from joblistings where state='$mystate'";
               $res=mysqli_query($conn,$sql);
               if($res == TRUE)
@@ -236,7 +242,7 @@ session_start();             //session has been started
                 <br>
                 <div class="last_job_content" style="margin-left:20px;">
                     <p id="first"><?php echo $job_type; ?></p>
-                    <a href="jobDescription.php?id=<?php echo $jobid; ?>" id="second">Apply Now</a>
+                    <a href="jobsDescription.php?id=<?php echo $jobid; ?>" id="second">Apply Now</a>
                 </div>
               </div>
 
@@ -298,9 +304,14 @@ session_start();             //session has been started
               <input type="radio" value="Internship" name="jobtype"> Internship
             </div>
             <br>
+            
             <div id="f1" >
-              Add Skills +
+             <span>
+             Add skills
+             <a href=""><i class="fa fa-plus" style="color:blue"></i></a>
+             <span>
             </div>
+            
             <br><input type="text" name="skill" placeholder=" &emsp;Enter skills" class="loc"><br><br>
             <button class="addFilesMyTasks1" id="btnapply" name="btnapply"> Apply </button>
           </form>

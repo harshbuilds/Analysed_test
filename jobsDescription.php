@@ -1,14 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 
-
-
-<?php
-
-   include 'connection1.php';
-   session_start();
-?>
-
-
+<!--TOP HEADER-->
 <?php include('header.php')?>
+
 <link rel="stylesheet" href="./css/jobsDescription.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,14 +13,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 <title>Job Description</title>
 
-
-<form class="" method="post">
-
-
 <div class="container">
 <div class="small_container">
     <div class="bread-crumbs_Mytools-recruiter" style="margin-bottom: 40px;">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a>
+            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
         </div>
     <div class="job-row-flex-JobDescription">
         <div class="left-side-jobDescription">
@@ -34,17 +25,17 @@
                 <a href="#"><img src="./img/Share.svg" class="share-and-star-icon-img"></a>
 
             </div>
-
-            
+                        <!-- START OF JOB DESCRIPTION -->
             <h2 class="heading-dash">Frontend Developer</h2>
             <div class="icons-flex-left-side-jobsDescription">
                 <span> <i class="fa fa-eye" aria-hidden="true" style="color:#FFBD06"></i> 202 views</span>
                 <span><i class="fa fa-users" aria-hidden="true" style="color:#8C60EB"></i> 4 applicants</span>
                 <span><i class="fa fa-clock-o" aria-hidden="true" style="color:#0F9D58"></i> 23 days remaining</span>
-            </div>
+            </div>   <!-- END OF JOB DESCRIPTION -->
             <div class="jobDescription-paragraph-left-side-jobsDescription">
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
             </div>
+                        <!-- SKILL SETS -->
             <div class="skills-leftSide-jobsDescription">
                 <p>Skills</p>
                 <span>HTML</span>
@@ -52,6 +43,7 @@
                 <span>HTML</span>
                 <span>HTML</span>
             </div>
+                              <!-- REQUIREMENTS -->
             <div class="requirements-section-leftSide-jobsDescription">
                 <p>Requirements</p>
                 <section class="requirements-detail-left-side-JobsDescription">
@@ -66,6 +58,8 @@
                     </div>
                 </section>
             </div>
+            
+                              <!-- APPLY FOR THE JOB -->
             <button class="applyNow-leftSide-jobsDescription" type="button"  data-toggle="modal" data-target="#myModal1">
                 Apply for this job
             </button>
@@ -81,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-
+	  
 	  <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -123,7 +117,7 @@
           <option value="2">Tamil Nadu</option>
           <option value="2">Kerala</option>
       </select>
-
+      
     </div>
  </div>
  <div class="form-row">
@@ -160,14 +154,14 @@
         </button>
       </div>
       <div class="modal-body">
-
+    
     <form>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="fileupload">Upload Resume <span style="font-size:13px;color:lightgray;">6 MB max</span></label>
       <p style="font-size:13px;color:lightgray;">Upload your resume if you have not already done so</p>
       <label for="fileupload" class="form-control" style="color:lightgray;">(*.doc,*.docx,*.rtf,*.txt,*.pdf)</label>
-
+      
       <input type="file" class="form-control" id="fileupload" style="display:none;">
     </div>
     <div class="form-group col-md-6">
@@ -200,7 +194,7 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="" data-toggle="modal" data-target="#myModal3" style="display:none;">
+<button type="button" class="" data-toggle="modal" data-target="#myModal3" style="display:none;"> 
 </button>
 
 <!--Work and Educational History--->
@@ -214,7 +208,7 @@
         </button>
       </div>
       <div class="modal-body">
-
+    
     <form>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -276,7 +270,7 @@
         </button>
       </div>
       <div class="modal-body">
-
+    
   <form>
     <div class="form-group">
       <label for="topic">Field of Study/Topic*</label>
@@ -338,7 +332,7 @@
         </button>
       </div>
       <div class="modal-body">
-
+    
     <form>
     <div class="form-group col-md-6">
       <p class="row-flex-jobs-j">
@@ -384,23 +378,21 @@
     </div>
 </div>
 
-</form>
-
 <script>
 $("div[id^='myModal']").each(function(){
-
+  
   var currentModal = $(this);
-
+  
   //click next
   currentModal.find('.btn-next').click(function(){
     currentModal.modal('hide');
-    currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show');
+    currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show'); 
   });
-
+  
   //click prev
   currentModal.find('.btn-prev').click(function(){
     currentModal.modal('hide');
-    currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show');
+    currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show'); 
   });
 
 });
@@ -411,7 +403,7 @@ $("div[id^='myModal']").each(function(){
 
     const categoryDiv3 = document.querySelector('#categoryDiv3');
 
-
+    
     filterHeading3.addEventListener('click',()=>{
         categoryDiv3.classList.toggle('active')
     })

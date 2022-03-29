@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--TOP HEADER-->
 <?php include('include/header.php')?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -36,7 +40,8 @@
     </div>
     <br><br>
     <div class="main_body">
-       <div class="container">
+       <div class="container"> 
+                        <!--START OF  DISPLAY OF NEARBY JOBS -->
          <p class="a1">Nearby Jobs <img src="./img/js_near1.png" height="40" weight="40"></p>
          <div class="row">
             <div class="col-2">               
@@ -260,25 +265,26 @@
                 </div>
                     
             </div>
-
+                            <!--  START  OF APPLY FILTER FOR NEARBY JOBS -->
             <div class="col-3 mb-4">
-                    <p id="f1">Filters <img src="img/filter_list-24px.svg" height="20" width="20"  /> <br><br>Location
-                        <br><input type="text" placeholder=" &emsp;Type Location" class="loc"><br><br>
-                        Pay type salary<br>
+                    <p id="f1">Filters <img src="img/filter_list-24px.svg" height="20" width="20"  />
+                    <p style="color:#3598db">Change Location</p>
+                        <input type="text" placeholder=" &emsp;Type Location" class="loc"><br>
+                        <p>Pay type salary</p>
                         <div class="sal2">
-                            <input type="text" style="float: left; " placeholder=" &emsp;Min" class="f2" >
+                            <input type="text" style="float: left; " placeholder=" &emsp;Min" class="f2">
                             <input type="text" style="float:right;" placeholder="&emsp; Max" class="f3" ></p>                            
                         </div>
-                        <p id="f1" style="margin-top:20px">Industry</p>
+                        <p id="f1" style="margin-top:10px">Industry</p>
                         <select title="Status" class="sel">
                         <option disabled selected>&emsp;  Choose Industry</option>
                         <option>Open</option>
                         <option>Closed</option>
-                        </select><br><br>
+                        </select><br>
                         <p id="f1">Job Type</h4>
                         <br>
                         <div class="radio-options" id="b3">
-                        <input type="radio" value="1" name="jobtype"> Part-time
+                        <input type="radio" value="1" name="jobtype" checked> Part-time
                         <br><br>
                         <input type="radio" value="2" name="jobtype"> Full-time
                         <br><br>
@@ -286,7 +292,10 @@
                         </div>
                         <br>
                         <div id="f1">
-                        Add Skills +
+                        <span>
+                        Add skills
+                        <a href=""><i class="fa fa-plus" style="color:blue"></i></a>
+                        <span>
                         </div><br>
                         <div class="chip">
                         PHP <span class="close">&nbsp;&times;</span>
@@ -295,11 +304,11 @@
                         MySQL<span class="close">&nbsp;&times;</span>
                         </div>
 
-            </div>
+            </div>    <!--  END OF APPLY FILTER FOR NEARBY JOBS -->
          </div>
          <!--end of row -->
          
-     </div> 
+     </div>    <!-- END OF DISPLAY OF NEARBY JOBS -->
 
     </div>
 </body>
