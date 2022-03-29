@@ -59,6 +59,10 @@
             <p class="mainParaDash">Fill in the details to create a new recruitment</p>
         </div>
         <!--<button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button>-->
+        <div class="header_img_cr1">   <!--Extra part added, required for responsiveness -->
+           <a href="./dashboard.php"> <img src="img/client_back.JPG" class="back_img_cr1"></a> <!-- back to dashboard pg-->
+            <img src="img/cr1.JPG" class="bg_img_cr">
+        </div>
 
         <form action="createRecruitement2.php" method="post" enctype="multipart/form-data"> <!-- redirecting to Role Details page with data of Skills & Exp -->
         <div class="row-recruiter container-for-add-client-main">
@@ -69,12 +73,12 @@
                 <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addRec-4"><a href="createRecruitement3.php">Payment info</a></p>
             </div>
 
-            <div class="right-side-row-for-add-client-container-1 " id="skills-information-createRec-1">
-                    <h2 class="heading-for-general-information-right-side-add-client-container okaniawa-1"><i class="fa fa-bullseye" aria-hidden="true"></i> Skills & Experience</h2>
+            <div class="right-side-row-for-add-client-container-1 " id="skills-information-createRec-1" >
+                    <h2 class="heading-for-general-information-right-side-add-client-container okaniawa-1" id="header"><i class="fa fa-bullseye" aria-hidden="true"></i> Skills & Experience</h2>
                     <div class="row-recruiter image-box-right-side-add-client">
                         <div class="right-side-image-box-right-add-client-1 create-rec">
                             <div class="row-recruiter sub-divs-image-box-right-side-add-client">
-                                <div class="row-recruiter inputs-for-add-client-below-image-box inputs-for-add-client-below-image-box-create-rec">
+                                <div class="row-recruiter inputs-for-add-client-below-image-box inputs-for-add-client-below-image-box-create-rec" id="block1">
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-select-for-no.11">Skills *</label>
                                         <input id="default-select-for-no.11" name="skills" type="text" class="default-input-for-add-client-1"placeholder="Enter skills required for this job" required />
@@ -101,7 +105,7 @@
                                     </p>
 
                                 </div>
-                                <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
+                                <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" id="save_cr1" value="Save" >
                             </div>
                         </form>
                     </div>

@@ -51,14 +51,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -72,14 +72,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -93,14 +93,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter"id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -114,14 +114,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket"id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -137,14 +137,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -158,14 +158,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -179,14 +179,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -200,14 +200,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -223,14 +223,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -244,14 +244,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -265,14 +265,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter"id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>
@@ -286,14 +286,14 @@
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter" id="img1">
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter"id="ptag">Johne</p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
+                            <p class="light-grey-text-complain-ticket" id="msg">Message</p>
                             <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
                     </span>
                 </div>

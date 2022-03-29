@@ -1,13 +1,11 @@
-
-<?php
-
-   include 'connection1.php';     //database connection page included
-   session_start();        //session has been started
-
-
-?>
 <?php include('header.php')?>
-
+<?php
+   define('LOCALHOST','localhost');
+   define('DB_USERNAME','root');
+   define('DB_PASSWORD','');
+   define('DB_NAME','analysed');
+   $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
+?>
 
 <?php
            if(isset($_POST['send']))
@@ -18,10 +16,10 @@
             $contact=$_POST['contact'];
             $message=$_POST['message'];
             $email=$_POST['email'];
-       
+            $contact_us_id='C102';
              
 
-             $sql2="INSERT INTO contact_us (firstname,lastname,email,contact,message) VALUES ('$firstname' , '$lastname' , '$email' , '$contact' , '$message')";
+            $sql2="INSERT INTO contact_us VALUES ('$contact_us_id', '$firstname' , '$lastname' , '$email' , '$contact' , '$message')";
              $res2=mysqli_query($conn,$sql2);
              if($res2 === TRUE)
               {
