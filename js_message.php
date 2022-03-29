@@ -1,5 +1,5 @@
 <?php include ('include/header.php')?>
-<link rel="stylesheet" href="./css/js_message.css">
+<link rel="stylesheet" href="css/js_message.css">
 <!-- <link rel="stylesheet" href="./css/js_message_1.css"> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -65,7 +65,7 @@
                             <!-- <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span> -->
                         </div>
                     </div>
-                    <div class="messagesDiv-right-side-myMessages">
+                    <div class="messagesDiv-right-side-myMessages" id="div2">
                         <div class="receiver-messages">
                             <p class="receiver-messages-message-received-myMessages"> sit amet, conset</p>
                             <span class="receiver-image-receiver-messages">EW</span>
