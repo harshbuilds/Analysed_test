@@ -233,3 +233,8 @@
   padding: 5px;
 }
 }
+@media screen and (max-width:650px) {
+  .searchButton {
+  margin-left: 24px;
+}
+}

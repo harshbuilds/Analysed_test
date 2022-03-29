@@ -220,7 +220,7 @@ margin-bottom: 30px;
     cursor: pointer;
 }
 .radioButtons-jobsType-modal{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .radioButtons-jobsType-modal{
     display: flex;
@@ -270,6 +270,21 @@ margin-bottom: 30px;
     padding: 0px;
     overflow: hidden;   
     display: none;
+}
+#partTime-jobType-modal {
+    border: 0px;
+    width: 15px;
+    height: 15px;
+}
+#fullTime-jobType-modal {
+    border: 0px;
+    width: 15px;
+    height: 15px;
+}
+#intern-jobType-modal {
+    border: 0px;
+    width: 15px;
+    height: 15px;
 }
 @media screen and (max-width:1300px){
     .cards-section-jobsNearYou{

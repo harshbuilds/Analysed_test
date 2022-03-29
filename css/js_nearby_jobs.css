@@ -197,3 +197,22 @@ color: #0F9D58;
 font-size: 16px;
 font-family: MetroM;
 }
+
+@media screen and (max-width: 650px){
+  .bread-crumbs_Mytools-recruiter,.col-2,.col-3{
+    display: none;
+  }
+  .a1 {
+    top: -115px;
+    position: relative;
+    left: -135px;
+    font-size: 25px;
+}
+.col-4 {
+  position: relative;
+  display: table;
+  top: -129px;
+  left: -94px;
+  padding-bottom: 3px;
+}
+}

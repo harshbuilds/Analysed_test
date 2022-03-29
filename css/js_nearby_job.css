@@ -78,7 +78,7 @@ padding-bottom: 20px;
   font-size: 14px;
 }
 #f1{
-  color:#333333;
+  color: #3598DB
   font-family: MetroM;
   font-size: 18px;
 }
@@ -96,6 +96,7 @@ font-size: 18px;
   margin-top: 10px;
   height: 50px;
   width:230px;
+  margin-bottom: 10px;
 }
 .f2{
   height: 53px;
@@ -114,6 +115,7 @@ font-size: 18px;
 .sal2
 {
   display: flex;
+  padding: 10px;
 }
 .chip {
   display: inline-block;
@@ -135,7 +137,8 @@ font-size: 18px;
   border: 1px solid #3598DB;
   border-radius: 7px;
   opacity: 1;
-  margin-top: 10px;
+  margin: 10px;
+  padding: 10px;
 }
 .icons{
   align-items: right;
@@ -182,4 +185,22 @@ progress::-webkit-progress-value {
 color: #0F9D58;
 font-size: 16px;
 font-family: MetroM;
+}
+@media screen and (max-width: 650px){
+  .bread-crumbs_Mytools-recruiter,.col-2,.col-3{
+    display: none;
+  }
+  .a1 {
+    top: -115px;
+    position: relative;
+    left: -135px;
+    font-size: 25px;
+}
+.col-4 {
+  position: relative;
+  display: table;
+  top: -129px;
+  left: -94px;
+  padding-bottom: 3px;
+}
 }
