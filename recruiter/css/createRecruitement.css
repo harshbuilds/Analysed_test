@@ -11,7 +11,7 @@
     align-items: flex-start;
 }
 .inputs-for-add-client-below-image-box{
-    width: 100%!important;
+    width: 100%;
 }
 .heading-for-general-information-right-side-add-client-container.okaniawa i{
     color: #51C46D;
@@ -38,6 +38,14 @@
 .default-button-for-recruiter-dashboard.file-upload{
     padding: 10px;
 }
+.header_img_cr,.back_img_cr,.bg_img_cr{
+    display: none;
+}
+#browse{
+     position: relative;
+    left: 2px;
+    bottom: -14px;
+}
 
 @media screen and (max-width:1300px){
     .create-rec-100-temp-p{
@@ -52,6 +60,89 @@
         flex-basis:100%!important;
     }
 
+}
+@media screen and (max-width: 609px){
+    .header_img_cr,.back_img_cr,.bg_img_cr{
+    display: flex;
+    }
+    .header_img_cr{
+    position: relative;
+    top: -170px;
+    left: -96px;
+    }
+    .back_img_cr,.back_img_cr1{
+        position: relative;
+    left: 63px;
+    top: 20px;
+    width: 45px;
+    height: 45px;
+    }
+    .bg_img_cr{
+            width: 409px;
+    }
+    #block h2 i{
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    padding-top: 4px;
+    font-size: 20px;
+    }
+    #block h2{
+        font-size: 15px;
+    }
+    #block1{
+        position: relative;
+    top: 85px;
+    width: 346px;
+
+    }
+    #fields{
+        font-size: 15px;
+    }
+    .select-for-select-image-box-below-inputs_cr::after{
+        top: 46px;
+    }
+    #jd{
+        position: relative;
+    top: 1765px;
+    left: -232px;
+
+    }
+    #browse{
+          left: -232px;
+    top: 1786px;
+    }
+    #save_cr,#save_cr1{
+            position: relative;
+    top: 215px;
+    left: 40px;
+    width: 272px;
+    }
+    .header_img_cr1{
+            position: relative;
+    top: -215px;
+    left: -56px;
+    }
+    .back_img_cr1{
+        left: 13px;
+    top: 56px;
+    }
+    #header i{
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    padding-top: 4px;
+    font-size: 20px;
+    }
+    #header{
+       font-size: 18px;
+    position: relative;
+    top: -251px;
+    }
+    #save_cr1{
+        top: 115px;
+    }
+    
 }
 
 

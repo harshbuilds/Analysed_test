@@ -354,8 +354,25 @@ width: 100%;
         position: relative;
     top: -213px;
   }
-  .light-grey-text-complain-ticket{
-    
+  #comp1{
+        position: relative;
+    left: -88px;
+  }
+  #comp2{
+    display: none;
+  }
+  #img1{
+        position: relative;
+    left: -97px;
+  }
+  #ptag{
+        position: relative;
+    top: -51px;
+    left: -32px;
+  }
+  #msg{
+    position: relative;
+    top: -34px;
   }
 }
 @media screen and (max-width:500px){
@@ -374,6 +391,8 @@ width: 100%;
     flex-direction: column;
   }
   .span-message-complaint-ticket-recruiter .black-text-ciomplaint-ticket-recruiter{
+    position: relative;
+    top: -29px;
     width: 100%;
     height: 100px;
     overflow: scroll;
