@@ -11,7 +11,7 @@
         <li><a href="addClient.php">Add Client</a></li>
         <li><a href="addContact.php">Add Contact</a></li>
         <li><a href="../addCandidate.php">Candidate</a></li>
-        <li><a href="../schedule.php">Schedule Interview</a></li>
+        <li><a href="schedule.php">Schedule Interview</a></li>
         <li><a href="createRecruitement.php">Create Job</a></li>
         <li><a href="createTasks.php">Create Task</a></li>
     </ul>
@@ -23,7 +23,7 @@
                 <p class="mainParaDash">Navigate with ease to essential pages</p>
             </div>
             <div class="row-recruiter quickaccess-links-container">
-                <a href="../schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
+                <a href="./schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
                 <a href="../mails.php" class="quickaccess-links-recruiter">My Mails <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                 <a href="../my_files.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
                 <a href="../myTasksNew.php" class="quickaccess-links-recruiter">My Tasks <i class="fa fa-check" aria-hidden="true"></i></a>
@@ -272,7 +272,7 @@
                 <section class="upcoming_interviews_recruiter_div ">
                 <span class="row-recruiter upcoming_interview_top_span">
                             <p>Upcoming Interviews</p>
-                            <a href="#">Schedule an Interview +</a>
+                            <a href="schedule.php">Schedule an Interview +</a>
                 </span>
 
                    <?php $result = mysqli_query($db, "SELECT * FROM interview where scheduler_date_from BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()"); ?>
