@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2022 at 06:02 PM
+-- Generation Time: Mar 31, 2022 at 05:16 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -2333,17 +2333,21 @@ CREATE TABLE `task` (
   `created_on` date NOT NULL,
   `website` varchar(225) NOT NULL,
   `progress` int(11) NOT NULL,
-  `company_img` varchar(225) NOT NULL
+  `company_img` varchar(225) NOT NULL,
+  `todo` varchar(225) NOT NULL,
+  `InProcess` varchar(225) NOT NULL,
+  `toTest` varchar(225) NOT NULL,
+  `completed` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`task_id`, `recruiter_id`, `position`, `jobtitle`, `company`, `skills`, `task_img`, `type_of_task`, `restrictions`, `task_name`, `assigned_to`, `description`, `accuracy`, `start_date`, `end_date`, `duration_weeks`, `duration_days`, `duration_hours`, `accepted_file_extensions`, `created_on`, `website`, `progress`, `company_img`) VALUES
-(1, 0, 'Ux Designer', 'Adobe web app researcher', 'Fox Hunt', 'HTML, CSS , Bootstrap', '', 'active', '', 'new', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-17', '2021-11-24', 0, 0, 0, '', '2021-10-25', 'fox.com', 10, ''),
-(2, 0, 'HTML Developer', 'Mobile App Developer', 'Flipkart', 'HTML,CSS,JS', '', 'completed', '', '', 'John Smith', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-03', '2021-11-17', 0, 0, 0, '', '2021-10-03', 'flipkart.com', 60, ''),
-(3, 0, 'Python Developer', 'Mobile App Developer', 'Google', 'Android', '', 'active', '', '', 'Joe Daisy', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-10', '2021-11-04', 0, 0, 0, '', '2021-10-02', 'google.com', 100, '');
+INSERT INTO `task` (`task_id`, `recruiter_id`, `position`, `jobtitle`, `company`, `skills`, `task_img`, `type_of_task`, `restrictions`, `task_name`, `assigned_to`, `description`, `accuracy`, `start_date`, `end_date`, `duration_weeks`, `duration_days`, `duration_hours`, `accepted_file_extensions`, `created_on`, `website`, `progress`, `company_img`, `todo`, `InProcess`, `toTest`, `completed`) VALUES
+(1, 0, 'Ux Designer', 'Adobe web app researcher', 'Fox Hunt', 'HTML, CSS , Bootstrap', '', 'active', '', 'new', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-17', '2021-11-24', 0, 0, 0, '', '2021-10-25', 'fox.com', 10, '', '10', '6', '10', '12'),
+(2, 0, 'HTML Developer', 'Mobile App Developer', 'Flipkart', 'HTML,CSS,JS', '', 'completed', '', 'website dev', 'John Smith', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-03', '2021-11-17', 0, 0, 0, '', '2021-10-03', 'flipkart.com', 60, '', '20', '12', '11', '11'),
+(3, 0, 'Python Developer', 'Mobile App Developer', 'Google', 'Android', '', 'active', '', 'app develop', 'Joe Daisy', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '', '2021-10-10', '2021-11-04', 0, 0, 0, '', '2021-10-02', 'google.com', 100, '', '26', '20', '12', '14');
 
 -- --------------------------------------------------------
 
