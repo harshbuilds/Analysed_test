@@ -46,6 +46,11 @@
     font-size: 14px;
     font-family: Metro;
 }
+.sub_2{
+  color: #3598DB;
+  font-size: 14px;
+  font-family: Metro;
+}
 .box_1{
     margin-bottom: 10px;
 }
@@ -65,10 +70,10 @@
     right: 2%;
     box-shadow: 1px 3px 8px #00000033;
     border-radius: 8px;
-    background-color: #6EC5FF;
+    background-color: #3598DB;
     color: #fff;
     padding: 8px 16px;
-    border: 1px solid #6EC5FF;
+    border: 1px solid #3598DB;
     align-items: right;
     width: 81px;
     height: 40px;
@@ -114,5 +119,79 @@
   .inputSearch_12{
     width: 50px;
   }
+  .input-field{
+    width:550px;
+  }
+  .check{
+    border: "1px solid #3598db;" 
+  }
+  
+
+@media screen and (max-width:650px) {
+ 
+  .bread-crumbs_Mytools-recruiter{
+    display: none;
+}
+  .head_txt{
+    position: relative;
+    right:172px;
+    font-size: 40px;
+  }
+  .sub_2{
+    position:relative;
+    left:-167px;
+    font-size: 16px;
+  }
+  
+.col-5{
+  display: none;
+}
+.input-field{
+  position: relative;
+  left: -201px;
+  width: 375px;
+}
+.add {
+  /* width: 55px; */
+  position: relative;
+  left: -893px;
+  /* top: 65px; */
+  /* display: flex; */
+}
+.searchButton {
+  position: relative;
+  margin-left: 48px;
+}
+.singletask_myTasks{
+  display: block;
+    position: relative;
+  width: 330px;
+    height: 316px;
+    margin-top: 48px;
+    left:-167px;
+    font-size: 19px;
+}
+.check{
+  position: relative
+  top:10px;
+}
+.button-div_myTasks{
+  position: relative;
+  top: 23px;
+  align-items: center;
+}
+#k2{
+  position: relative;
+    font-size: 16px;
+    top: 11px;
+    left: 16px;
+}
+.sub_1{
+  position: relative;
+    font-size: 16px;
+    top: -8px;
+    left: 16px;
+}
+}
 
   

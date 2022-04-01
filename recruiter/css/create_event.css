@@ -652,7 +652,7 @@ input[type="checkbox"]:focus + label::before {
         position: relative;
         display:grid;
         width:max-content;
-        font-size: 25px;
+        /* font-size: 25px; */
     }
     .input-class{
         position: relative;
@@ -670,7 +670,7 @@ input[type="checkbox"]:focus + label::before {
         position:relative;
         display:grid;
         top: 16px;
-        width: 350px;
+        width: 359px;
     }
     .card{
         position:relative;
@@ -711,4 +711,13 @@ input[type="checkbox"]:focus + label::before {
         position: relative;
         left: 3px;
     }
+    .scroll {
+        margin: 4px, 4px;
+        padding: 4px;
+        
+        width: 350px;
+        overflow: auto;
+        white-space: nowrap;
+      }
+      
 }
