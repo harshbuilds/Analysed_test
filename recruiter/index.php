@@ -73,10 +73,10 @@ if (isset($_POST['submit'])) {
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <div class="navbar-nav text-uppercase pt-3 ml-auto nav-form-s">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login </a>
+                        <a class="nav-link" href="../signup/recruiter/Recruiter login.php">Login </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Join us</a>
+                        <a class="nav-link" href="../signup/recruiter/index.php"> Join us</a>
                     </li>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
                     <div class="header-content mx-auto animated wow zoomIn" data-wow-duration="0.3s" data-wow-delay=".1s">
                       <h1 class="mx-auto">A Virtual Recruitment Platform</h1>
                       <p>Recruitment and hiring process has been a complex task for a long time and we plan to change that. Analysed helps recruiters in human analytics through AI and provides them with virtual testing tools to lighten the burden of the struggle for both recruiters and job aspirants. Let's eliminate together the troubles witnessed in the recruitment process and uncover a one stop solution to it.</p>
-                      <a href="signup/recruiter/index.php"><button  class="btn btn-white mt-4 py-2 px-3 ">Join us</button></a>
+                      <a href="../signup/recruiter/index.php"><button  class="btn btn-white mt-4 py-2 px-3 ">Join us</button></a>
                     </div>
                   </div>
                   <div class="col-lg-5 my-auto">
