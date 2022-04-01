@@ -18,15 +18,16 @@
             My Contact
         </div>
  	<form action="" method="post">
-        <div>
-            <a href="/" class="sub_1">Create new contact and manage old ones</a>
-            <a href="./recruiter/addClient.php"><button class="addFilesMyTasks1" >Add + </button></a>
+        <div class>
+            <a href="/" class="sub_2">Create new contact and manage old ones</a>
+            <!-- <a href="../addContact.php"><button class="addFilesMyTasks1" >Add + </button></a> -->
+            <a href="addContact.php"><button class="addFilesMyTasks1  add" id="myBtn" type="button">Add +</button></a>
         </div>
 
       <div class="container" style="margin-left:-2%;">
         <div class="row">
             <div class="col-7">
-                <div class="input-field" style="width:585px">
+                 <div class="input-field">
                 <img src="img/person.png" alt="" height="25px" width="25px" class="box_1"><span id="m1">Company&nbsp;</span>
                 <input type="text"  name="searchForNames" id="inputSearch_12" class="searchForJobs"
                     placeholder="| &emsp;&emsp;Search by name "
@@ -45,7 +46,7 @@
      </div>
 
         <div class="singleTasks_containerDiv">
-  <div class="row">
+  <div class="row" >
                 <?php
 
                            if(isset($_POST['searchForNames'])){
@@ -62,7 +63,7 @@
                             ?>
 
             <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
+                <input type="checkbox" name="checkBoxItem"  class ="check" >
                 <img src="img/<?php echo $row['picture'];?>" width="65" height="65">
                 <span >
                     <p id="k1"><?php echo $row['fname'] ; ?></p>
