@@ -1,3 +1,12 @@
+
+
+<?php
+
+   include 'connection1.php';
+   session_start();
+
+?>
+
 <?php include('header.php') ?>
 <?php include('modal1.php')?>
 <link rel="stylesheet" href="./css/mytasks.css">
@@ -71,82 +80,35 @@
             </div>
         </div>
         <div class="singleTasks_containerDiv">
+          <?php
+                      $sql= "select * from js_files";
+                      $run = mysqli_query($conn,$sql);
+                      $i= 1;
+
+                      while($row =mysqli_fetch_assoc($run)) {
+                      ?>
+
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" >
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p>05-05-2021</p>
+                    <p><?php echo $row['added_on']; ?></p>
                 </span>
                 <span>
-                    <p style="color:#297FB8;margin-bottom:5px;">Filename.pdf</p>
-                    <p>300kb</p>
+                    <p style="color:#297FB8;margin-bottom:5px;"><?php echo $row['file_name']; ?></p>
+                    <p><?php echo $row['file_size']; ?> kb</p>
                 </span>
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Type of Doc</p>
-                    <p>Resume</p>
+                    <p><?php echo $row['doc_type']; ?></p>
                 </span>
                 <div class="button-div_myTasks">
                     <button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
                     <button style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button>
                 </div>
             </div>
-            <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" >
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p>05-05-2021</p>
-                </span>
-                <span>
-                    <p style="color:#297FB8;margin-bottom:5px;">Filename.pdf</p>
-                    <p>300kb</p>
-                </span>
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Type of Doc</p>
-                    <p>Resume</p>
-                </span>
-                <div class="button-div_myTasks">
-                    <button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                    <button style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" >
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p>05-05-2021</p>
-                </span>
-                <span>
-                    <p style="color:#297FB8;margin-bottom:5px;">Filename.pdf</p>
-                    <p>300kb</p>
-                </span>
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Type of Doc</p>
-                    <p>Resume</p>
-                </span>
-                <div class="button-div_myTasks">
-                    <button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                    <button style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button>
-                </div>
-            </div>
-            <div class="singletask_myTasks">
-                <input type="checkbox" name="checkBoxItem" >
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                    <p>05-05-2021</p>
-                </span>
-                <span>
-                    <p style="color:#297FB8;margin-bottom:5px;">Filename.pdf</p>
-                    <p>300kb</p>
-                </span>
-                <span>
-                    <p class="light_spanItem_singleTask_myTasks">Type of Doc</p>
-                    <p>Resume</p>
-                </span>
-                <div class="button-div_myTasks">
-                    <button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                    <button style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button>
-                </div>
-            </div>
+
+          <?php } ?>
 
         </div>
     </div>
