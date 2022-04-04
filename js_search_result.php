@@ -1,3 +1,13 @@
+
+
+<?php
+
+   include 'connection1.php';     //database connection page included
+   session_start();        //session has been started
+
+
+?>
+
 <?php include('include/header.php')?>
 
 <link rel="stylesheet" href="css/js_search_result.css">
@@ -28,7 +38,7 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <body>
-    
+
     <br><br>
     <div class="right_shift">
        <div class="heading">
@@ -38,7 +48,7 @@
             Search for jobs, candidates, clients and more
        </div><br><br><br>
        <div class="input-field2">
-          <input
+<form action="" method="post"><input
             name="searchForJobs"
             id="inputSearch"
             class="searchForJobs"
@@ -47,131 +57,186 @@
           <!-- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           &emsp;&emsp;&emsp; &emsp;&emsp; -->
-          <button class="searchButton1"  style="color: #3598DB;margin-left: 600px;">
+          <button class="searchButton1" name="search"  style="color: #3598DB;margin-left: 600px;">
           <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
+          </button></form>
         </div><br><br>
         <div style="display:flex">
-            <button class="addFilesMyTasks1" id="myBtn1" onclick="window.location.href = 'js_search_result_1.php';"> People </button>&emsp;&emsp;
-            <button class="addFilesMyTasks1" id="myBtn2" > Jobs </button>&emsp;&emsp;
-            <button class="addFilesMyTasks1" id="myBtn3" > Companies </button>&emsp;&emsp;
-            <button class="addFilesMyTasks1" id="myBtn1" > &nbsp;Groups </button>&emsp;&emsp;
-            <button class="addFilesMyTasks1" id="myBtn1" >&nbsp; Events </button>&emsp;&emsp;
-            <button class="addFilesMyTasks1" id="myBtn1" > Courses </button>
+            <button class="addFilesMyTasks1" name="peopleCard" id="myBtn1" onclick="window.location.href = 'js_search_result_1.php';"> People </button>&emsp;&emsp;
+            <button class="addFilesMyTasks1" name="jobsCard" id="myBtn2" > Jobs </button>&emsp;&emsp;
+            <button class="addFilesMyTasks1" name="companiesCard" id="myBtn3" > Companies </button>&emsp;&emsp;
+            <button class="addFilesMyTasks1" name="groupCard" id="myBtn1" > &nbsp;Groups </button>&emsp;&emsp;
+            <button class="addFilesMyTasks1" name="eventsCard" id="myBtn1" >&nbsp; Events </button>&emsp;&emsp;
+            <button class="addFilesMyTasks1" name="coursesCard" id="myBtn1" > Courses </button>
         </div><br><br><br>
+
+
+
+
         <div class="card" style="width:1000px;height:500px">
+
+
             <p id="val1"><b>People </b></p><br>
             <div class="row">
+
+              <?php
+              $flag=0;
+              if((isset($_POST['search'])) OR (isset($_POST['peopleCard'])))   //condition to find set of variable of search and Filters
+              {
+                // code block to search according to given clauses
+
+                $search = $_POST['searchForJobs'];
+                $search = preg_replace("#[^0-9a-z]#i","",$search);
+                $sql="SELECT * FROM `candidates` WHERE firstname='$search' OR lastname= '$search'";
+                $flag=1;
+              }
+
+              if($flag == 0)
+              {
+                // code block for all data to be displayed if there are no clauses
+                  $sql="select * from candidates";
+              }
+                 // query to establish connection from database and get the output of required query
+                $res=mysqli_query($conn,$sql);
+                if($res == TRUE)
+                {
+                   // getting no of rows from table and assigning it to a variable. If this is more than 0 then all rows will be printed
+                    $count=mysqli_num_rows($res);
+                    if($count > 0)
+                    {
+
+                      // displaying all the data from the table
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+
+                     ?>
+
                 <div class="col-2">&emsp;&emsp;&emsp;&emsp;
                     <img src="img/prof.png" height="71px" width="71px">
                 </div>
                 <div class="col-10">
-                    <span id="val1"><b>Lorem Member</b></span><br>
-                    <span id="val2">Lea at Machine Vibration Engineering</span><br>
-                    <span id="val3">India</span>
+                    <span id="val1"><b><?php echo $row['firstname']; ?> <?php echo $row['lastname']; ?></b></span><br>
+                    <span id="val2"><?php echo $row['current_title']; ?></span><br>
+                    <span id="val3"><?php echo $row['country']; ?></span>
                     <hr id="val4"></hr>
                 </div>
-            </div>  
-            <div class="row">
-                <div class="col-2">&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/Ellipse 148-2.png" height="71px" width="71px">
-                </div>
-                <div class="col-10">
-                    <span id="val1"><b>Lorem Member</b></span><br>
-                    <span id="val2">Machine operator at Williams Lea</span><br>
-                    <span id="val3">Great Norwich Area, United Kingdom</span>
-                    <hr id="val4"></hr>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-2">&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/Profile3.png" height="71px" width="71px">
-                </div>
-                <div class="col-10">
-                    <span id="val1"><b>Lorem Member</b></span><br>
-                    <span id="val2">Machine operator at de Lea rue</span><br>
-                    <span id="val3">Malta</span>
-                </div>
-            </div>  
+
+                <?php }}} ?>
+            </div>
             <hr></hr><br>
             <p id="val5">See all result</p>
         </div>
 
         <br><br>
 
+
+<!-- companies -->
         <div class="card" style="width:1000px;height:500px">
             <p id="val1"><b>Companies</b></p><br>
             <div class="row">
+              <?php
+              $flag=0;
+              if((isset($_POST['search'])) OR (isset($_POST['companiesCard']))) //condition to find set of variable of search and Filters
+              {
+                // code block to search according to given clauses
+
+                $search = $_POST['searchForJobs'];
+                $search = preg_replace("#[^0-9a-z]#i","",$search);
+                $sql="SELECT * FROM `joblistings` WHERE 	client_company='$search'";
+                $flag=1;
+              }
+
+              if($flag == 0)
+              {
+                // code block for all data to be displayed if there are no clauses
+                  $sql="select * from joblistings";
+              }
+                 // query to establish connection from database and get the output of required query
+                $res=mysqli_query($conn,$sql);
+                if($res == TRUE)
+                {
+                   // getting no of rows from table and assigning it to a variable. If this is more than 0 then all rows will be printed
+                    $count=mysqli_num_rows($res);
+                    if($count > 0)
+                    {
+
+                      // displaying all the data from the table
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+
+                     ?>
                 <div class="col-2">&emsp;&emsp;&emsp;&emsp;
                     <img src="img/m-circle.png" height="71px" width="71px">
                 </div>
                 <div class="col-10">
-                    <span id="val1"><b>Lea Machine Service Inc</b></span><br>
-                    <span id="val2">Industrial Automation, Hollywood, Florida</span><br>
+                    <span id="val1"><b><?php echo $row['client_company']; ?></b></span><br>
+                    <span id="val2"><?php echo $row['location']; ?></span><br>
                     <span id="val3">4 Jobs opening</span>
                     <hr id="val4"></hr>
                 </div>
-            </div>  
-            <div class="row">
-                <div class="col-2">&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/m-circle.png" height="71px" width="71px">
-                </div>
-                <div class="col-10">
-                    <span id="val1"><b>Lea Machine Service Inc</b></span><br>
-                    <span id="val2">Industrial Automation, Hollywood, Florida</span><br>
-                    <span id="val3">4 Jobs opening</span>
-                    <hr id="val4"></hr>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-2">&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/m-circle.png" height="71px" width="71px">
-                </div>
-                <div class="col-10">
-                    <span id="val1"><b>Lea Machine Service Inc</b></span><br>
-                    <span id="val2">Industrial Automation, Hollywood, Florida</span><br>
-                    <span id="val3">4 Jobs opening</span>
-                </div>
-            </div>  
-            <hr></hr><br>
+              <?php }}} ?>
+              </div>
+                          <hr></hr><br>
             <p id="val5">See all result</p>
         </div>
 
         <br><br>
 
+
+
+
+<!-- jobs -->
         <div class="card" style="width:1000px;height:500px">
             <p id="val1"><b>Jobs </b></p><br>
             <div class="row">
+              <?php
+              $flag=0;
+              if((isset($_POST['search'])) OR (isset($_POST['jobsCard'])))  //condition to find set of variable of search and Filters
+              {
+                // code block to search according to given clauses
+
+                $search = $_POST['searchForJobs'];
+                $search = preg_replace("#[^0-9a-z]#i","",$search);
+                $sql="SELECT * FROM `joblistings` WHERE 	client_company='$search'";
+                $flag=1;
+              }
+
+              if($flag == 0)
+              {
+                // code block for all data to be displayed if there are no clauses
+                  $sql="select * from joblistings";
+              }
+                 // query to establish connection from database and get the output of required query
+                $res=mysqli_query($conn,$sql);
+                if($res == TRUE)
+                {
+                   // getting no of rows from table and assigning it to a variable. If this is more than 0 then all rows will be printed
+                    $count=mysqli_num_rows($res);
+                    if($count > 0)
+                    {
+
+                      // displaying all the data from the table
+                        while($row=mysqli_fetch_assoc($res))
+                        {
+
+                     ?>
                 <div class="col-2">&emsp;&emsp;&emsp;&emsp;
                     <img src="img/icon.png" height="71px" width="71px">
                 </div>
                 <div class="col-10">
-                    <span id="val1"><b>Machine Learning Engineering</b></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <span id="val1"><b><?php echo $row['designation']; ?></b></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <img src="img/share-icon.png" height="20px" width="22px">&emsp;
                     <img src="img/star-icon.png" height="20px" width="22px"><br>
-                    <span id="val2">Quantipihi</span><br>
-                    <span id="val3">Mumbai, Maharashtra, India</span><br>
+                    <span id="val2"><?php echo $row['client_company']; ?></span><br>
+                    <span id="val3"><?php echo $row['location']; ?>,<?php echo $row['state']; ?>,<?php echo $row['country']; ?></span><br>
                     <span id="val3"><img src="img/check.png" height="20px" width="20px">Actively recruiting</span><br>
                     <span id="val3">3 days ago . Easy apply</span>
                     <hr id="val4"></hr>
                 </div>
-            </div>  
-            <div class="row">
-                <div class="col-2">&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/icon3.png" height="71px" width="71px">
-                </div>
-                <div class="col-10">
-                    <span id="val1"><b>Machine Learning Research Scientist</b></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <img src="img/share-icon.png" height="22px" width="22px">&emsp;
-                    <img src="img/star-icon.png" height="22px" width="22px"><br>
-                    <span id="val2">Insilico</span><br>
-                    <span id="val3">Bengaluru, Karnataka, India</span><br>
-                    <span id="val3"><img src="img/check.png" height="20px" width="20px">Actively recruiting</span><br>
-                    <span id="val3">3 days ago .<span class="subhead"> 1 applicant</span> </span>
-                </div>
-            </div>  
+                <?php }}} ?>
+            </div>
+
             <hr></hr><br>
             <p id="val5">See all result</p>
         </div>

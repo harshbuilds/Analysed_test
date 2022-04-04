@@ -1,3 +1,11 @@
+
+<?php
+
+   include 'connection1.php';
+   session_start();
+
+?>
+
 <?php include('include/header.php')?>
 <link rel="stylesheet" href="css/company_my_task.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -29,7 +37,7 @@
 
 
 <body>
-    
+
     <br><br>
     <div class="main_body">
         <p class="mainHeadingDash" style="font-size:30px">My Tasks</p>
@@ -44,7 +52,7 @@
                     All tasks&emsp;</span>
                     <input type="text"  name="searchForJobs" id="inputSearch" class="searchForJobs"
                     placeholder="| &emsp;Search for a task "/>
-                    <button class="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>  
+                    <button class="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
             <div class="col-6">
@@ -80,27 +88,33 @@
         <br><br>
 
         <!-- list  -->
-    
+
         <a href="company_my_task_individual.php">
         <div class="row" id="ro1">
+          <?php
+                      $sql= "select * from task";
+                      $run = mysqli_query($conn,$sql);
+                      $i= 1;
+
+                      while($row =mysqli_fetch_assoc($run)) {
+                      ?>
             <div class="col-6">
                 <div class="card" id="car1">
-                    <div class="cont_1">
+                <div class="cont_1">
                         <div class="row">
-                            <div class="col-3"><img src="img/facebook.jpg" height="50px" width="50px"></div>
+                            <div class="col-3"><img src="img/<?php echo $row['company_img']; ?>" height="50px" width="50px"></div>
                             <div class="col-9">
-                                <p id="n1">Facebook</p>
-                                <p id="n2" style="line-height:0.5"><span style="color:#3598DB"><i class="fa fa-external-link"></i></span>&nbsp;www.facebook.com</p>
+                                <p id="n1"><?php echo $row['company']; ?></p>
+                                <p id="n2" style="line-height:0.5"><span style="color:#3598DB"><i class="fa fa-external-link"></i></span>&nbsp;<?php echo $row['website']; ?></p>
                             </div>
                         </div>
-                        
-                        <p id="n3">Task name</p>
-                        <p id="n2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                            diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+
+                        <p id="n3"><?php echo $row['task_name']; ?></p>
+                        <p id="n2"><?php echo $row['description']; ?></p>
 
                         <div>
-                            <progress value="60" max="100" id="p1" ></progress>
-                            <span id="n9">&emsp; 60%</span >
+                            <progress value="<?php echo $row['progress']; ?>" max="100" id="p1" ></progress>
+                            <span id="n9">&emsp;<?php echo $row['progress']; ?></span >
                         </div><br>
 
                         <p>
@@ -114,102 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card" id="car1">
-                <div class="cont_1">
-                        <div class="row">
-                            <div class="col-3"><img src="img/target.png" height="50px" width="50px"></div>
-                            <div class="col-9">
-                                <p id="n1">Target</p>
-                                <p id="n2" style="line-height:0.5"><span style="color:#3598DB"><i class="fa fa-external-link"></i></span>&nbsp;www.target.com</p>
-                            </div>
-                        </div>
-                        
-                        <p id="n3">Task name</p>
-                        <p id="n2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                            diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-
-                        <div>
-                            <progress value="60" max="100" id="p1" ></progress>
-                            <span id="n9">&emsp; 60%</span >
-                        </div><br>
-
-                        <p>
-                            <span style="color:#3598DB"><i class="fas fa-comment-alt"></i></span> &nbsp;7&emsp;
-                            <button id="n8" style="background-color:#FFBD0633;color:#FFBD06"><i class="fas fa-bell"></i>&nbsp;due in 5 days</button>
-                            <span style="margin-left:80px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px"> </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row" id="ro1">
-            <div class="col-6">
-                <div class="card" id="car1">
-                    <div class="cont_1">
-                        <div class="row">
-                            <div class="col-3"><img src="img/flipcart.png" height="50px" width="50px"></div>
-                            <div class="col-9">
-                                <p id="n1">Flipkart</p>
-                                <p id="n2" style="line-height:0.5"><span style="color:#3598DB"><i class="fa fa-external-link"></i></span>&nbsp;www.flipkart.com</p>
-                            </div>
-                        </div>
-                        
-                        <p id="n3">Task name</p>
-                        <p id="n2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                            diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-
-                        <div>
-                            <progress value="60" max="100" id="p1" ></progress>
-                            <span id="n9">&emsp; 60%</span >
-                        </div><br>
-
-                        <p>
-                            <span style="color:#3598DB"><i class="fas fa-comment-alt"></i></span> &nbsp;7&emsp;
-                            <button id="n8" style="background-color:#F5F5F5;color:#979797"><i class="fas fa-bell"></i>&nbsp;due in 7 days</button>
-                            <span style="margin-left:80px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px"> </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card" id="car1">
-                <div class="cont_1">
-                        <div class="row">
-                            <div class="col-3"><img src="img/Adobe icon.png" height="50px" width="50px"></div>
-                            <div class="col-9">
-                                <p id="n1">Adobe</p>
-                                <p id="n2" style="line-height:0.5"><span style="color:#3598DB"><i class="fa fa-external-link"></i></span>&nbsp;www.adobe.com</p>
-                            </div>
-                        </div>
-                        
-                        <p id="n3">Task name</p>
-                        <p id="n2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-                            diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
-
-                        <div>
-                            <progress value="60" max="100" id="p1" ></progress>
-                            <span id="n9">&emsp; 60%</span >
-                        </div><br>
-
-                        <p>
-                            <span style="color:#3598DB"><i class="fas fa-comment-alt"></i></span> &nbsp;7&emsp;
-                            <button id="n8"><i class="fas fa-bell"></i>&nbsp;due in 3 days</button>
-                            <span style="margin-left:80px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px">
-                            <img src="img/Profile1.png" height="41px" width="41px"> </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
+<?php } ?>
         </div>
         </a>
         <br><br>
