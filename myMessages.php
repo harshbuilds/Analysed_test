@@ -82,17 +82,34 @@
                     <span>EW</span>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <p>Location</p>
+                    <b>Location</b>
                     <p>Tornfast, Sweden</p>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <p>Timezone</p>
+                    <b>Timezone</b>
                     <p>PST UTC-8</p>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <p>Skills</p>
+                    <b>Skills</b>
                     <p>HTML, CSS, PHP & Javascript</p>
                 </section>
+                <section class="location-mymessages-rightSide">
+                    <b>Education Qualification</b>
+                   </section>
+                <section class="location-mymessages-rightSide">
+                    <p>Post Graduate in Information Technology</p>
+                </section>
+                <section class="location-mymessages-rightSide">
+                    <b>Work Experience</b>
+                </section>
+                <section class="location-mymessages-rightSide">
+                    <p>Lorem Company:</p>
+                    <p>2 year</p>
+                 </section>
+                 <section class="location-mymessages-rightSide">
+                    <p>Ipsum Company:</p>
+                    <p>6 months</p>
+                 </section>
                 </section>
                 </div>
             </div>
