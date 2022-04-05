@@ -53,7 +53,7 @@ if (isset($_POST['submit']))      //condition to insert set of variable if submi
             if ($res) {
 
                 // if query has worked properly it will redirect to following page
-                 echo " <script>window.open('addcandidates1.php','_self')</script>";
+                 echo " <script>window.open('Candidates_specific.php','_self')</script>";
             }
 }
 ?>
