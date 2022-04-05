@@ -9,11 +9,11 @@
                 <p class="live-recording-class"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Live <span>01:33:23</span> (Recording)</p>
                 </div>
                 <div class="meeting-image">
-                    <img src="./img/schedulemeeting.png" alt="" class="video-call-meet-image">
+                    <img src="./img/schedulemeeting.png" alt="" class="video-call-meet-image" id="image_vc-4">
                 </div>
                 <div class="queries">
                     <p class="queries-container">Queries based on skills</p>
-                    <div class="skills-container" id="list">
+                    <div class="skills-container flex-container" id="list">
                         <div class="skill-content active">
                             <p><a href="#" onclick="divVisibility('Div1');">PHP</a></p>
                         </div>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-side-container-DashboardJ">
+                <div class="right-side-container-DashboardJ" id="right-side-vc-4">
                     <div class="meet-info">
                         <p class="meet-info-name">John Smith</p>
                         <p class="meet-info-span-class">#JB13069</p>

@@ -12,8 +12,8 @@
                     <img src="./img/schedulemeeting.png" alt="" class="video-call-meet-image">
                 </div>
                 <div class="queries">
-                    <p class="queries-container">Queries based on skills</p>
-                    <div class="skills-container" id="list">
+                    <p class="queries-container ">Queries based on skills</p>
+                    <div class="skills-container flex-container" id="list">
                         <div class="skill-content">
                             <p><a href="video_call-4.php" onclick="divVisibility('Div1');">PHP</a></p>
                         </div>
