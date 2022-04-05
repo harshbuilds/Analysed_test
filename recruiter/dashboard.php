@@ -11,7 +11,7 @@
         <li><a href="addClient.php">Add Client</a></li>
         <li><a href="addContact.php">Add Contact</a></li>
         <li><a href="../addCandidate.php">Candidate</a></li>
-        <li><a href="schedule.php">Schedule Interview</a></li>
+        <li><a href="../schedule.php">Schedule Interview</a></li>
         <li><a href="createRecruitement.php">Create Job</a></li>
         <li><a href="createTasks.php">Create Task</a></li>
     </ul>
@@ -23,7 +23,7 @@
                 <p class="mainParaDash">Navigate with ease to essential pages</p>
             </div>
             <div class="row-recruiter quickaccess-links-container">
-                <a href="./schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
+                <a href="../schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
                 <a href="../mails.php" class="quickaccess-links-recruiter">My Mails <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                 <a href="../my_files.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
                 <a href="../myTasksNew.php" class="quickaccess-links-recruiter">My Tasks <i class="fa fa-check" aria-hidden="true"></i></a>
@@ -272,35 +272,30 @@
                 <section class="upcoming_interviews_recruiter_div ">
                 <span class="row-recruiter upcoming_interview_top_span">
                             <p>Upcoming Interviews</p>
-                            <a href="schedule.php">Schedule an Interview +</a>
+                            <a href="#">Schedule an Interview +</a>
                 </span>
 
-                   <?php $result = mysqli_query($db, "SELECT * FROM interview where scheduler_date_from BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()"); ?>
+                   <?php $result = mysqli_query($db, "SELECT * FROM interview"); ?>
               <div class="card mb-4">
-
-                            <div class="card-body">
-
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-         <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Position</th>
-    </tr>
-  </thead>
-  <?php while ($row = mysqli_fetch_array($result)) { ?>
-    <tr>
-      <td><?php echo $row['candidate']; ?></td>
-      <td><?php echo $row['scheduler_date_from']; ?></td>
-      <td><?php echo $row['position']; ?></td>
-
-
-    </tr>
-
-  <?php }?>
- </table>
-       </div>
-       </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" id="dataTable" width="100%" height="350px" cellspacing="0">
+                            <thead style="background-color: rgb(173, 216, 230); height: 40px; font-size: 13px;">
+                                <tr >
+                                <th style="text-align: left;padding: 6px; justify-content: left;">Name</th>
+                                <th style="text-align: left;padding: 6px; justify-content: left;">Date</th>
+                                <th style="text-align: left;padding: 6px; justify-content: left;">Position</th>
+                                </tr>
+                            </thead>
+                            <?php while ($row = mysqli_fetch_array($result)) { ?>
+                            <tr style="position: relative; left: 6px; justify-content: space-between;  padding: 1px 2px 3px 4px;">
+                              <td><?php echo $row['name']; ?></td>
+                              <td><?php echo $row['date']; ?></td>
+                              <td><?php echo $row['position']; ?></td>
+                            </tr>
+                        <?php }?>
+                        </table>
+                    </div>
+                </div>
 
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
