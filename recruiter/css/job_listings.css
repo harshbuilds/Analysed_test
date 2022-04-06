@@ -54,7 +54,7 @@
   display: none;
 }
 .head_main{
-  font-size: 40px;
+  font-size: 45px;
   font-family: CeraM;
   letter-spacing: 0px;
 color: #333333;
@@ -87,12 +87,12 @@ color: #333333;
 
 
 .categories-mytasks-1-active{
-  width: 50%;
+  width: 85%;
   margin: 10px;
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content:left;
   color: #979797;
   font-size: 16px;
 }
@@ -102,11 +102,12 @@ color: #333333;
   width: 50%;
   /* padding: 20px; */
   font-size: 16px;
+  margin-right:75px;
 }
 .category-mytasks1.active{
   border-bottom: 3px solid #3598DB;
   color: #3598DB;
-  width: 20%;
+  width: 30%;
   /* padding: 20px; */
   font-weight: 500;
   font-size: 16px;
@@ -399,6 +400,17 @@ p .active {
     margin-bottom: 0px!important;
 }
 
+#js{
+  /* width:571px; */
+}
+#btn-color{
+  margin-left:800px;
+}
+.addnew{
+  margin-left:1000px;
+}
+
+
 @media screen and (max-width:1100px){
     .left-section-shortlisted-jobs{
         flex-basis: 60%;
@@ -432,4 +444,85 @@ p .active {
   align-items: center;
   width: auto;
   height: 47px;
+}
+@media screen and (max-width: 650px){
+  .bread-crumbs_Mytools-recruiter,.sortByMyTasks,.recentMyTasks{
+      display:none;
+  }
+  .head_main{
+    position: relative;
+    left:-129px;
+  }
+  .active-breadcrumb-link{
+    position: relative;
+    left:-129px;
+  }
+  .input-field{
+    position: relative;
+    left:6px;
+    width:350px;
+  }
+ #alljob{
+   position: relative;
+   left:20px;
+ }
+  #js{
+    position: relative;
+    left:-159px;
+    width:367px;
+  }
+ #btnsearch
+ {
+  position: relative;
+  top: -30px;
+  left: 50px;
+ }
+ #btn-color{
+   position:relative;
+   margin-left: 127px;
+ }
+ .flex-container{
+   position:relative;
+   display:flex;
+ }
+   .category-mytasks1 {
+   position:relative;
+   margin-right: 16px;
+   top: 37px;
+   left: -133px;
+   }
+   .singleTasks_containerDiv{
+     position: relative;
+     left:-145px;
+   }
+  .singletask_myTasks{
+
+  
+    height: 684px;
+    width: 350px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .singletask_myTasks p{
+    font-size:18px;
+  }
+.addnew{
+  position: relative;
+  margin-left: 155px;
+}
+/* .light_spanItem_singleTask_myTasks{
+  font-size: 22px;
+}
+.date_s{
+  font-size: 20px; 
+}
+.ac_assis{
+  font-size: 19px;
+}
+.id_num{
+  font-size: 16px;
+}
+.loc_pin{
+  font-size: 18px;
+} */
 }
