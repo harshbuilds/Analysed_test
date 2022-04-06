@@ -175,8 +175,8 @@ if(isset($_POST['btnall']))
         </div>
 
 
-
-        <div class="singleTasks_containerDiv">
+        
+        
             <?php
           //  $sql="SELECT * FROM `joblistings`";
           if($flag == 0)
@@ -232,8 +232,11 @@ if(isset($_POST['btnall']))
                            }
                          }
 
-
-                 ?>
+                      
+                         ?>     
+        <a style="text-decoration:none" href="job_listings_individual.php?j_id=<?php echo $job_id ?>">
+        
+            <div class="singleTasks_containerDiv">
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
                 <?php
@@ -305,7 +308,8 @@ if(isset($_POST['btnall']))
             ?>
 
 
-        </div>
+            </div>
+        </a>
         <div class="addnew"><img src="img/plus.png" width="50" height="50" style="margin-left:1000px" /></div>
         <br><br><br>
     </div>
