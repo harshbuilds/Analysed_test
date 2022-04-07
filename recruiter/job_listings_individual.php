@@ -95,7 +95,7 @@
 
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-     <a href="recruiter/dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard </a> >  <a href="" class="active-breadcrumb-link"> My Database </a> >  <a href="recruiter/job_listings.php" class="active-breadcrumb-link"><u> Job Listings  </u></a>
+     <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard </a> >  <a href="candidate_list.php" class="active-breadcrumb-link"> My Database </a> >  <a href="job_listings.php" class="active-breadcrumb-link"><u> Job Listings  </u></a>
      >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
  </div>
 
@@ -130,10 +130,10 @@
     </div>
 
     <div class="col-lg-8 mb-4">
-        <div class="row">
+        <div class="row"  id="card-of-2">
             <div class="col-7">
             <br><br>
-                <div class="card" style="height:250px;width:420px">
+                <div class="card" id="card-1-of-2">
                     <div class="card-body">
                         <p class="m1"><strong>Summary</strong>
                         <span style="color:#979797;font-size:12px;padding-left:130px">Last edited</span>
@@ -154,9 +154,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-5" >
                 <br><br>
-                <div class="card"  style="height:250px;width:300px">
+                <div class="card"   style="height:307px;width:300px">
                     <div class="card-body">
                         <p class="m1"><strong>Required Skills</strong></p>
                         <?php
@@ -174,10 +174,10 @@
             </div>
         </div>
 <br>
-        <div class="row">
+        <div class="row " id="package">
             <div class="col-4">
                 <div class="card" style="height:70px">
-                    <div class="card-body">
+                    <div class="card-body " >
                         <p class="b1">Package Type</p>
                         <p class="b2"><?php echo  $package_type ?></p>
                     </div>
@@ -202,7 +202,7 @@
         </div>
 
 <br>
-        <div class="row">
+        <div class="row"  id="experience">
             <div class="col-4">
                 <div class="card" style="height:180px">
                     <div class="card-body">
@@ -252,10 +252,10 @@
 <br>
          <p class="indi1">Contact information for the advert</p>
          <div class="row">
-             <div class="col-4">
+             <div class="col-5">
                  <p class="b3" style="line-height:1.7"><?php echo  $advert_contact_name ?> <br><?php echo  $company_email ?> <br><?php echo  $advert_contact_no ?></p>
              </div>
-             <div class="col-8">
+             <div class="col-7">
              <p class="b3" style="line-height:1.7"><?php echo  $district ?> <br><?php echo  $state ?> <?php echo  $country ?></p>
              </div>
          </div>
@@ -265,13 +265,13 @@
     <div class="col-lg-3 mb-4">
 
     <br><br>
-        <div class="card" style="height:3000px;width:240px">
-            <div class="card-body">
-                <div class="right-panel" style="text-align:center">
+        <div class="card" id="right-side-col" style="height:1500px;width:350px">
+            <div class="card-body" id="right-side-body">
+                <div class="right-panel" id="right-side-body"style="text-align:center">
                     <br>
                     <div id="box_12">
                         #JB1554-1&emsp;&emsp;
-                        <span style="color:#979797;font-size:13px"><?php echo  $start_date ?></span>
+                        <span style="color:#979797;"><?php echo  $start_date ?></span>
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
@@ -295,13 +295,13 @@
                 <?php
                     }
                 ?> <?php echo  $position ?></span>
-                        <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
-                        <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
-                        <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>
+                        <p   style="color:#3598DB;"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
+                        <span style="color:#979797;"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
+                        <span  style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>
                         <hr style="color:#979797;width:100%"></hr>
                     </div>
                     <!-- <div class="displayname">  -->
-                    <div>
+                    <div >
 
                         <img src="img/eye-icon.jpg" width="25" height="20">&emsp;&emsp;
                         <img src="img/task-icon.png" width="23" height="25">&emsp;&emsp;
@@ -313,12 +313,12 @@
                     </div><br><br>
                         <!-- <div class="displayname">  -->
                     <div>
-                        <p style="color:#979797; line-height:10%;font-size:14px">Status &emsp;&emsp;&emsp;Last Contact</p>
+                        <p style="color:#979797; line-height:10%;">Status &emsp;&emsp;&emsp;Last Contact</p>
                         <p><span style="color:#51C46D;">Active&nbsp;&emsp;&emsp;&emsp;</span><span style=""><?php echo  $start_date ?></span></p>
                     </div><br>
                     <!-- <div class="displayname">  -->
-                    <div>
-                        <p style="color:#979797; line-height:10%;font-size:14px">Industry&emsp;&emsp;&emsp; Qualification req</p>
+                    <div >
+                        <p style="color:#979797; line-height:10%;">Industry&emsp;&emsp;&emsp; Qualification req</p>
                         <p style="color:#333333; "><b><?php echo  $industry ?>&emsp;&emsp;&emsp;&emsp;&emsp; <?php echo  $qualification ?>&emsp;&emsp;</b></p>
                     </div><br>
                     <!-- <div class="displayname"> -->
