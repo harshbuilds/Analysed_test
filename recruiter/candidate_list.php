@@ -108,12 +108,12 @@
 
 <div class="cont">
 
-
      <?php
      $flag=0;
      if((isset($_POST['searchCandidatesNames'])) OR (isset($_POST['filter'])))   //condition to find set of variable of search and Filters
      {
        // code block to search according to given clauses
+      $candidate_id = $_POST['candidate_id'];
        $qualification = $_POST['qualification'];
        $ownership = $_POST['country'];
        $State = $_POST['state'];
@@ -127,7 +127,7 @@
      if($flag == 0)
      {
        // code block for all data to be displayed if there are no clauses
-         $sql="select * from candidates";
+         $sql="select * from candidates ";
      }
         // query to establish connection from database and get the output of required query
        $res=mysqli_query($conn,$sql);
@@ -143,6 +143,7 @@
                {
 
             ?>
+ <a style="text-decoration:none" href="Candidates_specific.php?c_id=<?php echo $row['candidate_id']; ?>">           
 <div class="list">
  <input type="checkbox">
   <div class="added"><span style="color:979797"><?php echo $row['last_updated'] ; ?></span> <br><?php echo $row['candidate_id']; ?></div>
@@ -159,7 +160,9 @@ Uploaded by<br>
 </svg></p>
 <p class="less">Show less</p>
 </div>
+ </a>
  <?php }}} ?>
+
 </div>
 
 </div>
