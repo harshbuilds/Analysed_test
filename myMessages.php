@@ -1,3 +1,15 @@
+
+
+<?php
+
+
+    session_start();      //session has been started
+   include 'connection1.php';     //database connection page included
+
+
+?>
+
+
 <?php include ('header1.php')?>
 <link rel="stylesheet" href="./css/myMessages.css">
 <title>Messages</title>
@@ -11,48 +23,71 @@
                 <div class="nameAndInfo-myMessages">
                     <i class="fa fa-chevron-left back-icon-myMessages" aria-hidden="true"></i>
                     <span>
-                        <h1>Erik Hawkins</h1>
+                        <h1>Rick</h1>
+                        <!-- <?php echo $_SESSION['firstname']; ?> -->
                         <p>Task ID: 23128</p>
                     </span>
                     </div>
+
+
+
                     <span class="icon-nameAndInfo"><i class="fa fa-thumb-tack" aria-hidden="true"></i> 2 </span>
                     <span class="icon-nameAndInfo"><i class="fa fa-paperclip" aria-hidden="true"></i> 1</span>
                 <div class="messages-container-myMessages">
                     <span class="date-of-messages-container-myMessages">Today</span>
                     <div class="messagesDiv-left-side-myMessages">
+                      <?php
+                      $sender=$_GET['s_id'];
+                      $sql ="select * from chat where s_id = 1 ";
+                      $res = $conn->query($sql);
+                      if ($res->num_rows>0) {
+                        while ($row=$res->fetch_assoc()) {
+
+                          ?>
                         <div class="sender-messages">
-                            <p class="sender-image-sender-messages">EW</p>
-                            <p class="sender-messages-message-received-myMessages">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                            <span class="messages-seen-time-sender-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>    
+                            <p class="sender-image-sender-messages"><?php echo $row['name']; ?></p>
+                            <p class="sender-messages-message-received-myMessages"><?php echo $row['msg']; ?></p>
+                            <span class="messages-seen-time-sender-messages">Seen <?php echo $row['date']; ?><i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
-                        
+                      <?php }}
+
+                      $conn->close(); ?>
                     </div>
+
                     <div class="messagesDiv-right-side-myMessages">
+                      <?php
+                      $recv =  $_GET['r_id'];
+                      $sql ="select * from chat where r_id = 2";
+                      $res = $conn->query($sql);
+                      if ($res->num_rows>0) {
+                        while ($row=$res->fetch_assoc()) {
+
+                          ?>
                         <div class="receiver-messages">
-                            <p class="receiver-messages-message-received-myMessages">Lorem ipsum dolor sit amet, conset</p>
-                            <span class="receiver-image-receiver-messages">EW</span>
-                            <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
+                            <p class="receiver-messages-message-received-myMessages"><?php echo $row['msg']; ?></p>
+                            <span class="receiver-image-receiver-messages"><?php echo $row['name']; ?></span>
+                            <span class="messages-seen-time-receiver-messages">Seen <?php echo $row['date']; ?><i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
+                      <?php }}
+
+                      $conn->close(); ?>
                     </div>
-                    <div class="messagesDiv-right-side-myMessages">
-                        <div class="receiver-messages">
-                            <p class="receiver-messages-message-received-myMessages">Lorem ipsum dolor sit amet, conset</p>
-                            <span class="receiver-image-receiver-messages">EW</span>
-                            <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                    
+
+
+                  
                 </div>
+                <form action="post" action="send.php">
                 <div class="inputforMessages-send-messages-myMessages">
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
-                        <input type="text" name="" placeholder="Type your message here" id="">
+                        <input type="text" name="msg" placeholder="Type your message here" id="">
                         <div class="paperclip-and-sendButton-inputforMessages">
                         <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                          <input type="submit" value="send"><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                  </form>
             </div>
-            
+
             <div class="right-side-myMessages">
                 <div class="tabsForMyMessages-right-side">
                     <span class="status-tabsFromMyMessages active">Status</span>
@@ -82,34 +117,17 @@
                     <span>EW</span>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <b>Location</b>
+                    <p>Location</p>
                     <p>Tornfast, Sweden</p>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <b>Timezone</b>
+                    <p>Timezone</p>
                     <p>PST UTC-8</p>
                 </section>
                 <section class="location-mymessages-rightSide">
-                    <b>Skills</b>
+                    <p>Skills</p>
                     <p>HTML, CSS, PHP & Javascript</p>
                 </section>
-                <section class="location-mymessages-rightSide">
-                    <b>Education Qualification</b>
-                   </section>
-                <section class="location-mymessages-rightSide">
-                    <p>Post Graduate in Information Technology</p>
-                </section>
-                <section class="location-mymessages-rightSide">
-                    <b>Work Experience</b>
-                </section>
-                <section class="location-mymessages-rightSide">
-                    <p>Lorem Company:</p>
-                    <p>2 year</p>
-                 </section>
-                 <section class="location-mymessages-rightSide">
-                    <p>Ipsum Company:</p>
-                    <p>6 months</p>
-                 </section>
                 </section>
                 </div>
             </div>

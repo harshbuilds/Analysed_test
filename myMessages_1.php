@@ -1,3 +1,13 @@
+
+<?php
+
+
+    session_start();      //session has been started
+   include 'connection1.php';     //database connection page included
+
+
+?>
+
 <?php include ('header1.php')?>
 <link rel="stylesheet" href="./css/myMessages.css">
 <link rel="stylesheet" href="./css/myMessages_1.css">
@@ -21,39 +31,57 @@
                 <div class="messages-container-myMessages">
                     <span class="date-of-messages-container-myMessages">Today</span>
                     <div class="messagesDiv-left-side-myMessages">
+                      <?php
+                      $sender=$_GET['s_id'];
+                      $sql ="select * from chat where s_id = 1 ";
+                      $res = $conn->query($sql);
+                      if ($res->num_rows>0) {
+                        while ($row=$res->fetch_assoc()) {
+
+                          ?>
                         <div class="sender-messages">
-                            <p class="sender-image-sender-messages">EW</p>
-                            <p class="sender-messages-message-received-myMessages">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                            <span class="messages-seen-time-sender-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>    
+                            <p class="sender-image-sender-messages"><?php echo $row['name']; ?></p>
+                            <p class="sender-messages-message-received-myMessages"><?php echo $row['msg']; ?></p>
+                            <span class="messages-seen-time-sender-messages">Seen <?php echo $row['date']; ?><i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
-                        
+                      <?php }}
+
+                      $conn->close(); ?>
                     </div>
                     <div class="messagesDiv-right-side-myMessages">
+                      <?php
+                      $recv =  $_GET['r_id'];
+                      $sql ="select * from chat where r_id = 2";
+                      $res = $conn->query($sql);
+                      if ($res->num_rows>0) {
+                        while ($row=$res->fetch_assoc()) {
+
+                          ?>
                         <div class="receiver-messages">
-                            <p class="receiver-messages-message-received-myMessages">Lorem ipsum dolor sit amet, conset</p>
-                            <span class="receiver-image-receiver-messages">EW</span>
-                            <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
+                            <p class="receiver-messages-message-received-myMessages"><?php echo $row['msg']; ?></p>
+                            <span class="receiver-image-receiver-messages"><?php echo $row['name']; ?></span>
+                            <span class="messages-seen-time-receiver-messages">Seen <?php echo $row['date']; ?><i class="fa fa-check" aria-hidden="true"></i></span>
                         </div>
+                      <?php }}
+
+                      $conn->close(); ?>
                     </div>
-                    <div class="messagesDiv-right-side-myMessages">
-                        <div class="receiver-messages">
-                            <p class="receiver-messages-message-received-myMessages">Lorem ipsum dolor sit amet, conset</p>
-                            <span class="receiver-image-receiver-messages">EW</span>
-                            <span class="messages-seen-time-receiver-messages">Seen 1:00pm<i class="fa fa-check" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                    
+
+
+
                 </div>
+                <form action="post" action="send.php">
                 <div class="inputforMessages-send-messages-myMessages">
                         <i class="fa fa-smile-o" aria-hidden="true"></i>
-                        <input type="text" name="" placeholder="Type your message here" id="">
+                        <input type="text" name="msg" placeholder="Type your message here" id="">
                         <div class="paperclip-and-sendButton-inputforMessages">
                         <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                          <input type="submit" value="send"><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                  </form>
             </div>
-            
+
             <div class="right-side-myMessages">
                 <div class="tabsForMyMessages-right-side">
                     <span class="status-tabsFromMyMessages active">Description</span>
