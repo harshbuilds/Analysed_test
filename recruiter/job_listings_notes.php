@@ -11,7 +11,7 @@
 
 <title>Dashboard</title>
 
-<link rel="stylesheet" href="../css/job_listings_notes.css">
+<link rel="stylesheet" href="css/job_listings_notes.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -104,13 +104,13 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
     <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>
-        <div class="heading_dash1">
+        <div class="heading_dash1" id="heading1">
             <div class="row-flex-jobj">
-                <h1 class="mainHeadingDash" style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
+                <h1 class="mainHeadingDash"  id="position1"style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
             </div>
 
             <div class="row-flex-jobj">
@@ -160,14 +160,17 @@ $j_id=$_GET['j_id'];
                       </div>
                       <div class="row">
                             <div class="filterSmall_myTasks">
-                                <div class="selectAllActions_filterSmall_myTasks" style="margin-left: 500px;"><br>
-                                    <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
-                                    <label for="checkboxSelectAll_myTasks">Select All</label>
-                                    <select name="Select action">
+                                <div class="selectAllActions_filterSmall_myTasks" style="margin-left: 570px;"><br>
+                                <div class="select-dropdown">   
+                                <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
+                                  
+                                          <label for="checkboxSelectAll_myTasks">Select All</label>
+                                        <select name="Select action">
                                         <option value="0">Select action</option>
                                         <option value="1">Copy</option>
                                         <option value="2">Cut</option>
-                                    </select>
+                                         </select>
+                                    </div>
                                 </div>
                             </div>
                       </div>
@@ -205,12 +208,12 @@ $j_id=$_GET['j_id'];
 
 
                  ?>
-                <div class="row">
-                    <div class="col-sm-12 mb-4">
-                        <div class="card" >
-                            <div class="card-body">
+                <div class="row" id="align-col" >
+                    <div class="col-md-12 mb-4"  >
+                        <div class="card " >
+                            <div class="card-body" >
 
-                                <div class="row">
+                                <div class="row "id= "align-of-card">
                                     <div class="col-1">
                                             <input type="checkbox" name="checkBoxItem" >
                                     </div>
@@ -270,8 +273,8 @@ $j_id=$_GET['j_id'];
           
             </div>
             <div class="col-lg-3 mb-4" >
-            <div class="card" style="width:300px;">
-                       <div class="card-body">
+                       <div class="card"  id="right-side-col"style="width:300px;">
+                       <div class="card-body" id="right-side-body">
                 <div class="right-panel" style="text-align:center">
                     <br>
                     <div id="box_12">
