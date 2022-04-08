@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2022 at 06:22 PM
+-- Generation Time: Apr 08, 2022 at 06:55 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -103,6 +103,29 @@ INSERT INTO `candidates` (`candidate_id`, `image`, `firstname`, `lastname`, `can
 (4, '10.jpg', 'jammie', 'oliver', 'jami@gmail.com', '', 6756453423, '2021-10-29', '2', 'Richmond town', 'Australia', 'berlin', '713305', 'Maharastra', 'cyber security', 'Instagram', '2', '1', '1', '1', 12000, 13300, 14000, 'java', 'mbox.txt', 'Artificial Intelligence', 'BSc', 'working ', '2021-11-30', '2', '2', '2', '2022-03-12'),
 (5, '', 'lucy', 'brown', 'lusy@gmail.com', '', 6756453423, '2022-12-31', '1', 'Richmond town', 'India', 'kolkata', '123122', 'karnataka', 'developer', 'Boeing', '3', '1', '1', '2', 12000, 13300, 14000, 'Golang', '', 'ML', 'BSc', 'working ', '2021-10-29', '3', '2', '2', '2022-03-12'),
 (6, '16.jpg', 'Alex', 'wheeler', 'alex@gmai.com', '', 87654323, '2021-11-29', '2', 'baker street', 'Australia', 'berlin', '713305', 'UP', 'developer', 'facebook', '2', '2', '2', '2', 7000, 8000, 9000, 'java', '', 'C', 'MSc', 'working ', '2020-11-29', '3', '2', '2', '2022-03-12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `c_id` int(11) NOT NULL,
+  `msg` varchar(225) NOT NULL,
+  `name` varchar(225) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `s_id` int(11) NOT NULL,
+  `r_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`c_id`, `msg`, `name`, `date`, `s_id`, `r_id`) VALUES
+(1, 'hello', 'Rick', '2022-04-08 16:34:36', 1, 1),
+(2, 'hi how are you', 'mick', '2022-04-08 16:35:13', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -2444,6 +2467,12 @@ ALTER TABLE `candidates`
   ADD PRIMARY KEY (`candidate_id`);
 
 --
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`c_id`);
+
+--
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
@@ -2578,6 +2607,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `candidates`
   MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `client`
