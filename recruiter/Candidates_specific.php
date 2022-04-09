@@ -24,7 +24,7 @@ session_start();
             <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
   <div class="profile-img">
-   <img src="img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
+   <img src="../img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
   <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["candidate_id"]; ?></p1></h1><br>
   <h2><span style="color:#3598DB"><?php echo $row["current_title"]; ?>-</span><?php echo $row["company_name"]; ?></h2><br>
   <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -36,11 +36,11 @@ session_start();
 <button style="margin-top:-40px"><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
   </div>
   <div class="options">
-  <span style="color:#3598DB"><a style="color:#3598DB" href="Candidates_specific.php"><b>| </b> At a glance</a></span>
-  <p><a style="color:#979797" href="candidates_status.php">Status</a></p>
-   <p><a style="color:#979797" href="candidates_activity.php">Activity</a></p>
-    <p><a style="color:#979797" href="candidates_files.php">Files</a></p>
-     <p><a style="color:#979797" href="candidates_notes.php">Notes</a></p>
+  <span style="color:#3598DB"><!-- <a style="color:#3598DB" href="#"> --><b>| </b> At a glance</a></span>
+  <p><a style="text-decoration:none" href="candidates_status.php?c_id=<?php echo $row['candidate_id']; ?>">  Status</a></p>
+   <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $row['candidate_id']; ?>">Activity</a></p>
+    <p><a style="color:#3598DB" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
+     <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
      </div>
      <div class="options-card"></div>
      <div class="summary">
