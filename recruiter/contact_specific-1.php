@@ -9,8 +9,9 @@
 
 <?php include('header.php') ?>
 <?php
-    $c_id=15;
-    $sql="select * from client where client_id='$c_id'";
+
+    // $c_id=15;
+    $sql="select * from client";
     $res=mysqli_query($conn,$sql);
     if($res == TRUE)
     {
@@ -40,6 +41,54 @@
         }
     }
 ?>
+<?php
+    // $c_id=1004;
+// $sql="select * from contacts ";
+    $c_id=$_GET['c_id'];
+    $sql="select * from contacts where contact_id='$c_id'";
+    $res=mysqli_query($conn,$sql);
+    if($res == TRUE)
+    {
+        $count=mysqli_num_rows($res);
+        if($count >0)
+        {
+            while($rows=mysqli_fetch_assoc($res))
+            {
+                $contact_id=$rows['contact_id'];
+                $fname=$rows['fname'];
+                $lname=$rows['lname'];
+                $mname=$rows['mname'];
+                $company=$rows['company'];
+                $picture=$rows['picture'];
+                $status=$rows['status'];
+                $job_title=$rows['job_title'];
+                $cemail=$rows['email'];
+                $phone=$rows['phone'];
+                $city=$rows['city'];
+                $address=$rows['address'];
+                $skills=$rows['skills'];
+                $industry=$rows['industry'];
+                $last_meeting=$rows['last_meeting'];
+                $title=$rows['title'];
+                $city=$rows['city'];
+                $zip_code=$rows['zip_code'];
+                $state=$rows['state'];
+                $country=$rows['country'];
+                $company_name=$rows['company_name'];
+                $contact_type=$rows['contact_type'];
+                $division=$rows['division'];
+                $source=$rows['source'];
+                $reports_to=$rows['reports_to'];
+                $last_contact=$rows['last_contact'];
+                $visibility=$rows['visibility'];
+                $validity=$rows['validity'];
+                $lastvisit=$rows['lastvisit'];
+                $LinkedIn_profile=$rows['LinkedIn_profile'];
+                $added_on=$rows['added_on'];
+            }
+        }
+    }
+?>
 <title>Contact specific</title>
 <link rel="stylesheet" href="./css/contact_specific-1.css">
 
@@ -52,8 +101,8 @@
 
             <br><br>
             <div class="profile-img">
-                <?php echo '<img src="data:image;base64,'.base64_encode($client_img).' " >' ;   ?>
-                <h1><?php echo  $name ?><p1> #<?php echo  $c_id ?></p1></h1><br>
+                <?php echo '<img src="../img/'.$picture.' " >' ;   ?>
+                <h1><?php echo  $fname, $lname ?><p1> #<?php echo  $contact_id ?></p1></h1><br>
                 <h2><?php echo  $company_name ?> - <span><?php echo  $role ?></span></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
@@ -64,21 +113,21 @@
 
             <div class="options">
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>At a glance</p>
-                <p><a href="contact_specific-2.php">Appointments</a></p>
-                <p><a href="contact_specific-3.php">Activity</a></p>
-                <p><a href="contact_specific-5.php">Jobs</a></p>
-                <p><a href="contact_specific-4.php">Files</a></p>
-                <p><a href="contact_specific-6.php">Notes</a></p>
+                <p><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
+                <p><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
+                <p><a href="contact_specific-5.php?c_id=<?php echo $c_id; ?>">Jobs</a></p>
+                <p><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
+                <p><a href="contact_specific-6.php?c_id=<?php echo $c_id; ?>">Notes</a></p>
             </div>
 
             <br><br>
             <div class="status">
                 <div class="status1" >
-                    <p>#<?php echo  $c_id ?></p>
+                    <p>#<?php echo  $contact_id ?></p>
                     <span><?php echo  $added_on ?></span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;"><?php echo  $name ?></span>
+                    <span style="margin-left:50px;"><?php echo  $fname, $lname ?></span>
                     <p style="color:#3598DB;margin-left:70px"><?php echo  $company_name ?> <span style="color:black">| <?php echo  $role ?></span></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
@@ -124,8 +173,9 @@
 
 
             <?php
-            $cs_id=3;
-            $sql1="select * from contacts where contact_id='$cs_id'";
+            // $cs_id=3;
+            $c_id=$_GET['c_id'];
+            $sql1="select * from contacts where contact_id='$c_id'";
             $res1=mysqli_query($conn,$sql1);
             if($res1 == TRUE)
             {
@@ -279,7 +329,7 @@
 
                     <?php
 			 $job_id=8;
-			 $$sql="select * from joblistings where job_id =$job_id";
+			 $sql="select * from joblistings where job_id =$job_id";
                          $res=mysqli_query($conn,$sql);
                          if($res == TRUE)
                          {
@@ -290,29 +340,24 @@
                                 {
                                     $priority=$rows['priority'];
                                     $job_type=$rows['job_type'];
-
                                     $state=$rows['state'];
                                     $position=$rows['position'];
                                     $job_id=$rows['job_id'];
-
                                     $contact_client_company=$rows['contact_client_company'];
                                     $company_website=$rows['company_website'];
-
                                     $job_views=$rows['job_views'];
                                     $openings=$rows['openings'];
-
                                     $recruiters_name=$rows['recruiters_name'];
                                     $company_email=$rows['company_email'];
-
                                     $now = time(); // or your date as well
-                                    $your_date = strtotime($end_date);
-                                    $datediff = $your_date -$now;
-                                    $remain_days=round($datediff / (60 * 60 * 24));
-
-                                    if($remain_days < 0)
-                                    {
-                                      continue;
-                                    }
+                                    // // $your_date= strtotime($rows['end_date'];
+                                    // $end_date = strtotime($end_date);
+                                    // $datediff = $end_date -$now;
+                                    // $remain_days=round($datediff / (60 * 60 * 24));
+                                    // if($remain_days < 0)
+                                    // {
+                                    //   continue;
+                                    // }
 
 
                     ?>
@@ -359,7 +404,7 @@
                         </div>
                         <div class="column">
                             <p class="col-5"><i class="fa fa-eye" aria-hidden="true"></i></p>
-                            <span class="col-span-5"><?php echo $job_views; ?></span>
+                            <span class="col-span-5">10<?php echo $job_views; ?></span>
                         </div>
                         <div class="column">
                             <p class="col-5"><i class="fa fa-clipboard" aria-hidden="true"></i></p>
