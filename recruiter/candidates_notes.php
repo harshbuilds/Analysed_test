@@ -1,5 +1,5 @@
 <?php
-include 'conn.php';
+include 'connection1.php';
 session_start();
 if(isset($_SESSION['firstname']) && isset($_POST['submit']))
 {
@@ -22,12 +22,14 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
  <link rel="stylesheet" href="./css/candidates_notes.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
-  <?php include('candidates_status_header.php') ?>
+  <?php include('candidates_status_header.php') 
+  // $candidate_id = $_GET['c_id'];
+  ?>
 <div class="options">
-  <p><a style="color:#979797" href="Candidates_specific.php">At a glance</a></p>
-   <p><a style="color:#979797" href="candidates_status.php">Status</a></p>
-   <p><a style="color:#979797" href="candidates_activity.php">Activity</a></p>
-    <p><a style="color:#979797" href="candidates_files.php">Files</a></p><br>
+  <p><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
+   <p><a style="color:#979797"  href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
+   <p><a style="color:#979797"  href="candidates_activity.php?c_id=<?php echo $candidate_id; ?>">Activity</a></p>
+    <p><a style="color:#979797"  href="candidates_files.php?c_id=<?php echo $candidate_id; ?>">Files</a></p><br>
    <span style="color:#3598DB"><a style="color:#3598DB" href="candidates_notes.php"> <b>| Notes </b> </a></span>
 
      </div>
@@ -111,7 +113,8 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
   </select></span></div>
   <div class="files-added" id="result">
     <?php
-  $sql=mysqli_query($con,"select * from notes where firstname='$firstname'");
+    $c_id=$_GET['c_id'];
+  $sql=mysqli_query($conn,"select * from notes where firstname='$firstname'");
 
   $check=mysqli_num_rows($sql)>0;
   if($check){
