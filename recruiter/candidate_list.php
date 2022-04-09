@@ -147,7 +147,7 @@
 <div class="list">
  <input type="checkbox">
   <div class="added"><span style="color:979797"><?php echo $row['last_updated'] ; ?></span> <br><?php echo $row['candidate_id']; ?></div>
-  <img src="img/<?php echo $row['image']; ?>" width="70" height="70" alt="">
+  <img src="../img/<?php echo $row['image']; ?>" width="70" height="70" alt="">
 
 <div class="uploaded">
 Uploaded by<br>
@@ -184,3 +184,4 @@ Uploaded by<br>
 });
 </script>
 </body>
+
