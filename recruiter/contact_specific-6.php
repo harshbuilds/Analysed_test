@@ -3,7 +3,7 @@
    define('LOCALHOST','localhost');
    define('DB_USERNAME','root');
    define('DB_PASSWORD','');
-   define('DB_NAME','analyse');
+   define('DB_NAME','analysed');
    $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
 ?>
 <?php
@@ -18,7 +18,7 @@ if(isset($_POST['btnsearch']))
 ?>
 <?php
     $c_id=1004;
-    $sql="select * from client where client_id='$c_id'";
+    $sql="select * from client ";
     $res=mysqli_query($conn,$sql);
     if($res == TRUE)
     {
@@ -27,13 +27,13 @@ if(isset($_POST['btnsearch']))
         {
             while($rows=mysqli_fetch_assoc($res))
             {
-                $name=$rows['name'];
+                // $name=$rows['name'];
                 $company_name=$rows['company_name'];
-                $client_img=$rows['client_img'];
+                // $client_img=$rows['client_img'];
                 $role=$rows['role'];
                 $main_email=$rows['main_email'];
                 $contact_no=$rows['contact_no'];
-                $added_on=$rows['added_on'];
+                // $added_on=$rows['added_on'];
                 $city=$rows['city'];
                 $state=$rows['state'];
                 $country=$rows['country'];
@@ -48,6 +48,54 @@ if(isset($_POST['btnsearch']))
         }
     }
 ?>
+<?php
+    // $c_id=1004;
+    
+    // $sql="select * from contacts ";
+    $c_id=$_GET['c_id'];
+    $sql="select * from contacts where contact_id='$c_id'";
+    $res=mysqli_query($conn,$sql);
+    if($res == TRUE)
+    {
+        $count=mysqli_num_rows($res);
+        if($count >0)
+        {
+            while($rows=mysqli_fetch_assoc($res))
+            {
+                $fname=$rows['fname'];
+                $lname=$rows['lname'];
+                $mname=$rows['mname'];
+                $company=$rows['company'];
+                $picture=$rows['picture'];
+                $status=$rows['status'];
+                $job_title=$rows['job_title'];
+                $cemail=$rows['email'];
+                $phone=$rows['phone'];
+                $city=$rows['city'];
+                $address=$rows['address'];
+                $skills=$rows['skills'];
+                $industry=$rows['industry'];
+                $last_meeting=$rows['last_meeting'];
+                $title=$rows['title'];
+                $city=$rows['city'];
+                $zip_code=$rows['zip_code'];
+                $state=$rows['state'];
+                $country=$rows['country'];
+                $company_name=$rows['company_name'];
+                $contact_type=$rows['contact_type'];
+                $division=$rows['division'];
+                $source=$rows['source'];
+                $reports_to=$rows['reports_to'];
+                $last_contact=$rows['last_contact'];
+                $visibility=$rows['visibility'];
+                $validity=$rows['validity'];
+                $lastvisit=$rows['lastvisit'];
+                $LinkedIn_profile=$rows['LinkedIn_profile'];
+                $added_on=$rows['added_on'];
+            }
+        }
+    }
+?>
 
 <title>Contact specific</title>
 <link rel="stylesheet" href="./css/contact_specific-6.css">
@@ -56,13 +104,13 @@ if(isset($_POST['btnsearch']))
     <div class="container">
         <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $name ?></a>
+                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
             </div>
 
             <div class="profile-img">
-                <?php echo '<img src="data:image;base64,'.base64_encode($client_img).' " >' ;   ?>
-                <h1><?php echo  $name ?><p1> #<?php echo  $c_id ?></p1></h1><br>
-                <h2><?php echo  $company_name ?> - <span><?php echo  $role ?></span></h2><br>
+                <?php echo '<img src="../img/'.$picture.' " >' ;   ?>
+                <h1><?php echo  $fname, $lname ?><p1> #<?php echo  $c_id ?></p1></h1><br>
+                <h2><?php echo  $company_name ?><!--  - <span><?php //echo  $role ?></span -->></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
@@ -71,11 +119,11 @@ if(isset($_POST['btnsearch']))
             </div>
 
             <div class="options">
-                <p><a href="contact_specific-1.php">At a glance</a></p>
-                <p><a href="contact_specific-2.php">Appointments</a></p>
-                <p><a href="contact_specific-3.php">Activity</a></p>
-                <p><a href="contact_specific-5.php">Jobs</a></p>
-                <p><a href="contact_specific-4.php">Files</a></p>
+                <p><a href="contact_specific-1.php?c_id=<?php echo $c_id; ?>">At a glance</a></p>
+                <p><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
+                <p><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
+                <p><a href="contact_specific-5.php?c_id=<?php echo $c_id; ?>">Jobs</a></p>
+                <p><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Notes</p>
 
             </div>
@@ -86,8 +134,8 @@ if(isset($_POST['btnsearch']))
                     <span><?php echo  $added_on ?></span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;"><?php echo  $name ?></span>
-                    <p style="color:#3598DB;margin-left:70px"><?php echo  $company_name ?> <span style="color:black">| <?php echo  $role ?></span></p>
+                    <span style="margin-left:50px;"><?php echo  $fname, $lname ?></span>
+                    <p style="color:#3598DB;margin-left:70px"><?php echo  $company_name ?> <!-- <span style="color:black">| <?php //echo  $role ?></span> --></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
                     <span style="color:#979797; font-size:15px; margin-left:20px;">Status&emsp;&emsp;&emsp;&emsp;Last Contact</span>
@@ -214,14 +262,14 @@ if(isset($_POST['btnsearch']))
                 {
                     while($rows=mysqli_fetch_assoc($res))
                     {
-                        $n_id=$rows['n_id'];
-                        $last_updated=$rows['last_updated'];
+                        $id=$rows['id'];
+                        $last_edited=$rows['last_edited'];
                         $added_on=$rows['added_on'];
-                        $added_by=$rows['added_by'];
-                        $img=$rows['img'];
-                        $type=$rows['type'];
-                        $time=$rows['time'];
-                        $content=$rows['content'];
+                        $note_type=$rows['note_type'];
+                        $firstname=$rows['firstname'];
+                        $time_spent=$rows['time_spent'];
+                        // $time=$rows['time'];
+                        $notes=$rows['notes'];
 
 
                  ?>
@@ -233,28 +281,28 @@ if(isset($_POST['btnsearch']))
                     </div>
                     <div class="column">
                         <p class="col-1">Last Updated</p>
-                        <span class="col-span-1"><?php echo $last_updated; ?></span>
+                        <span class="col-span-1"><?php echo $last_edited; ?></span>
                     </div>
                     <div class="column">
                         <img src="./img/Ellipse -5.png" class="img">
                     </div>
                     <div class="column">
                         <p class="col-2">Uploaded by</p>
-                        <span class="col-span-2"><?php echo $added_by; ?></span>
+                        <span class="col-span-2"><?php echo $firstname; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-3">Type</p>
-                        <span class="col-span-3"><?php echo $type; ?></span>
+                        <span class="col-span-3"><?php echo $note_type; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-4">Time spent</p>
-                        <span class="col-span-4"><?php echo $time; ?></span>
+                        <span class="col-span-4"><?php echo $time_spent; ?></span>
                     </div>
                     <div class="column">
                         <p class="col-5">Edit <i class="fa fa-pencil" aria-hidden="true"></i></p>
                     </div>
                     <div class="column">
-                        <p class="col-6">Delete <i class="fa fa-trash" aria-hidden="true"></i></p>
+                        <p class="col-6"><a href='./includes/delete4.php?id=<?php echo $row["id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none">Delete</a> <i class="fa fa-trash" aria-hidden="true"></i></p>
                     </div>
 
                     <div class="column" style="margin-top:80px;margin-left: -838px;">
@@ -262,7 +310,7 @@ if(isset($_POST['btnsearch']))
                         <span class="col-span-1"><?php echo $added_on; ?></span>
                     </div>
                     <div class="column" style="margin-top:-5px;margin-left: 200px;padding-right: 10px;">
-                        <p style="font-size: 16px;"><?php echo $content; ?></p>
+                        <p style="font-size: 16px;"><?php echo $notes; ?></p>
                     </div>
                 </div>
                 <?php
@@ -290,4 +338,16 @@ items.forEach(item => {
     }
   });
 });
+</script>
+<script>
+    function checkdelete(){
+        return confirm('Are you sure you want to delete this file?');
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        $("#form1 #select-all").click(function(){
+            $("#form1 input[type='checkbox']").prop('checked',this.checked);
+        });
+    });
 </script>
