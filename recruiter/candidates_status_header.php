@@ -1,10 +1,11 @@
 <?php include 'connection1.php'; ?>
 
 <?php
-if(isset($_SESSION['firstname'])) {
+// if(isset($_SESSION['firstname'])) {
 
-    $firstname=$_SESSION['firstname'];
-    $sql=mysqli_query($conn,"select * from candidates where firstname='$firstname'");
+    // $firstname=$_SESSION['firstname'];
+    $c_id=$_GET['c_id'];
+    $sql=mysqli_query($conn,"select * from candidates where candidate_id='$c_id'");
     $check=mysqli_num_rows($sql)>0;
 
     if($check){
@@ -23,7 +24,7 @@ if(isset($_SESSION['firstname'])) {
         </div>
  <div class="profile-img">
    <img src="../img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
-  <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["id"]; ?></p1></h1><br>
+  <h1><?php echo $row["firstname"]; ?><p1 style="font-family:verdana"><?php echo $row["candidate_id"]; ?></p1></h1><br>
   <h2><span style="color:#3598DB"><?php echo $row["current_title"]; ?>-</span><?php echo $row["company_name"]; ?></h2><br>
   <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
@@ -35,7 +36,7 @@ if(isset($_SESSION['firstname'])) {
   </div>
           <div class="status">
      </div>
-     <div class="status1"><b><?php echo $row["id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;</b>
+     <div class="status1"><b><?php echo $row["candidate_id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;</b>
      <span style="color:#979797">05-05-2021</span>
      </div>
      <br>
@@ -85,4 +86,4 @@ if(isset($_SESSION['firstname'])) {
     <span style="color:black">+91 9876543210</span><br>
 </div>
 
-<?php } } } ?>
+<?php } }  ?>
