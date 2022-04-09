@@ -1,6 +1,6 @@
 <?php include 'conn.php';
 session_start();
-if(isset($_SESSION['firstname']) && isset($_POST['submit']))
+if( isset($_POST['submit']))
 {
   $firstname=$_SESSION['firstname'];
   $file_type=$_POST['file_type'];
@@ -34,13 +34,15 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
   }
   </style>
   <body>
-  <?php include('candidates_status_header.php') ?>
+  <?php include('candidates_status_header.php');
+  $candidate_id = $_GET['c_id'];
+   ?>
 <div class="options">
- <p><a style="color:#979797" href="Candidates_specific.php">At a glance</a></p>
-    <p><a style="color:#979797" href="candidates_status.php">Status</a></p>
-   <p><a style="color:#979797" href="candidates_activity.php">Activity</a></p><br>
-   <span style="color:#3598DB"><a style="color:#3598DB" href="candidates_files"> <b>| Files </b> </a></span>
-      <p><a style="color:#979797" href="candidates_notes.php">Notes</a></p>
+ <p><a style="text-decoration:none" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
+    <p><a style="text-decoration:none" href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
+   <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $candidate_id; ?>">Activity</a></p><br>
+   <span style="color:#3598DB"><!-- <a style="color:#3598DB" href="candidates_files.php"> --> <b>| Files </b> </a></span>
+      <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $candidate_id; ?>">Notes</a></p>
      </div>
 	 
      <div class="search">
@@ -132,7 +134,8 @@ Drag and Drop a File<br>
   <div class="files-added" id="result1">
 
   <?php
-  $sql=mysqli_query($con,"select * from files where firstname='$firstname'");
+  $c_id=$_GET['c_id'];
+  $sql=mysqli_query($con,"select * from files ");
 
   $check=mysqli_num_rows($sql)>0;
   if($check){
