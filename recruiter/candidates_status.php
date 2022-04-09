@@ -1,35 +1,38 @@
 <?php include('connection1.php'); ?>
 
-<?php
-session_start();
-if(isset($_SESSION['firstname']) && isset($_POST['select-box']))
-{
-  $firstname=$_SESSION['firstname'];
-  $status=$_POST['select-box'];
-  $date=date("Y-m-d");
-  $sql=mysqli_query($conn,"update candidates set status='$status',last_updated='$date' where firstname='$firstname'");
-}
+<?php 
+//session_start();
+// if(isset($_SESSION['firstname']) && isset($_POST['select-box']))
+// {
+  // $firstname=$_SESSION['firstname'];
+  // $status=$_POST['select-box'];
+  // $date=date("Y-m-d");
+  // $sql=mysqli_query($conn,"update candidates set status='$status',last_updated='$date' where firstname='$firstname'");
+// }
 ?>
 
   <link rel="stylesheet" href="./css/candidates_status.css">
   <body>
   <?php include('candidates_status_header.php') ?>
-<div class="options">
-  <p><a style="color:#979797" href="Candidates_specific.php">At a glance</a></p><br>
-  <span style="color:#3598DB"><a style="color:#3598DB" href="candidates_status"> <b>| Status </b> </a></span>
-   <p><a style="color:#979797" href="candidates_activity.php">Activity</a></p>
-    <p><a style="color:#979797" href="candidates_files.php">Files</a></p>
-     <p><a style="color:#979797" href="candidates_notes.php">Notes</a></p>
-     </div>
+
   <div class="box"></div>
   <form method="post" id="form">
 
     <?php
-    $sql=mysqli_query($conn,"select * from candidates where firstname='$firstname' ");
+    $c_id=$_GET['c_id'];
+    $sql=mysqli_query($conn,"select * from candidates where candidate_id='$c_id'");
     $check=mysqli_num_rows($sql)>0;
     if($check){
       while($row=mysqli_fetch_assoc($sql)){
         ?>
+        
+ <div class="options">
+  <p><a style="text-decoration:none" href="Candidates_specific.php?c_id=<?php echo $row['candidate_id']; ?>"> At a glance</a></p><br>
+  <span style="color:#3598DB"><!-- <a style="text-decoration:none" href="candidates_status.php?c_id=<?php //echo $row['candidate_id']; ?>"> --> <b>| Status </b> </a></span>
+   <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $row['candidate_id']; ?>">Activity</a></p>
+    <p><a style="color:#3598DB" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
+     <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
+     </div>
 
   <div class="box-1">
   Status&emsp;&emsp;
