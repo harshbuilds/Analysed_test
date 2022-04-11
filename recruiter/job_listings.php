@@ -25,7 +25,7 @@
 <body>
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-    <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> > <a href="Job_listings.php" class="active-breadcrumb-link">Job Listing</a>
+    <a href="js_dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard</a> > <a href="candidate_list.php" class="active-breadcrumb-link">My Dashboard</a> > <a href="Job_listings.php" class="active-breadcrumb-link">Job Listing</a>
 </div>
 
 <?php
@@ -121,11 +121,11 @@ if(isset($_POST['btnall']))
             <div>
         </div>
 
-        <div class="row"  style="display: flex">
+        <div class="row" style="display: flex">
             <div class="col-8">
-                <div class="input-field " id="js" >
-                <img src="img/location_icon.png" alt="" width="20px" height="20px" >
-                <a href="/" class="active-breadcrumb-link "id="alljob">All Jobs&emsp;<span style="color:#979797">|&emsp; &emsp;</span></a>
+                <div class="input-field" style="width:571px">
+                <img src="img/location_icon.png" alt="" width="15" height="15" >
+                <a href="/" class="active-breadcrumb-link">All Jobs   &emsp;   <span style="color:#979797">|&emsp; &emsp;</span></a>
 
               <form method="post">
                 <input
@@ -133,9 +133,9 @@ if(isset($_POST['btnall']))
                     name="searchForJobs"
                     id="inputSearch"
                     class="searchForJobs"
-                    placeholder="Search for Jobs by ID"
+                    placeholder="Search for Jobs by ID   "
                 />&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;
-                <button class="searchButton" type="submit" name="btnsearch" id="btnsearch">
+                <button class="searchButton" type="submit" name="btnsearch">
                     <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
                 </button>
               </form>
@@ -150,7 +150,7 @@ if(isset($_POST['btnall']))
         </div><br>
 
         <div class="row">
-            <div class="col-4 flex-container" id="btn-color">
+            <div class="col-4" style="margin-left:800px">
              <form method="post">
                <button type="submit" style="background: none;border: none;" name="btnhigh"><img src="img/red-icon.png" width="30" height="20"> High&emsp;</button>
                <button type="submit" style="background: none;border: none;" name="btnmedium"><img src="img/orange-icon.png" width="17" height="18">&nbsp;&nbsp;Medium&emsp;</button>
@@ -163,8 +163,8 @@ if(isset($_POST['btnall']))
 
                   <form method="post">
                     <button type="submit" style="background: none;border: none;" name="btnall"><p class="category-mytasks1 active" id="b1" >All</p></button>
-                    <button type="submit" style="background: none;border: none;" name="btnactive"><p class="category-mytasks1" id="b2" >Active </p></button>
-                    <button type="submit" style="background: none;border: none;" name="btncompleted"><p class="category-mytasks1 " id="b3" >Completed </p></button>
+                    <button type="submit" style="background: none;border: none;" name="btnactive"><p class="category-mytasks1" id="b2" >Active</p></button>
+                    <button type="submit" style="background: none;border: none;" name="btncompleted"><p class="category-mytasks1 " id="b3" >Completed</p></button>
                  </form>
 
 
@@ -175,8 +175,8 @@ if(isset($_POST['btnall']))
         </div>
 
 
-
-        <div class="singleTasks_containerDiv">
+        
+        
             <?php
           //  $sql="SELECT * FROM `joblistings`";
           if($flag == 0)
@@ -232,11 +232,11 @@ if(isset($_POST['btnall']))
                            }
                          }
 
-
-                 ?>
-               <a style="text-decoration:none" href="job_listings_individual.php?j_id=<?php echo $job_id ?>">
+                      
+                         ?>     
+        <a style="text-decoration:none" href="job_listings_individual.php?j_id=<?php echo $job_id ?>">
         
-            <!-- <div class="singleTasks_containerDiv"> -->
+            <div class="singleTasks_containerDiv">
             <div class="singletask_myTasks">
                 <input type="checkbox" name="checkBoxItem" style="border: 1px solid #3598db;" >
                 <?php
@@ -308,8 +308,8 @@ if(isset($_POST['btnall']))
             ?>
 
 
-        </div>
-         </a>
-        <div class="addnew"><img src="img/plus.png" width="50" height="50"  /></div>
+            </div>
+        </a>
+        <div class="addnew"><img src="img/plus.png" width="50" height="50" style="margin-left:1000px" /></div>
         <br><br><br>
     </div>

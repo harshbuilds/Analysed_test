@@ -11,7 +11,7 @@
 
 <title>Dashboard</title>
 
-<link rel="stylesheet" href="css/job_listings_files.css">
+<link rel="stylesheet" href="../css/job_listings_files.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -114,39 +114,8 @@ opacity: 1;
   height: 47px;
   margin-left: 210px;
 }
-@media screen and (max-width:650px){
-    #upload-container{
-    /* position: relative;
-    width: 369px;
-    height: 820px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 21px;
-    justify-content: center; */
-
-    background-color: #fefefe;
-    margin: 13% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 56%;
-    height: 943px;
-    border-radius: 11px;
-    }
-    .ro {
-    position: relative;
-    width: 339px;
-    height: 328px;
-    left: -51px;
-    top: 28px;
-}
-.filetype{
-    font-size: 21px;
-  }
-
-}
 
   </style>
-  
   <?php
    $flag=0;
    if(isset($_POST['btnsearch']))
@@ -208,7 +177,7 @@ $j_id=$_GET['j_id'];
 		<div id="upload-container">
             <br><br>
 			<p class="upload"> Upload Files
-            <span id="closeit" class="content_2" >Close</span></p><br>
+            <span id="closeit" class="content_2" style="margin-left:700px;color:grey;font-size:14px">Close</span></p><br>
 
 
           <?php
@@ -275,13 +244,13 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>
-        <div class="heading_dash1" id="heading1">
+        <div class="heading_dash1">
             <div class="row-flex-jobj">
-                <h1 class="mainHeadingDash"  id="position1"style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
+                <h1 class="mainHeadingDash" style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
             </div>
 
             <div class="row-flex-jobj">
@@ -337,16 +306,13 @@ $j_id=$_GET['j_id'];
                       <div class="row">
                             <div class="filterSmall_myTasks">
                                 <div class="selectAllActions_filterSmall_myTasks" style="margin-left: 570px;"><br>
-                                <div class="select-dropdown">   
-                                <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
-                                  
-                                          <label for="checkboxSelectAll_myTasks">Select All</label>
-                                        <select name="Select action">
+                                    <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
+                                    <label for="checkboxSelectAll_myTasks">Select All</label>
+                                    <select name="Select action">
                                         <option value="0">Select action</option>
                                         <option value="1">Copy</option>
                                         <option value="2">Cut</option>
-                                         </select>
-                                    </div>
+                                    </select>
                                 </div>
                             </div>
                       </div>
@@ -382,7 +348,7 @@ $j_id=$_GET['j_id'];
                          $added_on=$rows['added_on'];
 
                   ?>
-                  <div class="row" id="list-files">
+                  <div class="row">
                         <div class="singletask_myTasks">
                             <input type="checkbox" name="checkBoxItem" class="largerCheckbox">
                             <span>
@@ -424,8 +390,8 @@ $j_id=$_GET['j_id'];
 
             </div>
             <div class="col-lg-3 mb-4" >
-                       <div class="card"  id="right-side-col"style="width:300px;">
-                       <div class="card-body" id="right-side-body">
+                       <div class="card" style="width:300px;">
+                       <div class="card-body">
                 <div class="right-panel" style="text-align:center">
                     <br>
                     <div id="box_12">
