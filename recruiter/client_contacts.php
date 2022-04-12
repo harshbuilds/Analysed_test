@@ -2,12 +2,15 @@
 
 <?php
 session_start();
-if(isset($_SESSION['company_name'])) {
-    $company_name=$_SESSION['company_name'];
-    $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+// if(isset($_SESSION['company_name'])) {
+//     $company_name=$_SESSION['company_name'];
+//     $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+    $c_id=$_GET['c_id'];
+    $sql=mysqli_query($conn,"select * from client where client_id='$c_id'");
     $check=mysqli_num_rows($sql)>0;
     if($check){
         while($row=mysqli_fetch_assoc($sql)){
+            $company_name=$row['company_name'];
 ?>
 
 <?php include('header.php') ?>
@@ -35,13 +38,13 @@ if(isset($_SESSION['company_name'])) {
             </div>
 
             <div class="options">
-                <p><a href="client_individual.php">At a glance</a></p>
-                <p><a href="client_jobs.php">Hires</a></p>
+                <p><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
+                <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Contacts</p>
-                <p><a href="client_appointments.php">Appointments</a></p>
-                <p><a href="client_activity.php">Activity</a></p>
-                <p><a href="client_files.php">Files</a></p>
-                <p><a href="client_notes.php">Notes</a></p>
+                <p><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
+                <p><a href="client_activity.php?c_id=<?php echo $row['client_id']; ?>">Activity</a></p>
+                <p><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
+                <p><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
             </div>
 
             <div class="status">
@@ -89,7 +92,7 @@ if(isset($_SESSION['company_name'])) {
 
                      <?php
                      $name=$row["active_contact"];
-                     $sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+                     $sql=mysqli_query($conn,"select * from contacts where company_name like '$company_name'");
                      $check1=mysqli_num_rows($sql)>0;
                      if($check1){
                         while($row1=mysqli_fetch_assoc($sql)){
@@ -165,7 +168,7 @@ if(isset($_SESSION['company_name'])) {
 
                 <div class="cards-section-container row-flex-jobs-j" id="result1">
 				<?php
-				$sql=mysqli_query($conn,"select * from contacts where company='$company_name'");
+				$sql=mysqli_query($conn,"select * from contacts where company_name ='$company_name'");
 				$check=mysqli_num_rows($sql)>0;
 				if($check){
 					while($row=mysqli_fetch_assoc($sql)){
@@ -197,7 +200,7 @@ if(isset($_SESSION['company_name'])) {
     </div>
 </div>
 </body>
-<?php } ?>
+<?php  ?>
 <script>
     function checkdelete(){
         return confirm('Are you sure you want to delete this file?');
