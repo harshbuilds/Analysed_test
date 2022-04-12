@@ -2,16 +2,19 @@
 
 <?php
 session_start();
-if(isset($_SESSION['company_name'])) {
-    $company_name=$_SESSION['company_name'];
-    $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+// if(isset($_SESSION['company_name'])) {
+//     $company_name=$_SESSION['company_name'];
+//     $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+     $c_id=$_GET['c_id'];
+    $sql=mysqli_query($conn,"select * from client where client_id='$c_id'");
     $check=mysqli_num_rows($sql)>0;
     if($check){
         while($row=mysqli_fetch_assoc($sql)){
+            $company_name=$row['company_name'];
 ?>
 <?php include('header.php') ?>
 <title>Dashboard</title>
-<link rel="stylesheet" href="./css/client_activity.css">
+<link rel="stylesheet" href="css/client_activity.css">
 
 <body>
     <div class="container">
@@ -32,13 +35,13 @@ if(isset($_SESSION['company_name'])) {
             </div>
 
             <div class="options">
-                <p><a href="client_individual.php">At a glance</a></p>
-                <p><a href="client_jobs.php">Hires</a></p>
-                <p><a href="client_contacts.php">Contacts</a></p>
-                <p><a href="client_appointments.php">Appointments</a></p>
+                <p><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
+                <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
+                <p><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
+                <p><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Activity</p>
-                <p><a href="client_files.php">Files</a></p>
-                <p><a href="client_notes.php">Notes</a></p>
+                <p><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
+                <p><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
             </div>
 
             <div class="status">
@@ -265,7 +268,7 @@ if(isset($_SESSION['company_name'])) {
         </div>
     </div>
 </body>
-<?php } ?>
+<?php  ?>
 
 <script>
 var btnContainer=document.getElementById("list");
