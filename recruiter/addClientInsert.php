@@ -42,7 +42,7 @@ if (isset($_POST['submit']))
             if ($res) {
 
                 // if query has worked properly it will redirect to following page
-                echo " <script>window.open('client_individual.php','_self')</script>";
+                echo " <script>window.open('client_list.php','_self')</script>";
             }
 }
 ?>
