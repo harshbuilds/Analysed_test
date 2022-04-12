@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="sidebar_main-listItems">
-          <a href="#" class="sidebar_main-listlinks">
+          <a href="js_schedule.php" class="sidebar_main-listlinks">
             <img src="./img/nav-ele-5.png" />
           </a>
         </li>
