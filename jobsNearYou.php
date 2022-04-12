@@ -14,7 +14,7 @@
 
 
 <link rel="stylesheet" href="./css/jobsNearYou.css">
-<?php include ('header.php') ?>
+<?php include ('include/header.php') ?>
 <title>Jobs near you</title>
     <div class="bgcolor-modal-JobsNearYou">
 
