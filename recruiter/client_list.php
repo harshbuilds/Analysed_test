@@ -101,6 +101,7 @@
                       $added_on=$rows['last_updated'];
 
                ?>
+               <a style="text-decoration:none" href="client_individual.php?c_id=<?php echo $client_id; ?>">    
                 <div class="row" >
                     <div class="column">
                         <input type="checkbox" class="checkbox" id="c1">
@@ -108,7 +109,7 @@
                     </div>
                     <div class="column">
 
-                         <img src="img/<?php echo $rows['company_img']; ?>" width="65" height="65">
+                         <img src="../img/<?php echo $rows['company_img']; ?>" width="65" height="65">
                     </div>
                     <div class="column">
                         <p class="col-1"><?php echo $name; ?></p>
@@ -128,10 +129,11 @@
                     </div>
                     <div class="column">
                         <p class="col-5">Added on <span><?php echo $added_on; ?></span></p>
-                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit<span>
+                        <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
                           <a href="delete_client_list.php?Id=<?php echo $client_id; ?>"><button ><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></a>
                     </div>
                 </div>
+                </a>
 
 
                   <?php
