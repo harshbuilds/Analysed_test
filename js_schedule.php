@@ -1,4 +1,4 @@
-<?php include ('header.php')?>
+<?php include ('include/header.php')?>
 <link rel="stylesheet" href="./css/schedule.css">
 <div class="container">
         <div class="small_container" >
