@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include('include/header.php') ?>
 
 <?php
    define('LOCALHOST','localhost');
@@ -39,8 +39,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <?php
-            $j_id=$_GET['j_id'];
-
+$j_id=$_GET['j_id'];
             $sql="select * from joblistings where job_id='$j_id'";
             $res=mysqli_query($conn,$sql);
             if($res == TRUE)
@@ -77,16 +76,13 @@
                         $country=$rows['country'];
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
-                        $priority=$rows['priority'];
 
                         $job_id=$rows['job_id'];
+                        $Files=$rows['Files'];
+                        $Applicants=$rows['Applicants'];
+                        $Notes=$rows['Notes'];
 
-                        
-                        //$Files=$rows['Files'];
-                        //$Applicants=$rows['Applicants'];
-                        //$Notes=$rows['Notes'];
-
-                        $j_id=$_GET['j_id'];
+                        // $j_id=$_GET['j_id'];
                     }
                 }
               }
@@ -95,7 +91,7 @@
 
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-     <a href="recruiter/dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard </a> >  <a href="" class="active-breadcrumb-link"> My Database </a> >  <a href="recruiter/job_listings.php" class="active-breadcrumb-link"><u> Job Listings  </u></a>
+     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard </a> >  <a href="" class="active-breadcrumb-link"> My Database </a> >  <a href="" class="active-breadcrumb-link"><u> Job Listings  </u></a>
      >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
  </div>
 
@@ -140,9 +136,9 @@
                         <span style="color:#333333;font-size:14px"><b><?php echo  $start_date ?></b></span></p><br>
                         <div class="row">
                             <div class="col-5">
-                                <p id="box_12"><img src="img/page.png" width="20" height="20">&nbsp;Files&nbsp;<?php //echo $Files; ?></p>
-                                <p id="box_12"><img src="img/notes.png" width="20" height="20">&nbsp;Notes&nbsp;<?php //echo $Notes; ?></p>
-                                <p id="box_12"><img src="img/briefcase.png" width="20" height="20">&nbsp;Applicants&nbsp;<?php //echo $Applicants; ?></p>
+                                <p id="box_12"><img src="img/page.png" width="20" height="20">&nbsp;Files&nbsp;<?php echo $Files; ?></p>
+                                <p id="box_12"><img src="img/notes.png" width="20" height="20">&nbsp;Notes&nbsp;<?php echo $Notes; ?></p>
+                                <p id="box_12"><img src="img/briefcase.png" width="20" height="20">&nbsp;Applicants&nbsp;<?php echo $Applicants; ?></p>
                             </div>
                             <div class="col-7">
                                 <p style="color:#979797;font-size:14px;line-height:1.6">Industry&emsp;&emsp;&emsp;&emsp;&nbsp;Source<br>
@@ -275,26 +271,7 @@
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"> <?php
-                   if($priority == '3')
-                   {
-                ?>
-                   <img src="img/red-icon.png" width="30" height="20">
-                <?php
-                   }
-                   elseif($priority == '2')
-                   {
-                ?>
-                    <img src="img/orange-icon.png" width="20" height="20">
-                <?php
-                    }
-                    elseif($priority == '1')
-                    {
-                ?>
-                    <img src="img/Yellow-icon.png" width="20" height="20">
-                <?php
-                    }
-                ?> <?php echo  $position ?></span>
+                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

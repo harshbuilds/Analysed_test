@@ -1,9 +1,9 @@
-<?php include('header.php') ?>
+<?php include('include/header.php') ?>
 
 
 <?php
 
-   include 'connection1.php';
+   include 'conn.php';
    // session_start();
 ?>
 
@@ -11,7 +11,7 @@
 <head>
 <title>Dashboard</title>
         <!-- <link rel="stylesheet" href="job_listings_files2.css"> -->
-       <link rel="stylesheet" href="../css/job_listings_activity_res.css">
+       <link rel="stylesheet" href="css/job_listings_activity_res.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -47,29 +47,29 @@
         if(isset($_POST['btnsearch1']))
         {
             $text1=$_POST['text1'];
-            $sql1="select * from joblistings where contact_client_company='$text1'";
+            $sql1="select * from job_list where contact_client_company='$text1'";
             $flag1=1;
         }
 
         if(isset($_POST['btnsearch2']))
         {
             $text2=$_POST['text2'];
-            $sql2="select * from joblistings where contact_client_company='$text2'";
+            $sql2="select * from job_list where contact_client_company='$text2'";
             $flag2=1;
         }
 
         if(isset($_POST['btnsearch3']))
         {
             $text3=$_POST['text3'];
-            $sql3="select * from joblistings where contact_client_company='$text3'";
+            $sql3="select * from job_list where contact_client_company='$text3'";
             $flag3=1;
         }
 
     ?>
     <?php
-           $j_id=$_GET['j_id'];
+           $j_id=1;
             $sql="select * from joblistings where job_id='$j_id'";
-            $res=mysqli_query($conn,$sql);
+            $res=mysqli_query($con,$sql);
             if($res == TRUE)
             {
                 $count=mysqli_num_rows($res);
@@ -105,10 +105,10 @@
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
                         $status=$rows['status'];
-                        $priority=$rows['priority'];
+
                         $job_id=$rows['job_id'];
 
-                        $j_id=$_GET['j_id'];
+                        // $j_id=$_GET['j_id'];
 
                     }
                 }
@@ -154,7 +154,7 @@
       <div class="row">
                <div class="col-lg-1 mb-4">
                <div class="options">
-                <p ><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p ><a href="jobs_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
                 <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>Activity</p>
                 <p><a href="Job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Files</a></p>
@@ -222,7 +222,7 @@
                         <?php
                            if($flag1 == 0)
                            {
-                               $sql1="select * from joblistings";
+                               $sql1="select * from job_list";
                            }
 
                             $res=mysqli_query($conn,$sql1);
@@ -325,7 +325,7 @@
                           <?php
                           if($flag2 ==0)
                           {
-                            $sql2="select * from joblistings";
+                            $sql2="select * from job_list";
                           }
 
                 $res=mysqli_query($conn,$sql2);
@@ -447,7 +447,7 @@
 
                           if($flag3 ==0)
                           {
-                              $sql3="select * from joblistings";
+                              $sql3="select * from job_list";
                           }
 
                 $res=mysqli_query($conn,$sql3);
@@ -584,26 +584,7 @@
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"> <?php
-                   if($priority == '3')
-                   {
-                ?>
-                   <img src="img/red-icon.png" width="30" height="20">
-                <?php
-                   }
-                   elseif($priority == '2')
-                   {
-                ?>
-                    <img src="img/orange-icon.png" width="20" height="20">
-                <?php
-                    }
-                    elseif($priority == '1')
-                    {
-                ?>
-                    <img src="img/Yellow-icon.png" width="20" height="20">
-                <?php
-                    }
-                ?> <?php echo  $position ?></span>
+                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

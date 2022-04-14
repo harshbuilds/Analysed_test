@@ -8,7 +8,7 @@
 
 
 
-<?php include('header.php') ?>
+<?php include('include/header.php') ?>
 
 
 
@@ -16,7 +16,7 @@
 
 
 <title>Job Listing Activity Eval-1</title>
-<link rel="stylesheet" href="../css/job_listing_activity_eval-1.css">
+<link rel="stylesheet" href="css/job_listing_activity_eval-1.css">
 <link rel="stylesheet" href="job_listings_files2.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
@@ -114,7 +114,7 @@ if(isset($_POST['btnsearch']))
                         $job_type=$rows['job_type'];
                         // $job_views=$rows['job_views'];
                         $status=$rows['status'];
-                        $priority=$rows['priority'];
+
                         $job_id=$rows['job_id'];
 
                         // $j_id=$_GET['j_id'];
@@ -464,26 +464,7 @@ if(isset($_POST['btnsearch']))
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"> <?php
-                   if($priority == '3')
-                   {
-                ?>
-                   <img src="img/red-icon.png" width="30" height="20">
-                <?php
-                   }
-                   elseif($priority == '2')
-                   {
-                ?>
-                    <img src="img/orange-icon.png" width="20" height="20">
-                <?php
-                    }
-                    elseif($priority == '1')
-                    {
-                ?>
-                    <img src="img/Yellow-icon.png" width="20" height="20">
-                <?php
-                    }
-                ?> <?php echo  $position ?></span>
+                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

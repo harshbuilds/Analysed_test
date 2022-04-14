@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include('include/header.php') ?>
 
 
 <?php
@@ -11,7 +11,7 @@
 
 <title>Dashboard</title>
 
-<link rel="stylesheet" href="../css/job_listings_files.css">
+<link rel="stylesheet" href="css/job_listings_files.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -163,10 +163,10 @@ $j_id=$_GET['j_id'];
                         $country=$rows['country'];
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
-                        $priority=$rows['priority'];
+
                         $job_id=$rows['job_id'];
 
-                        $j_id=$_GET['j_id'];
+                        // $j_id=$_GET['j_id'];
                     }
                 }
               }
@@ -193,7 +193,7 @@ $j_id=$_GET['j_id'];
 
                 //echo $fileSize;
 
-                  $sql4="INSERT INTO `js_files`(`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`)
+                  $sql4="INSERT INTO `job_files`(`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`)
                  VALUES ('JS111','$fileName','$ext','$documenttype',$fileSize,'$created')";
                  $res4=mysqli_query($conn,$sql4);
                  if($res4)
@@ -264,14 +264,17 @@ $j_id=$_GET['j_id'];
         <div class="row">
             <div class="col-lg-1 mb-4">
 
-            <div class="options">
-                <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
-                <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
-                <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Activity</a></p>
-                <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>  Files</a></p>
-                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
-                <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
-            </div>
+                <div class="options">
+                    <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">At a glance </a></p>
+                    <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Applicants </a></p>
+
+                    <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Activity</a></p>
+                    <!-- <div class="option1"> -->
+                        <span style="color:#3598DB;"id="te1" > <b>|  Files</b></span>
+                    <!-- </div>  -->
+                    <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1"> Notes </a></p>
+                    <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Publish </a></p>
+                </div>
 
             </div>
             <div class="col-lg-8 mb-4">
@@ -328,7 +331,7 @@ $j_id=$_GET['j_id'];
               <?php
                  if($flag == 0)
                  {
-                   $sql5="SELECT * FROM `js_files`";
+                   $sql5="SELECT * FROM `job_files` WHERE JS_id='JS111'";
                  }
                   //$sql5="SELECT * FROM `job_files` WHERE JS_id='JS111'";
                   $res5=mysqli_query($conn,$sql5);
@@ -339,7 +342,7 @@ $j_id=$_GET['j_id'];
                     {
                       while($rows=mysqli_fetch_assoc($res5))
                       {
-                         $Id=$rows['JS_id'];
+                         $Id=$rows['Id'];
                          $file_name=$rows['file_name'];
                          $file_type=$rows['file_type'];
                          $doc_type=$rows['doc_type'];
@@ -400,26 +403,7 @@ $j_id=$_GET['j_id'];
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"> <?php
-                   if($priority == '3')
-                   {
-                ?>
-                   <img src="img/red-icon.png" width="30" height="20">
-                <?php
-                   }
-                   elseif($priority == '2')
-                   {
-                ?>
-                    <img src="img/orange-icon.png" width="20" height="20">
-                <?php
-                    }
-                    elseif($priority == '1')
-                    {
-                ?>
-                    <img src="img/Yellow-icon.png" width="20" height="20">
-                <?php
-                    }
-                ?> <?php echo  $position ?></span>
+                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

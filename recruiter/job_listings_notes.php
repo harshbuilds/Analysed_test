@@ -1,17 +1,17 @@
-<?php include('header.php') ?>
+<?php include('include/header.php') ?>
 
 
 <?php
    define('LOCALHOST','localhost');
    define('DB_USERNAME','root');
    define('DB_PASSWORD','');
-   define('DB_NAME','analysed');
+   define('DB_NAME','analyse');
    $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
 ?>
 
 <title>Dashboard</title>
 
-<link rel="stylesheet" href="../css/job_listings_notes.css">
+<link rel="stylesheet" href="css/job_listings_notes.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -91,7 +91,7 @@ $j_id=$_GET['j_id'];
                         $country=$rows['country'];
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
-                        $priority=$rows['priority'];
+
                         $job_id=$rows['job_id'];
 
                     }
@@ -125,9 +125,11 @@ $j_id=$_GET['j_id'];
             <div class="col-lg-1 mb-4">
 
                 <div class="options">
-                    <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Glance </a></p>
+                    <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">At a glance </a></p>
                     <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Applicants </a></p>
+
                     <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Activity</a></p>
+
                     <p><a href="job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color:#979797;" id="te1"> Files </a></p>
                     <span style="color:#3598DB;"id="te1" > <b>|  Notes</b></span>
                     <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color:#979797;" id="te1">Publish </a></p>
@@ -180,28 +182,28 @@ $j_id=$_GET['j_id'];
 
                   <!-- start cards -->
                   <?php
-            //       if($flag == 0)
-            //       {
-            //           $sql2="select * from notes";
-            //       }
-            // //$sql="select * from notes";
-            // $res=mysqli_query($conn,$sql2);
-            // if($res == TRUE)
-            // {
-            //     $count=mysqli_num_rows($res);
-            //     if($count >0)
-            //     {
-            //         while($rows=mysqli_fetch_assoc($res))
-            //         {
-            //             $Id=$rows['Id'];
-            //             $n_id=$rows['n_id'];
-            //             $last_updated=$rows['last_updated'];
-            //             $added_on=$rows['added_on'];
-            //             $added_by=$rows['added_by'];
-            //             $img=$rows['img'];
-            //             $type=$rows['type'];
-            //             $time=$rows['time'];
-            //             $content=$rows['content'];
+                  if($flag == 0)
+                  {
+                      $sql2="select * from notes";
+                  }
+            //$sql="select * from notes";
+            $res=mysqli_query($conn,$sql2);
+            if($res == TRUE)
+            {
+                $count=mysqli_num_rows($res);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                        $Id=$rows['Id'];
+                        $n_id=$rows['n_id'];
+                        $last_updated=$rows['last_updated'];
+                        $added_on=$rows['added_on'];
+                        $added_by=$rows['added_by'];
+                        $img=$rows['img'];
+                        $type=$rows['type'];
+                        $time=$rows['time'];
+                        $content=$rows['content'];
 
 
                  ?>
@@ -216,7 +218,7 @@ $j_id=$_GET['j_id'];
                                     </div>
                                     <div class="col-2">
                                         <p class="light_spanItem_singleTask_myTasks">Last updated</p>
-                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php// echo $last_updated; ?></p>
+                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php echo $last_updated; ?></p>
 
                                     </div>
                                     <div class="col-1">
@@ -224,20 +226,20 @@ $j_id=$_GET['j_id'];
                                     </div>
                                     <div class="col-2">
                                             <p class="light_spanItem_singleTask_myTasks">Added by</p>
-                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php //echo $added_by; ?></p>
+                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php echo $added_by; ?></p>
                                     </div>
                                     <div class="col-2">
                                             <p class="light_spanItem_singleTask_myTasks">Type</p>
-                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php //echo $type; ?></p>
+                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php echo $type; ?></p>
                                     </div>
                                     <div class="col-2">
                                             <p class="light_spanItem_singleTask_myTasks">Time Spent</p>
-                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php //echo $time; ?></p>
+                                            <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php echo $time; ?></p>
                                     </div>
                                     <div class="col-2">
                                         <div class="button-div_myTasks">
                                             <button style="color:#3598DB">Edit <i class="fa fa-edit" aria-hidden="true"></i></button>
-                                             <a href="delete_notes.php?Id=<?php //echo $Id; ?>"><button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button></a>
+                                             <a href="delete_notes.php?Id=<?php echo $Id; ?>"><button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button></a>
 
                                         </div>
                                     </div>
@@ -250,11 +252,11 @@ $j_id=$_GET['j_id'];
                                     </div>
                                     <div class="col-2">
                                                 <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                                                <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php //echo $added_on; ?></p>
+                                                <p style="font-family: 'metropolis-regular', sans-serif;font-size:14px;"><?php echo $added_on; ?></p>
                                     </div>
                                     <div class="col-9" id="texts">
                                         <p style="font-family: 'metropolis-light-4', sans-serif;color:#333333;font-size:14px;">
-                                        <?php //echo $content; ?>
+                                        <?php echo $content; ?>
                                         </p>
                                     </div>
                                 </div>
@@ -263,9 +265,9 @@ $j_id=$_GET['j_id'];
                     </div>
                 </div>
                 <?php
-                //         }
-                //     }
-                // }
+                        }
+                    }
+                }
             ?>
           
             </div>
@@ -280,26 +282,7 @@ $j_id=$_GET['j_id'];
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"> <?php
-                   if($priority == '3')
-                   {
-                ?>
-                   <img src="img/red-icon.png" width="30" height="20">
-                <?php
-                   }
-                   elseif($priority == '2')
-                   {
-                ?>
-                    <img src="img/orange-icon.png" width="20" height="20">
-                <?php
-                    }
-                    elseif($priority == '1')
-                    {
-                ?>
-                    <img src="img/Yellow-icon.png" width="20" height="20">
-                <?php
-                    }
-                ?> <?php echo  $position ?></span>
+                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>
