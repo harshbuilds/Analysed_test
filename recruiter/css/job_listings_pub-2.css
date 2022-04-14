@@ -117,10 +117,6 @@
   font-family: Metro;
   margin-bottom: 5px;
 }
-#texts {
-  color: #333333;
-  font-family: Metropolis Light;
-}
 .j1 {
   color: #333333;
   font-size: 14px;
@@ -209,6 +205,14 @@ select {
   flex-direction: column;
 }
 
+.nextMyTasks {
+  position: absolute;
+  box-shadow: 1px 3px 10px #00000033;
+  border-radius: 8px;
+  background-color: #3598db;
+  color: white;
+  padding: 8px 16px;
+}
 .status-name {
   font-family: Metro;
   font-size: 30px;
@@ -233,25 +237,19 @@ select {
 #r1 {
   font-size: 20px;
 }
+#pub1 {
+  height: 170px;
+  margin-bottom: 20px;
+}
 
 @media screen and (max-width: 650px) {
-  .bread-crumbs_Mytools-recruiter,
-  .sortByMyTasks,
-  .recentMyTasks,
-  .sortFilter_myTasks,
-  .select-dropdown {
+  .bread-crumbs_Mytools-recruiter {
     display: none;
   }
-
   #heading1 {
     position: relative;
     left: -82px;
     font-size: 20px;
-  }
-  #position1 {
-    position: relative;
-    font-size: 30px;
-    /* font-weight:bold; */
   }
   .options {
     font-size: 22px;
@@ -259,47 +257,26 @@ select {
     left: -121px;
     position: relative;
   }
-  .leftFilter_myTasks {
+  #align-of-card {
     position: relative;
+    top: 313px;
+    display: block;
     left: -100px;
-    width: 377px;
-    font-size: 16px;
+  }
+  #pub1 {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  .nextMyTasks {
+    position: relative;
+    top: 270px;
+    left: -56px;
   }
   #right-side-col {
     position: relative;
-    left: -116px;
-    margin: 30px 30px;
+    top: 1272px;
+    left: -475px;
     display: none;
-  }
-  #right-side-body {
-    position: relative;
-    font-size: 22px;
-  }
-  .addFilesMyTasks {
-    position: relative;
-    left: -270px;
-    top: 48px;
-    font-size: 17px;
-  }
-  #card-align {
-    position: relative;
-
-    left: 20px;
-  }
-  #align-col {
-    position: relative;
-    left: -122px;
-  }
-  #align-of-card {
-    font-size: 20px;
-    display: grid;
-  }
-
-  .light_spanItem_singleTask_myTasks {
-    font-size: 17px;
-    width: 100px;
-  }
-  #te1 {
-    font-size: 17px;
   }
 }

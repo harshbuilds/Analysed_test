@@ -131,7 +131,8 @@
   }
   #right-side-col{
     position:relative;
-    align-items: center;;
+    align-items: center;
+    display:none;
   }
   #package{
     width: 1035px;
