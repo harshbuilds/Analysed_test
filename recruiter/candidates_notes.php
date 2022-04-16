@@ -19,12 +19,13 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
 }
 ?>
 <html>
+<?php include('candidates_status_header.php') 
+  // $candidate_id = $_GET['c_id'];
+  ?>
  <link rel="stylesheet" href="./css/candidates_notes.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
-  <?php include('candidates_status_header.php') 
-  // $candidate_id = $_GET['c_id'];
-  ?>
+  
 <div class="options">
   <p><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
    <p><a style="color:#979797"  href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
