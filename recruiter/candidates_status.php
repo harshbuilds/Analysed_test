@@ -15,7 +15,7 @@
   <body>
   <?php include('candidates_status_header.php') ?>
 
-  <div class="box"></div>
+  
   <form method="post" id="form">
 
     <?php
@@ -33,28 +33,33 @@
     <p><a style="color:#3598DB" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
      <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
      </div>
+     <!-- Start of Status box -->
+     <div class="box">  
+       <div class="box-1">
+        Status&emsp;&emsp;
+        <p> <span style="color:#979797;">Last Updated</span>
+       <?php
+         $date=$row['last_updated']; 
+         $lastupdated=date("d-m-Y",strtotime($date));
+         ?>
 
-  <div class="box-1">
-  Status&emsp;&emsp;
-  <p><span style="color:#979797;">Last Updated</span>
-    <?php
-    $date=$row['last_updated']; 
-    $lastupdated=date("d-m-Y",strtotime($date));
-    ?>
+           <?php echo $lastupdated; ?>
+    </p>
 
-    <?php echo $lastupdated; ?>
-  </p>
-
-  <select class="sortbySelect" name="select-box" id="select-box" style="color:#3598DB;" onchange="document.getElementById('form').submit();">
-    <option value="">Select status</option>
-    <option value="Active">Active</option>
-    <option value="Inactive">In active</option>
-  </select>
+         <select class="sortbySelect" name="select-box" id="select-box" style="color:#3598DB;" onchange="document.getElementById('form').submit();">
+         <option value="">Select status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">In active</option>
+        </select>
+        </div>
 </div>
 </form>
-<div class="box-2"></div>
+<div class="box-2">
 <div class="box-2-1">
 Current Employer</div>
+
+
+
 <div class="box-2-1-1">
 <p>Company Name<br>
 <span style="color:black"><?php echo $row["company_name"]; ?></span></p>
@@ -71,7 +76,9 @@ Current Employer</div>
 <p>Notice<br>
 <span style="color:black">$5000</span></p>
 </div>
-<div class="box-3"></div>
+</div>
+
+<div class="box-3">
 <div class="box-3-1">
 Rates</div>
 <div class="box-3-1-1">
@@ -81,6 +88,6 @@ Rates</div>
 <div class="box-3-1-2">
 <p>Daily Rate(High)<br>
 <span style="color:black">$500</span></p>
-</div>
+</div></div>
 <div class="engagement"><a href="#">USER ENGAGEMENT?</a></div>
 <?php } } ?>

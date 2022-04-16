@@ -20,7 +20,7 @@
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href=" dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href=" candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
  <div class="profile-img">
    <img src="../img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
@@ -31,11 +31,11 @@
 </svg> <?php echo $row["city_name"]; ?></h4>
 </div>
 <div class="button">
-<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button>
-<button style="margin-top:-40px"><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
+<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button><br><br><br><br>
+<button ><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
   </div>
           <div class="status">
-     </div>
+       
      <div class="status1"><b><?php echo $row["candidate_id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;</b>
      <span style="color:#979797">05-05-2021</span>
      </div>
@@ -84,6 +84,6 @@
     <span style="color:#3598DB">Williams</span>
     <span style="color:black">abc@gmail.com</span><br>
     <span style="color:black">+91 9876543210</span><br>
-</div>
+</div>  </div>
 
 <?php } }  ?>
