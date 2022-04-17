@@ -1,58 +1,7 @@
-<link rel="stylesheet" href="./css/jobSeekerLogin.css"> <!--linking css file-->
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> JobSeeker Login</title> <!--giving title to the page-->
-
-<div class="background">
-    <img src="./img/background.png"> <!--background picture-->
-    <ul class="navbar-nav"> <!--navigation bar-->
-       <li> <a class="nav-link" id="contact" href="">Contact Us</a></li>
-        <li><a class="nav-link" href="">About</a></li>
-       <li> <a class="nav-link" href="">Login</a></li>
-       <li> <a class="nav-link" href="JobSeekerSignUp.php">Join Us</a></li> <!--redirects to sign up page-->
-	  </ul>
-</div>
-
-<div class="loginbox">
-    <h3>Login</h3>
-
-    <!-- form beign-->
-
-<form action="jobSeekerLogIn.php" method="post">
-    <!--email-->
-    <div class="txt-field">
-    <label>Email</label>
-        <input type="email" name="js_email" placeholder="Username/Email" required>
-        </div>
-
-        <!--password-->
-    <div class="txt-field">
-    <label>Password</label>
-        <input type="password" name="password"  placeholder="Password" required>
-    </div>
-<!--forgot password and cancel -->
-    <div class="pass">Forgot Password?</div>
-<div class="button">
-    <input type="submit" name="login" value="Login">
-    <a href="">Cancel</a>
-</div>
-</form>
-<!--form ends-->
-
-<!--chatbot-->
-<div class="bot">
-<a href="">
-<img src="./img/bot.png" style="width:70px;height:70px;">
-</a>
-</div>
-</div>
-
 
 <!--php code beign-->
 <?php
-
+session_start();
 $con=mysqli_connect('localhost','root','','analysed'); //connecting to the database
 if($con){
     //echo "done";
@@ -62,37 +11,31 @@ else{
 }
 
 //condition for login
-if(isset($_POST['login'])){
-
-
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
 $js_email=$_POST['js_email'];
-$password=$_POST['password'];
+$password=$_POST['js_password'];
 
 //query for login
-$s="SELECT * FROM jobseeker WHERE js_email='$js_email' && password='$password';";
-$result=mysqli_query($con,$s);
-$num=mysqli_num_rows($result);
-$z="SELECT * FROM recruiter WHERE email='$js_email' && password='$password';";
-$result1=mysqli_query($con,$z);
-$num1=mysqli_num_rows($result1);
-if($num==1)
-{
-    echo "<script>alert('Login Successful')</script>"; //alert message
-    echo "<script>window.open('./../../js_dashboard.php','_self')</script>";
-}
-else
-{
-  if($num1==1)
-  {
-    echo "<script>alert('Login Successful')</script>"; //alert message
-    echo "<script>window.open('./../../recruiter','_self')</script>";
-
-  }
-  else
-  {
-    echo"<script>alert('Please enter correct email and password')</script>"; //alert mesage
-  }
-}
+$sql = "SELECT * FROM jobseeker where js_email=? and JS_Password=?";
+            
+            $stmt = $con->stmt_init();
+            $stmt->prepare($sql);
+            $stmt->bind_param("ss", $js_email,$password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+           $resultArray = $result->fetch_assoc();
+            if($resultArray)
+            {   
+                
+                $_SESSION['jobSeekerID'] = $resultArray['jobseeker_id'];                                                       
+                header("Location:./../../js_dashboard.php");                
+            }
+            else
+            {
+                echo "<script>alert('Invalid Login credentials.')</script>";
+            }
+            
 }
 ?>
 
