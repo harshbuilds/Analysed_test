@@ -72,23 +72,45 @@ if (isset($_POST['submit'])) {
                   <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <div class="navbar-nav text-uppercase pt-3 ml-auto nav-form-s">
-                      <form action="signup/recruiter/Recruiter login.php" class="form-inline" method="post" >
-                        <div class="form-group mb-2 pl-2">
-                          <label for="staticEmail2" class="sr-only">Username / Email</label>
-                          <input type="text" name="username" class="form-control" id="staticEmail2" placeholder="Username / Email">
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2 pl-2">
-                          <label for="inputPassword2" class="sr-only">Password</label>
-                          <input type="password" name="password" class="form-control" id="inputPassword2" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2 ml-2 mr-3">Login</button>
-                        <div class="forg-pass-md"><a href="./forgot-password.php">Forgot Password ?</a></div>
-                      </form>
+                    <div class="navbar-nav text-uppercase pt-3 ml-auto nav-form-s">                      
+                        <button type="submit" class="btn btn-primary mb-2 ml-2 mr-3" data-toggle="modal" data-target="#exampleModal">Login</button>                                          
                     </div>
                 </div>
               </div>
             </nav>
+
+<!--MODAL FOR LOGIN-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="signup/jobSeeker/jobSeekerLogIn.php" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="js_email" name="js_email" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="js_password" name="js_password">
+    <small id="emailHelp" class="form-text text-muted">Forgot password?</small>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>       
+      </div>
+    </div>
+  </div>
+</div>
 
         <!--APP HEADER
             ================-->

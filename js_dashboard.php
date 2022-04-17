@@ -1,4 +1,13 @@
-<?php include('include/header.php') ?>
+<?php 
+session_start();
+if($_SESSION['jobSeekerID']==null)
+{
+    header("Location:index.php");
+}
+
+include('header.php');
+include('conn.php'); ?>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
@@ -32,90 +41,79 @@
 <title>Dashboard</title>
 <link rel="stylesheet" href="css/js_dashboard.css">
 <body>
-    
-    <div class="main_body">
+<?php
+        $jobseeker_ID = $_SESSION['jobSeekerID'];
+        $sql="SELECT * FROM jobseeker where jobseeker_id= '" .  $jobseeker_ID . "'";
+        $result_1 = mysqli_query($conn,$sql);
+        while ($row = mysqli_fetch_array($result_1)) {
+            
+                                        
+        ?>
+    <div class="main_body" style="margin-left: 100px;">
         <br><br><br>
         <!-- Heading -->
         <div>
           <p class="head_1">Dashboard</p>
-          <p class="sub_1">Welcome back, John Doe!</p>
+          <p class="sub_1">Welcome back, <?php echo $row['firstname'];?>!</p>
         </div>
         <br>
         <!-- line 1 -->
-        <div class="row">
-            <div class="col-3">
-                <div class="card" id="c1">
-                    <a href="js_applied_jobs.php">
-                    <div class="row" id="val1">
-                        <div class="col-8">
-                            <p class="headingCards">Jobs Applied</p>
-                            <p class="numberCards">1</p>
-                        </div>
-                        <div class="col-4">
-                            <img src="./img/stats-img-1.png" alt="" class="cardImageDash" />
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" id="c1">
-                    <a href="js_nearby_job.php">
-                    <div class="row" id="val1">
-                        <div class="col-8">
-                            <p class="headingCards">Jobs nearby</p>
-                            <p class="numberCards">30</p>
-                        </div>
-                        <div class="col-4">
-                            <img src="./img/js_near1.png" alt="" class="cardImageDash" />
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" id="c1">
-                    <a href="js_shortlisted_jobs.php">
-                    <div class="row" id="val1">
-                        <div class="col-8">
-                            <p class="headingCards">Shortlisted</p>
-                            <p class="numberCards">10</p>
-                        </div>
-                        <div class="col-4">
-                            <img src="./img/stats-img-3.png" alt="" class="cardImageDash" />
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card" id="c1">
-                    <a href="JS_Starred_Jobs.php">
-                    <div class="row" id="val1">
-                        <div class="col-8">
-                            <p class="headingCards">Starred jobs</p>
-                            <p class="numberCards">2</p>
-                        </div>
-                        <div class="col-4">
-                            <img src="./img/stats-img-4.png" alt="" class="cardImageDash" />
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+      <div class="row">
+          <div class="col-md-2" id="cards">
+             <div class="cards-description">
+                 Jobs applied
+                 <div class="numbers"><h2>1</h2></div>
+             </div>
+             <div class="cards-image">
+             <img src="./img/stats-img-1.png" alt="" class="cardImageDash" />
+             </div>
+          </div>
+         
+          <div class="col-md-2" id="cards">
+             <div class="cards-description">
+                 Jobs nearby
+                 <div class="numbers"><h2>30</h2></div>
+             </div>
+             <div class="cards-image">
+             <img src="./img/js_near1.png" alt="" class="cardImageDash" />
+             </div>
+          </div>
+
+          <div class="col-md-2" id="cards">
+             <div class="cards-description">
+                 Shortlisted
+                 <div class="numbers"><h2>10</h2></div>
+             </div>
+             <div class="cards-image">
+             <img src="./img/stats-img-3.png" alt="" class="cardImageDash" />
+             </div>
+          </div>
+
+          <div class="col-md-2" id="cards">
+             <div class="cards-description">
+                 Starred jobs
+                 <div class="numbers"><h2>2</h2></div>
+             </div>
+             <div class="cards-image">
+             <img src="./img/stats-img-4.png" alt="" class="cardImageDash" />
+             </div>
+          </div>
+      </div>
         <br><br>
+
+ <!-- line 2 -->
+ 
 
         <!-- line 2 -->
         <div class="row">
             <div class="col-6">
-                <div class="card" id="c2">
+                <div class="card" id="cards">
                     <p class="leftText">Jobs near you
                     <span class="rightText">
                         <img src="./img/setting-icon-blue.png" />
-                        Langley<br></span>
+                        <?php echo $row['city'];?><br></span>
                     </p>
-                    <a href="jobsNearYou.php"><img src="./img/map.png" alt="" class="mapForJobsImage"/></a>
+                    <a href="jobsNearYou.php"><img src="img/map.png" alt="" width="570" /></a>
                     
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Job title</span>
@@ -129,14 +127,14 @@
                 </div>
             </div>
             <div class="col-6">
-                <div class="card" id="c3">
+                <div class="card" id="cards">
                     <p class="leftText">Profile viewed
-                        <span class="rightText1">
+                        <span class="rightText">
                         <img src="./img/setting-icon-blue.png" />
                         Last 30 days<br></span>
                     </p>
                     <p class="loc_3" style="margin-left:30px">Total views: 136<br><br></p>
-                    <a href=""><img src="./img/graph.png" alt="" class="map_des" ></a>
+                    <a href=""><img src="./img/graph.png" alt="" class="map_des"  width="570"></a>
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Skills</span>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:290px">No. of Company</span>
@@ -151,98 +149,44 @@
         </div>
 
         <!-- line 3 -->
+
         <p class="head_1"><br>Recommended for you</p>
-            <div id="temp">
-                <div class="card" style="height:300px;width:280px" id="temp2">
-                    <a href="js_job_description.php">
-                    <div class="icons">
-                        <img src="img/share-icon.png" height="23" width="25">&emsp;
-                        <img src="img/star-icon.png" height="23" width="25">
-                    </div>
-                    <div class="row" style="margin-left:10px;">
-                        <div class="col-3"><img src="img/Airbnb-logo.png" height="50" width="50"/></div>
-                        <div class="col-9">
-                        <br><span style="line-height:1 ;" id="b4">AirBnB</span><br>
-                        <span id="b5"> London,UK</span>
-                        </div>
-                    </div>
-                    <div class="designation" style="margin-left:20px;">
-                    <br>FRONTEND DEVELOPER
-                    </div>
-                    <div style="margin-left:20px;">
-                        <progress value="2" max="20" ></progress>
-                        <span class="days"> 2 days left</span >
-                    </div><br>
-                    <div class="skills" style="margin-left:20px;">
-                        <p style="font-size:13px;line-height:5px ;"> <i>CSS, HTML, UI, Frontend</i></p>
-                    </div>
-                    <div class="last_job_content" style="margin-left:20px;">
-                        <p id="first"><br>Full Time</p><br>
-                        <a href="js_job_description.php" id="second">Apply Now</a>
-                    </div></a>
+        <div class="row">
+            <?php
+                $jobseeker_City = $row['city'];
+                $sqlCity="SELECT * FROM joblistings LIMIT 3";
+                $result_City = mysqli_query($conn,$sqlCity);
+                while ($rowCity = mysqli_fetch_array($result_City)) {
+            ?>
+            <!-- job 1 -->
+            <div class="col-md-3" id="cards">
+                <div class="icons" style="float:right;">
+                    <img src="img/share-icon.png" height="23" width="25">&emsp;
+                    <img src="img/star-icon.png" height="23" width="25">
                 </div>
-
-                <div class="card" style="height:300px;width:280px" id="temp2">
-                    <div class="icons">
-                        <img src="img/share-icon.png" height="23" width="25">&emsp;
-                        <img src="img/star-icon.png" height="23" width="25">
-                    </div>
-                    <div class="row" style="margin-left:10px;">
-                        <div class="col-3"><img src="img/Netflix-logo.png" height="50" width="50"/></div>
-                        <div class="col-9">
-                        <br><span style="line-height:1 ;" id="b4">Netflic Inc</span><br>
-                        <span id="b5"> New York, NY</span>
-                        </div>
-                    </div>
-                    <div class="designation" style="margin-left:20px;">
-                    <br>UX/DESIGNER
-                    </div>
-                    <div style="margin-left:20px;">
-                        <progress value="5" max="20" ></progress>
-                        <span class="days"> 5 days left</span >
-                    </div>
-                    <div class="skills" style="margin-left:20px;"><br>
-                        <p style="font-size:13px;line-height:5px ;"> <i>Wireframe, Sketch, Prototyping...</i></p>
-                    </div>
-                    <div class="last_job_content" style="margin-left:20px;">
-                        <p id="first"><br>Part Time</p><br>
-                        <a href="#" id="second">Apply Now</a>
-                    </div>
+                <div class="companyName">
+                    <img src="img/Airbnb-logo.png" height="50" width="50" style="float:left;margin-right: 20px;"/>
+                    <span style="line-height:1;"><b><?php echo $rowCity['client_company']; ?></b></span><br>
+                    <span style="color:grey;font-size:14px;"> London,UK</span>
                 </div>
-
-                <div class="card" style="height:300px;width:280px" id="temp2">
-                    <div class="icons">
-                        <img src="img/share-icon.png" height="23" width="25">&emsp;
-                        <img src="img/star-icon.png" height="23" width="25">
-                    </div>
-                    <div class="row" style="margin-left:10px;">
-                        <div class="col-3"><img src="img/Uber-logo.png" height="50" width="50"/></div>
-                        <div class="col-9">
-                        <br><span style="line-height:1 ;" id="b4">Uber</span><br>
-                        <span id="b5"> Portland, OG</span>
-                        </div>
-                    </div>
-                    <div class="designation" style="margin-left:20px;">
-                    <br>PRODUCT OWNER
-                    </div>
-                    <div style="margin-left:20px;">
-                        <progress value="20" max="20" ></progress>
-                        <span class="days"> 20 days left</span >
-                    </div>
-                    <div class="skills" style="margin-left:20px;"><br>
-                        <p style="font-size:13px;line-height:2px ;"> <i>Analysis, CRM, Data validation...</i></p>
-                    </div>
-                    <div class="last_job_content" style="margin-left:20px;">
-                        <p id="first"><br>Full Time</p><br>
-                        <a href="#" id="second">Apply Now</a>
-                    </div>
+                <br>
+                <div class="designation">
+                    <br><?php echo strtoupper($rowCity['position']); ?>
                 </div>
-
-                <div id="temp3">
-                    <a href="js_more_jobs.php">
-                    <p class="more_v">View more > </p></a>
-                </div>
+                <progress value="2" max="20" ></progress>
+                <span class="days"> 2 days left</span >
+                <p style="font-size:13px;line-height:5px;color:blue"> <i><?php echo $rowCity['skills']; ?></i></p>
+                <div class="last_job_content">
+                        <p style="float:left"><br>Full Time</p><br>
+                       
+                        <a href="jobsDescription.php?job_ID=<?php echo  $rowCity['job_id'];?>" id="second" style="float:right;"> <button class="btn btn-outline-primary" style="border-radius:25px">Apply Now</button></a>
+                    </div>
             </div>
+            <?php } ?>
+        </div>
+
+
+
 
         
             <!-- line 4 -->
@@ -323,5 +267,5 @@
         <br><br><br><br><br><br>
     </div>
 </body>
-
+        <?php } ?>
 </html>

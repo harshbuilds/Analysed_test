@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if($_SESSION['jobSeekerID']==null)
+{
+    header("Location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +23,7 @@
 <div class="container">
 <div class="small_container">
     <div class="bread-crumbs_Mytools-recruiter" style="margin-bottom: 40px;">
-            <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
+            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
         </div>
     <div class="job-row-flex-JobDescription">
         <div class="left-side-jobDescription">
@@ -25,10 +32,15 @@
                 <a href="#"><img src="./img/Share.svg" class="share-and-star-icon-img"></a>
 
             </div>
+            <?php $JobID = $_GET['job_ID'];
+             $sql="SELECT * FROM joblistings where job_id= '" .  $JobID . "'";
+             $result_1 = mysqli_query($conn,$sql);
+             while ($row = mysqli_fetch_array($result_1)) {
+               ?>
                         <!-- START OF JOB DESCRIPTION -->
-            <h2 class="heading-dash">Frontend Developer</h2>
+            <h2 class="heading-dash"><?php echo $row['position']; ?></h2>
             <div class="icons-flex-left-side-jobsDescription">
-                <span> <i class="fa fa-eye" aria-hidden="true" style="color:#FFBD06"></i> 202 views</span>
+                <span> <i class="fa fa-eye" aria-hidden="true" style="color:#FFBD06"></i> <?php echo $row['job_views']; ?> views</span>
                 <span><i class="fa fa-users" aria-hidden="true" style="color:#8C60EB"></i> 4 applicants</span>
                 <span><i class="fa fa-clock-o" aria-hidden="true" style="color:#0F9D58"></i> 23 days remaining</span>
             </div>   <!-- END OF JOB DESCRIPTION -->
@@ -37,11 +49,18 @@
             </div>
                         <!-- SKILL SETS -->
             <div class="skills-leftSide-jobsDescription">
-                <p>Skills</p>
-                <span>HTML</span>
-                <span>HTML</span>
-                <span>HTML</span>
-                <span>HTML</span>
+            <p>Skills</p>
+            <?php 
+              
+              $string = $row['skills'];
+              $str_arr = explode (",", $string);               
+              for($i=0;$i<count($str_arr);$i++)
+              { echo ' <span>'.$str_arr[$i].'</span>';
+              }
+              ?>
+               
+               
+              
             </div>
                               <!-- REQUIREMENTS -->
             <div class="requirements-section-leftSide-jobsDescription">
@@ -54,7 +73,7 @@
                         <span>Experience level:</span> <p>Intermediate (3-4 years)</p>
                     </div>
                     <div class="requirements-subDetail-left-sideJobsDescription">
-                        <span>Languages:</span> <p>English</p>
+                        <span>Languages:</span> <p><?php echo $row['Languages']; ?> </p>
                     </div>
                 </section>
             </div>
@@ -377,7 +396,7 @@
         </div>
     </div>
 </div>
-
+<?php } ?>
 <script>
 $("div[id^='myModal']").each(function(){
   
