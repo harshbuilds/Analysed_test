@@ -177,7 +177,7 @@
     <div class="container">
         <div class="small_container">
             <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname ?></a>
+                <a href="dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href=" candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addContact.php" class="unactive-breadcrumb-link">Add Contact</a> > <a href="contact_list.php" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname ?></a>
             </div>
 
             <div class="profile-img">
@@ -188,7 +188,7 @@
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
             <div class="button">
-                <button>Edit client</button>
+                <button  onclick="window.location='addContact.php';">Edit Contact</button>
             </div>
 
             <div class="options">
@@ -316,7 +316,7 @@
                         <input type="checkbox" id="c" name="cb">
                         <label for="c" class="select-col-label"> Select all</label>
                     </div>
-                    <select  id="multi_search" class="search_list_1">
+                    <select  id="multi_search" class="search_list_1" >
                         <option value="" default>Select action</option>
                         <option value="1"></option>
                         <option value="2"></option>

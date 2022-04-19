@@ -104,7 +104,7 @@ if(isset($_POST['btnsearch']))
     <div class="container">
         <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
+                <a href="dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addContact.php" class="unactive-breadcrumb-link">Add Contact</a> > <a href="contact_list.php" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
             </div>
 
             <div class="profile-img">
@@ -115,7 +115,7 @@ if(isset($_POST['btnsearch']))
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
             <div class="button">
-                <button>Edit client</button>
+                <button>Edit Contact</button>
             </div>
 
             <div class="options">
@@ -218,7 +218,7 @@ if(isset($_POST['btnsearch']))
 
                     </div>
                     </form>
-                    <button class="btn" id="myBtn" type="button">Add +</button>
+                    <button class="btn" id="myBtn" type="button">Add  Note +</button>
                 </span>
                 <div class="row-flex-jobj justifycontent-flex-end-1">
                     <p class="sortbyText">Sort by :
@@ -309,8 +309,8 @@ if(isset($_POST['btnsearch']))
                         <p class="col-1">Added on</p>
                         <span class="col-span-1"><?php echo $added_on; ?></span>
                     </div>
-                    <div class="column" style="margin-top:-5px;margin-left: 200px;padding-right: 10px;">
-                        <p style="font-size: 16px;"><?php echo $notes; ?></p>
+                    <div class="column"  id="note">
+                        <p ><?php echo $notes; ?></p>
                     </div>
                 </div>
                 <?php

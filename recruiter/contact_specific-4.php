@@ -26,7 +26,8 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
   echo '<script> alert("Files added successfully");</script>';
 }
 ?>
-<link rel="stylesheet" href="./css/candidates_files.css">
+<!-- <link rel="stylesheet" href="./css/candidates_files.css"> -->
+<link rel="stylesheet" href="./css/contact-specific-4.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <style>
@@ -130,9 +131,9 @@ opacity: 1;
 }
 .add button{
     margin-top:0px;
-    margin-left: 10px;
-    width: 30px;
-    height: 18px;
+    margin-left: 15px;
+    width: 97px;
+    height: 35px;
     font: normal normal normal 15px/22px Metro;
     background-color: #3598DB;
     border: #3598DB;
@@ -393,7 +394,7 @@ if(isset($_POST['btnsearch']))
     <div class="container">
         <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-                <a href="/" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">My Database</a> > <a href="" class="unactive-breadcrumb-link">Add Contact</a> > <a href="" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
+                <a href="dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addContact.php" class="unactive-breadcrumb-link">Add Contact</a> > <a href="contact_list.php" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
             </div>
 
             <div class="profile-img">
@@ -404,7 +405,7 @@ if(isset($_POST['btnsearch']))
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
             <div class="button">
-                <button>Edit client</button>
+                <button onclick="window.location='addContact.php';">Edit  Contact</button>
             </div>
 
             <div class="options">
@@ -503,7 +504,7 @@ if(isset($_POST['btnsearch']))
                 </span>
               </div>
                   <div class="add">
-                    <button class="btn" id="myBtn" ><a style="color:white" href="#">Add +</a></button>
+                    <button class="btn" id="myBtn" ><a style="color:white" href="#">Add  File +</a></button>
                   </div>
             
                 <div id="myModal" class="modal">
