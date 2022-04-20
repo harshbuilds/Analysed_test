@@ -1,3 +1,4 @@
+
 <?php include('connection1.php'); ?>
 
 <?php
@@ -42,10 +43,10 @@ session_start();
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>At a glance</p>
                 <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
                 <p><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
-                <p><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
-                <p><a href="client_activity.php?c_id=<?php echo $row['client_id']; ?>">Activity</a></p>
-                <p><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
-                <p><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
+                <p class="p1"><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
+                <p class="p1"><a href="client_activity.php?c_id=<?php echo $row['client_id']; ?>">Activity</a></p>
+                <p class="p1"><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
+                <p class="p1"><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
             </div>
 
             <div class="status">
@@ -179,7 +180,7 @@ session_start();
                         <p class="mainHeading">Company Description</p>
                         <span class="mainheading-left">Last edited <span >21-05-2020</span></span>
                     </div>
-                    <div class="company-content"><?php echo $row["company_desc"]; ?></div>
+                    <div class="company-content"><p class="p2"><?php echo $row["company_desc"]; ?></p></div>
                 </div>
 
                 <div class="contact-info">
@@ -225,18 +226,18 @@ session_start();
 
                 <?php } } ?>
 
-				<?php
+                <?php
                 $name=$row["active_contact"];
-				$sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
-				$check=mysqli_num_rows($sql)>0;
-				if($check){
-					while($row=mysqli_fetch_assoc($sql)){
-						?>
+                $sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+                $check=mysqli_num_rows($sql)>0;
+                if($check){
+                    while($row=mysqli_fetch_assoc($sql)){
+                        ?>
 
                 <div class="active-contact">
                     <div class="heading">
                         <p class="mainHeading">Active Contact</p>
-                        <span class="mainheading-left" style="color:red;margin-top:-30px"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        <span class="mainheading-left" id="del" style="color:red;margin-top:-30px"><i class="fa fa-trash" aria-hidden="true"></i></span>
                     </div>
                     <div class="active-contact-content">
                         <img src="img/Ellipse -4@2x.png" style="margin-left:60px;margin-top:15px">
@@ -245,18 +246,18 @@ session_start();
                         <span><?php echo $row["phone"]; ?></span>
                     </div>
                 </div>
-				<?php } } ?>
-				
-				
+                <?php } } ?>
+                
+                
 
                 <div class="open-jobs">
                     <p>Open jobs</p>
-					<?php
-					$sql=mysqli_query($conn,"select * from joblistings where client_company='$company_name'");
-					$check=mysqli_num_rows($sql)>0;
-					if($check){
-						while($row=mysqli_fetch_assoc($sql)){
-						?>
+                    <?php
+                    $sql=mysqli_query($conn,"select * from joblistings where client_company='$company_name'");
+                    $check=mysqli_num_rows($sql)>0;
+                    if($check){
+                        while($row=mysqli_fetch_assoc($sql)){
+                        ?>
                     <div class="row">
                         <div class="column">
                             <input type="checkbox" id="c1" class="checkbox">
@@ -298,7 +299,7 @@ session_start();
                             <span class="col-span-6">sandrovicente@gmail.com</span>
                         </div>
                     </div>
-				   <?php } } ?>
+                   <?php } } ?>
                 </div>
             </div>
         </div>
