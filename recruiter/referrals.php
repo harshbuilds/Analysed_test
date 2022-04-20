@@ -1,5 +1,14 @@
+<?php 
+session_start();
+if($_SESSION['email']==null)
+{
+    header("Location:index.php");
+}
+?>
 <link rel="stylesheet" href="./css/referrals.css"> <!--linking to the css file-->
-<?php include('header.php')?> <!--including the header file-->
+<?php include('header.php');
+include('connection1.php');
+?> <!--including the header file-->
 
 <title>Referrals</title>  <!--title of the page-->
 
@@ -18,11 +27,17 @@
     <img src="./img/facebook.png" >
     </div>
 </div>
-
+<?php
+$sql="SELECT * FROM recruiter where email= '" .  $_SESSION['email'] . "'";
+        $result_1 = mysqli_query($conn,$sql);
+        while ($row = mysqli_fetch_array($result_1)) {
+                                               
+                                        
+                                        	 ?>
 <div class="box">
-  <span class="copy" id="share">https://analysed.in/pages/signup/signup.php?referralid=1231%GhbvQlpN5z%</span>
+  <span class="copy" id="share"><?php echo $row['referralStr']; ?></span>
     <!--<input type="text" id="box">-->
-    <button class="copy" id="copy"> Copy Link</button>
+    <button class="copy" id="copy" onclick="copyToclipboard()"> Copy Link</button>
 </div>
 
 <div class="referrals">
@@ -111,3 +126,19 @@
                 
         </div>
 </div>
+<?php } 
+
+?>
+<script>
+function copyToclipboard()
+{
+    var range = document.createRange();
+                    range.selectNode(document.getElementById("share"));
+                    window.getSelection().removeAllRanges(); // clear current selection
+                    window.getSelection().addRange(range); // to select text
+                    document.execCommand("copy");
+                    window.getSelection().removeAllRanges();// to deselect
+                    alert('Referral link copied');
+
+}
+</script>
