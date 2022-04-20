@@ -10,7 +10,11 @@ if (isset($_POST['submit'])) {
   $_SESSION['offemail']    = $_POST['offemail'];
   $_SESSION['industry'] = $_POST['industry'];
   $_SESSION['offaddress'] = $_POST['offaddress'];
-  $_SESSION['consultant'] = $_POST['consultant'];
+  if(isset($_POST['consultant'])){
+    $consultant ='yes';
+}
+else{ $consultant ='no';}
+ 
 
 
   $query ="select * from recruiter where email = '".$_SESSION['email']."'";
@@ -23,7 +27,8 @@ if (isset($_POST['submit'])) {
           echo "Your password does not match ! please try  again";
       }
       else{
-          $sql='insert into recruiter(firstname,lastname,email,number,password,confirmpassword,address,company_name,designation,industry,off_email,off_address,consultant)values("'.$_SESSION['firstname'].'",
+          $ReferralLinkStr = referral_Link();
+          $sql='insert into recruiter(firstname,lastname,email,number,password,confirmpassword,address,company_name,designation,industry,off_email,off_address,consultant,referralStr)values("'.$_SESSION['firstname'].'",
           "'.$_SESSION['lastname'].'",
           "'.$_SESSION['email'].'",
           "'.$_SESSION['number'].'",
@@ -34,17 +39,28 @@ if (isset($_POST['submit'])) {
           "'.$_SESSION['designation'].'",
           "'.$_SESSION['industry'].'",
           "'.$_SESSION['offemail'].'",
-          "'.$_SESSION['offaddress'].'","'.$_SESSION['consultant'].'")';
+          "'.$_SESSION['offaddress'].'","'.$consultant.'","'.$ReferralLinkStr.'")';
 
-          $run = mysqli_query($conn,$sql);
+           $run = mysqli_query($conn,$sql);
 
-          if ($run) {
-                 echo " <script>window.open('index.php','_self')</script>";
-          }
+           if ($run) {
+               
+                 echo " <script>window.open('../../recruiter/dashboard.php','_self')</script>";
+           }
 
       }
 
 
+}
+
+function referral_Link()
+{
+    $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz'; 
+    $referralStr= '';
+    $referralStr .=$_SESSION['firstname'];
+    $referralStr .='@Analysed%';
+    $referralStr .= substr(str_shuffle($str_result), 0, 45); 
+    return $referralStr;
 }
 
 ?>

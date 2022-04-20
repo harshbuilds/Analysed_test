@@ -202,7 +202,7 @@ if (isset($_POST['next'])) {
                                 <input type="text" name="offaddress" placeholder="Address" id="input-first-name" required>
                             </div>
                             <div class="input-signup-div row-signup">
-                                <input type="checkbox" name="consultant" id="consultant-checkbox" style="width:auto!important;margin-bottom:0px">
+                                <input type="checkbox" name="consultant" id="consultant" style="width:auto!important;margin-bottom:0px">
                                 <label for="consultant-checkbox" style="display:inline-block;margin-bottom:0px">&nbsp;&nbsp;&nbsp;Are you a consultant?</label>
                             </div>
                         </div>
