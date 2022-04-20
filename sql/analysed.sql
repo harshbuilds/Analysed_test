@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 06:55 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Apr 20, 2022 at 01:32 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -2061,8 +2061,8 @@ CREATE TABLE `joblistings` (
 INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, `position`, `industry`, `job_type`, `client_company`, `contact_client_company`, `business_dev_manager`, `status`, `priority`, `job_reference_number`, `designation`, `recruiters_name`, `openings`, `start_date`, `end_date`, `country`, `state`, `district`, `starting_time`, `ending_time`, `client_margin`, `advert_contact_name`, `advert_contact_no`, `skills`, `qualification`, `eligibility_criteria`, `required_experience`, `relevant_experience`, `irrelevant_experience`, `roles_and_opportunity`, `growth_opportunity`, `learning_opportunity`, `emp_endorsement`, `emp_benefits`, `reputation_of_org`, `advert_job_description`, `workspace_view`, `transportation`, `package_type`, `package_duration`, `package`, `bill_rate`, `markup`, `cl_margin`, `days_on`, `days_off`, `shift_pattern`, `added_on`, `company`, `location`, `company_website`, `job_views`, `company_email`, `availability_time`, `salaryMax`, `salaryMin`, `Languages`, `radius`) VALUES
 (8, 1, 'Resume.pdf', '', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-19', 'Amazon', 'new jersy', 'www.intel.com', '', 'intel@gmail.com', '', '20000', '10000', '', '20'),
 (10, 2, 'Resume.pdf', '', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-27', 'Flipkart', 'manchester', '', '', '', '', '30000', '20000', '', '39'),
-(16, 0, '', '', 'UI Developer', 'Intel', 'Full-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'Chris Do', '12', '2021-11-30', '2021-11-29', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:57:00.00000', '21:58:00.00000', '11', 'New', '1234211231', 'Cloud computing', '12', 'Indian', '1 year', '11 months', '5 months', 'full stack developer', 'high', 'high', 'good', '100000', 'good', 'new', '', '1', '2', '3 month', 12111111, 12, 11, '11', '20', '10', 'Night', '2022-03-04', '', '', '', '', '', '', '50000', '45000', '', '78'),
-(17, 0, '', '', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', '', '', '', '', '', '1000000', '90000', '', '90');
+(16, 0, '', '', 'UI Developer', 'Intel', 'Full-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'Chris Do', '12', '2021-11-30', '2021-11-29', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:57:00.00000', '21:58:00.00000', '11', 'New', '1234211231', 'Cloud computing', '12', 'Indian', '1 year', '11 months', '5 months', 'full stack developer', 'high', 'high', 'good', '100000', 'good', 'new', '', '1', '2', '3 month', 12111111, 12, 11, '11', '20', '10', 'Night', '2022-03-04', '', 'mumbai', '', '', '', '', '50000', '45000', '', '78'),
+(17, 0, '', '', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', 'mumbai', '', '', '', '', '1000000', '90000', '', '90');
 
 -- --------------------------------------------------------
 
@@ -2075,7 +2075,7 @@ CREATE TABLE `jobseeker` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
-  `Password` varchar(225) NOT NULL,
+  `JS_Password` varchar(225) NOT NULL,
   `ConfirmPassword` varchar(225) NOT NULL,
   `job_type` varchar(50) NOT NULL,
   `yearofpassing` year(4) NOT NULL,
@@ -2127,7 +2127,7 @@ CREATE TABLE `jobseeker` (
 -- Dumping data for table `jobseeker`
 --
 
-INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
+INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `JS_Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
 (1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
 (2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
 (3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
@@ -2232,22 +2232,27 @@ CREATE TABLE `recruiter` (
   `password` varchar(50) NOT NULL,
   `confirmpassword` varchar(50) NOT NULL,
   `consultant` varchar(225) NOT NULL,
-  `rec_img` longblob DEFAULT NULL
+  `rec_img` longblob DEFAULT NULL,
+  `referralStr` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recruiter`
 --
 
-INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `consultant`, `rec_img`) VALUES
-(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', '', NULL),
-(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', '', NULL),
-(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', '', NULL),
-(4, 'nat', 'white', 'nat@gmail.com', '67564534', 'london', 'facebook', 'developer', 'Alternative Dispute Resolution', 'nat@facebook.com', '', 'nat@11', 'nat@11', 'on', NULL),
-(5, 'jessi', 'lingard', 'jes@gmail.com', '87675645', 'Richmond town', 'youtube', 'HR', 'Information Technology/IT', 'jes@youtube.com', 'Moscow', 'jes@11', 'jes@11', '', NULL),
-(6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL),
-(7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL),
-(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL);
+INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `consultant`, `rec_img`, `referralStr`) VALUES
+(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', '', NULL, ''),
+(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', '', NULL, ''),
+(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', '', NULL, ''),
+(4, 'nat', 'white', 'nat@gmail.com', '67564534', 'london', 'facebook', 'developer', 'Alternative Dispute Resolution', 'nat@facebook.com', '', 'nat@11', 'nat@11', 'on', NULL, ''),
+(5, 'jessi', 'lingard', 'jes@gmail.com', '87675645', 'Richmond town', 'youtube', 'HR', 'Information Technology/IT', 'jes@youtube.com', 'Moscow', 'jes@11', 'jes@11', '', NULL, ''),
+(6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL, ''),
+(7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL, ''),
+(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL, ''),
+(9, 'demoooo', 'dummmyyyy', 'jane34@gmail.com', '1231231232', 'qwerty', 'abc', 'ceo', 'Business Supplies/Equipment', 'rtyuiop@dfg', 'asdfghjk', 'qwerty', 'qwerty', '', NULL, ''),
+(10, 'tyghuj', 'sdgfthjh', 'jane67@gmail.com', '1234567', 'cvbn', 'abc', 'abc', 'Civil Engineering', 'abc@gmail.com', 'asdfghjk', 'qwerty', 'qwerty', '', NULL, ''),
+(11, 'Reshma', 'dummmyyyy', 'jane12@gmail.com', '2345656', 'ASDFGHJKLO;P\'[,.;/\'', 'ertyui', 'rtyui', 'Civic/Social Organization', 'abc@gmail.com', 'asdfghjk', '12345', '12345', '', NULL, 'Reshma@Analysed%Eu2afHCwUGxcj0PFiqYm84I6tBDdMv'),
+(12, 'ABC', 'sdgfthjh', 'jane2345@gmail.com', '12345563', '65757', 'ewqrt', 'rtyui', 'Civil Engineering', 'abc@gmail.com', 'asdfghjk', 'qwerty', 'qwerty', '', NULL, 'ABC@Analysed%8qRnlWoseItgzMwxQPf1NJDT20d6rm');
 
 -- --------------------------------------------------------
 
@@ -2708,7 +2713,7 @@ ALTER TABLE `query`
 -- AUTO_INCREMENT for table `recruiter`
 --
 ALTER TABLE `recruiter`
-  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `starred_jobs`
