@@ -435,8 +435,8 @@ input[type="checkbox"]:focus + label::before {
 	color:black;
 }
 .row{
-    width: 900px;
-    height: 150px;
+    width: 900px;/*
+    height: 150px;*/
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 1px 3px 10px #00000033;
@@ -573,4 +573,64 @@ input[type="checkbox"]:focus + label::before {
 }
 .column .fa-map-marker{
     color: #979797;
+}
+
+@media screen and (max-width: 609px){
+    .bread-crumbs_Mytools-recruiter,.status,.options .p1,.sortbyText,.search_list_1,.select-col-label {
+    display: none;
+    }
+    .profile-img{
+      margin-top: -136px;
+    margin-left: -52px;
+    }
+    .profile-img img{
+        width: 103px;
+    height: 111px;
+    margin-left: 57px;
+    }
+    .button button{
+    color:white;
+    background-color:  #3598DB;
+        margin-top: 37px;
+    margin-left: 40px;
+    }
+    .options {
+       margin-top: 35px;
+    margin-left: -18px;
+    display: flex;
+    justify-content: space-between;
+    }
+    .options p {
+    margin-top: 0px;
+    margin-left: 10px;
+    padding: 33px;   
+    white-space: nowrap;
+    }
+    .left-side-container-1{
+       margin-top: 208px;
+    margin-left: 60px;
+    width: 340px;
+    white-space: nowrap;
+    }
+    .search-box{
+      margin-top: -350px;
+    margin-left: -49px;
+    width: 100%;
+    }
+    .btn{
+      margin-top: -217px;
+    margin-left: -10px;
+    }
+    .quickaccess-links-recruiter{
+        width: 100%;
+    }
+    .row{
+        margin-left: -41px;
+    margin-top: 28px;
+    width: 100%;
+
+  }
+  .row-recruiter {
+    margin-top: 0px;
+}
 }
