@@ -207,7 +207,7 @@ body{
 }
 .quickaccess-links-container{
     justify-content: space-between;
-    width:87%;
+    width:70%;
     margin-top: -200px;
     margin-bottom: 30px;
     
@@ -231,9 +231,9 @@ body{
 }
 .company-desc{
     width: 580px;
-    height: 230px;
-    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    /*height: 230px;*/
+    /*background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;*/
     box-shadow: 1px 3px 10px #00000033;
     border-radius: 8px;
     opacity: 1;
@@ -260,14 +260,14 @@ body{
 }
 .contact-info{
     width: 290px;
-    height: 230px;
+    /*height: 230px;*/
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 1px 3px 10px #00000033;
     border-radius: 8px;
     opacity: 1;
     margin-left: 600px;
-    margin-top: -230px;
+    margin-top: -185px;
     padding: 15px;
 }
 .contact-content{
@@ -294,8 +294,8 @@ body{
     margin-bottom: 6px;
 }
 .last-note{
-width: 615px;
-height: 250px;
+width: 615px;/*
+height: 250px;*/
 background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 box-shadow: 1px 3px 10px #00000033;
@@ -322,8 +322,8 @@ margin-top: 30px;
 
 }
 .active-contact{
-    width: 250px;
-    height: 260px;
+    width: 250px;/*
+    height: 260px;*/
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 1px 3px 10px #00000033;
@@ -331,7 +331,7 @@ margin-top: 30px;
     opacity: 1;
     margin-left: 640px;
     padding: 15px;
-    margin-top: -250px;
+    margin-top: -217px;
 
 }
 .mainheading-left-1{
@@ -386,8 +386,8 @@ input[type="checkbox"]:focus + label::before {
 }
 
 .row{
-    width: 890px;
-    height: 120px;
+    width: 890px;/*
+    height: 120px;*/
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 1px 3px 10px #00000033;
@@ -524,4 +524,87 @@ input[type="checkbox"]:focus + label::before {
 }
 .column .fa-map-marker{
     color: #979797;
+}
+
+@media screen and (max-width: 609px){
+    .bread-crumbs_Mytools-recruiter,.status,.options .p1{
+    display: none;
+    }
+    .profile-img{
+      margin-top: -136px;
+    margin-left: -52px;
+    }
+    .profile-img img{
+        width: 120px;
+    height: 123px;
+    margin-left: 57px;
+    }
+    .button button{
+    color:white;
+    background-color:  #3598DB;
+        margin-top: 37px;
+    margin-left: 40px;
+    }
+    .options {
+       margin-top: 35px;
+    margin-left: -18px;
+    display: flex;
+    justify-content: space-between;
+    }
+    .options p {
+    margin-top: 0px;
+    margin-left: 10px;
+    padding: 33px;   
+    white-space: nowrap;
+    }
+    .left-side-container-1{
+       margin-top: 208px;
+    margin-left: 60px;
+    width: 340px;
+    white-space: nowrap;
+    }
+    .quickaccess-links-recruiter{
+        width: 100%;
+    }
+    .company-desc{
+         margin-top: 52px;
+    margin-left: -42px;
+    width: 340px;
+    }
+    .mainheading-left{
+    margin-top: 8px;
+    float: left;
+    }
+    .company-content .p2{
+    padding-top: 20px;
+    padding-right: 5px;
+    white-space: pre-wrap;
+    }
+    .contact-info{
+      white-space: normal;
+    margin-inline-start: auto;
+    margin-left: -42px;
+    margin-top: 25px;
+    width: 100%;
+    }
+    .last-note{
+        width: 100%;
+    margin-left: -42px;
+    white-space: normal;
+    }
+    .active-contact{
+            margin-inline-start: auto;
+    margin-left: -41px;
+    margin-top: 28px;
+    width: 100%;
+    }
+    #del{
+        float: right;
+    }
+    .row{
+        margin-left: -41px;
+    margin-top: 28px;
+    width: 100%;
+
+}
 }
