@@ -184,10 +184,10 @@ opacity: 1;
             </div>
 
             <div class="options">
-                <p><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
-                <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
-                <p><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
-                <p><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
+                <p class="p1"><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
+                <p class="p1"><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
+                <p class="p1"><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
+                <p class="p1"><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
                 <p><a href="client_activity.php?c_id=<?php echo $row['client_id']; ?>">Activity</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Files</p>
                 <p><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
