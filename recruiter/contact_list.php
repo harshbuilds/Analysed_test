@@ -19,14 +19,14 @@
         </div>
  	<form action="" method="post">
         <div>
-            <a href="#" class="sub_1">Create new contact and manage old ones</a>
+            <a href="#" class="sub_11">Create new contact and manage old ones</a>
             <button class="addFilesMyTasks1" ><a style="text-decoration: none; color: white;" href="addContact.php">Add + </a></button>
         </div>
 
       <div class="container" style="margin-left:-2%;">
         <div class="row">
             <div class="col-7">
-                <div class="input-field" style="width:585px">
+                <div class="input-field1" >
                 <img src="img/person.png" alt="" height="25px" width="25px" class="box_1"><span id="m1">Company&nbsp;</span>
                 <input type="text"  name="searchForNames" id="inputSearch_12" class="searchForJobs"
                     placeholder="| &emsp;&emsp;Search by name "
