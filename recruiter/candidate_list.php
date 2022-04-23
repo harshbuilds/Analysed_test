@@ -21,16 +21,17 @@
   <span>View and manage your candidates</span>
   </div>
    <div class="search">
-   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#3598DB" class="bi bi-eye-fill" viewBox="0 0 16 16"><a href="#" class="toggle-button">
+   <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#3598DB" class="bi bi-eye-fill" viewBox="0 0 16 16"><a href="#" class="toggle-button">
  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></a>
-</svg> <span  style="color:#3598DB" class="svg1"><input type="text" name="searchCandidatesNames" id="inputSearch_12" class="searchForJobs"  placeholder="| &emsp;&emsp;Search by candidate name "/>
+</svg> 
+<span  style="color:#3598DB" class="svg1"><input type="text" name="searchCandidatesNames" id="inputSearch_12" class="searchForJobs"  placeholder=" All Status|&emsp;Search by candidate name "/>
 <button class="searchButton">
 <i class="fa fa-search" style="color:blue"></i>
 </button>
    </div>
    <div class="add">
-<button class="btn" id="myBtn"><a style="color:white" href="addCandidates1.php">Add+</a></button>
+<button class="btn" id="myBtn"><a style="color:white" href="addCandidates1.php">Add +</a></button>
    </div>
 
    <div class="sort">
@@ -104,7 +105,7 @@
 </div>
 </div>
 
- <input type = "submit" name = "filter" class="save_button_addClient default-button-for-recruiter-dashboard" value="filter" >
+ <input type = "submit" name = "filter"  id="btn-filter" class="save_button_addClient default-button-for-recruiter-dashboard" value="filter" >
 
 <div class="cont">
 
@@ -154,7 +155,7 @@ Uploaded by<br>
   <?php echo $row['firstname']; ?></div>
 <div class="added1"><span style="color:979797"><?php echo $row['company_name'] ; ?></span><br><?php echo $row['current_title'];?></div>
 <div class="added2"><span style="color:979797">Status</span><br><?php echo $row['status'];?></div>
-<p><a href="edit-Candidates1.php?edit_Candidates=<?php echo $row['candidate_id'];?>"> Peek <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+<p><a href="edit-Candidates1.php?edit_Candidates=<?php echo $row['candidate_id'];?>"> Peek <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
   <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
 </svg></p>
@@ -184,4 +185,3 @@ Uploaded by<br>
 });
 </script>
 </body>
-
