@@ -81,8 +81,9 @@
             class="searchForJobs"
             placeholder="Search for Jobs"
           />
+         
           <button class="searchButton">
-            <img src="./img/search-icon-blue.png" />
+           <a href="searchJobs.php"> <img src="./img/search-icon-blue.png" /></a>
           </button>
         </div>
         <div class="profileInNav">
@@ -142,7 +143,7 @@
                   <a href="profile.php">Profile</a>
                 </li>
                 <li>
-                  <a href="#" style="color: #51C46D">Logout</a>
+                  <a href="logout.php" style="color: #51C46D">Logout</a>
                 </li>
               </ul>
             </div>

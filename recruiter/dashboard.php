@@ -272,7 +272,7 @@
                 <section class="upcoming_interviews_recruiter_div ">
                 <span class="row-recruiter upcoming_interview_top_span">
                             <p>Upcoming Interviews</p>
-                            <a href="#">Schedule an Interview +</a>
+                            <a href="schedule.php">Schedule an Interview +</a>
                 </span>
 
                    <?php $result = mysqli_query($db, "SELECT * FROM interview"); ?>
@@ -339,8 +339,9 @@
     </script>
 
         <script src="./js/dashboard.js"></script>
-        <script $(document).ready(function() {
-    $('#example').DataTable();
-} );
+       
+       
+<script>
+         $(document).ready(function() { 
+             $('#example').DataTable(); } );
 </script>
-

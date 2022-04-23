@@ -90,7 +90,7 @@ if (!isset($_SESSION['email']))
                     placeholder="Search for Jobs"
                 />
                 <button class="searchButton">
-                    <img src="./img/search-icon-blue.png" />
+                <a href="searchJobs.php"> <img src="./img/search-icon-blue.png" />  </a>
                 </button>
             </div>
 
@@ -150,10 +150,10 @@ if (!isset($_SESSION['email']))
                         <span>
                             <ul>
                                 <li>
-                                    <a href="../profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
+                                    <a href="profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
                                 </li>
                                 <li>
-                                    <a href="#" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
+                                    <a href="logout.php" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
                                 </li>
                                 </ul>
                         </span>
