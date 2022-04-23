@@ -6,8 +6,8 @@
             <i class="fa fa-bars navigation-menu-signup" aria-hidden="true" class=""></i>
 
             <ul class="analysed-navigation-items">
-                <li><a href="">Contact us</a></li>
-                <li><a href="">About us</a></li>
+                <li><a href="../../recruiter/contact.php">Contact us</a></li>
+                <li><a href="../../recruiter/aboutOrganization.php">About us</a></li>
             </ul>
 </nav>
 
