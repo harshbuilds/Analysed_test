@@ -118,11 +118,11 @@ session_start();            //session has been started
                     </p>
                     <p class="input-para-add-client-ekam-1">
                         <label for="default-select-for-no.9">Permanent fee</label>
-                            <input id="default-select-for-no.9" name="permanent_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
+                            <input type="number" id="default-select-for-no.9" name="permanent_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
                     </p>
                     <p class="input-para-add-client-ekam-1">
                         <label for="default-select-for-no.10">Contract fee</label>
-                        <input id="default-select-for-no.10" name="contract_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
+                        <input type="number" id="default-select-for-no.10" name="contract_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
                     </p>
                     </div>
                     <a href="addClient1.php"> <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" ></a> <!-- linked to addClient1 pg -->

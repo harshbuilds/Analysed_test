@@ -74,7 +74,7 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
                         </p>
                         <p class="input-para-add-client-ekam-1">
                             <label for="default-select-for-no.12">Contact number</label>
-                            <input id="default-select-for-no.12" type="tel" name="contact_no" class="default-input-for-add-client-1" placeholder="Enter 10 digit mobile number" required />
+                            <input id="default-select-for-no.12" type="tel" name="contact_no" class="default-input-for-add-client-1" maxlength="10" placeholder="Enter 10 digit mobile number" pattern="[789][0-9]{9}" required />
                             <img src="img/plus1.JPG" class="plus">
                     </p>
                     <p class="input-para-add-client-ekam-1">
