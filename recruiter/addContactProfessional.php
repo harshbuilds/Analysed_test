@@ -50,7 +50,8 @@ include 'connection1.php';         //database connection page included
 <form action="addContatadd.php" method="post" enctype="multipart/form-data"> <!-- redirecting to Additional info page with data of professional info -->
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add Contact</a>
+        
+        <a href="dashboard.php">Dashboard</a> > <a href="candidate_list.php">My Database</a> > <a href="#">Add Contact</a>
     </div>
     <div class="small_container">
         <div class="heading_dash">

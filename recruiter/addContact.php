@@ -20,7 +20,7 @@
 <div class="container">
 
     <div class="bread-crumbs_Mytools-recruiter">
-        <a href="/">Dashboard</a> > <a href="">My Database</a> > <a href="">Add Contact</a>
+        <a href="dashboard.php">Dashboard</a> > <a href="candidate_list.php">My Database</a> > <a href="#">Add Contact</a>
     </div>
 
     <div class="small_container">
@@ -93,7 +93,7 @@
                                                         <!-- CONTACT NUMBER -->
                                 <p class="input-para-add-client-ekam-1">
                                     <label for="default-input-for-no.2">Contact number * </label>
-                                    <input type="tel" maxlength="10" name="phone" class="default-input-for-add-client-1" placeholder="Contact number" id="default-input-for-no.2">
+                                    <input type="tel" maxlength="10" name="phone" class="default-input-for-add-client-1" placeholder="Contact number" id="default-input-for-no.2" pattern="[789][0-9]{9}">
                                     <a href=""><i class="fa fa-plus" style="color:blue"></i></a>
                                 </p>
                                                                     <!-- ADDRESS -->
