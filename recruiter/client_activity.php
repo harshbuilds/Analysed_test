@@ -35,13 +35,13 @@ session_start();
             </div>
 
             <div class="options">
-                <p><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
-                <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
-                <p><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
+                <p class="p1"><a href="client_individual.php?c_id=<?php echo $row['client_id']; ?>">At a glance</a></p>
+                <p class="p1"><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
+                <p class="p1"><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
                 <p><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Activity</p>
                 <p><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
-                <p><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
+                <p class="p1"><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
             </div>
 
             <div class="status">
@@ -157,6 +157,7 @@ session_start();
                     </div>
 
                     <div class="mail-box">
+                        <div class="scroll-test">
                         <div class="box-content" id="list">
                             <div class="box-content-rounded active">
                                 <p><a href="#" onclick="divVisibility('Div1');"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></p>
@@ -189,38 +190,40 @@ session_start();
                             <p style="margin-left:-30px">Notes</p>
                             <p style="margin-left:-10px">Files</p>
                         </div>
+                        </div>
 
                         <div id="Div1">
                         <div class="mail-content">
-                            <p class="heading-1">Mail Sent</p>
+                            <p class="heading-1 sub2">Mail Sent</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">TO: eirmod tempor</p>
-                            <p class="recent-content-content-2">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
+                            <p class="recent-content-content-1 sub">TO: eirmod tempor</p>
+                            <p class="recent-content-content-2 sub1">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Mail Sent</p>
+                        <p class="heading-1 sub2">Mail Sent</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">TO: eirmod tempor</p>
-                            <p class="recent-content-content-2">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
+                            <p class="recent-content-content-1 sub">TO: eirmod tempor</p>
+                            <p class="recent-content-content-2 sub1">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
+                            
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Mail Sent</p>
+                        <p class="heading-1 sub2">Mail Sent</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">TO: eirmod tempor</p>
-                            <p class="recent-content-content-2">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
+                            <p class="recent-content-content-1 sub">TO: eirmod tempor</p>
+                            <p class="recent-content-content-2 sub1">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Mail Sent</p>
+                        <p class="heading-1 sub2">Mail Sent</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">TO: eirmod tempor</p>
-                            <p class="recent-content-content-2">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
+                            <p class="recent-content-content-1 sub">TO: eirmod tempor</p>
+                            <p class="recent-content-content-2 sub1">SUB: consetetur sadipscing elitr, sed diam nonumy</p>
                         </div>
                          <div class="button-1">
                             <button class="next-btn">Go to Calls</button>
@@ -229,35 +232,35 @@ session_start();
 
                         <div id="Div2" style="display: none;">
                         <div class="mail-content">
-                            <p class="heading-1">Called made</p>
+                            <p class="heading-1 sub2">Called made</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">AT: 8:00AM, 23 Jul 2020</p>
-                            <p class="recent-content-content-2">WITH: consetetur sadipscing elitr</p>
+                            <p class="recent-content-content-1 sub">AT: 8:00AM, 23 Jul 2020</p>
+                            <p class="recent-content-content-2  sub1 ">WITH: consetetur sadipscing elitr</p>
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Called made</p>
+                            <p class="heading-1 sub2">Called made</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">AT: 8:00AM, 23 Jul 2020</p>
-                            <p class="recent-content-content-2">WITH: consetetur sadipscing elitr</p>
+                            <p class="recent-content-content-1 sub">AT: 8:00AM, 23 Jul 2020</p>
+                            <p class="recent-content-content-2 sub1">WITH: consetetur sadipscing elitr</p>
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Called made</p>
+                            <p class="heading-1 sub2">Called made</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">AT: 8:00AM, 23 Jul 2020</p>
-                            <p class="recent-content-content-2">WITH: consetetur sadipscing elitr</p>
+                            <p class="recent-content-content-1 sub">AT: 8:00AM, 23 Jul 2020</p>
+                            <p class="recent-content-content-2 sub1">WITH: consetetur sadipscing elitr</p>
                         </div>
                         <hr style="color:#979797;margin-top:10px;">
                         <div class="mail-content">
-                            <p class="heading-1">Called made</p>
+                            <p class="heading-1 sub2">Called made</p>
                             <p class="right-content-1">View mail</p>
                             <span class="right-content-2">9:30PM | 9 Jul, 2020</span>
-                            <p class="recent-content-content-1">AT: 8:00AM, 23 Jul 2020</p>
-                            <p class="recent-content-content-2">WITH: consetetur sadipscing elitr</p>
+                            <p class="recent-content-content-1 sub">AT: 8:00AM, 23 Jul 2020</p>
+                            <p class="recent-content-content-2 sub1">WITH: consetetur sadipscing elitr</p>
                         </div>
                          <div class="button-1">
                             <button class="next-btn">Go to Calls</button>
@@ -306,4 +309,3 @@ for(var i=0;i<btns.length;i++){
       }
     }
 </script>
-
