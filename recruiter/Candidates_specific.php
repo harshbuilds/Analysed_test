@@ -12,6 +12,8 @@ session_start();
     if($check){
         while($row=mysqli_fetch_assoc($sql)){
             ?>
+ 
+ 
  <?php include('header.php') ?>
 <title>Dashboard</title>
 
@@ -21,7 +23,7 @@ session_start();
 <div class="container1">
 <div class="small_container1">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
+            <a href="dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>John Smith</u></a>
         </div>
   <div class="profile-img">
    <img src="../img/<?php echo $row["image"]; ?>" width="130" height="130" style="margin: 25px" alt="">
@@ -32,17 +34,17 @@ session_start();
 </svg> <?php echo $row["city_name"]; ?></h4>
 </div>
 <div class="button">
-<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button>
-<button style="margin-top:-40px"><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
+<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button><br><br><br><br>
+<button ><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
   </div>
   <div class="options">
   <span style="color:#3598DB"><!-- <a style="color:#3598DB" href="#"> --><b>| </b> At a glance</a></span>
-  <p><a style="text-decoration:none" href="candidates_status.php?c_id=<?php echo $row['candidate_id']; ?>">  Status</a></p>
+  <p><a style="color:#979797" href="candidates_status.php?c_id=<?php echo $row['candidate_id']; ?>">  Status</a></p>
    <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $row['candidate_id']; ?>">Activity</a></p>
-    <p><a style="color:#3598DB" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
-     <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
+    <p class="p1"><a style="color:#979797" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
+     <p class="p1"><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
      </div>
-     <div class="options-card"></div>
+     <div class="options-card">
      <div class="summary">
      <strong>Summary</strong>
      </div>
@@ -77,7 +79,9 @@ session_start();
      <span>Daily Rate</span>
      <p style="color:black">N/A</p>
      </div>
-     <div class="skills"></div>
+     </div>
+                <!-- Start of Skills box -->
+     <div class="skills">
      <div class="skill">
      <strong>Skills</strong>
      </div><br>
@@ -92,8 +96,9 @@ session_start();
     ?>
 	</span>
      </div>
-     <div class="status">
      </div>
+     <div class="status">
+     
      <div class="status1"><b><?php echo $row["candidate_id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;</b>
      <span style="color:#979797"><?php echo $row["last_updated"]; ?></span>
      </div>
@@ -102,7 +107,7 @@ session_start();
      <span><?php echo $row["firstname"]; ?></span>
      <p style="color:#3598DB"><?php echo $row["current_title"]; ?>
      <span style="color:black; font-size:15px">|<?php echo $row["qualifications"]; ?></span></p>
-     <u style="color:#979797">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
+     <u style="color:#979797">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
      <br><br>
      <span style="color:#979797; font-size:15px; font-family:CeraM; margin-left:-15px;">
      Status&emsp;&emsp;&emsp;&emsp;&emsp;Availability date</span>
@@ -143,68 +148,90 @@ session_start();
     <span style="color:black">abc@gmail.com</span><br>
     <span style="color:black">+91 9876543210</span><br>
 </div>
-<div class="box-4"></div>
-<div class="box-4-1">
-<strong>Employeement History</strong><br><br>
-<p>MERN stack developer</p><br>
-<p>MERN stack developer</p></div>
-<div class="box-4-1-1">
-<span style="color:#3598DB;">Company name,City</span><br><br>
-Job Description,brief about the job.Job Description,brief about the job.<br><br>
-<span style="color:#979797;">November 2017-December 2019</span>
-<br><br><br>
-<span style="color:#3598DB">Company name,City</span><br><br>
-Job Description,brief about the job.Job Description,brief about the job.<br><br>
-<span style="color:#979797;">November 2017-December 2019</span>
+</div>
+<div class="box-4">
+    <div class="box-4-1">
+    <strong>Employeement History</strong><br><br>
+    <p>MERN stack developer</p><br>
+    <p>MERN stack developer</p>
+    </div>
+    <div class="box-4-1-1">
+    <span style="color:#3598DB;">Company name,City</span><br><br>
+      Job Description,brief about the job.Job Description,brief about the job.<br><br>
+    <span style="color:#979797;">November 2017-December 2019</span>
+    <br><br><br>
+    <span style="color:#3598DB">Company name,City</span><br><br>
+      Job Description,brief about the job.Job Description,brief about the job.<br><br>
+      <span style="color:#979797;">November 2017-December 2019</span>
+    </div>
 </div>
 
-<div class="box-5"></div>
-<div class="box-5-1">
-<strong>Contact</strong><br><br>
-<span style="color:#3598DB; font-size:15px; font-family:Metro"><?php echo $row["candidate_email"]; ?></span><br><br>
-<span style="color:black; font-size:15px; font-family:Metro"><?php echo $row["countrycode"]; ?> <?php echo $row["phone_no"]; ?><br><br>
-<?php echo $row["countrycode"]; ?> <?php echo $row["phone_no"]; ?><br><br><br>
-<?php echo $row["address"]; ?><br><br>
-   <?php echo $row["city_name"]; ?>-<?php echo $row["zipcode"]; ?><br><br>
-    <?php echo $row["state"]; ?>,<?php echo $row["country"]; ?>.</span>
-     </div>
-     <div class="box-6"> </div>
-     <div class="imaview">Image view</div>
-  <div class="box-6-1">
-  <strong>Tasks</strong><br><br>
-  <div class="taskscontent">
-  <img src="img/icon2.png" alt="" style="height:50px; width:50px;">
-<p>Fox hunt <span style="color:#3598DB">30%</span></p></div>
-<div class="taskname">
-Task name Name of the task</div>
-<div class="assignedon">
-Assigned on <span style="color:black">20-12-2000</span>
-</div>
-<div class="deadline">
-Dead line <span style="color:black">20-12-2000</span>
-</div></div>
-   <div class="taskscontent1">
-  <img src="img/icon2.png" alt="" style="height:50px; width:50px; margin-top:150px; margin-left:250px;">
-<p>Fox hunt <span style="color:#3598DB">30%</span></p></div>
-<div class="taskname1">
-Task name Name of the task</div>
-<div class="assignedon1">
-Assigned on <span style="color:black">20-12-2000</span>
-</div>
-<div class="deadline1">
-Dead line <span style="color:black">20-12-2000</span>
-</div>
-</div>
-<div class="box-7"></div>
-<div class="box-7-1">
-<strong>Languages</strong><br><br>
-<img src="img/a.png" alt="" style="height:50px; width:50px;">&emsp;&emsp;</div>
-<div class="box-7-1-1">English <span style="color:#979797;">&emsp;&emsp;Fluent</span></div><br><br>
-<img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:860px;">
-<div class="box-7-1-2">English <span style="color:#979797;">&emsp;&emsp;Fluent</span></div><br><br>
-<img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:860px;">
-<div class="box-7-1-3">English <span style="color:#979797;">&emsp;&emsp;Fluent</span></div><br><br>
-<div class="box-8"></div>
+<div class="box-5"> 
+    <div class="box-5-1">
+        <strong>Contact Info</strong><br><br>
+        <span style="color:#3598DB; font-size:15px; font-family:Metro"><?php echo $row["candidate_email"]; ?></span><br><br>
+          <span style="color:black; font-size:15px; font-family:Metro"><?php echo $row["countrycode"]; ?> <?php echo $row["phone_no"]; ?><br><br>
+          <?php echo $row["countrycode"]; ?> <?php echo $row["phone_no"]; ?><br><br><br>
+          <?php echo $row["address"]; ?><br><br>
+          <?php echo $row["city_name"]; ?>-<?php echo $row["zipcode"]; ?><br><br>
+          <?php echo $row["state"]; ?>,<?php echo $row["country"]; ?>.</span>
+    </div> 
+    </div>
+     <!-- Start of Task box -->
+     <div class="box-6"> 
+         <div class="imaview">Image view
+          </div>
+        <div class="box-6-1">
+            <strong>Tasks</strong><br><br>
+            <div class="taskscontent">
+              <img src="img/icon2.png" alt="" style="height:50px; width:50px;">
+              <p>Fox hunt <span style="color:#3598DB">30%</span></p>
+            </div>
+            <div class="taskname">
+              Task name Name of the task
+            </div>
+            <div class="assignedon">
+              Assigned on <span style="color:black">20-12-2000</span>
+            </div>
+            <div class="deadline">
+                Dead line <span style="color:black">20-12-2000</span>
+            </div>
+        </div>
+        <div class="box-6-2">
+            
+            <div class="taskscontent1">
+              <img src="img/icon2.png" alt="" style="height:50px; width:50px; margin-top:150px; margin-left:250px; ">
+              <p>Fox hunt <span style="color:#3598DB">30%</span></p>
+            </div>
+            <div class="taskname1">
+              Task name Name of the task
+            </div>
+            <div class="assignedon1">
+              Assigned on <span style="color:black">20-12-2000</span>
+            </div>
+            <div class="deadline1">
+                Dead line <span style="color:black">20-12-2000</span>
+            </div>
+        </div>
+    </div>
+            <!-- End of Task box -->
+
+<!-- Start of Language box -->
+  <div class="box-7">
+     <div class="box-7-1">
+      <strong>Languages</strong><br><br>
+      <img src="img/a.png" alt="" style="height:50px; width:50px;">&emsp;&emsp;></div>
+        <div class="box-7-1-1">English <span style="color:#979797;">&emsp;&emsp;Fluent</span><br><br>
+        <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-91px;"></div>
+        <div class="box-7-1-2">English <span style="color:#979797;">&emsp;&emsp;Fluent</span><br><br>
+          <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-91px;"></div>
+        <div class="box-7-1-3">English <span style="color:#979797;">&emsp;&emsp;Fluent</span></div><br><br>
+        
+ </div>
+<!-- End of Language box -->
+
+<!-- Start of Education box -->
+        <div class="box-8">
 <div class="box-8-1">
 <strong>Education</strong><br><br></div>
 <div class="degree">Bachelor of Technology(B.Tech)<br>
@@ -221,30 +248,44 @@ Indian Institute of Technology,Chennai.<br>
 computer science</div>
 <div class="institute">
 Indian Institute of Technology,Chennai.<br>
-<span style="color:#979797;">20-12-2000</span></div>
-<div class="box-9"></div>
+<span style="color:#979797;">20-12-2000</span>
+</div>
+</div>
+<!-- End  of Education box -->
+
+<!-- Start  of Certifications box -->
+<div class="box-9">
 <div class="box-9-1">
 <strong>Certifications</strong><br><br></div>
 <div class="certicontent">
-  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:260px;">
-<p>Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
+  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:26px;">
+<p class="c1">Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
 <div class="certicontent">
-  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:260px;">
-<p>Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
+  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:26px;">
+<p class="c1">Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
 <div class="certicontent">
-  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:260px;">
-<p>Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
-<div class="box-10"></div>
+  <img src="img/badge.jpg" alt="" style="height:50px; width:50px; margin-left:26px;">
+<p class="c1">Typography-01&emsp;&emsp;Futur&emsp;&emsp;<a href="#">view certificate</a><br><span style="color:#979797;">2020</span></p></div>
+</div>
+
+
+<!-- End  of Certifications box -->
+
+<!-- Start of Achievements box -->
+<div class="box-10">
 <div class="box-10-1">
 <strong>Achievements</strong><br><br></div>
 <div class="achievements">
 Head of cyber security club in the college<br>
 <span style="color:#979797;">2020-2021(expected)</span>
-</div>
+</div><br><br> <br>
+<hr style="height:0px; width:70%;color:gray; margin-left:30px">
 <div class="achievements">
 Head of cyber security club in the college<br>
 <span style="color:#979797;">2020-2021(expected)</span>
 </div>
+</div>
+<!-- End  of Achievements  box -->
 </div>
 </div>
 </body>
