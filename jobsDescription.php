@@ -34,7 +34,7 @@ if($_SESSION['jobSeekerID']==null)
             </div>
             <?php $JobID = $_GET['job_ID'];
              $sql="SELECT * FROM joblistings where job_id= '" .  $JobID . "'";
-             $result_1 = mysqli_query($conn,$sql);
+             $result_1 = mysqli_query($con,$sql);
              while ($row = mysqli_fetch_array($result_1)) {
                ?>
                         <!-- START OF JOB DESCRIPTION -->
