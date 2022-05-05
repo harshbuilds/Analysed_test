@@ -11,7 +11,28 @@ if (!isset($_SESSION['email']))
 <link rel="stylesheet" href="./css/recruiter_header.css">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="./css/candidate_list.css">
+<link rel="stylesheet" href="./css/contact_list.css">
+
+<style type="text/css">
+  .search_list{
+  display: flex;
+  border: 1px solid red;
+  margin-top: 231px;
+  width: auto;
+}
+/*#details{
+  display: none;
+
+}*/
+/*#searchBtn.active{
+  display: block;
+}*/
+
+</style>
 
 <nav class="sidebar_main">
       <ul class="sidebar_main-list">
@@ -81,18 +102,16 @@ if (!isset($_SESSION['email']))
         <img src="./img/hamburger-menu-icon.svg" alt="" class="hamburger">
         <nav class="nav_main-1">
             <h2 class="logo_heading">Analysed</h2>
+
+            <form action="search1.php" method="GET">
             <div class="input-field">
-                <input
-                    type="text"
-                    name="searchForJobs"
-                    id="inputSearch"
-                    class="searchForJobs"
-                    placeholder="Search for Jobs"
-                />
-                <button class="searchButton">
-                <a href="searchJobs.php"> <img src="./img/search-icon-blue.png" />  </a>
+                <input type="text" name="searchForJobs" value="<?php if(isset($_GET['searchForJobs'])){echo $_GET['searchForJobs'];} ?>" id="inputSearch" class="searchForJobs" placeholder="Search for Jobs" />
+                <button class="searchButton" id="searchBtn">
+                    <img src="./img/search-icon-blue.png" />
                 </button>
             </div>
+          
+
 
             <div class="profileSection-dashboard_recruiter">
 
@@ -150,10 +169,10 @@ if (!isset($_SESSION['email']))
                         <span>
                             <ul>
                                 <li>
-                                    <a href="profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
+                                    <a href="../profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
                                 </li>
                                 <li>
-                                    <a href="logout.php" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
+                                    <a href="#" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
                                 </li>
                                 </ul>
                         </span>
@@ -216,3 +235,6 @@ if (!isset($_SESSION['email']))
 
 </div>
 <script src="./js/header.js"></script>
+<script type="text/javascript">
+
+</script>
