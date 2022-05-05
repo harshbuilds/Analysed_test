@@ -62,18 +62,13 @@
     <img src="./img/hamburger-menu-icon.svg" alt="" class="hamburger">
       <nav class="nav_main">
         <h2 class="logo_heading">Analysed</h2>
-        <div class="input-field">
-          <input
-            type="text"
-            name="searchForJobs"
-            id="inputSearch"
-            class="searchForJobs"
-            placeholder="Search for Jobs"
-          />
-          <button class="searchButton">
-            <img src="./img/search-icon-blue.png" />
-          </button>
-        </div>
+       <form action="./search1_js.php" method="GET">
+            <div class="input-field">
+                <input type="text" name="searchForJobs" value="<?php if(isset($_GET['searchForJobs'])){echo $_GET['searchForJobs'];} ?>" id="inputSearch" class="searchForJobs" placeholder="Search for Jobs" />
+                <button class="searchButton" id="searchBtn">
+                    <img src="./img/search-icon-blue.png" />
+                </button>
+            </div>
         <div class="profileInNav">
         <div class="notificationsDiv">
         <ul>
@@ -140,3 +135,4 @@
       </nav>
 </div>
 <script src="./js/index.js"></script>
+
