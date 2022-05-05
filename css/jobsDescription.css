@@ -9,10 +9,10 @@
   position: relative;
   font-family: Metro;
 }
-.share-icons-leftside-jobDescription{
-    position: absolute;
-    top: 2%;
-    right: 2%;
+.share-icons-leftside-jobDescription {
+  position: absolute;
+  top: 2%;
+  right: 2%;
 }
 .left-side-jobDescription .heading-dash {
   text-transform: uppercase;
@@ -37,7 +37,7 @@
   font-family: Metro;
 }
 
-.rightJobDesc-images-sm{
+.rightJobDesc-images-sm {
   width: 19px;
   margin-right: 10px;
 }
@@ -62,14 +62,14 @@
 }
 .requirements-section-leftSide-jobsDescription {
   margin-top: 40px;
-  padding-left: 30px;
-  padding-right:30px;
+  padding-left: 0px;
+  padding-right: 30px;
 }
 .requirements-subDetail-left-sideJobsDescription {
-  display:flex;
+  display: flex;
   width: 60%;
-  padding:0 15px 15px 15px;
-  justify-content:start;
+  padding: 0 15px 15px 15px;
+  justify-content: space-between;
   align-items: baseline;
 }
 .requirements-subDetail-left-sideJobsDescription span {
@@ -83,6 +83,7 @@
   font-weight: normal;
   margin-left: 15px;
   margin-top: 10px;
+  width: 220px;
 }
 .applyNow-leftSide-jobsDescription {
   margin-top: 40px;
@@ -95,7 +96,7 @@
   border-radius: 8px;
   cursor: pointer;
 }
-.share-and-star-icon-img{
+.share-and-star-icon-img {
   width: 25px;
 }
 .right-side-jobDescription {
@@ -161,38 +162,44 @@
   z-index: 1;
   font-size: 16px;
 }
-@media screen and (max-width:1450px){
-  .icons-flex-left-side-jobsDescription{
+@media screen and (max-width: 1450px) {
+  .icons-flex-left-side-jobsDescription {
     width: 65%;
   }
-  .rightJobDesc-images-sm{
+  .rightJobDesc-images-sm {
     width: 15px;
   }
-  .right-side-jobDescription{
+  .right-side-jobDescription {
     flex-basis: 25%;
   }
 }
 
-@media screen and (max-width:1000px){
-    .left-side-jobDescription,.right-side-jobDescription{
-        flex-basis: 100%;
-    }
-    .share-icons-leftside-jobDescription{
-        top: -2%;
-    }
-    .icons-flex-left-side-jobsDescription{
-        width: 100%;
-        font-size: 16px;
-    }
-    .skills-leftSide-jobsDescription span{
-        margin: 8px;
-    }
-    .requirements-subDetail-left-sideJobsDescription{
-        width: 100%;
-    }
+@media screen and (max-width: 1000px) {
+  .left-side-jobDescription,
+  .right-side-jobDescription {
+    flex-basis: 100%;
+  }
+  .share-icons-leftside-jobDescription {
+    top: -2%;
+  }
+  .icons-flex-left-side-jobsDescription {
+    width: 100%;
+    font-size: 16px;
+  }
+  .skills-leftSide-jobsDescription span {
+    margin: 8px;
+  }
+  .requirements-subDetail-left-sideJobsDescription {
+    width: 100%;
+  }
 }
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px) {
   .searchButton {
-  margin-left: 24px;
-}
+    margin-left: 24px;
+  }
+
+  .icons-flex-left-side-jobsDescription {
+    width: 100%;
+    font-size: 16px;
+  }
 }
