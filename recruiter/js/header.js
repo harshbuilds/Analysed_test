@@ -33,3 +33,20 @@ profileDropdownLink.addEventListener('click',()=>{
 menuForSidebar.addEventListener("click", sideBarShow);
 hamburger.addEventListener("click", sideBarShow);
 notiMail.addEventListener("click", notifDiv);
+
+// const Item = document.querySelector('#searchBtn')
+// Item.addEventListener('click',() =>{
+//     document.querySelector('#details').style.display='block'
+    
+    
+// })
+
+ const targetDiv = document.getElementById("details");
+    const btn = document.getElementById("searchBtn");
+    btn.onclick = function () {
+      if (targetDiv.style.display !== 'none') {
+        targetDiv.style.display = 'none'
+      } else {
+        targetDiv.style.display = 'block'
+      }
+    };
