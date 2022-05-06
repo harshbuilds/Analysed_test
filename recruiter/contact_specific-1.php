@@ -115,9 +115,9 @@ session_start();        //session has been started
              <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>At a glance</p>
              <p><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
              <p><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
-             <p><a href="contact_specific-5.php?c_id=<?php echo $c_id; ?>">Jobs</a></p>
-             <p><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
-             <p><a href="contact_specific-6.php?c_id=<?php echo $c_id; ?>">Notes</a></p>
+             <p class="p1"><a href="contact_specific-5.php?c_id=<?php echo $c_id; ?>">Jobs</a></p>
+             <p class="p1"><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
+             <p class="p1"><a href="contact_specific-6.php?c_id=<?php echo $c_id; ?>">Notes</a></p>
          </div>
 
          <br><br>

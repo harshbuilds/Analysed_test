@@ -119,9 +119,9 @@ if(isset($_POST['btnsearch']))
             </div>
 
             <div class="options">
-                <p><a href="contact_specific-1.php?c_id=<?php echo $c_id; ?>">At a glance</a></p>
-                <p><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
-                <p><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
+                <p class="p1"><a href="contact_specific-1.php?c_id=<?php echo $c_id; ?>">At a glance</a></p>
+                <p class="p1"><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
+                <p class="p1"><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
                 <p><a href="contact_specific-5.php?c_id=<?php echo $c_id; ?>">Jobs</a></p>
                 <p><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Notes</p>

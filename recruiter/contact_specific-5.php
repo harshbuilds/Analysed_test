@@ -192,17 +192,17 @@
             </div>
 
             <div class="options">
-                <p><a href="contact_specific-1.php?c_id=<?php echo $c_id; ?>">At a glance</a></p>
-                <p><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
+                <p class="p1"><a href="contact_specific-1.php?c_id=<?php echo $c_id; ?>">At a glance</a></p>
+                <p class="p1"><a href="contact_specific-2.php?c_id=<?php echo $c_id; ?>">Appointments</a></p>
                 <p><a href="contact_specific-3.php?c_id=<?php echo $c_id; ?>">Activity</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>Jobs</p>
                 <p><a href="contact_specific-4.php?c_id=<?php echo $c_id; ?>">Files</a></p>
-                <p><a href="contact_specific-6.php?c_id=<?php echo $c_id; ?>">Notes</a></p>
+                <p class="p1"><a href="contact_specific-6.php?c_id=<?php echo $c_id; ?>">Notes</a></p>
             </div>
 
             <br><br>
             <div class="status">
-                <div class="status1" >
+                <div class="status1">
                     <p>#<?php echo  $c_id ?></p>
                     <span><?php echo  $added_on ?></span>
                 </div>
