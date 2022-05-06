@@ -570,7 +570,8 @@ input[type="checkbox"]:focus + label::before {
   .sortbyText,
   .list,
   .select-col,
-  .status {
+  .status,
+  .p1 {
     display: none;
   }
   .profile-img {
@@ -599,9 +600,10 @@ input[type="checkbox"]:focus + label::before {
   .options {
     font-size: 22px;
     padding-left: 20px;
-    position: relative;
-    top: 45px;
-    left: -56px;
+    margin-top: 75px;
+    margin-left: -19px;
+    display: flex;
+    justify-content: space-between;
   }
   .left-side-container-1 {
     position: relative;

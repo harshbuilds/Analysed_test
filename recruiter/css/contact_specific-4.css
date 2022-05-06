@@ -489,7 +489,8 @@ input[type="checkbox"]:focus + label::before {
 
 @media screen and (max-width: 650px) {
   .bread-crumbs_Mytools-recruiter,
-  .status {
+  .status,
+  .p1 {
     display: none;
   }
   .profile-img {
@@ -519,9 +520,13 @@ input[type="checkbox"]:focus + label::before {
   .options {
     font-size: 22px;
     padding-left: 20px;
-    position: relative;
+    margin-top: 75px;
+    margin-left: -19px;
+    /* position: relative;
     top: 45px;
-    left: -56px;
+    left: -56px; */
+    display: flex;
+    justify-content: space-between;
   }
   .left-side-container-1 {
     position: relative;
