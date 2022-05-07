@@ -1,7 +1,7 @@
-* {
+/* * {
   margin: 0px;
   padding: 0px;
-}
+} */
 
 body {
   background: white;
@@ -987,6 +987,9 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+.img-map img {
+  width: 670px;
+}
 .loc_2 {
   margin-left: 20px;
 }
@@ -1005,6 +1008,127 @@ body {
 .row {
   justify-content: space-between;
 }
-/* .s1 {
-  justify-content: space-between;
-} */
+.jobs {
+  color: #333333;
+  font-size: 18px;
+  font-family: MetroM;
+  margin-left: 250px;
+}
+.job-num {
+  margin-left: 180px;
+}
+.jobs-1{
+  color: #333333;f
+  ont-size: 18px;
+  font-family: MetroM;
+  margin-left:290px;
+}
+
+
+@media screen and (max-width: 650px) {
+  .searchButton {
+    margin-left: 24px;
+  }
+  .head_1 {
+    margin-left: -157px;
+  }
+  .sub_1 {
+    margin-left: -147px;
+  }
+  #li-1{
+    width: 360px;
+    margin-left: -180px;
+  }
+  #map1 {
+    display: grid;
+    margin-left: -200px;
+    width: 361px;
+  }
+  .rightText {
+    margin-left: 90px;
+  }
+  .img-map img {
+    width: 327px;
+  }
+  #cards {
+    width: 360px;
+    margin-bottom: 30px;
+  }
+  .jobs {
+    margin-left: 90px;
+  }
+  .loc_2 {
+    margin-left: 14px;
+    width: 300px;
+  }
+  .job-num {
+    margin-left: 261px;
+  }
+  .jobs-1 {
+    margin-left: 105px;
+  }
+  .head_11 {
+    margin-left: -157px;
+    width: 300px;
+    font-size: 22px;
+  }
+  #job-list {
+  margin-left: -185px;
+    width: 361px;
+  }
+  .companyName,.icons{
+    padding-top: 20px;
+  }
+  .more_m {
+    margin-top: 22px;
+    margin-left: 140px;
+    font-size: 22px;
+  }
+   #specific-job{
+    display: grid;
+    margin-left: -180px;
+    width: 360px;
+   
+}
+.s1 img{
+  margin-left: 106px;
+}
+.o1{
+  font-size: 22px;
+  margin-left: 108px;
+}
+#li_5 {
+  
+  width: 360px;
+margin-left: -179px;
+  
+}
+.addFilesMyTasks1{
+  margin-left: 43px;
+  width: 272px;
+  margin-top: 20px;
+  height: 45px;
+ 
+}
+.leftText1 {
+  padding-top: 20px;
+  height: 50px;
+  margin-left: 30px;
+  font-size: 22px;
+  font-style: bold;
+}
+.s4{
+  display: none;
+}
+#interview{
+  margin-top: 107px;
+height: 150px;
+    display: table;
+    margin-left: 20px;
+
+}
+#b_9,#b_8{
+  width: 300px;
+}
+}
+
