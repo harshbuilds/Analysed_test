@@ -111,7 +111,7 @@ body {
 .input-field {
   box-shadow: 3px 3px 5px 0px rgba(238, 238, 238, 1);
   border-radius: 31px;
-  flex-basis: 75%;
+  flex-basis: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
