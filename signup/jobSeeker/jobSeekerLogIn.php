@@ -17,7 +17,7 @@ $js_email=$_POST['js_email'];
 $password=$_POST['js_password'];
 
 //query for login
-$sql = "SELECT * FROM jobseeker where js_email=? and JS_Password=?";
+$sql = "SELECT * FROM jobseeker where js_email=? and Password=?";
             
             $stmt = $con->stmt_init();
             $stmt->prepare($sql);
