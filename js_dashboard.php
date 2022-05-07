@@ -5,7 +5,7 @@ if($_SESSION['jobSeekerID']==null)
     header("Location:index.php");
 }
 
-include('header.php');
+include('include/header.php');
 include('conn.php'); ?>
 
 
@@ -44,12 +44,12 @@ include('conn.php'); ?>
 <?php
         $jobseeker_ID = $_SESSION['jobSeekerID'];
         $sql="SELECT * FROM jobseeker where jobseeker_id= '" .  $jobseeker_ID . "'";
-        $result_1 = mysqli_query($conn,$sql);
+        $result_1 = mysqli_query($con,$sql);
         while ($row = mysqli_fetch_array($result_1)) {
             
                                         
         ?>
-    <div class="main_body" style="margin-left: 100px;">
+    <div class="main_body" style="margin-left: 200px;">
         <br><br><br>
         <!-- Heading -->
         <div>
@@ -113,8 +113,9 @@ include('conn.php'); ?>
                         <img src="./img/setting-icon-blue.png" />
                         <?php echo $row['city'];?><br></span>
                     </p>
-                    <a href="jobsNearYou.php"><img src="img/map.png" alt="" width="570" /></a>
-                    
+                    <div class="img-map">
+                    <a href="jobsNearYou.php"><img src="img/map.png" alt="" width="670px" /></a>
+        </div>
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Job title</span>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:250px">Jobs available</span>
@@ -134,7 +135,8 @@ include('conn.php'); ?>
                         Last 30 days<br></span>
                     </p>
                     <p class="loc_3" style="margin-left:30px">Total views: 136<br><br></p>
-                    <a href=""><img src="./img/graph.png" alt="" class="map_des"  width="570"></a>
+                    <div class="img-map">
+                    <a href=""><img src="./img/graph.png" alt="" class="map_des"  width="670px"></a></div>
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Skills</span>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:290px">No. of Company</span>
@@ -155,7 +157,7 @@ include('conn.php'); ?>
             <?php
                 $jobseeker_City = $row['city'];
                 $sqlCity="SELECT * FROM joblistings LIMIT 3";
-                $result_City = mysqli_query($conn,$sqlCity);
+                $result_City = mysqli_query($con,$sqlCity);
                 while ($rowCity = mysqli_fetch_array($result_City)) {
             ?>
             <!-- job 1 -->
@@ -183,6 +185,10 @@ include('conn.php'); ?>
                     </div>
             </div>
             <?php } ?>
+            <div id="temp3">
+                    <a href="js_more_job.php">
+                    <p class="more_m">View more > </p></a>
+                </div>
         </div>
 
 
