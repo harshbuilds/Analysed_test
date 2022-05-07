@@ -58,7 +58,7 @@ include('conn.php'); ?>
         </div>
         <br>
         <!-- line 1 -->
-      <div class="row">
+      <div class="row" id="li-1">
           <div class="col-md-2" id="cards">
              <div class="cards-description">
                  Jobs applied
@@ -105,7 +105,7 @@ include('conn.php'); ?>
  
 
         <!-- line 2 -->
-        <div class="row">
+        <div class="row" id="map1">
             <div class="col-6">
                 <div class="card" id="cards">
                     <p class="leftText">Jobs near you
@@ -114,16 +114,16 @@ include('conn.php'); ?>
                         <?php echo $row['city'];?><br></span>
                     </p>
                     <div class="img-map">
-                    <a href="jobsNearYou.php"><img src="img/map.png" alt="" width="670px" /></a>
+                    <a href="jobsNearYou.php"><img src="img/map.png" alt=""  /></a>
         </div>
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Job title</span>
-                        <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:250px">Jobs available</span>
+                        <span  class="jobs">Jobs available</span>
                         <hr style="width:90%;margin-left:30px;"></hr>
-                        <p class="loc_2">MERN stack developer <span style="margin-left:180px">506</span></p>
-                        <p class="loc_2">MEAN stack developer <span style="margin-left:180px">114</span></p>
-                        <p class="loc_2">Django developer <span style="margin-left:220px">678</span></p>
-                        <p class="loc_2">React-native front end developer <span style="margin-left:90px">89</span></p>
+                        <p class="loc_2">MERN stack developer <span  class="job-num">506</span></p>
+                        <p class="loc_2">MEAN stack developer <span class="job-num" >114</span></p>
+                        <p class="loc_2">Django developer <span class="job-num"  >678</span></p>
+                        <p class="loc_2">React-native front end developer <span class="job-num">89</span></p>
                     </p>
                 </div>
             </div>
@@ -139,7 +139,7 @@ include('conn.php'); ?>
                     <a href=""><img src="./img/graph.png" alt="" class="map_des"  width="670px"></a></div>
                     <p><br><br>
                         <span style="color: #333333;font-size: 18px;font-family: MetroM; margin-left:40px">Skills</span>
-                        <span style="color: #333333;font-size: 18px;font-family: MetroM;margin-left:290px">No. of Company</span>
+                        <span class="jobs-1" >No. of Company</span>
                         <hr style="width:90%;margin-left:30px;"></hr>
                         <p class="loc_2">Python <span style="margin-left:270px">506</span></p>
                         <p class="loc_2">Design Xd <span style="margin-left:240px">114</span></p>
@@ -152,8 +152,8 @@ include('conn.php'); ?>
 
         <!-- line 3 -->
 
-        <p class="head_1"><br>Recommended for you</p>
-        <div class="row">
+        <p class="head_11"><br>Recommended for you</p>
+        <div class="row" id="job-list">
             <?php
                 $jobseeker_City = $row['city'];
                 $sqlCity="SELECT * FROM joblistings LIMIT 3";
@@ -196,8 +196,8 @@ include('conn.php'); ?>
 
         
             <!-- line 4 -->
-        <p class="head_1"><br>Search for specific job</p>
-        <div class="row">
+        <p class="head_11"><br>Search for specific job</p>
+        <div class="row" id="specific-job">
             <div class="col mx-1">
                 <p class="s1" id="k1"> <img src="img/DataAnalysis.png" height="100px" width="120px" style="margin-top:41px" ><br><br><br> <span class="o1">Data Analysis</span></p>
                 
@@ -219,17 +219,18 @@ include('conn.php'); ?>
 
         <!-- line 5 -->
         <br><br><br>
+        
         <div class="card" id="li_5">
-            <span class="leftText">&emsp;Upcoming Interviews<a href="js_schedule.php"><button class="addFilesMyTasks1"> Schedule an interview + </button></a><br><br>
+            <span class="leftText1">&emsp;Upcoming Interviews<a href="js_schedule.php"><button class="addFilesMyTasks1"> Schedule an interview + </button></a><br><br>
             </span>
             <p class="s4" > 
                 <span class="last_t1" >NAME</span>
                 <span class="last_t2">DATE</span>
                 <span class="last_t3">JOB ROLE</span>
             </p>
-            <div class="row">
+            <div class="row" id="interview">
                 <div class="col-1" style="margin-left:30px"><img src="img/Profile1.png" height="60px" width="60px"></div>
-                <div class="col-3" id="b_9">John Smith<p id="b_8">Company</p></div>
+                <div class="col-3" id="b_9"><p id="b_8">John Smith</p><p id="b_8">Company</p></div>
                 <div class="col-7">
                     <span id="b_9"><i class='fas fa-calendar'> </i>&nbsp;12th May, 2020 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Full stack web developer</span><br>
                     <span id="b_8"><img src="img/grey-clock-icon.png" height="15px" width="15px">&nbsp; 5pm</span>
@@ -238,9 +239,9 @@ include('conn.php'); ?>
             </div>
             <hr style="margin-left:30px;width:92%"></hr>
 
-            <div class="row">
+            <div class="row" id="interview">
                 <div class="col-1" style="margin-left:30px"><img src="img/Prof-2.png" height="60px" width="60px"></div>
-                <div class="col-3" id="b_9">John Smith<p id="b_8">Company</p></div>
+                <div class="col-3" id="b_9"><p id="b_8">John Smith</p><p id="b_8">Company</p></div>
                 <div class="col-7">
                     <span id="b_9"><i class='fas fa-calendar'> </i>&nbsp;12th May, 2020 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Full stack web developer</span><br>
                     <span id="b_8"><img src="img/grey-clock-icon.png" height="15px" width="15px">&nbsp; 5pm</span>
@@ -249,9 +250,9 @@ include('conn.php'); ?>
             </div>
             <hr style="margin-left:30px;width:92%"></hr>
 
-            <div class="row">
+            <div class="row" id="interview">
                 <div class="col-1" style="margin-left:30px"><img src="img/Profile3.png" height="60px" width="60px"></div>
-                <div class="col-3" id="b_9">John Smith<p id="b_8">Company</p></div>
+                <div class="col-3" id="b_9"> <p id="b_8">John Smith</p><p id="b_8">Company</p></div>
                 <div class="col-7">
                     <span id="b_9"><i class='fas fa-calendar'> </i>&nbsp;12th May, 2020 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Full stack web developer</span><br>
                     <span id="b_8"><img src="img/grey-clock-icon.png" height="15px" width="15px">&nbsp; 5pm</span>
@@ -260,9 +261,9 @@ include('conn.php'); ?>
             </div>
             <hr style="margin-left:30px;width:92%"></hr>
 
-            <div class="row">
+            <div class="row" id="interview">
                 <div class="col-1" style="margin-left:30px"><img src="img/Profile4.png" height="60px" width="60px"></div>
-                <div class="col-3" id="b_9">John Smith<p id="b_8">Company</p></div>
+                <div class="col-3" id="b_9"> <p id="b_8">John Smith</p><p id="b_8">Company</p></div>
                 <div class="col-7">
                     <span id="b_9"><i class='fas fa-calendar'> </i>&nbsp;12th May, 2020 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Full stack web developer</span><br>
                     <span id="b_8"><img src="img/grey-clock-icon.png" height="15px" width="15px">&nbsp; 5pm</span>
@@ -270,6 +271,7 @@ include('conn.php'); ?>
                 <div class="col-1" id="b_9"></div>
             </div>
         </div>
+        
         <br><br><br><br><br><br>
     </div>
 </body>
