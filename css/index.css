@@ -22,7 +22,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-
 }
 
 .unactive-breadcrumb-link {
@@ -32,7 +31,7 @@
 }
 
 .active-breadcrumb-link {
-  color: #3598DB;
+  color: #3598db;
   text-decoration: none;
   font-family: Metro;
 }
@@ -112,7 +111,7 @@ body {
 .input-field {
   box-shadow: 3px 3px 5px 0px rgba(238, 238, 238, 1);
   border-radius: 31px;
-  flex-basis: 35%;
+  flex-basis: 75%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +132,9 @@ body {
   cursor: pointer;
   border: none;
 }
-
+.searchButton {
+  margin-left: 250px;
+}
 .profileInNav {
   flex-basis: 15%;
   justify-content: space-evenly;
@@ -147,7 +148,7 @@ body {
   padding: 20px;
   background-color: white;
   right: 70%;
-  box-shadow: 1px 6px 10px #0000004A;
+  box-shadow: 1px 6px 10px #0000004a;
   width: 400px;
   z-index: 2;
 }
@@ -363,8 +364,8 @@ span.skill-set-j {
 
 .seemore-button {
   font-family: Metro;
-  border: 1px solid #3598DB;
-  background: #3598DB36;
+  border: 1px solid #3598db;
+  background: #3598db36;
   outline: none;
   border-radius: 5px;
   padding: 4px 12px;
@@ -399,7 +400,8 @@ span.skill-set-j {
   border-radius: 10px 10px 0px 0px;
 }
 
-.table-content-desc {}
+.table-content-desc {
+}
 
 .small-content {
   border: 1px solid #00000021;
@@ -451,7 +453,6 @@ span.skill-set-j {
   padding: 20px;
   font-size: 20px;
   color: #333333;
-
 }
 
 .name-and-image span {
@@ -493,7 +494,7 @@ span.skill-set-j {
 }
 
 .dropDownDiv_nav ul li a {
-  color: #3598DB;
+  color: #3598db;
 }
 
 .hamburger {
@@ -516,7 +517,7 @@ span.skill-set-j {
   background: white;
 }
 
-@media screen and (max-width:1700px) {
+@media screen and (max-width: 1700px) {
   .skills-field-fx {
     padding: 20px;
     flex-basis: 24%;
@@ -546,8 +547,7 @@ span.skill-set-j {
   }
 }
 
-@media screen and (max-width:1550px) {
-
+@media screen and (max-width: 1550px) {
   .cards-single-item-index {
     margin-bottom: 10px;
     flex-basis: 48%;
@@ -618,7 +618,6 @@ span.skill-set-j {
 }
 
 @media screen and (max-width: 950px) {
-
   .left-side-fx-main,
   .right-side-fx-main,
   .skills-field-fx {
@@ -626,7 +625,7 @@ span.skill-set-j {
   }
 }
 
-@media screen and (max-width:770px) {
+@media screen and (max-width: 770px) {
   .schedule-interview-index {
     overflow: hidden;
     width: 100%;
@@ -634,7 +633,6 @@ span.skill-set-j {
 
   .card-item-schedule-single {
     /* width: 100vw; */
-
   }
 
   p.date-and-time,
@@ -697,7 +695,6 @@ span.skill-set-j {
   .profileInNav {
     flex-basis: 70%;
     margin: 0 auto;
-
   }
 
   .notificationsDiv {
