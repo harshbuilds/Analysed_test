@@ -68,7 +68,7 @@
                 <button class="searchButton" id="searchBtn">
                     <img src="./img/search-icon-blue.png" />
                 </button>
-            </div>
+            </div></form>
         <div class="profileInNav">
         <div class="notificationsDiv">
         <ul>
@@ -135,4 +135,3 @@
       </nav>
 </div>
 <script src="./js/index.js"></script>
-
