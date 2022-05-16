@@ -2065,7 +2065,6 @@ INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, 
 (17, 0, '', '', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', '', '', '', '', '', '1000000', '90000', '', '90');
 
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `jobseeker`
 --
@@ -2187,7 +2186,39 @@ INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_refere
 (26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21', '');
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `profile_db_js`
+--
 
+CREATE TABLE `profile_db_js` (
+  `jobs_id` int(255) NOT NULL,
+  `skill` varchar(255) DEFAULT NULL,
+  `git` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `about` varchar(255) DEFAULT NULL,
+  `b_colname` varchar(255) DEFAULT NULL,
+  `b_degree` varchar(255) DEFAULT NULL,
+  `b_syey` varchar(255) DEFAULT NULL,
+  `m_colname` varchar(255) NOT NULL,
+  `m_degree` varchar(255) NOT NULL,
+  `m_syey` varchar(255) NOT NULL,
+  `compname` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `duration` varchar(255) DEFAULT NULL,
+  `projects` varchar(255) DEFAULT NULL,
+  `lang` varchar(255) DEFAULT NULL,
+  `resume` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profile_db_js`
+--
+
+INSERT INTO `profile_db_js` (`jobs_id`, `skill`, `git`, `linkedin`, `twitter`, `about`, `b_colname`, `b_degree`, `b_syey`, `m_colname`, `m_degree`, `m_syey`, `compname`, `role`, `duration`, `projects`, `lang`, `resume`) VALUES
+(7, 'html,css', 'cc', 'cc', 'cc', 'khalid', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', '68_Expt3.pdf');
+
+-- ------------------------------------------------------------------------------
 --
 -- Table structure for table `query`
 --
@@ -2210,6 +2241,37 @@ CREATE TABLE `query` (
 
 INSERT INTO `query` (`query_id`, `Question`, `resp_name`, `resp_img`, `resp_ans`, `resp_time`, `ques_time`, `resp_date`, `ques_date`) VALUES
 (11, 'how to update', 'new', '', 'update using files upload', '2022-03-23', '2022-03-30', '2022-03-30', '2022-03-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_db_rec`
+--
+
+CREATE TABLE `profile_db_rec` (
+  `recruiter_id` int(11) NOT NULL,
+  `about` varchar(200) NOT NULL,
+  `b_colname` varchar(200) NOT NULL,
+  `b_degree` varchar(200) NOT NULL,
+  `b_syey` varchar(200) NOT NULL,
+  `m_colname` varchar(255) NOT NULL,
+  `m_degree` varchar(255) NOT NULL,
+  `m_syey` varchar(255) NOT NULL,
+  `compname` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `duration` varchar(200) NOT NULL,
+  `projects` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `profile_db_rec`
+--
+
+INSERT INTO `profile_db_rec` (`recruiter_id`, `about`, `b_colname`, `b_degree`, `b_syey`, `m_colname`, `m_degree`, `m_syey`, `compname`, `role`, `duration`, `projects`) VALUES
+(3, 'i am john', 'j', 'h', 'n', '', '', '', 'j', 'h', 'r', 'jhn'),
+(4, 'i am ban', 'natnat', 'natn', 'nat', '', '', '', 'nat', 'nat', 'nat', 'nat'),
+(5, 'jes', 'jl', 'jl', 'jl', '', '', '', 'jl', 'jl', 'jl', 'jl'),
+(2, 'sss', 'ss', 'sss', 'ss', 'sss', 'ss', 'ss', 'ss', 'sss', 'dd', 'sss');
 
 -- --------------------------------------------------------
 
@@ -2248,6 +2310,56 @@ INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `numb
 (6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL),
 (7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL),
 (8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `send_mail`
+--
+
+CREATE TABLE `send_mail` (
+  `mail_id` int(30) NOT NULL,
+  `fromEmail` varchar(200) NOT NULL,
+  `toEmail` varchar(200) NOT NULL,
+  `subjectName` varchar(200) NOT NULL,
+  `message` varchar(200) NOT NULL,
+  `file` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `send_mail`
+--
+
+INSERT INTO `send_mail` (`mail_id`, `fromEmail`, `toEmail`, `subjectName`, `message`, `file`) VALUES
+(1, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'sss', 'ssss', ''),
+(2, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ssssss', 'ssssssssssssss', ''),
+(3, 'bansivora9@gmail.com', 'jane@gmail.com', 'ssss', 'ssss', ''),
+(4, 'bansivora9@gmail.com', 'jane@gmail.com', 'Regarding web development course', 'sss', 'Agrawal healthcare.jpg'),
+(5, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(6, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(7, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(8, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(9, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(10, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'sASAsa', ''),
+(11, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hello', 'i am bansi vora', ''),
+(12, 'bansari.mopharma@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hhhh', 'hhhhhh', ''),
+(13, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'hello\r\n', ''),
+(14, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(15, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(16, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(17, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'Regarding web development course', 'ss', ''),
+(18, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
+(19, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
+(20, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'heheheellcjiocoic', 'xxx', ''),
+(21, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'xxx', ''),
+(22, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddddd', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', ''),
+(23, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'dd', 'dd', ''),
+(24, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
+(25, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
+(26, '_abc@acme-challenge.amazon.aws.com', 'bansivora9@gmail.com', 'd', 'dd', ''),
+(27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', ''),
+(28, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'Regarding web development course', 'ssssssssss', ''),
+(29, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'xxxxxxx', 'ssssssssss', '');
 
 -- --------------------------------------------------------
 
@@ -2551,6 +2663,7 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+
 --
 -- Table structure for table `mail_login`
 --
@@ -2572,14 +2685,7 @@ INSERT INTO `mail_login` (`email`, `password`) VALUES
 ('bansivora9@gmail.com', 'bansi9151'),
 ('jane@gmail.com', 'jane@11'),
 ('bansivora9@gmail.com', 'bansi9151');
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
+-- -----------------------------------------------------------
 
 --
 -- Table structure for table `user`
