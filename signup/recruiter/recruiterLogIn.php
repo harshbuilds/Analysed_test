@@ -74,6 +74,7 @@ $result=mysqli_query($con,$s);
 $num=mysqli_num_rows($result);
 if($num==1)
 {
+    
     echo "<script>alert('Login Successful')</script>"; //alert message
 }
 
