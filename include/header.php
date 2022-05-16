@@ -1,3 +1,7 @@
+<?php 
+       include('db.php'); ?>
+         <?php include('connection1.php'); ?>
+
 <link rel="stylesheet" href="./css/index.css">
 
 
@@ -123,7 +127,8 @@
             <div class="dropDownDiv_nav">
               <ul>
                 <li>
-                  <a href="profile.php">Profile</a>
+                <a style="text-decoration:none" href="profile_js.php">
+                  Profile</a>
                 </li>
                 <li>
                   <a href="#" style="color: #51C46D">Logout</a>
