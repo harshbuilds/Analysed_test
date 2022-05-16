@@ -7,6 +7,7 @@ if (!isset($_SESSION['email']))
   } ?>
    <?php 
        include('db.php'); ?>
+         <?php include('connection1.php'); ?>
 <link rel="stylesheet" href="./css/header.css">
 <link rel="stylesheet" href="./css/recruiter_header.css">
 
@@ -169,8 +170,12 @@ if (!isset($_SESSION['email']))
                         <span>
                             <ul>
                                 <li>
-                                    <a href="../profile.php" style="color:#3598DB">Profile <img src="./img/Path 469.png"/></a>
+                          
+                                    <a style="text-decoration:none" href="profile.php">Profile <img src="./img/Path 469.png"/></a>
+
+                              
                                 </li>
+
                                 <li>
                                     <a href="#" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
                                 </li>
