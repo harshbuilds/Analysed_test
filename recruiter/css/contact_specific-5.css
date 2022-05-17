@@ -46,12 +46,12 @@ body {
   color: #333333;
 }
 .profile-img img {
-  width: 130;
-  height: 130;
-  margin: 25px;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
 }
 .profile-img h1 {
-  margin-top: -150px;
+  margin-top: -120px;
   margin-left: 170px;
 }
 .profile-img h1 p1 {
@@ -80,7 +80,7 @@ body {
   color: #3598db;
   background-color: white;
   margin-top: -100px;
-  margin-left: 1100px;
+  margin-left: 995px;
   width: 173px;
   height: 47px;
   border: 1px solid var(--unnamed-color-3598db);
@@ -92,7 +92,7 @@ body {
 }
 .options {
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: 47px;
 }
 .options p {
   margin-top: 15px;
@@ -118,7 +118,7 @@ body {
   opacity: 1;
 }
 .status {
-  width: 270px;
+  width: 250px;
   height: 1060px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -126,7 +126,7 @@ body {
   border-radius: 8px;
   opacity: 1;
   padding: 10px;
-  margin-left: 1120px;
+  margin-left: 981px;
   margin-top: -220px;
 }
 .status1 p {
@@ -194,7 +194,7 @@ body {
 }
 .left-side-container-1 {
   margin-top: -1050px;
-  margin-left: 200px;
+  margin-left: 120px;
 }
 .row-recruiter {
   margin-top: 20px;
@@ -205,17 +205,18 @@ body {
 }
 .search-box {
   display: flex;
-  width: 500px;
+  width: 386px;
   box-shadow: 3px 3px 5px 0px rgba(238, 238, 238, 1);
   border-radius: 40px;
+  margin-left: 50px;
 }
 .search-form-input {
   -webkit-appearance: none;
   appearance: none;
   position: relative;
-  width: 75%;
+  width: 84%;
   height: 46px;
-  padding: 5px 20px 5px 40px;
+  padding: 5px 10px 5px 10px;
   border: none;
   border-radius: opx opx 40px 40px;
   background-image: url(ic_search.svg);
@@ -310,13 +311,13 @@ body {
   font-size: 14px;
   color: #979797;
 }
-.searchButton {
+.searchButton-cs {
   background: white;
   outline: none;
   cursor: pointer;
   border: none;
   border-radius: 0px 40px 40px 0px;
-  margin-right: 40px;
+  margin-left: 7px;
 }
 .btn {
   padding: 7px 12px;
@@ -333,11 +334,12 @@ body {
 }
 .sortbyText {
   color: #979797;
-  font-size: 20px;
+  margin-left: -25px;
+  /* font-size: 16px; */
 }
 .sortbySelect {
   background: transparent;
-  font-size: 20px;
+  font-size: 16px;
   color: #8bd0ff;
   outline: none;
   border: none;
@@ -351,18 +353,17 @@ body {
   border: none;
   color: black;
   font-size: 16px;
-  font-size: 18px;
 }
 .search_list_1 {
   border: 1px solid #3598db;
   color: #979797;
   font-size: 14px;
-  width: 187px;
+  width: 145px;
   height: 31px;
   margin-bottom: 10px;
   outline: 1px solid #3598db;
   margin-left: 710px;
-  margin-top: -38px;
+  margin-top: -60px;
 }
 .select-col {
   margin-bottom: -10px;
@@ -402,6 +403,7 @@ input[type="checkbox"]:focus + label::before {
 .list {
   margin-top: 50px;
   display: flex;
+  margin-left: 20px;
 }
 .list li {
   list-style: none;
@@ -423,13 +425,14 @@ input[type="checkbox"]:focus + label::before {
   color: black;
 }
 .row {
-  width: 900px;
-  height: 150px;
+  width: 830px;
+  height: auto;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
   opacity: 1;
+  padding: 15px;
   margin-top: 30px;
 }
 .column {
@@ -464,8 +467,8 @@ input[type="checkbox"]:focus + label::before {
 .row .added-class-2 {
   color: #979797;
   font-size: 16px;
-  margin-left: 690px;
-  margin-top: -10px;
+  margin-left: 630px;
+  margin-top: -18px;
 }
 .row span {
   color: black;
@@ -589,9 +592,8 @@ input[type="checkbox"]:focus + label::before {
     font-size: 19px;
   }
   .button button {
-    position: relative;
-    left: -1089px;
-    top: 115px;
+    margin-left: 20px;
+    margin-top: 46px;
     color: white;
     background-color: #3598db;
     cursor: pointer;
@@ -600,20 +602,19 @@ input[type="checkbox"]:focus + label::before {
   .options {
     font-size: 22px;
     padding-left: 20px;
-    margin-top: 75px;
+    margin-top: 50px;
     margin-left: -19px;
     display: flex;
     justify-content: space-between;
   }
   .left-side-container-1 {
-    position: relative;
-
-    top: 869px;
+    margin-top: -185px;
+    width: 370px;
+    margin-left: 2px;
   }
   .search_list_1 {
-    position: relative;
-    left: -893px;
-    top: 315px;
+    margin-top: 10px;
+    margin-left: 0px;
   }
   .search_list_1 select {
     width: 130px;
@@ -622,12 +623,11 @@ input[type="checkbox"]:focus + label::before {
     display: block;
   }
   .search-box {
-    position: relative;
-    top: 211px;
-    left: -200px;
+    margin-top: 175px;
+    margin-left: -5px;
     width: 375px;
   }
-  .searchButton {
+  .searchButton-cs {
     margin-right: 1px;
   }
   .dropdown {
@@ -638,17 +638,14 @@ input[type="checkbox"]:focus + label::before {
     font-size: 15px;
   }
   .btn {
-    position: relative;
-    top: 264px;
-    left: 4px;
-
+    margin-top: 50px;
+    margin-left: 200px;
     width: 102px;
     height: 45px;
   }
   #Div1 {
-    position: relative;
-    left: -200px;
-    top: 300px;
+    margin-top: 50px;
+    margin-left: 6px;
   }
   .row {
     display: grid;
@@ -656,7 +653,8 @@ input[type="checkbox"]:focus + label::before {
     height: 825px;
   }
   .row .added-class-2 {
-    margin-left: 10px;
+    margin-left: 21px;
+    margin-top: 10px;
   }
   .row .added-class-1,
   .row .added-class-2,

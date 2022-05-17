@@ -80,7 +80,7 @@ body {
   color: #3598db;
   background-color: white;
   margin-top: -100px;
-  margin-left: 1100px;
+  margin-left: 995px;
   width: 173px;
   height: 47px;
   border: 1px solid var(--unnamed-color-3598db);
@@ -125,7 +125,7 @@ body {
   border-radius: 8px;
   opacity: 1;
   padding: 10px;
-  margin-left: 1120px;
+  margin-left: 962px;
   margin-top: -220px;
 }
 .status1 p {
@@ -508,23 +508,20 @@ input[type="checkbox"]:focus + label::before {
     font-size: 19px;
   }
   .button button {
-    position: relative;
-    left: -1089px;
-    top: 115px;
     color: white;
     background-color: #3598db;
     font-size: 22px;
     height: 60px;
     cursor: pointer;
+    margin-left: 4px;
+    margin-top: 50px;
   }
   .options {
     font-size: 22px;
     padding-left: 20px;
     margin-top: 75px;
     margin-left: -19px;
-    /* position: relative;
-    top: 45px;
-    left: -56px; */
+
     display: flex;
     justify-content: space-between;
   }
@@ -551,5 +548,11 @@ input[type="checkbox"]:focus + label::before {
     width: 125px;
 
     font-size: 20px;
+  }
+  #cs-4 {
+    margin-left: 2px;
+  }
+  .search-form-input {
+    padding-left: 10px;
   }
 }

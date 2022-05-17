@@ -38,7 +38,7 @@ body {
 }
 .profile-img {
   margin-top: 25px;
-  margin-left: 40px;
+  margin-left: 11px;
   background: transparent url("img/Ellipse 148.png") 0% 0% no-repeat padding-box;
   opacity: 1;
 }
@@ -80,7 +80,7 @@ body {
   color: #3598db;
   background-color: white;
   margin-top: -100px;
-  margin-left: 1100px;
+  margin-left: 995px;
   width: 173px;
   height: 47px;
   border: 1px solid var(--unnamed-color-3598db);
@@ -91,7 +91,7 @@ body {
 }
 .options {
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: 60px;
 }
 .options p {
   margin-top: 15px;
@@ -117,15 +117,15 @@ body {
   opacity: 1;
 }
 .status {
-  width: 270px;
-  height: 1060px;
+  width: 250px;
+  height: 1013px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
   opacity: 1;
   padding: 10px;
-  margin-left: 1120px;
+  margin-left: 981px;
   margin-top: -260px;
 }
 .status1 p {
@@ -193,10 +193,10 @@ body {
 }
 .left-side-container-1 {
   margin-top: -1010px;
-  margin-left: 230px;
+  margin-left: 199px;
 }
 .summary {
-  width: 500px;
+  width: 440px;
   height: 230px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -243,18 +243,18 @@ body {
   padding-bottom: 8px;
 }
 .source {
-  margin-left: 150px;
-  margin-top: -50px;
+  margin-left: 114px;
+  margin-top: -27px;
 }
 .validity {
   margin-top: 20px;
 }
 .type {
-  margin-top: -45px;
-  margin-left: 150px;
+  margin-top: -26px;
+  margin-left: 122px;
 }
 .skills {
-  width: 340px;
+  width: 304px;
   height: 230px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -264,7 +264,7 @@ body {
   padding-top: 30px;
   padding: 20px;
   margin-top: -230px;
-  margin-left: 530px;
+  margin-left: 459px;
 }
 .skills-content {
   display: flex;
@@ -284,8 +284,8 @@ body {
 }
 .tasks {
   margin-top: 30px;
-  width: 580px;
-  height: 280px;
+  width: 547px;
+  height: fit-content;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
@@ -302,7 +302,7 @@ body {
   padding-top: 10px;
 }
 .task-column {
-  padding-right: 20px;
+  padding-right: 15px;
 }
 .task-column .col-1 {
   color: black;
@@ -341,18 +341,17 @@ body {
   height: 52px;
 }
 .contact-info {
-  margin-top: 30px;
-  width: 275px;
-  height: 250px;
+  width: 213px;
+  height: auto;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
   opacity: 1;
-  padding-top: 30px;
-  padding: 20px;
-  margin-left: 600px;
-  margin-top: -250px;
+
+  padding: 15px;
+  margin-left: 560px;
+  margin-top: -180px;
 }
 .contact-info-content {
   margin-top: 20px;
@@ -420,7 +419,7 @@ input[type="checkbox"]:focus + label::before {
 }
 
 .row {
-  width: 870px;
+  width: 775px;
   height: 120px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -583,9 +582,8 @@ input[type="checkbox"]:focus + label::before {
     font-size: 19px;
   }
   .button button {
-    position: relative;
-    left: -1089px;
-    top: 115px;
+    margin-left: 20px;
+    margin-top: 46px;
     color: white;
     background-color: #3598db;
     cursor: pointer;
@@ -593,7 +591,7 @@ input[type="checkbox"]:focus + label::before {
   .options {
     font-size: 22px;
     padding-left: 20px;
-    margin-top: 75px;
+    margin-top: 30px;
     margin-left: -19px;
     display: flex;
     justify-content: space-between;
@@ -604,9 +602,8 @@ input[type="checkbox"]:focus + label::before {
   }
 
   .summary {
-    position: relative;
-    left: -229px;
-    top: 253px;
+    margin-left: -186px;
+    margin-top: 200px;
     width: 350px;
     height: 350px;
     display: inline-grid;
@@ -626,29 +623,27 @@ input[type="checkbox"]:focus + label::before {
     top: -54px;
   }
   .skills {
-    position: relative;
-    top: 500px;
-    left: -751px;
+    margin-left: -186px;
+    margin-top: 45px;
   }
   .tasks {
-    position: relative;
-    top: 500px;
-    left: -223px;
-    width: 370px;
-    height: 450px;
+    margin-left: -186px;
+    margin-top: 45px;
+    width: 350px;
+    height: fit-content;
   }
   .task-row {
     display: grid;
     font-size: 19px;
   }
   .open-jobs {
-    position: relative;
-    top: 471px;
-    left: -220px;
+    margin-left: -186px;
+    margin-top: 45px;
+    margin-bottom: 30px;
   }
   .row {
     width: 350px;
-    height: 715px;
+    height: auto;
     display: grid;
   }
   .column,
