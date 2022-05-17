@@ -120,18 +120,17 @@ margin-left : 50px;
 .add
 {
 margin-top: -40px;
-margin-left: 700px;
-width: 70px;
+margin-left: 684px;
+/* width: 70px;
 height: 35px;
 background: var(--unnamed-color-3598db) 0% 0% no-repeat padding-box;
 background: #3598DB 0% 0% no-repeat padding-box;
 box-shadow: 1px 3px 10px #00000033;
 border-radius: 8px;
-opacity: 1;
+opacity: 1; */
 }
 .add button{
-    margin-top:0px;
-    margin-left: 15px;
+    
     width: 97px;
     height: 35px;
     font: normal normal normal 15px/22px Metro;
@@ -394,7 +393,7 @@ if(isset($_POST['btnsearch']))
     <div class="container">
         <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-                <a href="dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="unactive-breadcrumb-link">My Database</a> > <a href="addContact.php" class="unactive-breadcrumb-link">Add Contact</a> > <a href="contact_list.php" class="unactive-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
+                <a href="dashboard.php" class="active-breadcrumb-link">Dashboard</a> > <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> > <a href="addContact.php" class="active-breadcrumb-link">Add Contact</a> > <a href="contact_list.php" class="active-breadcrumb-link"> Client List</a> > <a href="" class="active-breadcrumb-link"><?php echo  $fname, $lname ?></a>
             </div>
 
             <div class="profile-img">
@@ -496,7 +495,7 @@ if(isset($_POST['btnsearch']))
                             </details-menu>
                         </details>
                         <input class="search-form-input" type="search" name="textsearch" placeholder="Search by File name">
-                        <button type="submit" name="btnsearch" class="searchButton">
+                        <button type="submit" name="btnsearch" class="searchButton" id="cs-4">
                             <img src="./img/search-icon-blue.png" />
                         </button>
                     </div>

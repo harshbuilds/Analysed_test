@@ -110,7 +110,7 @@ if(isset($_POST['btnsearch']))
             <div class="profile-img">
                 <?php echo '<img src="../img/'.$picture.' " >' ;   ?>
                 <h1><?php echo  $fname, $lname ?><p1> #<?php echo  $c_id ?></p1></h1><br>
-                <h2><?php echo  $company_name ?><!--  - <span><?php //echo  $role ?></span -->></h2><br>
+                <h2><?php echo  $company_name ?><!--  - <span><?php //echo  $role ?></span --></h2><br>
                 <h4><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg> <?php echo  $state ?></h4>
             </div>
@@ -305,7 +305,7 @@ if(isset($_POST['btnsearch']))
                         <p class="col-6"><a href='./includes/delete4.php?id=<?php echo $row["id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none">Delete</a> <i class="fa fa-trash" aria-hidden="true"></i></p>
                     </div>
 
-                    <div class="column" style="margin-top:80px;margin-left: -838px;">
+                    <div class="column" style="margin-top:80px;margin-left: -750px;">
                         <p class="col-1">Added on</p>
                         <span class="col-span-1"><?php echo $added_on; ?></span>
                     </div>

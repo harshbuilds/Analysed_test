@@ -281,7 +281,7 @@
 
                       <form method="post">
                         <input class="search-form-input" type="search" name="textsearch" placeholder="Search for job by Id or title">
-                        <button type="submit" name="btnsearch" class="searchButton">
+                        <button type="submit" name="btnsearch" class="searchButton-cs">
                             <img src="./img/search-icon-blue.png" />
                         </button>
                       </form>
