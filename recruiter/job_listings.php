@@ -3,9 +3,10 @@
    include 'connection1.php';   //database connection page included
     session_start();     //session has been started
 ?>
-<?php include('header.php') ?>
+<?php include('header-job.php') ?>
 <title>Job Listings</title>
 <link rel="stylesheet" href="css/job_listings.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -107,7 +108,7 @@ if(isset($_POST['btnall']))
 
 
  ?>
-<div class="container" style="margin-left:150px">
+<div class="container">
     <div class="small_container">
 
         <div class="row-flex-jobs-j alignitemsstart-shortlisted">
@@ -121,9 +122,9 @@ if(isset($_POST['btnall']))
             <div>
         </div>
 
-        <div class="row" style="display: flex">
+        <div class="row"  id="input-width"style="display: flex">
             <div class="col-8">
-                <div class="input-field" style="width:571px">
+                <div class="input-field-job-list" >
                 <img src="img/location_icon.png" alt="" width="15" height="15" >
                 <a href="/" class="active-breadcrumb-link">All Jobs   &emsp;   <span style="color:#979797">|&emsp; &emsp;</span></a>
 
@@ -132,10 +133,10 @@ if(isset($_POST['btnall']))
                     type="text"
                     name="searchForJobs"
                     id="inputSearch"
-                    class="searchForJobs"
+                    class="searchForJobs-list"
                     placeholder="Search for Jobs by ID   "
                 />&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;
-                <button class="searchButton" type="submit" name="btnsearch">
+                <button class="searchButton-list" type="submit" name="btnsearch">
                     <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
                 </button>
               </form>
@@ -150,8 +151,8 @@ if(isset($_POST['btnall']))
         </div><br>
 
         <div class="row">
-            <div class="col-4" style="margin-left:800px">
-             <form method="post">
+            <div class="col-4"  id="btn-align">
+             <form method="post" id="btn-display">
                <button type="submit" style="background: none;border: none;" name="btnhigh"><img src="img/red-icon.png" width="30" height="20"> High&emsp;</button>
                <button type="submit" style="background: none;border: none;" name="btnmedium"><img src="img/orange-icon.png" width="17" height="18">&nbsp;&nbsp;Medium&emsp;</button>
                <button type="submit" style="background: none;border: none;" name="btnlow"><img src="img/Yellow-icon.png" width="17" height="18">&nbsp;&nbsp;Low</button>
@@ -310,6 +311,6 @@ if(isset($_POST['btnall']))
 
             </div>
         </a>
-        <div class="addnew"><img src="img/plus.png" width="50" height="50" style="margin-left:1000px" /></div>
+        <div class="addnew"><img src="img/plus.png" width="50" height="50"  /></div>
         <br><br><br>
     </div>

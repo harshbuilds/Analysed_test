@@ -132,16 +132,16 @@
 </head>
 <body>
 <div class="bread-crumbs_Mytools-recruiter" style="margin-left:100px">
-            <a href="dashboard.php" class="active-breadcrumb-link">Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
+            <a href="dashboard.php" class="active-breadcrumb-link"><u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
 <div class="container" style="margin-left:150px">
   <div class="small_container">
 
 
-        <div class="heading_dash1" id="heading1">
+        <div class="heading_dash1"  id="heading">
             <div class="row-flex-jobj">
-                <h1 class="mainHeadingDash" id="position1"><?php echo  $position ?></h1>
+                <h1 class="mainHeadingDash" ><?php echo  $position ?></h1>
             </div>
                     <div class="row-flex-jobj">
                         <a href="#"><?php echo  $client_company ?>- </a> #1544-1
@@ -154,12 +154,12 @@
       <div class="row">
                <div class="col-lg-1 mb-4">
                <div class="options">
-                <p ><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
                 <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>Activity</p>
                 <p><a href="Job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Files</a></p>
-                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
-                <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
+                <p class="p1"><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
+                <p class="p1"><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
             </div>
     </div>
 
@@ -577,7 +577,7 @@
                 <!-- end of column -->
 
                 <div class="col-lg-3 mb-4">
-        <div class="card" id="right-side-col" style="height:1500px;width:350px">
+        <div class="card" id="right-side-col" style="height:1500px;width:250px">
         <div class="card-body" id="right-side-body">
                 <div class="right-panel" style="text-align:center">
                     <br>

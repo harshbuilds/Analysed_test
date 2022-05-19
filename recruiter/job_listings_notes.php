@@ -104,7 +104,7 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
     <div class="bread-crumbs_Mytools-recruiter">
-            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;<u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>
@@ -120,14 +120,14 @@ $j_id=$_GET['j_id'];
         </div>
     </div>
 
-    <div class="container" style="width:100%;margin-left:120px;margin-top:-2%;">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-1 mb-4">
 
                 <div class="options">
-                    <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Glance </a></p>
-                    <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Applicants </a></p>
-                    <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Activity</a></p>
+                    <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Glance </a></p>
+                    <p class="p1"><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Applicants </a></p>
+                    <p class="p1"><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Activity</a></p>
                     <p><a href="job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color:#979797;" id="te1"> Files </a></p>
                     <span style="color:#3598DB;"id="te1" > <b>|  Notes</b></span>
                     <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color:#979797;" id="te1">Publish </a></p>
@@ -210,7 +210,7 @@ $j_id=$_GET['j_id'];
                  ?>
                 <div class="row"  >
                     <div class="col-md-12 mb-4"  >
-                        <div class="card " id="align-col">
+                        <div class="card " >
                             <div class="card-body" >
 
                                 <div class="row "  id= "align-of-card">
@@ -273,7 +273,7 @@ $j_id=$_GET['j_id'];
           
             </div>
             <div class="col-lg-3 mb-4" >
-                       <div class="card"  id="right-side-col"style="width:300px;">
+                       <div class="card"  id="right-side-col"style="width: 250px;">
                        <div class="card-body" id="right-side-body">
                 <div class="right-panel" style="text-align:center">
                     <br>

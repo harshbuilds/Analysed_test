@@ -275,7 +275,7 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="candidate_list.php" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;<u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a> ><a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>
@@ -291,17 +291,17 @@ $j_id=$_GET['j_id'];
         </div>
     </div>
 
-    <div class="container" style="width:100%;margin-left:120px;margin-top:-2%;">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-1 mb-4">
 
             <div class="options">
-                <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
-                <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
+                <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p class="p1"><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
                 <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Activity</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>  Files</a></p>
                 <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
-                <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
+                <p class="p1"><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
             </div>
 
             </div>
