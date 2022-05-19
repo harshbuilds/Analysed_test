@@ -1,15 +1,15 @@
-<?php include('include/header.php') ?>
+<?php include('header.php') ?>
 <title>Dashboard</title>
 <?php
    define('LOCALHOST','localhost');
    define('DB_USERNAME','root');
    define('DB_PASSWORD','');
-   define('DB_NAME','analyse_m');
+   define('DB_NAME','analysed');
    $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_error());
 ?>
 
 
-<link rel="stylesheet" href="css/job_listings_pub-2.css">
+<link rel="stylesheet" href="./css/job_listings_pub-2.css">
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -44,11 +44,11 @@
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;<u>Dashboard</u></a> > <a href="candidate_list.php" class="active-breadcrumb-link"> <u>My Database</u></a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u>Actural Assistant</u></a>
         </div>
          <br>
-        <div class="heading_dash1">
+        <div class="heading_dash1" id="heading1">
             <div class="row-flex-jobj">
                 <h1 class="mainHeadingDash" style="font-size:35px;">&emsp;&emsp;Actural Assistant</h1>
             </div>
@@ -59,24 +59,64 @@
             <p><br>&emsp;&emsp;&emsp;&emsp;05-05-2020</p>
         </div>
     </div>
+<?php
+$j_id=$_GET['j_id'];
+            $sql="select * from joblistings where job_id='$j_id'";
+            $res=mysqli_query($conn,$sql);
+            if($res == TRUE)
+            {
+                $count=mysqli_num_rows($res);
+                if($count >0)
+                {
+                    while($rows=mysqli_fetch_assoc($res))
+                    {
+                        $position=$rows['position'];
+                        $start_date=$rows['start_date'];
+                        $client_company=$rows['client_company'];
+                        $end_date=$rows['end_date'];
+                        $industry=$rows['industry'];
+                        $qualification=$rows['qualification'];
+                        $eligibility_criteria=$rows['eligibility_criteria'];
+                        $skills=$rows['skills'];
+                        $package_type=$rows['package_type'];
+                        $package=$rows['package'];
+                        $transportation=$rows['transportation'];
+                        $required_experience=$rows['required_experience'];
+                        $relevant_experience=$rows['relevant_experience'];
+                        $irrelevant_experience=$rows['irrelevant_experience'];
+                        $roles_and_opportunity=$rows['roles_and_opportunity'];
+                        $learning_opportunity=$rows['learning_opportunity'];
+                        $emp_endorsement=$rows['emp_endorsement'];
+                        $emp_benefits=$rows['emp_benefits'];
+                        $advert_job_description=$rows['advert_job_description'];
+                        $advert_contact_name=$rows['advert_contact_name'];
+                        $company_email=$rows['company_email'];
+                        $advert_contact_no=$rows['advert_contact_no'];
+                        $district=$rows['district'];
+                        $state=$rows['state'];
+                        $country=$rows['country'];
+                        $job_type=$rows['job_type'];
+                        $job_views=$rows['job_views'];
+                        $priority=$rows['priority'];
+                        $job_id=$rows['job_id'];
 
-    <div class="container" style="width:100%;margin-left:120px;margin-top:-2%;">
+                    }
+                }
+              }
+                 ?>
+
+    <div class="container" >
         <div class="row">
-            <div class="col-2 mb-4">
+            <div class="col-1 mb-4">
 
-                <div class="options">
-                    <p><a href="job_listings_activity_res.php"style="color:#979797;" id="te1">At a glance </a></p>
-                    <p><a href="jobs_listings_activity_eval-1.php"style="color:#979797;" id="te1">Applicants </a></p>
-
-                    <p><a href="job_listings_activity_res.php"style="color:#979797;" id="te1">Activity</a></p>
-                    <!-- <div class="option1"> -->
-                    <p><a href="job_listings_files.php"style="color:#979797;" id="te1">Files </a></p>
-                    <!-- </div>  -->
-                    <p><a href="job_listings_notes.php"style="color:#979797;" id="te1"> Notes </a></p>
-
-                    <span style="color:#3598DB;"id="te1" > <b>|  Publish</b></span>
-                </div>
-
+            <div class="options">
+                <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p class="p1"><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
+                <p class="p1"><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Activity</a></p>
+                <p><a href="job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color:#979797;" id="te1"> Files </a></p>
+                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>                
+                <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>  Publish</a></p>
+            </div>
             </div>
             <div class="col-9 mb-4">
 
@@ -96,10 +136,10 @@
                 ?>
 
 
-                <div class="row">
+                <div class="row" id="align-of-card">
 
                   <?php
-                      $sql1="select * from job_list";
+                      $sql1="select * from joblistings";
                       $res=mysqli_query($conn,$sql1);
                       if($res == TRUE)
                       {
@@ -111,12 +151,13 @@
 
                                   $myimg=$rows['workspace_view'];
                                 ?>
-                              <div class="col-3">
-                                  <div class="card"  style="height:170px;margin-bottom:20px;">
+                                
+                              <div class="col-3" >
+                                  <div class="card" id="pub1">
                                       <div class="card-body" style="align:center"><br><br>
 
                                         <div id="ti" style="display:none;">
-                                         <img src="img/tickimgg.jpg" width="100" height="95">
+                                         <img src="img/tickimgg.png" width="100" height="95">
                                        </div>
 
                                     <form method="post">
@@ -137,7 +178,7 @@
 
 
             </div><br><br>
-            <button class="nextMyTasks" id="myBtn">Next <img src="img/arrow-right.png" width="15" height="20" ></button>
+            <button class="nextMyTasks" id="myBtn">Next <img src="img/arrow-right.jpg" width="15" height="20" ></button>
                     <br>
                  <!-- cards -->
 
@@ -145,8 +186,8 @@
 
 
             </div>
-            <div class="col-1 mb-4" >
-                       <div class="card" style="width:300px;">
+            <div class="col-2 mb-4" >
+                       <div class="card"  id="right-side-col" style="width:250px;">
                                 <div class="card-body">
 
                                   <div class="right-panel" style="text-align:center">
@@ -158,10 +199,29 @@
                                     </div><br>
                                     <div class="status-name">
                                       <!-- <div> -->
-                                        <span id="r1"><img src="img/red-logo.png" width="13" height="13"> <b>Acturial Assistant</b></span>
-                                        <p style="color:#3598DB;line-height: 40%;font-size: 16px">XYZ Pharmaceuticals<img src="img/launch-24px.png" width="15" height="17"><br><br><br>
-                                        <span style="color:#979797;font-size:14px;"><img src="img/location-pin.png" width="13" height="13">Hyderabad</span><br><br><br>
-                                        <span style="color:#979797;line-height: 150%;font-size:14px;"> Full-time</p>
+                                      <span id="r1"> <?php
+                   if($priority == '3')
+                   {
+                ?>
+                   <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   }
+                   elseif($priority == '2')
+                   {
+                ?>
+                    <img src="img/orange-icon.png" width="20" height="20">
+                <?php
+                    }
+                    elseif($priority == '1')
+                    {
+                ?>
+                    <img src="img/Yellow-icon.png" width="20" height="20">
+                <?php
+                    }
+                ?> <?php echo  $position ?></span>
+                                        <p style="color:#3598DB;line-height: 40%;font-size: 16px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br><br><br>
+                                        <span style="color:#979797;font-size:14px;"><img src="img/location-pin.png" width="13" height="13"> <?php echo  $district ?></span><br><br><br>
+                                        <span style="color:#979797;line-height: 150%;font-size:14px;"> <?php echo  $job_type ?></p>
                                         <hr style="color:#979797;width:100%"></hr>
                                     </div>
                                    <!-- <div class="displayname">  -->
@@ -173,54 +233,54 @@
                                     </div>
                                     <!-- <div class="displayname">  -->
                                     <div>
-                                        <p><b>10 &nbsp;&emsp;&emsp;6 &nbsp;&emsp;&emsp;1/4</b></p>
+                                        <p><b><?php echo  $job_views ?>  &nbsp;&emsp;&emsp;6 &nbsp;&emsp;&emsp;1/4</b></p>
                                     </div><br><br>
                                     <!-- <div class="displayname">  -->
                                         <div>
                                             <p style="color:#979797; line-height:10%; font-size:14px;">Status &emsp;&emsp;&emsp;&emsp;&emsp;Last Contact</p>
-                                            <p><span style="color:#51C46D;font-size:16px;">Active&nbsp;&emsp;&emsp;&emsp;&emsp;</span><span style="font-size:15px;font-weight:500">20-05-2020</span></p>
+                                            <p><span style="color:#51C46D;font-size:16px;">Active&nbsp;&emsp;&emsp;&emsp;&emsp;</span><span style="font-size:15px;font-weight:500"><?php echo  $start_date ?></span></p>
                                         </div><br>
                                         <!-- <div class="displayname">  -->
                                         <div>
                                             <p style="color:#979797; line-height:10%;font-size:14px;">&emsp;&emsp;Industry&emsp;&emsp;&emsp;&emsp;Qualification req</p>
-                                            <p style="color:#333333;font-size:16px;font-weight:600; ">&emsp;&emsp;IT&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; PG&emsp;&emsp;&emsp;</p>
+                                            <p style="color:#333333;font-size:16px;font-weight:600; ">&emsp;&emsp;<?php echo  $industry ?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <?php echo  $qualification ?>&emsp;&emsp;&emsp;</p>
                                         </div><br>
                                     <!-- <div class="displayname"> -->
                                     <div class="info1">
                                        <div>
                                             <p style="color:#979797; ">Created by</p>
-                                            <p style="color:#3598DB; ">Curtis Kelley</p>
-                                            <p style="color:#333333; line-height:10%">philipmartin@gmail.com</p>
-                                            <p style="color:#333333; line-height:30%">+91 9000900090</p>
+                                            <p style="color:#3598DB; "><?php echo  $advert_contact_name ?></p>
+                                            <p style="color:#333333; line-height:10%"><?php echo  $company_email ?></p>
+                                            <p style="color:#333333; line-height:30%">+91  <?php echo  $advert_contact_no ?></p>
                                         </div><br>
 
                                         <!-- <div class="displayname"> -->
                                         <div>
                                             <p style="color:#979797; ">Active Contact</p>
-                                            <p style="color:#3598DB; ">Curtis Kelley</p>
-                                            <p style="color:#333333; line-height:10%">philipmartin@gmail.com</p>
-                                            <p style="color:#333333; line-height:30%">+91 9000900090</p>
+                                            <p style="color:#3598DB; "><?php echo  $advert_contact_name ?></p>
+                                            <p style="color:#333333; line-height:10%"><?php echo  $company_email ?></p>
+                                            <p style="color:#333333; line-height:30%">+91  <?php echo  $advert_contact_no ?></p>
                                         </div><br>
 
                                         <!-- <div class="displayname"> -->
                                         <div>
                                             <p style="color:#979797; ">Assigned to</p>
-                                            <p style="color:#3598DB; ">Curtis Kelley</p>
-                                            <p style="color:#333333; line-height:10%">philipmartin@gmail.com</p>
-                                            <p style="color:#333333; line-height:30%">+91 9000900090</p>
+                                            <p style="color:#3598DB; "><?php echo  $advert_contact_name ?></p>
+                                            <p style="color:#333333; line-height:10%"><?php echo  $company_email ?></p>
+                                            <p style="color:#333333; line-height:30%">+91 <?php echo  $advert_contact_no ?></p>
                                         </div><br>
 
                                         <!-- <div class="displayname"> -->
                                         <div>
                                             <p style="color:#979797; ">Contact info</p>
-                                            <p style="color:#3598DB; ">Emailid@gmail.com</p>
-                                            <p style="color:#333333; line-height:10%">+91 90009009090</p>
-                                            <p style="color:#333333; line-height:30%">+91 9000900090</p>
+                                            <p style="color:#3598DB; "><?php echo  $company_email ?></p>
+                                            <p style="color:#333333; line-height:10%">+91 <?php echo  $advert_contact_no ?></p>
+                                            <p style="color:#333333; line-height:30%">+91 <?php echo  $advert_contact_no ?></p>
                                         </div><br>
                                     <!-- <div class="displayname"> -->
                                     <div>
                                             <p style="color:#979797; ">Address</p>
-                                            <p style="color:#333333; ">Address Line 1, <br>City - 530032, <br>State, Country</p>
+                                            <p style="color:#333333; "><?php echo  $district ?> <br><?php echo  $state ?>, <?php echo  $country ?></p>
                                         </div><br>
                                   </div>
                                 </div>

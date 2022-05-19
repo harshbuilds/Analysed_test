@@ -1,4 +1,4 @@
-<?php include('include/header.php') ?>
+<?php include('header.php') ?>
 
 
 <?php
@@ -114,8 +114,39 @@ opacity: 1;
   height: 47px;
   margin-left: 210px;
 }
+@media screen and (max-width:650px){
+    #upload-container{
+    /* position: relative;
+    width: 369px;
+    height: 820px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    justify-content: center; */
+
+    background-color: #fefefe;
+    margin: 13% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 56%;
+    height: 943px;
+    border-radius: 11px;
+    }
+    .ro {
+    position: relative;
+    width: 339px;
+    height: 328px;
+    left: -51px;
+    top: 28px;
+}
+.filetype{
+    font-size: 21px;
+  }
+
+}
 
   </style>
+  
   <?php
    $flag=0;
    if(isset($_POST['btnsearch']))
@@ -163,10 +194,10 @@ $j_id=$_GET['j_id'];
                         $country=$rows['country'];
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
-
+                        $priority=$rows['priority'];
                         $job_id=$rows['job_id'];
 
-                        // $j_id=$_GET['j_id'];
+                        $j_id=$_GET['j_id'];
                     }
                 }
               }
@@ -177,7 +208,7 @@ $j_id=$_GET['j_id'];
 		<div id="upload-container">
             <br><br>
 			<p class="upload"> Upload Files
-            <span id="closeit" class="content_2" style="margin-left:700px;color:grey;font-size:14px">Close</span></p><br>
+            <span id="closeit" class="content_2" >Close</span></p><br>
 
 
           <?php
@@ -193,7 +224,7 @@ $j_id=$_GET['j_id'];
 
                 //echo $fileSize;
 
-                  $sql4="INSERT INTO `job_files`(`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`)
+                  $sql4="INSERT INTO `js_files`(`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`)
                  VALUES ('JS111','$fileName','$ext','$documenttype',$fileSize,'$created')";
                  $res4=mysqli_query($conn,$sql4);
                  if($res4)
@@ -244,13 +275,13 @@ $j_id=$_GET['j_id'];
 <div class="main_body">
     <div class="small_container" style="margin-top:0%;"><br>
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link">Job_Listings</a>
+            <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;<u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a> ><a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
          <br>
-        <div class="heading_dash1">
+        <div class="heading_dash1" id="heading1">
             <div class="row-flex-jobj">
-                <h1 class="mainHeadingDash" style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
+                <h1 class="mainHeadingDash"  id="position1"style="font-size:35px;">&emsp;&emsp;<?php echo  $position ?></h1>
             </div>
 
             <div class="row-flex-jobj">
@@ -260,21 +291,18 @@ $j_id=$_GET['j_id'];
         </div>
     </div>
 
-    <div class="container" style="width:100%;margin-left:120px;margin-top:-2%;">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-1 mb-4">
 
-                <div class="options">
-                    <p><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">At a glance </a></p>
-                    <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Applicants </a></p>
-
-                    <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Activity</a></p>
-                    <!-- <div class="option1"> -->
-                        <span style="color:#3598DB;"id="te1" > <b>|  Files</b></span>
-                    <!-- </div>  -->
-                    <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1"> Notes </a></p>
-                    <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>"style="color:#979797;" id="te1">Publish </a></p>
-                </div>
+            <div class="options">
+                <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p class="p1"><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
+                <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Activity</a></p>
+                <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>  Files</a></p>
+                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
+                <p class="p1"><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
+            </div>
 
             </div>
             <div class="col-lg-8 mb-4">
@@ -309,13 +337,16 @@ $j_id=$_GET['j_id'];
                       <div class="row">
                             <div class="filterSmall_myTasks">
                                 <div class="selectAllActions_filterSmall_myTasks" style="margin-left: 570px;"><br>
-                                    <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
-                                    <label for="checkboxSelectAll_myTasks">Select All</label>
-                                    <select name="Select action">
+                                <div class="select-dropdown">   
+                                <input type="checkbox" name="checkboxSelectAll_myTasks" id="checkboxSelectAll_myTasks">
+                                  
+                                          <label for="checkboxSelectAll_myTasks">Select All</label>
+                                        <select name="Select action">
                                         <option value="0">Select action</option>
                                         <option value="1">Copy</option>
                                         <option value="2">Cut</option>
-                                    </select>
+                                         </select>
+                                    </div>
                                 </div>
                             </div>
                       </div>
@@ -331,7 +362,7 @@ $j_id=$_GET['j_id'];
               <?php
                  if($flag == 0)
                  {
-                   $sql5="SELECT * FROM `job_files` WHERE JS_id='JS111'";
+                   $sql5="SELECT * FROM `js_files`";
                  }
                   //$sql5="SELECT * FROM `job_files` WHERE JS_id='JS111'";
                   $res5=mysqli_query($conn,$sql5);
@@ -342,7 +373,7 @@ $j_id=$_GET['j_id'];
                     {
                       while($rows=mysqli_fetch_assoc($res5))
                       {
-                         $Id=$rows['Id'];
+                         $Id=$rows['JS_id'];
                          $file_name=$rows['file_name'];
                          $file_type=$rows['file_type'];
                          $doc_type=$rows['doc_type'];
@@ -351,7 +382,7 @@ $j_id=$_GET['j_id'];
                          $added_on=$rows['added_on'];
 
                   ?>
-                  <div class="row">
+                  <div class="row" id="list-files">
                         <div class="singletask_myTasks">
                             <input type="checkbox" name="checkBoxItem" class="largerCheckbox">
                             <span>
@@ -378,8 +409,8 @@ $j_id=$_GET['j_id'];
                                 <p class="j1">Sasuke Uchiha</p>
                             </span>
                             <div class="button-div_myTasks">
-                                  <a href="delete_listings_files.php?Id=<?php echo $Id; ?>"><button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button><br></a>
-                                   <a href="download.php?filename=<?php echo $file_name; ?>"><button style="font-size:14px;color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button></a>
+                                  <a href="delete_listings_files.php?Id=<?php echo $Id; ?>"><button class="j1" style="color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button><br></a>
+                                   <a href="download.php?filename=<?php echo $file_name; ?>"><button  class="j1"style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button></a>
                             </div>
                         </div>
                   </div>
@@ -393,8 +424,8 @@ $j_id=$_GET['j_id'];
 
             </div>
             <div class="col-lg-3 mb-4" >
-                       <div class="card" style="width:300px;">
-                       <div class="card-body">
+                       <div class="card"  id="right-side-col"style="width:300px;">
+                       <div class="card-body" id="right-side-body">
                 <div class="right-panel" style="text-align:center">
                     <br>
                     <div id="box_12">
@@ -403,7 +434,26 @@ $j_id=$_GET['j_id'];
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
+                        <span id="r1"> <?php
+                   if($priority == '3')
+                   {
+                ?>
+                   <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   }
+                   elseif($priority == '2')
+                   {
+                ?>
+                    <img src="img/orange-icon.png" width="20" height="20">
+                <?php
+                    }
+                    elseif($priority == '1')
+                    {
+                ?>
+                    <img src="img/Yellow-icon.png" width="20" height="20">
+                <?php
+                    }
+                ?> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

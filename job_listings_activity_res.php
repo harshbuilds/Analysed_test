@@ -1,9 +1,9 @@
-<?php include('include/header.php') ?>
+<?php include('header.php') ?>
 
 
 <?php
 
-   include 'conn.php';
+   include 'connection1.php';
    // session_start();
 ?>
 
@@ -34,7 +34,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -47,29 +47,29 @@
         if(isset($_POST['btnsearch1']))
         {
             $text1=$_POST['text1'];
-            $sql1="select * from job_list where contact_client_company='$text1'";
+            $sql1="select * from joblistings where contact_client_company='$text1'";
             $flag1=1;
         }
 
         if(isset($_POST['btnsearch2']))
         {
             $text2=$_POST['text2'];
-            $sql2="select * from job_list where contact_client_company='$text2'";
+            $sql2="select * from joblistings where contact_client_company='$text2'";
             $flag2=1;
         }
 
         if(isset($_POST['btnsearch3']))
         {
             $text3=$_POST['text3'];
-            $sql3="select * from job_list where contact_client_company='$text3'";
+            $sql3="select * from joblistings where contact_client_company='$text3'";
             $flag3=1;
         }
 
     ?>
     <?php
-           $j_id=1;
+           $j_id=$_GET['j_id'];
             $sql="select * from joblistings where job_id='$j_id'";
-            $res=mysqli_query($con,$sql);
+            $res=mysqli_query($conn,$sql);
             if($res == TRUE)
             {
                 $count=mysqli_num_rows($res);
@@ -105,10 +105,10 @@
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
                         $status=$rows['status'];
-
+                        $priority=$rows['priority'];
                         $job_id=$rows['job_id'];
 
-                        // $j_id=$_GET['j_id'];
+                        $j_id=$_GET['j_id'];
 
                     }
                 }
@@ -132,16 +132,16 @@
 </head>
 <body>
 <div class="bread-crumbs_Mytools-recruiter" style="margin-left:100px">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
+            <a href="dashboard.php" class="active-breadcrumb-link"><u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a> >  <a href="" class="active-breadcrumb-link"><u>Job_Listings</u></a>
             >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
         </div>
 <div class="container" style="margin-left:150px">
   <div class="small_container">
 
 
-        <div class="heading_dash1">
+        <div class="heading_dash1"  id="heading">
             <div class="row-flex-jobj">
-                <h1 class="mainHeadingDash"><?php echo  $position ?></h1>
+                <h1 class="mainHeadingDash" ><?php echo  $position ?></h1>
             </div>
                     <div class="row-flex-jobj">
                         <a href="#"><?php echo  $client_company ?>- </a> #1544-1
@@ -154,17 +154,18 @@
       <div class="row">
                <div class="col-lg-1 mb-4">
                <div class="options">
-                <p ><a href="jobs_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
+                <p class="p1"><a href="job_listings_individual.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Glance</a></p>
                 <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>Activity</p>
                 <p><a href="Job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Files</a></p>
-                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
-                <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
+                <p class="p1"><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
+                <p class="p1"><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
             </div>
     </div>
 
 
-               <div class="col-lg-8 mb-4">
+               <div class="col-lg-8 mb-4" id="responses">
+                   <!--  Start  of Web Responses -->
                <p><br><br><b>Web responses</b>
                     <button id="web_right_icon"> <img src="img/dropdown_icon.jpeg" width="20px" height="20px"> </button>
                     <button id="web_down_icon"> <img src="img/dropdown_icon2.jpeg" width="20px" height="20px"> </button>
@@ -175,7 +176,7 @@
                    <div class="row">
                        <div class="col-7">
                                 <form method="post">
-                                <div class="leftFilter_myTasks" style="width:450px;">
+                                <div class="leftFilter_myTasks" >
 
                                         <img src="img/chrome.png" width="20px" height="20px">
 
@@ -222,7 +223,7 @@
                         <?php
                            if($flag1 == 0)
                            {
-                               $sql1="select * from job_list";
+                               $sql1="select * from joblistings";
                            }
 
                             $res=mysqli_query($conn,$sql1);
@@ -234,7 +235,7 @@
                                     while($rows=mysqli_fetch_assoc($res))
                                     {
 
-                                        $rec_img=$rows['rec_img'];
+                                        $logo=$rows['logo'];
                                         $recruiters_name=$rows['recruiters_name'];
                                         $company_email=$rows['company_email'];
                                         $start_date=$rows['start_date'];
@@ -247,16 +248,16 @@
                                   <input type="checkbox" name="checkBoxItem" >&emsp;
                                   <span>
                                       <p class="light_spanItem_singleTask_myTasks">Added on</p>
-                                      <p style="color:#333333;font-size:14px"><?php echo $start_date; ?></p>
+                                      <p class="light_spanItem_singleTask_myTasks" style="color:#333333;"><?php echo $start_date; ?></p>
                                   </span>&emsp;
-                                  <?php echo '<img src="data:image;base64,'.base64_encode($rec_img).' "  style="width: 50px; height: 50px;" >' ;   ?>
+                                  <!-- <?php echo '<img src="data:image;base64,'.base64_encode($logo).' "  style="width: 50px; height: 50px;" >' ;   ?> -->
                                   <span>
-                                      <p style="color:#297FB8;margin-bottom:5px;margin-right:50px;font-size:14px"><?php echo $contact_client_company; ?>&emsp;<span style="color:#333333;font-size:14px"><?php echo $qualification; ?></span></p>
-                                      <p style="color:#333333;margin-bottom:5px;font-size:14px"><?php echo $company_email; ?>&emsp;&emsp;&emsp;</p>
+                                      <p class="light_spanItem_singleTask_myTasks" style="color:#297FB8;margin-bottom:5px;margin-right:50px;"><?php echo $contact_client_company; ?>&emsp;<span style="color:#333333;font-size:14px"><?php echo $qualification; ?></span></p>
+                                      <p class="light_spanItem_singleTask_myTasks" style="color:#333333;margin-bottom:5px;"><?php echo $company_email; ?>&emsp;&emsp;&emsp;</p>
                                   </span>
 
-                                  <span style="color:#297FB8;margin-bottom:5px;font-size:14px">Linkedin&emsp;</span>
-                                  <span style="color:#333333;font-size:14px"><?php echo $required_experience; ?></span>
+                                  <span class="light_spanItem_singleTask_myTasks" style="color:#297FB8;margin-bottom:5px;">Linkedin&emsp;</span>
+                                  <span class="light_spanItem_singleTask_myTasks" style="color:#333333;"><?php echo $required_experience; ?></span>
                               </div>
                               <?php
                         }
@@ -265,8 +266,9 @@
                 ?>
                     </div>
                     <br>
-                  </div>
-
+                </div>        <!--  End of Web Responses -->
+                                       
+                <!-- Start of Resume Evaluation -->
                    <p><b>Resume Evaluation</b>
                     <button id="re_right_icon"> <img src="img/dropdown_icon.jpeg" width="20px" height="20px"> </button>
                     <button id="re_down_icon"> <img src="img/dropdown_icon2.jpeg" width="20px" height="20px"> </button>
@@ -278,7 +280,7 @@
 
                        <div class="col-6">
                           <form method="post">
-                            <div class="leftFilter_myTasks" style="width:400px;">
+                            <div class="leftFilter_myTasks" >
 
                                     <img src="img/eye.png" width="20px" height="20px">
 
@@ -325,7 +327,7 @@
                           <?php
                           if($flag2 ==0)
                           {
-                            $sql2="select * from job_list";
+                            $sql2="select * from joblistings";
                           }
 
                 $res=mysqli_query($conn,$sql2);
@@ -337,7 +339,7 @@
                         while($rows=mysqli_fetch_assoc($res))
                         {
 
-                            $rec_img=$rows['rec_img'];
+                            $logo=$rows['logo'];
                             $recruiters_name=$rows['recruiters_name'];
                             $company_email=$rows['company_email'];
                             $status=$rows['status'];
@@ -349,10 +351,10 @@
                     ?>
                           <div class="singletask_myTasks">
                           <input type="checkbox" name="checkBoxItem" id="te2" > &emsp;
-                <?php echo '<img src="data:image;base64,'.base64_encode($rec_img).' "  style="width: 50px; height: 50px;" >' ;   ?>
+                <?php echo '<img src="data:image;base64,'.base64_encode($logo).' "  style="width: 50px; height: 50px;" >' ;   ?>
                 <span>
                 <p class="light_spanItem_singleTask_myTasks1"><?php echo $contact_client_company; ?> (<?php echo $qualification; ?>)</p>
-                    <p class="light_spanItem_singleTask_myTasks" style="font-size:12px"><?php echo $company_email; ?></p>
+                    <p class="light_spanItem_singleTask_myTasks" ><?php echo $company_email; ?></p>
                 </span>&emsp;
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Status</p>
@@ -380,15 +382,15 @@
                 </span>&emsp;
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Through</p>
-                    <p style="color:#3598DB;font-size:14px">LinkedIn</p>
+                    <p style="color:#3598DB;">LinkedIn</p>
                 </span>&emsp;&emsp;
                 <span>
-                    <p class="light_spanItem_singleTask_myTasks"style="font-size:13px">Recruiter name</p>
-                    <p style="font-size:13px"><b><?php echo $recruiters_name; ?></b></p>
+                    <p class="light_spanItem_singleTask_myTasks">Recruiter name</p>
+                    <p ><b><?php echo $recruiters_name; ?></b></p>
                 </span>&emsp;
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Added on  <span style="color:#333333"><?php echo $start_date; ?></span></p>
-                    <p style="color:#3598DB;font-size:14px">&emsp;View resume</p>
+                    <p style="color:#3598DB;">&emsp;View resume</p>
                 </span>
 
                         </div>
@@ -401,6 +403,7 @@
                     <br>
 
                   </div>
+                         <!-- start of Submitted Resumes -->
                    <p><b>Submitted Resumes</b>
                     <button id="sr_right_icon"> <img src="img/dropdown_icon.jpeg" width="20px" height="20px"> </button>
                     <button id="sr_down_icon"> <img src="img/dropdown_icon2.jpeg" width="20px" height="20px"> </button>
@@ -411,7 +414,7 @@
                    <div class="row">
                        <div class="col-6">
                             <form method="post">
-                                <div class="leftFilter_myTasks" style="width:450px;">
+                                <div class="leftFilter_myTasks" >
 
                                         <img src="img/eye.png" width="20px" height="20px">
 
@@ -447,7 +450,7 @@
 
                           if($flag3 ==0)
                           {
-                              $sql3="select * from job_list";
+                              $sql3="select * from joblistings";
                           }
 
                 $res=mysqli_query($conn,$sql3);
@@ -459,7 +462,7 @@
                         while($rows=mysqli_fetch_assoc($res))
                         {
 
-                            $rec_img=$rows['rec_img'];
+                            $logo=$rows['logo'];
                             $recruiters_name=$rows['recruiters_name'];
                             $company_email=$rows['company_email'];
                             $status=$rows['status'];
@@ -475,22 +478,22 @@
                                     <img src="img/Ellipse 148.png" width="50px" height="50px">
                                   <span>
                                       <p style="color:#297FB8;margin-bottom:5px;margin-right:100px;font-size:13px"><?php echo $contact_client_company; ?><span style="color:#333333"><?php echo $qualification; ?></span></p>
-                                      <p style="font-size:13px"><?php echo $company_email; ?></p>
+                                      <p class="light_spanItem_singleTask_myTasks1" ><?php echo $company_email; ?></p>
                                   </span>
-                                  <?php echo '<img src="data:image;base64,'.base64_encode($rec_img).' "  style="width: 50px; height: 50px;" >' ;   ?>
+                                  <?php echo '<img src="data:image;base64,'.base64_encode($logo).' "  style="width: 50px; height: 50px;" >' ;   ?>
 
                                   <span>
-                                        <p class="light_spanItem_singleTask_myTasks" style="font-size:13px">Recruiter</p>
-                                        <p style="font-size:13px"><b><?php echo $recruiters_name; ?></b></p>
+                                        <p class="light_spanItem_singleTask_myTasks" >Recruiter</p>
+                                        <p class="light_spanItem_singleTask_myTasks1"><b><?php echo $recruiters_name; ?></b></p>
                                     </span>&emsp;
                                     <?php echo '<img src="data:image;base64,'.base64_encode($workspace_view).' "  style="width: 50px; height: 50px;" >' ;   ?>
                 <span>
-                                        <p class="light_spanItem_singleTask_myTasks" style="font-size:13px">Company contact</p>
-                                        <p style="font-size:13px"><b><?php echo $client_company; ?></b></p>
+                                        <p class="light_spanItem_singleTask_myTasks" >Company contact</p>
+                                        <p class="light_spanItem_singleTask_myTasks1"><b><?php echo $client_company; ?></b></p>
                                     </span>&emsp;
                                     <span>
-                                        <p class="light_spanItem_singleTask_myTasks" style="font-size:13px">Sent on  <span style="color:#333333">05-05-2020</span></p>
-                                        <p style="color:#3598DB;font-size:13px">&emsp;&emsp;&emsp;View resume</p>
+                                        <p class="light_spanItem_singleTask_myTasks" >Sent on  <span style="color:#333333">05-05-2020</span></p>
+                                        <p  style="color:#3598DB;">&emsp;&emsp;&emsp;View resume</p>
                                     </span>
                               </div>
                               <?php
@@ -506,7 +509,7 @@
                    <!--end of Submitted Resumes -->
 
 
-
+                     <!--Start  of Submitted Resumes -->
                    <p><b>Placements</b>
                     <button id="place_right_icon"> <img src="img/dropdown_icon.jpeg" width="20px" height="20px"> </button>
                     <button id="place_down_icon"> <img src="img/dropdown_icon2.jpeg" width="20px" height="20px"> </button>
@@ -516,7 +519,7 @@
               <div id="Placements">
                    <div class="row">
                        <div class="col-6">
-                                <div class="leftFilter_myTasks" style="width:400px;">
+                                <div class="leftFilter_myTasks" >
 
                                         <img src="files_icon.png" width="20px" height="20px">
 
@@ -574,8 +577,8 @@
                 <!-- end of column -->
 
                 <div class="col-lg-3 mb-4">
-        <div class="card" style="height:3000px;width:240px">
-        <div class="card-body">
+        <div class="card" id="right-side-col" style="height:1500px;width:250px">
+        <div class="card-body" id="right-side-body">
                 <div class="right-panel" style="text-align:center">
                     <br>
                     <div id="box_12">
@@ -584,7 +587,26 @@
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
+                        <span id="r1"> <?php
+                   if($priority == '3')
+                   {
+                ?>
+                   <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   }
+                   elseif($priority == '2')
+                   {
+                ?>
+                    <img src="img/orange-icon.png" width="20" height="20">
+                <?php
+                    }
+                    elseif($priority == '1')
+                    {
+                ?>
+                    <img src="img/Yellow-icon.png" width="20" height="20">
+                <?php
+                    }
+                ?> <?php echo  $position ?></span>
                         <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
                         <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
                         <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>

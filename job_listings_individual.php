@@ -1,4 +1,4 @@
-<?php include('include/header.php') ?>
+<?php include('header.php') ?>
 
 <?php
    define('LOCALHOST','localhost');
@@ -39,7 +39,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <?php
-$j_id=$_GET['j_id'];
+            $j_id=$_GET['j_id'];
+
             $sql="select * from joblistings where job_id='$j_id'";
             $res=mysqli_query($conn,$sql);
             if($res == TRUE)
@@ -76,13 +77,16 @@ $j_id=$_GET['j_id'];
                         $country=$rows['country'];
                         $job_type=$rows['job_type'];
                         $job_views=$rows['job_views'];
+                        $priority=$rows['priority'];
 
                         $job_id=$rows['job_id'];
-                        $Files=$rows['Files'];
-                        $Applicants=$rows['Applicants'];
-                        $Notes=$rows['Notes'];
 
-                        // $j_id=$_GET['j_id'];
+                        
+                        //$Files=$rows['Files'];
+                        //$Applicants=$rows['Applicants'];
+                        //$Notes=$rows['Notes'];
+
+                        $j_id=$_GET['j_id'];
                     }
                 }
               }
@@ -91,7 +95,7 @@ $j_id=$_GET['j_id'];
 
 <br>
 <div class="bread-crumbs_Mytools-recruiter">
-     <a href="" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dashboard </a> >  <a href="" class="active-breadcrumb-link"> My Database </a> >  <a href="" class="active-breadcrumb-link"><u> Job Listings  </u></a>
+     <a href="dashboard.php" class="active-breadcrumb-link">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<u>Dashboard</u> </a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u> My Database </u></a> >  <a href="job_listings.php" class="active-breadcrumb-link"> <u>Job Listings </u></a>
      >  <a href="" class="active-breadcrumb-link"><u><?php echo  $position ?></u></a>
  </div>
 
@@ -119,40 +123,40 @@ $j_id=$_GET['j_id'];
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 5px;">|</b>Glance</p>
                 <p><a href="jobs_listings_activity_eval-1.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Applicants</a></p>
                 <p><a href="job_listings_activity_res.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Activity</a></p>
-                <p><a href="Job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Files</a></p>
-                <p><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
-                <p><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
+                <p class="p1"><a href="Job_listings_files.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Files</a></p>
+                <p class="p1"><a href="job_listings_notes.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Notes</a></p>
+                <p class="p1"><a href="job_listings_pub-2.php?j_id=<?php echo  $job_id ?>" style="color: #979797">Publish</a></p>
             </div>
     </div>
 
     <div class="col-lg-8 mb-4">
-        <div class="row">
+        <div class="row"  id="card-of-2">
             <div class="col-7">
             <br><br>
-                <div class="card" style="height:250px;width:420px">
+                <div class="card" id="card-1-of-2">
                     <div class="card-body">
                         <p class="m1"><strong>Summary</strong>
-                        <span style="color:#979797;font-size:12px;padding-left:130px">Last edited</span>
+                        <span  id="summ">Last edited</span>
                         <span style="color:#333333;font-size:14px"><b><?php echo  $start_date ?></b></span></p><br>
                         <div class="row">
                             <div class="col-5">
-                                <p id="box_12"><img src="img/page.png" width="20" height="20">&nbsp;Files&nbsp;<?php echo $Files; ?></p>
-                                <p id="box_12"><img src="img/notes.png" width="20" height="20">&nbsp;Notes&nbsp;<?php echo $Notes; ?></p>
-                                <p id="box_12"><img src="img/briefcase.png" width="20" height="20">&nbsp;Applicants&nbsp;<?php echo $Applicants; ?></p>
+                                <p id="box_12"><img src="img/page.png" width="20" height="20">&nbsp;Files&nbsp;<?php //echo $Files; ?></p>
+                                <p id="box_12"><img src="img/notes.png" width="20" height="20">&nbsp;Notes&nbsp;<?php //echo $Notes; ?></p>
+                                <p id="box_12"><img src="img/briefcase.png" width="20" height="20">&nbsp;Applicants&nbsp;<?php //echo $Applicants; ?></p>
                             </div>
                             <div class="col-7">
                                 <p style="color:#979797;font-size:14px;line-height:1.6">Industry&emsp;&emsp;&emsp;&emsp;&nbsp;Source<br>
                                 <span style="color:#333333;font-size:16px;"><b><?php echo  $industry ?>&emsp;&emsp;&emsp;LinkedIn</b></span></p>
                                 <p style="color:#979797;font-size:14px;line-height:1.6">Qualification req&emsp;Citizenship crit<br>
-                                <span style="color:#333333;font-size:16px;"><b><?php echo  $qualification ?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $eligibility_criteria ?></b></span></p>
+                                <span style="color:#333333;font-size:14px;"><?php echo  $qualification ?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<?php echo  $eligibility_criteria ?></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-5" >
                 <br><br>
-                <div class="card"  style="height:250px;width:300px">
+                <div class="card"   style="height:307px;width:300px">
                     <div class="card-body">
                         <p class="m1"><strong>Required Skills</strong></p>
                         <?php
@@ -170,17 +174,17 @@ $j_id=$_GET['j_id'];
             </div>
         </div>
 <br>
-        <div class="row">
+        <div class="row " id="package">
             <div class="col-4">
-                <div class="card" style="height:70px">
-                    <div class="card-body">
+                <div class="card" id="cards">
+                    <div class="card-body ">
                         <p class="b1">Package Type</p>
                         <p class="b2"><?php echo  $package_type ?></p>
                     </div>
                 </div>
             </div>
             <div class="col-4">
-                <div class="card"  style="height:70px">
+                <div class="card"  id="cards">
                     <div class="card-body">
                         <p class="b1">Package</p>
                         <p class="b2">Rs. <?php echo  $package ?></p>
@@ -188,7 +192,7 @@ $j_id=$_GET['j_id'];
                 </div>
             </div>
             <div class="col-4">
-                <div class="card"  style="height:70px">
+                <div class="card" id="cards">
                     <div class="card-body">
                         <p class="b1">Transportation</p>
                         <p class="b2"><?php echo  $transportation ?></p>
@@ -198,9 +202,9 @@ $j_id=$_GET['j_id'];
         </div>
 
 <br>
-        <div class="row">
+        <div class="row"  id="experience">
             <div class="col-4">
-                <div class="card" style="height:180px">
+                <div class="card" id="exp-card" >
                     <div class="card-body">
                         <p class="b1">Experience requirement</p>
                         <p class="b3"><?php echo  $required_experience ?></p>
@@ -208,7 +212,7 @@ $j_id=$_GET['j_id'];
                 </div>
             </div>
             <div class="col-4">
-                <div class="card"  style="height:180px">
+                <div class="card" id="exp-card">
                     <div class="card-body">
                         <p class="b1">Relevant experience</p>
                         <p class="b3"><?php echo  $relevant_experience ?></p>
@@ -216,7 +220,7 @@ $j_id=$_GET['j_id'];
                 </div>
             </div>
             <div class="col-4">
-                <div class="card"  style="height:180px">
+                <div class="card" id="exp-card">
                     <div class="card-body">
                         <p class="b1">Irrelevant experience</p>
                         <p class="b3"><?php echo  $irrelevant_experience ?></p>
@@ -248,10 +252,10 @@ $j_id=$_GET['j_id'];
 <br>
          <p class="indi1">Contact information for the advert</p>
          <div class="row">
-             <div class="col-4">
+             <div class="col-5">
                  <p class="b3" style="line-height:1.7"><?php echo  $advert_contact_name ?> <br><?php echo  $company_email ?> <br><?php echo  $advert_contact_no ?></p>
              </div>
-             <div class="col-8">
+             <div class="col-7">
              <p class="b3" style="line-height:1.7"><?php echo  $district ?> <br><?php echo  $state ?> <?php echo  $country ?></p>
              </div>
          </div>
@@ -261,24 +265,43 @@ $j_id=$_GET['j_id'];
     <div class="col-lg-3 mb-4">
 
     <br><br>
-        <div class="card" style="height:3000px;width:240px">
-            <div class="card-body">
-                <div class="right-panel" style="text-align:center">
+        <div class="card" id="right-side-col" >
+            <div class="card-body" id="right-side-body">
+                <div class="right-panel" id="right-side-body"style="text-align:center">
                     <br>
                     <div id="box_12">
                         #JB1554-1&emsp;&emsp;
-                        <span style="color:#979797;font-size:13px"><?php echo  $start_date ?></span>
+                        <span style="color:#979797;"><?php echo  $start_date ?></span>
                     </div><br>
                     <div class="status-name">
                         <!-- <div> -->
-                        <span id="r1"><img src="img/red-logo.png" width="15" height="15"> <?php echo  $position ?></span>
-                        <p style="color:#3598DB;font-size: 14px"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
-                        <span style="color:#979797;font-size:14px"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
-                        <span style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>
+                        <span id="r1"> <?php
+                   if($priority == '3')
+                   {
+                ?>
+                   <img src="img/red-icon.png" width="30" height="20">
+                <?php
+                   }
+                   elseif($priority == '2')
+                   {
+                ?>
+                    <img src="img/orange-icon.png" width="20" height="20">
+                <?php
+                    }
+                    elseif($priority == '1')
+                    {
+                ?>
+                    <img src="img/Yellow-icon.png" width="20" height="20">
+                <?php
+                    }
+                ?> <?php echo  $position ?></span>
+                        <p   style="color:#3598DB;"><?php echo  $client_company ?><img src="img/launch-24px.png" width="15" height="17"><br>
+                        <span style="color:#979797;"><i class="fa fa-map-marker"></i> <?php echo  $district ?></span><br>
+                        <span  style="color:#979797;line-height: 3;"><?php echo  $job_type ?></p>
                         <hr style="color:#979797;width:100%"></hr>
                     </div>
                     <!-- <div class="displayname">  -->
-                    <div>
+                    <div >
 
                         <img src="img/eye-icon.jpg" width="25" height="20">&emsp;&emsp;
                         <img src="img/task-icon.png" width="23" height="25">&emsp;&emsp;
@@ -290,12 +313,12 @@ $j_id=$_GET['j_id'];
                     </div><br><br>
                         <!-- <div class="displayname">  -->
                     <div>
-                        <p style="color:#979797; line-height:10%;font-size:14px">Status &emsp;&emsp;&emsp;Last Contact</p>
+                        <p style="color:#979797; line-height:10%;">Status &emsp;&emsp;&emsp;Last Contact</p>
                         <p><span style="color:#51C46D;">Active&nbsp;&emsp;&emsp;&emsp;</span><span style=""><?php echo  $start_date ?></span></p>
                     </div><br>
                     <!-- <div class="displayname">  -->
-                    <div>
-                        <p style="color:#979797; line-height:10%;font-size:14px">Industry&emsp;&emsp;&emsp; Qualification req</p>
+                    <div >
+                        <p style="color:#979797; line-height:10%;">Industry&emsp;&emsp;&emsp; Qualification req</p>
                         <p style="color:#333333; "><b><?php echo  $industry ?>&emsp;&emsp;&emsp;&emsp;&emsp; <?php echo  $qualification ?>&emsp;&emsp;</b></p>
                     </div><br>
                     <!-- <div class="displayname"> -->
