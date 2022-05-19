@@ -241,10 +241,22 @@ select {
   height: 170px;
   margin-bottom: 20px;
 }
-
+.container {
+  width: 100%;
+  margin-left: 120px;
+  margin-top: -2%;
+}
 @media screen and (max-width: 650px) {
-  .bread-crumbs_Mytools-recruiter {
+  .bread-crumbs_Mytools-recruiter,
+  .p1 {
     display: none;
+  }
+
+  .row {
+    width: 370px;
+  }
+  .col-1 mb-4 {
+    display: flex;
   }
   #heading1 {
     position: relative;
@@ -253,25 +265,29 @@ select {
   }
   .options {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
-    position: relative;
+    margin-left: 5px;
+    display: flex;
+    width: 350px;
+    justify-content: space-around;
   }
   #align-of-card {
     position: relative;
-    top: 313px;
+    top: 95px;
     display: block;
-    left: -100px;
+    left: 44px;
   }
   #pub1 {
     position: relative;
     width: 200px;
     height: 200px;
   }
+  #te1 {
+    font-size: 22px;
+  }
   .nextMyTasks {
     position: relative;
-    top: 270px;
-    left: -56px;
+    margin-left: 100px;
+    margin-top: 47px;
   }
   #right-side-col {
     position: relative;

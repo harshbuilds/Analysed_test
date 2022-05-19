@@ -303,13 +303,18 @@ select {
   height: 47px;
   margin-left: 210px;
 }
-
+.container {
+  width: 100%;
+  margin-left: 120px;
+  margin-top: -2%;
+}
 @media screen and (max-width: 650px) {
   .bread-crumbs_Mytools-recruiter,
   .sortByMyTasks,
   .recentMyTasks,
   .sortFilter_myTasks,
-  .select-dropdown {
+  .select-dropdown,
+  .p1 {
     display: none;
   }
 
@@ -325,23 +330,21 @@ select {
   }
   .options {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
-    position: relative;
+    display: flex;
+    justify-content: space-around;
   }
-  .leftFilter_myTasks {
-    position: relative;
-    left: -100px;
-  }
+
   .addFilesMyTasks {
     position: relative;
-    left: -270px;
-    top: 48px;
+    left: -374px;
+    top: 61px;
     font-size: 17px;
+    width: 100px;
+    height: 47px;
   }
   #list-files {
-    margin-top: 30px;
-    margin-left: -50px;
+    margin-top: 50px;
+    margin-left: 68px;
   }
   .singletask_myTasks {
     position: relative;

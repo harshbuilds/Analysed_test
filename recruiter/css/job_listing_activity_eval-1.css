@@ -240,6 +240,7 @@ select {
 .inputSearchFileName_myTasks {
   color: #979797;
   padding: 10px;
+  width: 250px;
 }
 .leftFilter_myTasks button {
   color: #297fb8;
@@ -287,7 +288,8 @@ select {
   color: #297fb8;
 }
 .selectAllActions_filterSmall_myTasks select {
-  margin-left: 10px;
+  margin-left: 90px;
+  margin-top: -34px;
 }
 
 .singleTasks_containerDiv {
@@ -347,8 +349,8 @@ select {
     padding: 0px;
   }
   .inputSearchFileName_myTasks {
-    width: 50%;
-    font-size: 14px;
+    width: 71%;
+    font-size: 20px;
   }
   .rightFilter_myTasks {
     text-align: center;
@@ -385,27 +387,43 @@ select {
   .bread-crumbs_Mytools-recruiter,
   .sortByMyTasks,
   .recentMyTasks,
-  .filterSmall_myTasks {
+  .filterSmall_myTasks,
+  .p1,
+  .col-4 {
     display: none;
   }
   .options {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
+    display: flex;
+    justify-content: space-around;
     position: relative;
+    top: -86px;
+  }
+  .small_container {
+    position: relative;
+    left: -152px;
+    width: 370px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .row {
+    position: relative;
+    left: 20px;
   }
   .leftFilter_myTasks {
-    position: relative;
-    left: -178px;
     width: 365px;
+    margin-left: 0px;
+    margin-top: -143px;
+    height: 50px;
   }
   .searchButton_myTasks {
     position: relative;
-    left: 8px;
+    left: 180px;
+    top: -38px;
   }
   #display-btn {
     position: relative;
-    left: -126px;
+    top: -50px;
   }
   .addFilesMyTasks1 {
     position: relative;
@@ -427,9 +445,7 @@ select {
     font-size: 20px;
   }
   #filter-options {
-    position: relative;
-    left: 20px;
-    left: -142px;
+    margin-left: 0px;
     display: grid;
     font-size: 20px;
   }
@@ -443,14 +459,11 @@ select {
     height: 45px;
   }
   .singleTasks_containerDiv {
-    position: relative;
-    left: 20px;
+    margin-left: 0px;
   }
   .singletask_myTasks {
-    position: relative;
     height: 394px;
     width: 350px;
-    left: -170px;
     display: grid;
   }
   .light_spanItem_singleTask_myTasks {
@@ -462,19 +475,24 @@ select {
     align-items: center;
     left: -141px;
     display: none;
+    height: 1500px;
+    width: 250px;
   }
   #right-side-body {
     position: relative;
     font-size: 22px;
   }
   #heading {
-    position: relative;
+    /* position: relative;
     left: -141px;
-    font-size: 17px;
+    font-size: 17px; */
+    margin-left: 5px;
   }
-  #position {
+  .row-flex-jobj {
+    font-size: 22px;
+  }
+  .row {
     position: relative;
-    font-size: 30px;
-    font-weight: bold;
+    left: 4px;
   }
 }

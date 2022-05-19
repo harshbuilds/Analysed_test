@@ -332,30 +332,28 @@ select {
   .selectAllActions_filterSmall_myTasks,
   .filterSmall_myTasks,
   .selectAllActions_filterSmall_myTasks input,
-  .filterSmall_myTasks select {
+  .filterSmall_myTasks select,
+  .p1 {
     display: none;
   }
-  #heading1 {
-    position: relative;
-    left: -141px;
-    font-size: 20px;
-  }
-  #position1 {
-    position: relative;
-    font-size: 30px;
-    font-weight: bold;
+  #heading {
+    margin-left: 5px;
   }
   .options {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
+    display: flex;
+    margin-left: 0px;
+    justify-content: space-around;
+  }
+  .small_container {
     position: relative;
+    left: -155px;
+    width: 370px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   #responses {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
-    position: relative;
   }
   #right-side-col {
     position: relative;
@@ -368,25 +366,31 @@ select {
     font-size: 22px;
   }
   .light_spanItem_singleTask_myTasks {
-    position: relative;
     font-size: 17px;
   }
   .light_spanItem_singleTask_myTasks1 {
     font-size: 17px;
   }
-  .singleTasks_containerDiv {
-    position: relative;
-    left: 142px;
-  }
+
   .singletask_myTasks {
-    position: relative;
     height: 516px;
     width: 350px;
-    left: -170px;
+    margin-left: 0px;
     display: grid;
   }
   .searchButton_myTasks {
     position: relative;
     margin-left: 20px;
+  }
+  .row-flex-jobj {
+    font-size: 22px;
+  }
+  .row {
+    width: 370px;
+    position: relative;
+    left: 10px;
+  }
+  #webresponses {
+    width: 370px;
   }
 }

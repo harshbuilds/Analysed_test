@@ -233,13 +233,18 @@ select {
 #r1 {
   font-size: 20px;
 }
-
+.container {
+  width: 100%;
+  margin-left: 120px;
+  margin-top: -2%;
+}
 @media screen and (max-width: 650px) {
   .bread-crumbs_Mytools-recruiter,
   .sortByMyTasks,
   .recentMyTasks,
   .sortFilter_myTasks,
-  .select-dropdown {
+  .select-dropdown,
+  .p1 {
     display: none;
   }
 
@@ -253,15 +258,16 @@ select {
     font-size: 30px;
     /* font-weight:bold; */
   }
+  .row {
+    width: 370px;
+  }
   .options {
     font-size: 22px;
-    display: table-row;
-    left: -121px;
-    position: relative;
+    display: flex;
+    width: 370px;
+    justify-content: space-around;
   }
   .leftFilter_myTasks {
-    position: relative;
-    left: -100px;
     width: 377px;
     font-size: 16px;
   }
@@ -286,10 +292,7 @@ select {
 
     left: 20px;
   }
-  #align-col {
-    position: relative;
-    left: -122px;
-  }
+
   #align-of-card {
     font-size: 20px;
     display: grid;
@@ -300,6 +303,6 @@ select {
     width: 100px;
   }
   #te1 {
-    font-size: 17px;
+    font-size: 22px;
   }
 }
