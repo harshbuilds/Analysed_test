@@ -1,8 +1,8 @@
 .options {
   font-family: CeraB;
   margin-top: -988px;
-  margin-left: 100px;
-  width: 200px;
+  margin-left: 39px;
+  /* width: 200px; */
 }
 
 .options p {
@@ -15,9 +15,9 @@
 }
 .box {
   margin-top: -155px;
-  margin-left: 260px;
-  width: 370px;
-  height: 150px;
+  margin-left: 200px;
+  width: 350px;
+  height: 130px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
   /* background: #ffffff 0% 0% no-repeat padding-box; */
   box-shadow: 1px 3px 10px #00000033;
@@ -31,7 +31,7 @@
   font-size: 23px;
   font-family: CeraB;
   color: #3598db;
-  margin-left: 10px;
+  padding: 10px 10px 10px 10px;
 }
 .box-1 p {
   margin-top: -20px;
@@ -43,7 +43,7 @@
 }
 .box-1 select {
   margin-top: 0px;
-  margin-left: 30px;
+  margin-left: 15px;
   width: 300px;
   height: 40px;
   border: 1px solid var(--unnamed-color-3598db);
@@ -52,10 +52,11 @@
 }
 
 .box-2 {
-  margin-top: -150px;
-  margin-left: 650px;
-  width: 450px;
-  height: 150px;
+  margin-top: -133px;
+  margin-left: 566px;
+  width: 400px;
+  height: 135px;
+
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box; */
   box-shadow: 1px 3px 10px #00000033;
@@ -99,8 +100,8 @@
 }
 .box-3 {
   margin-top: 30px;
-  margin-left: 260px;
-  width: 370px;
+  margin-left: 207px;
+  width: 350px;
   height: 150px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box; */
@@ -118,46 +119,55 @@
 }
 
 .box-3-1-1 {
-  margin-top: 30px;
+  /* margin-top: 30px;
   margin-left: 20px;
+  margin-right: 20px; */
+  padding: 20px 20px 20px 20px;
   font: normal normal normal 13px/19px Metro;
   color: #979797;
 }
 
 .box-3-1-2 {
-  margin-top: -37px;
+  margin-top: -50px;
   margin-left: 160px;
   font: normal normal normal 13px/19px Metro;
   color: #979797;
 }
 .engagement {
   margin-top: -102px;
-  margin-left: 800px;
+  margin-left: 650px;
   font: normal normal normal 13px/19px Metro;
   color: #3598db;
 }
 /* =========================================================================================== */
 
 @media screen and (max-width: 650px) {
-  .bread-crumbs_Mytools-recruiter {
+  .bread-crumbs_Mytools-recruiter,
+  .p1,
+  .status {
     display: none;
   }
   .options {
-    position: relative;
+    margin-left: -15px;
+    margin-top: 27px;
+    /* position: relative;
     left: -98px;
-    top: 20px;
+    top: 20px; */
     font-size: 22px;
+    display: flex;
+    justify-content: space-between;
   }
   .box {
-    position: relative;
-    top: 195px;
-    left: -256px;
+    margin-top: 30px;
+    margin-left: 2px;
     width: 340px;
   }
+  .box-1 p {
+    margin-left: 184px;
+  }
   .box-2 {
-    position: relative;
-    top: 357px;
-    left: -651px;
+    margin-left: 10px;
+    margin-top: 42px;
     width: 340px;
     height: 370px;
   }
@@ -192,10 +202,8 @@
     font-size: 18px;
   }
   .box-3 {
-    position: relative;
-    width: 340px;
-    top: 350px;
-    left: -261px;
+    margin-top: 45px;
+    margin-left: 2px;
     height: 220px;
   }
   .box-3-1 {
@@ -212,15 +220,15 @@
     font-size: 18px;
   }
   .engagement {
-    position: relative;
-    top: 530px;
-    left: -690px;
+    margin-top: 45px;
+    margin-left: 75px;
     font-size: 18px;
   }
   .status {
     position: relative;
     top: 1195px;
     left: -1110px;
+
     width: 340px;
   }
 }

@@ -28,7 +28,7 @@
 }
 .profile-img {
   margin-top: 0px;
-  margin-left: 90px;
+  margin-left: 50px;
   background: transparent url("img/Ellipse 148.png") 0% 0% no-repeat padding-box;
   opacity: 1;
 }
@@ -60,7 +60,7 @@
   color: #3598db;
   background-color: white;
   margin-top: -100px;
-  margin-left: 1100px;
+  margin-left: 1035px;
   width: 173px;
   height: 47px;
   border: 1px solid var(--unnamed-color-3598db);
@@ -76,7 +76,7 @@
 .options {
   font-family: CeraB;
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 75px;
   font-size: 18px;
 }
 .options p {
@@ -91,7 +91,7 @@
 .options-card {
   font-family: CeraB;
   margin-top: -135px;
-  margin-left: 230px;
+  margin-left: 200px;
   width: 500px;
   height: 200px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
@@ -168,9 +168,9 @@
 }
 .skills {
   font-family: CeraB;
-  margin-top: -171px;
-  margin-left: 750px;
-  width: 350px;
+  margin-top: -202px;
+  margin-left: 717px;
+  width: 270px;
   height: 200px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box; */
@@ -203,8 +203,8 @@
 .status {
   font-family: CeraB;
   margin-top: -170px;
-  margin-left: 1120px;
-  width: 360px;
+  margin-left: 1002px;
+  width: 250px;
   height: 1000px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box; */
@@ -256,8 +256,8 @@
 .box-4 {
   font-family: CeraB;
   margin-top: -914px;
-  margin-left: 230px;
-  width: 600px;
+  margin-left: 197px;
+  width: 515px;
   height: 300px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
   /* background: #ffffff 0% 0% no-repeat padding-box; */
@@ -275,6 +275,7 @@
   color: #3598db;
   position: relative;
   left: -235px;
+  padding-top: 15px;
 }
 .box-4-1 p {
   margin-top: 0px;
@@ -298,7 +299,7 @@
 .box-5 {
   font-family: CeraB;
   margin-top: -183px;
-  margin-left: 850px;
+  margin-left: 744px;
   width: 250px;
   height: 300px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
@@ -323,8 +324,8 @@
 .box-6 {
   font-family: CeraB;
   margin-top: 353px;
-  margin-left: 230px;
-  width: 600px;
+  margin-left: 193px;
+  width: 570px;
   height: 300px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box; */
@@ -352,13 +353,15 @@
 }
 .imaview {
   margin-top: -338px;
-  margin-left: 740px;
+  margin-left: 481px;
   font-family: Metro;
   font-size: 15px;
   color: #3598db;
-  position: relative;
+  width: 100px;
+  padding-top: 20px;
+  /* position: relative;
   top: 9px;
-  left: -228px;
+  left: -228px; */
 }
 .taskscontent p {
   margin-top: -50px;
@@ -445,8 +448,8 @@
 .box-7 {
   font-family: CeraB;
   margin-top: -175px;
-  margin-left: 850px;
-  width: 250px;
+  margin-left: 770px;
+  width: 226px;
   height: 300px;
   /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
   /* background: #ffffff 0% 0% no-repeat padding-box; */
@@ -502,8 +505,8 @@
 .box-8 {
   font-family: CeraB;
   margin-top: -75px;
-  margin-left: 230px;
-  width: 870px;
+  margin-left: 184px;
+  width: 805px;
   height: 300px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -528,7 +531,7 @@
 }
 .institute {
   margin-top: -50px;
-  margin-left: 580px;
+  margin-left: 490px;
   font: normal normal normal 15px/24px Metro;
   color: black;
   width: 248px;
@@ -536,7 +539,7 @@
 .box-9 {
   font-family: CeraB;
   margin-top: 35px;
-  margin-left: 230px;
+  margin-left: 190px;
   width: 500px;
   height: 220px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
@@ -567,7 +570,7 @@
 .box-10 {
   font-family: CeraB;
   margin-top: -265px;
-  margin-left: 750px;
+  margin-left: 703px;
   width: 350px;
   height: 250px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
@@ -640,17 +643,16 @@
   }
   .options {
     margin-left: -15px;
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 24px;
     display: flex;
     justify-content: space-around;
   }
 
   .options-card {
-    position: relative;
-    top: 143px;
-    left: -254px;
     width: 370px;
+    margin-left: -27px;
+    margin-top: 50px;
   }
   .files p {
     position: relative;
@@ -673,7 +675,7 @@
     left: -70px;
   }
   .skills {
-    margin-top: 354px;
+    margin-top: 220px;
     margin-left: -27px;
 
     width: 370px;
@@ -708,7 +710,7 @@
   }
   .imaview {
     position: relative;
-    left: -437px;
+    left: -220px;
     font-size: 17px;
   }
   .box-6-1 {

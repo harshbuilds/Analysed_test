@@ -1,7 +1,7 @@
 .options {
   font-family: CeraB;
-  margin-top: -950px;
-  margin-left: 100px;
+  margin-top: -977px;
+  margin-left: 52px;
 }
 
 .options p {
@@ -14,8 +14,8 @@
 }
 .search {
   margin-top: -140px;
-  margin-left: 220px;
-  width: 450px;
+  margin-left: 200px;
+  width: 390px;
   height: 45px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -30,7 +30,7 @@
 }
 .add {
   margin-top: -40px;
-  margin-left: 700px;
+  margin-left: 620px;
   width: 70px;
   height: 35px;
   background: var(--unnamed-color-3598db) 0% 0% no-repeat padding-box;
@@ -51,7 +51,7 @@
 }
 .sort {
   margin-top: -70px;
-  margin-left: 800px;
+  margin-left: 730px;
   font: normal normal normal 15px/19px Metro;
 }
 .sort select {
@@ -65,11 +65,11 @@
 }
 .radio {
   margin-top: 30px;
-  margin-left: 800px;
+  margin-left: 735px;
   font: normal normal normal 15px/19px Metro;
 }
 .radio select {
-  width: 187px;
+  width: 135px;
   height: 31px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   border: 1px solid var(--unnamed-color-3598db);
@@ -91,14 +91,15 @@
 }
 .files {
   margin-top: 30px;
-  margin-left: 220px;
-  width: 850px;
-  height: 100px;
+  margin-left: 195px;
+  width: 780px;
+  height: auto;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
   opacity: 1;
+  padding: 15px;
 }
 .files input {
   margin-top: 30px;
@@ -132,7 +133,7 @@
 
 .files img {
   margin-top: -50px;
-  margin-left: 480px;
+  margin-left: 465px;
 }
 .files .uploaded {
   margin-top: -60px;
@@ -141,7 +142,7 @@
 }
 .files .delete {
   margin-top: -50px;
-  margin-left: 700px;
+  margin-left: 667 px;
   font: normal normal normal 15px/24px Metro;
 }
 .btn {
@@ -270,17 +271,24 @@
   border-radius: 8px;
   opacity: 1;
 }
+.download {
+  margin-left: 333px;
+}
+.delete {
+  margin-left: 333px;
+}
 @media screen and (max-width: 650px) {
   .sort,
   .cars,
   .radio input,
   .radio,
-  .bread-crumbs_Mytools-recruiter {
+  .bread-crumbs_Mytools-recruiter,
+  .p1,
+  .status {
     display: none;
   }
   .profile-img {
-    position: relative;
-    left: -112px;
+    margin-left: -15px;
   }
   .profile-img h2 {
     position: relative;
@@ -288,11 +296,12 @@
     font-size: 19px;
   }
   .options {
-    position: relative;
-    left: -98px;
-    top: -46px;
+    margin-left: -19px;
+    margin-top: 50px;
     font-size: 22px;
     padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
   }
   .search {
     position: relative;
@@ -301,23 +310,21 @@
     width: 370px;
   }
   .add {
-    position: relative;
-    top: 232px;
-    left: -438px;
+    margin-left: 9px;
+    margin-top: 206px;
   }
   .add button {
-    position: relative;
-    width: 85px;
-    height: 46px;
-    font-size: 15px;
+    /* position: relative; */
+    width: 146px;
+    height: 47px;
+    font-size: 22px;
     margin-left: 0px;
   }
   .files-added {
-    position: relative;
-    top: 260px;
-    left: -200px;
-    margin-left: 10px;
+    margin-left: -177px;
+    margin-top: 50px;
   }
+
   .files {
     position: relative;
     width: 320px;
@@ -354,9 +361,8 @@
     margin-top: 63px;
   }
   .files .download {
-    position: relative;
-    margin-left: 89px;
-    margin-top: -40px;
+    margin-left: 164px;
+    margin-top: -27px;
   }
   .modal-content {
     position: relative;
