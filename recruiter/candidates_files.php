@@ -39,8 +39,8 @@ if( isset($_POST['submit']))
   <body>
  
 <div class="options">
- <p><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
-    <p><a style="color:#979797" href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
+ <p class="p1"><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
+    <p class="p1"><a style="color:#979797" href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
    <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $candidate_id; ?>">Activity</a></p><br>
    <span style="color:#3598DB"><!-- <a style="color:#3598DB" href="candidates_files.php"> --> <b>| Files </b> </a></span>
       <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $candidate_id; ?>">Notes</a></p>
@@ -50,7 +50,7 @@ if( isset($_POST['submit']))
 	 <form class="form">
      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="#3598DB" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
   <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3z"/>
-</svg> <span style="color:#3598DB">File name&emsp;&emsp;</span><span style="color:#979797"><strong>|&emsp;&emsp;</strong><input type="text" id="search" placeholder="Search by files" oninput="myFunction()" style="border:none;outline:none"></span>
+</svg> <span style="color:#3598DB">File name&emsp;&emsp;</span><span style="color:#979797"><strong>|&emsp;&emsp;</strong><input type="text" id="search" placeholder="Search by files"oninput="myFunction()" style="border:none;outline:none"></span>
         <i class="fa fa-search" style="color:#3598DB"></i>
 		</form>
    </div>
@@ -108,14 +108,14 @@ Drag and Drop a File<br>
    <form id="form1">
    <div class="sort">
    <span style="color:#979797">Sort by &emsp;
-   <select name="multi_search" id="multi_search" class="sortbySelect" style="color:#3598DB;width:70px">
+   <select name="multi_search" id="multi_search" class="sortbySelect" style="color:#3598DB;width:60px">
    <option>All</option>
    <option value="Recent">Recent</option>
    <option value="Old">Old</option>
    </select>
    </span>
    <span class="cars">
-    <select name="cars" id="cars" style="width:150px">
+    <select name="cars" id="cars" style="width:100px">
     <option value="volvo">Last edited</option>
     <option value="saab">Saab</option>
     <option value="opel">Opel</option>
@@ -162,11 +162,11 @@ Uploaded by<br>
 <?php echo $row["firstname"]; ?></div>
 
 <div class="delete">
-<span style="color:red"><a href='./includes/delete3.php?id=<?php echo $row["file_id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none">Delete</a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+<span  class="delete"style="color:red"><a href='./includes/delete3.php?id=<?php echo $row["file_id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none">Delete</a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 </svg></span><br>
 <div class="download">
-<a style="color:#3598DB;text-decoration:none" href="img/<?php echo $row["files"]; ?>" download><span  class="download" style="color:#3598DB"> Download <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
+<a style="color:#3598DB;text-decoration:none" href="img/<?php echo $row["files"]; ?>" download><span   style="color:#3598DB"> Download <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-arrow-down-fill" viewBox="0 0 16 16">
   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8 5a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5A.5.5 0 0 1 8 5z"/>
 </svg></span></a></div>
 </div>

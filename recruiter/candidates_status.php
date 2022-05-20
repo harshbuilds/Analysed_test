@@ -30,8 +30,8 @@
   <p><a style="text-decoration:none" href="Candidates_specific.php?c_id=<?php echo $row['candidate_id']; ?>"> At a glance</a></p><br>
   <span style="color:#3598DB"><!-- <a style="text-decoration:none" href="candidates_status.php?c_id=<?php //echo $row['candidate_id']; ?>"> --> <b>| Status </b> </a></span>
    <p><a style="color:#979797" href="candidates_activity.php?c_id=<?php echo $row['candidate_id']; ?>">Activity</a></p>
-    <p><a style="color:#3598DB" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
-     <p><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
+    <p class="p1"><a style="color:#979797" href="candidates_files.php?c_id=<?php echo $row['candidate_id']; ?>">Files</a></p>
+     <p class="p1"><a style="color:#979797" href="candidates_notes.php?c_id=<?php echo $row['candidate_id']; ?>">Notes</a></p>
      </div>
      <!-- Start of Status box -->
      <div class="box">  

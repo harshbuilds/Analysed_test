@@ -107,7 +107,7 @@ session_start();
      <span><?php echo $row["firstname"]; ?></span>
      <p style="color:#3598DB"><?php echo $row["current_title"]; ?>
      <span style="color:black; font-size:15px">|<?php echo $row["qualifications"]; ?></span></p>
-     <u style="color:#979797">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
+     <u style="color:#979797">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
      <br><br>
      <span style="color:#979797; font-size:15px; font-family:CeraM; margin-left:-15px;">
      Status&emsp;&emsp;&emsp;&emsp;&emsp;Availability date</span>
@@ -220,11 +220,14 @@ session_start();
   <div class="box-7">
      <div class="box-7-1">
       <strong>Languages</strong><br><br>
-      <img src="img/a.png" alt="" style="height:50px; width:50px;">&emsp;&emsp;></div>
+      
+      <img src="img/a.png" alt="" style="height:50px; width:50px;">&emsp;&emsp;</div>
         <div class="box-7-1-1">English <span style="color:#979797;">&emsp;&emsp;Fluent</span><br><br>
-        <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-91px;"></div>
+        
+        <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-75px; margin-top:9px"></div>
         <div class="box-7-1-2">English <span style="color:#979797;">&emsp;&emsp;Fluent</span><br><br>
-          <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-91px;"></div>
+         
+        <img src="img/a.png" alt="" style="height:50px; width:50px; margin-left:-75px;"></div>
         <div class="box-7-1-3">English <span style="color:#979797;">&emsp;&emsp;Fluent</span></div><br><br>
         
  </div>

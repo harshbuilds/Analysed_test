@@ -27,8 +27,8 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
   <body>
   
 <div class="options">
-  <p><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
-   <p><a style="color:#979797"  href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
+  <p class="p1"><a style="color:#979797" href="Candidates_specific.php?c_id=<?php echo $candidate_id; ?>">At a glance</a></p>
+   <p class="p1"><a style="color:#979797"  href="candidates_status.php?c_id=<?php echo $candidate_id; ?>">Status</a></p>
    <p><a style="color:#979797"  href="candidates_activity.php?c_id=<?php echo $candidate_id; ?>">Activity</a></p>
     <p><a style="color:#979797"  href="candidates_files.php?c_id=<?php echo $candidate_id; ?>">Files</a></p><br>
    <span style="color:#3598DB"><a style="color:#3598DB" href="candidates_notes.php"> <b>| Notes </b> </a></span>
@@ -90,14 +90,14 @@ if(isset($_SESSION['firstname']) && isset($_POST['submit']))
    <div class="sort">
    <span style="color:#979797">Sort by &emsp;</span>
    <span style="color:#3598DB">
-     <select name="multi_search" id="multi_search" class="sortbySelect" style="color:#3598DB;width:70px">
+     <select name="multi_search" id="multi_search" class="sortbySelect" style="color:#3598DB;width:60px">
    <option>All</option>
    <option value="Recent">Recent</option>
    <option value="Old">Old</option>
    </select>
    </span>
    <span>
-    <select name="last_edited" id="cars" style="width:150px">
+    <select name="last_edited" id="cars" style="width:130px">
     <option value="volvo">Last edited</option>
     <option value="saab">Saab</option>
     <option value="opel">Opel</option>

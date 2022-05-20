@@ -36,7 +36,7 @@
   </div>
           <div class="status">
        
-     <div class="status1"><b><?php echo $row["candidate_id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;</b>
+     <div class="status1"><b><?php echo $row["candidate_id"]; ?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</b>
      <span style="color:#979797">05-05-2021</span>
      </div>
      <br>
