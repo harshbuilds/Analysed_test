@@ -1,70 +1,69 @@
-.heading_dash{
+.heading_dash {
   position: relative;
 }
-.heading_dash span{
+.heading_dash span {
   position: absolute;
   top: 10px;
   right: 5px;
   color: #979797;
 }
-.ticket-select-options-div-complaint_tickets{
+.ticket-select-options-div-complaint_tickets {
   margin-top: 50px;
 }
-.ticket_type_label_complaint_tickets_label{
-    margin-bottom: 4px;
-    display: block;
-    width: 100%;
-    font-size: 16px;
-    color: #333333;
+.ticket_type_label_complaint_tickets_label {
+  margin-bottom: 4px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: #333333;
 }
-#ticket_type_label_complaint_tickets{
-  border:1px solid #3598DB;
+#ticket_type_label_complaint_tickets {
+  border: 1px solid #3598db;
   border-radius: 7px;
   padding: 5px 15px;
   width: 120px;
   font-size: 14px;
-  color: #3598DB;;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -ms-appearance: none; 
-    margin-right: 12px;
+  color: #3598db;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+  margin-right: 12px;
 }
-.ticket-after-div-select-element{
+.ticket-after-div-select-element {
   position: relative;
 }
-.ticket-after-div-select-element::after{
-  content:"";
+.ticket-after-div-select-element::after {
+  content: "";
   position: absolute;
   top: 12px;
   right: 1340px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 8px solid #3598DB;
+  border-top: 8px solid #3598db;
 }
-#label3{
+#label3 {
   position: relative;
-    top: -49px;
-    left: 161px;
-
+  top: -49px;
+  left: 161px;
 }
-#arrow1{
-      position: relative;
-    top: -50px;
-    left: 161px;
+#arrow1 {
+  position: relative;
+  top: -50px;
+  left: 161px;
 }
-.ticket-select-options-div-complaint_tickets button{
-    position: absolute;
-    right: 5px;
-    top: 161px;
-    background-color: #51C46D;
-    border:none;
-    outline: none;
-    color: white;
-    font-size: 16px;
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 8px;
+.ticket-select-options-div-complaint_tickets button {
+  position: absolute;
+  right: 5px;
+  top: 161px;
+  background-color: #51c46d;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 8px;
 }
 .ticket-categories-options-tochoose {
   margin: 20px 0px;
@@ -74,7 +73,7 @@
   width: 70%;
   justify-content: center;
   margin: 0px auto;
-      display: flex;
+  display: flex;
 }
 .sub-ticket-categories-options-tochoose {
   padding: 20px 40px;
@@ -82,9 +81,9 @@
   color: #979797;
   font-size: 18px;
 }
-.sub-ticket-categories-options-tochoose.active{
-    color: #3598DB;
-    border-bottom: 2px solid #3598DB;
+.sub-ticket-categories-options-tochoose.active {
+  color: #3598db;
+  border-bottom: 2px solid #3598db;
 }
 .sub-ticket-categories-options-tochoose::after {
   content: "2";
@@ -95,10 +94,10 @@
   margin-left: 4px;
   padding: 3px 7px;
 }
-.complaint-tickets-recruiter-cards-div{
+.complaint-tickets-recruiter-cards-div {
   display: none;
 }
-.complaint-tickets-recruiter-cards-div.active{
+.complaint-tickets-recruiter-cards-div.active {
   display: block;
 }
 .light-grey-text-complain-ticket.complaint {
@@ -131,9 +130,9 @@
 }
 .image-margin-right-complaint-ticket-recruiter {
   margin-right: 8px;
-      position: relative;
-    left: 166px;
-    top: -47px;
+  position: relative;
+  left: 166px;
+  top: -47px;
 }
 .complaint-card-recruiter-complaint-tickets .row-recruiter {
   justify-content: space-around;
@@ -162,303 +161,341 @@
   bottom: 10px;
   right: 10px;
 }
-.create-ticket-recruiter-ekam{
-  background: rgba(0, 0, 0, .5);
+.create-ticket-recruiter-ekam {
+  background: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: none;
 }
-.create-ticket-recruiter-ekam.active{
+.create-ticket-recruiter-ekam.active {
   display: block;
 }
-.create-ticket-recruiter-ekam form{
+.create-ticket-recruiter-ekam form {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background: #fff;
   padding: 50px;
-  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   width: 60vw;
 }
-.name-for-form-create-ticket-recruiter-ekam{
-  font-size:27px ;
-  color:#3598DB;
-  float:left;
+.name-for-form-create-ticket-recruiter-ekam {
+  font-size: 27px;
+  color: #3598db;
+  float: left;
   display: block;
   width: 100%;
   margin-bottom: 20px;
 }
-.create-ticket-subTicket-recruiter span label,.span-section-for-email-andlabels-complaints label,.create-ticket-subTicket-recruiter-2 label{ 
+.create-ticket-subTicket-recruiter span label,
+.span-section-for-email-andlabels-complaints label,
+.create-ticket-subTicket-recruiter-2 label {
   display: block;
   margin-top: 12px;
   margin-bottom: 12px;
   color: #333333;
   font-size: 18px;
 }
-.create-ticket-subTicket-recruiter span input,.span-section-for-email-andlabels-complaints input,#message-input-complaint-tickets-recruiter{
-width: 100%;
-}
-.create-ticket-main-recruiter-complaints{
+.create-ticket-subTicket-recruiter span input,
+.span-section-for-email-andlabels-complaints input,
+#message-input-complaint-tickets-recruiter {
   width: 100%;
-  align-items: flex-start;  
+}
+.create-ticket-main-recruiter-complaints {
+  width: 100%;
+  align-items: flex-start;
   justify-content: space-between;
 }
-.create-ticket-subTicket-recruiter,.create-ticket-subTicket-recruiter-2{
+.create-ticket-subTicket-recruiter,
+.create-ticket-subTicket-recruiter-2 {
   flex-basis: 45%;
 }
-.create-ticket-subTicket-recruiter input,.create-ticket-subTicket-recruiter-2 input,#message-input-complaint-tickets-recruiter{
-  border: 1px solid #3598DB;
+.create-ticket-subTicket-recruiter input,
+.create-ticket-subTicket-recruiter-2 input,
+#message-input-complaint-tickets-recruiter {
+  border: 1px solid #3598db;
   outline: none;
-  padding:8px 10px;
+  padding: 8px 10px;
   border-radius: 8px;
   font-size: 16px;
 }
-#message-input-complaint-tickets-recruiter{
-  min-height:300px ;
+#message-input-complaint-tickets-recruiter {
+  min-height: 300px;
   padding: 20px;
   font-size: 18px;
 }
-.select-options-for-complaint-tickets{
+.select-options-for-complaint-tickets {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
 }
-.select-options-for-complaint-tickets span label{
+.select-options-for-complaint-tickets span label {
   display: block;
   margin-top: 12px;
   margin-bottom: 12px;
   color: #333333;
   font-size: 18px;
 }
-#complaint-type-input-complaint-tickets-recruiter{
-  border:1px solid #3598DB;
+#complaint-type-input-complaint-tickets-recruiter {
+  border: 1px solid #3598db;
   width: 100%;
   border-radius: 8px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -ms-appearance: none; 
-  padding:8px 10px;
+  -ms-appearance: none;
+  padding: 8px 10px;
   color: #333333;
 }
 
-.button-complaints-recruiter-complaints{
+.button-complaints-recruiter-complaints {
   float: right;
   margin-top: 20px;
-  
 }
-.close-button-for-dialog-box-create-tickets{
+.close-button-for-dialog-box-create-tickets {
   outline: none;
   border: none;
-  color:#979797;
+  color: #979797;
   margin: 0px 20px;
   cursor: pointer;
 }
-.button-complaints-recruiter-complaints button:nth-child(2){
+.button-complaints-recruiter-complaints button:nth-child(2) {
   outline: none;
   border: none;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 8px;
   color: white;
   padding: 7px 20px;
-  background-color: #51C46D;
+  background-color: #51c46d;
   margin: 0px 20px;
   cursor: pointer;
 }
-#comp1{
+#comp1 {
   position: relative;
-    left: 34px;
+  left: 34px;
 }
-#comp2{
+#comp2 {
   position: relative;
   left: 230px;
-    top: -98px;
+  top: -98px;
 }
-#comp3{
-      position: relative;
-    left: 227px;
-    top: -95px;
-}
-#comp4{
+#comp3 {
   position: relative;
-    left: 340px;
-    top: -138px;
+  left: 227px;
+  top: -95px;
 }
-#comp5{
-    position: relative;
-    left: 340px;
-    top: -132px;
-    display: flex;
+#comp4 {
+  position: relative;
+  left: 340px;
+  top: -138px;
 }
-@media screen and (max-width:750px){
-  .heading_dash span{
+#comp5 {
+  position: relative;
+  left: 340px;
+  top: -132px;
+  display: flex;
+}
+#label3,
+#arrow1,
+#comp1,
+#comp2,
+#comp3,
+#comp4,
+#comp5 {
+  width: 500px;
+}
+
+@media screen and (max-width: 750px) {
+  .heading_dash span {
     display: none;
   }
-  .complaint-card-recruiter-complaint-tickets{
+  .complaint-card-recruiter-complaint-tickets {
     padding: 8px;
   }
-  .span-message-complaint-ticket-recruiter{
+  .span-message-complaint-ticket-recruiter {
     width: 40%;
   }
 }
-@media screen and (max-width:650px){
-  .heading_dash span{
+@media screen and (max-width: 650px) {
+  .heading_dash span {
     display: none;
   }
-  .complaint-card-recruiter-complaint-tickets{
+  .complaint-card-recruiter-complaint-tickets {
     padding: 8px;
   }
-  .span-message-complaint-ticket-recruiter .black-text-ciomplaint-ticket-recruiter{
+  .span-message-complaint-ticket-recruiter
+    .black-text-ciomplaint-ticket-recruiter {
     width: 100%;
     height: 100px;
     overflow: scroll;
   }
-  .span-message-complaint-ticket-recruiter{
+  .span-message-complaint-ticket-recruiter {
     width: 70%;
   }
 }
-@media screen and (max-width: 609px){
-  .mainHeadingDash{
+@media screen and (max-width: 609px) {
+  .mainHeadingDash {
     font-size: 31px;
     position: relative;
     top: -88px;
   }
-  .mainParaDash{
-    color: black;
+  .mainParaDash {
+    color: #3598db;
     position: relative;
     top: -82px;
-    font-size: 14px;
+    font-size: 18px;
   }
-  #but1{
-        position: relative;
-    left: 0px;
-    top: -219px;
-    background-color: #3598DB;
-  }
-  #label1{
+  #but1 {
     position: relative;
-    top: -68px;
+    left: 0px;
+    top: -236px;
+    background-color: #3598db;
+    height: 45px;
+    width: 176px;
+    font-size: 22px;
   }
-  #ticket_type_label_complaint_tickets{
+  #label1 {
+    position: relative;
+    top: -57px;
+    font-size: 22px;
+  }
+  #ticket_type_label_complaint_tickets {
     border: 1px solid black;
     color: black;
+    font-size: 18px;
   }
-  .label2{ 
-   position: relative;
-        top: -63px;
+  .label2 {
+    position: relative;
+    top: -52px;
   }
-  #arrow::after{
+  #arrow::after {
     border-top: 8px solid red;
-    z-index:10000;
+    z-index: 10000;
     top: -8px;
   }
-  #label3{
-        position: relative;
+  #label3 {
+    position: relative;
     top: -118px;
     left: 153px;
   }
-  .label4{
-        position: relative;
-     top: -63px;
+  .label4 {
+    position: relative;
+    top: -63px;
     left: -8px;
-
   }
-  #arrow1::after{
+  #arrow1::after {
     border-top: 8px solid black;
-        top: -52px;
+    top: -52px;
     right: 253px;
   }
-  #head1{
+  #head1 {
     position: relative;
-       top: -161px;
+    top: -161px;
     left: 67px;
   }
-  .sub-ticket-categories-options-tochoose::after{
-    background-color: #3598DB;
+  .sub-ticket-categories-options-tochoose::after {
+    background-color: #3598db;
     position: relative;
     top: -7px;
   }
-  #head2{
+  #head2 {
     position: relative;
-        top: -161px;
+    top: -161px;
     left: 30px;
   }
-  #head3{
+  #head3 {
     position: relative;
-         top: -162px;
+    top: -162px;
     left: -41px;
   }
-  #complaints{
-        position: relative;
+  #complaints {
+    position: relative;
     top: -143px;
   }
-  #comp1{
-        left: 9px;
+  #comp1 {
+    left: 9px;
   }
-  .complaint-card-recruiter-complaint-tickets{
+  .complaint-card-recruiter-complaint-tickets {
     height: 300px;
   }
   .image-margin-right-complaint-ticket-recruiter {
-        left: 10px;
+    left: 10px;
     position: relative;
     top: 9px;
     width: 46px;
   }
-  #comp2{
+  #comp2 {
     display: none;
   }
-  #img1{
-        position: relative;
+  #img1 {
+    position: relative;
     left: -97px;
   }
-  #comp3{
-        left: 77px;
+  #comp3 {
+    left: 77px;
     top: -25px;
   }
-  #comp4{
+  #comp4 {
     display: none;
   }
-  #comp5{
+  #comp5 {
     left: 4px;
     top: 15px;
   }
-
+  #label3,
+  #arrow1,
+  #comp1,
+  #comp2,
+  #comp3,
+  #comp4,
+  #comp5 {
+    width: 340px;
+    font-size: 22px;
+  }
+  /* .searchButton {
+    margin-left: 57px;
+  }
+  .searchForJobs {
+    margin-left: 75px;
+  } */
 }
-@media screen and (max-width:500px){
-  .create-ticket-recruiter-ekam form{
+@media screen and (max-width: 500px) {
+  .create-ticket-recruiter-ekam form {
     margin: 50px auto;
     overflow: scroll;
     width: 90vw;
     top: 300px;
     height: 600px;
-    padding:50px 20px;
+    padding: 50px 20px;
   }
-  .create-ticket-subTicket-recruiter,.create-ticket-subTicket-recruiter-2{
+  .create-ticket-subTicket-recruiter,
+  .create-ticket-subTicket-recruiter-2 {
     flex-basis: 100%;
   }
-  .complaint-card-recruiter-complaint-tickets .row-recruiter{
+  .complaint-card-recruiter-complaint-tickets .row-recruiter {
     flex-direction: column;
   }
-  .span-message-complaint-ticket-recruiter .black-text-ciomplaint-ticket-recruiter{
+  .span-message-complaint-ticket-recruiter
+    .black-text-ciomplaint-ticket-recruiter {
     width: 100%;
     height: 100px;
     overflow: scroll;
   }
 
-  .complaint-card-recruiter-complaint-tickets .row-recruiter span{
+  .complaint-card-recruiter-complaint-tickets .row-recruiter span {
     margin: 8px 0px;
   }
-  .ticket-select-options-div-complaint_tickets .row-recruiter{
+  .ticket-select-options-div-complaint_tickets .row-recruiter {
     align-items: flex-start;
     flex-direction: column;
   }
-  .ticket-select-options-div-complaint_tickets .row-recruiter span{
+  .ticket-select-options-div-complaint_tickets .row-recruiter span {
     margin-bottom: 10px;
   }
 }
