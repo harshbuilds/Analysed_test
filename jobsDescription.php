@@ -23,7 +23,7 @@ if($_SESSION['jobSeekerID']==null)
 <div class="container">
 <div class="small_container">
     <div class="bread-crumbs_Mytools-recruiter" style="margin-bottom: 40px;">
-            <a href="js_dashboard.php" class="unactive-breadcrumb-link">Dashboard</a> > <a href="" class="unactive-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
+            <a href="js_dashboard.php" class="active-breadcrumb-link">Dashboard</a> > <a href="" class="active-breadcrumb-link">Suggested Jobs</a> > <a href="" class="active-breadcrumb-link">Job Description</a> 
         </div>
     <div class="job-row-flex-JobDescription">
         <div class="left-side-jobDescription">
