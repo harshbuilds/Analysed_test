@@ -11,9 +11,10 @@ select {
   right: 2%;
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
-  background-color: #6ec5ff;
+  background-color: #3598db;
   color: white;
   padding: 8px 16px;
+  cursor: pointer;
 }
 .cards_myTasks {
   margin-top: 120px;
@@ -33,6 +34,17 @@ select {
   align-items: center;
   justify-content: space-between;
 }
+.cardItem_myTasks1 {
+  flex-basis: 22%;
+  background-color: white;
+  box-shadow: 1px 3px 10px #00000033;
+  border-radius: 8px;
+  color: #333333;
+  padding: 30px 20px;
+  display: block;
+  /* align-items: center;
+  justify-content: space-between; */
+}
 .memoryUsed_myTasks {
   font-weight: bold;
   font-size: 12px;
@@ -40,6 +52,7 @@ select {
 .avaiSpace_myTasks {
   color: #979797;
   font-size: 12px;
+  margin-left: 28px;
 }
 .yellowIcon_myTasks {
   color: #ffbd06;
@@ -118,7 +131,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 .filterSmall_myTasks select {
   color: #3598db;
@@ -149,71 +162,123 @@ select {
   box-shadow: 1px 3px 10px #00000033;
   border-radius: 8px;
   background: #fff;
-  padding:20px;
+  padding: 20px;
   color: #333333;
   margin-bottom: 15px;
 }
-.light_spanItem_singleTask_myTasks{
+.light_spanItem_singleTask_myTasks {
   color: #979797;
   font-size: 14px;
   margin-bottom: 5px;
 }
-.button-div_myTasks{
+.button-div_myTasks {
   display: flex;
   flex-direction: column;
 }
-.button-div_myTasks button{
+.button-div_myTasks button {
   text-align: left;
 }
-
-@media screen and (max-width:700px){
-  .cardItem_myTasks{
+.disk-usage {
+  margin: 4 0 4 0;
+}
+.disk-usage meter {
+  width: 100%;
+  color: #3598db;
+}
+meter::-webkit-meter-optimum-value {
+  background: #3598db; /* Green */
+}
+.small_container {
+  max-width: 80vw;
+}
+@media screen and (max-width: 700px) {
+  .selectAllActions_filterSmall_myTasks {
+    display: none;
+  }
+  .cardItem_myTasks {
     flex-basis: 95%;
     margin-bottom: 10px;
   }
   .filterSection_myTasks {
     flex-direction: column;
   }
-  .leftFilter_myTasks{
+  .leftFilter_myTasks {
     flex-basis: 95%;
     padding: 0px;
     margin-bottom: 20px;
+    position: relative;
+    top: -761px;
   }
-  .leftFilter_myTasks select{
-    font-size: 14px;
+  .leftFilter_myTasks select {
+    font-size: 20px;
     padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
-  .inputSearchFileName_myTasks{
+  .inputSearchFileName_myTasks {
     width: 50%;
-    font-size: 14px;
+    font-size: 18px;
   }
-  .rightFilter_myTasks{
+  .rightFilter_myTasks {
     text-align: center;
+    display: none;
   }
-  .filterSmall_myTasks{
+  .filterSmall_myTasks {
     margin-top: 20px;
   }
-  .filterSmall_myTasks select{
+  .filterSmall_myTasks select {
     padding: 5px 12px;
-    font-size: 13px;
-    min-width: 80px;
+    font-size: 19px;
+    width: 147px;
+    position: relative;
+    top: -650px;
+    height: 45px;
   }
-  .selectAllActions_filterSmall_myTasks{
+  /* .selectAllActions_filterSmall_myTasks {
     width: 60%;
     display: flex;
     align-items: center;
     font-size: 13px;
-  }
+  } */
   .singletask_myTasks {
     padding: 20px 5px;
   }
-  .selectAllActions_filterSmall_myTasks input{
+  .selectAllActions_filterSmall_myTasks input {
     margin-right: 8px;
   }
-  .singletask_myTasks span:nth-child(2),.singletask_myTasks span:nth-child(4){
+  .singletask_myTasks span:nth-child(2),
+  .singletask_myTasks span:nth-child(4) {
     display: none;
   }
-  .singletask_myTasks button{
+  .singletask_myTasks button {
     cursor: pointer;
+  }
+  #myBtn {
+    position: relative;
+    top: 227px;
+    left: 186px;
+    width: 150px;
+    height: 47px;
+    font-size: 19px;
+  }
+  .cards_myTasks {
+    margin-top: 200px;
+  }
+  .cardItem_myTasks1 {
+    flex-basis: 95%;
+    margin-bottom: 10px;
+
+    position: relative;
+    top: -150px;
+  }
+  /* .cardItem_myTasks1 p {
+    font-size: 19px;
+  } */
+  .memoryUsed_myTasks,
+  .avaiSpace_myTasks {
+    font-size: 14px;
+  }
+  .singleTasks_containerDiv {
+    margin-top: -173px;
   }
 }
