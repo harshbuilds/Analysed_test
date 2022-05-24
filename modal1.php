@@ -5,7 +5,7 @@
 
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Upload file</p>
+    <b>Upload file</b><br><br>
     <p>lorem ipsum lorem ipsum</p>
     <div class="tabs">
         <div class="tab">
@@ -13,7 +13,7 @@
             <label for="tab-1">Documents</label>
             
             <div class="content">
-                <div class="select">
+                <div class="select-doc">
                     <select>
                         <option value="hidden">Type of Document</option>
                         <option> 10th class result</option>
@@ -31,7 +31,7 @@
             </div> 
         </div>
          
-        <div class="tab">
+        <div class=" tab tab1">
             <input type="radio" id="tab-2" name="tab-group-1">
             <label for="tab-2">Task files</label>
             
