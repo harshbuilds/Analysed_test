@@ -21,11 +21,12 @@
         <button class="addFilesMyTasks" id="myBtn">Add +</button>
 
         <div class="cards_myTasks">
-            <div class="cardItem_myTasks">
+            <div class="cardItem_myTasks1">
                 <p>
                     <span class="memoryUsed_myTasks">30MB/100GB Used</span>
+                    <span class="avaiSpace_myTasks">Available space</span>
                 </p>
-                <span class="avaiSpace_myTasks">Available space</span>
+               <div class="disk-usage"> <meter id="disk_d" value="0.3">30%</meter></div>
             </div>
             <div class="cardItem_myTasks">
                 <i class="fa fa-file-image-o yellowIcon_myTasks" aria-hidden="true" ></i>
