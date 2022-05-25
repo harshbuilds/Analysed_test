@@ -3,7 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.default-button-for-recruiter-dashboard{
+.default-button-for-recruiter-dashboard {
   color: white;
   background-color: #3598db;
   outline: none;
@@ -30,7 +30,7 @@ body {
   background-color: #fff;
 }
 .sidebar_main {
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -38,10 +38,22 @@ body {
   width: auto;
   padding: 20px;
   z-index: 100;
+  overflow-y: scroll; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2d3e50;
+  height: 100%;
+  width: auto;
+  overflow: scroll;
   overflow-y: scroll;
+  padding: 20px;
+  z-index: 100;
 }
 .sidebar_main-list {
   list-style: none;
+  padding-left: 0px;
 }
 .sidebar_main-listItems {
   display: block;
@@ -297,7 +309,7 @@ body {
   }
 }
 @media screen and (max-width: 609px) {
-  .nav_main{
+  .nav_main {
     display: none;
   }
 }
