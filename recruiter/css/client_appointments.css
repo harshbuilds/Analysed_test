@@ -2,77 +2,94 @@
   font-family: CeraB;
   src: url(../fonts/CeraPro-Bold.ttf);
 }
+
 @font-face {
   font-family: CeraM;
   src: url(../fonts/CeraPRO-Medium.ttf);
 }
+
 @font-face {
   font-family: Metro;
   src: url(../fonts/metropolis/Metropolis-Regular.woff);
 }
+
 @font-face {
   font-family: MetroM;
   src: url(../fonts/metropolis/Metropolis-Medium.woff);
 }
+
 body {
   margin-left: 0%;
   margin-right: 0%;
 }
+
 .small_container {
   margin-left: 0%;
   margin-right: 0%;
 }
+
 .heading_dash {
   margin-left: 4%;
   margin-top: 5%;
 }
+
 .unactive-breadcrumb-link {
   color: #3598db;
 }
+
 .active-breadcrumb-link {
   color: #3598db;
   text-decoration: underline;
 }
+
 .bread-crumbs_Mytools-recruiter {
   margin-top: -30px;
 }
+
 .profile-img {
   margin-top: 25px;
   margin-left: 40px;
   background: transparent url("img/Ellipse 148.png") 0% 0% no-repeat padding-box;
   opacity: 1;
 }
+
 .profile-img img {
   width: 130;
   height: 130;
   margin: 25px;
 }
+
 .profile-img h1 {
   margin-top: -150px;
   margin-left: 170px;
 }
+
 .profile-img h1 p1 {
   margin-left: 20px;
   font-size: 15px;
   font-weight: 100;
 }
+
 .fa-pencil-square-o {
   width: 22px;
   height: 22px;
   color: #3598db;
 }
+
 .profile-img h2 {
   margin-left: 170px;
   font-size: 15px;
   font-weight: 100;
   color: #3598db;
 }
+
 .profile-img h4 {
   margin-left: 170px;
   font-size: 15px;
   font-weight: 100;
   color: #979797;
 }
+
 .button button {
   color: #3598db;
   background-color: white;
@@ -86,10 +103,12 @@ body {
   border-radius: 8px;
   opacity: 1;
 }
+
 .options {
   margin-top: 50px;
   margin-left: 70px;
 }
+
 .options p {
   margin-top: 15px;
   margin-left: 10px;
@@ -98,10 +117,12 @@ body {
   color: #979797;
   opacity: 1;
 }
+
 .options a {
   text-decoration: none;
   color: #979797;
 }
+
 .options-card {
   margin-top: -135px;
   margin-left: 230px;
@@ -113,9 +134,9 @@ body {
   border-radius: 8px;
   opacity: 1;
 }
+
 .status {
   width: 270px;
-  height: 1060px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 3px 10px #00000033;
@@ -123,75 +144,92 @@ body {
   opacity: 1;
   padding: 10px;
   margin-left: 1120px;
-  margin-top: -260px;
+  margin-top: -230px;
 }
+
 .status1 p {
   padding-top: 20px;
   color: #333333;
 }
+
 .status1 span {
   color: #979797;
   float: right;
   margin-top: -20px;
 }
+
 .status-name {
   font-size: 30px;
 }
+
 .fee {
   font-size: 30px;
 }
+
 .status-name p {
   margin-top: 10px;
   margin-left: 0px;
   font-size: 15px;
 }
+
 .status-name u {
   margin-top: 0px;
   margin-left: -20px;
   font-size: 15px;
 }
+
 .displayname {
   margin-top: 10px;
   font-size: 15px;
 }
+
 .fee-percent {
   margin-top: 10px;
   font-size: 15px;
 }
+
 .fee-percent {
   color: #333333;
   margin-left: 15px;
 }
+
 .displayname span {
   color: #51c46d;
   margin-left: 15px;
 }
+
 .fee span {
   color: #979797;
   font-size: 15px;
   margin-left: 15px;
 }
+
 .employeement {
   margin-left: 40px;
   color: #979797;
 }
+
 .employeement p {
   margin-left: 10px;
   color: #3598db;
 }
+
 .details {
   margin-left: 40px;
   color: #979797;
 }
+
 .details p {
   padding-top: 7px;
   margin-left: 10px;
   color: #3598db;
 }
+
 .left-side-container-1 {
-  margin-top: -1050px;
+  margin-top: -1670px;
   margin-left: 200px;
 }
+
 .row-recruiter {
   margin-top: 20px;
 }
@@ -202,6 +240,7 @@ body {
   box-shadow: 3px 3px 5px 0px rgba(238, 238, 238, 1);
   border-radius: 40px;
 }
+
 .search-form-input {
   -webkit-appearance: none;
   appearance: none;
@@ -220,12 +259,14 @@ body {
   font-size: 14px;
   outline: none;
 }
+
 .dropdown {
   position: relative;
   width: 35%;
   height: 46px;
   border-right: 1px solid #979797;
 }
+
 .dropdown::before {
   position: absolute;
   top: 5px;
@@ -236,6 +277,7 @@ body {
   background-color: #ccc;
   content: "";
 }
+
 .dropdown-button {
   list-style: none;
   position: relative;
@@ -248,13 +290,16 @@ body {
   outline: none;
   cursor: pointer;
 }
+
 .dropdown-button::-webkit-details-marker {
   display: none;
 }
+
 .dropdown-button .selected-item {
   color: #297fb8;
   font-size: 1rem;
 }
+
 .dropdown[open] .dropdown-button::before {
   position: fixed;
   top: 0;
@@ -263,10 +308,12 @@ body {
   left: 0;
   content: "";
 }
+
 .dropdown-button:hover:after {
   border-right: 2px solid #22a7b4;
   border-bottom: 2px solid #22a7b4;
 }
+
 .dropdown-menu {
   position: absolute;
   top: 55px;
@@ -278,31 +325,38 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
+
 .dropdown-menu-header {
   padding-bottom: 4px;
   border-bottom: 1px solid #ccc;
 }
+
 .dropdown-menu-list {
   display: flex;
   flex-direction: column;
   margin-top: 5px;
 }
+
 .dropdown-menu-item {
   width: 100%;
   padding: 5px;
   cursor: pointer;
 }
-.dropdown-menu-item input:checked + span,
+
+.dropdown-menu-item input:checked+span,
 .dropdown-menu-item:hover {
   color: #22a7b4;
 }
+
 .dropdown-menu-item input {
   display: none;
 }
+
 ::placeholder {
   font-size: 14px;
   color: #979797;
 }
+
 .searchButton {
   background: white;
   outline: none;
@@ -311,6 +365,7 @@ body {
   border-radius: 0px 40px 40px 0px;
   margin-right: 40px;
 }
+
 .btn {
   padding: 7px 12px;
   background-color: #3598db;
@@ -320,14 +375,17 @@ body {
   margin-left: 30px;
   margin-top: -2px;
 }
+
 .justifycontent-flex-end-1 {
   margin-top: -70px;
   margin-left: 680px;
 }
+
 .sortbyText {
   color: #979797;
   font-size: 20px;
 }
+
 .sortbySelect {
   background: transparent;
   font-size: 20px;
@@ -339,6 +397,7 @@ body {
   appearance: none;
   -ms-appearance: none;
 }
+
 .search_list {
   outline: none;
   border: none;
@@ -346,6 +405,7 @@ body {
   font-size: 16px;
   font-size: 18px;
 }
+
 .search_list_1 {
   border: 1px solid #3598db;
   color: #979797;
@@ -357,19 +417,23 @@ body {
   margin-left: 710px;
   margin-top: -19px;
 }
+
 .select-col {
   margin-bottom: -10px;
   margin-top: 40px;
   margin-left: 570px;
 }
+
 .select-col-label {
   color: #3598db;
   margin-right: 30px;
 }
+
 input[type="checkbox"] {
   visibility: hidden;
 }
-input[type="checkbox"] + label:before {
+
+input[type="checkbox"]+label:before {
   border: 2px solid #3598db;
   content: "\00a0";
   display: inline-block;
@@ -379,21 +443,35 @@ input[type="checkbox"] + label:before {
   vertical-align: middle;
   width: 15px;
 }
-input[type="checkbox"]:checked + label:before {
+
+input[type="checkbox"]:checked+label:before {
   background: #3598db;
   color: white;
   content: "\2713";
   text-align: center;
 }
-input[type="checkbox"]:checked + label:after {
+
+input[type="checkbox"]:checked+label:after {
   font-weight: bold;
 }
 
-input[type="checkbox"]:focus + label::before {
+input[type="checkbox"]:focus+label::before {
   outline: rgb(59, 153, 252) auto 5px;
 }
 
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+  .status {
+    margin-left: 950px !important;
+  }
+
+  .button button {
+    margin-left: 1000px;
+  }
+}
+
 @media screen and (max-width: 609px) {
+
   .bread-crumbs_Mytools-recruiter,
   .status,
   .options .p1,
@@ -402,15 +480,18 @@ input[type="checkbox"]:focus + label::before {
   .select-col {
     display: none;
   }
+
   .profile-img {
     margin-top: -136px;
     margin-left: -52px;
   }
+
   .profile-img img {
     width: 103px;
     height: 111px;
     margin-left: 57px;
   }
+
   .button button {
     color: white;
     background-color: #3598db;
@@ -418,12 +499,14 @@ input[type="checkbox"]:focus + label::before {
     margin-left: 40px;
     font-size: 19px;
   }
+
   .options {
     margin-top: 35px;
     margin-left: -18px;
     display: flex;
     justify-content: space-between;
   }
+
   .options p {
     margin-top: 0px;
     margin-left: 10px;
@@ -431,17 +514,20 @@ input[type="checkbox"]:focus + label::before {
     white-space: nowrap;
     font-size: 19px;
   }
+
   .left-side-container-1 {
     margin-top: 208px;
     margin-left: 60px;
     width: 340px;
     white-space: nowrap;
   }
+
   .search-box {
     margin-top: -350px;
     margin-left: -49px;
     width: 100%;
   }
+
   .btn {
     margin-top: -217px;
     margin-left: -10px;
