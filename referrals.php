@@ -1,114 +1,128 @@
-<link rel="stylesheet" href="css/referrals.css"> <!--linking to the css file-->
-<?php include('include/header.php')?> <!--including the header file-->
+<link rel="stylesheet" href="css/referrals.css">
+<!--linking to the css file-->
+<?php include('include/header.php')?>
+<!--including the header file-->
 
-<title>Referrals</title>  <!--title of the page-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css"
+    integrity="sha512-E+53kXnJyuZFSz75xSmTfCpUNj3gp9Bd80TeQQMTPJTVWDRHPOpEYczGwWtsZXvaiz27cqvhdH8U+g/NMYua3A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<div class="title">
-    <p>Refer friends & earn credits</p>
-    <img src="./img/referral.png" >
-</div>
-<div class="credits">
-    <img src="img/credit.JPG">
-</div>
-<div class="social">
-    <p> Share via</p>
-    <div class="media">
-    <img src="./img/linkedin.png" >
-    <img src="./img/twitter.png" >
-    <img src="./img/gmail.png" >
-    <img src="./img/facebook.png" >
+<title>Referrals</title>
+<!--title of the page-->
+
+<div class="referandearn">
+    <p class="rp">Refer friends & earn credits</p>
+    <div class="creditshare">
+        <div class="credits">
+            <p>Credits</p>
+            <span>100</span>
+        </div>
+        <div class="share">
+            <p>Share via</p>
+            <div class="sharelinks">
+                <!-- <img src="./img/iconfinder_Rounded_Linkedin2_svg_5282542.png">
+                <img src="./img/Path 2-2.png">
+                <img src="./img/Icon material-mail-outline.png">
+                <img src="./img/facebook.png"> -->
+                <i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-twitter"></i>
+                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+        </div>
+        <div class="sharedesign">
+            <img src="img/Group 2327.png" alt="">
+        </div>
+    </div>
+    <div class="actuallink">
+        <div class="copylink">
+            <a href="">https://analysed.in/pages/signup/signup.php?referralid=1231%GhbvQIpN5z%</a>
+            <span class="copylinkshare" id="copylinkshare">Share Link</span>
+        </div>
+        <div class="copy">
+            <i class="fa-regular fa-copy"></i>
+            <p>Copy link</p>
+        </div>
     </div>
 </div>
 
-<div class="box">
-  <span class="copy" id="share">https://analysed.in/pages/signup/signup.php?referralid=1231%GhbvQlpN5z%</span>
-    <!--<input type="text" id="box">-->
-    <button class="copy" id="copy"> Copy Link</button>
-</div>
-
 <div class="referrals">
-    <p> Your Referrals</p>
-    <div class="referral">
-                <div class="div1">
-                    <span class="s0">
-                        <p class="p1">Sent On</p>
-                        <p class="p2">05-05-2021</p>
-                    </span>
-                    <span class="s1">
-                        <span>
-                            <p  class="p3">Name</p>
-                            <p class="p4">Sloan Freeman</p>
-                        </span>
-                    </span>
-                    <span class="s2">
-                            <p class="p5">Email</p>
-                            <p class="p6">sloanfreeman@gmail.com</p>
-                    </span>
-                    <span class="s3">
-                            <p class="p7">Sent <br>through</p>
-                            <img src="img/r1.JPG" class="img1">
-                    </span>
-                    <span class="s4">
-                            <p class="p8">Status</p>
-                            <p class="p9">Pending</p>
-                    </span>
-                </div>
-                
+    <p class="rf">Your Referrals</p>
+    <div class="ref ref1">
+        <div class="senton">
+            <p class="p">Sent on</p>
+            <p class="b">05-05-2020</p>
         </div>
-
-    <div class="referral1">
-                <div class="div1">
-                    <span>
-                        <p class="p1">Sent On</p>
-                        <p class="p2">05-05-2021</p>
-                    </span>
-                    <span class="s1">
-                        <span>
-                            <p  class="p3">Name</p>
-                            <p class="p4">Sloan Freeman</p>
-                        </span>
-                    </span>
-                    <span class="s2">
-                            <p class="p5">Email</p>
-                            <p class="p6">sloanfreeman@gmail.com</p>
-                    </span>
-                    <span class="s3">
-                            <p class="p7">Sent <br>through</p>
-                            <img src="img/r2.JPG" class="img1">
-                    </span>
-                    <span class="s4">
-                            <p class="p8">Status</p>
-                            <p class="p9">Pending</p>
-                    </span>
-                </div>
-                
+        <div class="name">
+            <p class="p">Name</p>
+            <p class="b">Sloan Freeman</p>
         </div>
-
-            <div class="referral2">
-                <div class="div1">
-                    <span>
-                        <p class="p1">Sent On</p>
-                        <p class="p2">05-05-2021</p>
-                    </span>
-                    <span class="s1">
-                        <span>
-                            <p  class="p3">Name</p>
-                            <p class="p4">Sloan Freeman</p>
-                        </span>
-                    </span>
-                    <span class="s2">
-                            <p class="p5">Email</p>
-                            <p class="p6">sloanfreeman@gmail.com</p>
-                    </span>
-                    <span class="s3">
-                            <p class="p7">Sent <br>through</p>
-                            <img src="img/r3.JPG" class="img1">
-                    </span>
-                    <span class="s4">
-                            <p class="p8">Status</p>
-                            <p class="p9">Pending</p>
-                    </span>
-                </div>
-                
+        <div class="email">
+            <p class="p">Email</p>
+            <p class="b">sloanfreeman@gmail.com</p>
         </div>
+        <div class="sent ">
+            <div class="senthrough">
+                <p class="p">Sent</p>
+                <p class="p">through</p>
+            </div>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <div class="status">
+            <p class="p">Status</p>
+            <p class="y">Pending</p>
+        </div>
+    </div>
+    <div class="ref ref2">
+        <div class="senton">
+            <p class="p">Sent on</p>
+            <p class="b">05-05-2020</p>
+        </div>
+        <div class="name">
+            <p class="p">Name</p>
+            <p class="b">Sloan Freeman</p>
+        </div>
+        <div class="email">
+            <p class="p">Email</p>
+            <p class="b">sloanfreeman@gmail.com</p>
+        </div>
+        <div class="sent ">
+            <div class="senthrough">
+                <p class="p">Sent</p>
+                <p class="p">through</p>
+            </div>
+            <i class="fa-regular fa-envelope"></i>
+        </div>
+        <div class="status">
+            <p class="p">Status</p>
+            <p class="g">Pending</p>
+        </div>
+    </div>
+    <div class="ref ref3">
+        <div class="senton">
+            <p class="p">Sent on</p>
+            <p class="b">05-05-2020</p>
+        </div>
+        <div class="name">
+            <p class="p">Name</p>
+            <p class="b">Sloan Freeman</p>
+        </div>
+        <div class="email">
+            <p class="p">Email</p>
+            <p class="b">sloanfreeman@gmail.com</p>
+        </div>
+        <div class="sent ">
+            <div class="senthrough">
+                <p class="p">Sent</p>
+                <p class="p">through</p>
+            </div>
+            <i class="fa-brands fa-facebook-f"></i>
+        </div>
+        <div class="status">
+            <p class="p">Status</p>
+            <p class="y">Pending</p>
+        </div>
+    </div>
 </div>
