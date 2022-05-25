@@ -173,6 +173,7 @@
 }
 .create-ticket-recruiter-ekam.active {
   display: block;
+  overflow-y: scroll;
 }
 .create-ticket-recruiter-ekam form {
   position: absolute;
@@ -184,6 +185,14 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   width: 60vw;
+  /* background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  position: relative;
+  top: -193px;
+  height: 900px; */
 }
 .name-for-form-create-ticket-recruiter-ekam {
   font-size: 27px;
@@ -211,8 +220,11 @@
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
+  display: flex;
 }
-.create-ticket-subTicket-recruiter,
+.create-ticket-subTicket-recruiter {
+  flex-basis: 45%;
+}
 .create-ticket-subTicket-recruiter-2 {
   flex-basis: 45%;
 }
@@ -226,7 +238,7 @@
   font-size: 16px;
 }
 #message-input-complaint-tickets-recruiter {
-  min-height: 300px;
+  height: 200px;
   padding: 20px;
   font-size: 18px;
 }
@@ -234,6 +246,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+  display: flex;
 }
 .select-options-for-complaint-tickets span label {
   display: block;
@@ -310,7 +323,9 @@
 #comp5 {
   width: 500px;
 }
-
+.select-options {
+  display: flex;
+}
 @media screen and (max-width: 750px) {
   .heading_dash span {
     display: none;
@@ -455,9 +470,10 @@
   #comp3,
   #comp4,
   #comp5 {
-    width: 340px;
+    width: 190px;
     font-size: 22px;
   }
+
   /* .searchButton {
     margin-left: 57px;
   }
