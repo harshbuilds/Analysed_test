@@ -330,15 +330,15 @@
     
         
         <div class="row-recruiter select-options-for-complaint-tickets">
-            <span>
+            <span style="width:45%">
                 <label for="options-input-complaint-tickets-recruiter">Subject *</label>
-                <div class="row-recruiter" style="justify-content:space-around;" name="priority">
-                    <div class="row-recruiter" style="margin-right:35px"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-1"> <label for="options-input-complaint-tickets-recruiter-1" value="high">High</label></div>
-                    <div class="row-recruiter" style="margin-right:35px"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-2"> <label for="options-input-complaint-tickets-recruiter-2" value="medium">Medium</label></div>
-                    <div class="row-recruiter" style="margin-right:35px"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-3"> <label for="options-input-complaint-tickets-recruiter-3" vaue="low">Low</label></div>
+                <div class="row-recruiter select-options" style="justify-content:space-around;" name="priority">
+                    <div class="row-recruiter" style="margin-right:35px"> <label for="options-input-complaint-tickets-recruiter-1" value="high"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-1"> High</label></div>
+                    <div class="row-recruiter" style="margin-right:35px"> <label for="options-input-complaint-tickets-recruiter-2" value="medium"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-2"> Medium</label></div>
+                    <div class="row-recruiter" style="margin-right:35px"> <label for="options-input-complaint-tickets-recruiter-3" vaue="low"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-3"> Low</label></div>
                 </div>
             </span>
-            <span style="width:45%" >
+            <span  style="width:45%" >
             <label for="complaint-type-input-complaint-tickets-recruiter">Ticket type*</label>
             <select id="complaint-type-input-complaint-tickets-recruiter" name="tickettype">
                 <option value="Complaint">Complaint</option>
