@@ -208,7 +208,7 @@
 
                ?>
                      <div class="col-4 mb-3">
-                             <div class="card" style="height:315px;width:250px" id="temp2">
+                             <div class="card"  id="temp2">
                              <div class="icons">
                                  <img src="img/share-icon.png" height="27" width="29">&emsp;
                                  <img src="img/star-icon.png" height="27" width="29">
@@ -231,7 +231,7 @@
                                  <span class="days"> <?php echo $remain_days; ?> days left</span >
                              </div><br>
                              <div class="skills" style="margin-left:20px;">
-                                 <p style="font-size:13px;line-height:2px ;"> <i><?php echo $skills; ?></i></p>
+                                 <p> <i><?php echo $skills; ?></i></p>
                              </div>
 
                          <br>
