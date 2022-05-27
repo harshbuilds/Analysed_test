@@ -3,7 +3,7 @@
    include 'connection1.php';   //database connection page included
     session_start();     //session has been started
 ?>
-<?php include('header-job.php') ?>
+<?php include('header.php') ?>
 <title>Job Listings</title>
 <link rel="stylesheet" href="css/job_listings.css">
 
