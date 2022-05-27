@@ -72,7 +72,7 @@
 <div class="container">
     <img src="./img/hamburger-menu-icon.svg" alt="" class="hamburger">
       <nav class="nav_main">
-        <h2 class="logo_heading">Analysed</h2>
+        <h2 class="logo_heading" style=" font-weight: bold;" >Analysed</h2>
         <div class="input-field">
           <input
             type="text"
