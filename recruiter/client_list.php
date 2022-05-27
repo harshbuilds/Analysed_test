@@ -19,7 +19,7 @@
                 <p class="mainParaDash">create new client and manage old ones</p>
             </div>
             <span>
-                <a href="addClient.php"><button class="btn" id="myBtn" type="button">Add +</button></a>
+                <a href="addClient.php"><button class="btn" id="myBtn" type="button">Add + </button></a>
             </span>
             <div class="search-box">
                 <details id="dropdown" class="dropdown">
@@ -49,7 +49,7 @@
                 </details>
               <form method="post">
                 <input class="search-form-input" type="text" name="textsearch" placeholder="Search by company name">
-                <button type="submit" name="btnsearch" class="searchButton">
+                <button type="submit" name="btnsearch" class="searchButton-client">
                     <img src="./img/search-icon-blue.png" />
                 </button>
               </form>
@@ -115,6 +115,8 @@
                         <p class="col-1"><?php echo $name; ?></p>
                         <span class="col-span-1"><?php echo $company_name; ?></span>
                     </div>
+                    <!-- span  start of more -->
+                    <span id="dots">...</span> <div  id="more"> 
                     <div class="column">
                         <p class="col-2"><?php echo $role; ?></p>
                         <span class="col-span-2"><?php echo $role_detail; ?></span>
@@ -123,15 +125,18 @@
                         <p class="col-3"><?php echo $contact_no; ?></p>
                         <span class="col-span-3"><?php echo $main_email; ?></span>
                     </div>
+                  
                     <div class="column">
                         <p class="col-4"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</p>
                         <span class="col-span-4"><i class="fa fa-bell" aria-hidden="true"></i> Remainder</span>
                     </div>
-                    <div class="column">
+                    <div class="column" >
                         <p class="col-5">Added on <span><?php echo $added_on; ?></span></p>
                         <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
-                          <a href="delete_client_list.php?Id=<?php echo $client_id; ?>"><button ><i class="fa fa-trash" aria-hidden="true"></i> Delete</button></a>
+                        <a href="delete_client_list.php?Id=<?php echo $client_id; ?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i> Delete</a>
                     </div>
+                  </div>   <!--   close of span  id more -->
+                  <button onclick="myFunction()" id="myBtnn"> Read more</button>
                 </div>
                 </a>
 
@@ -144,6 +149,7 @@
 
 
             </div>
+      
         </div>
     </body>
 
@@ -161,3 +167,29 @@ items.forEach(item => {
   });
 });
 </script>
+
+
+<!-- readmore less script for smaller screen -->
+
+<script>
+function myFunction() {
+    // console.log(ele);
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtnn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+
+
+
