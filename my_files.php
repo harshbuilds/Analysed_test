@@ -54,7 +54,7 @@
                     <option value="2">2</option>
                 </select>
                 <input type="text" name="search" placeholder=" Search by File name" class="centered_span_myTasks" id="search" oninput="myFunction()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <img src="img/search-icon-blue.png" height="15px" width="15px" >
+                <img src="img/search-icon-blue.png" id="search-icon" height="15px" width="15px" >
             </div>
            </form>
 
@@ -74,7 +74,7 @@
         </div>
         <form id="form1">
         <div class="filterSmall_myTasks">
-            <div class="selectAllActions_filterSmall_myTasks" style="margin-left:850px">
+            <div class="selectAllActions_filterSmall_myTasks" style="margin-left:734px">
                 <input type="checkbox" name="checkboxSelectAll_myTasks" id="select-all">
                 <label for="checkboxSelectAll_myTasks">Select All</label>
                 <select name="Select action">
