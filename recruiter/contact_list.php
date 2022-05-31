@@ -20,32 +20,31 @@
  	<form action="" method="post">
         <div>
             <a href="#" class="sub_11">Create new contact and manage old ones</a>
-            <button class="addFilesMyTasks1" ><a style="text-decoration: none; color: white;" href="addContact.php">Add + </a></button>
+            <button class="addFilesMyTasks1" ><a  href="addContact.php">Add + </a></button>
         </div>
 
-      <div class="container" style="margin-left:-2%;">
+      <div class="container" style="margin-left: 2%; margin-right:20px">
         <div class="row">
             <div class="col-7">
-                <div class="input-field1" >
+                <div class="search" >
                 <img src="img/person.png" alt="" height="25px" width="25px" class="box_1"><span id="m1">Company&nbsp;</span>
-                <input type="text"  name="searchForNames" id="inputSearch_12" class="searchForJobs"
-                    placeholder="| &emsp;&emsp;Search by name "
-                />
-                <button class="searchButton">
-                    <img src="img/search-icon-blue.png" width="15" height="15" style="font:right" />
+                <input type="text"  name="searchForNames" id="inputSearch_12" class="searchForJobs-col " placeholder="| &emsp;Search by name,company,job title "/>
+                <button class="searchButton1">
+                    <!-- <img src="img/search-icon-blue.png" width="20" height="20" style="font:right" /> -->
+                    <i class="fa fa-search"></i>
                 </button>
                 </div>
             </div>
             <div class="col-5">
-                <span class="sortByMyTasks">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sort By: </span>
+                <span class="sortByMyTasks">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sort By: </span>
                 <span class="recentMyTasks"><a href="/" class="active-breadcrumb-link">Recent </a></span>
-                <span class="sortByMyTasks" style="color:black">Last Edited &nbsp;<img src="img/dropdown.png" width="15" height="10" style="font:right" /></span>
+                <span class="sortByMyTasks" style="color:black">Last Edited &nbsp;<img src="img/dropdown.png" width="12" height="8" style="font:right" /></span>
             </div>
         </div><br>
      </div>
 
         <div class="singleTasks_containerDiv">
-  <div class="row">
+  <div class="row" style="margin-left:8px">
                 <?php
 
                            // if(isset($_POST['searchForNames'])){
@@ -85,7 +84,7 @@
                     <span style="color:#333333"><?php echo $row['added_on'];?></span></o>
                     <div class="button-div_myTasks">
                         <p style="color:#3598DB">&nbsp;Edit <i class="fa fa-edit" aria-hidden="true"></i>
-                        <span style="font-size:14px;color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
+                        <span style="color:#EC4551">&emsp;&emsp;&emsp;&emsp;&emsp;Delete <i class="fa fa-trash" aria-hidden="true"></i></span></p>
                     </div>
                 </span>
 
