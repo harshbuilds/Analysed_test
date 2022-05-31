@@ -14,7 +14,7 @@
 <div class="container">
 <div class="small_container">
         <div class="bread-crumbs_Mytools-recruiter">
-            <a href="" class="active-breadcrumb-link">Dashboard</a> >  <a href="" class="active-breadcrumb-link">My Database</a>
+            <a href="dashboard.php" class="active-breadcrumb-link"><u>Dashboard</u></a> >  <a href="candidate_list.php" class="active-breadcrumb-link"><u>My Database</u></a>
         </div>
   <div class="database">
   My Database<br><br>
@@ -25,9 +25,10 @@
  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></a>
 </svg> 
-<span  style="color:#3598DB" class="svg1"><input type="text" name="searchCandidatesNames" id="inputSearch_12" class="searchForJobs"  placeholder=" All Status|&emsp;Search by candidate name "/>
-<button class="searchButton">
-<i class="fa fa-search" style="color:blue"></i>
+<span id="m1">All Status&nbsp;</span>
+ <input type="text" name="searchCandidatesNames" id="inputSearch_12" class="searchForJobs-cal svg1"  placeholder=" |&emsp; Search by candidate name "/>
+<button class="searchButton-cal">
+<i class="fa fa-search"></i>
 </button>
    </div>
    <div class="add">
@@ -105,7 +106,7 @@
 </div>
 </div>
 
- <input type = "submit" name = "filter"  id="btn-filter" class="save_button_addClient default-button-for-recruiter-dashboard" value="filter" >
+ <input type = "submit" name = "filter"  id="btn-filter" class="default-button-for-recruiter-dashboard" value="filter" >
 
 <div class="cont">
 
@@ -152,10 +153,10 @@
 
 <div class="uploaded">
 Uploaded by<br>
-  <?php echo $row['firstname']; ?></div>
-<div class="added1"><span style="color:979797"><?php echo $row['company_name'] ; ?></span><br><?php echo $row['current_title'];?></div>
+ <div class="fname"> <?php echo $row['firstname']; ?></div></div>
+<div class="added1"><span style="color:979797"><?php echo $row['company_name'] ; ?></span><br><span style="color:black"><?php echo $row['current_title'];?></span></div>
 <div class="added2"><span style="color:979797">Status</span><br><?php echo $row['status'];?></div>
-<p><a href="edit-Candidates1.php?edit_Candidates=<?php echo $row['candidate_id'];?>"> Peek <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+<p class="peek"><a href="edit-Candidates1.php?edit_Candidates=<?php echo $row['candidate_id'];?>"> Peek <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
   <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
 </svg></p>
