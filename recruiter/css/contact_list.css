@@ -1,98 +1,385 @@
 @font-face {
-    font-family: CeraB;
-    src: url(../fonts/CeraPro-Bold.ttf);
+  font-family: CeraB;
+  src: url(../fonts/CeraPro-Bold.ttf);
 }
 @font-face {
-    font-family: MetroB;
-    src: url(../fonts/metropolis/Metropolis-Bold.woff);
+  font-family: MetroB;
+  src: url(../fonts/metropolis/Metropolis-Bold.woff);
 }
-  @font-face {
-    font-family: CeraM;
-    src: url(../fonts/CeraPRO-Medium.ttf);
-  }
-  @font-face {
-    font-family: Metro;
-    src: url(../fonts/metropolis/Metropolis-Regular.woff);
-  }
-  @font-face {
-    font-family: MetroM;
-    src: url(../fonts/metropolis/Metropolis-Medium.woff);
-  }
-  @font-face {
-    font-family: MetroS;
-    src: url(../fonts/metropolis/Metropolis-ExtraBold.woff);
-  }
-  @font-face {
-    font-family: MetroMI;
-    src: url(../fonts/metropolis/Metropolis-MediumItalic.woff);
-  }
-
-.main_body{
-    margin-left:200px;
+@font-face {
+  font-family: CeraM;
+  src: url(../fonts/CeraPRO-Medium.ttf);
 }
-.head_txt{
-    color: #333333;
-    font-size: 30px;
-    font-family: CeraM;
+@font-face {
+  font-family: Metro;
+  src: url(../fonts/metropolis/Metropolis-Regular.woff);
+}
+@font-face {
+  font-family: MetroM;
+  src: url(../fonts/metropolis/Metropolis-Medium.woff);
+}
+@font-face {
+  font-family: MetroS;
+  src: url(../fonts/metropolis/Metropolis-ExtraBold.woff);
+}
+@font-face {
+  font-family: MetroMI;
+  src: url(../fonts/metropolis/Metropolis-MediumItalic.woff);
+}
+.main_body {
+  margin-left: 15%;
+  margin-right: 6%;
 }
 
-#m1{
-    color: #297FB8;
-    font-size: 18px;
-    font-family: Metro;
+.head_txt {
+  color: #333333;
+  font-size: 30px;
+  font-family: CeraM;
 }
-.sub_1{
-    color: #3598DB;
-    font-size: 14px;
-    font-family: Metro;
+
+#m1 {
+  color: #297fb8;
+  font-size: 18px;
+  font-family: Metro;
 }
-.sub_11{
-  color: #3598DB;
+
+.sub_1 {
+  color: #3598db;
   font-size: 14px;
   font-family: Metro;
 }
-.sub_2{
-  color: #3598DB;
+.sub_11 {
+  color: #3598db;
   font-size: 14px;
   font-family: Metro;
 }
-.box_1{
-    margin-bottom: 10px;
+.sub_2 {
+  color: #3598db;
+  font-size: 14px;
+  font-family: Metro;
 }
-#k1{
+.box_1 {
+  margin-bottom: 10px;
+}
+#k1 {
   color: #333333;
   font-size: 16px;
   font-family: Metro;
 }
-#k2{
+#k2 {
   color: #979797;
   font-size: 14px;
   font-family: Metro;
   line-height: 0.5;
 }
 .addFilesMyTasks1 {
+  display: flex;
+  right: 2%;
+  box-shadow: 1px 3px 8px #00000033;
+  border-radius: 8px;
+  background-color: #3598db;
+  color: #fff;
+  padding: 8px 16px;
+  border: 1px solid #3598db;
+  align-items: right;
+  width: 81px;
+  height: 40px;
+  margin-left: 980px;
+  margin-bottom: 50px;
+}
+.singleTasks_containerDiv {
+  margin-top: 40px;
+  /* position: fixed; */
+}
+
+.singletask_myTasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 3px 10px #00000033;
+  border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+  color: #333333;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 1065px;
+}
+.button-div_myTasks {
+  display: flex;
+  flex-direction: column;
+}
+.sortByMyTasks {
+  color: #979797;
+  margin: 0px 15px;
+}
+.recentMyTasks {
+  color: #8bd0ffb8;
+  margin: 0px 10px;
+}
+
+/* .inputSearch_12 {
+  width: 50px;
+} */
+.search {
+  width: 585px;
+  box-shadow: 3px 3px 5px 0px rgb(238 238 238);
+  border-radius: 31px;
+  flex-basis: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+.check {
+  border: "1px solid #3598db;";
+}
+.addFilesMyTasks1 a {
+  text-decoration: none;
+  color: white;
+}
+.fa-search {
+  color: #3598db;
+}
+.searchButton1 {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-left: 167px;
+}
+.search input {
+  width: 300px;
+  height: 35px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-3598db);
+  /* background: #ffffff 0% 0% no-repeat padding-box; */
+  border: none;
+  opacity: 1;
+}
+.svg1 {
+  position: relative;
+  top: -3px;
+}
+.searchForJobs-col {
+  padding: 5px 0px;
+  text-align: start;
+  border: none;
+  outline: none;
+  color: #979797;
+}
+
+@media screen and (max-width: 609px) {
+  .bread-crumbs_Mytools-recruiter,
+  #m1 {
+    display: none;
+  }
+  .main_body {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    /* margin-left:180px; */
+  }
+  .head_txt {
+    position: relative;
+    right: 9px;
+    font-size: 40px;
+  }
+
+  .sub_2 {
+    position: relative;
+    left: -167px;
+    font-size: 16px;
+  }
+
+  .col-5 {
+    display: none;
+  }
+  .search {
+    width: 300px;
+    border-radius: 7px;
+    margin-left: -20px;
+    box-sizing: border-box;
+    padding: 1px;
+    box-shadow: 2px 2px 5px rgb(192 192 192);
+  }
+  .add {
+    /* width: 55px; */
+    position: relative;
+    left: -893px;
+    /* top: 65px; */
+    /* display: flex; */
+  }
+  .searchButton1 {
+    position: relative;
+    left: -356px;
+  }
+  .singletask_myTasks {
+    display: block;
+
+    width: 330px;
+    height: fit-content;
+    margin-top: 48px;
+
+    font-size: 19px;
+  }
+  .check {
+    position: relative;
+    top: 10px;
+  }
+  .button-div_myTasks {
+    position: relative;
+    top: 23px;
+    align-items: center;
+  }
+  #k2 {
+    position: relative;
+    font-size: 16px;
+    top: 11px;
+    left: 16px;
+  }
+  .sub_1 {
+    position: relative;
+    font-size: 16px;
+    top: -8px;
+    left: 3px;
+  }
+  .sub_11 {
+    font-size: 16px;
+  }
+
+  .addFilesMyTasks1 {
+    position: relative;
+    margin-left: 6px;
+    top: 181px;
+    width: 180px;
+    height: 48px;
+    font-size: 22px;
+    justify-content: center;
+  }
+  .box_1 {
+    position: relative;
+    left: 412px;
+    box-sizing: border-box;
+    padding: 1px;
+    box-shadow: 2px 2px 5px rgb(192 192 192);
+    width: 45px;
+    height: 48px;
+  }
+  .searchForJobs-col {
+    position: relative;
+    left: 97px;
+    font-size: 20px;
+  }
+  /* .fa-search {
+    color: white;
+
+    background-color: #3598db;
+  } */
+  .searchButton1 i {
+    left: 16px;
+    position: relative;
+    top: 0px;
+    height: 50px;
+    display: block;
+    width: 50px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #3598db;
+    color: white;
+  }
+  #k1,
+  #k2,
+  .sub_1,
+  .singletask_myTasks {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+  .logo_heading {
+    color: #2d3e50;
+    font-size: 28px;
+    font-family: sans-serif;
+    /* margin-right: 69px; */
+    position: relative;
+    left: 45px;
+  }
+  .input-field {
+    box-shadow: 3px 3px 5px 0px rgb(238 238 238);
+    border-radius: 31px;
+    flex-basis: 35%;
     display: flex;
-    right: 2%;
-    box-shadow: 1px 3px 8px #00000033;
-    border-radius: 8px;
-    background-color: #3598DB;
-    color: #fff;
-    padding: 8px 16px;
-    border: 1px solid #3598DB;
-    align-items: right;
-    width: 81px;
-    height: 40px;
-    margin-left: 980px;
-    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    position: relative;
+    left: 10px;
   }
-
-
-
-
-  .singleTasks_containerDiv {
-    margin-top: 40px;
+  /* .main_body {
+    margin-left: 121px;
+    max-width: 100%; 
+     overflow-x: hidden;
+  } */
+  .search {
+    width: 455px;
+    box-shadow: 3px 3px 5px 0px rgb(238 238 238);
+    border-radius: 31px;
+    flex-basis: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
   }
-  
+  .box_1 {
+    margin-bottom: 2px;
+    position: relative;
+    left: 4px;
+  }
+  #m1 {
+    color: #297fb8;
+    font-size: 18px;
+    font-family: Metro;
+    position: relative;
+    left: 10px;
+    top: 2px;
+  }
+  .searchForJobs-col {
+    padding: 5px 0px;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: #979797;
+  }
+  .searchButton1 {
+    margin-left: 121px;
+  }
+  .sortByMyTasks {
+    color: #979797;
+    margin: 0px 15px;
+    position: relative;
+    right: 62px;
+    font-size: 11px;
+  }
+  .recentMyTasks {
+    position: relative;
+    right: 65px;
+    color: #8bd0ffb8;
+    margin: 0px 10px;
+  }
   .singletask_myTasks {
     display: flex;
     align-items: center;
@@ -100,126 +387,25 @@
     box-shadow: 1px 3px 10px #00000033;
     border-radius: 8px;
     background: #fff;
-    padding:20px;
+    padding: 20px;
     color: #333333;
     margin-bottom: 20px;
     height: 100px;
-    width: 1140px;
+    width: 890px;
   }
-  .button-div_myTasks{
+  .addFilesMyTasks1 {
     display: flex;
-    flex-direction: column;
+    right: 2%;
+    box-shadow: 1px 3px 8px #00000033;
+    border-radius: 8px;
+    background-color: #3598db;
+    color: #fff;
+    padding: 8px 16px;
+    border: 1px solid #3598db;
+    align-items: right;
+    width: 81px;
+    height: 40px;
+    margin-left: 790px;
+    margin-bottom: 50px;
   }
-  .sortByMyTasks {
-    color: #979797;
-    margin: 0px 15px;
-  }
-  .recentMyTasks {
-    color: #8bd0ffb8;
-    margin: 0px 10px;
-  }
-  .searchButton{
-    margin-left: 250px;
-  }
-  .inputSearch_12{
-    width: 50px;
-  }
-  .input-field1{
-    width:585px;
-   
-      box-shadow: 3px 3px 5px 0px rgb(238 238 238);
-      border-radius: 31px;
-      flex-basis: 35%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 5px 10px;
-  
-  }
-  .check{
-    border: "1px solid #3598db;" 
-  }
-  
-
-@media screen and (max-width:650px) {
- 
-  .bread-crumbs_Mytools-recruiter{
-    display: none;
 }
-  .head_txt{
-    position: relative;
-    right:172px;
-    font-size: 40px;
-  }
- 
-  .sub_2{
-    position:relative;
-    left:-167px;
-    font-size: 16px;
-  }
-  
-.col-5{
-  display: none;
-}
-.input-field1{
-  position: relative;
-  left: -201px;
-  width: 375px;
-}
-.add {
-  /* width: 55px; */
-  position: relative;
-  left: -893px;
-  /* top: 65px; */
-  /* display: flex; */
-}
-.searchButton {
-  position: relative;
-  margin-left: 48px;
-}
-.singletask_myTasks{
-  display: block;
-    position: relative;
-  width: 330px;
-    height: fit-content;
-    margin-top: 48px;
-    left:-167px;
-    font-size: 19px;
-}
-.check{
-  position: relative
-  top:10px;
-}
-.button-div_myTasks{
-  position: relative;
-  top: 23px;
-  align-items: center;
-}
-#k2{
-  position: relative;
-    font-size: 16px;
-    top: 11px;
-    left: 16px;
-}
-.sub_1{
-  position: relative;
-    font-size: 16px;
-    top: -8px;
-    left: 3px;
-}
-.sub_11{
- 
-  position: relative;
-    font-size: 16px;
-    top: -8px;
-    left: -170px;
-}
-
-.addFilesMyTasks1 {
-  position: relative;
-  margin-left: -170px;
-  top: 181px;
-}
-}
-
-  
