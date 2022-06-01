@@ -1,15 +1,20 @@
+
 <?php include('connection1.php'); ?>
 
 <?php
 session_start();
 
-if(isset($_SESSION['company_name'])) {
+// if(isset($_SESSION['company_name'])) {
 
-    $company_name=$_SESSION['company_name'];
-    $sql=mysqli_query($conn,"select * from client where company_name='$company_name'");
+    // $company_name=$_SESSION['company_name'];
+    $c_id=$_GET['c_id'];
+    $sql=mysqli_query($conn,"select * from client where client_id='$c_id'");
+    
     $check=mysqli_num_rows($sql)>0;
     if($check){
         while($row=mysqli_fetch_assoc($sql)){
+            $company_name=$row['company_name'];
+            
 ?>
 
 <?php include('header.php') ?>
@@ -36,12 +41,12 @@ if(isset($_SESSION['company_name'])) {
 
             <div class="options">
                 <p style="color:#3598DB;margin-left:-2px"> <b style="margin-right: 10px;">|</b>At a glance</p>
-                <p><a href="client_jobs.php">Hires</a></p>
-                <p><a href="client_contacts.php">Contacts</a></p>
-                <p><a href="client_appointments.php">Appointments</a></p>
-                <p><a href="client_activity.php">Activity</a></p>
-                <p><a href="client_files.php">Files</a></p>
-                <p><a href="client_notes.php">Notes</a></p>
+                <p><a href="client_jobs.php?c_id=<?php echo $row['client_id']; ?>">Hires</a></p>
+                <p><a href="client_contacts.php?c_id=<?php echo $row['client_id']; ?>">Contacts</a></p>
+                <p class="p1"><a href="client_appointments.php?c_id=<?php echo $row['client_id']; ?>">Appointments</a></p>
+                <p class="p1"><a href="client_activity.php?c_id=<?php echo $row['client_id']; ?>">Activity</a></p>
+                <p class="p1"><a href="client_files.php?c_id=<?php echo $row['client_id']; ?>">Files</a></p>
+                <p class="p1"><a href="client_notes.php?c_id=<?php echo $row['client_id']; ?>">Notes</a></p>
             </div>
 
             <div class="status">
@@ -56,17 +61,17 @@ if(isset($_SESSION['company_name'])) {
                     <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></p>
                     <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
                     <br><br>
-                    <span style="color:#979797; font-size:15px; margin-left:15px;">Status&emsp;&emsp;Ownership&emsp;&emsp;Source</span>
+                    <span style="color:#979797; font-size:15px; margin-left:20px;">Status&emsp;Ownership&emsp;Source</span>
                     <br>
                 </div>
 
                 <div class="displayname"> 
-                    <span><?php echo $row["status"]; ?></span>&emsp;&emsp;&emsp;<?php echo $row["ownership"]; ?>&emsp;&emsp;<?php echo $row["source"]; ?>
+                    <span><?php echo $row["status"]; ?></span>&emsp;&emsp;<?php echo $row["ownership"]; ?>&emsp;&emsp;<?php echo $row["source"]; ?>
                 </div>
                 <br><br>
 
                 <div class="fee">
-                    <span>Average fee&emsp;&emsp;&emsp;&emsp;Current fee</span><br>
+                    <span>Average fee&emsp;&emsp;&emsp;Current fee</span><br>
                 </div>
 
                 <div class="fee-percent">
@@ -175,7 +180,7 @@ if(isset($_SESSION['company_name'])) {
                         <p class="mainHeading">Company Description</p>
                         <span class="mainheading-left">Last edited <span >21-05-2020</span></span>
                     </div>
-                    <div class="company-content"><?php echo $row["company_desc"]; ?></div>
+                    <div class="company-content"><p class="p2"><?php echo $row["company_desc"]; ?></p></div>
                 </div>
 
                 <div class="contact-info">
@@ -185,15 +190,15 @@ if(isset($_SESSION['company_name'])) {
                     <div class="contact-content">
                         <p><i class="fa fa-phone" aria-hidden="true"></i></p>
                         <p class="contact-email"><?php echo $row["main_email"]; ?></p>
-                        <span><?php echo $row["contact_no"]; ?></span>
-                        <span><?php echo $row["contact_no"]; ?></span>
+                        <span class="mob-num"><?php echo $row["contact_no"]; ?></span>
+                        <span class="mob-num"><?php echo $row["contact_no"]; ?></span>
                     </div>
 
                     <div class="contact-content">
                         <p><i class="fa fa-building" aria-hidden="true"></i></p>
                         <p class="contact-address"><?php echo $row["address"]; ?></p>
-                        <span><?php echo $row["city"]; ?> - <?php echo $row["zipcode"]; ?></span>
-                        <span><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></span>
+                        <span class="mob-num"><?php echo $row["city"]; ?> - <?php echo $row["zipcode"]; ?></span>
+                        <span class="mob-num"><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></span>
                     </div>
                 </div>
 
@@ -211,7 +216,7 @@ if(isset($_SESSION['company_name'])) {
                         <span class="mainheading-left">Last edited <span style="font-size: 16px;color:black"> <?php echo $row1["last_edited"]; ?></span></span>
                     </div>
                     <div class="last-note-profile">
-                        <img src="./img/Profile-pic.png" style="margin-top: 12px;">
+                        <img src="./img/Profile-pic.png" >
                         <p>Added by</p>
                         <span>Sasuke Uchiha</span>
                     </div>
@@ -221,18 +226,18 @@ if(isset($_SESSION['company_name'])) {
 
                 <?php } } ?>
 
-				<?php
+                <?php
                 $name=$row["active_contact"];
-				$sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
-				$check=mysqli_num_rows($sql)>0;
-				if($check){
-					while($row=mysqli_fetch_assoc($sql)){
-						?>
+                $sql=mysqli_query($conn,"select * from contacts where company='$company_name' and fname='$name'");
+                $check=mysqli_num_rows($sql)>0;
+                if($check){
+                    while($row=mysqli_fetch_assoc($sql)){
+                        ?>
 
                 <div class="active-contact">
                     <div class="heading">
                         <p class="mainHeading">Active Contact</p>
-                        <span class="mainheading-left" style="color:red;margin-top:-30px"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        <span class="mainheading-left" id="del" style="color:red;margin-top:-30px"><i class="fa fa-trash" aria-hidden="true"></i></span>
                     </div>
                     <div class="active-contact-content">
                         <img src="img/Ellipse -4@2x.png" style="margin-left:60px;margin-top:15px">
@@ -241,18 +246,18 @@ if(isset($_SESSION['company_name'])) {
                         <span><?php echo $row["phone"]; ?></span>
                     </div>
                 </div>
-				<?php } } ?>
-				
-				
+                <?php } } ?>
+                
+                
 
                 <div class="open-jobs">
                     <p>Open jobs</p>
-					<?php
-					$sql=mysqli_query($conn,"select * from joblistings where client_company='$company_name'");
-					$check=mysqli_num_rows($sql)>0;
-					if($check){
-						while($row=mysqli_fetch_assoc($sql)){
-						?>
+                    <?php
+                    $sql=mysqli_query($conn,"select * from joblistings where client_company='$company_name'");
+                    $check=mysqli_num_rows($sql)>0;
+                    if($check){
+                        while($row=mysqli_fetch_assoc($sql)){
+                        ?>
                     <div class="row">
                         <div class="column">
                             <input type="checkbox" id="c1" class="checkbox">
@@ -294,13 +299,13 @@ if(isset($_SESSION['company_name'])) {
                             <span class="col-span-6">sandrovicente@gmail.com</span>
                         </div>
                     </div>
-				   <?php } } ?>
+                   <?php } } ?>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<?php } } }?>
+<?php } } ?>
 <script>
 var items = document.getElementsByName('item');
 var selectedItem = document.getElementById('selected-item');
