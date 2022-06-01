@@ -52,13 +52,15 @@ session_start();
                     <span>05-05-2021</span>
                 </div>
                 <div class="status-name" style="margin-top:30px;">
-                    <span style="margin-left:50px;"><?php echo $row["company_name"]; ?></span>
-                    <p style="color:#3598DB;margin-left:40px"><?php echo $row["industry"]; ?></p>
-                    <p style="color:#979797;font-size:18px;margin-left:25px"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</p>
-                    <p style="color:#979797;font-size:18px;margin-left:140px;margin-top: -23px;"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></p>
-                    <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u>
-                    <br><br>
-                    <span style="color:#979797; font-size:15px; margin-left:15px;">Status&emsp;&emsp;Ownership&emsp;&emsp;Source</span>
+                    <span style="margin-left: 56px;font-size: 1.4rem;"><?php echo $row["company_name"]; ?></span>
+                    <p style="color:#3598DB;margin-left:31px; line-height: 0px;font-size: 0.9rem;"><?php echo $row["industry"]; ?></p>
+                    <p style="color:#979797;font-size:14px;margin-left:25px"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs</p>
+                    <p style="color:#979797;font-size:15px;margin-left: 133px;margin-top: -19px;"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $row["country"]; ?></p>
+                    <br>
+                    <hr>
+                    <!-- <u style="color:#979797;margin-left:15px">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</u> -->
+                   
+                    <span style="color:#979797; font-size: 14px;margin-left: 7px;line-height: 68px;">Status&emsp;&emsp;Ownership&emsp;&emsp;Source</span>
                     <br>
                 </div>
 
@@ -76,17 +78,17 @@ session_start();
                 </div>
                 <br><br>
                 <div class="employeement">
-                    <p style="margin-left:8px">Parent Company</p>
-                    <p style="color:black;margin-top:10px"><?php echo $row["parent_company"]; ?></p>
+                    <p style="margin-left:8px; margin-top:22px;">Parent Company</p>
+                    <p style="color:black;margin-top:4px;margin-left: 8px;"><?php echo $row["parent_company"]; ?></p>
                 </div>
                 <br><br>
 
                 <div class="details">
                     <p style="color:#979797;padding-top: 0px;">Created by</p>
                     <br>
-                    <p style="color:#3598DB;">Curtis kelly</p>
-                    <p style="color:black;">abc@gmail.com</p>
-                    <p style="color:black;">+91 9876543210</p>
+                    <p style="color:#3598DB;margin-top:2px;">Curtis kelly</p>
+                    <p style="color:black;margin-top:22px;">abc@gmail.com</p>
+                    <p style="color:black;margin-top:21px;">+91 9876543210</p>
                     <br><br>
 
                      <?php
@@ -97,25 +99,25 @@ session_start();
                         while($row1=mysqli_fetch_assoc($sql)){
                         ?>
 
-                    <p style="color:#979797;padding-top: 0px;">Active conatct</p>
+                    <p style="color:#979797;padding-top: 0px;">Active contact</p>
                     <br>
                     <p style="color:#3598DB;"><?php echo $row1["fname"]; ?></p>
-                    <p style="color:black;"><?php echo $row1["email"]; ?></p>
-                    <p style="color:black;"><?php echo $row1["phone"]; ?></p>
+                    <p style="color:black;margin-top:18px;"><?php echo $row1["email"]; ?></p>
+                    <p style="color:black;margin-top:21px;"><?php echo $row1["phone"]; ?></p>
                     <br><br>
                     <?php } } ?>
                     
                     <p style="color:#979797;padding-top: 0px;">Contact info</p>
                     <br>
                     <p style="color:#3598DB;"><?php echo $row["main_email"]; ?></p>
-                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
-                    <p style="color:black;"><?php echo $row["contact_no"]; ?></p>
+                    <p style="color:black;margin-top:21px;"><?php echo $row["contact_no"]; ?></p>
+                    <p style="color:black;margin-top:21px;"><?php echo $row["contact_no"]; ?></p>
                     <br><br>
                     <p style="color:#979797;padding-top: 0px;">Address</p>
                     <br>
                     <p style="color:black"><?php echo $row["address"]; ?></p>
-                    <p style="color:black;">  <?php echo $row["city"]; ?>-<?php echo $row["zipcode"]; ?></p>
-                    <p style="color: black;"><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></p>
+                    <p style="color:black;margin-top:21px;">  <?php echo $row["city"]; ?>-<?php echo $row["zipcode"]; ?></p>
+                    <p style="color: black;margin-top:21px;"><?php echo $row["state"]; ?>, <?php echo $row["country"]; ?></p>
                     <br><br>
                 </div>
             </div>
@@ -159,10 +161,7 @@ session_start();
                         <li ><a class="btn-1" href="#" onclick="divVisibility('Div2');" >Active</a></li>
                         <li ><a class="btn-1" href="#" onclick="divVisibility('Div3');">Completed</a></li>
                     </div>
-                    <div class="select-col">
-                        <input type="checkbox" id="select-all" name="cb">
-                        <label for="select-all" class="select-col-label" > Select all</label>
-                    </div>
+                  
                     <select  id="multi_search" class="search_list_1">
                         <option value="" default>Select action</option>
                         <option value="1"></option>
@@ -215,7 +214,7 @@ session_start();
                             <p class="col-5"><i class="fa fa-user" aria-hidden="true"></i></p>
                             <span class="col-span-5">1/4</span>
                         </div>
-                        <div class="column">
+                        <div class="column rec">
                             <p class="col-6">Recruiter</p>
                             <p class="col-6-1"><?php echo $row["recruiters_name"]; ?></p>
                             <span class="col-span-6">sandrovicente@gmail.com</span>
