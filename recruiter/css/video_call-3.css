@@ -1,3 +1,8 @@
+body{
+    overflow-x: hidden;
+}
+
+
 .small_container{
     margin-left: -1%;
     margin-right: -2%;
@@ -10,17 +15,18 @@
 }
 .left-side-container-DashboardJ{
   flex-basis: 77%;
-  margin-right: 40px;
+  margin-right: 3%;
 }
 .right-side-container-DashboardJ {
-  flex-basis: 27%;
-  border-left: 2px solid #979797;
-  padding-left: 30px;
-  margin-right: -300px;
-  margin-top: 30px;
+    flex-basis: 27%;
+    border-left: 2px solid #979797;
+    padding-left: 2%;
+    margin-right: 5%;
+    margin-top: 30px;
+    margin-left: -10%;
 }
 .live-recording-class {
-  font-size: 27px;
+  font-size: 1.3rem;
   color: #333333;
   margin-bottom: 20px;
 }
@@ -30,90 +36,97 @@
     margin-right:10px;
 }
 .live-recording-class span {
-  font-size: 27px;
+  font-size: 22px;
   color: #979797;
   font-weight: 400;
 }
 .video-call-meet-image{
   text-align: center;
   width: 90%;
-  margin: 0px auto;
+  margin: -4px ;
   display: block;
   cursor: pointer;
   border-radius: 31px;
+  margin-left: -3%;
 }
 .queries-container {
-  margin: 30px 0px 20px 0px;
-  font-size: 18px;
-  color: #333333;
-  font-weight: bold;
+    margin: 5% 0 2% 0%;
+    font-size: 1.2rem;
+    color: #333333;
+    font-weight: bold;
 }
 .skills-container{
     display: flex;
      cursor: pointer;
 }
 .skill-content{
-    width: 113px;
-    height: 47px;
+    width: 9vw;
+    height: 42px;
     background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 8px;
     opacity: 1;
-    margin-right: 20px;
+    margin-right: 3%;
 }
 .skill-content p{
     color: #3598DB;
-    padding: 15px 30px;
+    padding: 15px 27%;
 
 }
 .queries-details-container{
-  margin-top: 30px;
-  justify-content: space-between;
+    margin-top: 30px;
+    /* justify-content: space-between; */
+    margin-left: -1%;
 }
 .query-box-container{
-  flex-basis: 49%;
-  margin: 20px 0px;
-  color: #333333;
-  padding: 15px;
-  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 6px;
-  opacity: 1;
+    margin: 20px 0px;
+    color: #333333;
+    padding: 18px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 6px;
+    opacity: 1;
+    width: 29vw;
+    margin-left: 2%;
+}
+.query-box-container p{
+font-size: 0.9rem;
 }
 .meet-info-name{
     color: black;
-    font-size: 27px;
+    font-size: 1.5rem;
 }
 .meet-info-span-class{
-    margin-left: 210px;
-    margin-top: -20px;
+    margin-left: 70%;
+    margin-top: -7%;
 }
 .meet-info-1{
     margin-top: 10px;
 }
 .meet-info-role{
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: 0px;
     color: #3598DB;
 }
 .meet-info-1 span{
     color: black;
+    font-size: 0.9rem;
 }
 .meet-info-span-class-role{
-    margin-left: 230px;
-    margin-top: -20px;
+    margin-left: 73%;
+    margin-top: -6%;
 }
 .meet-info-span-class-location{
-    margin-left: 230px;
-    margin-top: -20px;
+    margin-left: 75%;
+    margin-top: -5%;
 }
 .meet-info-2{
      margin-top: 50px;
  }
  .span-1{
-    margin-left: 70px;
+    margin-left: 19%;
     margin-top: -38px;
  }
  .span-1 span{
@@ -142,7 +155,7 @@
  }
  .skills-class{
     color: #3598DB;
-    font-size: 18px;
+    font-size: 1.4rem;
  }
  .skills{
     display: flex;
@@ -153,16 +166,18 @@
     border: 1px solid #333333;
     border-radius: 6px;
     opacity: 1;
-    width: 89px;
-    height: 36px;
-    margin-right: 20px;
+    width: 70px;
+    height: 34px;
+    margin-right: 5%;
     display: block;
 }
 .skills-box p{
-    padding: 10px 20px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
 }
 .employment-history{
     margin-top: 20px;
+    font-size: 0.9rem;
 }
 .employment-history-class-1{
     color: #979797;
@@ -170,6 +185,7 @@
 }
 .education{
     margin-top: 20px;
+    font-size: 13px;
 }
 .location-info{
     margin-left: 100px;
@@ -181,6 +197,8 @@
 }
 .contact-info{
     margin-top: 20px;
+    
+    font-size: 0.9rem;
 }
 .contact-info-class{
     margin-bottom: 8px;
@@ -202,7 +220,7 @@
 }
 @media screen  and (max-width:650px){
     
-    .video-call-meet-image{
+     .video-call-meet-image{
         position: relative;
         width: 353px;
         left: -4px;
@@ -216,9 +234,48 @@
       }
     .right-side-container-DashboardJ{
         position: relative;
-        top: 483px;
-        left:50px;
-        left: -421px;
+        border-left: none;
+    top: 527px;
+    left: 50px;
+    left: -334px;
+    }
+    .skills-container{
+        display: inline-block;
+        width: 0px;
+        height: 33px;
+        background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 8px;
+        opacity: 1;
+        margin-right: 3%;
+        padding: px;
+        margin: 5px;
+        margin-left: 65px;
+    }
+    .skill-content{
+        position: relative;
+        width: 51vw;
+    height: 42px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 8px;
+    opacity: 1;
+    margin-right: 3%;
+    margin: 4px;
+    }
+    .skills-box {
+        position: relative;
+        margin-top: 15px;
+        border: 1px solid var(--unnamed-color-333333);
+        border: 1px solid #333333;
+        border-radius: 6px;
+        opacity: 1;
+        width: 74px;
+        height: 35px;
+        margin-right: 5%;
+        display: block;
     }
     #image_vc-4{
         position: relative;
@@ -230,4 +287,8 @@
         left: -421px;
         height:940px;
     }
+    .left-side-container-DashboardJ{
+        flex-basis: 77%;
+        margin-right: 16%;
+      }
 }
