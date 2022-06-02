@@ -311,20 +311,20 @@
             <div class="create-ticket-subTicket-recruiter">
                 <span>
                     <label for="name-input-complaint-tickets-recruiter">Name *</label>
-                    <input type="text" id="name-input-complaint-tickets-recruiter" placeholder="Recruiter name" name="name">
+                    <input type="text" id="name-input-complaint-tickets-recruiter" placeholder="Recruiter name" name="name" required>
                 </span>
                 <span class="span-section-for-email-andlabels-complaints">
                     <label for="Email-input-complaint-tickets-recruiter">Email *</label>
-                    <input type="text" id="Email-input-complaint-tickets-recruiter" name="email" placeholder="Enter the associated email address">
+                    <input type="text" id="Email-input-complaint-tickets-recruiter" name="email" placeholder="Enter the associated email address"required>
                 </span>
                 <span  class="span-section-for-email-andlabels-complaints">
                     <label for="Subject-input-complaint-tickets-recruiter">Subject *</label>
-                    <input type="text" id="Subject-input-complaint-tickets-recruiter" name="subject" placeholder="Subject">
+                    <input type="text" id="Subject-input-complaint-tickets-recruiter" name="subject" placeholder="Subject"required>
                 </span>
             </div>
             <span class="create-ticket-subTicket-recruiter-2">
                 <label for="message-input-complaint-tickets-recruiter">Message *</label>
-                <textarea placeholder="Enter your message here" name="message" id="message-input-complaint-tickets-recruiter"></textarea>
+                <textarea placeholder="Enter your message here" name="message" id="message-input-complaint-tickets-recruiter"required></textarea>
             </span>
         </div>
     
