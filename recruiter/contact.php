@@ -66,11 +66,11 @@
             <div class="row-recruiter input-labels-contact-us">
                 <span>
                     <label for="first-name-recruiter-contact-us" id="fn">First Name *</label><br>
-                    <input type="text" placeholder="Enter your first name" name="firstname" required id="first-name-recruiter-contact-us" class="fn-1">
+                    <input type="text" placeholder="Enter your first name" name="firstname" required id="first-name-recruiter-contact-us" class="fn-1" required>
                 </span>
                 <span>
                     <label for="first-name-recruiter-contact-us" id="ln">Last Name</label><br>
-                    <input type="text" placeholder="Enter your last name" name="lastname"  id="last-name-recruiter-contact-us " class="ln-1">
+                    <input type="text" placeholder="Enter your last name" name="lastname"  id="last-name-recruiter-contact-us " class="ln-1" required>
                 </span>
             </div>
                     <span id="next-header">
@@ -79,11 +79,11 @@
                 </span>
                 <span id="next-header">
                     <label for="number-recruiter-contact-us">Contact number *</label><br>
-                    <input type="tel" placeholder="Enter your phone number" maxlength = 10 required name="contact" id="number-recruiter-contact-us">
+                    <input type="tel" placeholder="Enter your phone number" maxlength = 10 required name="contact" id="number-recruiter-contact-us"required>
                 </span>
                 <span id="next-header">
                     <label for="Message-recruiter-contact-us">Message *</label><br>
-                    <input placeholder="Enter your message here" required id="Message-recruiter-contact-us"  name="message"></input>
+                    <input placeholder="Enter your message here" required id="Message-recruiter-contact-us"  name="message"required></input>
                 </span>
                 <button class="button-recruiter-contact-us-submit" name="send">Send message&nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
             </form>
