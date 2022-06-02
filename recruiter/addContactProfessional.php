@@ -74,19 +74,19 @@ include 'connection1.php';         //database connection page included
                                                 <!-- CURRENT TITLE     -->
                         <p class="input-para-add-client-ekam-1" >
                                 <label for="default-input-for-no.1">Current title </label>
-                                <input type="text" name="job_title" class="default-input-for-add-client-1" placeholder="Enter current job title of candidate" id="default-input-for-no.1">
+                                <input type="text" name="job_title" class="default-input-for-add-client-1" placeholder="Enter current job title of candidate" id="default-input-for-no.1" required>
                             </p>
                                                     <!-- COMPANY NAME -->
                             <p class="input-para-add-client-ekam-1" >
                                 <label for="default-input-for-no.1011">Company name</label>
-                                <input type="text" name="company_name"class="default-input-for-add-client-1" placeholder="Candidate currently employed in?" id="default-input-for-no.1011">
+                                <input type="text" name="company_name"class="default-input-for-add-client-1" placeholder="Candidate currently employed in?" id="default-input-for-no.1011"required>
                             </p>
                             </div>
                                                         <!-- CONTACT TYPE -->
                             <div class="row-recruiter inputs-for-add-client-below-image-box">
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Contact type *</label>
-                                    <select name="contact_type" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="contact_type" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Client</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -96,7 +96,7 @@ include 'connection1.php';         //database connection page included
                                                             <!-- DIVISION -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Division*</label>
-                                    <select name="division" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="division" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Other</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -106,7 +106,7 @@ include 'connection1.php';         //database connection page included
                                                                 <!-- SOURCE -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Source *</label>
-                                    <select name="source" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="source" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Select your source (Ex. LinkedIn)</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -116,7 +116,7 @@ include 'connection1.php';         //database connection page included
                                                     <!-- REPORT -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Reports to *</label>
-                                    <select name="reports_to" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="reports_to" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Select a recruiter</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -126,7 +126,7 @@ include 'connection1.php';         //database connection page included
                                                             <!-- INDUSTRY -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Industry *</label>
-                                    <select name="industry" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="industry" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Select Industry</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -136,7 +136,7 @@ include 'connection1.php';         //database connection page included
                                                                     <!-- REQUIRED SKILLS -->
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-input-for-no.2">Required skills </label>
-                                        <input name="skills" type="text" class="default-input-for-add-client-1" placeholder="Enter Required skills" id="default-input-for-no.2">
+                                        <input name="skills" type="text" class="default-input-for-add-client-1" placeholder="Enter Required skills" id="default-input-for-no.2"required>
                                     </p>
                             </div>
                                                                     <!-- SAVE BUTTON -->
@@ -149,3 +149,4 @@ include 'connection1.php';         //database connection page included
     </div>
 </div>
 </form>
+
