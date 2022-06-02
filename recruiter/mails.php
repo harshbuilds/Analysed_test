@@ -1,13 +1,23 @@
+
 <?php 
 session_start();
-include('header.php')?>
+include('header.php');
+$flag=0;
+?>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/mails.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <style type="text/css">
+  .section3{
+    display: none;
+  } 
+</style>
+ -->
 </head>
 <body>
+
 <div class="container">
     <div class="bread-crumbs_Mytools-recruiter">
         <a href="./dashboard.php">Dashboard</a> > <a href="mails.php">My Mails</a> 
@@ -50,7 +60,7 @@ include('header.php')?>
    	<!-- <?php // include 'connection1.php';
        /* $email= $_SESSION['email'];*/
    ?> -->
-   <div class="mail" id="result1"  >
+   <div class="mail" id="result1" onclick="myFunction()" >
    <?php include 'connection1.php';
    $email= $_SESSION['email'];
    // $sql=mysqli_query($conn,"select * from recruiter where email= $email;");
@@ -73,6 +83,7 @@ include('header.php')?>
         if($check){
           while($row=mysqli_fetch_assoc($sql)){
             ?>
+             <a class="mail_ahref" style="text-decoration:none" href="mails.php?id=<?php echo $row['mail_id'] ?>">
                 <div class="row" id="<?php echo $row["mail_id"]; ?>" onclick="openEmail(this)">
                     <div class="column">
                         <p class="col-2"><?php echo $row["toEmail"]; ?> <!-- <span><?php //echo $row["phone"]; ?></span> --></p>
@@ -83,6 +94,7 @@ include('header.php')?>
                         <!-- <span class="col-span-3"><a href='./includes/delete.php?id=<?php// echo $row["contact_id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a></span> -->
                     </div>
                 </div>
+              </a>
         <?php }}?>
         </div>
 
@@ -107,18 +119,22 @@ include('header.php')?>
     </div>
 </div>
 
-
-   <div class="section3">
+  <?php 
+        if($id=$_GET['id']){
+          ?>  
+   <div class="section3" id="sec3">
         	<div class="mail_des" id="des">
         		<?php
-        		$id = "<script>document.writeln(y);</script>" ;
-        		 $id= $_COOKIE["mail_id"];
-        		 // echo $id;
+        		// $id = "<script>document.writeln(y);</script>" ;
+        		 // $id=$_GET['id'];
+        		  // echo $id;
+
 				$sql=mysqli_query($conn,"select * from send_mail where mail_id ='$id'");
 				$check=mysqli_num_rows($sql)>0;
 				if($check){
 					while($row=mysqli_fetch_assoc($sql)){
 						?>
+        
 				<div class="header">
 					<p class="col_1"><img src="img/mail.JPG"></p>
 					<span class="col_span_1"><?php echo $row["toEmail"]; ?></span>
@@ -140,22 +156,50 @@ include('header.php')?>
                         <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
                           <input type="submit" value="send"><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
                         </div>
-                </div>
+        </div>
+       
+        
 
 				<?php }}?>
         	</div>
         	
     </div>
+     <?php } 
+      else{
+      ?>
+       
+            <div class="section3" id="sec3">
+           
+          </div>
+
+        <?php }?>
+   
 </div>
 </body>
 <?php }} ?>
+
+
 <script>
     function checkdelete(){
         return confirm('Are you sure you want to delete this email?');
     }
 
 </script>
-<!-- <script>
+<script type="text/javascript">
+  function myFunction() {
+  $flag=1;
+}
+</script>
+ <!-- <script type="text/javascript">
+  const result1 = document.querySelector('#result1');
+  const sec3 = document.querySelector('#sec3');
+result1.addEventListener('click',() =>{
+  document.querySelector('#sec3').style.display='block'
+    sec3.classList.add('active');
+})
+</script>
+
+<script>
 function myFunc() {
   var x = document.getElementById("des");
   if (x.style.display === "none") {
@@ -166,21 +210,22 @@ function myFunc() {
 }
 
 </script> -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	let y;
 	function openEmail(e){
 		console.log(e.id);
 		y=e.id;
 		// document.cookie = escape("mail_id") + "=" + escape("y") + ;
-		createCookie("mail_id",y,1);
+    window.location.reload();
+		createCookie("mail_id",y,30);
 		window.location.reload();
 	}
-	function createCookie(name, value, days) {
+	function createCookie(name, value, seconds) {
     var expires;
       
-    if (days) {
+    if (seconds) {
         var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        date.setTime(date.getTime()+(30*1000));
         expires = "; expires=" + date.toGMTString();
     }
     else {
@@ -191,3 +236,4 @@ function myFunc() {
         escape(value) + expires + "; path=/";
 }
 </script>
+ -->
