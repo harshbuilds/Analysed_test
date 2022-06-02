@@ -154,9 +154,9 @@ else{
         Add more
     </a>
  <div class="para-profileContainer"> 
-    <input type="text"  class="form-input" name="compname[]" placeholder="Company Name" required>
-    <input type="text"  class="form-input" name="role[]" placeholder="Role" required>
-    <input type="text"  class="form-input" name="duration[]" placeholder="Duration" required>
+    <input type="text"  class="form-input" name="compname" placeholder="Company Name" required>
+    <input type="text"  class="form-input" name="role" placeholder="Role" required>
+    <input type="text"  class="form-input" name="duration" placeholder="Duration" required>
 <!-- 
     <input type="text"  class="form-input" name="compname[]" placeholder="Company Name" required>
     <input type="text"  class="form-input" name="role[]" placeholder="Role" required>
