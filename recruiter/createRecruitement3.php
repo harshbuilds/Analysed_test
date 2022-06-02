@@ -71,7 +71,7 @@
                                 <div class="row-recruiter inputs-for-add-client-below-image-box" id="block1">
                                     <p class="select-for-select-image-box-below-inputs right-side">
                                         <label for="default-select-for-no.3">Package type *</label>
-                                            <select name="Package_type"id="default-select-for-no.3" class="default-select-for-add-client-1">
+                                            <select name="Package_type"id="default-select-for-no.3" class="default-select-for-add-client-1" required>
                                                 <option value="Dollars" default>Dollars (AUS)</option>
                                                 <option value="1">Open</option>
                                                 <option value="2">Closed</option>
