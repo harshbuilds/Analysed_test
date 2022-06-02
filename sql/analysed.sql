@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 06:55 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Jun 02, 2022 at 02:21 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -2065,6 +2065,7 @@ INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, 
 (17, 0, '', '', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', '', '', '', '', '', '1000000', '90000', '', '90');
 
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `jobseeker`
 --
@@ -2186,6 +2187,7 @@ INSERT INTO `notes` (`id`, `firstname`, `note_type`, `reference_to`, `Job_refere
 (26, 'John Smith', 'Resume Evaluation', '1', 1, 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum.', '90 min', '2021-10-21', '2021-10-21', '');
 
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `profile_db_js`
 --
@@ -2217,30 +2219,6 @@ CREATE TABLE `profile_db_js` (
 
 INSERT INTO `profile_db_js` (`jobs_id`, `skill`, `git`, `linkedin`, `twitter`, `about`, `b_colname`, `b_degree`, `b_syey`, `m_colname`, `m_degree`, `m_syey`, `compname`, `role`, `duration`, `projects`, `lang`, `resume`) VALUES
 (7, 'html,css', 'cc', 'cc', 'cc', 'khalid', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', 'cc', '68_Expt3.pdf');
-
--- ------------------------------------------------------------------------------
---
--- Table structure for table `query`
---
-
-CREATE TABLE `query` (
-  `query_id` int(11) NOT NULL,
-  `Question` varchar(225) NOT NULL,
-  `resp_name` varchar(225) NOT NULL,
-  `resp_img` varchar(225) NOT NULL,
-  `resp_ans` varchar(225) NOT NULL,
-  `resp_time` date NOT NULL DEFAULT current_timestamp(),
-  `ques_time` date NOT NULL DEFAULT current_timestamp(),
-  `resp_date` date NOT NULL DEFAULT current_timestamp(),
-  `ques_date` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `query`
---
-
-INSERT INTO `query` (`query_id`, `Question`, `resp_name`, `resp_img`, `resp_ans`, `resp_time`, `ques_time`, `resp_date`, `ques_date`) VALUES
-(11, 'how to update', 'new', '', 'update using files upload', '2022-03-23', '2022-03-30', '2022-03-30', '2022-03-30');
 
 -- --------------------------------------------------------
 
@@ -2276,6 +2254,31 @@ INSERT INTO `profile_db_rec` (`recruiter_id`, `about`, `b_colname`, `b_degree`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `query`
+--
+
+CREATE TABLE `query` (
+  `query_id` int(11) NOT NULL,
+  `Question` varchar(225) NOT NULL,
+  `resp_name` varchar(225) NOT NULL,
+  `resp_img` varchar(225) NOT NULL,
+  `resp_ans` varchar(225) NOT NULL,
+  `resp_time` date NOT NULL DEFAULT current_timestamp(),
+  `ques_time` date NOT NULL DEFAULT current_timestamp(),
+  `resp_date` date NOT NULL DEFAULT current_timestamp(),
+  `ques_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `query`
+--
+
+INSERT INTO `query` (`query_id`, `Question`, `resp_name`, `resp_img`, `resp_ans`, `resp_time`, `ques_time`, `resp_date`, `ques_date`) VALUES
+(11, 'how to update', 'new', '', 'update using files upload', '2022-03-23', '2022-03-30', '2022-03-30', '2022-03-30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `recruiter`
 --
 
@@ -2294,22 +2297,23 @@ CREATE TABLE `recruiter` (
   `password` varchar(50) NOT NULL,
   `confirmpassword` varchar(50) NOT NULL,
   `consultant` varchar(225) NOT NULL,
-  `rec_img` longblob DEFAULT NULL
+  `rec_img` longblob DEFAULT NULL,
+  `referralStr` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recruiter`
 --
 
-INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `consultant`, `rec_img`) VALUES
-(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', '', NULL),
-(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', '', NULL),
-(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', '', NULL),
-(4, 'nat', 'white', 'nat@gmail.com', '67564534', 'london', 'facebook', 'developer', 'Alternative Dispute Resolution', 'nat@facebook.com', '', 'nat@11', 'nat@11', 'on', NULL),
-(5, 'jessi', 'lingard', 'jes@gmail.com', '87675645', 'Richmond town', 'youtube', 'HR', 'Information Technology/IT', 'jes@youtube.com', 'Moscow', 'jes@11', 'jes@11', '', NULL),
-(6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL),
-(7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL),
-(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL);
+INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `number`, `address`, `company_name`, `designation`, `industry`, `off_email`, `off_address`, `password`, `confirmpassword`, `consultant`, `rec_img`, `referralStr`) VALUES
+(1, 'jane', 'doe', 'jane@gmail.com', '8754875348', 'bangalore', 'analysed', 'Software engineer', '', 'jane@analysed.ac.in', 'bangalore', 'jane@11', 'jane@11', '', NULL, ''),
+(2, 'noah', 'c', 'noah@gmail.com', '8744874858', 'delhi', 'google', 'SE', '', 'noah@google.com', 'delhi', 'noah', 'noah', '', NULL, ''),
+(3, 'John', 'roe', 'john@gmail.com', '3984739487', 'mumbai', 'amazon', 'manager', '', 'john@amazon.com', 'mumbai', 'john@22', 'john@22', '', NULL, ''),
+(4, 'nat', 'white', 'nat@gmail.com', '67564534', 'london', 'facebook', 'developer', 'Alternative Dispute Resolution', 'nat@facebook.com', '', 'nat@11', 'nat@11', 'on', NULL, ''),
+(5, 'jessi', 'lingard', 'jes@gmail.com', '87675645', 'Richmond town', 'youtube', 'HR', 'Information Technology/IT', 'jes@youtube.com', 'Moscow', 'jes@11', 'jes@11', '', NULL, ''),
+(6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL, ''),
+(7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL, ''),
+(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -2359,7 +2363,34 @@ INSERT INTO `send_mail` (`mail_id`, `fromEmail`, `toEmail`, `subjectName`, `mess
 (26, '_abc@acme-challenge.amazon.aws.com', 'bansivora9@gmail.com', 'd', 'dd', ''),
 (27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', ''),
 (28, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'Regarding web development course', 'ssssssssss', ''),
-(29, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'xxxxxxx', 'ssssssssss', '');
+(29, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'xxxxxxx', 'ssssssssss', ''),
+(1, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'sss', 'ssss', ''),
+(2, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ssssss', 'ssssssssssssss', ''),
+(3, 'bansivora9@gmail.com', 'jane@gmail.com', 'ssss', 'ssss', ''),
+(4, 'bansivora9@gmail.com', 'jane@gmail.com', 'Regarding web development course', 'sss', 'Agrawal healthcare.jpg'),
+(5, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(6, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(7, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(8, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(9, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
+(10, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'sASAsa', ''),
+(11, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hello', 'i am bansi vora', ''),
+(12, 'bansari.mopharma@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hhhh', 'hhhhhh', ''),
+(13, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'hello\r\n', ''),
+(14, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(15, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(16, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
+(17, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'Regarding web development course', 'ss', ''),
+(18, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
+(19, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
+(20, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'heheheellcjiocoic', 'xxx', ''),
+(21, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'xxx', ''),
+(22, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddddd', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', ''),
+(23, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'dd', 'dd', ''),
+(24, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
+(25, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
+(26, '_abc@acme-challenge.amazon.aws.com', 'bansivora9@gmail.com', 'd', 'dd', ''),
+(27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', '');
 
 -- --------------------------------------------------------
 
@@ -2537,467 +2568,6 @@ INSERT INTO `tickets` (`ticket_id`, `name`, `email`, `subject`, `message`, `prio
 (7, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'dfgh', 'on', '2', '', ''),
 (8, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'dfgh', 'on', '2', '', ''),
 (9, 'Anushaya Kumar', 'anushayakumar20@gmai', 'aaa', 'asd', 'on', '2', '', '');
-
--- --------------------------------------------------------
-
-
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 04:46 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `analysed`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `send_mail`
---
-
-CREATE TABLE `send_mail` (
-  `mail_id` int(30) NOT NULL,
-  `fromEmail` varchar(200) NOT NULL,
-  `toEmail` varchar(200) NOT NULL,
-  `subjectName` varchar(200) NOT NULL,
-  `message` varchar(200) NOT NULL,
-  `file` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `send_mail`
---
-
-INSERT INTO `send_mail` (`mail_id`, `fromEmail`, `toEmail`, `subjectName`, `message`, `file`) VALUES
-(1, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'sss', 'ssss', ''),
-(2, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ssssss', 'ssssssssssssss', ''),
-(3, 'bansivora9@gmail.com', 'jane@gmail.com', 'ssss', 'ssss', ''),
-(4, 'bansivora9@gmail.com', 'jane@gmail.com', 'Regarding web development course', 'sss', 'Agrawal healthcare.jpg'),
-(5, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
-(6, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
-(7, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
-(8, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
-(9, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dadads', ''),
-(10, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'sASAsa', ''),
-(11, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hello', 'i am bansi vora', ''),
-(12, 'bansari.mopharma@gmail.com', 'bansari.vora_19@sakec.ac.in', 'hhhh', 'hhhhhh', ''),
-(13, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'hello\r\n', ''),
-(14, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
-(15, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
-(16, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'hh', 'hh', ''),
-(17, 'bansivora9@gmail.com', 'bansari.vora_19@sakec.ac.in', 'Regarding web development course', 'ss', ''),
-(18, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
-(19, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'ddd', 'hhh', ''),
-(20, 'bansari.vora_19@sakec.ac.in', 'bansari.vora_19@sakec.ac.in', 'heheheellcjiocoic', 'xxx', ''),
-(21, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'heheheellcjiocoic', 'xxx', ''),
-(22, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddddd', 'dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', ''),
-(23, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'dd', 'dd', ''),
-(24, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
-(25, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
-(26, '_abc@acme-challenge.amazon.aws.com', 'bansivora9@gmail.com', 'd', 'dd', ''),
-(27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', '');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `send_mail`
---
-ALTER TABLE `send_mail`
-  ADD PRIMARY KEY (`mail_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `send_mail`
---
-ALTER TABLE `send_mail`
-  MODIFY `mail_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 04:46 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `analysed`
---
-
--- --------------------------------------------------------
-
-
---
--- Table structure for table `mail_login`
---
-
-CREATE TABLE `mail_login` (
-  `email` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `mail_login`
---
-
-INSERT INTO `mail_login` (`email`, `password`) VALUES
-('bansivora9@gmail.com', 'bansi9151'),
-('bansivora9@gmail.com', 'bansi9151'),
-('bansivora9@gmail.com', 'bansi9151'),
-('bansivora9@gmail.com', 'bansi9151'),
-('bansivora9@gmail.com', 'bansi9151'),
-('jane@gmail.com', 'jane@11'),
-('bansivora9@gmail.com', 'bansi9151');
--- -----------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `image` varchar(50) NOT NULL,
-  `usertype` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `designation` varchar(50) NOT NULL,
-  `phone_number` varchar(10) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `notification` varchar(50) NOT NULL,
-  `user_details` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `image`, `usertype`, `name`, `designation`, `phone_number`, `email`, `password`, `notification`, `user_details`) VALUES
-(18, 'Ellipse -1@2x.png', 'Job seeker', 'Andrew foy', 'Manager', '9089786767', 'abc12@gmail.com', '1234abcd', 'Allow user to choose settings', 'Can shortlist candidates,Can add a company,'),
-(19, 'Ellipse -2@2x.png', 'client', 'Sam', 'Recruiter', '8909786756', 'abc12@gmail.com', '1234', 'Allow user to choose settings', 'Access to database,Can create a job,Can shortlist candidates,Can add a company,Can add tasks,Can hire candidates,Can view analytics,Can view billing details,Can start or join video calls,Can schedule interviews,Can add candidates,Can reply to queries,Can create contracts,Can edit details of organisation,'),
-(23, '', 'Recruiter', 'neo', 'developer', '8978675645', 'neo@gmail.com', 'neo1', 'Allow email notifications', 'Access to database,Can create a job,Can shortlist candidates,Can add a company,Can add tasks,Can hire candidates,Can view analytics,Can view billing details,Can start or join video calls,Can schedule interviews,Can add candidates,Can reply to queries,Can create contracts,Can edit details of organisation,'),
-(24, '', 'Recruiter', 'neo', 'developer', '8978675645', 'neo@gmail.com', 'neo1', 'Allow email notifications', 'Access to database,Can create a job,Can shortlist candidates,Can add a company,Can add tasks,Can hire candidates,Can view analytics,Can view billing details,Can start or join video calls,Can schedule interviews,Can add candidates,Can reply to queries,Can create contracts,Can edit details of organisation,'),
-(25, '7.jpg', 'Job seeker', 'jay', 'william', '9878564534', 'j@gmail.com', '@g', 'Allow email notifications', 'Access to database,Can create a job,Can shortlist candidates,Can add a company,Can add tasks,Can hire candidates,Can view analytics,Can view billing details,Can start or join video calls,Can schedule interviews,Can add candidates,Can reply to queries,Can create contracts,Can edit details of organisation,');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `candidates`
---
-ALTER TABLE `candidates`
-  ADD PRIMARY KEY (`candidate_id`);
-
---
--- Indexes for table `chat`
---
-ALTER TABLE `chat`
-  ADD PRIMARY KEY (`c_id`);
-
---
--- Indexes for table `client`
---
-ALTER TABLE `client`
-  ADD PRIMARY KEY (`client_id`);
-
---
--- Indexes for table `client_files`
---
-ALTER TABLE `client_files`
-  ADD PRIMARY KEY (`file_id`);
-
---
--- Indexes for table `client_notes`
---
-ALTER TABLE `client_notes`
-  ADD PRIMARY KEY (`note_id`);
-
---
--- Indexes for table `company_task`
---
-ALTER TABLE `company_task`
-  ADD PRIMARY KEY (`job_id`);
-
---
--- Indexes for table `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`contact_id`);
-
---
--- Indexes for table `contact_us`
---
-ALTER TABLE `contact_us`
-  ADD PRIMARY KEY (`contact_us_id`);
-
---
--- Indexes for table `event`
---
-ALTER TABLE `event`
-  ADD PRIMARY KEY (`event_id`);
-
---
--- Indexes for table `files`
---
-ALTER TABLE `files`
-  ADD PRIMARY KEY (`file_id`);
-
---
--- Indexes for table `interview`
---
-ALTER TABLE `interview`
-  ADD PRIMARY KEY (`int_id`);
-
---
--- Indexes for table `jobapply`
---
-ALTER TABLE `jobapply`
-  ADD PRIMARY KEY (`application_id`);
-
---
--- Indexes for table `joblistings`
---
-ALTER TABLE `joblistings`
-  ADD PRIMARY KEY (`job_id`);
-
---
--- Indexes for table `jobseeker`
---
-ALTER TABLE `jobseeker`
-  ADD PRIMARY KEY (`jobseeker_id`);
-
---
--- Indexes for table `js_files`
---
-ALTER TABLE `js_files`
-  ADD PRIMARY KEY (`JS_id`);
-
---
--- Indexes for table `notes`
---
-ALTER TABLE `notes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `query`
---
-ALTER TABLE `query`
-  ADD PRIMARY KEY (`query_id`);
-
---
--- Indexes for table `recruiter`
---
-ALTER TABLE `recruiter`
-  ADD PRIMARY KEY (`recruiter_id`);
-
---
--- Indexes for table `starred_jobs`
---
-ALTER TABLE `starred_jobs`
-  ADD PRIMARY KEY (`job_id`);
-
---
--- Indexes for table `task`
---
-ALTER TABLE `task`
-  ADD PRIMARY KEY (`task_id`);
-
---
--- Indexes for table `task_restriction`
---
-ALTER TABLE `task_restriction`
-  ADD PRIMARY KEY (`restr_id`);
-
---
--- Indexes for table `tickets`
---
-ALTER TABLE `tickets`
-  ADD PRIMARY KEY (`ticket_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `candidates`
---
-ALTER TABLE `candidates`
-  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `chat`
---
-ALTER TABLE `chat`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `client`
---
-ALTER TABLE `client`
-  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `client_files`
---
-ALTER TABLE `client_files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `client_notes`
---
-ALTER TABLE `client_notes`
-  MODIFY `note_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `company_task`
---
-ALTER TABLE `company_task`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `contacts`
---
-ALTER TABLE `contacts`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `contact_us`
---
-ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `event`
---
-ALTER TABLE `event`
-  MODIFY `event_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `files`
---
-ALTER TABLE `files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
-
---
--- AUTO_INCREMENT for table `interview`
---
-ALTER TABLE `interview`
-  MODIFY `int_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `jobapply`
---
-ALTER TABLE `jobapply`
-  MODIFY `application_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `joblistings`
---
-ALTER TABLE `joblistings`
-  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `jobseeker`
---
-ALTER TABLE `jobseeker`
-  MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `js_files`
---
-ALTER TABLE `js_files`
-  MODIFY `JS_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `notes`
---
-ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- AUTO_INCREMENT for table `query`
---
-ALTER TABLE `query`
-  MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `recruiter`
---
-ALTER TABLE `recruiter`
-  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `starred_jobs`
---
-ALTER TABLE `starred_jobs`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `task`
---
-ALTER TABLE `task`
-  MODIFY `task_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `task_restriction`
---
-ALTER TABLE `task_restriction`
-  MODIFY `restr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tickets`
---
-ALTER TABLE `tickets`
-  MODIFY `ticket_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
