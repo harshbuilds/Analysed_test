@@ -40,7 +40,7 @@
 
                         <label for="file-upload-create-rec-e" ><p id="jd" style="font-size:18px;margin-right:12px;color:#333333;">Job description</p>
                         <label class="default-button-for-recruiter-dashboard file-upload"  id="browse" >
-                            <input type="file" name="file"style="display: none">Browse</label>
+                            <input type="file" name="file"style="display: none" required>Browse</label>
                         </label>
                     </div>
 
@@ -188,11 +188,11 @@
                                     </p>
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1 create-rec-100-temp-p">
                                             <label for="default-select-for-no.10" id="fields">Starting time *</label>
-                                            <input id="default-select-for-no.10" name="Starting_time" type="time" class="default-input-for-add-client-1" placeholder="HH:MM:SS" >
+                                            <input id="default-select-for-no.10" name="Starting_time" type="time" class="default-input-for-add-client-1" placeholder="HH:MM:SS" required>
                                     </p>
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1 create-rec-100-temp-p">
                                             <label for="default-select-for-no.10" id="fields">Ending time *</label>
-                                            <input id="default-select-for-no.10" name="Ending_time" type="time" class="default-input-for-add-client-1" placeholder="HH:MM:SS" >
+                                            <input id="default-select-for-no.10" name="Ending_time" type="time" class="default-input-for-add-client-1" placeholder="HH:MM:SS"required >
                                     </p>
                                     <p class="input-para-add-client-ekam-1 fx-city-name">
                                             <label for="default-select-for-no.10" id="fields">Client margin</label>
@@ -200,11 +200,11 @@
                                     </p>
                                     <p class="input-para-add-client-ekam-1">
                                             <label for="default-select-for-no.10" id="fields">Contact information for the advert *</label>
-                                            <input id="default-select-for-no.10" name="Contact_information_for_the_advert" style="color: #979797;" type="text" class="default-input-for-add-client-1" placeholder="Name">
+                                            <input id="default-select-for-no.10" name="Contact_information_for_the_advert" style="color: #979797;" type="text" class="default-input-for-add-client-1" placeholder="Name"required>
                                     </p>
                                     <p class="input-para-add-client-ekam-1 ">
                                         <label for="default-select-for-no.10"> &nbsp;</label>
-                                            <input id="default-select-for-no.10" name="advert_contact_no"  style="color: #979797;" type="tel" class="default-input-for-add-client-1" placeholder="Contact number">
+                                            <input id="default-select-for-no.10" name="advert_contact_no"  style="color: #979797;" type="tel" class="default-input-for-add-client-1" placeholder="Contact number"required>
                                     </p>
 
                                 </div>
