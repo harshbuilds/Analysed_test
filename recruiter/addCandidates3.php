@@ -61,7 +61,7 @@ if (isset($_POST['next'])) {
                                     <div class="input-signup-div fx-city-name-1">
                                             <label for="file-upload">Upload resume </label>
                                             <label for="file-upload"><span class="span-class-file-upload">(*.docx, *.rtf, *.txt, *.pdf) <i class="fa fa-upload" aria-hidden="true"></i></span></label>
-                                            <input type="file" name="resume" id="file-upload" placeholder="docx" style="display:none;" />
+                                            <input type="file" name="resume" id="file-upload" placeholder="docx" style="display:none;" required />
                                     </div>
                                     <p class="input-para-add-client-ekam-1 talents">
                                         <label for="default-input-for-no.1">Skills*</label>
