@@ -62,19 +62,19 @@
                                                         <!-- LAST CONTACT -->
                             <p class="input-para-add-client-ekam-1 calendar-input-addContact-1" >
                                 <label for="default-input-for-no.1 ">Last Contact </label>
-                                <input type="date" name="last_contact" class="default-input-for-add-client-1" placeholder="Enter current job title of candidate" id="default-input-for-no.1">
+                                <input type="date" name="last_contact" class="default-input-for-add-client-1" placeholder="Enter current job title of candidate" id="default-input-for-no.1" required>
                             </p>
                                                         <!-- LAST VISIT -->
                             <p class="input-para-add-client-ekam-1 calendar-input-addContact-1" >
                                 <label for="default-input-for-no.1011">Last visit</label>
-                                <input type="date" name="lastvisit" class="default-input-for-add-client-1" placeholder="Candidate currently employed in?" id="default-input-for-no.1011">
+                                <input type="date" name="lastvisit" class="default-input-for-add-client-1" placeholder="Candidate currently employed in?" id="default-input-for-no.1011"required>
                             </p>
                             </div>
                                                         <!-- VISIBILITY -->
                             <div class="row-recruiter inputs-for-add-client-below-image-box">
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Visibility *</label>
-                                    <select name="visibility" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="visibility" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>Internal</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -84,7 +84,7 @@
                                                             <!-- VALIDITY -->
                                 <p class="input-para-add-client-ekam-1 right-side" style="margin-left: 0px;">
                                     <label for="default-select-for-no1">Validity*</label>
-                                    <select name="validity" id="default-select-for-no.1" class="default-select-for-add-client-1">
+                                    <select name="validity" id="default-select-for-no.1" class="default-select-for-add-client-1"required>
                                         <option value="0" default>System verified</option>
                                         <option value="1">Open</option>
                                         <option value="2">Closed</option>
@@ -94,7 +94,7 @@
                                                                     <!-- LINKEDIN PROFILE  -->
                                     <p class="input-para-add-client-ekam-1">
                                         <label for="default-input-for-no.2">Link to LinkedIn profile </label>
-                                        <input type="url" name="LinkedIn_profile" class="default-input-for-add-client-1" placeholder="Profile URL" id="default-input-for-no.2">
+                                        <input type="url" name="LinkedIn_profile" class="default-input-for-add-client-1" placeholder="Profile URL" id="default-input-for-no.2"required>
                                     </p>
                             </div>
                                                             <!-- SAVE BUTTON -->
