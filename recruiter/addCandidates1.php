@@ -40,7 +40,7 @@ session_start();            //session has been started
                 <div class="row-recruiter image-box-right-side-add-client">
                         <div class="left-side-image-box-add-client-1">
                             <div class="sub-divs-image-box-right-side-add-client">
-                                <input type="file" name="image" class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client" />
+                                <input type="file" name="image" class="input-image-upload-ekam-1-add-client" id="input-image-upload-ekam-1-add-client" required />
                                 <label class="label-for-image-upload-ekam-1client" for="input-image-upload-ekam-1-add-client">
                                     <h2><i class="" aria-hidden="true"></i></h2>
                                     <p class="position-absolute-image-upload-e"><i class="fa fa-camera" aria-hidden="true"></i></p>
@@ -72,7 +72,7 @@ session_start();            //session has been started
                                     </p>
                                     <p class="select-for-select-image-box-below-inputs fx-city-name-1">
                                         <label for="default-select-for-no.3">Status</label>
-                                            <select name="Industry" id="default-select-for-no.3" class="default-select-for-add-client-1">
+                                            <select name="Industry" id="default-select-for-no.3" class="default-select-for-add-client-1"required>
                                                 <option value="0" default>Temporary to permanent</option>
                                                 <option value="1">Open</option>
                                                 <option value="2">Closed</option>
@@ -85,7 +85,7 @@ session_start();            //session has been started
                                     </p>
                                     <p  class="input-para-add-client-ekam-1 fx-city-name-1">
                                         <label for="default-select-for-no.2">Country</label>
-                                        <select name="ownership" id="default-select-for-no.2" class="default-select-for-add-client-1">
+                                        <select name="ownership" id="default-select-for-no.2" class="default-select-for-add-client-1"required>
                                             <option value="0" default>Select Ownership</option>
                                             <option value="India">India</option>
                                             <option value="Australia">Australia</option>
@@ -94,15 +94,15 @@ session_start();            //session has been started
                                     </p>
                                     <p class="input-para-add-client-ekam-1  fx-city-name-1">
                                         <label for="default-select-for-no.13">City name</label>
-                                        <input id="default-select-for-no.13" name="cityname" type="text" class="default-input-for-add-client-1" placeholder="Enter your city name">
+                                        <input id="default-select-for-no.13" name="cityname" type="text" class="default-input-for-add-client-1" placeholder="Enter your city name" required>
                                     </p>
                                     <p class="input-para-add-client-ekam-1  fx-city-name-1">
                                             <label for="default-select-for-no.13">Zipcode</label>
-                                            <input id="default-select-for-no.13" name="Zipcode" type="text" class="default-input-for-add-client-1" placeholder="Enter zipcode of city">
+                                            <input id="default-select-for-no.13" name="Zipcode" type="text" class="default-input-for-add-client-1" placeholder="Enter zipcode of city" required>
                                     </p>
                                     <p class="select-for-select-image-box-below-inputs  fx-city-name-1">
                                         <label for="default-select-for-no.6">State</label>
-                                            <select name="State" id="default-select-for-no.6" class="default-select-for-add-client-1">
+                                            <select name="State" id="default-select-for-no.6" class="default-select-for-add-client-1"required >
                                                 <option value="0" default>Andhra Pradesh</option>
                                                 <option value="karnataka">karnataka</option>
                                                 <option value="UP">UP</option>
