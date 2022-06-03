@@ -1,5 +1,6 @@
 <?php
-   
+   session_start();
+$recruiter_id=$_SESSION['recruiter_id'];
    $name = $_POST["name"];
     $email = $_POST["email"];
      $subject = $_POST["subject"];
@@ -12,8 +13,8 @@
 
         $conn = mysqli_connect('localhost','root','','analysed');
 
-        $sql = mysqli_query($conn,"INSERT INTO `tickets`(`name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES 
-         ('$name','$email','$subject','$message','$priority','$tickettype')");
+        $sql = mysqli_query($conn,"INSERT INTO `tickets`(`recruiter_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES 
+         ('$recruiter_id', $name','$email','$subject','$message','$priority','$tickettype')");
 
         if($sql){
             unset($_POST['submit']);
