@@ -304,14 +304,14 @@
     </div>
 </div>
 <div class="create-ticket-recruiter-ekam">
-    <form action="includes/ticket.php" method="post">
+    <form action="recruiter/includes/ticket_js.php" method="post">
         <p class="name-for-form-create-ticket-recruiter-ekam">Create ticket</p>
         <br>
         <div class="row-recruiter create-ticket-main-recruiter-complaints">
             <div class="create-ticket-subTicket-recruiter">
                 <span>
                     <label for="name-input-complaint-tickets-recruiter">Name *</label>
-                    <input type="text" id="name-input-complaint-tickets-recruiter" placeholder="Recruiter name" name="name">
+                    <input type="text" id="name-input-complaint-tickets-recruiter" placeholder="Jobseeker name" name="name">
                 </span>
                 <span class="span-section-for-email-andlabels-complaints">
                     <label for="Email-input-complaint-tickets-recruiter">Email *</label>
@@ -331,7 +331,7 @@
         
         <div class="row-recruiter select-options-for-complaint-tickets">
             <span style="width:45%">
-                <label for="options-input-complaint-tickets-recruiter">Subject *</label>
+                <label for="options-input-complaint-tickets-recruiter">Priority *</label>
                 <div class="row-recruiter select-options" style="justify-content:space-around;" name="priority">
                     <div class="row-recruiter" style="margin-right:35px"> <label for="options-input-complaint-tickets-recruiter-1" value="high"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-1"> High</label></div>
                     <div class="row-recruiter" style="margin-right:35px"> <label for="options-input-complaint-tickets-recruiter-2" value="medium"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-2"> Medium</label></div>
