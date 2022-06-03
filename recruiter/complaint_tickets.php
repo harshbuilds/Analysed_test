@@ -46,6 +46,9 @@
         <div class="recent-complaint-tickets-recruiter active complaint-tickets-recruiter-cards-div" id="complaints">
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
+                    
+                    <!-- Add recruiter id here (SQL QUERY) -->
+
                     <span>
                         <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
                         <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
@@ -331,7 +334,7 @@
         
         <div class="row-recruiter select-options-for-complaint-tickets">
             <span>
-                <label for="options-input-complaint-tickets-recruiter">Subject *</label>
+                <label for="options-input-complaint-tickets-recruiter">Priority *</label>
                 <div class="row-recruiter" style="justify-content:space-around;" name="priority">
                     <div class="row-recruiter" style="margin-right:35px"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-1"> <label for="options-input-complaint-tickets-recruiter-1" value="high">High</label></div>
                     <div class="row-recruiter" style="margin-right:35px"><input type="radio" name="priority" style="margin-right:8px" id="options-input-complaint-tickets-recruiter-2"> <label for="options-input-complaint-tickets-recruiter-2" value="medium">Medium</label></div>
