@@ -2543,33 +2543,46 @@ INSERT INTO `task_restriction` (`restr_id`, `restr_name`, `restr_img`, `restr_de
 --
 
 CREATE TABLE `tickets` (
-  `ticket_id` int(255) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `subject` varchar(20) NOT NULL,
-  `message` varchar(100) NOT NULL,
-  `priority` varchar(20) NOT NULL,
-  `tickettype` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL,
-  `reply` varchar(100) NOT NULL
+  `recruiter_id` int(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `priority` varchar(255) NOT NULL,
+  `tickettype` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tickets`
 --
 
-INSERT INTO `tickets` (`ticket_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`, `status`, `reply`) VALUES
-(1, '', '', '', '', '', '', '', ''),
-(2, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'SDCFV', '', '1', '', ''),
-(3, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'SDCFV', '', '1', '', ''),
-(4, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'SDCFV', '', '1', '', ''),
-(5, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'wertyu', 'on', '1', '', ''),
-(6, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'wertyu', 'on', '1', '', ''),
-(7, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'dfgh', 'on', '2', '', ''),
-(8, 'Anushaya Kumar', 'anushayakumar20@gmai', 'esss', 'dfgh', 'on', '2', '', ''),
-(9, 'Anushaya Kumar', 'anushayakumar20@gmai', 'aaa', 'asd', 'on', '2', '', '');
+INSERT INTO `tickets` (`recruiter_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES
+(0, 'Bansari Vora', 'bansivora999@gmail.com', 'hello', 'agquywtewrbcrcrfwgcbfvctryueiwopqoiwueytrfgdhjsklamzxncbvgtyrueiwoskjhf', 'on', 'Feedback');
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tickets_js`
+--
+
+CREATE TABLE `tickets_js` (
+  `jobs_id` int(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `priority` varchar(255) NOT NULL,
+  `tickettype` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tickets_js`
+--
+
+INSERT INTO `tickets_js` (`jobs_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES
+(7, 'chatBot', 'bansi@gmail.com', 'Regarding web development course', 'j', 'on', 'Complaint');
+COMMIT;
+
