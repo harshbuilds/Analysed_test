@@ -1,5 +1,6 @@
 
 
+
 <?php
 
    include 'connection1.php';
@@ -82,7 +83,7 @@
         </div>
         <div class="singleTasks_containerDiv">
           <?php
-                      $sql= "select * from js_files";
+                      $sql= "select * from files";
                       $run = mysqli_query($conn,$sql);
                       $i= 1;
 
@@ -96,16 +97,23 @@
                     <p><?php echo $row['added_on']; ?></p>
                 </span>
                 <span>
-                    <p style="color:#297FB8;margin-bottom:5px;"><?php echo $row['file_name']; ?></p>
-                    <p><?php echo $row['file_size']; ?> kb</p>
+                    <p style="color:#297FB8;margin-bottom:5px;"><?php echo $row['files']; ?></p>
+                    <p><?php echo $row['kb']; ?> kb</p>
                 </span>
                 <span>
                     <p class="light_spanItem_singleTask_myTasks">Type of Doc</p>
-                    <p><?php echo $row['doc_type']; ?></p>
+                    <p><?php echo $row['file_type']; ?></p>
                 </span>
-                <div class="button-div_myTasks">
-                    <button style="font-size:14px;color:#EC4551">Delete <i class="fa fa-trash" aria-hidden="true"></i></button>
-                    <button style="color:#3598DB">Download <i class="fa fa-file" aria-hidden="true"></i></button>
+                <span>
+                    <p><img src="img/Prof-1.png" height="50px" width="50px"></p>
+                </span>
+                <span style="margin-right:30px">
+                    <p class="light_spanItem_singleTask_myTasks">Candidate name</p>
+                    <p class="j1"><b><?php echo $row["firstname"]; ?></b></p>
+                </span>
+                 <div class="button-div_myTasks">
+                    <button style="font-size:14px;color:#EC4551"><a href='./include/delete_files.php?id=<?php echo $row["file_id"] ?>' onclick='checkdelete()' style="color:red;text-decoration:none">Delete <i class="fa fa-trash" aria-hidden="true"></i></a></button><br><br>
+                    <button style="color:#3598DB"><a style="color:#3598DB;text-decoration:none" href="img/<?php echo $row["files"]; ?>" download>Download <i class="fa fa-file" aria-hidden="true"></i></a></button>
                 </div>
             </div>
 
