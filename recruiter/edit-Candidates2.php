@@ -2,7 +2,7 @@
 <?php
 include 'connection1.php';     //database connection page included
 session_start();      //session has been started
-
+$c_id=$_GET['c_id'];
 if (isset($_POST['next'])) {
 
 
@@ -50,10 +50,10 @@ if (isset($_POST['next'])) {
         <!-- <button class="save_button_addClient default-button-for-recruiter-dashboard">Save</button> -->
         <div class="row-recruiter container-for-add-client-main">
             <div class="left-side-row-for-add-client-container-1">
-                <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addClient-1"><a href="edit-Candidates1.php" >Personal infromation</a></p>
+                <p class="links-for-add-client-low-side-row-for-add-client active" id="link-categories-addClient-1"><a href="edit-Candidates1.php?c_id=<?php echo $c_id?>" >Personal infromation</a></p>
                 <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addClient-2"><a href="#" class="active">Professional infromation</a></p>
-                <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addClient-3"><a href="edit-Candidates3.php">Skills & Qualification</a></p>
-                <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addClient-3"><a href="edit-Candidates4.php">Additional information</a></p>
+                <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addClient-3"><a href="edit-Candidates3.php?c_id=<?php echo $c_id?>">Skills & Qualification</a></p>
+                <p class="links-for-add-client-low-side-row-for-add-client" id="link-categories-addClient-3"><a href="edit-Candidates4.php?c_id=<?php echo $c_id?>">Additional information</a></p>
             </div>
             <div class="right-side-row-for-add-client-container-1" id="general-information-addclient-1">
             <div class="row-recruiter" style="margin-bottom: 30px;">
@@ -64,12 +64,12 @@ if (isset($_POST['next'])) {
 
 
 
-                                 $sql=mysqli_query($conn,"select * from candidates where candidate_id='".$_SESSION['cid']."'");
+                                 $sql=mysqli_query($conn,"select * from candidates where candidate_id='".$c_id."'");
                                  $check=mysqli_num_rows($sql)>0;
                                  if($check){
                                      while($row=mysqli_fetch_assoc($sql)){
                         ?>
-                <form action="edit-Candidates3.php" method="post">
+                <form action="edit-Candidates3.php?c_id=<?php echo $c_id?>" method="post">
                 <div class="row-recruiter inputs-for-add-client-below-image-box">
                     <div class="right-side-image-box-right-add-client-1">
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
@@ -130,7 +130,7 @@ if (isset($_POST['next'])) {
                                         </span>
                                     </span>
                                 </div>
-                                <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
+                                <input href="edit-Candidates3.php?c_id=<?php echo $c_id?>" type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" >
                         </div>
                     </form>
                 <?php } } ?>

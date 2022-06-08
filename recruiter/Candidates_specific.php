@@ -34,7 +34,7 @@ session_start();
 </svg> <?php echo $row["city_name"]; ?></h4>
 </div>
 <div class="button">
-<button><a href="edit-Candidates1.php" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button><br><br><br><br>
+<button><a href="edit-Candidates1.php?c_id=<?php echo $c_id?>" style="text-decoration: none;color:#3598DB;">Edit candidate</a></button><br><br><br><br>
 <button ><a href="img/<?php echo $row["resume"]; ?>" target="_blank" style="text-decoration: none;color:#3598DB;">View Resume</a></button>
   </div>
   <div class="options">
