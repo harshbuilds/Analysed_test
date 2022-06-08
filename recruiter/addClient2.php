@@ -4,7 +4,8 @@ session_start();                 //session has been started
 
 
 
-
+if (isset($_POST['next']))
+{
 // posting all data from personal information page to global variables using $_Session[''
 $_SESSION['main_email']  = $_POST['main_email'];
 $_SESSION['contact_no']   = $_POST['contact_no'];
@@ -13,7 +14,7 @@ $_SESSION['city'] = $_POST['city'];
 $_SESSION['zipcode']   = $_POST['zipcode'];
 $_SESSION['state']   = $_POST['state'];
 $_SESSION['country']    = $_POST['country'];
-
+}
 ?>
 
 <?php include('header.php')?>

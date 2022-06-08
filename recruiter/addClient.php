@@ -125,7 +125,7 @@ session_start();            //session has been started
                         <input type="number" id="default-select-for-no.10" name="contract_fee" class="default-input-for-add-client-1" placeholder="Enter value in %" required>
                     </p>
                     </div>
-                    <a href="addClient1.php"> <input type = "submit" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" ></a> <!-- linked to addClient1 pg -->
+                     <input type = "submit" href="addClient1.php" name = "next" class="save_button_addClient default-button-for-recruiter-dashboard" value="Save" > <!-- linked to addClient1 pg -->
             </div>
 
         </div>

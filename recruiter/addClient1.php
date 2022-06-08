@@ -4,9 +4,10 @@ include 'connection1.php';     //database connection page included
 session_start();        //session has been started
 
 
-
+if (isset($_POST['next']))
+{
 // posting all data from personal information page to global variables using $_Session['']
-$_SESSION['company_name']  = $_POST['company_name'];
+$_SESSION['company_name']  = ($_POST['company_name'])?$_POST['company_name'] :null;
 $_SESSION['status']   = $_POST['status'];
 $_SESSION['company']    = $_POST['company'];
 $_SESSION['ownership'] = $_POST['ownership'];
@@ -34,7 +35,7 @@ $_SESSION['contract_fee']      = $_POST['contract_fee'];
         echo "something wrong";
     }
 
-
+}
 
 ?>
 
