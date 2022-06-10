@@ -231,7 +231,7 @@ select {
 }
 .info1 {
   text-align: left;
-  padding-left: 60px;
+  padding-left: 22px;
 }
 
 #r1 {
@@ -269,6 +269,7 @@ select {
     display: flex;
     width: 350px;
     justify-content: space-around;
+    overflow: scroll;
   }
   #align-of-card {
     position: relative;
@@ -295,4 +296,5 @@ select {
     left: -475px;
     display: none;
   }
+
 }
