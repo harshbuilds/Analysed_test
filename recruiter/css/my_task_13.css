@@ -31,6 +31,32 @@
     /* display:flex; */
     margin-left: 140px;
 }
+/* #col5 {
+  position: relative;
+  bottom: 216px;
+  right: 62px;
+}
+#col7 {
+  position: relative;
+  bottom: 214px;
+}
+#coll5 {
+  position: relative;
+  bottom: 353px;
+  right: 62px;
+}
+.col-4{
+  position:relative;
+  bottom:335px;
+} */
+/* #col44{
+  position:relative;
+  bottom:477px;
+}
+#col4{
+  position:relative;
+  bottom:622px;
+} */
 .a1{
     color: #333333;
     font-family: CeraM;
@@ -137,166 +163,89 @@ input.largerCheckbox {
 .back_img,.last_img{
   display: none;
 }
-@media screen and (max-width: 609px){
-  .back_img{
-    display: flex;
-        position: relative;
-    top: -56px;
-  }
-  .a1{
-    position: relative;
-    left: -122px;
-    top: -45px;
-    font-size: 21px;
-  }
-  .a2{
-        position: relative;
-    left: -122px;
-    top: -45px;
-    color: black;
-    font-size: 12px;
-  }
-  #nac,#ac{
-    display: none;
-  }
-  .c1,.c2{
-        position: relative;
-    left: -170px;
-    top: -93px;
-    font-size: 14px;
-  }
-  .c2{
-    top: -95px;
-  }
-  .c3{
-        position: relative;
-    left: -170px;
-    top: -90px;
-    font-size: 14px;
-    margin-right: -100px;
-  }
-  .c4,.c4_1,.c4_2,.c4_3,.c4_4,.c4_5,.c4_6,.c4_7,.c4_8{
-    position: relative;
-    left: -170px;
-    top: -99px;
-    white-space: nowrap;
-    font-size: 12px;
-  }
-  .f2,.f2_1,.f2_2,.f2_3{
-    position: relative;
-    top: -96px;
-    left: -170px;
-    width: 302px;
-  }
-  #sel{
-        position: relative;
-    top: -99px;
-    left: -25px;
-  }
-  .m1{
-    position: relative;
-    top: -102px;
-    left: -26px;
-    font-size: 16px;
-  }
-  .c4_1{
-       left: -306px;
-    top: 27px;
-  }
-  .f2_1{
-    left: -306px;
-    top: 23px;
-  }
-  .c4_2{
-        left: -170px;
-    top: -76px;
-  }
-  .f2_2{
-    left: -170px;
-    top: -81px;
-  }
-  .c4_3{
-       left: -306px;
-    top: 27px;
-  }
-  .f2_3{
-    left: -306px;
-    top: 23px;
-  }
-   .c4_4{
-        left: -170px;
-    top: -33px;
-  }
-  .f5{
-        left: -170px;
-    top: -33px;
-    position: relative;
-    width: 302px;
-  }
-  .c4_5{
-    left: -243px;
-    top: 68px;
-  }
-  #f6{
-        position: relative;
-    top: 57px;
-    left: -243px;
-    width: 302px;
-  }
-  .c4_6{
-        left: -319px;
-    top: 161px;
-  }
-  #f6_1{
-        position: relative;
-    top: 156px;
-    left: -321px;
-    width: 302px;
-  }
-  .c4_7{
-    top: 98px;
-    left: -161px;
-  }
-  .f4,.f4_1,.f4_2,.f4_3{
-        position: relative;
-    top: 88px;
-    left: -161px;
-  }
-  .f4_1{
-        left: -240px;
-    top: 149px;
-  }
-  .f4_2{
-        left: -318px;
-    top: 217px;
-  }
-  .c4_8{
-        top: 162px;
-    left: -155px;
-  }
-  .f4_3{
-    top: 156px;
-  }
-  .b5{
-    position: relative;
-    left: -324px;
-    top: 223px;
-    width: 251px;
-    padding-left: 60px;
-    background-color: #3598DB;
-  }
-  .last_img{
-       display: flex;
-    position: relative;
-    top: 160px;
-    left: -178px;
-    height: 70px;
-  }
-  #last_img{
-    position: relative;
-    position: relative;
-    left: 60px;
-    top: 9px;
-  }
 
+@media screen and (max-width: 670px){ 
+  .main_body{
+    /* display:flex; */
+    margin-left: 26px;
 }
+.b1{
+  flex-direction: row;
+}
+#ac {
+  position: relative;
+  bottom: 144px;
+  left: 237px;
+  white-space: nowrap;
+}
+#nac {
+  color: #979797;
+  position: relative;
+  left: 51px;
+  bottom: 47px;
+  white-space: nowrap;
+}
+#nnac {
+  color: #979797;
+  position: relative;
+  left: 147px;
+  bottom: 97px;
+  white-space: nowrap;
+}
+#fcolumn {
+  margin-left: -43px;
+}
+.f2, .f2_1, .f2_2, .f2_3 {
+  height: 61px;
+  width: 298px;
+}
+#col5 {
+  position: relative;
+  bottom: -199px;
+  right: 219px;
+}
+#col7 {
+  position: relative;
+  bottom: -87px;
+}
+#col444 {
+  position: relative;
+  /* bottom: 4px; */
+  right: -1px;
+  top: 140px;
+}
+#col4 {
+  position: relative;
+  bottom: -355px;
+  right: 247px;
+}
+#col44 {
+  position: relative;
+  right: 123px;
+  top: 245px;
+}
+#col {
+  position: relative;
+  top: 400px;
+  right: 125px;
+}
+#coll {
+  position: relative;
+  top: 485px;
+  right: 248px;
+}
+#colll {
+  position: relative;
+  top: 291px;
+  right: 0px;
+}
+#col10{
+  position: relative;
+  top: 419px;
+}
+#button2 {
+  position: relative;
+  right: 238px;
+  top: 512px;
+}
+ }
