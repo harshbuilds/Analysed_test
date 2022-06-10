@@ -50,7 +50,7 @@
               <form method="post">
                 <input class="search-form-input" type="text" name="textsearch" placeholder="Search by company name">
                 <button type="submit" name="btnsearch" class="searchButton-client">
-                    <img src="./img/search-icon-blue.png" />
+                    <img src="./img/search-icon-blue.png" / id="searchButtonImg">
                 </button>
               </form>
             </div>
@@ -116,12 +116,9 @@
                         <span class="col-span-1"><?php echo $company_name; ?></span>
                     </div>
                     <!-- span  start of more -->
-                    <span id="dots">...</span> <div  id="more"> 
-                    <div class="column">
-                        <p class="col-2"><?php echo $role; ?></p>
-                        <span class="col-span-2"><?php echo $role_detail; ?></span>
-                    </div>
-                    <div class="column">
+                    <!--  <span id="dots">...</span> <div  id="more">  -->
+                
+                    <div class="column" id="contact_email">
                         <p class="col-3"><?php echo $contact_no; ?></p>
                         <span class="col-span-3"><?php echo $main_email; ?></span>
                     </div>
@@ -133,10 +130,10 @@
                     <div class="column" >
                         <p class="col-5">Added on <span><?php echo $added_on; ?></span></p>
                         <span class="col-span-5"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
-                        <a href="delete_client_list.php?Id=<?php echo $client_id; ?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i> Delete</a>
+                        <a href="delete_client_list.php?Id=<?php echo $client_id; ?>" class="colSpan5"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i> Delete</a>
                     </div>
-                  </div>   <!--   close of span  id more -->
-                  <button onclick="myFunction()" id="myBtnn"> Read more</button>
+                   <!--   close of span  id more -->
+                  <!-- <button onclick="myFunction()" id="myBtnn"> Read more</button> -->
                 </div>
                 </a>
 
@@ -166,11 +163,12 @@ items.forEach(item => {
     }
   });
 });
+
 </script>
 
 
 <!-- readmore less script for smaller screen -->
-
+<!-- 
 <script>
 function myFunction() {
     // console.log(ele);
@@ -178,7 +176,7 @@ function myFunction() {
   var moreText = document.getElementById("more");
   var btnText = document.getElementById("myBtnn");
 
-  if (dots.style.display === "none") {
+  if (dots.style.display == "none") {
     dots.style.display = "inline";
     btnText.innerHTML = "Read more"; 
     moreText.style.display = "none";
@@ -189,7 +187,7 @@ function myFunction() {
   }
 }
 </script>
-
+ -->
 
 
 
