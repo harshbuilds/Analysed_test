@@ -51,18 +51,19 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
 
         <div class="row">
 
-          <div class="col-2">
+          <div class="col-2" id="col2">
             <div class="options">
               <button class="b1" id="nac" onclick="location.href='my_task_10.php'">Step 1</button>
-              <button class="b1" id="nac" onclick="location.href='my_task_11.php'">Step 2</button>
+              <button class="b1" id="nnac" onclick="location.href='my_task_11.php'">Step 2</button>
               <button class="b1" id="ac">Step 3</button>
             </div>
           </div>
 
           <div class="col-10">
+              <br><br>
             <p class="c1">Step 3</p>
             <p class="c2">Assign Task</p>
-            <p class="c3">Assign task to one or a group of individual. elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et 
+            <p class="c3">Assign task to one or a group of individual. elitr, sed diam nonumy eirmod tempor <br> invidunt ut labore et  <br>dolore magna aliquyam erat, sed diam voluptua.<br> At vero eos et accusam et 
             justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p><br>
             
 
@@ -98,7 +99,7 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
               }
            }
       ?>
-        <form method = "POST" >
+        <form method = "POST"  id="fcolumn">
             <div class="row" >
                 <div class="col-7">
                     <p class="c4">Select list individuals to assign the task to<span style="color:#3598DB"> &#42;</span></p>
@@ -106,57 +107,61 @@ $conn=mysqli_connect(LOCALHOST,DB_USERNAME,DB_PASSWORD,DB_NAME) or die(mysqli_er
                     <input type="checkbox" id="sel" name="sel" class="largerCheckbox">
                     <label for="vehicle1" class="m1"> Select all</label><br>
                 </div>
-                <div class="col-5">
+                <div class="col-5" id="col5">
+                   
                     <p class="c4_1">Name of the task <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Enter the name of the task" class="f2_1" name="t_name">
                 </div>
             </div><br><br><br>
 
             <div class="row" >
-                <div class="col-7">
+                <div class="col-7" id="col7">
                     <p class="c4_2">Description <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Give a short description of the task" class="f2_2" name="desc_short">
                 </div>
-                <div class="col-5">
+                <div class="col-5" id="col5">
+               
                     <p class="c4_3">Skill requirement <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Select a few skills required for the test" class="f2_3" name="desc_skills">
                 </div>
             </div><br><br><br>
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-4" id="col444">
                     <p class="c4_4">Accuracy <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Enter value in percentage" class="f5" name="accuracy">
                 </div>
-                <div class="col-4">
+                <div class="col-4" id="col44">
+               
                     <p class="c4_5">Start date <span style="color:#3598DB"> &#42;</span></p>
                     <input type="date" onload="getDate()" class="form-control" id="f6" name="start_date">
                 </div>
-                <div class="col-4">
+                <div class="col-4" id="col4">
+               
                     <p class="c4_6">End date <span style="color:#3598DB"> &#42;</span></p>
                     <input type="date" onload="getDate()" class="form-control" id="f6_1" name="end_date">
                 </div>
             </div><br><br><br>
 
             <div class="row" >
-                <div class="col-4">
+                <div class="col-4" id="colll">
                     <p class="c4_7">Set task duration <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Enter number of weeks" class="f4" name="duration_week">
                 </div>
-                <div class="col-4" style="margin-top:40px;">
+                <div class="col-4" style="margin-top:40px;" id="col">
                     <input type="text" style="float: left; " placeholder=" &emsp;Enter number of days" class="f4_1" name="duration_days">
                 </div>
-                <div class="col-4" style="margin-top:40px;">
+                <div class="col-4" style="margin-top:40px;" id="coll">
                 <input type="text" style="float: left; " placeholder=" &emsp;Enter number of hours" class="f4_2" name="duration_hours">
                 </div>
             </div><br><br><br>
 
             <div class="row" >
-                <div class="col-10">
+                <div class="col-10" id="col10">
                     <p class="c4_8">List of accepted file extentions <span style="color:#3598DB"> &#42;</span></p>
                     <input type="text" style="float: left; " placeholder=" &emsp;Ex. png ,jpeg, xml ,pdf" class="f4_3" name="file_extensions">
                 </div>
-                <div class="col-2" style="margin-top:40px;">
+                <div class="col-2" style="margin-top:40px;" id="button2">
                   <button class="b5" name="create_task" >&emsp;Create task</button>
                 </div>
             </div><br><br><br>
