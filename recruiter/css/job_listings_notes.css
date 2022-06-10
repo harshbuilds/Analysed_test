@@ -2,26 +2,32 @@
   font-family: CeraB;
   src: url(../fonts/CeraPro-Bold.ttf);
 }
+
 @font-face {
   font-family: MetroB;
   src: url(../fonts/metropolis/Metropolis-Bold.woff);
 }
+
 @font-face {
   font-family: CeraM;
   src: url(../fonts/CeraPRO-Medium.ttf);
 }
+
 @font-face {
   font-family: Metro;
   src: url(../fonts/metropolis/Metropolis-Regular.woff);
 }
+
 @font-face {
   font-family: MetroM;
   src: url(../fonts/metropolis/Metropolis-Medium.woff);
 }
+
 @font-face {
   font-family: MetroS;
   src: url(../fonts/metropolis/Metropolis-ExtraBold.woff);
 }
+
 @font-face {
   font-family: MetroMI;
   src: url(../fonts/metropolis/Metropolis-MediumItalic.woff);
@@ -43,6 +49,7 @@
   color: #979797;
   opacity: 1;
 }
+
 #te1 {
   font-size: 16px;
   font-family: Metro;
@@ -67,11 +74,13 @@
   font-size: 16px;
   font-family: Metro;
 }
+
 #k1 {
   color: #297fb8;
   font-size: 15px;
   font-family: Metro;
 }
+
 .filterSection_myTasks {
   padding: 10px 0px;
   display: flex;
@@ -80,14 +89,16 @@
   margin-top: 10px;
   flex-wrap: wrap;
 }
+
 .leftFilter_myTasks {
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 31px;
   opacity: 1;
-  padding: 0px 26px;
-  height: 35px;
+  padding: 5px 26px;
+  height: 45px;
   width: 400px;
 }
+
 .leftFilter_myTasks select {
   padding: 7px 10px;
   color: #297fb8;
@@ -98,9 +109,11 @@
   font-size: 12px;
   border-right: 1px solid #979797;
 }
+
 .leftFilter_myTasks select::-ms-expand {
   display: none;
 }
+
 .filterSmall_myTasks select {
   color: #979797;
   border: 1px solid #3598db;
@@ -117,15 +130,18 @@
   font-family: Metro;
   margin-bottom: 5px;
 }
+
 #texts {
   color: #333333;
   font-family: Metropolis Light;
 }
+
 .j1 {
   color: #333333;
   font-size: 14px;
   font-family: Metro;
 }
+
 .singletask_myTasks {
   display: flex;
   align-items: center;
@@ -152,15 +168,18 @@ select {
   color: #979797;
   padding: 10px;
 }
+
 .leftFilter_myTasks button {
   color: #297fb8;
   cursor: pointer;
 }
+
 .sortByMyTasks {
   color: #979797;
   padding: 0px 5px 3px 5px;
   margin-left: -19%;
 }
+
 .recentMyTasks {
   color: #8bd0ffb8;
   padding: 0px 10px;
@@ -175,21 +194,26 @@ select {
   text-overflow: "";
   font-size: 16px;
 }
+
 .filterSmall_myTasks {
   display: flex;
   /* align-items: center; */
   /* justify-content: space-between; */
   /* flex-wrap:wrap; */
 }
+
 .selectAllActions_filterSmall_myTasks {
   color: #297fb8;
 }
+
 .selectAllActions_filterSmall_myTasks select {
   margin-left: 10px;
 }
+
 .singleTasks_containerDiv {
   margin-top: 40px;
 }
+
 .singletask_myTasks {
   display: flex;
   align-items: center;
@@ -203,6 +227,7 @@ select {
   height: 80px;
   width: 1150px;
 }
+
 .button-div_myTasks {
   margin-top: -2%;
   /* display: flex; */
@@ -213,18 +238,21 @@ select {
   font-family: Metro;
   font-size: 30px;
 }
+
 .status-name p {
   margin-top: 10px;
   margin-left: 0px;
   font-family: CeraM;
   font-size: 15px;
 }
+
 .status-name u {
   margin-top: 0px;
   margin-left: -20px;
   font-family: CeraB;
   font-size: 15px;
 }
+
 .info1 {
   text-align: left;
   padding-left: 60px;
@@ -233,18 +261,42 @@ select {
 #r1 {
   font-size: 20px;
 }
+
 .container {
   width: 100%;
   margin-left: 120px;
-  margin-top: -2%;
 }
+
+.main_body {
+  overflow: hidden;
+}
+
+#align-of-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1200px) and (max-width:1300px) {
+  .container {
+    max-width: 1050px !important;
+    margin-left: 100px !important;
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width:1400px) {
+  .container {
+    max-width: 1150px !important;
+    margin-left: 125px !important;
+  }
+}
+
 @media screen and (max-width: 650px) {
+
   .bread-crumbs_Mytools-recruiter,
   .sortByMyTasks,
   .recentMyTasks,
   .sortFilter_myTasks,
-  .select-dropdown,
-  .p1 {
+  .select-dropdown {
     display: none;
   }
 
@@ -253,40 +305,48 @@ select {
     left: -82px;
     font-size: 20px;
   }
+
   #position1 {
     position: relative;
     font-size: 30px;
     /* font-weight:bold; */
   }
+
   .row {
     width: 370px;
   }
+
   .options {
     font-size: 22px;
     display: flex;
     width: 370px;
     justify-content: space-around;
   }
+
   .leftFilter_myTasks {
     width: 377px;
     font-size: 16px;
   }
+
   #right-side-col {
     position: relative;
     left: -116px;
     margin: 30px 30px;
     display: none;
   }
+
   #right-side-body {
     position: relative;
     font-size: 22px;
   }
+
   .addFilesMyTasks {
     position: relative;
     left: -270px;
     top: 48px;
     font-size: 17px;
   }
+
   #card-align {
     position: relative;
 
@@ -296,13 +356,98 @@ select {
   #align-of-card {
     font-size: 20px;
     display: grid;
+    position: relative;
   }
 
   .light_spanItem_singleTask_myTasks {
     font-size: 17px;
     width: 100px;
   }
+
   #te1 {
     font-size: 22px;
+  }
+
+  .card {
+    margin-top: -50px;
+  }
+
+  .small_container {
+    margin: 40px auto;
+  }
+
+  .options {
+    position: relative;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    padding-bottom: 5px;
+    padding-left: 140px;
+  }
+
+  .options .p1,
+  .options span {
+    margin-right: 50px;
+  }
+
+  .options-notes {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .card-body .row .card-body-checkbox {
+    display: none;
+  }
+
+  .card-body-div {
+    display: flex;
+    width: 300px;
+  }
+
+  #align-of-card {
+    display: flex;
+    justify-content: initial;
+  }
+
+  .container {
+    padding-left: 30px !important;
+  }
+
+  .main-card-div {
+    padding: 0px !important;
+  }
+
+  .card-body-div-added {
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+  }
+
+  .card-body-div-1 {
+    padding: 0 !important;
+    flex: initial !important;
+    max-width: initial !important;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card-body-div-type {
+    margin-top: 20px;
+  }
+
+  .card-body {
+    position: relative;
+  }
+
+  .card-body-div-edit {
+    position: absolute;
+    bottom: -160px;
+    left: 10px;
+  }
+
+  .col-2 {
+    padding-left: 0px !important;
   }
 }
