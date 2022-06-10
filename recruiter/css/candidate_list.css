@@ -419,7 +419,7 @@ input,
   }
   .cont .list {
     width: 330px;
-    height: 293px;
+    height: 354px;
     margin-top: 48px;
     padding: 10px;
   }
@@ -491,5 +491,6 @@ input,
   .added2 span,
   .list p {
     font-size: 23px;
+    padding: 5px;
   }
 }
