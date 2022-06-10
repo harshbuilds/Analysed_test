@@ -410,6 +410,7 @@ input[type="checkbox"]:focus + label::before {
   }
   .row {
     height: fit-content;
+        margin-right: 23px;
   }
   #myBtnn {
     border-radius: 8px;
@@ -428,8 +429,46 @@ input[type="checkbox"]:focus + label::before {
     margin-left: 5%;
     margin-right: 0px;
   }
-  .column {
+  #selected-item{
+    position: relative;
+    top: -10px;
+    margin: -3px;
+  }
+   .column {
     padding: 26px;
     margin-right: 22px;
+        padding-top: 0px;
   }
+  .col-span-5,.colSpan5{
+        display: inline-flex;
+        padding: 23px;
+    box-sizing: border-box;
+    background-color: #80808024;
+    border-radius: 8px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    color: #3598db;
+  }
+  .col-span-5 i,.colSpan5 i{
+        margin: 5px;
+  }
+  .colSpan5{
+     display: inline-flex;
+         padding: 7px;
+    box-sizing: border-box;
+    background-color: #80808024;
+    border-radius: 8px;
+    height: 47px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 609px) {
+  .column #c1{
+    display: none;
+  }
+
+}
 }
