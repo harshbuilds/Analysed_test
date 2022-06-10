@@ -629,7 +629,6 @@ input[type="checkbox"]:focus + label::before {
 @media screen and (max-width: 609px) {
   .bread-crumbs_Mytools-recruiter,
   .status,
-  .options .p1,
   .sortbyText,
   .search_list_1,
   .select-col-label {
@@ -657,6 +656,7 @@ input[type="checkbox"]:focus + label::before {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    overflow: scroll;
   }
   .options p {
     margin-top: 0px;
