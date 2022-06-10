@@ -90,9 +90,9 @@ if(isset($_POST['submit']))
 </style>    <!-- END OF INTERNAL STYLESHEET -->
 <div class="container">
     <div class="small_container">
-        <div class="heading_dash">
+        <div class="heading_dash" id="heading_dash1">
             <!-- CREATE USER -->
-            <h1 class="mainHeadingDash">Create User</h1>
+            <h1 class="mainHeadingDash" id="mainHeadingDash1">Create User</h1>
             <p class="mainParaDash" style="color:#3598DB;">Provide details and give user access controls.</p>
         </div>
         <form method="post" id="form1" enctype="multipart/form-data">
@@ -100,10 +100,10 @@ if(isset($_POST['submit']))
             <div class="left-side-image-box-add-client-1">
                 <div class="sub-divs-image-box-right-side-add-client">
                      <div id="profile-container">
-                        <image id="profileImage" src="img/user1.png" width="101px" height="101px">
+                    <image id="profileImage" src="img/user1.png" width="101px" height="101px">
                      </div>
-                     <h2 class="background-class"><i class="" aria-hidden="true"></i></h2>
-                     <p class="image-upload-e"><i class="fa fa-camera" aria-hidden="true"></i></p>
+                     <h2 class="background-class" id="background-class"><i class="" aria-hidden="true"></i></h2>
+                     <p class="image-upload-e" id="img_upload"><i class="fa fa-camera" aria-hidden="true"></i></p>
                      <input type="file" name="compfile" value="" id="imageUpload">
                  </div>
             </div>
@@ -113,10 +113,10 @@ if(isset($_POST['submit']))
                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                     <div class="row-recruiter"style="padding-top:40px">
                                     <!-- PERSONAL DETAILS -->
-                        <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Personal details</h2>
+                        <h2 class="heading-for-general-information-right-side-add-client-container" id="heading_cnu" style="color:#3598DB;font-size:23px;">Personal details</h2>
                     </div>
                 </div>
-                <div class="row-recruiter inputs-for-add-client-below-image-box">
+                <div class="row-recruiter inputs-for-add-client-below-image-box" id="part1">
                     <div class="right-side-image-box-right-add-client-1">
                                 <div class="row-recruiter sub-divs-image-box-right-side-add-client">
                                     <p class="input-para-add-client-ekam-1 fx-city-name-1">
@@ -153,9 +153,9 @@ if(isset($_POST['submit']))
                             </div>
                         </div>          <!-- NOTIFICATION DETAILS -->
                                 <div class="row-recruiter" style="margin-bottom: 30px;">
-                                    <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">Notification details</h2>
+                                    <h2 class="heading-for-general-information-right-side-add-client-container" id="heading_part2" style="color:#3598DB;font-size:23px;">Notification details</h2>
                                 </div>
-                                <div class="row-recruiter sub-divs-image-box-right-side-add-client">
+                                <div class="row-recruiter sub-divs-image-box-right-side-add-client" id="part2">
                                     <div class="radio-item">
                                         <input type="radio" id="ritema" name="notification" value="Allow email notifications" checked="checked">
                                         <label for="ritema">Allow email notifications</label>
@@ -170,13 +170,14 @@ if(isset($_POST['submit']))
                                     </div>
                                 </div>
                                                     <!-- USER ACCESS DETAILS -->
-                            <div class="row-recruiter" style="margin-bottom: 30px;">
-                                    <h2 class="heading-for-general-information-right-side-add-client-container" style="color:#3598DB;font-size:23px;">User access details</h2>
-									<div class="col-sm">
+                            <div class="row-recruiter" id="header_part3" style="margin-bottom: 30px;">
+                                    <h2 class="heading-for-general-information-right-side-add-client-container" id="part3" style="color:#3598DB;font-size:23px;">User access details</h2>
+									<div class="col-sm" id="col-sm">
                                         <input type="checkbox" id="select-all">
 										<label for="select-all" style="color:#3598DB;"> Select all</label>
                                     </div>
                             </div>
+                            <div id="user_access">
                                 <div class="row"style="padding-bottom:13px">
                                     <div class="col-sm">
                                         <input type="checkbox" id="c1" name="user[]" value="Access to database">
@@ -236,15 +237,16 @@ if(isset($_POST['submit']))
                                         <input type="checkbox" id="c13" name="user[]" value="Can create contracts">
 										<label for="c13">Can create contracts</label>
                                     </div>
-                                    <div class="col-sm" style="margin-left:-570px">
+                                    <div class="col-sm" id="c14_1">
                                         <input type="checkbox" id="c14" name="user[]" value="Can edit details of organisation">
 										<label for="c14">Can edit details of organisation</label>
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </div>
                                              <!-- CREATE USER BUTTON -->
-                        <button  type="submit" name="submit" class="btn btn-success" style="float:right">Create user</button>
+                        <button  type="submit" name="submit" class="btn btn-success" id="create_but">Create user</button>
                     </form>
                 </div>
             </div>
