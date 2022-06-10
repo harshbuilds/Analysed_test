@@ -2,26 +2,32 @@
   font-family: CeraB;
   src: url(../fonts/CeraPro-Bold.ttf);
 }
+
 @font-face {
   font-family: MetroB;
   src: url(../fonts/metropolis/Metropolis-Bold.woff);
 }
+
 @font-face {
   font-family: CeraM;
   src: url(../fonts/CeraPRO-Medium.ttf);
 }
+
 @font-face {
   font-family: Metro;
   src: url(../fonts/metropolis/Metropolis-Regular.woff);
 }
+
 @font-face {
   font-family: MetroM;
   src: url(../fonts/metropolis/Metropolis-Medium.woff);
 }
+
 @font-face {
   font-family: MetroS;
   src: url(../fonts/metropolis/Metropolis-ExtraBold.woff);
 }
+
 @font-face {
   font-family: MetroMI;
   src: url(../fonts/metropolis/Metropolis-MediumItalic.woff);
@@ -43,6 +49,7 @@
   color: #979797;
   opacity: 1;
 }
+
 #te1 {
   font-size: 16px;
   font-family: Metro;
@@ -67,11 +74,13 @@
   font-size: 16px;
   font-family: Metro;
 }
+
 #k1 {
   color: #297fb8;
   font-size: 15px;
   font-family: Metro;
 }
+
 .filterSection_myTasks {
   padding: 10px 0px;
   display: flex;
@@ -80,6 +89,7 @@
   margin-top: 10px;
   flex-wrap: wrap;
 }
+
 .leftFilter_myTasks {
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 31px;
@@ -88,6 +98,7 @@
   height: 35px;
   width: 366px;
 }
+
 .leftFilter_myTasks select {
   padding: 7px 10px;
   color: #297fb8;
@@ -98,9 +109,11 @@
   font-size: 12px;
   border-right: 1px solid #979797;
 }
+
 .leftFilter_myTasks select::-ms-expand {
   display: none;
 }
+
 .filterSmall_myTasks select {
   color: #979797;
   border: 1px solid #3598db;
@@ -117,11 +130,13 @@
   font-family: Metro;
   margin-bottom: 5px;
 }
+
 .j1 {
   color: #333333;
   font-size: 14px;
   font-family: Metro;
 }
+
 .singletask_myTasks {
   display: flex;
   align-items: center;
@@ -148,15 +163,18 @@ select {
   color: #979797;
   padding: 10px;
 }
+
 .leftFilter_myTasks button {
   color: #297fb8;
   cursor: pointer;
 }
+
 .sortByMyTasks {
   color: #979797;
   padding: 0px 5px 3px 5px;
   margin-left: -19%;
 }
+
 .recentMyTasks {
   color: #8bd0ffb8;
   padding: 0px 10px;
@@ -171,21 +189,26 @@ select {
   text-overflow: "";
   font-size: 16px;
 }
+
 .filterSmall_myTasks {
   display: flex;
   /* align-items: center; */
   /* justify-content: space-between; */
   /* flex-wrap:wrap; */
 }
+
 .selectAllActions_filterSmall_myTasks {
   color: #297fb8;
 }
+
 .selectAllActions_filterSmall_myTasks select {
   margin-left: 10px;
 }
+
 .singleTasks_containerDiv {
   margin-top: 40px;
 }
+
 .singletask_myTasks {
   display: flex;
   align-items: center;
@@ -199,6 +222,7 @@ select {
   height: 80px;
   width: 1150px;
 }
+
 .button-div_myTasks {
   margin-top: -2%;
   /* display: flex; */
@@ -209,18 +233,21 @@ select {
   font-family: Metro;
   font-size: 30px;
 }
+
 .status-name p {
   margin-top: 10px;
   margin-left: 0px;
   font-family: CeraM;
   font-size: 15px;
 }
+
 .status-name u {
   margin-top: 0px;
   margin-left: -20px;
   font-family: CeraB;
   font-size: 15px;
 }
+
 .info1 {
   text-align: left;
   padding-left: 60px;
@@ -240,6 +267,7 @@ select {
   z-index: 2;
   display: block;
 }
+
 #upload-container {
   width: 850px;
   height: 500px;
@@ -252,6 +280,7 @@ select {
   padding: 10px;
   /* text-align: center; */
 }
+
 .content_2 {
   margin-left: 700px;
   color: grey;
@@ -270,6 +299,7 @@ select {
   margin-left: 20px;
   font: normal normal normal 15px/19px MetroM;
 }
+
 .filetype select {
   margin-top: 10px;
   margin-left: 0px;
@@ -280,6 +310,7 @@ select {
   border-radius: 7px;
   opacity: 1;
 }
+
 .ro {
   width: 420px;
   height: 250px;
@@ -303,31 +334,42 @@ select {
   height: 47px;
   margin-left: 210px;
 }
-.container {
+
+.page-container {
   width: 100%;
   margin-left: 120px;
-  margin-top: -2%;
 }
+
+
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+  .page-container-row {
+    width: 1200px;
+  }
+}
+
 @media screen and (max-width: 650px) {
+
   .bread-crumbs_Mytools-recruiter,
   .sortByMyTasks,
   .recentMyTasks,
   .sortFilter_myTasks,
-  .select-dropdown,
-  .p1 {
+  .select-dropdown {
     display: none;
   }
+
 
   #heading1 {
     position: relative;
     left: -82px;
     font-size: 20px;
   }
+
   #position1 {
     position: relative;
     font-size: 30px;
     /* font-weight:bold; */
   }
+
   .options {
     font-size: 22px;
     display: flex;
@@ -342,10 +384,12 @@ select {
     width: 100px;
     height: 47px;
   }
+
   #list-files {
     margin-top: 50px;
     margin-left: 68px;
   }
+
   .singletask_myTasks {
     position: relative;
     width: 320px;
@@ -354,15 +398,18 @@ select {
     font-size: 20px;
     left: -49px;
   }
+
   #right-side-col {
     position: relative;
     left: -72px;
     display: none;
   }
+
   #right-side-body {
     position: relative;
     font-size: 22px;
   }
+
   #upload-container {
     position: relative;
     width: 369px;
@@ -379,6 +426,11 @@ select {
     height: 943px;
     border-radius: 11px; */
   }
+
+  .small_container {
+    margin: 40px auto;
+  }
+
   .content_2 {
     position: relative;
     left: -425px;
@@ -386,16 +438,90 @@ select {
     font-size: 22px;
     cursor: pointer;
   }
+
   .upload {
     font-size: 26px;
   }
+
   .light_spanItem_singleTask_myTasks {
     font-size: 20px;
   }
+
   .j1 {
     font-size: 20px;
   }
+
   .button-div_myTasks {
     font-size: 20px;
   }
+
+  .container {
+    overflow: hidden;
+  }
+
+  .container .hamburger {
+    margin-top: 15px !important;
+  }
+
+  .options {
+    position: relative;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    padding-bottom: 5px;
+    padding-left: 140px;
+  }
+
+  .options .p1 {
+    margin-right: 50px;
+  }
+
+  .singletask_myTasks input[type="checkbox"] {
+    display: none;
+  }
+
+  .singletask_myTasks span:nth-of-type(1),
+  .singletask_myTasks span:nth-of-type(2),
+  .singletask_myTasks span:nth-of-type(3),
+  .singletask_myTasks span:nth-of-type(4),
+  .singletask_myTasks span:nth-of-type(5) {
+    display: flex;
+  }
+
+  .j2 {
+    margin-left: 20px;
+  }
+
+  .myTasks-file,
+  .myTasks-internal,
+  .myTasks-upload {
+    margin-left: 0px !important;
+  }
+
+  .singletask_myTasks {
+    position: relative;
+  }
+
+  .myTasks-upload {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+  }
+
+  .button-div_myTasks {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 200px;
+    margin-left: 40px;
+  }
+
+  .singletask_myTasks {
+    height: 390px;
+  }
+
+  #list-files {
+    margin-bottom: -20px;
+  }
+
+  .options-1 {}
 }
