@@ -231,4 +231,9 @@
 
     width: 340px;
   }
+  #status_head{
+   top: 10px;
+   position: relative;
+    left: -16px;
+  }
 }
