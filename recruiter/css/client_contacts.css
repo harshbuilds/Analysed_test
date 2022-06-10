@@ -555,7 +555,6 @@ input[type="checkbox"]:focus+label::before {
 
   .bread-crumbs_Mytools-recruiter,
   .status,
-  .options .p1,
   .sortbyText,
   .search_list_1,
   .select-col-label {
@@ -585,6 +584,7 @@ input[type="checkbox"]:focus+label::before {
     margin-left: -18px;
     display: flex;
     justify-content: space-between;
+    overflow:scroll;
   }
 
   .options p {
