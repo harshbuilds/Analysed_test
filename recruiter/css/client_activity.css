@@ -547,8 +547,7 @@ body {
 
 @media screen and (max-width: 609px) {
   .bread-crumbs_Mytools-recruiter,
-  .status,
-  .options .p1
+  .status
 
   /* .sortbyText,
     .search_list_1,
@@ -593,6 +592,7 @@ body {
     margin-left: -18px;
     display: flex;
     justify-content: space-between;
+    overflow: scroll;
   }
 
   .options p {
