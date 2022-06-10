@@ -194,7 +194,7 @@ $j_id=$_GET['j_id'];
                                     <!-- <div class="status1"> -->
 
                                       <div style="font-size:14px;">
-                                        <b>#JB1554-1&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</b>
+                                        <b>#JB1554-1&emsp;&emsp;&emsp;</b>
                                         <span style="color:#979797;">05-05-2020</span>
                                     </div><br>
                                     <div class="status-name">
@@ -233,7 +233,7 @@ $j_id=$_GET['j_id'];
                                     </div>
                                     <!-- <div class="displayname">  -->
                                     <div>
-                                        <p><b><?php echo  $job_views ?>  &nbsp;&emsp;&emsp;6 &nbsp;&emsp;&emsp;1/4</b></p>
+                                        <p><b><?php echo  $job_views ?>  &nbsp;&emsp;&emsp;&emsp;&emsp;6 &nbsp;&emsp;&emsp;1/4</b></p>
                                     </div><br><br>
                                     <!-- <div class="displayname">  -->
                                         <div>
@@ -242,8 +242,8 @@ $j_id=$_GET['j_id'];
                                         </div><br>
                                         <!-- <div class="displayname">  -->
                                         <div>
-                                            <p style="color:#979797; line-height:10%;font-size:14px;">&emsp;&emsp;Industry&emsp;&emsp;&emsp;&emsp;Qualification req</p>
-                                            <p style="color:#333333;font-size:16px;font-weight:600; ">&emsp;&emsp;<?php echo  $industry ?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <?php echo  $qualification ?>&emsp;&emsp;&emsp;</p>
+                                            <p style="color:#979797; line-height:10%;font-size:14px;">Industry&emsp;&emsp;Qualification req</p>
+                                            <p style="color:#333333;font-size:16px;font-weight:600; "><?php echo  $industry ?>&emsp;&emsp;&emsp; <?php echo  $qualification ?></p>
                                         </div><br>
                                     <!-- <div class="displayname"> -->
                                     <div class="info1">
