@@ -5,26 +5,69 @@ session_start();
 <link rel="stylesheet" href="../css/recruiterLogIn.css"> <!--linking css file-->
 <style type="text/css">
     .background #back{
-        background-size: auto;
+            height: 100vh;
+    width: 100%;
     }
     .loginbox #head{
             padding-left: 35px;
     left: 0;
+    }
+    .loginbox{
+        box-shadow: 0px 2px 8px grey;
+    }
+
+    @media screen and (max-width: 609px){
+       .background{
+            height: 100%;
+    width: 104%;
+       }
+       #list_items{
+            display: flex;
+    position: relative;
+    left: -751px;
+    font-size: 22px;
+       }
+       .navbar-nav li{
+            border-radius: 12px;
+        margin: 15px;
+    font-size: 20px;
+    padding: 12px;
+    background-color: #3598DB;
+       }
+       .navbar-nav li a {
+    color: white;
+    font-weight: 100;
+}
+        .loginbox{
+            top: -50%;
+    left: 50%;
+            width: 351px;
+    padding-right: 4px;
+        }
+        .button{
+            display: flex;
+    position: relative;
+    left: -18px;
+        }
     }
 </style>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title> <!--giving title to the page-->
-
+<body>
 <div class="background">
     <img src="../img/background.png" id="back"> <!--background picture-->
-    <ul class="navbar-nav"> <!--navigation bar-->
-       <li> <a class="nav-link" id="contact" href="">Contact Us</a></li>
-        <li><a class="nav-link" href="">About</a></li>
-       <li> <a class="nav-link" href="">Login</a></li>
-       <li> <a class="nav-link" href="recruiterSignUp.php">Join Us</a></li> <!--redirects to sign up page-->
-	  </ul>
+    <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <div class="navbar-nav text-uppercase pt-3 ml-auto nav-form-s" id="list_items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../signup/recruiter/Recruiter login.php">Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../signup/recruiter/index.php"> Join us</a>
+                    </li>
+                    </div>
+    </div> -->
 </div>
 
 <div class="loginbox">
@@ -61,7 +104,7 @@ session_start();
 </div> -->
 </div>
 
-
+</body>
 <!--php code beign-->
 <?php
 
