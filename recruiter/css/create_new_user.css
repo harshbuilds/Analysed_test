@@ -114,3 +114,83 @@ input[type="checkbox"]:checked + label:after {
 input[type="checkbox"]:focus + label::before {
     outline: rgb(59, 153, 252) auto 5px;
 }
+#c14_1
+{
+  margin-left:-570px;
+}
+#create_but{
+  float: right;
+}
+@media screen and (max-width: 1024px){
+  .small_container{
+    margin-left: 50px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px){
+  .small_container{
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width:609px){
+  #profile-container,#background-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 525px;
+  }
+  #img_upload{
+    position: relative;
+    top: 525px;
+    display: flex;
+  }
+  #heading_cnu{
+        margin-bottom: 0px;
+    top: -282px;
+        left: 0px;
+    padding: 18px;
+  }
+  #part1{
+        top: 0px;
+    left: 0px;
+  }
+  #part2{
+        margin-bottom: 0;
+    top: -246px;
+    position: relative;
+  }
+  #heading_part2{
+    left: 0;
+  }
+  #col-sm{
+    display: flex;
+    position: relative;
+    top: 0;
+    padding: 0;
+    /* margin-left: -7px; */
+    margin-top: -380px;
+  }
+  #user_access{
+        display: flex;
+    flex-direction: column;
+    margin-top: -200px;
+    margin-left: -4px;
+}
+  }
+  #part3{
+    left: 0;
+    top: -200px;
+  }
+  #c14_1{
+    margin-left: 0px;
+  }
+  #create_but{
+    display: flex;
+    float: left;
+  }
+  
+}
