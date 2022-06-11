@@ -12,31 +12,31 @@
         
 
         <div class="cards_myTasks">
-            <div class="cardItem_myTasks first">
-                    <p class="memoryUsed_myTasks">30MB/100GB <span class="v1"> Used&emsp;&emsp;&emsp;&emsp; Available space</span><br><br>
+            <div class="cardItem_myTasks">
+                    <p class="memoryUsed_myTasks">30MB/100GB <span class="v1"> Used&emsp;&emsp;&emsp;&emsp;&emsp; Available space</span><br><br>
                     <progress value="7" max="20" ></progress></p>
             </div>
-            <div class="cardItem_myTasks second">
-                <img src="img/Icon material-image.png">&emsp;
-                <span class="centered_span_myTasks">367KB&emsp;</span>
+            <div class="cardItem_myTasks">
+                <img src="img/Icon material-image.png">
+                <span class="centered_span_myTasks">367KB</span>
                 <?php
                 $total_rows = mysqli_query($conn,"SELECT * FROM files where kb='367'");
                 $num = mysqli_num_rows($total_rows);
                 ?>
                 <h4 class="headingInCard_myTasks"><?php echo htmlentities($num); ?></h4>
             </div>
-            <div class="cardItem_myTasks third">
-                <img src="img/Icon awesome-file-pdf.png">&emsp;
-                <span class="centered_span_myTasks">110KB&emsp;</span>
+            <div class="cardItem_myTasks">
+                <img src="img/Icon awesome-file-pdf.png">
+                <span class="centered_span_myTasks">110KB</span>
                 <?php
                 $total_rows = mysqli_query($conn,"SELECT * FROM files where kb='110'");
                 $num = mysqli_num_rows($total_rows);
                 ?>
                 <h4 class="headingInCard_myTasks"><?php echo htmlentities($num); ?></h4>
             </div>
-            <div class="cardItem_myTasks fourth">
-                <img src="img/Icon awesome-file-alt.png">&emsp;
-                <span class="centered_span_myTasks">500KB&emsp;</span>
+            <div class="cardItem_myTasks">
+                <img src="img/Icon awesome-file-alt.png">
+                <span class="centered_span_myTasks">500KB</span>
                 <?php
                 $total_rows = mysqli_query($conn,"SELECT * FROM files where kb='500'");
                 $num = mysqli_num_rows($total_rows);
@@ -54,7 +54,7 @@
                     <option value="2">2</option>
                 </select>
                 <input type="text" name="search" placeholder=" Search by File name" class="centered_span_myTasks" id="search" oninput="myFunction()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <img src="img/search-icon-blue.png" class="search_img" height="15px" width="15px" >
+                <img src="img/search-icon-blue.png" id="search-icon" height="15px" width="15px" >
             </div>
            </form>
 
@@ -74,8 +74,8 @@
         </div>
         <form id="form1">
         <div class="filterSmall_myTasks">
-            <div class="selectAllActions_filterSmall_myTasks" style="margin-left:850px">
-                <input type="checkbox" name="checkboxSelectAll_myTasks" id="select-all" class="check_1">
+            <div class="selectAllActions_filterSmall_myTasks" style="margin-left:734px">
+                <input type="checkbox" name="checkboxSelectAll_myTasks" id="select-all">
                 <label for="checkboxSelectAll_myTasks">Select All</label>
                 <select name="Select action">
                     <option value="0">Select action</option>
