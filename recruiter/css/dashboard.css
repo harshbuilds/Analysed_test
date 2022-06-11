@@ -136,6 +136,13 @@ a {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+.active_jobs_img{
+  width: 100%;
+}
+.active_jobs_img img{
+  height: 100%;
+    width: 100%;
+}
 .linebar_spanwidth_applications {
   flex-wrap: nowrap;
   margin-bottom: 20px;
