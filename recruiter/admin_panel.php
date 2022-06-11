@@ -47,7 +47,7 @@
                     <img src="./img/search-icon-blue.png" />
                 </button>
             </div>
-        <button class="btn" id="myBtn" type="button">Create new user +</button>
+        <button class="btn" id="myBtn" type="button"><a href="create_new_user.php">Create new user +</a></button>
     </span>
 
     <!-- The Modal -->
