@@ -1,5 +1,5 @@
 <?php include('connection1.php'); ?>
-<?php include('header1.php') ?>
+<?php include('header.php') ?>
 <link rel="stylesheet" href="css/my_files.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>My Files</title>
