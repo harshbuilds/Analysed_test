@@ -23,9 +23,9 @@
                 <p class="mainParaDash">Navigate with ease to essential pages</p>
             </div>
             <div class="row-recruiter quickaccess-links-container">
-                <a href="../schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
+                <a href="schedule.php" class="quickaccess-links-recruiter">My Schedule <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a>
                 <a href="mails.php" class="quickaccess-links-recruiter">My Mails <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="../my_files.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
+                <a href="my_files.php" class="quickaccess-links-recruiter">My Files <i class="fa fa-file-code-o" aria-hidden="true"></i></a>
                 <a href="../myTasksNew.php" class="quickaccess-links-recruiter">My Tasks <i class="fa fa-check" aria-hidden="true"></i></a>
             </div>
             <div class="main-dashboard-container-recruiter">
