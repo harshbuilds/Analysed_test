@@ -42,7 +42,7 @@
                 </div>
                 <section class="cards_recruiter-items row-recruiter">
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../DashboardJobs.php">
+                        <section class="numberSection"><a href="DashboardJobs.php">
                             <p class="cardItemDash_recruiterheadingCards">Jobs Created</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM joblistings");
@@ -58,7 +58,7 @@
                             </div></a>
                     </div>
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../Appliedcandidates.php">
+                        <section class="numberSection"><a href="Appliedcandidates.php">
                             <p class="cardItemDash_recruiterheadingCards">Applied candidates</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM jobseeker");
@@ -74,7 +74,7 @@
                             </div></a>
                     </div>
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../interviewDone.php">
+                        <section class="numberSection"><a href="interviewDone.php">
                             <p class="cardItemDash_recruiterheadingCards">Interviews done</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM interview");
@@ -90,7 +90,7 @@
                             </div></a>
                     </div>
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../hiredCandidates.php">
+                        <section class="numberSection"><a href="hiredCandidates.php">
                             <p class="cardItemDash_recruiterheadingCards">Hired candidates</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM jobseeker where job_status='Hired'");
@@ -106,7 +106,7 @@
                             </div></a>
                     </div>
                     <div class="cardItemDash_recruiter">
-                        <section class="numberSection"><a href="../TasksCreated.php">
+                        <section class="numberSection"><a href="TasksCreated.php">
                             <p class="cardItemDash_recruiterheadingCards">Tasks Created</p>
                             <h3 class="cardItemDash_recruiternumberCards"><?php
                                         	$id = $db->query("SELECT * FROM task");
