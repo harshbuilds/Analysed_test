@@ -144,7 +144,10 @@
                             <p>Active Jobs</p>
 
                         </span>
-                       <div id="curve_chart" style="width: 500px; height: 400px"></div>
+                        <div class="active_jobs_img">
+                            <img src="img/graph.png">
+                        </div>
+                       <!-- <div id="curve_chart" style="width: 500px; height: 400px"></div> -->
                         <div class="jobtitles_chart-div_active-jobs_recruiter">
                             <span>
                                 <p>Job title</p>
