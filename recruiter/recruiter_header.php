@@ -177,7 +177,7 @@ if (!isset($_SESSION['email']))
                                 </li>
 
                                 <li>
-                                    <a href="#" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
+                                     <a href="logout.php" style="color: #51C46D">Logout <img src="./img/Path 481.png"/></a>
                                 </li>
                                 </ul>
                         </span>
