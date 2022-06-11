@@ -2,7 +2,7 @@
 session_start();
 if( isset($_POST['submit']))
 {
-  $firstname=$_SESSION['firstname'];
+  // $firstname=$_SESSION['firstname'];
   $file_type=$_POST['file_type'];
   $visibility=$_POST['visibility'];
   $validity=$_POST['validity'];
@@ -18,7 +18,7 @@ if( isset($_POST['submit']))
 }
 ?>
  <?php include('candidates_status_header.php');
-  $candidate_id = $_GET['c_id'];
+  $c_id = $_GET['c_id'];
    ?>
   <link rel="stylesheet" href="./css/candidates_files.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,12 +56,12 @@ if( isset($_POST['submit']))
    </div>
   
    <div class="add">
-<button class="btn" id="myBtn"><a style="color:white" href="#">Add+</a></button>
+<button class="btn" onclick="myFunct()" id="myBtn"><a style="color:white" href="#">Add+</a></button>
    </div>
    
-   <div id="myModal" class="modal">
+  <div id="myModal" class="modal">
             <!-- Modal content -->
-			<form method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data">
       <div class="modal-content">
                 <span class="close">close</span>
                 <div class="upload">Upload Files</div>
@@ -100,9 +100,9 @@ Drag and Drop a File<br>
 </div>
   </div>
       </div>
-	  </form>
+    </form>
    </div>
-   </div>
+</div>
 
    <div class="sort-by">
    <form id="form1">
@@ -175,9 +175,14 @@ Uploaded by<br>
   </div>
   </form>
 </div>
-
+</body>
+</form>
+</body>
 <script>
-    var modal = document.getElementById("myModal");
+function myFunct(){
+  
+  var modal = document.getElementById("myModal");
+
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -201,54 +206,48 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-</script>
 
-<script>
-	function checkdelete(){
-		return confirm('Are you sure you want to delete this file?');
-	}
-</script>
 
-<script>
     $(document).ready(function(){
         $("#form1 #select-all").click(function(){
             $("#form1 input[type='checkbox']").prop('checked',this.checked);
         });
     });
-</script>
 
-<script type="text/javascript">
 
-	function myFunction(){
-			var action='data';
-			var search=document.getElementById('search').value;
-		
+  function myFunction(){
+      var action='data';
+      var search=document.getElementById('search').value;
+    
         
-			$.ajax({
-				url:'./include/action1.php',
-			    method:'POST',
-				data:{action:action,search:search},
-				success:function(response){
-					$("#result1").html(response);
+      $.ajax({
+        url:'./include/action1.php',
+          method:'POST',
+        data:{action:action,search:search},
+        success:function(response){
+          $("#result1").html(response);
 
-				}
-			});
-		}
-</script>
+        }
+      });
+    }
 
-<script>
-	$(document).ready(function(){
-		$("#multi_search").change(function(){
-			var sort_val=$(this).val();
+  $(document).ready(function(){
+    $("#multi_search").change(function(){
+      var sort_val=$(this).val();
 
-			$.ajax({
-				url:'./include/action1.php',
-				method:'POST',
-				data:{sort_val:sort_val},
-				success:function(response){
-					$("#result1").html(response);
-				}
-			});
-		});
-	});
+      $.ajax({
+        url:'./include/action1.php',
+        method:'POST',
+        data:{sort_val:sort_val},
+        success:function(response){
+          $("#result1").html(response);
+        }
+      });
+    });
+  });
+}
+  function checkdelete(){
+    return confirm('Are you sure you want to delete this file?');
+  }
+
 </script>
