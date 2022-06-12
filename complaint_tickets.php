@@ -44,263 +44,38 @@
             </div>
         </div>
         <div class="recent-complaint-tickets-recruiter active complaint-tickets-recruiter-cards-div" id="complaints">
+            <?php
+  $sql=mysqli_query($conn,"select * from tickets_js ");
+
+  $check=mysqli_num_rows($sql);
+  if($check){
+    while($row=mysqli_fetch_assoc($sql)){
+      ?>
             <div class="complaint-card-recruiter-complaint-tickets">
                 <div class="row-recruiter">
                     <span>
-                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
+                        <p class="light-grey-text-complain-ticket complaint" id="comp1"><?php echo $row["tickettype"]; ?></p>
                     </span>
                     <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
+                       <!--  <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter"> -->
                         <span>
                             <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp3">Johne</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp3"><?php echo $row["name"]; ?></p>
                         </span>
                     </span>
                     <span class="span-message-complaint-ticket-recruiter">
+                        <p class="light-grey-text-complain-ticket" id="comp4">Subject</p>
+                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp5"><?php echo $row["subject"]; ?></p>
                             <p class="light-grey-text-complain-ticket" id="comp4">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> Stet clita kasd.</p>
+                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp5"><?php echo $row["message"]; ?></p>
                     </span>
                 </div>
                 <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
                 <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
             </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp3">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket" id="comp4">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket feedback" id="comp1">Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter"id="comp3">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket" id="comp4">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket"id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp3">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket" id="comp4">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter" id="comp5">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
+            <?php } } ?>
         </div>
-        <div class="unassigned-complaint-tickets-recruiter complaint-tickets-recruiter-cards-div">
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket feedback" id="comp1">Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query"  id="comp1"id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-        </div>
-        <div class="closed-complaint-tickets-recruiter complaint-tickets-recruiter-cards-div">
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket complaint" id="comp1">Complaint</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket feedback" id="comp1" >Feedback</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-            <div class="complaint-card-recruiter-complaint-tickets">
-                <div class="row-recruiter">
-                    <span>
-                        <p class="light-grey-text-complain-ticket query" id="comp1">Query</p>
-                        <p class="black-text-ciomplaint-ticket-recruiter" id="comp1">05-05-2021</p>
-                    </span>
-                    <span class="row-recruiter">
-                        <img src="./img/Ellipse -1.png" class="image-margin-right-complaint-ticket-recruiter">
-                        <span>
-                            <p  class="light-grey-text-complain-ticket" id="comp2">Added by</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Johne</p>
-                        </span>
-                    </span>
-                    <span class="span-message-complaint-ticket-recruiter">
-                            <p class="light-grey-text-complain-ticket">Message</p>
-                            <p class="black-text-ciomplaint-ticket-recruiter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
-                    </span>
-                </div>
-                <button class="delete-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Delete <i class="fa fa-trash" aria-hidden="true" style="color:#EC4551"></i></button>
-                <button class="reply-button-complaint-ticket-recruiter light-grey-text-complain-ticket">Reply <i class="fa fa-reply" aria-hidden="true" style="color:#51C46D"></i></button>
-            </div>
-        </div>
+        
     </div>
 </div>
 <div class="create-ticket-recruiter-ekam">
