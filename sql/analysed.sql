@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2022 at 02:21 PM
+-- Generation Time: Jun 12, 2022 at 05:47 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -98,11 +98,11 @@ CREATE TABLE `candidates` (
 --
 
 INSERT INTO `candidates` (`candidate_id`, `image`, `firstname`, `lastname`, `candidate_email`, `countrycode`, `phone_no`, `birth_date`, `status`, `address`, `country`, `city_name`, `zipcode`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talents`, `resume`, `skills`, `qualifications`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `last_updated`) VALUES
-(1, '5.jpg', 'John Smith', 'S', 'abc@gmail.com', '+91', 9878675545, '2021-10-12', 'Active', '1234,New Street.', 'India', 'Chennai', '637 409', 'Tamil Nadu', 'Web Developer', 'Fox Hunt', 'Contract', 'Temporary', 'Linkedin', 'Andrew foy', 24000, 20000, 40000, 'Team Player,Good Communicator,Self motivated,Adapt', '', 'HTML,CSS,JS,PHP', 'BCom', 'no comments to make', '2021-10-25', 'Sr.Product designer', 'Internal', 'Submission', '2022-03-05'),
-(3, '', 'julia ', 'robert', 'jul@gmail.com', '', 7656432314, '2000-01-02', '1', 'Richmond town', 'Australia', 'london', '713305', 'karnataka', 'developer', 'facebook', '2', '3', '3', '3', 12000, 13300, 14000, 'c++', 'addCandidate1.txt', 'Cloud computing', 'BSc', 'working ', '2021-11-30', '1', '1', '1', '2022-03-12'),
-(4, '10.jpg', 'jammie', 'oliver', 'jami@gmail.com', '', 6756453423, '2021-10-29', '2', 'Richmond town', 'Australia', 'berlin', '713305', 'Maharastra', 'cyber security', 'Instagram', '2', '1', '1', '1', 12000, 13300, 14000, 'java', 'mbox.txt', 'Artificial Intelligence', 'BSc', 'working ', '2021-11-30', '2', '2', '2', '2022-03-12'),
-(5, '', 'lucy', 'brown', 'lusy@gmail.com', '', 6756453423, '2022-12-31', '1', 'Richmond town', 'India', 'kolkata', '123122', 'karnataka', 'developer', 'Boeing', '3', '1', '1', '2', 12000, 13300, 14000, 'Golang', '', 'ML', 'BSc', 'working ', '2021-10-29', '3', '2', '2', '2022-03-12'),
-(6, '16.jpg', 'Alex', 'wheeler', 'alex@gmai.com', '', 87654323, '2021-11-29', '2', 'baker street', 'Australia', 'berlin', '713305', 'UP', 'developer', 'facebook', '2', '2', '2', '2', 7000, 8000, 9000, 'java', '', 'C', 'MSc', 'working ', '2020-11-29', '3', '2', '2', '2022-03-12');
+(1, 'icon.png', 'John Smith', 'S', 'abc@gmail.com', '+91', 9878675545, '2021-10-12', 'Active', '1234,New Street.', 'India', 'Chennai', '637 409', 'Tamil Nadu', 'Web Developer', 'Fox Hunt', 'Contract', 'Temporary', 'Linkedin', 'Andrew foy', 24000, 20000, 40000, 'Team Player,Good Communicator,Self motivated,Adapt', '', 'HTML,CSS,JS,PHP', 'BCom', 'no comments to make', '2021-10-25', 'Sr.Product designer', 'Internal', 'Submission', '2022-03-05'),
+(3, 'icon2.png', 'julia ', 'robert', 'jul@gmail.com', '', 7656432314, '2000-01-02', '1', 'Richmond town', 'Australia', 'london', '713305', 'karnataka', 'developer', 'facebook', '2', '3', '3', '3', 12000, 13300, 14000, 'c++', 'addCandidate1.txt', 'Cloud computing', 'BSc', 'working ', '2021-11-30', '1', '1', '1', '2022-03-12'),
+(4, 'icon3.png', 'jammie', 'oliver', 'jami@gmail.com', '', 6756453423, '2021-10-29', '2', 'Richmond town', 'Australia', 'berlin', '713305', 'Maharastra', 'cyber security', 'Instagram', '2', '1', '1', '1', 12000, 13300, 14000, 'java', 'mbox.txt', 'Artificial Intelligence', 'BSc', 'working ', '2021-11-30', '2', '2', '2', '2022-03-12'),
+(5, 'fox.png', 'lucy', 'brown', 'lusy@gmail.com', '', 6756453423, '2022-12-31', '1', 'Richmond town', 'India', 'kolkata', '123122', 'karnataka', 'developer', 'Boeing', '3', '1', '1', '2', 12000, 13300, 14000, 'Golang', '', 'ML', 'BSc', 'working ', '2021-10-29', '3', '2', '2', '2022-03-12'),
+(6, 'icon.png', 'Alex', 'wheeler', 'alex@gmai.com', '', 87654323, '2021-11-29', '2', 'baker street', 'Australia', 'berlin', '713305', 'UP', 'developer', 'facebook', '2', '2', '2', '2', 7000, 8000, 9000, 'java', '', 'C', 'MSc', 'working ', '2020-11-29', '3', '2', '2', '2022-03-12');
 
 -- --------------------------------------------------------
 
@@ -1674,9 +1674,9 @@ CREATE TABLE `client` (
 
 INSERT INTO `client` (`client_id`, `company_name`, `status`, `company`, `company_img`, `ownership`, `industry`, `source`, `parent_company`, `active_contact`, `company_desc`, `permanent_fee`, `contract_fee`, `main_email`, `contact_no`, `address`, `city`, `zipcode`, `state`, `country`, `bank_name`, `bank_id`, `bank_acc_no`, `iban`, `vat`, `last_updated`, `role`, `division`, `internal`, `created_by`, `created_email`, `created_no`, `role_detail`) VALUES
 (15, 'Fox hunt', 'Inactive', 'http://www.example.com', 'aa.png', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Caley Mike', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.      ', '10%', '10%', 'abc12@gmail.com', 8870986950, 'abc road,chennai', 'Washington', '637 409', 'Andhra Pradesh', 'India', 'Indian Bank', 1, 1234, '11', '12', '2022-03-04', 'developer', 'none', 'yes', 'Max', 'max@gmail.com', '123412', 'developer lead'),
-(16, 'virtusa', 'Active', 'orls,dla', '3.jpg', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Andrew foy', 'new company to join                            ', '14', '14', 'vir@gmail.com', 67543423, 'las vegas', 'las', '76564534', 'Madhya Pradesh', 'Germany', 'hdfc', 16521, 123123121, '1234321', '123651', '2022-03-04', '', '', '', '', '', '', ''),
-(17, 'oracle', 'Inactive', 'orls,dla', '', 'Temporary', 'Working', 'Linkedin', 'Flipkart', 'Andrew foy', '                           new', '1233', '12', 'or@gmail.com', 1234567890, 'Richmond town', 'chennai', '76564534', 'Tamil Nadu', 'India', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-12', '', '', '', '', '', '', ''),
-(18, 'oracle', 'Active', 'netbeans.com', '', 'Contract', 'Closed', 'Internshala', '', 'Caley Mike', '                            ', '1233', '14', 'net@gamil.com', 67543423, 'baker street', 'Bangalore Rural', '123121', 'Andhra Pradesh', 'Australia', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-17', '', '', '', '', '', '', '');
+(16, 'virtusa', 'Active', 'orls,dla', 'fox.png', 'Private', 'Information Technology', 'Linkedin', 'Flipkart', 'Andrew foy', 'new company to join                            ', '14', '14', 'vir@gmail.com', 67543423, 'las vegas', 'las', '76564534', 'Madhya Pradesh', 'Germany', 'hdfc', 16521, 123123121, '1234321', '123651', '2022-03-04', '', '', '', '', '', '', ''),
+(17, 'oracle', 'Inactive', 'orls,dla', 'letter-a.png', 'Temporary', 'Working', 'Linkedin', 'Flipkart', 'Andrew foy', '                           new', '1233', '12', 'or@gmail.com', 1234567890, 'Richmond town', 'chennai', '76564534', 'Tamil Nadu', 'India', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-12', '', '', '', '', '', '', ''),
+(18, 'oracle', 'Active', 'netbeans.com', 'fox.png', 'Contract', 'Closed', 'Internshala', '', 'Caley Mike', '                            ', '1233', '14', 'net@gamil.com', 67543423, 'baker street', 'Bangalore Rural', '123121', 'Andhra Pradesh', 'Australia', 'hdfc', 16521, 12341234, '1234321', '123651', '2022-03-17', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1812,9 +1812,9 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`contact_id`, `creator_id`, `company`, `fname`, `lname`, `status`, `picture`, `job_title`, `email`, `phone`, `address`, `skills`, `industry`, `last_meeting`, `mname`, `title`, `city`, `zip_code`, `state`, `country`, `company_name`, `contact_type`, `division`, `source`, `reports_to`, `last_contact`, `visibility`, `validity`, `lastvisit`, `LinkedIn_profile`, `added_on`, `files`, `notes`) VALUES
-(1, 1, 'Fox Hunt', 'Caley Mike', 'S', 'Active', '', 'Python Developer', 'abc2@gmail.com', '9000765890', 'New Street,chennai', 'Python,Java', 'Information Technology', '2021-10-11', '', NULL, 'chennai', 637890, 'Tamil Nadu', 'India', 'NAN', '', '', '', '', '', '', '', '0000-00-00', '', '2021-10-11', '', ''),
-(3, 2, 'max', 'Richard', 'Max', '1', '', 'Developer', 'jane@gmail.com', '86564534', 'madras', 'java', '2', NULL, 'Jr', NULL, 'chennai', 1234112, '3', '1', 'virtusa', '2', '2', '2', '2', '2020-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-05', '11', 'going to join'),
-(4, NULL, NULL, 'Richard', 'jones', '2', '3.jpg', 'Developer', 'jbone@gmail.com', '3425123456', 'Richmond town', 'ML', '2', NULL, '', '', 'Bangalore Rural', -2, '2', '2', 'netbeans', '2', '3', '2', '2', '2021-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-17', '', '');
+(1, 1, 'Fox Hunt', 'Caley Mike', 'S', 'Active', 'Prof-1.png', 'Python Developer', 'abc2@gmail.com', '9000765890', 'New Street,chennai', 'Python,Java', 'Information Technology', '2021-10-11', '', NULL, 'chennai', 637890, 'Tamil Nadu', 'India', 'NAN', '', '', '', '', '', '', '', '0000-00-00', '', '2021-10-11', '', ''),
+(3, 2, 'max', 'Richard', 'Max', '1', 'Prof-1.png', 'Developer', 'jane@gmail.com', '86564534', 'madras', 'java', '2', NULL, 'Jr', NULL, 'chennai', 1234112, '3', '1', 'virtusa', '2', '2', '2', '2', '2020-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-05', '11', 'going to join'),
+(4, NULL, NULL, 'Richard', 'jones', '2', 'Prof-1.png', 'Developer', 'jbone@gmail.com', '3425123456', 'Richmond town', 'ML', '2', NULL, '', '', 'Bangalore Rural', -2, '2', '2', 'netbeans', '2', '3', '2', '2', '2021-11-30', '2', '2', '2021-11-29', 'new@gmail.com', '2022-03-17', '', '');
 
 -- --------------------------------------------------------
 
@@ -1898,7 +1898,8 @@ CREATE TABLE `files` (
 
 INSERT INTO `files` (`file_id`, `added_on`, `file_type`, `visibility`, `validity`, `files`, `kb`, `firstname`, `image`) VALUES
 (64, '2021-10-25', 'Resume', 'Internal', 'System Verified', 'Resume.pdf', 124, 'Chris Shore', ''),
-(65, '2021-10-25', '10th files', 'External', 'System Verified', 'Resume.pdf', 124, 'Chris Shore', '');
+(65, '2021-10-25', '10th files', 'External', 'System Verified', 'Resume.pdf', 124, 'Chris Shore', ''),
+(67, '2022-06-11', 'Resume', 'External', 'System Verified', 'CV_Anurag Rungta.pdf', 16, '', '');
 
 -- --------------------------------------------------------
 
@@ -2059,10 +2060,10 @@ CREATE TABLE `joblistings` (
 --
 
 INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, `position`, `industry`, `job_type`, `client_company`, `contact_client_company`, `business_dev_manager`, `status`, `priority`, `job_reference_number`, `designation`, `recruiters_name`, `openings`, `start_date`, `end_date`, `country`, `state`, `district`, `starting_time`, `ending_time`, `client_margin`, `advert_contact_name`, `advert_contact_no`, `skills`, `qualification`, `eligibility_criteria`, `required_experience`, `relevant_experience`, `irrelevant_experience`, `roles_and_opportunity`, `growth_opportunity`, `learning_opportunity`, `emp_endorsement`, `emp_benefits`, `reputation_of_org`, `advert_job_description`, `workspace_view`, `transportation`, `package_type`, `package_duration`, `package`, `bill_rate`, `markup`, `cl_margin`, `days_on`, `days_off`, `shift_pattern`, `added_on`, `company`, `location`, `company_website`, `job_views`, `company_email`, `availability_time`, `salaryMax`, `salaryMin`, `Languages`, `radius`) VALUES
-(8, 1, 'Resume.pdf', '', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-19', 'Amazon', 'new jersy', 'www.intel.com', '', 'intel@gmail.com', '', '20000', '10000', '', '20'),
-(10, 2, 'Resume.pdf', '', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-27', 'Flipkart', 'manchester', '', '', '', '', '30000', '20000', '', '39'),
-(16, 0, '', '', 'UI Developer', 'Intel', 'Full-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'Chris Do', '12', '2021-11-30', '2021-11-29', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:57:00.00000', '21:58:00.00000', '11', 'New', '1234211231', 'Cloud computing', '12', 'Indian', '1 year', '11 months', '5 months', 'full stack developer', 'high', 'high', 'good', '100000', 'good', 'new', '', '1', '2', '3 month', 12111111, 12, 11, '11', '20', '10', 'Night', '2022-03-04', '', '', '', '', '', '', '50000', '45000', '', '78'),
-(17, 0, '', '', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', '', '', '', '', '', '1000000', '90000', '', '90');
+(8, 1, 'Resume.pdf', 'fox.png', 'Android Developer', 'Intel', 'Part-time', 'Fox hunt', 'Naruto Uzumaki', 'John Doe', 'Temporary', '2', '1', 'AA', 'John Doe', '10', '2021-09-17', '2021-09-08', 'India', 'Madhya Pradesh', 'Coimbatore', '14:51:00.00000', '14:51:00.00000', '00', 'Albert', '0887098698', 'HTML,CSS,JS,PHP', 'Msc', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', 'Airbnb-logo.png', 'Anywhere', 'Dollars', '3 month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-19', 'Amazon', 'new jersy', 'www.intel.com', '', 'intel@gmail.com', '', '20000', '10000', '', '20'),
+(10, 2, 'Resume.pdf', 'Netflix-logo.png', 'HTML Developer', 'Intel', 'Full-time', 'Fox hunt', 'Agarwal', 'John smith', 'Temporary to Permanent', '1', '1', 'AA', 'John Doe', '10', '2021-09-22', '2021-10-01', 'India', 'Andhra Pradesh', 'Chennai', '16:04:00.00000', '17:04:00.00000', '10', 'Albert', '8870986950', 'PHP,MySQL', 'Any degree', 'are available for the work from home job/internship, are available for duration of 2 months', '2 years of experience', 'Any relevent Experience', 'AA', '1. Preparing Graphics/banners/posters for social media 2. Handling Social Media Pages', 'organizing monthly knowledge-sharing workshops', 'Developing and implementing learning strategies and programs. Designing e-learning courses, career p', 'AA', 'Certificate, Letter of recommendation, Flexible work hour', 'AA', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l', '', 'Anywhere', 'Dollars', 'Per month', 5000, 100, 10, '', '5', '2', '9-6', '2021-10-27', 'Flipkart', 'manchester', '', '', '', '', '30000', '20000', '', '39'),
+(16, 0, '', 'icon.png', 'UI Developer', 'Intel', 'Full-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'Chris Do', '12', '2021-11-30', '2021-11-29', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:57:00.00000', '21:58:00.00000', '11', 'New', '1234211231', 'Cloud computing', '12', 'Indian', '1 year', '11 months', '5 months', 'full stack developer', 'high', 'high', 'good', '100000', 'good', 'new', '', '1', '2', '3 month', 12111111, 12, 11, '11', '20', '10', 'Night', '2022-03-04', '', '', '', '', '', '', '50000', '45000', '', '78'),
+(17, 0, '', 'icon2.png', 'Android Developer', 'AirBnB', 'Part-time', 'Blue yonder', 'Adams', 'John smith', 'Temporary', '2', '2', 'Developer', 'John Doe', '12', '2021-11-30', '2021-11-30', 'Australia', 'Madhya Pradesh', 'Coimbatore', '22:58:00.00000', '22:58:00.00000', '11', 'New', '1234211231', 'c#', 'bsc', 'Indian', '10', '9', '11', 'analyst', 'positive', 'ros', 'ms', '100', 'quality', 'new', 'wp4932312-coding-minimalist-wallpapers.jpg', '2', '3', '3 month', 12111111, 12, 11, '11', '10', '10', 'Night', '2022-03-19', '', '', '', '', '', '', '1000000', '90000', '', '90');
 
 -- --------------------------------------------------------
 
@@ -2120,48 +2121,22 @@ CREATE TABLE `jobseeker` (
   `accessibility` varchar(20) NOT NULL,
   `response_type` varchar(20) NOT NULL,
   `job_status` varchar(50) NOT NULL,
-  `added_on` date NOT NULL,
-  `referralStr` varchar(255) NOT NULL
+  `added_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jobseeker`
 --
 
-INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`, `referralStr`) VALUES
-(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11', ''),
-(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03', ''),
-(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09', ''),
-(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', 'old', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06', ''),
-(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', 'new', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01', ''),
-(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11', ''),
-(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 91, 76564534, 0x6d626f782e747874, 'new york', 'development', 'analysed', 'developer', 'facebook', 'immidiate', 22, 'english', 'good to join', '', '2022-03-02', 'available', 'Bangalore', 'india', 'bangalore', '7133055', 'karnataka', 'dev', 'facebook', 'new', 'ok', 'none', 'fox', 10000, 10000, 20000, 'c++', 'ready to join', '2022-03-30', 'new', 'yes', 'yes', 'applied', '2022-02-28', ''),
-(8, 'max', 'glenn', 'Btech', 'max@11', 'max@11', 'Part-time', 2020, 'MAIT', 'Part-time', 'C++', 1, 'max@gmailcom', 0, 7685645344, 0x6a6176612e706466, '', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', 'new jersy', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', '', '2022-03-25', '');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `jobseeker`
---
-ALTER TABLE `jobseeker`
-  ADD PRIMARY KEY (`jobseeker_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `jobseeker`
---
-ALTER TABLE `jobseeker`
-  MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
+(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
+(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
+(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
+(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', 'old', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
+(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', 'new', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
+(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11'),
+(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 91, 76564534, 0x6d626f782e747874, 'new york', 'development', 'analysed', 'developer', 'facebook', 'immidiate', 22, 'english', 'good to join', '', '2022-03-02', 'available', 'Bangalore', 'india', 'bangalore', '7133055', 'karnataka', 'dev', 'facebook', 'new', 'ok', 'none', 'fox', 10000, 10000, 20000, 'c++', 'ready to join', '2022-03-30', 'new', 'yes', 'yes', 'applied', '2022-02-28'),
+(8, 'max', 'glenn', 'Btech', 'max@11', 'max@11', 'Part-time', 2020, 'MAIT', 'Part-time', 'C++', 1, 'max@gmailcom', 0, 7685645344, 0x6a6176612e706466, '', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', 'new jersy', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', '', '2022-03-25');
 
 -- --------------------------------------------------------
 
@@ -2185,6 +2160,30 @@ CREATE TABLE `js_files` (
 INSERT INTO `js_files` (`JS_id`, `file_name`, `file_type`, `doc_type`, `file_size`, `added_on`) VALUES
 (1, '1.jpeg', 'jpeg', 'resume', '54539', '2022-03-12'),
 (2, '1.jpeg', 'jpeg', 'resume', '54539', '2022-03-12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mail_login`
+--
+
+CREATE TABLE `mail_login` (
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mail_login`
+--
+
+INSERT INTO `mail_login` (`email`, `password`) VALUES
+('bansivora9@gmail.com', 'bansi9151'),
+('bansivora9@gmail.com', 'bansi9151'),
+('bansivora9@gmail.com', 'bansi9151'),
+('bansivora9@gmail.com', 'bansi9151'),
+('bansivora9@gmail.com', 'bansi9151'),
+('jane@gmail.com', 'jane@11'),
+('bansivora9@gmail.com', 'bansi9151');
 
 -- --------------------------------------------------------
 
@@ -2275,7 +2274,10 @@ INSERT INTO `profile_db_rec` (`recruiter_id`, `about`, `b_colname`, `b_degree`, 
 (3, 'i am john', 'j', 'h', 'n', '', '', '', 'j', 'h', 'r', 'jhn'),
 (4, 'i am ban', 'natnat', 'natn', 'nat', '', '', '', 'nat', 'nat', 'nat', 'nat'),
 (5, 'jes', 'jl', 'jl', 'jl', '', '', '', 'jl', 'jl', 'jl', 'jl'),
-(2, 'sss', 'ss', 'sss', 'ss', 'sss', 'ss', 'ss', 'ss', 'sss', 'dd', 'sss');
+(2, 'sss', 'ss', 'sss', 'ss', 'sss', 'ss', 'ss', 'ss', 'sss', 'dd', 'sss'),
+(1, 'I am lead HR Manager', 'Dummy college', 'B.TECH', '2019-2022', 'dUMMY cOLLEGE', 'MTECH', '2019-2022', 'DUMMY COMPANY', 'HR', '2 YEARS', 'DUMMY PROJECT'),
+(9, 'I am lead HR Manager', 'Dummy college', 'B.TECH', '2019-2022', 'dUMMY cOLLEGE', 'MTECH', '2019-2022', 'DUMMY COMPANY', 'HR', '2 YEARS', ''),
+(10, 'I am lead HR Manager', 'Dummy college', 'B.TECH', '2019-2022', 'dUMMY cOLLEGE', 'MTECH', '2019-2022', 'DUMMY COMPANY', 'HR', '2 YEARS', '');
 
 -- --------------------------------------------------------
 
@@ -2339,7 +2341,9 @@ INSERT INTO `recruiter` (`recruiter_id`, `firstname`, `lastname`, `email`, `numb
 (5, 'jessi', 'lingard', 'jes@gmail.com', '87675645', 'Richmond town', 'youtube', 'HR', 'Information Technology/IT', 'jes@youtube.com', 'Moscow', 'jes@11', 'jes@11', '', NULL, ''),
 (6, 'mark', 'lee', 'mark@gmail.com', '65432312', 'mumbai', 'virtusa', 'tester', 'Information Technology/IT', 'mark@virtusa.com', 'Bangalore', 'mark@11', 'mark@11', '', NULL, ''),
 (7, 'mark', 'lee', 'mark@gmail1.com', '65432312', 'mumbai', 'virtusa', 'HR', 'Airlines/Aviation', 'mark@virtusa.com', 'berlin', 'newmark', 'newmark', '', NULL, ''),
-(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL, '');
+(8, 'adil', 'ahmed', 'adil@gmail.com', '654321', 'bangalore', 'TCS', 'Tester', 'Alternative Medicine', 'adil@tcs.com', 'Bangalore', 'adil@11', 'adil@11', 'on', NULL, ''),
+(9, 'Reshma', 'Waghle', 'reshma@gmail.com', '1234567890', 'Mumbai', 'Dummy ', 'HR Manager', 'Arts/Crafts', 'reshmaHR@gmail.com', 'Mumbai', 'admin@123', 'admin@123', 'no', NULL, 'Reshma@Analysed%mybqVJlGsLHnWFCcozgM154Q9ZOPwrAep0h6ESavYU2RI'),
+(10, 'Rahul', 'Yadav', 'rahul@gmail.com', '1234567890', 'Mumbai', 'FoxHunt', 'HR Manager', 'Broadcast Media', 'rahulFoxhunt@gmail.com', 'Mumbai', 'admin@123', 'admin@123', 'no', NULL, 'Rahul@Analysed%RV5DOgrZ60XtfUchaw7NAe49GpzjdB38J1Y2qmLluTFnI');
 
 -- --------------------------------------------------------
 
@@ -2416,7 +2420,11 @@ INSERT INTO `send_mail` (`mail_id`, `fromEmail`, `toEmail`, `subjectName`, `mess
 (24, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
 (25, 'bansari.vora_19@sakec.ac.in', 'bansivora9@gmail.com', 'hello', 'dddddddd', ''),
 (26, '_abc@acme-challenge.amazon.aws.com', 'bansivora9@gmail.com', 'd', 'dd', ''),
-(27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', '');
+(27, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'ddd', 'ddd', ''),
+(0, 'bansivora9@gmail.com', 'ndesai1503@gmail.com', 'dummy', 'dummy', ''),
+(0, 'bansivora9@gmail.com', 'ndesai1503@gmail.com', 'dummy', 'dummy\r\n', ''),
+(0, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'dummy', 'dummy\r\n', ''),
+(0, 'bansivora9@gmail.com', 'bansivora9@gmail.com', 'dummy', 'dummy\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -2584,9 +2592,6 @@ CREATE TABLE `tickets` (
 
 INSERT INTO `tickets` (`recruiter_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES
 (0, 'Bansari Vora', 'bansivora999@gmail.com', 'hello', 'agquywtewrbcrcrfwgcbfvctryueiwopqoiwueytrfgdhjsklamzxncbvgtyrueiwoskjhf', 'on', 'Feedback');
-COMMIT;
-
-
 
 -- --------------------------------------------------------
 
@@ -2610,5 +2615,76 @@ CREATE TABLE `tickets_js` (
 
 INSERT INTO `tickets_js` (`jobs_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES
 (7, 'chatBot', 'bansi@gmail.com', 'Regarding web development course', 'j', 'on', 'Complaint');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `candidates`
+--
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`candidate_id`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`client_id`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`file_id`);
+
+--
+-- Indexes for table `joblistings`
+--
+ALTER TABLE `joblistings`
+  ADD PRIMARY KEY (`job_id`);
+
+--
+-- Indexes for table `recruiter`
+--
+ALTER TABLE `recruiter`
+  ADD PRIMARY KEY (`recruiter_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `client_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `joblistings`
+--
+ALTER TABLE `joblistings`
+  MODIFY `job_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `recruiter`
+--
+ALTER TABLE `recruiter`
+  MODIFY `recruiter_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
