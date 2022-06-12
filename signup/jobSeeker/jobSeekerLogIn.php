@@ -1,4 +1,5 @@
 
+
 <!--php code beign-->
 <?php
 session_start();
@@ -27,7 +28,7 @@ $sql = "SELECT * FROM jobseeker where js_email=? and Password=?";
            $resultArray = $result->fetch_assoc();
             if($resultArray)
             {   
-                
+                $_SESSION['js_email']=$js_email;
                 $_SESSION['jobSeekerID'] = $resultArray['jobseeker_id'];                                                       
                 header("Location:./../../js_dashboard.php");                
             }
