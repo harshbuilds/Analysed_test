@@ -2071,7 +2071,7 @@ INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, 
 --
 
 CREATE TABLE `jobseeker` (
-  `jobseeker_id` int(255) NOT NULL,
+  `jobs_id` int(255) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
@@ -2120,22 +2120,48 @@ CREATE TABLE `jobseeker` (
   `accessibility` varchar(20) NOT NULL,
   `response_type` varchar(20) NOT NULL,
   `job_status` varchar(50) NOT NULL,
-  `added_on` date NOT NULL
+  `added_on` date NOT NULL,
+  `referralStr` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jobseeker`
 --
 
-INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`) VALUES
-(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11'),
-(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03'),
-(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09'),
-(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', 'old', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06'),
-(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', 'new', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01'),
-(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11'),
-(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 91, 76564534, 0x6d626f782e747874, 'new york', 'development', 'analysed', 'developer', 'facebook', 'immidiate', 22, 'english', 'good to join', '', '2022-03-02', 'available', 'Bangalore', 'india', 'bangalore', '7133055', 'karnataka', 'dev', 'facebook', 'new', 'ok', 'none', 'fox', 10000, 10000, 20000, 'c++', 'ready to join', '2022-03-30', 'new', 'yes', 'yes', 'applied', '2022-02-28'),
-(8, 'max', 'glenn', 'Btech', 'max@11', 'max@11', 'Part-time', 2020, 'MAIT', 'Part-time', 'C++', 1, 'max@gmailcom', 0, 7685645344, 0x6a6176612e706466, '', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', 'new jersy', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', '', '2022-03-25');
+INSERT INTO `jobseeker` (`jobs_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`, `referralStr`) VALUES
+(1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11', ''),
+(2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03', ''),
+(3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09', ''),
+(4, 'Karen Doe', 'S', 'MCA', '', '', 'Part-time', 2020, '', '', 'PHP,MySQL,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'UI Designer', '', '', 0, '', '', '', '0000-00-00', 'old', '', '', '', '', '', '', 'Amazon', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-06', ''),
+(5, 'Chris Shore', 'S', 'BCom', '', '', 'Full-time', 2020, '', '', 'Android', 1, 'abc@gmail.com', 91, 9898876767, '', 'Madurai', '', '', 'Android Developer', '', '', 0, '', '', '', '0000-00-00', 'new', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-01', ''),
+(6, 'Joe Daisy', 'S', 'MSc.SS', '', '', 'Part-time', 2020, '', '', 'Java, C++', 3, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Java Developer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-11-11', ''),
+(7, 'khalid', 'Athar', 'Btech', 'khalid', 'khalid', 'Regular', 2019, 'MAIT', 'Regular', 'C++', 1, 'khalid@gmail.com', 91, 76564534, 0x6d626f782e747874, 'new york', 'development', 'analysed', 'developer', 'facebook', 'immidiate', 22, 'english', 'good to join', '', '2022-03-02', 'available', 'Bangalore', 'india', 'bangalore', '7133055', 'karnataka', 'dev', 'facebook', 'new', 'ok', 'none', 'fox', 10000, 10000, 20000, 'c++', 'ready to join', '2022-03-30', 'new', 'yes', 'yes', 'applied', '2022-02-28', ''),
+(8, 'max', 'glenn', 'Btech', 'max@11', 'max@11', 'Part-time', 2020, 'MAIT', 'Part-time', 'C++', 1, 'max@gmailcom', 0, 7685645344, 0x6a6176612e706466, '', '', '', '', '', '', 0, '', '', '', '0000-00-00', '', 'new jersy', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', '', '2022-03-25', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `jobseeker`
+--
+ALTER TABLE `jobseeker`
+  ADD PRIMARY KEY (`jobs_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `jobseeker`
+--
+ALTER TABLE `jobseeker`
+  MODIFY `jobs_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- --------------------------------------------------------
 
