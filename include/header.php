@@ -131,7 +131,7 @@
                   Profile</a>
                 </li>
                 <li>
-                  <a href="#" style="color: #51C46D">Logout</a>
+                   <a href="logout_js.php" style="color: #51C46D">Logout</a>
                 </li>
               </ul>
             </div>
