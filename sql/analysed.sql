@@ -2071,7 +2071,7 @@ INSERT INTO `joblistings` (`job_id`, `recruiter_id`, `job_description`, `logo`, 
 --
 
 CREATE TABLE `jobseeker` (
-  `jobs_id` int(255) NOT NULL,
+  `jobseeker_id` int(255) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `qualification` varchar(100) NOT NULL,
@@ -2128,7 +2128,7 @@ CREATE TABLE `jobseeker` (
 -- Dumping data for table `jobseeker`
 --
 
-INSERT INTO `jobseeker` (`jobs_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`, `referralStr`) VALUES
+INSERT INTO `jobseeker` (`jobseeker_id`, `firstname`, `lastname`, `qualification`, `Password`, `ConfirmPassword`, `job_type`, `yearofpassing`, `institute`, `education`, `skills`, `experience`, `js_email`, `countrycode`, `number`, `resume`, `location`, `interest`, `project`, `position`, `organisation`, `availability`, `age`, `language`, `notes`, `image`, `dob`, `status`, `address`, `country`, `city`, `zip`, `state`, `current_title`, `company_name`, `candidate_type`, `emp_preference`, `source`, `recruiter`, `current_salary`, `salary_range1`, `salary_range2`, `talent`, `comment`, `availability_date`, `job`, `accessibility`, `response_type`, `job_status`, `added_on`, `referralStr`) VALUES
 (1, 'John Smith', 'S', 'BSc.CS', '', '', 'Full-time', 2020, '', '', 'PHP, MySQl, CSS', 1, 'abc@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'HTML Developer', '', '', 0, '', '', '', '0000-00-00', 'joined', '', '', '', '', '', '', 'Fox Hunt', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Contacting', '2021-10-11', ''),
 (2, 'Caley Mike', 'S', 'Computer Science Degree', '', '', 'Part-time', 2023, '', '', 'Python,Java', 4, 'abcd@gmail.com', 91, 9898876767, '', 'Coimbatore', '', '', 'Python Developer', '', '', 0, '', '', '', '0000-00-00', 'notice', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Hired', '2021-10-03', ''),
 (3, 'John Doe', 'S', 'Design Master Degree', '', '', 'Internship', 2020, '', '', 'Bootstrap,HTML,CSS,JS', 2, 'abcd@gmail.com', 91, 9898876767, '', 'Chennai', '', '', 'Ux Designer', '', '', 0, '', '', '', '0000-00-00', 'working', '', '', '', '', '', '', 'Flipkart', '', '', '', '', 0, 0, 0, '', '', '0000-00-00', '', '', '', 'Reviewed', '2021-10-09', ''),
@@ -2146,7 +2146,7 @@ INSERT INTO `jobseeker` (`jobs_id`, `firstname`, `lastname`, `qualification`, `P
 -- Indexes for table `jobseeker`
 --
 ALTER TABLE `jobseeker`
-  ADD PRIMARY KEY (`jobs_id`);
+  ADD PRIMARY KEY (`jobseeker_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -2156,7 +2156,7 @@ ALTER TABLE `jobseeker`
 -- AUTO_INCREMENT for table `jobseeker`
 --
 ALTER TABLE `jobseeker`
-  MODIFY `jobs_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `jobseeker_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
