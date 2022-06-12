@@ -14,7 +14,7 @@ $recruiter_id=$_SESSION['recruiter_id'];
         $conn = mysqli_connect('localhost','root','','analysed');
 
         $sql = mysqli_query($conn,"INSERT INTO `tickets`(`recruiter_id`, `name`, `email`, `subject`, `message`, `priority`, `tickettype`) VALUES 
-         ('$recruiter_id', $name','$email','$subject','$message','$priority','$tickettype')");
+         ('$recruiter_id', '$name','$email','$subject','$message','$priority','$tickettype')");
 
         if($sql){
             unset($_POST['submit']);
